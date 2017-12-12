@@ -27,9 +27,6 @@ global.wrap_border_bottom = room_height - global.wrap_margin_player
 
 // Create particle systems
 
-OOOOH TESTING
-
-
 global.part_system_below = part_system_create();
 part_system_depth(global.part_system_below,10);
 
