@@ -1,0 +1,2 @@
+alpha = min(destruction_timer/20,1)
+draw_sprite_general(spr,-1,xx,yy,chunk_size,chunk_size,phy_position_x-0.5*chunk_size,phy_position_y-0.5*chunk_size,1,1,-phy_rotation, c_white, c_white, c_white,c_white,alpha);
