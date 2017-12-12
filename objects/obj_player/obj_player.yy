@@ -56,6 +56,7 @@
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -70,29 +71,51 @@
     "physicsShape": 2,
     "physicsShapePoints": [
         {
-            "id": "0eaea718-80d3-4dea-bfe1-e9015f66c820",
+            "id": "42187a7e-2623-49b4-9a84-036b424e1020",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 16,
-            "y": 64
+            "x": 7,
+            "y": 76
         },
         {
-            "id": "90b76ded-662f-44ec-b44c-36b563d72d42",
+            "id": "33e2734f-5cba-42d7-9570-f0e3629a4022",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 16.3333435,
-            "y": 15.9999962
+            "x": 7.33334351,
+            "y": 22.9999962
         },
         {
-            "id": "8d5f2246-6ac1-434c-bb05-38e52402029d",
+            "id": "5fa570d6-035e-4b3f-bc3b-733cc662ffce",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 64.12947,
-            "y": 40.12224
+            "x": 66.12947,
+            "y": 23.1222382
+        },
+        {
+            "id": "07b7297d-c463-4343-9d06-605f2678b7ce",
+            "modelName": "GMPoint",
+            "mvc": "1.0",
+            "x": 99.90221,
+            "y": 46.48768
+        },
+        {
+            "id": "e81f112f-429b-4f06-907a-755447ef4f34",
+            "modelName": "GMPoint",
+            "mvc": "1.0",
+            "x": 99.90221,
+            "y": 54.5911255
+        },
+        {
+            "id": "ecdb6f9d-a1ee-43f4-988c-f36b2a29eb1e",
+            "modelName": "GMPoint",
+            "mvc": "1.0",
+            "x": 65.85295,
+            "y": 74.65517
         }
     ],
     "physicsStartAwake": true,
+    "properties": null,
     "solid": false,
-    "spriteId": "c406900e-c66b-4118-8342-effa2a5317f1",
+    "spriteId": "0bf600db-c93d-475f-8127-3efc63ec6183",
     "visible": true
 }

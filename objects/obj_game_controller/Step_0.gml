@@ -35,7 +35,7 @@ if global.view_mode == 1{
 	view_visible[0] = true
 	view_set_wport(view_current,1920)
 	view_set_hport(view_current,1080)
-	camera_set_view_size(view_camera[0],1920,1080)
+	camera_set_view_size(view_camera[0],400*aspect_ratio,400)
 	}
 if global.view_mode == 2{
 	view_visible[1] = true

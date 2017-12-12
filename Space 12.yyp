@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "0bf600db-c93d-475f-8127-3efc63ec6183",
+            "Value": {
+                "id": "5f538101-1479-47bd-9c5f-144414361480",
+                "resourcePath": "sprites\\spr_player_ship\\spr_player_ship.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0c21e8fd-90ec-49ff-b67b-48a99e163aa8",
             "Value": {
                 "id": "1cd04837-4211-4dfd-b3cb-72995f33b359",
@@ -99,6 +107,14 @@
             "Value": {
                 "id": "054ef7ba-1391-4726-a356-323a8c56961f",
                 "resourcePath": "sprites\\spr_map_marker_enemy_ship\\spr_map_marker_enemy_ship.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "164f4570-8120-4f16-94ba-cc93f301b4ff",
+            "Value": {
+                "id": "9c5bc877-b866-43fc-99eb-4fdfeb40e1ba",
+                "resourcePath": "sprites\\spr_enemy_interceptor\\spr_enemy_interceptor.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -274,7 +290,7 @@
             "Key": "4a4ac631-a4fc-476c-9355-f45dbbb9ceb8",
             "Value": {
                 "id": "a06d02ec-56cb-4067-93bf-4ca7c05f1a44",
-                "resourcePath": "sprites\\spr_rocket\\spr_rocket.yy",
+                "resourcePath": "sprites\\spr_rocket_old\\spr_rocket_old.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -455,6 +471,14 @@
             }
         },
         {
+            "Key": "766f073f-e756-41a4-8f2c-613554ac2f20",
+            "Value": {
+                "id": "89e69f82-5465-4d5e-82c8-bcc5e66798c4",
+                "resourcePath": "sprites\\spr_missile\\spr_missile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "772ab2a7-9237-46f2-b418-7927dbcf32ae",
             "Value": {
                 "id": "ccf3b38e-0338-4fc0-90cb-bd1877cd60b6",
@@ -570,7 +594,7 @@
             "Key": "a178bb54-8dd6-4d6c-900f-49d02143a7c4",
             "Value": {
                 "id": "7f19393f-0a0a-4a7f-a812-7703e68f5d07",
-                "resourcePath": "sprites\\spr_enemy_1\\spr_enemy_1.yy",
+                "resourcePath": "sprites\\spr_enemy_1_old\\spr_enemy_1_old.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -618,7 +642,7 @@
             "Key": "c406900e-c66b-4118-8342-effa2a5317f1",
             "Value": {
                 "id": "b52d17fb-8f4b-4c21-9f9a-8218f6366ce4",
-                "resourcePath": "sprites\\spr_ship_1\\spr_ship_1.yy",
+                "resourcePath": "sprites\\spr_ship_1_old\\spr_ship_1_old.yy",
                 "resourceType": "GMSprite"
             }
         },
