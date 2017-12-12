@@ -8,6 +8,8 @@ game_paused = false;
 // View settings
 
 global.view_mode = 1
+global.zoom = 400
+temp_zoom = 400
 
 // Play area settings
 

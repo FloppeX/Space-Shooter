@@ -1,3 +1,7 @@
+// Camera
+cam = camera_get_active()
+camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
+
 //draw_rectangle(global.wrap_border_left,global.wrap_border_top,global.wrap_border_right,global.wrap_border_bottom,true)
 
 if global.view_mode == 2{

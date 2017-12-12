@@ -1,8 +1,5 @@
 
-// Cameras and draw self
 
-cam = camera_get_active()
-camera_set_view_pos(cam,phy_com_x -0.5*camera_get_view_width(cam),phy_com_y-0.5*camera_get_view_height(cam))
 draw_self();
 
 // Draw sprite at mirror_positions

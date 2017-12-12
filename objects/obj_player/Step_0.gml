@@ -26,6 +26,17 @@ if gamepad_button_check(0,gp_face4)
 	shoot_2 = 1
 	else shoot_2 = 0;
 	
+if gamepad_button_check_pressed(0,gp_padu){
+	global.zoom = global.zoom / 2
+	if global.zoom < 100
+	global.zoom = 100
+	}
+
+if gamepad_button_check_pressed(0,gp_padd){
+	global.zoom += global.zoom * 2
+	if global.zoom > 4000
+	global.zoom = 4000
+	}
 
 // Turn
 

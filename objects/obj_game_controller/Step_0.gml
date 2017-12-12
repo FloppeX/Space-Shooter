@@ -30,12 +30,17 @@ if gamepad_button_check_pressed(0,gp_shoulderr)
 
 aspect_ratio = display_get_width()/display_get_height(); 
 
+if temp_zoom > global.zoom
+	temp_zoom -= 0.1 * abs(temp_zoom-global.zoom)
+if temp_zoom < global.zoom
+	temp_zoom += 0.1 * abs(temp_zoom-global.zoom)
+
 if global.view_mode == 1{
 	view_visible[1] = false
 	view_visible[0] = true
 	view_set_wport(view_current,1920)
 	view_set_hport(view_current,1080)
-	camera_set_view_size(view_camera[0],1920,1080)
+	camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 	}
 if global.view_mode == 2{
 	view_visible[1] = true
