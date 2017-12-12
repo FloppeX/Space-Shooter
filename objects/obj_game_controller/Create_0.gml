@@ -53,11 +53,11 @@ part_type_size(global.part_rocket_smoke,0.6,1,-0.04,0);                    //Thi
 part_type_scale(global.part_rocket_smoke,1,1);                       //This is for scaling
 part_type_color3(global.part_rocket_smoke,c_white,c_yellow,c_red);
 part_type_alpha3(global.part_rocket_smoke,1,1,0);
-part_type_speed(global.part_rocket_smoke,0.2,0.4,-0.10,0.3);            //The particles speed
-part_type_direction(global.part_rocket_smoke,0,0,0,0);            //The direction
+part_type_speed(global.part_rocket_smoke,0.2,0.4,-0.10,1);            //The particles speed
+part_type_direction(global.part_rocket_smoke,0,0,0,1);            //The direction
 part_type_orientation(global.part_rocket_smoke,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_rocket_smoke,true);                         //This is the blend mode, either additive or normal
-part_type_life(global.part_rocket_smoke,10,20);                       //this is its lifespan in steps
+part_type_life(global.part_rocket_smoke,4,10);                       //this is its lifespan in steps
 
 global.part_rocket_smoke_small=part_type_create();
 part_type_sprite(global.part_rocket_smoke_small,spr_engine_smoke,false,false,false);            //This defines the particles shape

@@ -54,7 +54,8 @@ if add_thrust
 	//col = make_colour_hsv(230, 255,100+irandom(155));
 	offset_distance = 46
 	offset_angle = 149
-	part_type_speed(part_engine_flame_player,add_thrust *0.5,add_thrust,0,0.3);            
+	
+	part_type_speed(part_engine_flame_player,add_thrust ,add_thrust,0,0.3);            
 	part_type_direction(part_engine_flame_player,180-phy_rotation,180-phy_rotation,0,0);    
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 3);
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 3);

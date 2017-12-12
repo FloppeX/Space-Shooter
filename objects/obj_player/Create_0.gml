@@ -40,18 +40,6 @@ module_3.owner = self;
 
 part_engine_flame_player = part_type_create();
 part_engine_flame_player = global.part_rocket_smoke
-/*
-part_type_sprite(part_engine_flame_player,spr_engine_smoke,false,false,false);
-part_type_size(part_engine_flame_player,0.6,1,-0.04,0);
-part_type_scale(part_engine_flame_player,1,1);
-part_type_color3(part_engine_flame_player,c_white,c_yellow,c_red);
-part_type_alpha3(part_engine_flame_player,1,1,0);
-part_type_speed(part_engine_flame_player,0.2,0.4,-0.10,0.3);            
-part_type_direction(part_engine_flame_player,0,0,0,0);          
-part_type_orientation(part_engine_flame_player,0,0,0,0,1);        
-part_type_blend(part_engine_flame_player,true);                        
-part_type_life(part_engine_flame_player,10,20);  
-*/
 
 engine_flame_emitter_1 = part_emitter_create(global.part_system_below);
 engine_flame_emitter_2 = part_emitter_create(global.part_system_below);
