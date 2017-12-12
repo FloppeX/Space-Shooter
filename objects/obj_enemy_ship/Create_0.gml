@@ -33,6 +33,7 @@ target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 	
 part_engine_flame = part_type_create();
 part_engine_flame = global.part_rocket_smoke
+part_type_speed(part_engine_flame,1,1,0,0.3);      
 
 
 gun = instance_create_depth(x,y,0,obj_module_gun);
