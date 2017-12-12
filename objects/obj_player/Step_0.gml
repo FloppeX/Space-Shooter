@@ -39,9 +39,10 @@ if add_thrust
 	if phy_speed < max_speed
 		physics_apply_local_force(0,0,add_thrust * thrust,0)
 	col = make_colour_hsv(230, 255,100+irandom(155));
-	offset_distance = 42
-	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+138), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+138), global.part_rocket_smoke, 3);
-	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-138), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-138), global.part_rocket_smoke, 3);
+	offset_distance = 45
+	offset_angle = 142
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), global.part_rocket_smoke, 3);
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-38,-phy_rotation), mirror_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke,3);
 

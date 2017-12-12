@@ -14,9 +14,9 @@ mirror_y = 0
 
 obj_health = 10000000;
 
-thrust = 400;
-rotation_force = 160;
-drift_resistance = 300
+thrust = 800;
+rotation_force = 100;
+drift_resistance = 800
 
 max_speed = 6;
 
