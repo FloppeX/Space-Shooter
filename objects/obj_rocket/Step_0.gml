@@ -15,6 +15,8 @@ if obj_health = 0{
 	damage_number = instance_create_depth(phy_position_x,phy_position_y,-1,obj_damage_number)
 	damage_number.damage = damage;
 	damage_number.color = damage_color;
+	
+	//part_type_destroy(part_engine_flame);
 	instance_destroy();
 	exit;
 	}

@@ -144,7 +144,10 @@ scr_wrap_room_player();
 
 // Particle emitters
 
-part_emitter_region(global.part_system_below,dust_emitter,x-0.6 * global.play_area_width,x+0.6 * global.play_area_width,y-0.6 * global.play_area_height,y+0.6 * global.play_area_height,ps_shape_rectangle,ps_distr_linear);
-part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
+//part_emitter_region(global.part_system_below,dust_emitter,x-0.6 * global.play_area_width,x+0.6 * global.play_area_width,y-0.6 * global.play_area_height,y+0.6 * global.play_area_height,ps_shape_rectangle,ps_distr_linear);
+//part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
 
-
+part_type_speed(global.dust_particle,phy_speed,phy_speed,0,0);
+part_type_direction(global.dust_particle,180-phy_rotation-10,180-phy_rotation+10,0,2);
+part_emitter_region(global.part_system_below,dust_emitter,x-800,x+800,y-800,y+800,ps_shape_ellipse,ps_distr_gaussian);
+part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,1);
