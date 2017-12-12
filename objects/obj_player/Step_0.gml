@@ -93,8 +93,8 @@ if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margi
 	
 // Modules
 
-module_1.x = phy_position_x + lengthdir_x(24,-phy_rotation+135);
-module_1.y = phy_position_y + lengthdir_y(24,-phy_rotation+135);
+module_1.x = phy_position_x + lengthdir_x(24,-phy_rotation+45);
+module_1.y = phy_position_y + lengthdir_y(24,-phy_rotation+45);
 module_1.obj_rotation = -phy_rotation;
 module_1.hspeed = phy_speed_x
 module_1.vspeed = phy_speed_y
@@ -103,8 +103,8 @@ if shoot_1
 else
 	module_1.shoot = false
 
-module_2.x = phy_position_x + lengthdir_x(24,-phy_rotation-135);
-module_2.y = phy_position_y + lengthdir_y(24,-phy_rotation-135);
+module_2.x = phy_position_x + lengthdir_x(24,-phy_rotation-45);
+module_2.y = phy_position_y + lengthdir_y(24,-phy_rotation-45);
 module_2.obj_rotation = -phy_rotation;
 module_2.hspeed = phy_speed_x
 module_2.vspeed = phy_speed_y
