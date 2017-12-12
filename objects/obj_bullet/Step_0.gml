@@ -11,9 +11,9 @@ if timer <= 0{
 phy_rotation = -point_direction(0, 0, phy_speed_x, phy_speed_y)
 
 // Particle effect
-
+/*
 part_particles_create_color(global.part_system_below, phy_position_x,phy_position_y,global.blaster_particle,color, 3);
-
+*/
 // Hit an enemy
 
 if hit_enemy == true{
