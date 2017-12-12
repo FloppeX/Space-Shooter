@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
- 
+
 destruction_timer -= 1
 
 if destruction_timer <= 0

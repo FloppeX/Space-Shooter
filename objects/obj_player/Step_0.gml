@@ -39,7 +39,9 @@ if add_thrust
 	if phy_speed < max_speed
 		physics_apply_local_force(0,0,add_thrust * thrust,0)
 	col = make_colour_hsv(230, 255,100+irandom(155));
-	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
+	offset_distance = 42
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+138), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+138), global.part_rocket_smoke, 3);
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-138), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-138), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-38,-phy_rotation), mirror_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke,3);
 
@@ -93,8 +95,8 @@ if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margi
 	
 // Modules
 
-module_1.x = phy_position_x + lengthdir_x(24,-phy_rotation+45);
-module_1.y = phy_position_y + lengthdir_y(24,-phy_rotation+45);
+module_1.x = phy_position_x + lengthdir_x(36,-phy_rotation+45);
+module_1.y = phy_position_y + lengthdir_y(36,-phy_rotation+45);
 module_1.obj_rotation = -phy_rotation;
 module_1.hspeed = phy_speed_x
 module_1.vspeed = phy_speed_y
@@ -103,8 +105,8 @@ if shoot_1
 else
 	module_1.shoot = false
 
-module_2.x = phy_position_x + lengthdir_x(24,-phy_rotation-45);
-module_2.y = phy_position_y + lengthdir_y(24,-phy_rotation-45);
+module_2.x = phy_position_x + lengthdir_x(36,-phy_rotation-45);
+module_2.y = phy_position_y + lengthdir_y(36,-phy_rotation-45);
 module_2.obj_rotation = -phy_rotation;
 module_2.hspeed = phy_speed_x
 module_2.vspeed = phy_speed_y
