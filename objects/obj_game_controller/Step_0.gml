@@ -49,5 +49,6 @@ if global.view_mode == 2{
 	view_set_hport(view_current,1080)
 	camera_set_view_size(view_camera[1],global.play_area_width*aspect_ratio,global.play_area_height)
 	}
+	
 // Wrap stuff
 
