@@ -1,5 +1,5 @@
 
-
+draw_sprite_ext(sprite_index,-1,phy_position_x+20,phy_position_y+20,0.5,0.5,-phy_rotation,c_black,0.2)
 draw_self();
 
 // Draw sprite at mirror_positions
