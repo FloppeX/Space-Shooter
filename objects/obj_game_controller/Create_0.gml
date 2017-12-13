@@ -132,6 +132,7 @@ for (var i = 0; i< 5; i++;)
    layer_sprite_blend(background_sprite[i], color);
    layer_sprite_alpha(background_sprite[i], 1);
    layer_sprite_angle(background_sprite[i], random(360));
+
    }
    
 for (var i = 0; i< 800; i++;)
