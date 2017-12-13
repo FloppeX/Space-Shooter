@@ -113,17 +113,17 @@ part_type_life(global.smoke_particle,30,60);
 
 for (var i = 0; i< 300; i++;)
    {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_1"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_star);
+   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_1"),random(room_width),random( room_height), spr_star);
    var scale = random(1)
    layer_sprite_xscale(background_sprite[i], scale);
    layer_sprite_yscale(background_sprite[i], scale);
-   var color = make_color_hsv(random(255),10,255)
+   var color = make_color_hsv(random(255),random(40)+10,255)
    layer_sprite_blend(background_sprite[i], color);
    layer_sprite_alpha(background_sprite[i], random(1));
    }
    
 
-for (var i = 0; i< 5; i++;)
+for (var i = 0; i< 10; i++;)
    {
    background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_2"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_background_1);
    layer_sprite_xscale(background_sprite[i],  random(3)+5);
@@ -133,15 +133,15 @@ for (var i = 0; i< 5; i++;)
    layer_sprite_alpha(background_sprite[i], 1);
    }
    
-for (var i = 0; i< 5; i++;)
+for (var i = 0; i< 600; i++;)
    {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_3"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_background_1);
-   layer_sprite_xscale(background_sprite[i], random(3)+5);
-   layer_sprite_yscale(background_sprite[i], random(3)+5);
-   layer_sprite_angle(background_sprite[i], random(360));
-   var color = make_color_hsv(random(255),255,255)
+   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_3"),random(room_width),random( room_height), spr_star);
+   var scale = random(0.2)
+   layer_sprite_xscale(background_sprite[i], scale);
+   layer_sprite_yscale(background_sprite[i], scale);
+   var color = make_color_hsv(random(255),random(20)+10,255)
    layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], 1);
+   layer_sprite_alpha(background_sprite[i], random(1));
    }
 
 // Create some enemies
