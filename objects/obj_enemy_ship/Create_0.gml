@@ -17,7 +17,7 @@ drift_resistance = 80;
 damage = 4;
 
 ai_mode = 1
-shoot = false
+shoot_1 = false
 direction_randomizer = 0
 
 target = noone;

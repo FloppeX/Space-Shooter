@@ -1,6 +1,7 @@
 event_inherited();
 
-shield_active = false;
+activate_shield = false;
+shield_active = false
 
 shield = physics_fixture_create()
 physics_fixture_set_circle_shape(shield, 60)

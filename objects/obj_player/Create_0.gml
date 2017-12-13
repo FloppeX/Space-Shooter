@@ -26,7 +26,7 @@ col = 0;
 // Modules
 
 event_inherited();
-
+/*
 module_1 = instance_create_depth(x,y,0,obj_module_gun);
 module_1.owner = self;
 
@@ -35,14 +35,25 @@ module_2.owner = self;
 
 module_3 = instance_create_depth(x,y,0,obj_module_shield);
 module_3.owner = self;
+*/
+ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun);
+ship_modules[0].offset_angle = 0;
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_test);
+ship_modules[1].offset_angle = 0;
+ship_modules[2] = instance_create_depth(x,y,-10,obj_module_gun);
+ship_modules[2].offset_angle = 0;
+ship_modules[3] = instance_create_depth(x,y,-10,obj_module_gun);
+ship_modules[3].offset_angle = -90;
+ship_modules[4] = instance_create_depth(x,y,-10,obj_module_test);
+ship_modules[4].offset_angle = 0;
+ship_modules[5] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[5].offset_angle = 90;
+ship_modules[6] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[6].offset_angle = 180;
+for(var i = 0; i < 7; i+=1;){
+	ship_modules[i].owner= id;
+	}
 
-ship_modules[1] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[2] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[3] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[4] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[5] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[6] = instance_create_depth(x,y,0,obj_module_test);
-ship_modules[7] = instance_create_depth(x,y,0,obj_module_test);
 
 // Particles
 

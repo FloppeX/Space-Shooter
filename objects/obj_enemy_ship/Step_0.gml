@@ -4,6 +4,8 @@ if obj_health <= 0{
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	//part_type_destroy(part_engine_flame);
 	scr_explode_object();
+	with(gun)
+		instance_destroy();
 	instance_destroy();
 	exit;
 	}
@@ -56,12 +58,12 @@ if ai_mode == 2 {
 	angle_diff = abs(angle_difference(-phy_rotation,target_dir));
 	if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
 		and angle_diff < 5
-		shoot = true
+		shoot_1 = true
 	else 
-		shoot = false
+		shoot_1 = false
 	if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
 		ai_mode = 1
-		shoot = false
+		shoot_1 = false
 		}
 	}
 	
@@ -130,12 +132,12 @@ part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offs
 
 // Gun
 
-gun.x = phy_position_x 
-gun.y = phy_position_y 
-gun.obj_rotation = -phy_rotation;
-gun.hspeed = phy_speed_x
-gun.vspeed = phy_speed_y
-if shoot
+gun.phy_position_x = phy_position_x 
+gun.phy_position_y = phy_position_y 
+gun.phy_rotation = phy_rotation;
+gun.phy_speed_x = phy_speed_x
+gun.phy_speed_y = phy_speed_y
+if shoot_1
 	gun.shoot = true
 else
 	gun.shoot = false

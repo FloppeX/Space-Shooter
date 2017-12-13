@@ -15,16 +15,16 @@ gamepad_set_axis_deadzone(0, 0);
 add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
 if gamepad_button_check(0,gp_face3)
-	shoot_1 = 1
-	else shoot_1 = 0;
+	shoot_1 = true
+	else shoot_1 = false;
 	
 if gamepad_button_check(0,gp_face2)
-	shield = 1
-	else shield = 0;
+	shield = true
+	else shield = false;
 	
 if gamepad_button_check(0,gp_face4)
-	shoot_2 = 1
-	else shoot_2 = 0;
+	shoot_2 = true
+	else shoot_2 = false;
 	
 if gamepad_button_check_pressed(0,gp_padu){
 	global.zoom = global.zoom / 2
@@ -111,31 +111,13 @@ if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margi
 	global.wrap_border_top = global.wrap_border_bottom  - global.play_area_height;
 	}
 
-// Find module positions and draw them
-
-
-module_1.hspeed = phy_speed_x
-module_1.vspeed = phy_speed_y
-if shoot_1
-	module_1.shoot = true
-else
-	module_1.shoot = false
-
-
-module_2.hspeed = phy_speed_x
-module_2.vspeed = phy_speed_y
-if shoot_2
-	module_2.shoot = true
-else
-	module_2.shoot = false
-
-module_3.hspeed = phy_speed_x
-module_3.vspeed = phy_speed_y
+// Find mirror positions
 
 scr_find_mirror_positions();
 
-scr_wrap_room_player();
+// Wrap room if needed
 
+scr_wrap_room_player();
 
 // Particle emitters
 
