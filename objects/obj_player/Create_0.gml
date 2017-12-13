@@ -36,6 +36,14 @@ module_2.owner = self;
 module_3 = instance_create_depth(x,y,0,obj_module_shield);
 module_3.owner = self;
 
+ship_modules[1] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[2] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[3] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[4] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[5] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[6] = instance_create_depth(x,y,0,obj_module_test);
+ship_modules[7] = instance_create_depth(x,y,0,obj_module_test);
+
 // Particles
 
 part_engine_flame_player = part_type_create();
