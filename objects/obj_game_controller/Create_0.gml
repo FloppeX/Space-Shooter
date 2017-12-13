@@ -94,7 +94,7 @@ part_type_size(global.flame_particle,0.40,0.70,0,0);
 part_type_scale(global.flame_particle,1,1);
 part_type_color3(global.flame_particle,c_white,c_yellow,c_red);
 part_type_alpha3(global.flame_particle,0.8,0.5,0);
-part_type_speed(global.flame_particle,3,5,-0.1,0);
+part_type_speed(global.flame_particle,1.5,3,-0.03,0);
 part_type_direction(global.flame_particle,0,359,0,0);
 part_type_gravity(global.flame_particle,0,270);
 part_type_orientation(global.flame_particle,0,0,0,1,1);
@@ -107,7 +107,7 @@ part_type_size(global.smoke_particle,0.60,1,0,0);
 part_type_scale(global.smoke_particle,1,1);
 part_type_color3(global.smoke_particle,12632256,8421504,0);
 part_type_alpha3(global.smoke_particle,0.6,0.3,0);
-part_type_speed(global.smoke_particle,0,1,0,0);
+part_type_speed(global.smoke_particle,0.5,2,-0.03,0);
 part_type_direction(global.smoke_particle,0,359,0,0);
 part_type_gravity(global.smoke_particle,0,270);
 part_type_orientation(global.smoke_particle,0,0,0,1,1);
@@ -115,16 +115,16 @@ part_type_blend(global.smoke_particle,0);
 part_type_life(global.smoke_particle,80,120);
 
 global.bullet_glow_particle = part_type_create();
-part_type_sprite(global.bullet_glow_particle,spr_flame_particle,false,false,false);            
+part_type_sprite(global.bullet_glow_particle,spr_bullet_glow,false,false,false);            
 part_type_size(global.bullet_glow_particle,0.6,0.8,-0.04,0);                   
 part_type_scale(global.bullet_glow_particle,1,1);                     
-part_type_color1(global.bullet_glow_particle,c_lime);
-part_type_alpha3(global.bullet_glow_particle,1,0.5,0);
+part_type_color2(global.bullet_glow_particle,c_white,c_lime);
+part_type_alpha3(global.bullet_glow_particle,1,1,0);
 part_type_speed(global.bullet_glow_particle,0,0,0,0);         
 part_type_direction(global.bullet_glow_particle,0,0,0,1);            
 part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
 part_type_blend(global.bullet_glow_particle,true);                      
-part_type_life(global.bullet_glow_particle,2,4);     
+part_type_life(global.bullet_glow_particle,4,6);     
 
 // Create background sprites
 

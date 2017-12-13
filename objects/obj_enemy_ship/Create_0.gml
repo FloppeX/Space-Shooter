@@ -7,9 +7,9 @@ obj_rotation = 0
 obj_health = 2
 
 target_speed = 0
-max_speed = 5
+max_speed = 6
 thrust = 0
-max_thrust = 300
+max_thrust = 360
 
 rotation_force = 100;
 drift_resistance = 80;
@@ -30,12 +30,11 @@ avoiding_obstacle = false;
 target_point_x = irandom(global.wrap_border_left + global.play_area_width)
 target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 
-	
+	/*
 part_engine_flame = part_type_create();
 part_engine_flame = global.part_rocket_smoke
 part_type_speed(part_engine_flame,1,1,0,0.3);      
-
-
+*/
 gun = instance_create_depth(x,y,0,obj_module_gun);
 gun.owner = self;
 gun.bullet_type = obj_bullet_enemy

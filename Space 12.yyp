@@ -554,7 +554,7 @@
             "Key": "8bd241a2-6964-4237-bec3-2bf2a6c3e3fd",
             "Value": {
                 "id": "9cee4ffc-e0f8-4328-894e-ad43482119d1",
-                "resourcePath": "sprites\\spr_bullet_glow_player\\spr_bullet_glow_player.yy",
+                "resourcePath": "sprites\\spr_bullet_glow\\spr_bullet_glow.yy",
                 "resourceType": "GMSprite"
             }
         },
