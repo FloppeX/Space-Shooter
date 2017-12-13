@@ -1,9 +1,3 @@
-
-
-// Start of step
-
-image_angle = phy_rotation
-
 // Gamepad controls
 
 gamepad_set_axis_deadzone(0, 0.1);

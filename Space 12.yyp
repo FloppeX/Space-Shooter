@@ -170,7 +170,7 @@
             "Key": "29e35262-19f3-4cd3-9b2e-3308a9d6c7d4",
             "Value": {
                 "id": "1af88bf2-7cec-43f3-bd49-e1240f7e3057",
-                "resourcePath": "objects\\obj_game_controller\\obj_game_controller.yy",
+                "resourcePath": "objects\\obj_game_controller_space\\obj_game_controller_space.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -220,6 +220,14 @@
                 "id": "b3b42c1f-97cd-4c96-a03d-6831396d0b5c",
                 "resourcePath": "sprites\\spr_bullet_glow_enemy\\spr_bullet_glow_enemy.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "32e75e0e-2880-45e5-86d9-4ef5b517c420",
+            "Value": {
+                "id": "1ad5d0d8-ca48-468a-81c3-fcc99936eff2",
+                "resourcePath": "objects\\obj_game_controller_shop\\obj_game_controller_shop.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -783,6 +791,14 @@
             }
         },
         {
+            "Key": "e657710d-8f1e-4ef4-a092-fb1623c5450c",
+            "Value": {
+                "id": "2db0d245-47be-42bd-827e-8e3e883068ac",
+                "resourcePath": "rooms\\rm_shop\\rm_shop.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e731fbad-73cf-4f0e-8330-508671be9aa6",
             "Value": {
                 "id": "8344d8bb-e8c5-455e-9f88-2051156d484c",
@@ -842,7 +858,7 @@
             "Key": "f413b9da-8a01-47a1-8fbb-96dba1ef2572",
             "Value": {
                 "id": "6e9cf753-cf27-477f-82b8-eae4202d51a0",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rm_space\\rm_space.yy",
                 "resourceType": "GMRoom"
             }
         },
