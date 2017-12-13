@@ -1,4 +1,4 @@
-
+/*
 temp_alpha = 0.6
 gpu_set_blendmode(bm_add)
 draw_sprite_ext(glow_sprite,image_index,phy_position_x,phy_position_y,image_xscale,image_yscale,-phy_rotation,color,image_alpha*temp_alpha)

@@ -52,6 +52,7 @@ physics_apply_force(phy_com_x,phy_com_y, drift_resistance_force_x , drift_resist
 // Smoke effect
 
 part_type_speed(part_engine_flame,1,1,0,0.3);    
+part_type_direction(part_engine_flame,-phy_rotation,-phy_rotation,0,0);
 offset_distance = 12
 part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), part_engine_flame, 3);
 part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), part_engine_flame, 3);

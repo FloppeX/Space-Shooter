@@ -423,6 +423,14 @@
             }
         },
         {
+            "Key": "663d0963-9968-42eb-b682-eb52b42c12e6",
+            "Value": {
+                "id": "d3444511-673a-4d42-bd17-e14531c791d4",
+                "resourcePath": "sprites\\spr_flame_particle\\spr_flame_particle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "69e62d67-3eb2-4d97-8ee0-89581287c600",
             "Value": {
                 "id": "886d2b78-7991-4e0e-ae16-14f1c36636db",

@@ -52,8 +52,8 @@ part_type_blend(global.part_weapon_splat,1);                         //This is t
 part_type_life(global.part_weapon_splat,1,10);                         //this is its lifespan in steps
 
 global.part_rocket_smoke=part_type_create();
-part_type_sprite(global.part_rocket_smoke,spr_engine_smoke,false,false,false);            //This defines the particles shape
-part_type_size(global.part_rocket_smoke,0.6,1,-0.04,0);                    //This is for the size
+part_type_sprite(global.part_rocket_smoke,spr_flame_particle,false,false,false);            //This defines the particles shape
+part_type_size(global.part_rocket_smoke,0.4,0.6,-0.04,0);                    //This is for the size
 part_type_scale(global.part_rocket_smoke,1,1);                       //This is for scaling
 part_type_color3(global.part_rocket_smoke,c_white,c_yellow,c_red);
 part_type_alpha3(global.part_rocket_smoke,1,1,0);
@@ -64,7 +64,8 @@ part_type_blend(global.part_rocket_smoke,true);                         //This i
 part_type_life(global.part_rocket_smoke,4,10);                       //this is its lifespan in steps
 
 global.part_rocket_smoke_small=part_type_create();
-part_type_sprite(global.part_rocket_smoke_small,spr_engine_smoke,false,false,false);            //This defines the particles shape
+part_type_sprite(global.part_rocket_smoke_small,spr_flame_particle,false,false,false);            //This defines the particles shape
+part_type_size(global.part_rocket_smoke_small,0.2,0.4,-0.001,0);
 part_type_scale(global.part_rocket_smoke_small,1,1);                       //This is for scaling
 part_type_color3(global.part_rocket_smoke_small,c_white,c_yellow,c_red);
 part_type_alpha3(global.part_rocket_smoke_small,1,1,0);
@@ -72,7 +73,7 @@ part_type_speed(global.part_rocket_smoke_small,0.2,0.4,-0.10,1);            //Th
 part_type_direction(global.part_rocket_smoke_small,0,0,0,1);            //The direction
 part_type_orientation(global.part_rocket_smoke_small,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_rocket_smoke_small,true);                         //This is the blend mode, either additive or normal
-part_type_life(global.part_rocket_smoke_small,4,10);                       //this is its lifespan in steps
+part_type_life(global.part_rocket_smoke_small,60,120);                       //this is its lifespan in steps
 
 global.dust_particle = part_type_create();
 part_type_shape(global.dust_particle,pt_shape_sphere);
@@ -85,33 +86,45 @@ part_type_direction(global.dust_particle,0,359,0,0);
 part_type_gravity(global.dust_particle,0,270);
 part_type_orientation(global.dust_particle,0,0,0,1,1);
 part_type_blend(global.dust_particle,0);
-part_type_life(global.dust_particle,60,120);
+part_type_life(global.dust_particle,60,150);
 
 global.flame_particle = part_type_create();
-part_type_shape(global.flame_particle,pt_shape_disk);
-part_type_size(global.flame_particle,0.30,0.60,0,0);
+part_type_shape(global.flame_particle,pt_shape_sphere);
+part_type_size(global.flame_particle,0.40,0.70,0,0);
 part_type_scale(global.flame_particle,1,1);
 part_type_color3(global.flame_particle,c_white,c_yellow,c_red);
-part_type_alpha2(global.flame_particle,1,0);
+part_type_alpha3(global.flame_particle,0.8,0.5,0);
 part_type_speed(global.flame_particle,3,5,-0.1,0);
 part_type_direction(global.flame_particle,0,359,0,0);
 part_type_gravity(global.flame_particle,0,270);
 part_type_orientation(global.flame_particle,0,0,0,1,1);
 part_type_blend(global.flame_particle,0);
-part_type_life(global.flame_particle,40,60);
+part_type_life(global.flame_particle,80,120);
 
 global.smoke_particle = part_type_create();
-part_type_shape(global.smoke_particle,pt_shape_disk);
-part_type_size(global.smoke_particle,0.50,1,0,0);
+part_type_shape(global.smoke_particle,pt_shape_sphere);
+part_type_size(global.smoke_particle,0.60,1,0,0);
 part_type_scale(global.smoke_particle,1,1);
 part_type_color3(global.smoke_particle,12632256,8421504,0);
-part_type_alpha3(global.smoke_particle,1,1,0);
+part_type_alpha3(global.smoke_particle,0.6,0.3,0);
 part_type_speed(global.smoke_particle,0,1,0,0);
 part_type_direction(global.smoke_particle,0,359,0,0);
 part_type_gravity(global.smoke_particle,0,270);
 part_type_orientation(global.smoke_particle,0,0,0,1,1);
 part_type_blend(global.smoke_particle,0);
-part_type_life(global.smoke_particle,30,60);
+part_type_life(global.smoke_particle,80,120);
+
+global.bullet_glow_particle = part_type_create();
+part_type_sprite(global.bullet_glow_particle,spr_flame_particle,false,false,false);            
+part_type_size(global.bullet_glow_particle,0.6,0.8,-0.04,0);                   
+part_type_scale(global.bullet_glow_particle,1,1);                     
+part_type_color1(global.bullet_glow_particle,c_lime);
+part_type_alpha3(global.bullet_glow_particle,1,0.5,0);
+part_type_speed(global.bullet_glow_particle,0,0,0,0);         
+part_type_direction(global.bullet_glow_particle,0,0,0,1);            
+part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
+part_type_blend(global.bullet_glow_particle,true);                      
+part_type_life(global.bullet_glow_particle,2,4);     
 
 // Create background sprites
 

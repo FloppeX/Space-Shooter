@@ -24,5 +24,5 @@ targeting_arc = 90;
 timer = range;
 
 part_engine_flame = part_type_create();
-part_engine_flame = global.part_rocket_smoke
+part_engine_flame = global.part_rocket_smoke_small
  
