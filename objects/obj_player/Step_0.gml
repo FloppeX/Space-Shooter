@@ -55,7 +55,7 @@ if add_thrust
 	offset_distance = 46
 	offset_angle = 149
 	
-	part_type_speed(part_engine_flame_player,add_thrust ,add_thrust,0,0.3);            
+	part_type_speed(part_engine_flame_player,add_thrust ,2*add_thrust,0,0.3);            
 	part_type_direction(part_engine_flame_player,180-phy_rotation,180-phy_rotation,0,0);    
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 3);
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 3);
@@ -144,21 +144,24 @@ scr_wrap_room_player();
 
 // Particle emitters
 
-//part_emitter_region(global.part_system_below,dust_emitter,x-0.6 * global.play_area_width,x+0.6 * global.play_area_width,y-0.6 * global.play_area_height,y+0.6 * global.play_area_height,ps_shape_rectangle,ps_distr_linear);
-//part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
+part_emitter_region(global.part_system_below,dust_emitter,x-global.play_area_width,x+ global.play_area_width,y-global.play_area_height,y+global.play_area_height,ps_shape_rectangle,ps_distr_linear);
+part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
 
-part_type_speed(global.dust_particle,2*phy_speed,2*phy_speed,0,0);
-part_type_direction(global.dust_particle,180-phy_rotation-10,180-phy_rotation+10,0,2);
-part_emitter_region(global.part_system_below,dust_emitter,x-800,x+800,y-800,y+800,ps_shape_ellipse,ps_distr_gaussian);
-part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,0);
+//part_type_speed(global.dust_particle,2*phy_speed,2*phy_speed,0,0);
+//part_type_direction(global.dust_particle,180-phy_rotation-10,180-phy_rotation+10,0,2);
+//part_emitter_region(global.part_system_below,dust_emitter,x-800,x+800,y-800,y+800,ps_shape_ellipse,ps_distr_gaussian);
+//part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,0);
 
 // Set background speed
 
 layer_hspeed(layer_get_id("background_layer_1"), phy_speed_x*0.8)
 layer_vspeed(layer_get_id("background_layer_1"), phy_speed_y*0.8)
 
-layer_hspeed(layer_get_id("background_layer_2"), phy_speed_x*0)
-layer_vspeed(layer_get_id("background_layer_2"), phy_speed_y*0)
+layer_hspeed(layer_get_id("background_layer_2"), phy_speed_x*0.6)
+layer_vspeed(layer_get_id("background_layer_2"), phy_speed_y*0.6)
 
-layer_hspeed(layer_get_id("background_layer_3"), phy_speed_x*-2)
-layer_vspeed(layer_get_id("background_layer_3"), phy_speed_y*-2)
+layer_hspeed(layer_get_id("background_layer_3"), phy_speed_x*0.4)
+layer_vspeed(layer_get_id("background_layer_3"), phy_speed_y*0.4)
+
+layer_hspeed(layer_get_id("background_layer_4"), phy_speed_x*0)
+layer_vspeed(layer_get_id("background_layer_4"), phy_speed_y*0)

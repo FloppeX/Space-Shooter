@@ -11,6 +11,10 @@ global.view_mode = 1
 global.zoom = 400
 temp_zoom = 400
 
+// Depth
+
+depth = 20
+
 // Play area settings
 
 global.wrap_margin_player = 1000
@@ -71,17 +75,17 @@ part_type_blend(global.part_rocket_smoke_small,true);                         //
 part_type_life(global.part_rocket_smoke_small,4,10);                       //this is its lifespan in steps
 
 global.dust_particle = part_type_create();
-part_type_shape(global.dust_particle,pt_shape_flare);
-part_type_size(global.dust_particle,0.02,0.20,0,0);
+part_type_shape(global.dust_particle,pt_shape_sphere);
+part_type_size(global.dust_particle,0.2,0.4,0,0);
 part_type_scale(global.dust_particle,1,1);
 part_type_color1(global.dust_particle,c_olive);
-part_type_alpha3(global.dust_particle,0,1,0);
+part_type_alpha3(global.dust_particle,0,0.4,0);
 part_type_speed(global.dust_particle,0,0,0,0);
 part_type_direction(global.dust_particle,0,359,0,0);
 part_type_gravity(global.dust_particle,0,270);
 part_type_orientation(global.dust_particle,0,0,0,1,1);
 part_type_blend(global.dust_particle,0);
-part_type_life(global.dust_particle,30,60);
+part_type_life(global.dust_particle,120,300);
 
 global.flame_particle = part_type_create();
 part_type_shape(global.flame_particle,pt_shape_disk);
@@ -114,37 +118,49 @@ part_type_life(global.smoke_particle,30,60);
 for (var i = 0; i< 300; i++;)
    {
    background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_1"),random(room_width),random( room_height), spr_star);
-   var scale = random(0.3)
+   var scale = random(0.5)+0.5
    layer_sprite_xscale(background_sprite[i], scale);
    layer_sprite_yscale(background_sprite[i], scale);
    var color = make_color_hsv(random(255),random(40)+10,255)
    layer_sprite_blend(background_sprite[i], color);
    layer_sprite_alpha(background_sprite[i], random(1));
    }
-   
 
-for (var i = 0; i< 5; i++;)
+for (var i = 0; i< 400; i++;)
    {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_2"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_background_1);
-   layer_sprite_xscale(background_sprite[i],  random(10)+5);
-   layer_sprite_yscale(background_sprite[i],  random(10)+5);
-   var color = make_color_hsv(random(255),255,255)
-   layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], 1);
-   layer_sprite_angle(background_sprite[i], random(360));
-
-   }
-   
-for (var i = 0; i< 800; i++;)
-   {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_3"),random(room_width),random( room_height), spr_star);
-   var scale = random(0.2)
+   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_2"),random(room_width),random( room_height), spr_star);
+   var scale = random(0.75)+0.75
    layer_sprite_xscale(background_sprite[i], scale);
    layer_sprite_yscale(background_sprite[i], scale);
    var color = make_color_hsv(random(255),random(20)+10,255)
    layer_sprite_blend(background_sprite[i], color);
    layer_sprite_alpha(background_sprite[i], random(1));
    }
+   
+for (var i = 0; i< 600; i++;)
+   {
+   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_3"),random(room_width),random( room_height), spr_star);
+   var scale = random(1)+1
+   layer_sprite_xscale(background_sprite[i], scale);
+   layer_sprite_yscale(background_sprite[i], scale);
+   var color = make_color_hsv(random(255),random(20)+10,255)
+   layer_sprite_blend(background_sprite[i], color);
+   layer_sprite_alpha(background_sprite[i], random(1));
+   }
+
+for (var i = 0; i< 5; i++;)
+   {
+   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_4"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_background_1);
+   layer_sprite_xscale(background_sprite[i],  random(10)+5);
+   layer_sprite_yscale(background_sprite[i],  random(10)+5);
+   var color = make_color_hsv(random(255),255,255)
+   layer_sprite_blend(background_sprite[i], color);
+   layer_sprite_alpha(background_sprite[i], random(1));
+   layer_sprite_angle(background_sprite[i], random(360));
+
+   }
+   
+
 
 // Create some enemies
 
