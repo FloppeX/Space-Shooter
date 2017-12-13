@@ -28,9 +28,9 @@ if global.view_mode == 2{
 	camera_set_view_size(view_camera[1],global.play_area_width*aspect_ratio,global.play_area_height)
 	}
 
-// Center camera
+// Align camera - off center because of shop!
 cam = camera_get_active()
-camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
+camera_set_view_pos(cam,obj_player.phy_com_x -0.25*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
 
 // Drav lines if view mode 2 
 

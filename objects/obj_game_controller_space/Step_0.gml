@@ -8,9 +8,6 @@ if gamepad_button_check(0,gp_select)
 if keyboard_check(vk_escape)
 	game_end();
 	
-if keyboard_check(vk_space)
-	room_goto(rm_shop)
-	
 if gamepad_button_check(0,gp_start){
 	physics_pause_enable(true);
    instance_deactivate_all(true);

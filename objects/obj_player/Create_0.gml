@@ -23,6 +23,8 @@ max_speed = 6;
 obj_rotation = 0;
 col = 0;
 
+movement_disabled = false
+
 // Modules
 
 event_inherited();
@@ -38,13 +40,13 @@ module_3.owner = self;
 */
 ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[0].offset_angle = 0;
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_test);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[1].offset_angle = 0;
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[2].offset_angle = 0;
 ship_modules[3] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[3].offset_angle = -90;
-ship_modules[4] = instance_create_depth(x,y,-10,obj_module_test);
+ship_modules[4] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[4].offset_angle = 0;
 ship_modules[5] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
 ship_modules[5].offset_angle = 90;

@@ -1,24 +1,26 @@
 // Gamepad controls
 
-gamepad_set_axis_deadzone(0, 0.1);
+if movement_disabled == false{
+	gamepad_set_axis_deadzone(0, 0.1);
 
-rotation_value = gamepad_axis_value(0,gp_axislh);
+	rotation_value = gamepad_axis_value(0,gp_axislh);
 
-gamepad_set_axis_deadzone(0, 0);
+	gamepad_set_axis_deadzone(0, 0);
 
-add_thrust = gamepad_button_value(0, gp_shoulderrb)
+	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
-if gamepad_button_check(0,gp_face3)
-	shoot_1 = true
-	else shoot_1 = false;
+	if gamepad_button_check(0,gp_face3)
+		shoot_1 = true
+		else shoot_1 = false;
 	
-if gamepad_button_check(0,gp_face2)
-	shield = true
-	else shield = false;
+	if gamepad_button_check(0,gp_face2)
+		shield = true
+		else shield = false;
 	
-if gamepad_button_check(0,gp_face4)
-	shoot_2 = true
-	else shoot_2 = false;
+	if gamepad_button_check(0,gp_face4)
+		shoot_2 = true
+		else shoot_2 = false;
+	}
 	
 if gamepad_button_check_pressed(0,gp_padu){
 	global.zoom = global.zoom / 2
@@ -31,6 +33,10 @@ if gamepad_button_check_pressed(0,gp_padd){
 	if global.zoom > 4000
 	global.zoom = 4000
 	}
+	
+if keyboard_check(vk_space)
+	room_goto(rm_shop)
+
 
 // Turn
 

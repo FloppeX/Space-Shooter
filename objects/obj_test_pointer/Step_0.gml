@@ -2,9 +2,11 @@ x = mouse_x
 y = mouse_y
 
 if mouse_check_button_pressed(mb_left){
-	//instance_create_depth(x,y,-10,obj_explosion)
-	part_system_position(global.part_system_above,x,y)
-	part_system_position(global.part_system_below,x,y)
+	var target_module = instance_place(x,y,obj_module)
+	if target_module != noone{
+		with (target_module)
+			instance_change(obj_module_empty,false)
+		}
 	}
 
 // Find mirror positions

@@ -8,7 +8,7 @@ game_paused = false;
 // View settings
 
 global.view_mode = 1
-global.zoom = 200
+global.zoom = 150
 temp_zoom = 4000
 
 // Depth
@@ -172,13 +172,11 @@ for (var i = 0; i< 5; i++;)
    layer_sprite_angle(background_sprite[i], random(360));
 
    }
-   
 
-
-// Create some enemies
-
-repeat(0)
-	new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_ship)
-
-repeat(6)
-	new_asteroid_1 = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_asteroid_big)
+// Settings for player instance
+with(obj_player){
+	phy_position_x = 0.5 * room_width
+	phy_position_y = 0.5 * room_height
+	phy_rotation = -90
+	movement_disabled = true
+	}
