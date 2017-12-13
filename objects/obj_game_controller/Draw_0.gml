@@ -49,14 +49,17 @@ if global.view_mode == 2{
 	
 // draw shadows
 
-with(obj_player)
-	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.5)
+with(obj_player){
+	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.1)
+	draw_sprite_ext(sprite_index,-1,phy_position_x+29,phy_position_y+29,0.6,0.6,-phy_rotation,c_black,0.1)
+	draw_sprite_ext(sprite_index,-1,phy_position_x+31,phy_position_y+31,0.6,0.6,-phy_rotation,c_black,0.1)
+	}
 	
 with(obj_enemy_ship)
-	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.5)
+	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.3)
 	
 with(obj_rocket)
-	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.5)
+	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.3)
 	
 with(obj_bullet)
-	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.5)
+	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.3)

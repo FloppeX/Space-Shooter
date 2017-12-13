@@ -109,12 +109,10 @@ if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margi
 	global.wrap_border_bottom = phy_position_y + global.wrap_margin_objects;
 	global.wrap_border_top = global.wrap_border_bottom  - global.play_area_height;
 	}
-	
-// Modules
 
-module_1.x = phy_position_x + lengthdir_x(36,-phy_rotation+45);
-module_1.y = phy_position_y + lengthdir_y(36,-phy_rotation+45);
-module_1.obj_rotation = -phy_rotation;
+// Find module positions and draw them
+
+
 module_1.hspeed = phy_speed_x
 module_1.vspeed = phy_speed_y
 if shoot_1
@@ -122,9 +120,7 @@ if shoot_1
 else
 	module_1.shoot = false
 
-module_2.x = phy_position_x + lengthdir_x(36,-phy_rotation-45);
-module_2.y = phy_position_y + lengthdir_y(36,-phy_rotation-45);
-module_2.obj_rotation = -phy_rotation;
+
 module_2.hspeed = phy_speed_x
 module_2.vspeed = phy_speed_y
 if shoot_2
@@ -132,15 +128,13 @@ if shoot_2
 else
 	module_2.shoot = false
 
-module_3.phy_position_x = phy_com_x
-module_3.phy_position_y = phy_com_y
-module_3.phy_rotation= phy_rotation;
 module_3.hspeed = phy_speed_x
 module_3.vspeed = phy_speed_y
 
 scr_find_mirror_positions();
 
 scr_wrap_room_player();
+
 
 // Particle emitters
 
