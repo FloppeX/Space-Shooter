@@ -626,7 +626,7 @@
             "Key": "99489252-f415-4fbf-9cce-5f735685aa4c",
             "Value": {
                 "id": "01a78ca7-deb9-4673-b369-a03063be1869",
-                "resourcePath": "objects\\obj_test_pointer\\obj_test_pointer.yy",
+                "resourcePath": "objects\\obj_pointer\\obj_pointer.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -683,6 +683,14 @@
             "Value": {
                 "id": "f9dabead-3fd2-42af-9336-cd132cfc8e13",
                 "resourcePath": "sprites\\spr_test\\spr_test.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bf927bf8-d6e2-4379-b0ce-f0edb6e583fd",
+            "Value": {
+                "id": "f086cf3b-ce3a-4317-9a24-ea85b119373d",
+                "resourcePath": "sprites\\spr_nothing\\spr_nothing.yy",
                 "resourceType": "GMSprite"
             }
         },
