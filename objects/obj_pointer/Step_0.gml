@@ -1,19 +1,36 @@
-x = mouse_x
-y = mouse_y
+sprite_index = spr_cursor_yellow
+if collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, phy_position_y+12, obj_module, false, true)
+	sprite_index = spr_cursor_orange
 
-/*
-x = camera_get_view_x(view_camera[0]) + mouse_x
-y = camera_get_view_y(view_camera[0]) + mouse_y
-*/
+phy_position_x = mouse_x
+phy_position_y = mouse_y
 
+active_module.phy_position_x = phy_position_x
+active_module.phy_position_y = phy_position_y
 
-/*
-var module_under_cursor = instance_place(x,y,obj_module)
 if mouse_check_button_pressed(mb_left){
-	if module_under_cursor != noone{
-		global.temp_module_type = active_module_type
-		active_module_type = module_under_cursor.object_index
-		with (module_under_cursor)
-			instance_change(global.temp_module_type,true)
+	selected_module = collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, phy_position_y+12, obj_module, false, true);
+	if selected_module != noone{
+		swap_module_1 = selected_module
+		swap_module_2 = active_module
+		selected_module = swap_module_2
+		active_module = swap_module_1
+		}
+}
+
+swap_module_1.phy_position_x = 0
+swap_module_1.phy_position_y = 0
+swap_module_2.phy_position_x = 0
+swap_module_2.phy_position_y = 0
+
+	/*	
+	with(obj_player){
+		for(var i = 0; i < 7; i+=1;){
+			with(ship_modules[i]){
+				var temp_module = collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, phy_position_y+12, obj_module, false, true);
+				if temp_module != noone
+					instance_change(temp_module,false)
+				}
+			}
 		}
 	}
