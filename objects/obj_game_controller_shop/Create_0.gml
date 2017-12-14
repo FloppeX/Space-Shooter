@@ -180,5 +180,7 @@ with(obj_player){
 	phy_rotation = -90
 	movement_disabled = true
 	}
-instance_create_depth(0,0,-10,obj_shop)
+shop = instance_create_depth(0,0,12,obj_shop)
+shop.phy_position_x = 0.5 * room_width + 80
+shop.phy_position_y = 0.5 * room_height - 80
 	

@@ -6,7 +6,7 @@ for(var i = 0; i < 9; i+=1;){
 	shop_modules[i].offset_angle = irandom(3) * 90;
 	shop_modules[i].phy_rotation = 0
 
-	shop_modules[i].phy_rotation = 90 - shop_modules[i].offset_angle
+	shop_modules[i].phy_rotation = -90 + shop_modules[i].offset_angle
 	/*var h = irandom(4)
 	switch (h){
 		case 0: shop_modules[i] = instance_create_depth(x,y,-10,obj_module_empty); break;
