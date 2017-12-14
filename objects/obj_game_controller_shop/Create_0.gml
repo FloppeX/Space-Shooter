@@ -180,4 +180,5 @@ with(obj_player){
 	phy_rotation = -90
 	movement_disabled = true
 	}
+instance_create_depth(0,0,-10,obj_shop)
 	

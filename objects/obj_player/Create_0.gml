@@ -1,5 +1,10 @@
 // Gamepad controls
 
+global.gamepad_button_x = false;
+global.gamepad_button_y = false;
+global.gamepad_button_a = false;
+global.gamepad_button_b = false;
+
 turn_clockwise = 0;
 turn_counter_clockwise = 0;
 add_thrust = 0;

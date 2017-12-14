@@ -6,6 +6,10 @@ event_inherited();
 
 physics_mass_properties(0, phy_com_x, phy_com_y, 0)
 
+if global.gamepad_button_b 
+	activate_shield = true
+else 
+	activate_shield = false
 
 if activate_shield{
 	sprite_index = spr_ship_shield;

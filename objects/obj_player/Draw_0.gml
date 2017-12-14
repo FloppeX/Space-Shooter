@@ -45,16 +45,6 @@ for(var i = 0; i < 7; i+=1;){
 	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	ship_modules[i].phy_speed_x = phy_speed_x
 	ship_modules[i].phy_speed_y = phy_speed_y
-	if shoot_1
-		with(ship_modules[i])
-			shoot = true
-	else with(ship_modules[i])
-			shoot = false
-	if shield
-		with(ship_modules[i])
-			activate_shield = true
-	else with(ship_modules[i])
-		activate_shield = false
 	}
 
 	

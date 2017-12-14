@@ -10,16 +10,16 @@ if movement_disabled == false{
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
 	if gamepad_button_check(0,gp_face3)
-		shoot_1 = true
-		else shoot_1 = false;
+		global.gamepad_button_x = true
+		else global.gamepad_button_x = false;
 	
 	if gamepad_button_check(0,gp_face2)
-		shield = true
-		else shield = false;
+		global.gamepad_button_b = true
+		else global.gamepad_button_b = false;
 	
 	if gamepad_button_check(0,gp_face4)
-		shoot_2 = true
-		else shoot_2 = false;
+		global.gamepad_button_y = true
+		else global.gamepad_button_y = false;
 	}
 	
 if gamepad_button_check_pressed(0,gp_padu){
