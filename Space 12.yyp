@@ -439,6 +439,14 @@
             }
         },
         {
+            "Key": "68bdf5e9-2931-442b-ba37-0548fa41a21e",
+            "Value": {
+                "id": "a887e7eb-611f-49db-86bc-690655bd6b88",
+                "resourcePath": "sprites\\spr_rocket_launcher\\spr_rocket_launcher.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "69e62d67-3eb2-4d97-8ee0-89581287c600",
             "Value": {
                 "id": "886d2b78-7991-4e0e-ae16-14f1c36636db",

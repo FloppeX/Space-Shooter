@@ -5,23 +5,34 @@ if collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, 
 phy_position_x = mouse_x
 phy_position_y = mouse_y
 
-active_module.phy_position_x = phy_position_x
-active_module.phy_position_y = phy_position_y
+
 
 if mouse_check_button_pressed(mb_left){
-	selected_module = collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, phy_position_y+12, obj_module, false, true);
-	if selected_module != noone{
-		swap_module_1 = selected_module
-		swap_module_2 = active_module
-		selected_module = swap_module_2
-		active_module = swap_module_1
+	global.active_module.phy_position_x = 0
+	global.active_module.phy_position_y = 0
+	
+	global.selected_module = collision_rectangle(phy_position_x-12, phy_position_y-12, phy_position_x+12, phy_position_y+12, obj_module, false, true);
+	if global.selected_module != noone {
+		with(global.swap_module)
+			instance_destroy();
+		with(global.selected_module){
+			global.swap_module = instance_copy(false);
+			instance_destroy();
+			}
+		with(global.active_module){
+			global.selected_module = instance_copy(false);
+			instance_destroy();
+			}
+		with(global.swap_module)
+			global.active_module = instance_copy(false);
+
+		global.swap_module.phy_position_x = obj_player.phy_position_x + 120
+		global.swap_module.phy_position_y = obj_player.phy_position_y + 30
 		}
 }
+global.active_module.phy_position_x = phy_position_x
+global.active_module.phy_position_y = phy_position_y
 
-swap_module_1.phy_position_x = 0
-swap_module_1.phy_position_y = 0
-swap_module_2.phy_position_x = 0
-swap_module_2.phy_position_y = 0
 
 	/*	
 	with(obj_player){

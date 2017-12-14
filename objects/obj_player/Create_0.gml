@@ -7,8 +7,7 @@ shoot_1 = 0;
 shoot_2 = 0;
 
 // Ship variables
-phy_rotation = 0
-
+phy_rotation = -90
 mirror_x = 0
 mirror_y = 0
 

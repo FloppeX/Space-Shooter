@@ -54,9 +54,9 @@ physics_apply_force(phy_com_x,phy_com_y, drift_resistance_force_x , drift_resist
 part_type_speed(global.part_rocket_smoke_small,1,1,0,0.3);    
 part_type_direction(global.part_rocket_smoke_small,-phy_rotation,-phy_rotation,0,0);
 offset_distance = 12
-part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
-part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
-part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
+part_particles_create(global.part_system_above, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
+part_particles_create(global.part_system_above, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
+part_particles_create(global.part_system_above, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
 	
 // Wrap movement
 
