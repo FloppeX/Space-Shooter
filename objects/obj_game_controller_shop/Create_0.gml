@@ -180,3 +180,4 @@ with(obj_player){
 	phy_rotation = -90
 	movement_disabled = true
 	}
+	

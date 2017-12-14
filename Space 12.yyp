@@ -330,7 +330,7 @@
             "Key": "4bb50cfc-6ca7-4a89-9230-c998f1b20662",
             "Value": {
                 "id": "83c8b950-5df8-491a-b22a-6285012961b9",
-                "resourcePath": "sprites\\spr_bullet_splat\\spr_bullet_splat.yy",
+                "resourcePath": "sprites\\spr_cursor_yellow\\spr_cursor_yellow.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -668,6 +668,14 @@
                 "id": "c08a45d1-1299-431e-b940-df60fad31ac1",
                 "resourcePath": "scripts\\scr_wrap_closest_distance_to_instance\\scr_wrap_closest_distance_to_instance.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b556db80-9324-40ed-924b-d3fd4aceb928",
+            "Value": {
+                "id": "ad07b46d-0235-4efd-8cdd-03e7565cf9fb",
+                "resourcePath": "sprites\\spr_cursor_orange\\spr_cursor_orange.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
