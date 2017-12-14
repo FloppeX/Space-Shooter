@@ -634,7 +634,7 @@
             "Key": "99489252-f415-4fbf-9cce-5f735685aa4c",
             "Value": {
                 "id": "01a78ca7-deb9-4673-b369-a03063be1869",
-                "resourcePath": "objects\\obj_pointer\\obj_pointer.yy",
+                "resourcePath": "objects\\obj_space_shop\\obj_space_shop.yy",
                 "resourceType": "GMObject"
             }
         },

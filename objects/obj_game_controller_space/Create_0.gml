@@ -173,8 +173,13 @@ for (var i = 0; i< 5; i++;)
 
    }
    
-
-
+with(obj_player){
+	phy_position_x = 0.5 * room_width
+	phy_position_y = 0.5 * room_height
+	phy_rotation = -90
+	movement_disabled = false
+	}
+   
 // Create some enemies
 
 repeat(0)

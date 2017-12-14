@@ -42,8 +42,7 @@ for(var i = 0; i < 7; i+=1;)
 		draw_self();
 	
 for(var i = 0; i < 7; i+=1;){
-	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle;
-	//draw_sprite_ext(ship_modules[i].sprite_index,-1,ship_modules[i].x,ship_modules[i].y,1,1,ship_modules[i].obj_rotation,c_white,1)
+	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	ship_modules[i].phy_speed_x = phy_speed_x
 	ship_modules[i].phy_speed_y = phy_speed_y
 	if shoot_1

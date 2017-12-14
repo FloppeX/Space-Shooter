@@ -34,9 +34,13 @@ if gamepad_button_check_pressed(0,gp_padd){
 	global.zoom = 4000
 	}
 	
-if keyboard_check(vk_space)
-	room_goto(rm_shop)
-
+if keyboard_check(vk_right){
+		room_goto(rm_shop)
+	}
+	
+if keyboard_check(vk_left){
+		room_goto(rm_space)
+	}
 
 // Turn
 

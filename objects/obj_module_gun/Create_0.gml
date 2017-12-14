@@ -1,5 +1,6 @@
 event_inherited();
 shoot = false
+shoot_2 = false
 muzzle_velocity = 10;
 bullet_interval = 10;
 bullet_timer = bullet_interval;
