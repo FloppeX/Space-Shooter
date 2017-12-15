@@ -8,7 +8,7 @@ game_paused = false;
 // View settings
 
 global.view_mode = 1
-global.zoom = 150
+global.zoom = 200
 temp_zoom = 4000
 
 // Depth
