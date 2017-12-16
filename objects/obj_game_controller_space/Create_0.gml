@@ -61,7 +61,7 @@ part_type_speed(global.part_rocket_smoke,0.2,0.4,-0.10,1);            //The part
 part_type_direction(global.part_rocket_smoke,0,0,0,1);            //The direction
 part_type_orientation(global.part_rocket_smoke,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_rocket_smoke,true);                         //This is the blend mode, either additive or normal
-part_type_life(global.part_rocket_smoke,4,10);                       //this is its lifespan in steps
+part_type_life(global.part_rocket_smoke,6,20);                       //this is its lifespan in steps
 
 global.part_rocket_smoke_small=part_type_create();
 part_type_sprite(global.part_rocket_smoke_small,spr_flame_particle,false,false,false);            //This defines the particles shape
@@ -130,89 +130,320 @@ part_type_life(global.bullet_glow_particle,5,10);
 
 for (var i = 0; i< 300; i++;)
    {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_1"),random(room_width),random( room_height), spr_star);
-   var scale = random(0.5)+0.5
-   layer_sprite_xscale(background_sprite[i], scale);
-   layer_sprite_yscale(background_sprite[i], scale);
-   var color = make_color_hsv(random(255),random(40)+10,255)
-   layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], random(1));
-   }
-
-for (var i = 0; i< 400; i++;)
-   {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_2"),random(room_width),random( room_height), spr_star);
-   var scale = random(0.75)+0.75
-   layer_sprite_xscale(background_sprite[i], scale);
-   layer_sprite_yscale(background_sprite[i], scale);
-   var color = make_color_hsv(random(255),random(20)+10,255)
-   layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], random(1));
-   }
-   
-for (var i = 0; i< 600; i++;)
-   {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_3"),random(room_width),random( room_height), spr_star);
-   var scale = random(1)+1
-   layer_sprite_xscale(background_sprite[i], scale);
-   layer_sprite_yscale(background_sprite[i], scale);
-   var color = make_color_hsv(random(255),random(20)+10,255)
-   layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], random(1));
-   }
-
-for (var i = 0; i< 5; i++;){ //  NEED TO CREATE NINE SPRITES EACH TIME, NOT JUST FIVE
-	var x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+   var sprite, scale, x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+	sprite = spr_star
 	x_pos = global.wrap_border_left + random( global.play_area_width)
 	y_pos = global.wrap_border_top + random( global.play_area_height)
-	x_scale =  random(10)+5
-	y_scale =  random(10)+5
-	color = make_color_hsv(random(255),255,255)
-	alpha =  random(1)
+	scale = random(0.5)+0.5
+	x_scale = scale
+	y_scale =  scale
+	color = make_color_hsv(random(255),random(20)+10,255)
+	alpha =  random(0.5)+0.5
 	angle = random(360)
-	background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos, spr_background_1);
-	layer_sprite_xscale(background_sprite[i],  x_scale);
-	layer_sprite_yscale(background_sprite[i],  y_scale);
-	layer_sprite_blend(background_sprite[i], color);
-	layer_sprite_alpha(background_sprite[i], alpha);
-	layer_sprite_angle(background_sprite[i], angle);
 	
-	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos+global.play_area_width,y_pos, spr_background_1);
+	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_0[i],  x_scale);
+	layer_sprite_yscale(background_sprite_0[i],  y_scale);
+	layer_sprite_blend(background_sprite_0[i], color);
+	layer_sprite_alpha(background_sprite_0[i], alpha);
+	layer_sprite_angle(background_sprite_0[i], angle);
+	
+	background_sprite_1[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_1[i],  x_scale);
+	layer_sprite_yscale(background_sprite_1[i],  y_scale);
+	layer_sprite_blend(background_sprite_1[i], color);
+	layer_sprite_alpha(background_sprite_1[i], alpha);
+	layer_sprite_angle(background_sprite_1[i], angle);
+	
+	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos+global.play_area_width,y_pos-global.play_area_height, sprite);
 	layer_sprite_xscale(background_sprite_2[i],  x_scale);
 	layer_sprite_yscale(background_sprite_2[i],  y_scale);
 	layer_sprite_blend(background_sprite_2[i], color);
 	layer_sprite_alpha(background_sprite_2[i], alpha);
 	layer_sprite_angle(background_sprite_2[i], angle);
 	
-	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos, spr_background_1);
+	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos-global.play_area_width,y_pos, sprite);
 	layer_sprite_xscale(background_sprite_3[i],  x_scale);
 	layer_sprite_yscale(background_sprite_3[i],  y_scale);
 	layer_sprite_blend(background_sprite_3[i], color);
 	layer_sprite_alpha(background_sprite_3[i], alpha);
 	layer_sprite_angle(background_sprite_3[i], angle);
 	
-	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos+global.play_area_height, spr_background_1);
+	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos,y_pos, sprite);
 	layer_sprite_xscale(background_sprite_4[i],  x_scale);
 	layer_sprite_yscale(background_sprite_4[i],  y_scale);
 	layer_sprite_blend(background_sprite_4[i], color);
 	layer_sprite_alpha(background_sprite_4[i], alpha);
 	layer_sprite_angle(background_sprite_4[i], angle);
 	
-	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos-global.play_area_height, spr_background_1);
+	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos+global.play_area_width,y_pos, sprite);
 	layer_sprite_xscale(background_sprite_5[i],  x_scale);
 	layer_sprite_yscale(background_sprite_5[i],  y_scale);
 	layer_sprite_blend(background_sprite_5[i], color);
 	layer_sprite_alpha(background_sprite_5[i], alpha);
 	layer_sprite_angle(background_sprite_5[i], angle);
 	
+	background_sprite_6[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos-global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_6[i],  x_scale);
+	layer_sprite_yscale(background_sprite_6[i],  y_scale);
+	layer_sprite_blend(background_sprite_6[i], color);
+	layer_sprite_alpha(background_sprite_6[i], alpha);
+	layer_sprite_angle(background_sprite_6[i], angle);
+	
+	background_sprite_7[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_7[i],  x_scale);
+	layer_sprite_yscale(background_sprite_7[i],  y_scale);
+	layer_sprite_blend(background_sprite_7[i], color);
+	layer_sprite_alpha(background_sprite_7[i], alpha);
+	layer_sprite_angle(background_sprite_7[i], angle);
+	
+	background_sprite_8[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos+global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_8[i],  x_scale);
+	layer_sprite_yscale(background_sprite_8[i],  y_scale);
+	layer_sprite_blend(background_sprite_8[i], color);
+	layer_sprite_alpha(background_sprite_8[i], alpha);
+	layer_sprite_angle(background_sprite_8[i], angle);
+   }
+
+for (var i = 0; i< 400; i++;)
+   {
+   
+   var sprite, scale, x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+	sprite = spr_star
+	x_pos = global.wrap_border_left + random( global.play_area_width)
+	y_pos = global.wrap_border_top + random( global.play_area_height)
+	scale = random(0.75)+0.75
+	x_scale = scale
+	y_scale =  scale
+	color = make_color_hsv(random(255),random(20)+10,255)
+	alpha =  random(0.5)+0.5
+	angle = random(360)
+	
+	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_0[i],  x_scale);
+	layer_sprite_yscale(background_sprite_0[i],  y_scale);
+	layer_sprite_blend(background_sprite_0[i], color);
+	layer_sprite_alpha(background_sprite_0[i], alpha);
+	layer_sprite_angle(background_sprite_0[i], angle);
+	
+	background_sprite_1[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_1[i],  x_scale);
+	layer_sprite_yscale(background_sprite_1[i],  y_scale);
+	layer_sprite_blend(background_sprite_1[i], color);
+	layer_sprite_alpha(background_sprite_1[i], alpha);
+	layer_sprite_angle(background_sprite_1[i], angle);
+	
+	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos+global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_2[i],  x_scale);
+	layer_sprite_yscale(background_sprite_2[i],  y_scale);
+	layer_sprite_blend(background_sprite_2[i], color);
+	layer_sprite_alpha(background_sprite_2[i], alpha);
+	layer_sprite_angle(background_sprite_2[i], angle);
+	
+	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos-global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_3[i],  x_scale);
+	layer_sprite_yscale(background_sprite_3[i],  y_scale);
+	layer_sprite_blend(background_sprite_3[i], color);
+	layer_sprite_alpha(background_sprite_3[i], alpha);
+	layer_sprite_angle(background_sprite_3[i], angle);
+	
+	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_4[i],  x_scale);
+	layer_sprite_yscale(background_sprite_4[i],  y_scale);
+	layer_sprite_blend(background_sprite_4[i], color);
+	layer_sprite_alpha(background_sprite_4[i], alpha);
+	layer_sprite_angle(background_sprite_4[i], angle);
+	
+	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos+global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_5[i],  x_scale);
+	layer_sprite_yscale(background_sprite_5[i],  y_scale);
+	layer_sprite_blend(background_sprite_5[i], color);
+	layer_sprite_alpha(background_sprite_5[i], alpha);
+	layer_sprite_angle(background_sprite_5[i], angle);
+	
+	background_sprite_6[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos-global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_6[i],  x_scale);
+	layer_sprite_yscale(background_sprite_6[i],  y_scale);
+	layer_sprite_blend(background_sprite_6[i], color);
+	layer_sprite_alpha(background_sprite_6[i], alpha);
+	layer_sprite_angle(background_sprite_6[i], angle);
+	
+	background_sprite_7[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_7[i],  x_scale);
+	layer_sprite_yscale(background_sprite_7[i],  y_scale);
+	layer_sprite_blend(background_sprite_7[i], color);
+	layer_sprite_alpha(background_sprite_7[i], alpha);
+	layer_sprite_angle(background_sprite_7[i], angle);
+	
+	background_sprite_8[i] = layer_sprite_create(layer_get_id("background_layer_2"),x_pos+global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_8[i],  x_scale);
+	layer_sprite_yscale(background_sprite_8[i],  y_scale);
+	layer_sprite_blend(background_sprite_8[i], color);
+	layer_sprite_alpha(background_sprite_8[i], alpha);
+	layer_sprite_angle(background_sprite_8[i], angle);
    }
    
-with(obj_player){
-	phy_position_x = 0.5 * room_width
-	phy_position_y = 0.5 * room_height
-	phy_rotation = -90
-	movement_disabled = false
-	}
+for (var i = 0; i< 600; i++;)
+   {
+   
+   var sprite, scale, x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+	sprite = spr_star
+	x_pos = global.wrap_border_left + random( global.play_area_width)
+	y_pos = global.wrap_border_top + random( global.play_area_height)
+	scale = random(1)+1
+	x_scale = scale
+	y_scale =  scale
+	color = make_color_hsv(random(255),random(20)+10,255)
+	alpha =  random(0.5)+0.5
+	angle = random(360)
+	
+	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_0[i],  x_scale);
+	layer_sprite_yscale(background_sprite_0[i],  y_scale);
+	layer_sprite_blend(background_sprite_0[i], color);
+	layer_sprite_alpha(background_sprite_0[i], alpha);
+	layer_sprite_angle(background_sprite_0[i], angle);
+	
+	background_sprite_1[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_1[i],  x_scale);
+	layer_sprite_yscale(background_sprite_1[i],  y_scale);
+	layer_sprite_blend(background_sprite_1[i], color);
+	layer_sprite_alpha(background_sprite_1[i], alpha);
+	layer_sprite_angle(background_sprite_1[i], angle);
+	
+	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos+global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_2[i],  x_scale);
+	layer_sprite_yscale(background_sprite_2[i],  y_scale);
+	layer_sprite_blend(background_sprite_2[i], color);
+	layer_sprite_alpha(background_sprite_2[i], alpha);
+	layer_sprite_angle(background_sprite_2[i], angle);
+	
+	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos-global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_3[i],  x_scale);
+	layer_sprite_yscale(background_sprite_3[i],  y_scale);
+	layer_sprite_blend(background_sprite_3[i], color);
+	layer_sprite_alpha(background_sprite_3[i], alpha);
+	layer_sprite_angle(background_sprite_3[i], angle);
+	
+	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_4[i],  x_scale);
+	layer_sprite_yscale(background_sprite_4[i],  y_scale);
+	layer_sprite_blend(background_sprite_4[i], color);
+	layer_sprite_alpha(background_sprite_4[i], alpha);
+	layer_sprite_angle(background_sprite_4[i], angle);
+	
+	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos+global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_5[i],  x_scale);
+	layer_sprite_yscale(background_sprite_5[i],  y_scale);
+	layer_sprite_blend(background_sprite_5[i], color);
+	layer_sprite_alpha(background_sprite_5[i], alpha);
+	layer_sprite_angle(background_sprite_5[i], angle);
+	
+	background_sprite_6[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos-global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_6[i],  x_scale);
+	layer_sprite_yscale(background_sprite_6[i],  y_scale);
+	layer_sprite_blend(background_sprite_6[i], color);
+	layer_sprite_alpha(background_sprite_6[i], alpha);
+	layer_sprite_angle(background_sprite_6[i], angle);
+	
+	background_sprite_7[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_7[i],  x_scale);
+	layer_sprite_yscale(background_sprite_7[i],  y_scale);
+	layer_sprite_blend(background_sprite_7[i], color);
+	layer_sprite_alpha(background_sprite_7[i], alpha);
+	layer_sprite_angle(background_sprite_7[i], angle);
+	
+	background_sprite_8[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos+global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_8[i],  x_scale);
+	layer_sprite_yscale(background_sprite_8[i],  y_scale);
+	layer_sprite_blend(background_sprite_8[i], color);
+	layer_sprite_alpha(background_sprite_8[i], alpha);
+	layer_sprite_angle(background_sprite_8[i], angle);
+   }
+   
+   
+for (var i = 0; i< 5; i++;){
+	var sprite, x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+	sprite = spr_background_1
+	x_pos = global.wrap_border_left + random( global.play_area_width)
+	y_pos = global.wrap_border_top + random( global.play_area_height)
+	x_scale =  random(10)+5
+	y_scale =  random(10)+5
+	color = make_color_hsv(random(255),255,255)
+	alpha =  random(0.6)+0.4
+	angle = random(360)
+	
+	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_0[i],  x_scale);
+	layer_sprite_yscale(background_sprite_0[i],  y_scale);
+	layer_sprite_blend(background_sprite_0[i], color);
+	layer_sprite_alpha(background_sprite_0[i], alpha);
+	layer_sprite_angle(background_sprite_0[i], angle);
+	
+	background_sprite_1[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_1[i],  x_scale);
+	layer_sprite_yscale(background_sprite_1[i],  y_scale);
+	layer_sprite_blend(background_sprite_1[i], color);
+	layer_sprite_alpha(background_sprite_1[i], alpha);
+	layer_sprite_angle(background_sprite_1[i], angle);
+	
+	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos+global.play_area_width,y_pos-global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_2[i],  x_scale);
+	layer_sprite_yscale(background_sprite_2[i],  y_scale);
+	layer_sprite_blend(background_sprite_2[i], color);
+	layer_sprite_alpha(background_sprite_2[i], alpha);
+	layer_sprite_angle(background_sprite_2[i], angle);
+	
+	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_3[i],  x_scale);
+	layer_sprite_yscale(background_sprite_3[i],  y_scale);
+	layer_sprite_blend(background_sprite_3[i], color);
+	layer_sprite_alpha(background_sprite_3[i], alpha);
+	layer_sprite_angle(background_sprite_3[i], angle);
+	
+	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_4[i],  x_scale);
+	layer_sprite_yscale(background_sprite_4[i],  y_scale);
+	layer_sprite_blend(background_sprite_4[i], color);
+	layer_sprite_alpha(background_sprite_4[i], alpha);
+	layer_sprite_angle(background_sprite_4[i], angle);
+	
+	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos+global.play_area_width,y_pos, sprite);
+	layer_sprite_xscale(background_sprite_5[i],  x_scale);
+	layer_sprite_yscale(background_sprite_5[i],  y_scale);
+	layer_sprite_blend(background_sprite_5[i], color);
+	layer_sprite_alpha(background_sprite_5[i], alpha);
+	layer_sprite_angle(background_sprite_5[i], angle);
+	
+	background_sprite_6[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_6[i],  x_scale);
+	layer_sprite_yscale(background_sprite_6[i],  y_scale);
+	layer_sprite_blend(background_sprite_6[i], color);
+	layer_sprite_alpha(background_sprite_6[i], alpha);
+	layer_sprite_angle(background_sprite_6[i], angle);
+	
+	background_sprite_7[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_7[i],  x_scale);
+	layer_sprite_yscale(background_sprite_7[i],  y_scale);
+	layer_sprite_blend(background_sprite_7[i], color);
+	layer_sprite_alpha(background_sprite_7[i], alpha);
+	layer_sprite_angle(background_sprite_7[i], angle);
+	
+	background_sprite_8[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos+global.play_area_width,y_pos+global.play_area_height, sprite);
+	layer_sprite_xscale(background_sprite_8[i],  x_scale);
+	layer_sprite_yscale(background_sprite_8[i],  y_scale);
+	layer_sprite_blend(background_sprite_8[i], color);
+	layer_sprite_alpha(background_sprite_8[i], alpha);
+	layer_sprite_angle(background_sprite_8[i], angle);
+	
+   }
+   
+// Place player in the center of the room
+   
+player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
+player.movement_disabled = false
+player.phy_rotation = -90
+	
    
 // Create some enemies
 

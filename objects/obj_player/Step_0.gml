@@ -33,7 +33,13 @@ if gamepad_button_check_pressed(0,gp_padd){
 	if global.zoom > 4000
 	global.zoom = 4000
 	}
-	
+
+if gamepad_button_check_pressed(0,gp_padl)
+	global.view_mode = 1
+
+if gamepad_button_check_pressed(0,gp_padl)
+	global.view_mode = 2
+
 if keyboard_check(vk_right){
 		room_goto(rm_shop)
 	}
@@ -59,9 +65,10 @@ if add_thrust
 	offset_distance = 46
 	offset_angle = 149
 	
-	part_type_speed(part_engine_flame_player,add_thrust ,2*add_thrust,0,0.3);            
-	part_type_direction(part_engine_flame_player,-phy_rotation,-phy_rotation,0,0);
-	//part_type_orientation(part_engine_flame_player)
+	part_type_speed(part_engine_flame_player,3*add_thrust ,6*add_thrust,0,0);
+	temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
+	part_type_direction(part_engine_flame_player,temp_dir+180,temp_dir+180,0,0);
+	part_type_orientation(part_engine_flame_player,temp_dir,temp_dir,0,0,0)
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 3);
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 3);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
@@ -125,11 +132,7 @@ scr_wrap_room_player();
 
 // Particle emitters
 
+
+/*
 part_emitter_region(global.part_system_below,dust_emitter,x-global.play_area_width,x+ global.play_area_width,y-global.play_area_height,y+global.play_area_height,ps_shape_rectangle,ps_distr_linear);
 part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
-
-//part_type_speed(global.dust_particle,2*phy_speed,2*phy_speed,0,0);
-//part_type_direction(global.dust_particle,180-phy_rotation-10,180-phy_rotation+10,0,2);
-//part_emitter_region(global.part_system_below,dust_emitter,x-800,x+800,y-800,y+800,ps_shape_ellipse,ps_distr_gaussian);
-//part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,0);
-

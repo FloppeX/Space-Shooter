@@ -12,6 +12,9 @@ shoot_1 = 0;
 shoot_2 = 0;
 
 // Ship variables
+
+depth = -5
+
 phy_rotation = -90
 mirror_x = 0
 mirror_y = 0
