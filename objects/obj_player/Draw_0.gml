@@ -42,6 +42,9 @@ for(var i = 0; i < 7; i+=1;)
 		draw_self();
 	
 for(var i = 0; i < 7; i+=1;){
+	if shoot
+		with (ship_modules[i])
+			shoot = true
 	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	ship_modules[i].phy_speed_x = phy_speed_x
 	ship_modules[i].phy_speed_y = phy_speed_y

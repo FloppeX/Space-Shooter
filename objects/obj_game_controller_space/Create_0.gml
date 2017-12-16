@@ -116,15 +116,15 @@ part_type_life(global.smoke_particle,80,120);
 
 global.bullet_glow_particle = part_type_create();
 part_type_sprite(global.bullet_glow_particle,spr_bullet_glow,false,false,false);            
-part_type_size(global.bullet_glow_particle,0.6,0.8,-0.04,0);                   
+part_type_size(global.bullet_glow_particle,0.6,1.2,0,0.1);                   
 part_type_scale(global.bullet_glow_particle,1,1);                     
 part_type_color2(global.bullet_glow_particle,c_white,c_lime);
-part_type_alpha3(global.bullet_glow_particle,1,1,0);
+part_type_alpha3(global.bullet_glow_particle,0.2,0.6,0);
 part_type_speed(global.bullet_glow_particle,0,0,0,0);         
 part_type_direction(global.bullet_glow_particle,0,0,0,1);            
 part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
 part_type_blend(global.bullet_glow_particle,true);                      
-part_type_life(global.bullet_glow_particle,4,6);     
+part_type_life(global.bullet_glow_particle,5,10);     
 
 // Create background sprites
 
@@ -161,16 +161,50 @@ for (var i = 0; i< 600; i++;)
    layer_sprite_alpha(background_sprite[i], random(1));
    }
 
-for (var i = 0; i< 5; i++;)
-   {
-   background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_4"),global.wrap_border_left+ random( global.play_area_width), global.wrap_border_top+ random( global.play_area_height), spr_background_1);
-   layer_sprite_xscale(background_sprite[i],  random(10)+5);
-   layer_sprite_yscale(background_sprite[i],  random(10)+5);
-   var color = make_color_hsv(random(255),255,255)
-   layer_sprite_blend(background_sprite[i], color);
-   layer_sprite_alpha(background_sprite[i], random(1));
-   layer_sprite_angle(background_sprite[i], random(360));
-
+for (var i = 0; i< 5; i++;){ //  NEED TO CREATE NINE SPRITES EACH TIME, NOT JUST FIVE
+	var x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
+	x_pos = global.wrap_border_left + random( global.play_area_width)
+	y_pos = global.wrap_border_top + random( global.play_area_height)
+	x_scale =  random(10)+5
+	y_scale =  random(10)+5
+	color = make_color_hsv(random(255),255,255)
+	alpha =  random(1)
+	angle = random(360)
+	background_sprite[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos, spr_background_1);
+	layer_sprite_xscale(background_sprite[i],  x_scale);
+	layer_sprite_yscale(background_sprite[i],  y_scale);
+	layer_sprite_blend(background_sprite[i], color);
+	layer_sprite_alpha(background_sprite[i], alpha);
+	layer_sprite_angle(background_sprite[i], angle);
+	
+	background_sprite_2[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos+global.play_area_width,y_pos, spr_background_1);
+	layer_sprite_xscale(background_sprite_2[i],  x_scale);
+	layer_sprite_yscale(background_sprite_2[i],  y_scale);
+	layer_sprite_blend(background_sprite_2[i], color);
+	layer_sprite_alpha(background_sprite_2[i], alpha);
+	layer_sprite_angle(background_sprite_2[i], angle);
+	
+	background_sprite_3[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos, spr_background_1);
+	layer_sprite_xscale(background_sprite_3[i],  x_scale);
+	layer_sprite_yscale(background_sprite_3[i],  y_scale);
+	layer_sprite_blend(background_sprite_3[i], color);
+	layer_sprite_alpha(background_sprite_3[i], alpha);
+	layer_sprite_angle(background_sprite_3[i], angle);
+	
+	background_sprite_4[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos+global.play_area_height, spr_background_1);
+	layer_sprite_xscale(background_sprite_4[i],  x_scale);
+	layer_sprite_yscale(background_sprite_4[i],  y_scale);
+	layer_sprite_blend(background_sprite_4[i], color);
+	layer_sprite_alpha(background_sprite_4[i], alpha);
+	layer_sprite_angle(background_sprite_4[i], angle);
+	
+	background_sprite_5[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos,y_pos-global.play_area_height, spr_background_1);
+	layer_sprite_xscale(background_sprite_5[i],  x_scale);
+	layer_sprite_yscale(background_sprite_5[i],  y_scale);
+	layer_sprite_blend(background_sprite_5[i], color);
+	layer_sprite_alpha(background_sprite_5[i], alpha);
+	layer_sprite_angle(background_sprite_5[i], angle);
+	
    }
    
 with(obj_player){

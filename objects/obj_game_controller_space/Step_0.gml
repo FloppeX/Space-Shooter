@@ -23,7 +23,29 @@ else
 if gamepad_button_check_pressed(0,gp_shoulderl)
 new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_ship)
 	
+// Set background speed
 
-	
-// Wrap stuff
+layer_x(layer_get_id("background_layer_1"), obj_player.phy_position_x* 0.8)
+layer_y(layer_get_id("background_layer_1"), obj_player.phy_position_y* 0.8)
 
+layer_x(layer_get_id("background_layer_2"), obj_player.phy_position_x* 0.6)
+layer_y(layer_get_id("background_layer_2"), obj_player.phy_position_y* 0.6)
+
+layer_x(layer_get_id("background_layer_3"), obj_player.phy_position_x* 0.4)
+layer_y(layer_get_id("background_layer_3"), obj_player.phy_position_y* 0.4)
+
+layer_x(layer_get_id("background_layer_4"), obj_player.phy_position_x* 0)
+layer_y(layer_get_id("background_layer_4"), obj_player.phy_position_y* 0)
+
+/*
+layer_hspeed(layer_get_id("background_layer_1"), phy_speed_x*0.8)
+layer_vspeed(layer_get_id("background_layer_1"), phy_speed_y*0.8)
+
+layer_hspeed(layer_get_id("background_layer_2"), phy_speed_x*0.6)
+layer_vspeed(layer_get_id("background_layer_2"), phy_speed_y*0.6)
+
+layer_hspeed(layer_get_id("background_layer_3"), phy_speed_x*0.4)
+layer_vspeed(layer_get_id("background_layer_3"), phy_speed_y*0.4)
+
+layer_hspeed(layer_get_id("background_layer_4"), phy_speed_x*0)
+layer_vspeed(layer_get_id("background_layer_4"), phy_speed_y*0)

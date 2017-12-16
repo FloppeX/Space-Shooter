@@ -34,7 +34,8 @@ camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj
 
 // Drav lines if view mode 2 
 
-if global.view_mode == 2{
+if 2 == 2{
+	draw_set_color(c_orange)
 	draw_line_width(global.wrap_border_left,global.wrap_border_top,global.wrap_border_right,global.wrap_border_top,5)
 	draw_line_width(global.wrap_border_left,global.wrap_border_bottom,global.wrap_border_right,global.wrap_border_bottom,5)
 	draw_line_width(global.wrap_border_left,global.wrap_border_top,global.wrap_border_left,global.wrap_border_bottom,5)

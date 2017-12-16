@@ -10,8 +10,8 @@ if movement_disabled == false{
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
 	if gamepad_button_check(0,gp_face3)
-		global.gamepad_button_x = true
-		else global.gamepad_button_x = false;
+		shoot = true
+		else shoot = false;
 	
 	if gamepad_button_check(0,gp_face2)
 		global.gamepad_button_b = true
@@ -133,16 +133,3 @@ part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,1
 //part_emitter_region(global.part_system_below,dust_emitter,x-800,x+800,y-800,y+800,ps_shape_ellipse,ps_distr_gaussian);
 //part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,0);
 
-// Set background speed
-
-layer_hspeed(layer_get_id("background_layer_1"), phy_speed_x*0.8)
-layer_vspeed(layer_get_id("background_layer_1"), phy_speed_y*0.8)
-
-layer_hspeed(layer_get_id("background_layer_2"), phy_speed_x*0.6)
-layer_vspeed(layer_get_id("background_layer_2"), phy_speed_y*0.6)
-
-layer_hspeed(layer_get_id("background_layer_3"), phy_speed_x*0.4)
-layer_vspeed(layer_get_id("background_layer_3"), phy_speed_y*0.4)
-
-layer_hspeed(layer_get_id("background_layer_4"), phy_speed_x*0)
-layer_vspeed(layer_get_id("background_layer_4"), phy_speed_y*0)

@@ -1,8 +1,7 @@
 event_inherited();
 shoot = false
-shoot_2 = false
-muzzle_velocity = 10;
-bullet_interval = 10;
+muzzle_velocity = 6;
+bullet_interval = 15;
 bullet_timer = bullet_interval;
 bullet_type = obj_bullet_player;
 bullet_depth = 10
