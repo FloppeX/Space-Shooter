@@ -104,8 +104,8 @@
             "visible": true,
             "vspeed": 0,
             "vtiled": true,
-            "x": 1000,
-            "y": 1000
+            "x": 0,
+            "y": 0
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",
@@ -139,8 +139,8 @@
             "visible": true,
             "vspeed": 0,
             "vtiled": true,
-            "x": 1000,
-            "y": 1000
+            "x": 0,
+            "y": 0
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",
@@ -174,8 +174,8 @@
             "visible": true,
             "vspeed": 0,
             "vtiled": true,
-            "x": 1000,
-            "y": 1000
+            "x": 0,
+            "y": 0
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",

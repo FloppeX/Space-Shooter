@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "338a5999-e90e-4594-a09f-357f02964661",
+            "Value": {
+                "id": "4c60048f-b781-45f7-9ca9-0a9513a6737a",
+                "resourcePath": "sprites\\spr_ship_shield1\\spr_ship_shield1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "35f8a975-cb59-4067-8d62-a431ee8ac1ac",
             "Value": {
                 "id": "a8cf4e7e-0152-40fb-908c-c1a5cf470cd8",

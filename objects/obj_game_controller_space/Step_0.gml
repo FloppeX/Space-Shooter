@@ -41,11 +41,11 @@ layer_y(layer_get_id("background_layer_4"), obj_player.phy_position_y* 0)
 layer_hspeed(layer_get_id("background_layer_1"), obj_player.phy_speed_x*0.8)
 layer_vspeed(layer_get_id("background_layer_1"), obj_player.phy_speed_y*0.8)
 
-layer_hspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_x*0.6)
-layer_vspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_y*0.6)
+layer_hspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_x*0.4)
+layer_vspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_y*0.4)
 
-layer_hspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_x*0.4)
-layer_vspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_y*0.4)
+layer_hspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_x*0)
+layer_vspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_y*0)
 
 layer_hspeed(layer_get_id("background_layer_4"), obj_player.phy_speed_x*0)
 layer_vspeed(layer_get_id("background_layer_4"), obj_player.phy_speed_y*0)
