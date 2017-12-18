@@ -31,7 +31,7 @@ if global.view_mode == 2{
 	}
 	
 // draw shadows
-
+/*
 with(obj_player){
 	draw_sprite_ext(sprite_index,-1,phy_position_x+30,phy_position_y+30,0.6,0.6,-phy_rotation,c_black,0.1)
 	draw_sprite_ext(sprite_index,-1,phy_position_x+29,phy_position_y+29,0.6,0.6,-phy_rotation,c_black,0.1)

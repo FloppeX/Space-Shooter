@@ -34,7 +34,7 @@ global.wrap_border_bottom = room_height - global.wrap_margin_player
 // Create particle systems
 
 global.part_system_below = part_system_create();
-part_system_depth(global.part_system_below,10);
+part_system_depth(global.part_system_below,8);
 
 global.part_system_above = part_system_create();
 part_system_depth(global.part_system_above,-10);
@@ -75,18 +75,17 @@ part_type_orientation(global.part_rocket_smoke_small,0,0,0,0,1);           //Thi
 part_type_blend(global.part_rocket_smoke_small,true);                         //This is the blend mode, either additive or normal
 part_type_life(global.part_rocket_smoke_small,60,120);                       //this is its lifespan in steps
 
-global.dust_particle = part_type_create();
-part_type_shape(global.dust_particle,pt_shape_sphere);
-part_type_size(global.dust_particle,0.1,0.2,0,0);
-part_type_scale(global.dust_particle,1,1);
-part_type_color1(global.dust_particle,c_olive);
-part_type_alpha3(global.dust_particle,0,0.4,0);
-part_type_speed(global.dust_particle,0,0,0,0);
-part_type_direction(global.dust_particle,0,359,0,0);
-part_type_gravity(global.dust_particle,0,270);
-part_type_orientation(global.dust_particle,0,0,0,1,1);
-part_type_blend(global.dust_particle,0);
-part_type_life(global.dust_particle,60,150);
+dust_particle = part_type_create();
+part_type_shape(dust_particle,spr_star_test11);
+part_type_size(dust_particle,1,2,0,0);
+part_type_scale(dust_particle,1,1);
+part_type_color3(dust_particle,c_white, c_olive,c_black);
+part_type_alpha3(dust_particle,1,1,1);
+part_type_speed(dust_particle,0,0,0,0);
+part_type_direction(dust_particle,0,359,0,0);
+part_type_orientation(dust_particle,0,0,0,1,1);
+part_type_blend(dust_particle,1);
+part_type_life(dust_particle,60,240);
 
 global.flame_particle = part_type_create();
 part_type_shape(global.flame_particle,pt_shape_sphere);
@@ -439,10 +438,11 @@ for (var i = 0; i< 5; i++;){
    }
    
 // Place player in the center of the room
-   
-player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-player.movement_disabled = false
-player.phy_rotation = -90
+
+if !instance_exists(obj_player)
+	instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
+obj_player.movement_disabled = false
+obj_player.phy_rotation = -90
 	
    
 // Create some enemies

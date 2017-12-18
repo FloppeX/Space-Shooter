@@ -37,14 +37,21 @@ ship_modules[6].phy_position_x = phy_position_x + lengthdir_x(25,-phy_rotation+1
 ship_modules[6].phy_position_y = phy_position_y + lengthdir_y(25,-phy_rotation+180);
 ship_modules[6].phy_rotation= phy_rotation;
 
-for(var i = 0; i < 7; i+=1;)
-	with ship_modules[i]
-		draw_self();
-	
+for(var i = 0; i < 7; i+=1;){
+	if movement_disabled		// disable visibility of modules and draw them directly, so they dont wiggle around
+		with (ship_modules[i])
+			visible = true
+	else with (ship_modules[i])
+			visible = false
+	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,1)
+	}
 for(var i = 0; i < 7; i+=1;){
 	if shoot
 		with (ship_modules[i])
 			shoot = true
+			
+
+			
 	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	ship_modules[i].phy_speed_x = phy_speed_x
 	ship_modules[i].phy_speed_y = phy_speed_y

@@ -2,7 +2,7 @@
     "id": "338a5999-e90e-4594-a09f-357f02964661",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_ship_shield1",
+    "name": "spr_ship_shield_small",
     "For3D": false,
     "HTile": false,
     "VTile": false,
@@ -54,7 +54,7 @@
             "visible": true
         }
     ],
-    "origin": 4,
+    "origin": 7,
     "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
@@ -66,5 +66,5 @@
     "type": 0,
     "width": 84,
     "xorig": 42,
-    "yorig": 29
+    "yorig": 58
 }
