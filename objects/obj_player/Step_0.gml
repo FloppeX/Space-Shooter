@@ -23,15 +23,15 @@ if movement_disabled == false{
 	}
 	
 if gamepad_button_check_pressed(0,gp_padu){
-	global.zoom = global.zoom / 2
+	global.zoom = global.zoom - 200
 	if global.zoom < 100
 	global.zoom = 100
 	}
 
 if gamepad_button_check_pressed(0,gp_padd){
-	global.zoom += global.zoom * 2
-	if global.zoom > 4000
-	global.zoom = 4000
+	global.zoom = global.zoom + 200
+	if global.zoom > 1000
+	global.zoom = 1000
 	}
 
 if gamepad_button_check_pressed(0,gp_padl)

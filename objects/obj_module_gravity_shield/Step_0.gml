@@ -19,23 +19,15 @@ else {
 		
 	}
 	
+if shield_active{
+	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
+	scr_gravity_push(obj_enemy_ship,gravity_radius,gravity_force*50)
+	scr_gravity_push(obj_asteroid,gravity_radius,gravity_force*100)
+	}
 
 if shield_active{
 	if shield_current_size < shield_max_size
 		shield_current_size = shield_current_size + (shield_max_size - shield_current_size)/size_change_coefficient	
-	
-	for(i=0;i<instance_number(obj_bullet);i+=1){
-		temp_instance = instance_find(obj_bullet, i);
-			if temp_instance != noone{
-				temp_distance = point_distance(phy_position_x,phy_position_y,temp_instance.phy_position_x,temp_instance.phy_position_y)
-				if temp_distance <= gravity_radius{
-					global.force_x = lengthdir_x(gravity_force,point_direction(x,y,temp_instance.x,temp_instance.y))
-					global.force_y = lengthdir_y(gravity_force,point_direction(x,y,temp_instance.x,temp_instance.y))
-					with (temp_instance)
-					    physics_apply_impulse(x,y,global.force_x,global.force_y)
-					}
-				}
-		}
 	}
 else 
 	if shield_current_size > 0{

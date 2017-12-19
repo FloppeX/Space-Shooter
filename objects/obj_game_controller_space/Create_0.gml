@@ -8,7 +8,7 @@ game_paused = false;
 // View settings
 
 global.view_mode = 1
-global.zoom = 400
+global.zoom = 600
 temp_zoom = 400
 
 // Depth
@@ -123,7 +123,17 @@ part_type_speed(global.bullet_glow_particle,0,0,0,0);
 part_type_direction(global.bullet_glow_particle,0,0,0,1);            
 part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
 part_type_blend(global.bullet_glow_particle,true);                      
-part_type_life(global.bullet_glow_particle,5,10);     
+part_type_life(global.bullet_glow_particle,5,10);
+
+global.laser_particle  = part_type_create();
+part_type_sprite(global.laser_particle,spr_laser_glow,false,false,false);            
+part_type_size(global.laser_particle  ,1,1,0,0.1);                                  
+part_type_alpha3(global.laser_particle ,0.1,0.3,0);
+part_type_speed(global.laser_particle ,0,0,0,0);         
+part_type_direction(global.laser_particle ,0,0,0,1);            
+part_type_orientation(global.laser_particle ,0,0,0,0,1);      
+part_type_blend(global.laser_particle ,true);                      
+part_type_life(global.laser_particle ,1,4);     
 
 // Create background sprites
 
