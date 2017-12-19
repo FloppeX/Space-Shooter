@@ -25,6 +25,7 @@ if mouse_check_button_pressed(mb_left){
 			instance_change(global.swap_module.object_index,true)
 			offset_angle = global.swap_module.offset_angle
 			phy_rotation = -90
+			persistent = false
 			}
 		}
 	}

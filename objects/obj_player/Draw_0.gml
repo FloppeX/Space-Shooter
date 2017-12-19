@@ -43,6 +43,8 @@ for(var i = 0; i < 7; i+=1;){
 			visible = true
 	else with (ship_modules[i])
 			visible = false
+	with (ship_modules[i])
+			persistent = true
 	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,1)
 	}
 for(var i = 0; i < 7; i+=1;){
