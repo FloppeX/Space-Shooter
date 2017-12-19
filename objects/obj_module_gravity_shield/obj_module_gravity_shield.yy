@@ -46,8 +46,8 @@
     "physicsKinematic": false,
     "physicsLinearDamping": 0,
     "physicsObject": true,
-    "physicsRestitution": 1,
-    "physicsSensor": false,
+    "physicsRestitution": 0,
+    "physicsSensor": true,
     "physicsShape": 1,
     "physicsShapePoints": [
         {
@@ -84,6 +84,6 @@
         
     ],
     "solid": false,
-    "spriteId": "4df4dd5d-1501-42b8-a5de-ec7f442e42d9",
+    "spriteId": "879d3601-4073-4954-a1fa-f1e16723b32a",
     "visible": true
 }
