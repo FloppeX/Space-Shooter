@@ -6,7 +6,7 @@ activate_shield = false;
 shield_active = false
 shield_max_size = 2.1
 shield_current_size = 0
-size_change_coefficient = 12
+size_change_coefficient = 8
 
 shield = physics_fixture_create()
 physics_fixture_set_circle_shape(shield, 60)

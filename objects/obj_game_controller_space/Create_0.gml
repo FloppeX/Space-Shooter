@@ -136,8 +136,8 @@ for (var i = 0; i< 300; i++;)
 	scale = random(0.5)+0.5
 	x_scale = scale
 	y_scale =  scale
-	color = make_color_hsv(random(255),random(20)+10,255)
-	alpha =  random(0.5)+0.5
+	color = make_color_hsv(random(255),random(20)+30,255)
+	alpha =  random(0.2)+0.3
 	angle = random(360)
 	
 	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_1"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
@@ -214,7 +214,7 @@ for (var i = 0; i< 400; i++;)
 	scale = random(0.75)+0.75
 	x_scale = scale
 	y_scale =  scale
-	color = make_color_hsv(random(255),random(20)+10,255)
+	color = make_color_hsv(random(255),random(20)+30,255)
 	alpha =  random(0.5)+0.5
 	angle = random(360)
 	
@@ -292,8 +292,8 @@ for (var i = 0; i< 600; i++;)
 	scale = random(1)+1
 	x_scale = scale
 	y_scale =  scale
-	color = make_color_hsv(random(255),random(20)+10,255)
-	alpha =  random(0.5)+0.5
+	color = make_color_hsv(random(255),random(20)+30,255)
+	alpha =  random(0.5)+1
 	angle = random(360)
 	
 	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_3"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
@@ -369,7 +369,7 @@ for (var i = 0; i< 5; i++;){
 	x_scale =  random(10)+5
 	y_scale =  random(10)+5
 	color = make_color_hsv(random(255),255,255)
-	alpha =  random(0.6)+0.4
+	alpha =  random(0.4)+0.4
 	angle = random(360)
 	
 	background_sprite_0[i] = layer_sprite_create(layer_get_id("background_layer_4"),x_pos-global.play_area_width,y_pos-global.play_area_height, sprite);
@@ -447,7 +447,7 @@ obj_player.phy_rotation = -90
    
 // Create some enemies
 
-repeat(0)
+repeat(8)
 	new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_ship)
 
 repeat(6)
