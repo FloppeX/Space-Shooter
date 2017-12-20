@@ -727,6 +727,14 @@
             }
         },
         {
+            "Key": "9e4e5c3b-7b6e-4d3a-bd60-547b9e174027",
+            "Value": {
+                "id": "134cafd3-2467-40fd-a3df-8fdb5f119077",
+                "resourcePath": "sprites\\spr_module_rainbow_laser\\spr_module_rainbow_laser.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a178bb54-8dd6-4d6c-900f-49d02143a7c4",
             "Value": {
                 "id": "7f19393f-0a0a-4a7f-a812-7703e68f5d07",
@@ -943,6 +951,14 @@
             }
         },
         {
+            "Key": "ddc42977-ebe7-499d-b8c7-b4380710ba17",
+            "Value": {
+                "id": "d7665b12-4c03-4baa-9b2e-be720de3725f",
+                "resourcePath": "scripts\\scr_counter_lateral_drift\\scr_counter_lateral_drift.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ddc57113-261d-4b3c-bf0c-f0ab9870f92e",
             "Value": {
                 "id": "a2461ee5-4cb4-4476-848a-c6a32737d7e2",
@@ -1095,6 +1111,14 @@
             }
         },
         {
+            "Key": "f7797e0b-dcba-427c-9bf4-ad3554a58f63",
+            "Value": {
+                "id": "9bdcb970-3afe-4f54-ba40-6f290c692035",
+                "resourcePath": "objects\\obj_module_rainbow_laser\\obj_module_rainbow_laser.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f8286703-88e8-4076-9326-4fc2dc323cea",
             "Value": {
                 "id": "c8fc26be-8557-4cd3-bded-11acf72a9003",
@@ -1148,7 +1172,8 @@
         "a34212cc-ef22-462d-bbfc-fcac1e0dfe8b",
         "6a86f978-e12d-439c-99e6-8ab8d2ef4a15",
         "35fe1de9-5989-4ca4-afbd-d9ee813f4902",
-        "08d317cf-cac2-4634-9fa9-2fb70e7b23e6"
+        "08d317cf-cac2-4634-9fa9-2fb70e7b23e6",
+        "ddc42977-ebe7-499d-b8c7-b4380710ba17"
     ],
     "tutorial": ""
 }

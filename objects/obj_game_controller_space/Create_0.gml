@@ -17,8 +17,11 @@ depth = 20
 
 // Play area settings
 
-global.wrap_margin_player = 1000
-global.wrap_margin_objects = 1000
+room_width = 10000;
+room_height = 10000;
+
+global.wrap_margin_player = 1000;
+global.wrap_margin_objects = 1000;
 
 global.viewport_width = view_get_wport(0);
 global.viewport_height = view_get_hport(0);
@@ -127,13 +130,13 @@ part_type_life(global.bullet_glow_particle,5,10);
 
 global.laser_particle  = part_type_create();
 part_type_sprite(global.laser_particle,spr_laser_glow,false,false,false);            
-part_type_size(global.laser_particle  ,1,1,0,0.1);                                  
-part_type_alpha3(global.laser_particle ,0.1,0.3,0);
+part_type_size(global.laser_particle  ,1,1,0,0);                                  
+part_type_alpha3(global.laser_particle ,0.1,0.6,0);
 part_type_speed(global.laser_particle ,0,0,0,0);         
 part_type_direction(global.laser_particle ,0,0,0,1);            
 part_type_orientation(global.laser_particle ,0,0,0,0,1);      
 part_type_blend(global.laser_particle ,true);                      
-part_type_life(global.laser_particle ,1,4);     
+part_type_life(global.laser_particle ,2,4);     
 
 // Create background sprites
 

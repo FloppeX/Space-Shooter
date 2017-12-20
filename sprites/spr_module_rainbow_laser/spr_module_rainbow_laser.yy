@@ -2,7 +2,7 @@
     "id": "9e4e5c3b-7b6e-4d3a-bd60-547b9e174027",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_module_laser1",
+    "name": "spr_module_rainbow_laser",
     "For3D": false,
     "HTile": false,
     "VTile": false,

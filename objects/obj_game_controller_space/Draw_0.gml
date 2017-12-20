@@ -1,5 +1,11 @@
-// Zooming
+	// Control zoom
 
+if global.zoom > 14000
+	global.zoom = 14000
+	
+if global.zoom < 100
+	global.zoom = 100
+	
 aspect_ratio = display_get_width()/display_get_height(); 
 view_set_wport(view_current,1920)
 view_set_hport(view_current,1080)

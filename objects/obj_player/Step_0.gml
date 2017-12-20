@@ -22,17 +22,11 @@ if movement_disabled == false{
 		else global.gamepad_button_y = false;
 	}
 	
-if gamepad_button_check_pressed(0,gp_padu){
-	global.zoom = global.zoom - 200
-	if global.zoom < 100
-	global.zoom = 100
-	}
+if gamepad_button_check(0,gp_padu)
+	global.zoom = global.zoom - 100
 
-if gamepad_button_check_pressed(0,gp_padd){
-	global.zoom = global.zoom + 200
-	if global.zoom > 1000
-	global.zoom = 1000
-	}
+if gamepad_button_check(0,gp_padd)
+	global.zoom = global.zoom + 100
 
 if gamepad_button_check_pressed(0,gp_padl)
 	global.view_mode = 1
@@ -52,10 +46,7 @@ if keyboard_check(vk_left){
 
 phy_angular_velocity = rotation_value * rotation_force;
 	
-	
 // Moving
-
-
 
 if add_thrust
 	{
@@ -67,10 +58,10 @@ if add_thrust
 	
 	part_type_speed(part_engine_flame_player,3*add_thrust ,6*add_thrust,0,0);
 	temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
-	part_type_direction(part_engine_flame_player,temp_dir+180,temp_dir+180,0,0);
-	part_type_orientation(part_engine_flame_player,temp_dir,temp_dir,0,0,0)
-	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 3);
-	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 3);
+	part_type_direction(part_engine_flame_player,180-phy_rotation,180-phy_rotation,0,0);
+	part_type_orientation(part_engine_flame_player,-phy_rotation,-phy_rotation,0,0,0)
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 8);
+	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 8);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-38,-phy_rotation), mirror_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke,3);
 
@@ -78,18 +69,8 @@ if add_thrust
 	}
 	
 // Stop ship from skidding
-if add_thrust{
-	travel_speed = point_distance(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
-	travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
-	forward_speed = max(0,abs(lengthdir_x(phy_speed,angle_difference(-phy_rotation,travel_direction))))
-	lateral_drift_speed = lengthdir_y(travel_speed,angle_difference(-phy_rotation,travel_direction))
-	lateral_drift_direction = -phy_rotation + 90;
-	drift_resistance_force = drift_resistance * lateral_drift_speed * forward_speed
-	drift_resistance_force_x = lengthdir_x(drift_resistance_force,lateral_drift_direction+180)
-	drift_resistance_force_y = lengthdir_y(drift_resistance_force,lateral_drift_direction+180)
-
-	physics_apply_force(phy_com_x,phy_com_y, drift_resistance_force_x, drift_resistance_force_y)
-	}
+if add_thrust
+	scr_counter_lateral_drift();
 
 // Health
 
