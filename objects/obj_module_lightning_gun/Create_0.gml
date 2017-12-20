@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-bullet_interval = 1;
+bullet_interval = 30;
 muzzle_velocity = 0;
 bullet_type = obj_lightning_bolt
 spread = 0
