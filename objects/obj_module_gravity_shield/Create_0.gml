@@ -4,11 +4,11 @@ depth = -12
 
 activate_shield = false;
 shield_active = false
-shield_max_size = 2.1
+shield_max_size = 2.3
 shield_current_size = 0
-size_change_coefficient = 8
+size_change_coefficient = 15
 gravity_radius = 200
-gravity_force = 1.5
+gravity_force = 5
 global.force_x = 0
 global.force_y = 0
 

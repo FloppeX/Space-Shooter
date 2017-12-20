@@ -1,4 +1,4 @@
-
+/*
 force_x = lengthdir_x(gravity_force,point_direction(x,y,other.x,other.y))
 force_y = lengthdir_y(gravity_force,point_direction(x,y,other.x,other.y))
 with (other)

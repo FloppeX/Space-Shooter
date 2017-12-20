@@ -1,5 +1,3 @@
-
-
 // Wrap ship and backgrounds!
 	
 if phy_position_x > room_width - global.wrap_margin_player{
@@ -33,5 +31,4 @@ if phy_position_y < global.wrap_margin_player{
 	//layer_y(layer_get_id("background_layer_4"), obj_player.phy_position_y* 0)
 	}
 	
-// Wrap particle systems!
 

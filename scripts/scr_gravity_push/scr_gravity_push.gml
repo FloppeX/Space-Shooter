@@ -8,8 +8,8 @@ for(i=0;i<instance_number(obj_type);i+=1){
 			if temp_instance != noone{
 				temp_distance = point_distance(phy_position_x,phy_position_y,temp_instance.phy_position_x,temp_instance.phy_position_y)
 				if temp_distance <= radius{
-					global.force_x = lengthdir_x(force,point_direction(x,y,temp_instance.x,temp_instance.y))
-					global.force_y = lengthdir_y(force,point_direction(x,y,temp_instance.x,temp_instance.y))
+					global.force_x = lengthdir_x(force*temp_instance.phy_mass,point_direction(x,y,temp_instance.x,temp_instance.y))
+					global.force_y = lengthdir_y(force*temp_instance.phy_mass,point_direction(x,y,temp_instance.x,temp_instance.y))
 					with (temp_instance)
 					    physics_apply_impulse(x,y,global.force_x,global.force_y)
 					}

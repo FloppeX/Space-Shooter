@@ -1,0 +1,19 @@
+{
+    "id": "98587199-6b28-4841-9400-c1267849f055",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "98587199-6b28-4841-9400-c1267849f055",
+    "children": [
+        "2b70bfcc-0788-4bab-b31b-62eb0da52e58",
+        "b80cd7e0-9e99-4039-929e-ac2c068043cd",
+        "9e4e5c3b-7b6e-4d3a-bd60-547b9e174027",
+        "00e2c74a-f3eb-44a6-bcdd-5c04d49db020",
+        "4df4dd5d-1501-42b8-a5de-ec7f442e42d9",
+        "879d3601-4073-4954-a1fa-f1e16723b32a",
+        "68bdf5e9-2931-442b-ba37-0548fa41a21e"
+    ],
+    "filterType": "GMSprite",
+    "folderName": "Module sprites",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}
