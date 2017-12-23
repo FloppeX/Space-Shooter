@@ -23,8 +23,8 @@ target_speed = max_speed
 
 if ai_mode == 1 {
 	ai_timer -= 1;
-	min_standoff_distance = 800
-	max_standoff_distance = 1200
+	min_standoff_distance = 500
+	max_standoff_distance = 800
 	distance_to_target = point_distance(phy_position_x,phy_position_y,obj_player.phy_position_x,obj_player.phy_position_y)
 	if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
 		dir_to_target = scr_wrap_direction_to_closest_instance(obj_player)
@@ -41,7 +41,7 @@ if ai_mode == 1 {
 	if ai_timer <= 0{
 
 		ai_timer = 240
-		if irandom(6) == 0{
+		if irandom(4) == 0{
 			ai_mode = 2
 			ai_timer = 600
 			}

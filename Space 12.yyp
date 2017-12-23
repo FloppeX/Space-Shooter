@@ -831,6 +831,14 @@
             }
         },
         {
+            "Key": "aaa227f2-f9dc-4536-bd10-c7e55df65d5c",
+            "Value": {
+                "id": "514806c9-d7f1-4183-b672-bfab5693a9f3",
+                "resourcePath": "sprites\\spr_lightning_2\\spr_lightning_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b556db80-9324-40ed-924b-d3fd4aceb928",
             "Value": {
                 "id": "ad07b46d-0235-4efd-8cdd-03e7565cf9fb",

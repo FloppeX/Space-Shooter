@@ -138,6 +138,16 @@ part_type_orientation(global.laser_particle ,0,0,0,0,1);
 part_type_blend(global.laser_particle ,true);                      
 part_type_life(global.laser_particle ,2,4);     
 
+global.lightning_particle  = part_type_create();
+part_type_sprite(global.lightning_particle,spr_lightning_2,false,false,false);            
+part_type_size(global.lightning_particle  ,0.8,1.2,0,0);
+part_type_color3(global.lightning_particle,c_white,c_yellow,c_black);
+part_type_alpha2(global.lightning_particle,1,0);
+part_type_speed(global.lightning_particle ,0,0,0,0.2);         
+part_type_direction(global.lightning_particle ,0,0,0,1);            
+part_type_orientation(global.lightning_particle ,0,0,0,0,1);      
+part_type_blend(global.lightning_particle ,true);                      
+part_type_life(global.lightning_particle ,30,90);     
 // Create background sprites
 
 for (var i = 0; i< 300; i++;)

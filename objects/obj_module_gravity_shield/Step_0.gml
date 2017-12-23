@@ -9,6 +9,7 @@ if global.gamepad_button_b
 else 
 	activate_shield = false
 
+/*
 if activate_shield
 	if shield_active == false
 		shield_active = true;
@@ -17,6 +18,7 @@ else {
 		shield_active = false;
 		
 	}
+*/
 	
 if activate_shield{
 	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
@@ -24,15 +26,13 @@ if activate_shield{
 	scr_gravity_push(obj_asteroid,gravity_radius,gravity_force)
 	}
 
-if shield_active
-	if shield_current_size < shield_max_size
+if activate_shield
 		shield_current_size = shield_current_size + (shield_max_size - shield_current_size)/size_change_coefficient	
 else 
-	if shield_current_size > 0
 		shield_current_size = shield_current_size - shield_current_size/size_change_coefficient	
 
 	
-if activate_shield{
+if shield_current_size > 0{
 	part_type_size(shield_particle,shield_current_size,shield_current_size,0,0.1);
 	part_type_speed(shield_particle,phy_speed,phy_speed,0,0.3);  
 	part_type_direction(shield_particle,-phy_rotation,-phy_rotation,0,0);

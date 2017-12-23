@@ -7,4 +7,4 @@ bullet_interval = 30;
 muzzle_velocity = 0;
 bullet_type = obj_lightning_bolt
 spread = 0
-bullet_color = c_yellow
+bullet_color = c_navy
