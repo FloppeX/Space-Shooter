@@ -1,7 +1,7 @@
 phy_position_x = obj_player.phy_position_x + 100
 phy_position_y = obj_player.phy_position_y - 60
 for(var i = 0; i < 9; i+=1;){
-	var h = irandom(5)
+	var h = irandom(7)
 	switch (h){
 		case 0: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gun); break;
 		case 1: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_shield); break;
@@ -9,6 +9,8 @@ for(var i = 0; i < 9; i+=1;){
 		case 3: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_laser); break;
 		case 4: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_rainbow_laser); break;
 		case 5: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
+		case 6: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_lightning_gun); break;
+		case 7: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
 		}
 
 	shop_modules[i].offset_angle = irandom(3) * 90;

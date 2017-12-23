@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "1edb7e2b-f58f-4f9f-b7bb-0f164bb905ed",
+            "Value": {
+                "id": "2cf1f323-138b-4e90-a29f-284755eede9d",
+                "resourcePath": "objects\\obj_module_lightning_gun\\obj_module_lightning_gun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "21973724-9cb7-4b82-a23b-eccad4c8ea04",
             "Value": {
                 "id": "6acf02b9-42f6-421b-a81c-455a2069be6e",
@@ -498,7 +506,7 @@
             "Key": "5d04052b-768a-4a70-8bd4-c9d634517626",
             "Value": {
                 "id": "d35ec7de-18c2-42df-a25c-33aa6fd17fa2",
-                "resourcePath": "objects\\obj_module_lightning_gun\\obj_module_lightning_gun.yy",
+                "resourcePath": "objects\\obj_module_mine_layer\\obj_module_mine_layer.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -572,6 +580,14 @@
                 "id": "877f59d6-ab55-49c0-8be9-5b97c3fdfcf3",
                 "resourcePath": "scripts\\scr_wrap_intercept_course\\scr_wrap_intercept_course.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6bcd901f-2b96-4280-800a-9842fcbdf734",
+            "Value": {
+                "id": "a0b0fede-e1b3-4a04-aaa6-3a7021ff73ff",
+                "resourcePath": "sprites\\spr_module_gravity_shield1\\spr_module_gravity_shield1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1015,6 +1031,22 @@
             }
         },
         {
+            "Key": "d9f03159-80b8-4991-8fd4-a225b2f56773",
+            "Value": {
+                "id": "ded308f9-6d7e-4cc7-81c9-cd184abec170",
+                "resourcePath": "sprites\\spr_module_mine_layer\\spr_module_mine_layer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dce0cd3f-d51e-4a25-ba3d-906bb9c49373",
+            "Value": {
+                "id": "82de0029-7ae9-4c52-85d2-25c01e6bb9f9",
+                "resourcePath": "objects\\obj_mine\\obj_mine.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ddc42977-ebe7-499d-b8c7-b4380710ba17",
             "Value": {
                 "id": "d7665b12-4c03-4baa-9b2e-be720de3725f",
@@ -1195,6 +1227,14 @@
             "Value": {
                 "id": "c8fc26be-8557-4cd3-bded-11acf72a9003",
                 "resourcePath": "sprites\\spr_planet\\spr_planet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f99b0f72-09e1-4a87-9388-22169c9d1640",
+            "Value": {
+                "id": "efb887ad-e0b5-4338-8851-acba778ff471",
+                "resourcePath": "sprites\\spr_module_lightning_gun\\spr_module_lightning_gun.yy",
                 "resourceType": "GMSprite"
             }
         },

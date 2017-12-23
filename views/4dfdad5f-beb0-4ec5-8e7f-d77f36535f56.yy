@@ -9,7 +9,8 @@
         "4b7ff823-1469-4fa0-8b29-12908b6d8560",
         "e464eb79-08dc-42f2-a2cb-ea6f1418aa26",
         "ddc57113-261d-4b3c-bf0c-f0ab9870f92e",
-        "48c0461f-d3d2-4ec5-8efd-69be05a0d27b"
+        "48c0461f-d3d2-4ec5-8efd-69be05a0d27b",
+        "dce0cd3f-d51e-4a25-ba3d-906bb9c49373"
     ],
     "filterType": "GMObject",
     "folderName": "Bullets, missiles etc",

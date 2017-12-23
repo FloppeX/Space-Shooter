@@ -21,9 +21,12 @@ else {
 */
 	
 if activate_shield{
+	scr_gravity_push(obj_parent_physical,gravity_radius,gravity_force)
+	/*
 	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
 	scr_gravity_push(obj_enemy_ship,gravity_radius,gravity_force)
 	scr_gravity_push(obj_asteroid,gravity_radius,gravity_force)
+	*/
 	}
 
 if activate_shield

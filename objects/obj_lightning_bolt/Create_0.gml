@@ -1,11 +1,11 @@
-remaining_steps = 8;
+remaining_steps = 10;
 step_timer = 1
-damage = 3;
+damage = 1;
 victim = noone;
 target_dir = -phy_rotation
 max_turn = 15
-targeting_arc = 360;
-spread = 45
-color = c_navy
+targeting_arc = 90;
+spread = 30
+color = c_blue
 chance_new_branch = 10 //percentage
-new_branch_angle = 45
+new_branch_angle = 30

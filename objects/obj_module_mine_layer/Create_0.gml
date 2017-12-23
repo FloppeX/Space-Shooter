@@ -3,8 +3,9 @@
 
 // Inherit the parent event
 event_inherited();
-bullet_interval = 30;
+barrel_length = 10
+bullet_interval = 1;
 muzzle_velocity = 0;
-bullet_type = obj_lightning_bolt
+bullet_type = obj_mine
 spread = 0
-bullet_color = c_blue
+bullet_color = c_white
