@@ -2,6 +2,9 @@ event_inherited();
 
 depth = -12
 
+activation_button = 2
+activated = false
+
 activate_shield = false;
 shield_active = false
 shield_max_size = 2.3

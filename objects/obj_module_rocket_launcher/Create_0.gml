@@ -1,8 +1,11 @@
 event_inherited();
 
+activation_button = 4
+activated = false
+
 barrel_length = 0
 
-muzzle_velocity = 0;
+muzzle_velocity = 1;
 bullet_interval = 180;
 bullet_timer = bullet_interval;
 bullet_type = obj_rocket;

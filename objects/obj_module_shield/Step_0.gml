@@ -4,12 +4,8 @@ event_inherited();
 
 // Shield properties
 
-if global.gamepad_button_b 
-	activate_shield = true
-else 
-	activate_shield = false
 
-if activate_shield{
+if activated{
 	if shield_active == false{
 		my_shield = physics_fixture_bind(shield, id)
 		shield_active = true;

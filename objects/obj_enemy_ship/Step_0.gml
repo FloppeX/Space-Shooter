@@ -133,9 +133,9 @@ gun.phy_rotation = phy_rotation;
 gun.phy_speed_x = phy_speed_x
 gun.phy_speed_y = phy_speed_y
 if shoot_1
-	gun.shoot = true
+	gun.activated = true
 else
-	gun.shoot = false
+	gun.activated = false
 
 // Find mirror positions
 

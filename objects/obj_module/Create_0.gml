@@ -1,4 +1,6 @@
 //
+activation_button = 2
+activated = false
 
 owner = noone;
 obj_rotation = 0;

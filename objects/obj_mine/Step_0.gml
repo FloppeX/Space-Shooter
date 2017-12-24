@@ -15,7 +15,7 @@ if explode{
 		temp_instance = instance_find(obj_parent_physical, i);
 				if temp_instance != noone{
 					temp_distance = point_distance(phy_position_x,phy_position_y,temp_instance.phy_position_x,temp_instance.phy_position_y)
-					if temp_distance <= sensor_range{
+					if temp_distance <= explosion_range{
 						with(temp_instance)
 							obj_health -= 10
 						}

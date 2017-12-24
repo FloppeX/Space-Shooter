@@ -4,11 +4,12 @@ event_inherited();
 
 // Shield properties
 
+/*
 if global.gamepad_button_b 
 	activate_shield = true
 else 
 	activate_shield = false
-
+*/
 /*
 if activate_shield
 	if shield_active == false
@@ -20,7 +21,7 @@ else {
 	}
 */
 	
-if activate_shield{
+if activated{
 	scr_gravity_push(obj_parent_physical,gravity_radius,gravity_force)
 	/*
 	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
@@ -29,7 +30,7 @@ if activate_shield{
 	*/
 	}
 
-if activate_shield
+if activated
 		shield_current_size = shield_current_size + (shield_max_size - shield_current_size)/size_change_coefficient	
 else 
 		shield_current_size = shield_current_size - shield_current_size/size_change_coefficient	

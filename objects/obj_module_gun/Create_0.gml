@@ -1,4 +1,8 @@
 event_inherited();
+
+activation_button = 3
+activated = false
+
 shoot = false
 muzzle_velocity = 6;
 bullet_interval = 15;

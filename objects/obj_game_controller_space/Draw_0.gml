@@ -19,6 +19,7 @@ camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 // Center camera
 cam = camera_get_active()
 camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
+//camera_set_view_angle(cam, obj_player.phy_rotation +90) 
 
 // Drav lines if view mode 2 
 

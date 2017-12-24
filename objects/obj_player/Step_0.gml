@@ -9,18 +9,23 @@ if movement_disabled == false{
 
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
-	if gamepad_button_check(0,gp_face3)
-		shoot = true
-		else shoot = false;
+	if gamepad_button_check(0,gp_face1)
+		gamepad_button[1] = true
+	else gamepad_button[1] = false
 	
 	if gamepad_button_check(0,gp_face2)
-		global.gamepad_button_b = true
-		else global.gamepad_button_b = false;
+		gamepad_button[2] = true
+	else gamepad_button[2] = false
 	
+	if gamepad_button_check(0,gp_face3)
+		gamepad_button[3] = true
+	else gamepad_button[3] = false
+		
 	if gamepad_button_check(0,gp_face4)
-		global.gamepad_button_y = true
-		else global.gamepad_button_y = false;
-	}
+		gamepad_button[4] = true
+	else gamepad_button[4] = false
+	
+}
 	
 if gamepad_button_check(0,gp_padu)
 	global.zoom = global.zoom - 100
@@ -31,7 +36,7 @@ if gamepad_button_check(0,gp_padd)
 if gamepad_button_check_pressed(0,gp_padl)
 	global.view_mode = 1
 
-if gamepad_button_check_pressed(0,gp_padl)
+if gamepad_button_check_pressed(0,gp_padr)
 	global.view_mode = 2
 
 if keyboard_check(vk_right){
