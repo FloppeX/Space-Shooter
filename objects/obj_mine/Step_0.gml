@@ -1,3 +1,13 @@
+light_timer -= 1;
+
+if image_index >= image_number -1
+	image_speed = 0
+	
+if light_timer <= 0{
+	image_index = 0
+	image_speed = 1
+	light_timer = 60
+	}
 
 for (i=0;i<instance_number(obj_enemy_ship);i+=1){
 	temp_instance = instance_find(obj_enemy_ship, i);

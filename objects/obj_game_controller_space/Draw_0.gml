@@ -1,4 +1,4 @@
-	// Control zoom
+// Control zoom
 
 if global.zoom > 14000
 	global.zoom = 14000
@@ -16,10 +16,14 @@ if temp_zoom < global.zoom
 	temp_zoom += 0.1 * abs(temp_zoom-global.zoom)
 camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 
+// Set wrap border
+
+//global.wrap_margin_player = max(0.5 * camera_get_view_width(view_camera[0]),1000)
+
 // Center camera
 cam = camera_get_active()
 camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
-//camera_set_view_angle(cam, obj_player.phy_rotation +90) 
+camera_set_view_angle(cam, gamepad_button_value(0, gp_shoulderlb) * (obj_player.phy_rotation +90)) 
 
 // Drav lines if view mode 2 
 

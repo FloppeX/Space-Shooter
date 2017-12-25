@@ -20,6 +20,12 @@ if mouse_check_button_pressed(mb_left){
 			instance_change(global.active_module.object_index,true)
 			offset_angle = global.active_module.offset_angle
 			phy_rotation = -90 + offset_angle
+			switch (offset_angle){
+				case 0: activation_button = 4; break;
+				case 90: activation_button = 2; break;
+				case 180: activation_button = 1; break;
+				case 270: activation_button = 3; break;
+				}
 			}
 		with(global.active_module){
 			instance_change(global.swap_module.object_index,true)

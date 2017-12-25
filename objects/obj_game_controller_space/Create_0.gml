@@ -17,8 +17,8 @@ depth = 20
 
 // Play area settings
 
-room_width = 10000;
-room_height = 10000;
+room_width = 5000;
+room_height = 5000;
 
 global.wrap_margin_player = 1000;
 global.wrap_margin_objects = 1000;
@@ -147,7 +147,19 @@ part_type_speed(global.lightning_particle ,0,0,0,0.2);
 part_type_direction(global.lightning_particle ,0,0,0,1);            
 part_type_orientation(global.lightning_particle ,0,0,0,0,1);      
 part_type_blend(global.lightning_particle ,true);                      
-part_type_life(global.lightning_particle ,30,90);     
+part_type_life(global.lightning_particle ,30,90);  
+
+global.flashing_light_particle  = part_type_create();
+part_type_sprite(global.flashing_light_particle,spr_flashing_light_particle,false,false,false);            
+part_type_size(global.flashing_light_particle  ,0.8,1.2,0,0);
+part_type_color2(global.flashing_light_particle,c_red,c_maroon);
+part_type_alpha2(global.flashing_light_particle,1,0);
+part_type_speed(global.flashing_light_particle ,0.01,0.02,0,0.2);         
+part_type_direction(global.flashing_light_particle ,0,0,0,1);            
+part_type_orientation(global.flashing_light_particle ,0,0,0,0,1);      
+part_type_blend(global.flashing_light_particle ,true);                      
+part_type_life(global.flashing_light_particle ,10,20);     
+
 // Create background sprites
 
 for (var i = 0; i< 300; i++;)
