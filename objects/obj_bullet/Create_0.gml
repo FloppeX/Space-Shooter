@@ -7,7 +7,7 @@ timer = range;
 
 damage = 1;
 
-
+invisible = false
 
 hit_enemy = false;
 

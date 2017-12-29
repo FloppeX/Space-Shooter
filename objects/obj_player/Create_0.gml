@@ -37,6 +37,9 @@ col = 0;
 
 movement_disabled = false
 
+invisible = false
+alpha = 1
+
 // Set view object
 
 global.obj_to_center_view_on = id // View will center on player
@@ -47,22 +50,22 @@ global.obj_to_center_view_on = id // View will center on player
 ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_shield);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
-ship_modules[3] = instance_create_depth(x,y,-10,obj_module_empty);
+ship_modules[3] = instance_create_depth(x,y,-10,obj_module_lightning_gun);
 ship_modules[3].offset_angle = -90;
 ship_modules[3].activation_button = 3
 ship_modules[4] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[4].offset_angle = 0;
 ship_modules[4].activation_button = 4
-ship_modules[5] = instance_create_depth(x,y,-10,obj_module_teleporter);
+ship_modules[5] = instance_create_depth(x,y,-10,obj_module_cloaking_device);
 ship_modules[5].offset_angle = 90;
 ship_modules[5].activation_button = 2
-ship_modules[6] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[6] = instance_create_depth(x,y,-10,obj_module_teleporter);
 ship_modules[6].offset_angle = 180; 
 ship_modules[6].activation_button = 1
 for(var i = 0; i < 7; i+=1;){

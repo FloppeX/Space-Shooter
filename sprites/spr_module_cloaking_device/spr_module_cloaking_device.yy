@@ -2,7 +2,7 @@
     "id": "c705ee8b-d014-45b9-aa0b-57d459b2171e",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_module_gravity_shield1",
+    "name": "spr_module_cloaking_device",
     "For3D": false,
     "HTile": false,
     "VTile": false,

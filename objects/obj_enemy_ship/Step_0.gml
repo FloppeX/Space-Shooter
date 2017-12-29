@@ -25,45 +25,50 @@ if ai_mode == 1 {
 	ai_timer -= 1;
 	min_standoff_distance = 500
 	max_standoff_distance = 800
-	distance_to_target = point_distance(phy_position_x,phy_position_y,obj_player.phy_position_x,obj_player.phy_position_y)
-	if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
-		dir_to_target = scr_wrap_direction_to_closest_instance(obj_player)
-		if angle_difference(-phy_rotation,dir_to_target) > 0
-			target_dir = scr_wrap_direction_to_closest_instance(obj_player) + 90
-		else 
-			target_dir = scr_wrap_direction_to_closest_instance(obj_player) + 90
-		}
-	if distance_to_target < min_standoff_distance 
-		target_dir = scr_wrap_direction_to_closest_instance(obj_player) + 180
-	if distance_to_target > max_standoff_distance
-		target_dir = scr_wrap_direction_to_closest_instance(obj_player)
-
-	if ai_timer <= 0{
-
-		ai_timer = 240
-		if irandom(4) == 0{
-			ai_mode = 2
-			ai_timer = 600
+	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180)
+	if target != noone{
+		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
+		if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
+			dir_to_target = scr_wrap_direction_to_closest_instance(target)
+			if angle_difference(-phy_rotation,dir_to_target) > 0
+				target_dir = scr_wrap_direction_to_closest_instance(target) + 90
+			else 
+				target_dir = scr_wrap_direction_to_closest_instance(target) + 90
 			}
-		}
+		if distance_to_target < min_standoff_distance 
+			target_dir = scr_wrap_direction_to_closest_instance(target) + 180
+		if distance_to_target > max_standoff_distance
+			target_dir = scr_wrap_direction_to_closest_instance(target)
+
+		if ai_timer <= 0{
+
+			ai_timer = 240
+			if irandom(4) == 0{
+				ai_mode = 2
+				ai_timer = 600
+				}
+			}
+	}
 	}
 	
 if ai_mode == 2 {
 
 	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180)
-	target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.muzzle_velocity)
-	target_point_x = scr_wrap_closest_x(target);
-	target_point_y = scr_wrap_closest_y(target);
+	if target != noone{
+		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.muzzle_velocity)
+		target_point_x = scr_wrap_closest_x(target);
+		target_point_y = scr_wrap_closest_y(target);
 
-	angle_diff = abs(angle_difference(-phy_rotation,target_dir));
-	if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
-		and angle_diff < 5
-		shoot_1 = true
-	else 
-		shoot_1 = false
-	if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
-		ai_mode = 1
-		shoot_1 = false
+		angle_diff = abs(angle_difference(-phy_rotation,target_dir));
+		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
+			and angle_diff < 5
+			shoot_1 = true
+		else 
+			shoot_1 = false
+		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
+			ai_mode = 1
+			shoot_1 = false
+			}
 		}
 	}
 	

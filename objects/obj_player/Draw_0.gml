@@ -1,17 +1,17 @@
 
 
-draw_self();
+draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,c_white,alpha)
 
 // Draw sprite at mirror_positions
 
 if phy_position_x > 0.5 * room_width
-	draw_sprite_ext(sprite_index,-1,global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,1)
+	draw_sprite_ext(sprite_index,-1,global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,alpha)
 if phy_position_x < 0.5 * room_width
-draw_sprite_ext(sprite_index,-1,room_width - global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,1)
+draw_sprite_ext(sprite_index,-1,room_width - global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,alpha)
 if phy_position_y > 0.5 * room_height
-	draw_sprite_ext(sprite_index,-1,phy_position_x,global.wrap_margin_player,1,1,-phy_rotation,c_white,1)
+	draw_sprite_ext(sprite_index,-1,phy_position_x,global.wrap_margin_player,1,1,-phy_rotation,c_white,alpha)
 if phy_position_y < 0.5 * room_height
-	draw_sprite_ext(sprite_index,-1,phy_position_x,room_height - global.wrap_margin_player,1,1,-phy_rotation,c_white,1)
+	draw_sprite_ext(sprite_index,-1,phy_position_x,room_height - global.wrap_margin_player,1,1,-phy_rotation,c_white,alpha)
 // Find module positions and then draw them
 /*
 module_1.x = phy_position_x + lengthdir_x(36,-phy_rotation+45);
@@ -56,7 +56,7 @@ for(var i = 0; i < 7; i+=1;){
 			visible = false
 	with (ship_modules[i])
 			persistent = true
-	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,1)
+	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,alpha)
 	
 	/*
 	}

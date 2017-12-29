@@ -20,6 +20,8 @@ ai_mode = 1
 shoot_1 = false
 direction_randomizer = 0
 
+invisible = false
+
 target = noone;
 targeting_arc = 90;
 target_dir = 0

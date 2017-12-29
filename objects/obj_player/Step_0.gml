@@ -65,6 +65,7 @@ if add_thrust
 	temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
 	part_type_direction(part_engine_flame_player,180-phy_rotation,180-phy_rotation,0,0);
 	part_type_orientation(part_engine_flame_player,-phy_rotation,-phy_rotation,0,0,0)
+	part_type_alpha2(part_engine_flame_player,0.3 * alpha,0);
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation+offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation+offset_angle), part_engine_flame_player, 8);
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 8);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);

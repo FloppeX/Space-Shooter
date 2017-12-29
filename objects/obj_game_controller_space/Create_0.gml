@@ -61,7 +61,7 @@ part_type_sprite(global.part_rocket_smoke,spr_flame_particle,false,false,false);
 part_type_size(global.part_rocket_smoke,0.4,0.6,-0.04,0);                    //This is for the size
 part_type_scale(global.part_rocket_smoke,1,1);                       //This is for scaling
 part_type_color3(global.part_rocket_smoke,c_white,c_yellow,c_red);
-part_type_alpha3(global.part_rocket_smoke,1,1,0);
+part_type_alpha2(global.part_rocket_smoke,1,0);
 part_type_speed(global.part_rocket_smoke,0.2,0.4,-0.10,1);            //The particles speed
 part_type_direction(global.part_rocket_smoke,0,0,0,1);            //The direction
 part_type_orientation(global.part_rocket_smoke,0,0,0,0,1);           //This changes the rotation of the particle
