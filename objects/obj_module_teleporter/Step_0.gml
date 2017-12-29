@@ -18,13 +18,6 @@ if activated and use_timer <= 0 and teleporting == false{
 	
 	temp_speed = min((temp_dist / duration_timer),20) // Max speed 20, I want to avoid really fast speeds
 	
-	// Create view object
-	
-	temp_view_object = instance_create_depth(owner.phy_position_x,owner.phy_position_y,-10,obj_temp_view_object)
-	temp_view_object.phy_position_x = owner.phy_position_x
-	temp_view_object.phy_position_y = owner.phy_position_y
-	global.obj_to_center_view_on = temp_view_object
-	
 	//Save original phy values to re-apply later
 	temp_phy_rotation = owner.phy_rotation
 	temp_angular_velocity = owner.phy_angular_velocity
@@ -38,9 +31,7 @@ if activated and use_timer <= 0 and teleporting == false{
 	owner.phy_speed_x = 0
 	owner.phy_speed_y = 0
 	
-	// Create teleport out effect
-	part_type_orientation(global.teleport_out_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);   
-	part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y, global.teleport_out_particle, 1);
+	
 	
 	}
 	
@@ -48,18 +39,26 @@ if activated and use_timer <= 0 and teleporting == false{
 	
 if teleporting{
 	duration_timer -= 1
-	temp_dist = scr_wrap_distance_to_point(temp_view_object.phy_position_x,temp_view_object.phy_position_y,target_point_x,target_point_y)
-	temp_dir = scr_wrap_direction_to_point(temp_view_object.phy_position_x,temp_view_object.phy_position_y,target_point_x,target_point_y)
-	temp_view_object.phy_position_x = temp_view_object.phy_position_x + lengthdir_x(temp_speed,temp_dir)
-	temp_view_object.phy_position_y = temp_view_object.phy_position_y + lengthdir_y(temp_speed,temp_dir)
-
-	// Create teleport in effect just before player teleports back
-	if duration_timer == 20{
-		part_type_orientation(global.teleport_in_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);      
-		part_particles_create(global.part_system_below, target_point_x, target_point_y, global.teleport_in_particle, 1);
+	temp_dist = scr_wrap_distance_to_point(owner.phy_position_x,owner.phy_position_y,target_point_x,target_point_y)
+	temp_dir = scr_wrap_direction_to_point(owner.phy_position_x,owner.phy_position_y,target_point_x,target_point_y)
+	owner.phy_position_x = owner.phy_position_x + lengthdir_x(temp_speed,temp_dir)
+	owner.phy_position_y = owner.phy_position_y + lengthdir_y(temp_speed,temp_dir)
+	
+	// Create teleport out effect
+	if duration_timer > 0{
+	part_type_orientation(global.teleport_out_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);   
+	part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y, global.teleport_out_particle, 5);
+	if x > 0.5 * room_width
+		part_particles_create(global.part_system_below, owner.phy_position_x-global.play_area_width, owner.phy_position_y, global.teleport_out_particle, 1);
+	else
+		part_particles_create(global.part_system_below, owner.phy_position_x+global.play_area_width, owner.phy_position_y, global.teleport_out_particle, 1);
+	if y > 0.5 * room_height
+		part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y-global.play_area_height, global.teleport_out_particle, 1);
+	else
+		part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y+global.play_area_height, global.teleport_out_particle, 1);
 	}
 	
-	if duration_timer <= 1{
+	if duration_timer <= 0{
 		owner.phy_active = true
 		owner.phy_position_x = target_point_x
 		owner.phy_position_y = target_point_y
@@ -72,9 +71,6 @@ if teleporting{
 		use_timer = use_timer_interval;
 		owner.movement_disabled = false
 		owner.visible = true
-		global.obj_to_center_view_on = owner
-		with(temp_view_object)
-			instance_destroy()
 		target_point_x = 0
 		target_point_y = 0
 		

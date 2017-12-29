@@ -93,7 +93,7 @@ part_type_blend(dust_particle,1);
 part_type_life(dust_particle,60,240);
 
 global.flame_particle = part_type_create();
-part_type_shape(global.flame_particle,pt_shape_sphere);
+part_type_shape(global.flame_particle,pt_shape_disk);
 part_type_size(global.flame_particle,0.40,0.70,0,0);
 part_type_scale(global.flame_particle,1,1);
 part_type_color3(global.flame_particle,c_white,c_yellow,c_red);
@@ -106,7 +106,7 @@ part_type_blend(global.flame_particle,0);
 part_type_life(global.flame_particle,80,120);
 
 global.smoke_particle = part_type_create();
-part_type_shape(global.smoke_particle,pt_shape_sphere);
+part_type_shape(global.smoke_particle,pt_shape_disk);
 part_type_size(global.smoke_particle,0.60,1,0,0);
 part_type_scale(global.smoke_particle,1,1);
 part_type_color3(global.smoke_particle,12632256,8421504,0);
@@ -165,25 +165,14 @@ part_type_life(global.flashing_light_particle ,10,20);
 
 global.teleport_out_particle  = part_type_create();
 part_type_sprite(global.teleport_out_particle ,spr_player_ship,false,false,false);            
-part_type_size(global.teleport_out_particle   ,1.1,1.4,0,0.01);
+part_type_size(global.teleport_out_particle   ,0.8,1.2,0,0.01);
 part_type_color1(global.teleport_out_particle ,c_yellow);
-part_type_alpha3(global.teleport_out_particle ,0,0.2,0);
+part_type_alpha3(global.teleport_out_particle ,0,0.1,0);
 part_type_speed(global.teleport_out_particle ,0,0,0,0);         
 part_type_direction(global.teleport_out_particle ,0,0,0,1);            
 part_type_orientation(global.teleport_out_particle ,0,0,0,0,1);      
 part_type_blend(global.teleport_out_particle ,true);                      
-part_type_life(global.teleport_out_particle ,10,30);     
-
-global.teleport_in_particle  = part_type_create();
-part_type_sprite(global.teleport_in_particle ,spr_player_ship,false,false,false);            
-part_type_size(global.teleport_in_particle   ,1.1,1.4,0,0.01);
-part_type_color1(global.teleport_in_particle ,c_yellow);
-part_type_alpha3(global.teleport_in_particle ,0,0.2,0);
-part_type_speed(global.teleport_in_particle ,0,0,0,0);         
-part_type_direction(global.teleport_in_particle ,0,0,0,1);            
-part_type_orientation(global.teleport_in_particle ,0,0,0,0,1);      
-part_type_blend(global.teleport_in_particle ,true);                      
-part_type_life(global.teleport_in_particle ,10,30);     
+part_type_life(global.teleport_out_particle ,5,40);     
 
 // Create background sprites
 

@@ -4,7 +4,7 @@ activation_button = 3
 activated = false
 
 teleporting = false
-teleport_duration = 40
+teleport_duration = 20
 duration_timer = teleport_duration
 
 teleport_distance = 300;
