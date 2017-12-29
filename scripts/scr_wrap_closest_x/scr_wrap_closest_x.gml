@@ -1,4 +1,4 @@
-// Takes: object,object that has mirror coords
+// Takes: object that has mirror coords
 // Returns: closest mirror coord x
 var obj;
 obj = argument0;

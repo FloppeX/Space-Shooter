@@ -37,26 +37,20 @@ col = 0;
 
 movement_disabled = false
 
+// Set view object
+
+global.obj_to_center_view_on = id // View will center on player
+
 // Modules
 
-event_inherited();
-/*
-module_1 = instance_create_depth(x,y,0,obj_module_gun);
-module_1.owner = self;
 
-module_2 = instance_create_depth(x,y,0,obj_module_rocket_launcher);
-module_2.owner = self;
-
-module_3 = instance_create_depth(x,y,0,obj_module_shield);
-module_3.owner = self;
-*/
 ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_gravity_shield);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_shield);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
-ship_modules[2] = instance_create_depth(x,y,-10,obj_module_laser);
+ship_modules[2] = instance_create_depth(x,y,-10,obj_module_gun);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
 ship_modules[3] = instance_create_depth(x,y,-10,obj_module_empty);

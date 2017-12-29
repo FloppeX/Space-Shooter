@@ -22,19 +22,19 @@ camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 
 // Center camera
 cam = camera_get_active()
-camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
-camera_set_view_angle(cam, gamepad_button_value(0, gp_shoulderlb) * (obj_player.phy_rotation +90)) 
+camera_set_view_pos(cam,global.obj_to_center_view_on.phy_com_x -0.5*camera_get_view_width(cam),global.obj_to_center_view_on.phy_com_y-0.5*camera_get_view_height(cam))
+camera_set_view_angle(cam, gamepad_button_value(0, gp_shoulderlb) * (global.obj_to_center_view_on.phy_rotation +90)) 
 
 // Drav lines if view mode 2 
 
 if global.view_mode == 2{
-	draw_set_color(c_maroon)
+	draw_set_color(c_orange)
 	draw_line_width(global.wrap_border_left,global.wrap_border_top,global.wrap_border_right,global.wrap_border_top,5)
 	draw_line_width(global.wrap_border_left,global.wrap_border_bottom,global.wrap_border_right,global.wrap_border_bottom,5)
 	draw_line_width(global.wrap_border_left,global.wrap_border_top,global.wrap_border_left,global.wrap_border_bottom,5)
 	draw_line_width(global.wrap_border_right,global.wrap_border_top,global.wrap_border_right,global.wrap_border_bottom,5)
 
-
+	draw_set_color(c_maroon)
 	draw_line_width(global.wrap_margin_player,global.wrap_margin_player,room_width- global.wrap_margin_player,global.wrap_margin_player,5)
 	draw_line_width(global.wrap_margin_player,room_height - global.wrap_margin_player,room_width- global.wrap_margin_player,room_height -global.wrap_margin_player,5)
 	draw_line_width(global.wrap_margin_player,global.wrap_margin_player,global.wrap_margin_player,room_height - global.wrap_margin_player,5)

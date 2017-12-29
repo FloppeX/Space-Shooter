@@ -4,9 +4,14 @@ draw_self();
 
 // Draw sprite at mirror_positions
 
-draw_sprite_ext(sprite_index,-1,mirror_x,phy_position_y,1,1,-phy_rotation,c_white,1)
-draw_sprite_ext(sprite_index,-1,phy_position_x,mirror_y,1,1,-phy_rotation,c_white,1)
-
+if phy_position_x > 0.5 * room_width
+	draw_sprite_ext(sprite_index,-1,global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,1)
+if phy_position_x < 0.5 * room_width
+draw_sprite_ext(sprite_index,-1,room_width - global.wrap_margin_player,phy_position_y,1,1,-phy_rotation,c_white,1)
+if phy_position_y > 0.5 * room_height
+	draw_sprite_ext(sprite_index,-1,phy_position_x,global.wrap_margin_player,1,1,-phy_rotation,c_white,1)
+if phy_position_y < 0.5 * room_height
+	draw_sprite_ext(sprite_index,-1,phy_position_x,room_height - global.wrap_margin_player,1,1,-phy_rotation,c_white,1)
 // Find module positions and then draw them
 /*
 module_1.x = phy_position_x + lengthdir_x(36,-phy_rotation+45);

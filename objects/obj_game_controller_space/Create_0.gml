@@ -11,6 +11,8 @@ global.view_mode = 1
 global.zoom = 600
 temp_zoom = 400
 
+global.obj_to_center_view_on = noone; // This is the object that the view centers on. Will be set to player
+
 // Depth
 
 depth = 20
@@ -159,6 +161,29 @@ part_type_direction(global.flashing_light_particle ,0,0,0,1);
 part_type_orientation(global.flashing_light_particle ,0,0,0,0,1);      
 part_type_blend(global.flashing_light_particle ,true);                      
 part_type_life(global.flashing_light_particle ,10,20);     
+
+
+global.teleport_out_particle  = part_type_create();
+part_type_sprite(global.teleport_out_particle ,spr_player_ship,false,false,false);            
+part_type_size(global.teleport_out_particle   ,1.1,1.4,0,0.01);
+part_type_color1(global.teleport_out_particle ,c_yellow);
+part_type_alpha3(global.teleport_out_particle ,0,0.2,0);
+part_type_speed(global.teleport_out_particle ,0,0,0,0);         
+part_type_direction(global.teleport_out_particle ,0,0,0,1);            
+part_type_orientation(global.teleport_out_particle ,0,0,0,0,1);      
+part_type_blend(global.teleport_out_particle ,true);                      
+part_type_life(global.teleport_out_particle ,10,30);     
+
+global.teleport_in_particle  = part_type_create();
+part_type_sprite(global.teleport_in_particle ,spr_player_ship,false,false,false);            
+part_type_size(global.teleport_in_particle   ,1.1,1.4,0,0.01);
+part_type_color1(global.teleport_in_particle ,c_yellow);
+part_type_alpha3(global.teleport_in_particle ,0,0.2,0);
+part_type_speed(global.teleport_in_particle ,0,0,0,0);         
+part_type_direction(global.teleport_in_particle ,0,0,0,1);            
+part_type_orientation(global.teleport_in_particle ,0,0,0,0,1);      
+part_type_blend(global.teleport_in_particle ,true);                      
+part_type_life(global.teleport_in_particle ,10,30);     
 
 // Create background sprites
 
