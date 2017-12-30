@@ -490,7 +490,7 @@ for (var i = 0; i< 5; i++;){
 
 if !instance_exists(obj_player)
 	instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-obj_player.movement_disabled = false
+obj_player.controls_disabled = false
 obj_player.phy_rotation = -90
 	
    

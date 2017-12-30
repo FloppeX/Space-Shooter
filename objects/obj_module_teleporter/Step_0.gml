@@ -23,7 +23,7 @@ if activated and use_timer <= 0 and teleporting == false{
 	temp_angular_velocity = owner.phy_angular_velocity
 	temp_speed_x = owner.phy_speed_x
 	temp_speed_y = owner.phy_speed_y
-	owner.movement_disabled = true
+	owner.controls_disabled = true
 	owner.visible = false
 	owner.phy_active = false
 	owner.phy_angular_velocity = 0
@@ -64,7 +64,7 @@ if teleporting{
 		teleporting = false
 		duration_timer = teleport_duration
 		use_timer = use_timer_interval;
-		owner.movement_disabled = false
+		owner.controls_disabled = false
 		owner.visible = true
 		target_point_x = 0
 		target_point_y = 0

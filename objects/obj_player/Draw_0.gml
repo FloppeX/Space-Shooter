@@ -13,19 +13,7 @@ if phy_position_y > 0.5 * room_height
 if phy_position_y < 0.5 * room_height
 	draw_sprite_ext(sprite_index,-1,phy_position_x,room_height - global.wrap_margin_player,1,1,-phy_rotation,c_white,alpha)
 // Find module positions and then draw them
-/*
-module_1.x = phy_position_x + lengthdir_x(36,-phy_rotation+45);
-module_1.y = phy_position_y + lengthdir_y(36,-phy_rotation+45);
-module_1.obj_rotation = -phy_rotation;
 
-module_2.x = phy_position_x + lengthdir_x(36,-phy_rotation-45);
-module_2.y = phy_position_y + lengthdir_y(36,-phy_rotation-45);
-module_2.obj_rotation = -phy_rotation;
-
-module_3.phy_position_x = phy_com_x
-module_3.phy_position_y = phy_com_y
-module_3.phy_rotation= phy_rotation;
-*/
 ship_modules[0].phy_position_x = phy_position_x + lengthdir_x(35,-phy_rotation+45);
 ship_modules[0].phy_position_y = phy_position_y + lengthdir_y(35,-phy_rotation+45);
 ship_modules[1].phy_position_x = phy_position_x + lengthdir_x(25,-phy_rotation);
@@ -49,7 +37,7 @@ for(var i = 0; i < 7; i+=1;){
 	else ship_modules[i].activated = false
 	
 	// disable visibility of modules and draw them directly, so they dont wiggle around
-	if movement_disabled		
+	if controls_disabled		
 		with (ship_modules[i])
 			visible = true
 	else with (ship_modules[i])

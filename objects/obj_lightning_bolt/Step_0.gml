@@ -18,6 +18,8 @@ new_dir += random(spread)-0.5*spread;
 //new_dir = phy_rotation
 
 // Particle effect
+
+part_type_sprite(global.lightning_particle,lightning_sprite,false,false,false);
 part_type_color2(global.lightning_particle,color,c_black);
 part_type_orientation(global.lightning_particle,-phy_rotation,-phy_rotation,0,0,0);
 part_particles_create(global.part_system_below, phy_position_x, phy_position_y,global.lightning_particle, 3);

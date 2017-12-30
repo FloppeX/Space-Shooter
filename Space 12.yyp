@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "03f9f2f8-a5e6-48a6-a1f0-e4ec94b9c29d",
+            "Value": {
+                "id": "82c3b39f-4ece-4a79-a743-cd5724867260",
+                "resourcePath": "sprites\\spr_lightning_3\\spr_lightning_3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "044fcc05-c85e-49dd-a6d4-f4ec7a0e59b8",
             "Value": {
                 "id": "76c5d8af-b465-460d-80ac-d6e67d335818",
@@ -823,6 +831,14 @@
             }
         },
         {
+            "Key": "92bb4a25-f248-4ec4-a4e8-bb5076a9ff26",
+            "Value": {
+                "id": "43894fa4-c3ef-4210-888c-fa77f611eef9",
+                "resourcePath": "objects\\obj_electrified\\obj_electrified.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9483c9e9-46c3-4768-b40c-ef2c69cc8a52",
             "Value": {
                 "id": "dbd9f6a0-e934-45f6-b80d-d767890e7ea3",
@@ -1004,6 +1020,14 @@
                 "id": "bcc99994-5de7-49e7-b7cc-45bbef8c37f2",
                 "resourcePath": "scripts\\scr_wrap_closest_y_non_object\\scr_wrap_closest_y_non_object.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c2ad6773-80e3-41ba-8313-a4f1508c6a32",
+            "Value": {
+                "id": "28d021c2-106a-438d-8fe7-4c40f7b8a19f",
+                "resourcePath": "sprites\\spr_lightning_1\\spr_lightning_1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1267,14 +1291,6 @@
             "Value": {
                 "id": "9e25aed3-8eff-46bd-a248-505577ef7897",
                 "resourcePath": "sprites\\spr_ship_shield\\spr_ship_shield.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "f34bdd26-bede-4ec0-9baa-d79a5598c4ee",
-            "Value": {
-                "id": "8e53d358-b24a-4fea-8e4b-d83d274b099d",
-                "resourcePath": "sprites\\spr_lightning\\spr_lightning.yy",
                 "resourceType": "GMSprite"
             }
         },

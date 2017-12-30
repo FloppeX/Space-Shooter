@@ -28,7 +28,7 @@ physics_apply_local_force(0,0, thrust,0)
 	
 // Targeting & turning
 
-target = scr_rocket_find_target_in_arc(obj_enemy_ship,-phy_rotation,targeting_arc)
+target = scr_rocket_find_target_in_arc(obj_enemy_ship,-phy_rotation,targeting_arc,seek_range)
 if target != noone
 	target_dir = scr_wrap_intercept_course(id,target,phy_speed)
 else target_dir = -phy_rotation

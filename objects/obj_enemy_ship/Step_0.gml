@@ -25,7 +25,7 @@ if ai_mode == 1 {
 	ai_timer -= 1;
 	min_standoff_distance = 500
 	max_standoff_distance = 800
-	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180)
+	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180,seek_range)
 	if target != noone{
 		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
 		if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
@@ -53,7 +53,7 @@ if ai_mode == 1 {
 	
 if ai_mode == 2 {
 
-	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180)
+	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180,seek_range)
 	if target != noone{
 		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.muzzle_velocity)
 		target_point_x = scr_wrap_closest_x(target);
@@ -101,18 +101,21 @@ if closest_obstacle != noone{
 	target_speed = 1 * max_speed
 	}
 	
-// Turn
+// Controls
 
-angle_diff = angle_difference(-phy_rotation,target_dir);
-turn_value = clamp(angle_diff/20, -1, 1)
-phy_angular_velocity = turn_value * rotation_force;	
+if controls_disabled == false{
+	// Turn
+	angle_diff = angle_difference(-phy_rotation,target_dir);
+	turn_value = clamp(angle_diff/20, -1, 1)
+	phy_angular_velocity = turn_value * rotation_force;	
 
-// Apply thrust
+	// Apply thrust
 
-if phy_speed < target_speed 
-	thrust = max_thrust
-else thrust = 0
-physics_apply_local_force(0,0, thrust,0)
+	if phy_speed < target_speed 
+		thrust = max_thrust
+	else thrust = 0
+	physics_apply_local_force(0,0, thrust,0)
+	}
 
 // Counter drift
 
@@ -120,16 +123,17 @@ scr_counter_lateral_drift();
 
 // Smoke effect
 
-offset_distance = 25
+if controls_disabled == false{
+	offset_distance = 25
 
-part_type_speed(global.part_rocket_smoke,1,1,0,0);  
-temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
-part_type_direction(global.part_rocket_smoke,temp_dir+180,temp_dir+180,0,0);
-part_type_orientation(global.part_rocket_smoke,temp_dir,temp_dir,0,0,0)
-part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-
+	part_type_speed(global.part_rocket_smoke,1,1,0,0);  
+	temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
+	part_type_direction(global.part_rocket_smoke,temp_dir+180,temp_dir+180,0,0);
+	part_type_orientation(global.part_rocket_smoke,temp_dir,temp_dir,0,0,0)
+	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
+	part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
+	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
+	}
 // Gun
 
 gun.phy_position_x = phy_position_x 
@@ -137,7 +141,7 @@ gun.phy_position_y = phy_position_y
 gun.phy_rotation = phy_rotation;
 gun.phy_speed_x = phy_speed_x
 gun.phy_speed_y = phy_speed_y
-if shoot_1
+if shoot_1 and controls_disabled == false
 	gun.activated = true
 else
 	gun.activated = false

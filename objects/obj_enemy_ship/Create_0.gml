@@ -6,6 +6,8 @@ mirror_y = 0
 obj_rotation = 0
 obj_health = 2
 
+controls_disabled = false
+
 target_speed = 0
 max_speed = 6
 thrust = 0
@@ -24,6 +26,7 @@ invisible = false
 
 target = noone;
 targeting_arc = 90;
+seek_range = 600;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0
@@ -32,11 +35,6 @@ avoiding_obstacle = false;
 target_point_x = irandom(global.wrap_border_left + global.play_area_width)
 target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 
-	/*
-part_engine_flame = part_type_create();
-part_engine_flame = global.part_rocket_smoke
-part_type_speed(part_engine_flame,1,1,0,0.3);      
-*/
 gun = instance_create_depth(x,y,0,obj_module_gun);
 gun.owner = self;
 gun.bullet_type = obj_bullet_enemy

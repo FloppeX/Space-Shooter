@@ -1,9 +1,10 @@
 target_type = argument0
 angle = argument1
 angle_arc = argument2
+var range = argument3
 var target = noone
-var temp_distance = 100000;
-var closest_distance = 100000;
+var temp_distance = range;
+var closest_distance = range;
 var temp_direction = angle;
 var closest_direction = angle;
 var temp_x,temp_y,i;

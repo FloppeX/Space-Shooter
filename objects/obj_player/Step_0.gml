@@ -1,6 +1,6 @@
 // Gamepad controls
 
-if movement_disabled == false{
+if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
 
 	rotation_value = gamepad_axis_value(0,gp_axislh);
@@ -24,7 +24,14 @@ if movement_disabled == false{
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
 	else gamepad_button[4] = false
+
+	if gamepad_button_check(0,gp_face4)
+		gamepad_button[4] = true
+	else gamepad_button[4] = false
 	
+	if gamepad_button_check(0,gp_face4)
+		gamepad_button[4] = true
+	else gamepad_button[4] = false
 }
 	
 if gamepad_button_check(0,gp_padu)
@@ -49,6 +56,7 @@ if keyboard_check(vk_left){
 
 // Turn
 
+phy_rotation = (phy_rotation + 360) mod 360
 phy_angular_velocity = rotation_value * rotation_force;
 	
 // Moving

@@ -1,7 +1,8 @@
-target_type = argument0
+var target_type = argument0
+var range = argument1
 var target = noone
-var temp_distance = 100000;
-var closest_distance = 100000;
+var temp_distance = range;
+var closest_distance = range;
 var temp_direction = 0;
 var closest_direction = 0;
 var temp_x,temp_y,i;

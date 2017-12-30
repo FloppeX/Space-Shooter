@@ -178,7 +178,7 @@ with(obj_player){
 	phy_position_x = 0.5 * room_width
 	phy_position_y = 0.5 * room_height
 	phy_rotation = -90
-	movement_disabled = true
+	controls_disabled = true
 	}
 shop = instance_create_depth(0,0,12,obj_shop)
 shop.phy_position_x = 0.5 * room_width + 80
