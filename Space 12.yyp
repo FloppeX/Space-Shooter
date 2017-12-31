@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "284a67a9-dfd4-4116-8557-909b43c10e13",
+            "Value": {
+                "id": "c6f0e866-cdbf-404a-97c7-10cabf885059",
+                "resourcePath": "sprites\\spr_module_gun_new\\spr_module_gun_new.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "29e35262-19f3-4cd3-9b2e-3308a9d6c7d4",
             "Value": {
                 "id": "1af88bf2-7cec-43f3-bd49-e1240f7e3057",
@@ -348,6 +356,14 @@
                 "id": "808884c6-ec97-46db-b511-867b176349a5",
                 "resourcePath": "scripts\\scr_wrap_collision_line\\scr_wrap_collision_line.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "367cd097-f3c4-41cf-a641-fabfafd9a08d",
+            "Value": {
+                "id": "aa07f430-ebc9-4ebb-a75f-ed7a4f966afb",
+                "resourcePath": "sprites\\spr_explosion\\spr_explosion.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -935,6 +951,14 @@
             }
         },
         {
+            "Key": "a37894c3-da56-4b28-82b4-754dfb286027",
+            "Value": {
+                "id": "f823f4a3-8148-47df-af6c-c7f94667502a",
+                "resourcePath": "objects\\obj_mouse_cursor\\obj_mouse_cursor.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a7297cc6-3f27-4665-a755-6c3245efd667",
             "Value": {
                 "id": "c8c4ca32-8bb5-4097-962e-0269f46d54ae",
@@ -963,6 +987,14 @@
             "Value": {
                 "id": "c8fe17cc-169b-47e0-9115-fc019bc5b8e1",
                 "resourcePath": "objects\\obj_module_teleporter\\obj_module_teleporter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b19166ed-cad7-4b01-867b-be094cf8a4b0",
+            "Value": {
+                "id": "88b2a6ea-847e-4793-9d7b-2529d06426d9",
+                "resourcePath": "objects\\obj_explosion\\obj_explosion.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1274,7 +1306,7 @@
             "Key": "edad9078-b638-49b0-8521-5d6b1cd2e9c5",
             "Value": {
                 "id": "78277724-b323-4dd5-8aca-4a479928183d",
-                "resourcePath": "objects\\obj_explosion\\obj_explosion.yy",
+                "resourcePath": "objects\\obj_explosion_effect\\obj_explosion_effect.yy",
                 "resourceType": "GMObject"
             }
         },

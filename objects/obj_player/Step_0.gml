@@ -99,6 +99,11 @@ if obj_health <= 0{
 
 // Set wrap boundaries for other objects
 
+global.wrap_border_left = phy_position_x - 0.5 * global.play_area_width;
+global.wrap_border_right = phy_position_x + 0.5 * global.play_area_width;
+global.wrap_border_top = phy_position_y - 0.5 * global.play_area_height;
+global.wrap_border_bottom = phy_position_y + 0.5 * global.play_area_height;
+/*
 if phy_position_x < global.wrap_margin_player + global.wrap_margin_objects{
 	global.wrap_border_left = phy_position_x - global.wrap_margin_objects;
 	global.wrap_border_right = global.wrap_border_left + global.play_area_width ;
@@ -116,7 +121,7 @@ if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margi
 	global.wrap_border_bottom = phy_position_y + global.wrap_margin_objects;
 	global.wrap_border_top = global.wrap_border_bottom  - global.play_area_height;
 	}
-
+*/
 // Find mirror positions
 
 scr_find_mirror_positions();

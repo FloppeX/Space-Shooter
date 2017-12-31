@@ -2,7 +2,7 @@ event_inherited();
 
 activation_button = 3
 activated = false
-
+barrel_length = 10
 shoot = false
 muzzle_velocity = 6;
 bullet_interval = 15;

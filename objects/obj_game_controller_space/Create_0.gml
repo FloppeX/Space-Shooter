@@ -493,6 +493,7 @@ if !instance_exists(obj_player)
 obj_player.controls_disabled = false
 obj_player.phy_rotation = -90
 	
+instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
    
 // Create some enemies
 

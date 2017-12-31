@@ -3,8 +3,8 @@
 if global.zoom > 14000
 	global.zoom = 14000
 	
-if global.zoom < 100
-	global.zoom = 100
+if global.zoom < 120
+	global.zoom = 120
 	
 aspect_ratio = display_get_width()/display_get_height(); 
 view_set_wport(view_current,1920)
@@ -15,10 +15,6 @@ if temp_zoom > global.zoom
 if temp_zoom < global.zoom
 	temp_zoom += 0.1 * abs(temp_zoom-global.zoom)
 camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
-
-// Set wrap border
-
-//global.wrap_margin_player = max(0.5 * camera_get_view_width(view_camera[0]),1000)
 
 // Center camera
 cam = camera_get_active()

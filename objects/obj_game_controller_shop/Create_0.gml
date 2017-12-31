@@ -18,7 +18,6 @@ depth = 20
 // Play area settings
 
 global.wrap_margin_player = 1000
-global.wrap_margin_objects = 1000
 
 global.viewport_width = view_get_wport(0);
 global.viewport_height = view_get_hport(0);
