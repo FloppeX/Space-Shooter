@@ -8,5 +8,5 @@ bullet_timer -= 1;
 if activated and bullet_timer <= 0{
 		scr_shoot();
 		image_index = 1;
-		image_speed = 2;
+		image_speed = 1;
 		}

@@ -250,7 +250,7 @@
             "Key": "284a67a9-dfd4-4116-8557-909b43c10e13",
             "Value": {
                 "id": "c6f0e866-cdbf-404a-97c7-10cabf885059",
-                "resourcePath": "sprites\\spr_module_gun\\spr_module_gun.yy",
+                "resourcePath": "sprites\\spr_module_gun_OLD_2\\spr_module_gun_OLD_2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -794,7 +794,7 @@
             "Key": "7b82b0f7-c5bb-42fe-85ed-2f73f6023c17",
             "Value": {
                 "id": "80ae72a4-0133-4421-bdea-29911cde842d",
-                "resourcePath": "sprites\\spr_module_lightning_gun\\spr_module_lightning_gun.yy",
+                "resourcePath": "sprites\\spr_module_lightning_gun_OLD2\\spr_module_lightning_gun_OLD2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -859,6 +859,14 @@
             "Value": {
                 "id": "9cee4ffc-e0f8-4328-894e-ad43482119d1",
                 "resourcePath": "sprites\\spr_bullet_glow\\spr_bullet_glow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8d4721fc-e3ee-40b9-acc0-a6be581f7d34",
+            "Value": {
+                "id": "410325b2-931b-4d9a-b6cd-611a0e7d36a9",
+                "resourcePath": "sprites\\spr_module_gun\\spr_module_gun.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1195,6 +1203,14 @@
             "Value": {
                 "id": "c5141b7f-dd71-4a5e-8e1c-82c84c90c38a",
                 "resourcePath": "sprites\\spr_asteroid_small_4\\spr_asteroid_small_4.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d0668e9a-40ef-4357-aa7a-abd3128f26c2",
+            "Value": {
+                "id": "96738785-9653-4f88-bf5c-f37e736c9f3d",
+                "resourcePath": "sprites\\spr_module_lightning_gun\\spr_module_lightning_gun.yy",
                 "resourceType": "GMSprite"
             }
         },
