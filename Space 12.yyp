@@ -607,6 +607,14 @@
             }
         },
         {
+            "Key": "648799b2-d0b4-4bc6-a3b6-cd572e6c9f23",
+            "Value": {
+                "id": "5b30e1b1-7e9f-4783-a8f1-df5fed13ac8f",
+                "resourcePath": "scripts\\scr_draw_vision_cone\\scr_draw_vision_cone.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "663d0963-9968-42eb-b682-eb52b42c12e6",
             "Value": {
                 "id": "d3444511-673a-4d42-bd17-e14531c791d4",
@@ -1433,7 +1441,8 @@
         "1df318d2-c53e-4eea-a577-0655828a4564",
         "bfbe7ef8-8d33-49d3-abc8-d671de8e2b04",
         "7eeb337a-e64b-4727-9478-d5c504c8d574",
-        "c77cb2c5-edd2-401d-9df3-5fe7650005d1"
+        "c77cb2c5-edd2-401d-9df3-5fe7650005d1",
+        "648799b2-d0b4-4bc6-a3b6-cd572e6c9f23"
     ],
     "tutorial": ""
 }

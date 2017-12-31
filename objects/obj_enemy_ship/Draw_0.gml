@@ -1,6 +1,6 @@
-
-
+// scr_draw_vision_cone();
 draw_self();
+
 
 /*
 if global.view_mode == 2{

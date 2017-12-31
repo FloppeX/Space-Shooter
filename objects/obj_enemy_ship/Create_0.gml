@@ -25,8 +25,8 @@ direction_randomizer = 0
 invisible = false
 
 target = noone;
-targeting_arc = 90;
-seek_range = 600;
+targeting_arc = 225;
+seek_range = 1800;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0

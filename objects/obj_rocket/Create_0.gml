@@ -22,8 +22,8 @@ min_damage = 4;
 max_damage = 8;
 
 target = noone;
-targeting_arc = 90;
-seek_range = 600;
+targeting_arc = 120;
+seek_range = 1200;
 timer = range;
 
 /*

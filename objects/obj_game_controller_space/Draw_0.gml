@@ -33,7 +33,8 @@ angle_diff = angle_difference(cam_rotation, target_rotation)
 cam_rotation = (view_rotation_value * sign(angle_diff) * target_rotation) mod 360
 	
 camera_set_view_angle(cam, cam_rotation)
-global.zoom = 1000 - 800 * view_rotation_value
+if view_rotation_value > 0
+	global.zoom = 1000 - 800 * view_rotation_value
 
 // Drav lines if view mode 2 
 
