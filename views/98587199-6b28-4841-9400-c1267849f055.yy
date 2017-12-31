@@ -4,7 +4,7 @@
     "mvc": "1.1",
     "name": "98587199-6b28-4841-9400-c1267849f055",
     "children": [
-        "2b70bfcc-0788-4bab-b31b-62eb0da52e58",
+        "284a67a9-dfd4-4116-8557-909b43c10e13",
         "b80cd7e0-9e99-4039-929e-ac2c068043cd",
         "9e4e5c3b-7b6e-4d3a-bd60-547b9e174027",
         "00e2c74a-f3eb-44a6-bcdd-5c04d49db020",
@@ -14,8 +14,7 @@
         "f99b0f72-09e1-4a87-9388-22169c9d1640",
         "d9f03159-80b8-4991-8fd4-a225b2f56773",
         "205e6f12-8007-4da2-be64-66cc1b434a09",
-        "c705ee8b-d014-45b9-aa0b-57d459b2171e",
-        "284a67a9-dfd4-4116-8557-909b43c10e13"
+        "c705ee8b-d014-45b9-aa0b-57d459b2171e"
     ],
     "filterType": "GMSprite",
     "folderName": "Module sprites",

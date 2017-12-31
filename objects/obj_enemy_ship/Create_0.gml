@@ -38,5 +38,5 @@ target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 gun = instance_create_depth(x,y,0,obj_module_gun);
 gun.owner = self;
 gun.bullet_type = obj_bullet_enemy
-gun.muzzle_velocity = 12;
+gun.muzzle_velocity = 7;
 gun.bullet_interval = 18;

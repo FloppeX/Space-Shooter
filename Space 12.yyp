@@ -138,7 +138,7 @@
             "Key": "127304b6-b54a-4783-b54f-47ae1c785be4",
             "Value": {
                 "id": "054ef7ba-1391-4726-a356-323a8c56961f",
-                "resourcePath": "sprites\\spr_map_marker_enemy_ship\\spr_map_marker_enemy_ship.yy",
+                "resourcePath": "sprites\\spr_map_marker_enemy_ship_OLD\\spr_map_marker_enemy_ship_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -162,7 +162,7 @@
             "Key": "16bd7919-85c5-4301-b3e5-a733e2c6a049",
             "Value": {
                 "id": "bd2e1414-8fa8-4ee3-b669-b30148f6e856",
-                "resourcePath": "sprites\\spr_map_marker_asteroid\\spr_map_marker_asteroid.yy",
+                "resourcePath": "sprites\\spr_map_marker_asteroid_OLD\\spr_map_marker_asteroid_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -234,7 +234,15 @@
             "Key": "25550561-7ba8-4a83-8ff8-be4e0df5c238",
             "Value": {
                 "id": "42393363-daf7-472d-bc85-e45b63dfc2a6",
-                "resourcePath": "sprites\\spr_map_2\\spr_map_2.yy",
+                "resourcePath": "sprites\\spr_map_2_OLD\\spr_map_2_OLD.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "274951bc-8dda-4e96-85d7-c2d0a605751a",
+            "Value": {
+                "id": "10f85ac5-e658-41ae-8f69-53413d9c82a7",
+                "resourcePath": "sprites\\spr_map_marker_player\\spr_map_marker_player.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -242,7 +250,7 @@
             "Key": "284a67a9-dfd4-4116-8557-909b43c10e13",
             "Value": {
                 "id": "c6f0e866-cdbf-404a-97c7-10cabf885059",
-                "resourcePath": "sprites\\spr_module_gun_new\\spr_module_gun_new.yy",
+                "resourcePath": "sprites\\spr_module_gun\\spr_module_gun.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -274,7 +282,7 @@
             "Key": "2b70bfcc-0788-4bab-b31b-62eb0da52e58",
             "Value": {
                 "id": "8fb0ca38-2d8b-4a4e-9ed9-75c5684b1213",
-                "resourcePath": "sprites\\spr_module_gun\\spr_module_gun.yy",
+                "resourcePath": "sprites\\spr_module_gun_OLD\\spr_module_gun_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -434,7 +442,7 @@
             "Key": "4649179e-f610-4cae-8eac-d5b3c899a9e8",
             "Value": {
                 "id": "bf8593b4-84f4-48f7-b2fb-9af4078a5887",
-                "resourcePath": "sprites\\spr_map_marker_rocket\\spr_map_marker_rocket.yy",
+                "resourcePath": "sprites\\spr_map_marker_rocket_OLD\\spr_map_marker_rocket_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -663,6 +671,14 @@
             }
         },
         {
+            "Key": "6afd8bb7-d6e1-4a6d-a78c-f724b2165355",
+            "Value": {
+                "id": "6cecaa2d-76ab-4fc9-b087-a6ca7a95ccb5",
+                "resourcePath": "sprites\\spr_radar\\spr_radar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6bcd901f-2b96-4280-800a-9842fcbdf734",
             "Value": {
                 "id": "a0b0fede-e1b3-4a04-aaa6-3a7021ff73ff",
@@ -708,6 +724,14 @@
                 "id": "79bd8cbd-e489-4df6-8a91-f0a82e8687c8",
                 "resourcePath": "views\\749bcb2b-a432-4890-8c1d-1ca9049024d1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "74e37c30-6324-4fe5-84e4-14e2d8d6a306",
+            "Value": {
+                "id": "54060bc6-867c-46d8-85fd-949874cd9ffe",
+                "resourcePath": "sprites\\spr_map_marker_rocket\\spr_map_marker_rocket.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -803,6 +827,14 @@
             "Value": {
                 "id": "953f0cd6-c6d9-42d6-b1e9-35d8cb24d4ba",
                 "resourcePath": "sprites\\spr_module_gravity_shield\\spr_module_gravity_shield.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "88b46a5c-f3a6-4633-8509-dfe7dbd4daf2",
+            "Value": {
+                "id": "cd3542e8-23d7-4a3d-9bbf-8759df9172da",
+                "resourcePath": "sprites\\spr_map_marker_asteroid\\spr_map_marker_asteroid.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -938,7 +970,7 @@
             "Key": "a2b3679a-7e26-467e-95d9-63326c7c5ed6",
             "Value": {
                 "id": "00afaaed-0598-46b4-83e0-9b5889728ae7",
-                "resourcePath": "sprites\\spr_map_marker_player\\spr_map_marker_player.yy",
+                "resourcePath": "sprites\\spr_map_marker_player_OLD\\spr_map_marker_player_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -996,6 +1028,14 @@
                 "id": "88b2a6ea-847e-4793-9d7b-2529d06426d9",
                 "resourcePath": "objects\\obj_explosion\\obj_explosion.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b2a3c825-89a4-4715-9dcb-84b3e7c3ba19",
+            "Value": {
+                "id": "27def59b-092d-463b-8fd6-86e7568966a5",
+                "resourcePath": "sprites\\spr_map_marker_enemy_ship\\spr_map_marker_enemy_ship.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

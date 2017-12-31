@@ -17,7 +17,7 @@ map_center_y = map_edge_top+0.5*map_height
 
 map_range = 0.5 * global.play_area_width;
 
-draw_sprite(spr_map_2,-1, map_edge_left+ 0.5*map_width,map_edge_top+0.5*map_height)
+draw_sprite(spr_radar,-1, map_edge_left+ 0.5*map_width,map_edge_top+0.5*map_height)
 player_x = phy_position_x-global.wrap_border_left
 player_y = phy_position_y-global.wrap_border_top
 
