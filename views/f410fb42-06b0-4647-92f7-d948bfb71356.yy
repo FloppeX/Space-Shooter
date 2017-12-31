@@ -13,7 +13,12 @@
         "f3363de5-3fcb-474f-9efd-5a31d4ab5bd2",
         "338a5999-e90e-4594-a09f-357f02964661",
         "4f841436-1843-4d40-af67-b9ba2da5f89d",
-        "2b70bfcc-0788-4bab-b31b-62eb0da52e58"
+        "2b70bfcc-0788-4bab-b31b-62eb0da52e58",
+        "16bd7919-85c5-4301-b3e5-a733e2c6a049",
+        "a2b3679a-7e26-467e-95d9-63326c7c5ed6",
+        "25550561-7ba8-4a83-8ff8-be4e0df5c238",
+        "4649179e-f610-4cae-8eac-d5b3c899a9e8",
+        "127304b6-b54a-4783-b54f-47ae1c785be4"
     ],
     "filterType": "GMSprite",
     "folderName": "Old sprites",

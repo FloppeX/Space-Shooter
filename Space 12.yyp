@@ -791,6 +791,14 @@
             }
         },
         {
+            "Key": "7b82b0f7-c5bb-42fe-85ed-2f73f6023c17",
+            "Value": {
+                "id": "80ae72a4-0133-4421-bdea-29911cde842d",
+                "resourcePath": "sprites\\spr_module_lightning_gun\\spr_module_lightning_gun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7eeb337a-e64b-4727-9478-d5c504c8d574",
             "Value": {
                 "id": "dcf1bc13-5e70-4638-b294-c7401575bd04",
@@ -1458,7 +1466,7 @@
             "Key": "f99b0f72-09e1-4a87-9388-22169c9d1640",
             "Value": {
                 "id": "efb887ad-e0b5-4338-8851-acba778ff471",
-                "resourcePath": "sprites\\spr_module_lightning_gun\\spr_module_lightning_gun.yy",
+                "resourcePath": "sprites\\spr_module_lightning_gun_OLD\\spr_module_lightning_gun_OLD.yy",
                 "resourceType": "GMSprite"
             }
         },
