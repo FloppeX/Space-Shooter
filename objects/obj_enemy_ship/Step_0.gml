@@ -1,9 +1,9 @@
 
 //Health
 if obj_health <= 0{
-	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
-	//part_type_destroy(part_engine_flame);
+	phy_active = false
 	scr_explode_object();
+	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	with(gun)
 		instance_destroy();
 	instance_destroy();
