@@ -1,10 +1,13 @@
 // TEST
 
+draw_text(50,100,global.aa_level)
+
+/*
 var val = camera_get_view_angle(view_camera[0])
 
 draw_text(50,100,val)
 draw_text(100,100,(phy_rotation+90)mod 360)
-
+*/
 //display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 display_set_gui_size(1024, 640);
 map_edge_right = 1004

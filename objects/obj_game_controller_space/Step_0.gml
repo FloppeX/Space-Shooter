@@ -8,6 +8,25 @@ if gamepad_button_check(0,gp_select)
 if keyboard_check(vk_escape)
 	game_end();
 	
+if gamepad_button_check(0,gp_padu)
+	global.zoom = global.zoom - 100
+
+if gamepad_button_check(0,gp_padd)
+	global.zoom = global.zoom + 100
+
+if gamepad_button_check_pressed(0,gp_padl){
+	if global.aa_level  <= 3
+		global.aa_level  += 0.5
+	else global.aa_level  = 0
+	draw_set_swf_aa_level(global.aa_level );
+	}
+
+if gamepad_button_check_pressed(0,gp_padr)
+	if global.view_mode == 2
+		global.view_mode = 1
+	else global.view_mode = 2
+
+	
 if gamepad_button_check(0,gp_start){
 	physics_pause_enable(true);
    instance_deactivate_all(true);

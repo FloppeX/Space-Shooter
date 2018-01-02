@@ -19,10 +19,10 @@ camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 // Center camera
 cam = camera_get_active()
 
-camera_set_view_pos(cam,global.obj_to_center_view_on.phy_com_x -0.5*camera_get_view_width(cam),global.obj_to_center_view_on.phy_com_y-0.5*camera_get_view_height(cam))
+camera_set_view_pos(cam,obj_player.phy_com_x -0.5*camera_get_view_width(cam),obj_player.phy_com_y-0.5*camera_get_view_height(cam))
 view_rotation_value = gamepad_button_value(0,gp_shoulderlb)
 if view_rotation_value > 0 
-	target_rotation = ((global.obj_to_center_view_on.phy_rotation+90)mod 360)
+	target_rotation = ((obj_player.phy_rotation+90)mod 360)
 else target_rotation = 0
 cam_rotation = (camera_get_view_angle(view_camera[0]) +360) mod 360
 angle_diff = angle_difference(cam_rotation, target_rotation)

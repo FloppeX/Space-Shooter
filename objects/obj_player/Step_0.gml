@@ -33,18 +33,6 @@ if controls_disabled == false{
 		gamepad_button[4] = true
 	else gamepad_button[4] = false
 }
-	
-if gamepad_button_check(0,gp_padu)
-	global.zoom = global.zoom - 100
-
-if gamepad_button_check(0,gp_padd)
-	global.zoom = global.zoom + 100
-
-if gamepad_button_check_pressed(0,gp_padl)
-	global.view_mode = 1
-
-if gamepad_button_check_pressed(0,gp_padr)
-	global.view_mode = 2
 
 if keyboard_check(vk_right){
 		room_goto(rm_shop)

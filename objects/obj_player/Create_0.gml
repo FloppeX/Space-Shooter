@@ -42,7 +42,7 @@ alpha = 1
 
 // Set view object
 
-global.obj_to_center_view_on = id // View will center on player
+//global.obj_to_center_view_on = id // View will center on player
 
 // Modules
 

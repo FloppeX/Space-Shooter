@@ -11,7 +11,14 @@ global.view_mode = 1
 global.zoom = 600
 temp_zoom = 400
 
-global.obj_to_center_view_on = noone; // This is the object that the view centers on. Will be set to player
+
+// Graphics settings
+
+draw_enable_swf_aa(true);
+global.aa_level = 0
+draw_set_swf_aa_level(global.aa_level);
+
+//global.obj_to_center_view_on = noone; // This is the object that the view centers on. Will be set to player
 
 // Depth
 
