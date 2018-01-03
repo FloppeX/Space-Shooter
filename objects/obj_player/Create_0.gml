@@ -29,6 +29,7 @@ obj_health = 10000000;
 thrust = 800;
 rotation_force = 100;
 drift_resistance = 800
+target_rotation = 0
 
 max_speed = 6;
 
