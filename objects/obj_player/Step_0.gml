@@ -4,8 +4,10 @@ if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
 
 	rotation_value = gamepad_axis_value(0,gp_axislh);
+	left_stick_value = sqrt(power(gamepad_axis_value(0,gp_axislh),2) + power(gamepad_axis_value(0,gp_axislv),2))
 	if abs(gamepad_axis_value(0,gp_axislh)) > 0.2 or abs(gamepad_axis_value(0,gp_axislv)) > 0.2
 		target_rotation = point_direction(0,0, gamepad_axis_value(0,gp_axislh), gamepad_axis_value(0,gp_axislv))
+	
 	
 	gamepad_set_axis_deadzone(0, 0);
 
@@ -51,8 +53,10 @@ phy_rotation = (phy_rotation + 360) mod 360
 if control_mode == 1
 	phy_angular_velocity = rotation_value * rotation_force;
 if control_mode == 2{
+	
 	rotation_value = angle_difference(-phy_rotation,target_rotation)/10
 	rotation_value = clamp(rotation_value,-1,1)
+	rotation_value = rotation_value * left_stick_value
 	phy_angular_velocity = rotation_value * rotation_force
 	}
 	
