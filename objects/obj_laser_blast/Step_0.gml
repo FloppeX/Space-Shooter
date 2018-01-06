@@ -20,7 +20,7 @@ if victim != noone{
 		temp_pos_x = phy_position_x+lengthdir_x(0.5 * temp_distance,-phy_rotation)
 		temp_pos_y = phy_position_y+lengthdir_y(0.5 * temp_distance,-phy_rotation)
 		temp_scale_x = range/10
-		draw_sprite_ext(spr_laser_glow,-1,phy_position_x+lengthdir_x(0.5 * temp_distance,-phy_rotation),phy_position_y+lengthdir_y(0.5 * temp_distance,-phy_rotation),range/10,1,-phy_rotation,color,1)
+		//draw_sprite_ext(spr_laser_glow,-1,phy_position_x+lengthdir_x(0.5 * temp_distance,-phy_rotation),phy_position_y+lengthdir_y(0.5 * temp_distance,-phy_rotation),range/10,1,-phy_rotation,color,1)
 		}
 	else{
 		temp_length = 1
@@ -30,12 +30,13 @@ if victim != noone{
 		temp_pos_x = phy_position_x+lengthdir_x(0.5 * (temp_distance-temp_length),-phy_rotation)
 		temp_pos_y = phy_position_y+lengthdir_y(0.5 * (temp_distance-temp_length),-phy_rotation)
 		temp_scale_x = (temp_distance-temp_length)/10
-		draw_sprite_ext(spr_laser_glow,-1,phy_position_x+lengthdir_x(0.5 * (temp_distance-temp_length),-phy_rotation),phy_position_y+lengthdir_y(0.5 * (temp_distance-temp_length),-phy_rotation),(temp_distance-temp_length)/10,1,-phy_rotation,color,1)
+		//draw_sprite_ext(spr_laser_glow,-1,phy_position_x+lengthdir_x(0.5 * (temp_distance-temp_length),-phy_rotation),phy_position_y+lengthdir_y(0.5 * (temp_distance-temp_length),-phy_rotation),(temp_distance-temp_length)/10,1,-phy_rotation,color,1)
 		victim.obj_health -= 1
 		}
 
 part_type_scale(global.laser_particle,temp_scale_x,1); 
-part_type_speed(global.laser_particle,0,0,0,0);  
-part_type_orientation(global.laser_particle,-phy_rotation,-phy_rotation,0,0,0);
+part_type_speed(global.laser_particle,phy_speed,phy_speed,0,0);  
+part_type_orientation(global.laser_particle,0,0,0,0.1,1);
+part_type_direction(global.laser_particle,-phy_rotation,-phy_rotation,0,0);
 part_type_color3(global.laser_particle,c_white,color,c_black);
 part_particles_create(global.part_system_below, temp_pos_x, temp_pos_y, global.laser_particle, 2);

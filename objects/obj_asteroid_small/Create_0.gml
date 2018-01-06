@@ -1,6 +1,6 @@
 event_inherited();
 
-obj_health = 2;
+obj_health = 25;
 
 i = irandom(4)
 if i == 0

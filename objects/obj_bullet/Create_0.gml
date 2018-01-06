@@ -5,7 +5,7 @@ obj_rotation = 0;
 range = 640;
 timer = range;
 
-damage = 1;
+damage = 10;
 
 invisible = false
 

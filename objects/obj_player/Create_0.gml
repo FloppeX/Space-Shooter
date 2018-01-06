@@ -24,7 +24,8 @@ phy_rotation = -90
 mirror_x = 0
 mirror_y = 0
 
-obj_health = 10000000;
+obj_health = 100;
+energy = 100
 
 thrust = 800;
 rotation_force = 120;
@@ -49,13 +50,13 @@ alpha = 1
 // Modules
 
 
-ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun);
+ship_modules[0] = instance_create_depth(x,y,-10,obj_module_laser);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
 ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
-ship_modules[2] = instance_create_depth(x,y,-10,obj_module_gun);
+ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
 ship_modules[3] = instance_create_depth(x,y,-10,obj_module_lightning_gun);

@@ -1,5 +1,5 @@
 radius = 70
-damage = 3
+damage = 10
 force = 50
 destruction_timer = 1
 

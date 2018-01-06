@@ -4,7 +4,7 @@ mirror_x = 0
 mirror_y = 0
 
 obj_rotation = 0
-obj_health = 2
+obj_health = 20
 
 controls_disabled = false
 
