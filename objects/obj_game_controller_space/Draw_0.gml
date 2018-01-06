@@ -1,7 +1,7 @@
 // Control zoom
 
-if global.zoom > 14000
-	global.zoom = 14000
+if global.zoom > 0.55 * global.play_area_width
+	global.zoom =  0.55 * global.play_area_width
 	
 if global.zoom < 120
 	global.zoom = 120

@@ -64,7 +64,7 @@ ship_modules[3].activation_button = 3
 ship_modules[4] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[4].offset_angle = 0;
 ship_modules[4].activation_button = 4
-ship_modules[5] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[5] = instance_create_depth(x,y,-10,obj_module_mine_layer);
 ship_modules[5].offset_angle = 90;
 ship_modules[5].activation_button = 2
 ship_modules[6] = instance_create_depth(x,y,-10,obj_module_gun);
@@ -74,6 +74,9 @@ for(var i = 0; i < 7; i+=1;){
 	ship_modules[i].owner= id;
 	}
 
+// Modifiers
+
+//ship_modifiers[0] = 
 
 // Particles
 

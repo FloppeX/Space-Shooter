@@ -19,11 +19,8 @@ if phy_speed > max_speed
 else 
 	phy_linear_damping = 0
 	
-if phy_angular_velocity > max_rotation_speed or phy_angular_velocity < -max_rotation_speed
-	phy_angular_damping = 1
-else 
-	phy_angular_damping = 0
-	
+phy_angular_velocity = clamp(phy_angular_velocity,-max_rotation_speed,max_rotation_speed)
+
 // Find mirror positions
 
 scr_find_mirror_positions();

@@ -5,7 +5,7 @@ phy_speed_x = random (8)-4
 phy_speed_y = random (8)-4
 
 max_speed = 3
-max_rotation_speed = 200
+max_rotation_speed = 50
 
 mirror_x = 0;
 mirror_y = 0;

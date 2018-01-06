@@ -31,7 +31,7 @@ if activated and boom_extended and bullet_timer <= 0{
 	bullet.phy_speed_y = 0
 	bullet.color = bullet_color
 	}
-	
+/*
 if image_index >= 9 {
 	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(barrel_length,-phy_rotation), phy_position_y+ lengthdir_y(barrel_length,-phy_rotation),global.lightning_blob, 8);
 	}

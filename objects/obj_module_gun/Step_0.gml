@@ -1,4 +1,7 @@
 event_inherited();
+/*with(owner)
+	scr_apply_modifiers();
+*/
 
 if image_index == 0
 	image_speed = 0

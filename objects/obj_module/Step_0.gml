@@ -1,3 +1,4 @@
-/*
-obj_rotation = -owner.phy_rotation;
-image_angle = obj_rotation;
+// Modifier variables
+
+bullet_damage_modifier = 0
+bullet_speed_modifier = 0

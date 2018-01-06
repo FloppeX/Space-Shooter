@@ -104,25 +104,7 @@ global.wrap_border_left = phy_position_x - 0.5 * global.play_area_width;
 global.wrap_border_right = phy_position_x + 0.5 * global.play_area_width;
 global.wrap_border_top = phy_position_y - 0.5 * global.play_area_height;
 global.wrap_border_bottom = phy_position_y + 0.5 * global.play_area_height;
-/*
-if phy_position_x < global.wrap_margin_player + global.wrap_margin_objects{
-	global.wrap_border_left = phy_position_x - global.wrap_margin_objects;
-	global.wrap_border_right = global.wrap_border_left + global.play_area_width ;
-	}
-if phy_position_x > room_width -( global.wrap_margin_player + global.wrap_margin_objects){
-	global.wrap_border_right = phy_position_x + global.wrap_margin_objects;
-	global.wrap_border_left = global.wrap_border_right - global.play_area_width ;
 
-	}
-if phy_position_y < global.wrap_margin_player + global.wrap_margin_objects{
-	global.wrap_border_top = phy_position_y - global.wrap_margin_objects;
-	global.wrap_border_bottom = global.wrap_border_top + global.play_area_height;
-	}
-if phy_position_y > room_height - (global.wrap_margin_player + global.wrap_margin_objects){
-	global.wrap_border_bottom = phy_position_y + global.wrap_margin_objects;
-	global.wrap_border_top = global.wrap_border_bottom  - global.play_area_height;
-	}
-*/
 // Find mirror positions
 
 scr_find_mirror_positions();
@@ -131,8 +113,11 @@ scr_find_mirror_positions();
 
 scr_wrap_room_player();
 
-// Particle emitters
+// TEST
 
+//event_perform()
+
+// Particle emitters
 
 /*
 part_emitter_region(global.part_system_below,dust_emitter,x-global.play_area_width,x+ global.play_area_width,y-global.play_area_height,y+global.play_area_height,ps_shape_rectangle,ps_distr_linear);
