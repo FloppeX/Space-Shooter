@@ -8,6 +8,8 @@ offset_angle = 0;
 shoot = false
 activate_shield = false
 
+energy_cost = 10
+
 // Modifier variables
 
 bullet_damage_modifier = 0

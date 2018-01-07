@@ -11,3 +11,4 @@ bullet_color = c_blue
 barrel_length = 40
 boom_extended = false
 boom_retracted = true
+energy_cost = 30

@@ -10,6 +10,9 @@ max_rotation_speed = 50
 mirror_x = 0;
 mirror_y = 0;
 
+damage = 10
+push_force = 30
+
 child_object = obj_asteroid_medium;
 obj_health = 8;
 death_effect_size = 2;

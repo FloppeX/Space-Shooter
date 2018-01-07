@@ -5,6 +5,8 @@ depth = -12
 activation_button = 2
 activated = false
 
+energy_cost = 1.5
+
 activate_shield = false;
 shield_active = false
 shield_max_size = 2.3

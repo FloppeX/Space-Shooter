@@ -6,6 +6,10 @@ mirror_y = 0
 obj_rotation = 0
 obj_health = 20
 
+max_energy = 100;
+energy = max_energy;
+energy_increase = 1;
+
 controls_disabled = false
 
 target_speed = 0

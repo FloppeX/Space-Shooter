@@ -146,6 +146,13 @@ if instance_exists(gun){
 	else
 		gun.activated = false
 	}
+	
+// Energy
+
+if energy < max_energy
+	energy += energy_increase
+if energy > max_energy
+	energy = max_energy
 
 // Find mirror positions
 

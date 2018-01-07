@@ -25,11 +25,12 @@ if !activated and !boom_retracted{
 if !activated and boom_retracted
 	image_speed = 0;	
 	
-if activated and boom_extended and bullet_timer <= 0{
+if activated and boom_extended and bullet_timer <= 0 and owner.energy > energy_cost{
 	scr_shoot();
 	bullet.phy_speed_x = 0
 	bullet.phy_speed_y = 0
 	bullet.color = bullet_color
+	owner.energy -= energy_cost;
 	}
 /*
 if image_index >= 9 {

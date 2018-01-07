@@ -20,6 +20,10 @@ else {
 		
 	}
 */
+if activated and owner.energy < energy_cost
+	activated = false
+if activated 
+	owner.energy -= energy_cost
 	
 if activated{
 	scr_gravity_push(obj_parent_physical,gravity_radius,gravity_force)

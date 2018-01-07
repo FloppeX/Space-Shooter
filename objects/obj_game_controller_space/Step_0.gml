@@ -1,14 +1,14 @@
 // Move view object
 
 if instance_exists(obj_player){
-	view_object.phy_position_x = obj_player.phy_position_x
-	view_object.phy_position_y = obj_player.phy_position_y
+	view_object.phy_position_x = obj_player.phy_com_x
+	view_object.phy_position_y = obj_player.phy_com_y
 	view_object.phy_speed_x = obj_player.phy_speed_x
 	view_object.phy_speed_y = obj_player.phy_speed_y
 	}
 else {
-	view_object.phy_speed_x = 0
-	view_object.phy_speed_y = 0
+	// view_object.phy_speed_x = 0
+	// view_object.phy_speed_y = 0
 	}
 
 // Game controls

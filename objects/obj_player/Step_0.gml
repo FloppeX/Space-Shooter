@@ -44,6 +44,13 @@ if keyboard_check(vk_right){
 if keyboard_check(vk_left){
 		room_goto(rm_space)
 	}
+	
+if keyboard_check_pressed(vk_up){
+		map_scale += 0.1
+	}
+if keyboard_check_pressed(vk_down){
+		map_scale -= 0.1
+	}
 
 // Turn
 control_mode = 2
@@ -120,3 +127,11 @@ scr_wrap_room_player();
 /*
 part_emitter_region(global.part_system_below,dust_emitter,x-global.play_area_width,x+ global.play_area_width,y-global.play_area_height,y+global.play_area_height,ps_shape_rectangle,ps_distr_linear);
 part_emitter_stream(global.part_system_below,dust_emitter,global.dust_particle,10);
+*/
+
+// Energy
+
+if energy < max_energy
+	energy += energy_increase
+if energy > max_energy
+	energy = max_energy

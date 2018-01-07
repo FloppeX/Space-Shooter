@@ -11,6 +11,6 @@ for(i=0;i<instance_number(obj_type);i+=1){
 		temp_dir = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
 		temp_x = lengthdir_x(temp_dist,temp_dir)
 		temp_y = lengthdir_y(temp_dist,temp_dir)
-		draw_sprite_ext(map_sprite,-1,map_center_x+ temp_x,map_center_y + temp_y,1,1,-temp_obj.phy_rotation,c_white,1)
+		draw_sprite_ext(map_sprite,-1,map_center_x+ temp_x,map_center_y + temp_y,map_scale,map_scale,-temp_obj.phy_rotation,c_white,1)
 		}
 }
