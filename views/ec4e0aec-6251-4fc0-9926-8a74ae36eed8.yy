@@ -13,7 +13,8 @@
         "c2ad6773-80e3-41ba-8313-a4f1508c6a32",
         "aaa227f2-f9dc-4536-bd10-c7e55df65d5c",
         "03f9f2f8-a5e6-48a6-a1f0-e4ec94b9c29d",
-        "6bcd901f-2b96-4280-800a-9842fcbdf734"
+        "6bcd901f-2b96-4280-800a-9842fcbdf734",
+        "8a80c1b5-1345-428e-afbc-6533b31442b6"
     ],
     "filterType": "GMSprite",
     "folderName": "Bullets, beams etc",

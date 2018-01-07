@@ -2,7 +2,7 @@
     "id": "e66cb37b-ab83-4275-a838-aabf5cdc0596",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_temp_view_object",
+    "name": "obj_view_object",
     "eventList": [
         {
             "id": "edc339b5-752a-4c65-bb28-45aefbf4eac0",
@@ -24,7 +24,7 @@
     "physicsFriction": 0,
     "physicsGroup": 0,
     "physicsKinematic": false,
-    "physicsLinearDamping": 0,
+    "physicsLinearDamping": 0.2,
     "physicsObject": true,
     "physicsRestitution": 0,
     "physicsSensor": false,

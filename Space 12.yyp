@@ -855,6 +855,14 @@
             }
         },
         {
+            "Key": "8a80c1b5-1345-428e-afbc-6533b31442b6",
+            "Value": {
+                "id": "965539a5-eda0-47ad-8e1e-323f03a5363a",
+                "resourcePath": "sprites\\spr_laser_glow\\spr_laser_glow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8bd241a2-6964-4237-bec3-2bf2a6c3e3fd",
             "Value": {
                 "id": "9cee4ffc-e0f8-4328-894e-ad43482119d1",
@@ -1330,7 +1338,7 @@
             "Key": "e66cb37b-ab83-4275-a838-aabf5cdc0596",
             "Value": {
                 "id": "e37b530d-646f-427c-9091-2cfe32afa4c5",
-                "resourcePath": "objects\\obj_temp_view_object\\obj_temp_view_object.yy",
+                "resourcePath": "objects\\obj_view_object\\obj_view_object.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1378,7 +1386,7 @@
             "Key": "edc99170-2d3e-4896-bbec-87844d181169",
             "Value": {
                 "id": "4bb11032-4b5c-4f10-9886-ec87386df03b",
-                "resourcePath": "sprites\\spr_laser_glow\\spr_laser_glow.yy",
+                "resourcePath": "sprites\\spr_laser_glow_old\\spr_laser_glow_old.yy",
                 "resourceType": "GMSprite"
             }
         },

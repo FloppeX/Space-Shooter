@@ -3,7 +3,6 @@ temp_length = 1
 temp_distance = 0
 timer = 1
 damage = 1;
-
 hit_enemy = false;
 victim = noone;
 

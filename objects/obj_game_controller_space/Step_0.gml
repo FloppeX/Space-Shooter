@@ -1,4 +1,15 @@
+// Move view object
 
+if instance_exists(obj_player){
+	view_object.phy_position_x = obj_player.phy_position_x
+	view_object.phy_position_y = obj_player.phy_position_y
+	view_object.phy_speed_x = obj_player.phy_speed_x
+	view_object.phy_speed_y = obj_player.phy_speed_y
+	}
+else {
+	view_object.phy_speed_x = 0
+	view_object.phy_speed_y = 0
+	}
 
 // Game controls
 
@@ -47,14 +58,14 @@ new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_a
 
 // Set background speed
 
-layer_hspeed(layer_get_id("background_layer_1"), obj_player.phy_speed_x*0.8)
-layer_vspeed(layer_get_id("background_layer_1"), obj_player.phy_speed_y*0.8)
+layer_hspeed(layer_get_id("background_layer_1"), view_object.phy_speed_x*0.8)
+layer_vspeed(layer_get_id("background_layer_1"), view_object.phy_speed_y*0.8)
 
-layer_hspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_x*0.4)
-layer_vspeed(layer_get_id("background_layer_2"), obj_player.phy_speed_y*0.4)
+layer_hspeed(layer_get_id("background_layer_2"), view_object.phy_speed_x*0.4)
+layer_vspeed(layer_get_id("background_layer_2"), view_object.phy_speed_y*0.4)
 
-layer_hspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_x*0)
-layer_vspeed(layer_get_id("background_layer_3"), obj_player.phy_speed_y*0)
+layer_hspeed(layer_get_id("background_layer_3"), view_object.phy_speed_x*0)
+layer_vspeed(layer_get_id("background_layer_3"), view_object.phy_speed_y*0)
 
-layer_hspeed(layer_get_id("background_layer_4"), obj_player.phy_speed_x*0)
-layer_vspeed(layer_get_id("background_layer_4"), obj_player.phy_speed_y*0)
+layer_hspeed(layer_get_id("background_layer_4"), view_object.phy_speed_x*0)
+layer_vspeed(layer_get_id("background_layer_4"), view_object.phy_speed_y*0)

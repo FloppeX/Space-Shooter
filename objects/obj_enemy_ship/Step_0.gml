@@ -135,16 +135,17 @@ if controls_disabled == false{
 	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	}
 // Gun
-
-gun.phy_position_x = phy_position_x 
-gun.phy_position_y = phy_position_y 
-gun.phy_rotation = phy_rotation;
-gun.phy_speed_x = phy_speed_x
-gun.phy_speed_y = phy_speed_y
-if shoot_1 and controls_disabled == false
-	gun.activated = true
-else
-	gun.activated = false
+if instance_exists(gun){
+	gun.phy_position_x = phy_position_x 
+	gun.phy_position_y = phy_position_y 
+	gun.phy_rotation = phy_rotation;
+	gun.phy_speed_x = phy_speed_x
+	gun.phy_speed_y = phy_speed_y
+	if shoot_1 and controls_disabled == false
+		gun.activated = true
+	else
+		gun.activated = false
+	}
 
 // Find mirror positions
 

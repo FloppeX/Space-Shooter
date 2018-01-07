@@ -7,6 +7,8 @@ game_paused = false;
 
 // View settings
 
+view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
+
 global.view_mode = 1
 global.zoom = 600
 temp_zoom = 400
@@ -496,11 +498,11 @@ for (var i = 0; i< 5; i++;){
 // Place player in the center of the room
 
 if !instance_exists(obj_player)
-	instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-obj_player.controls_disabled = false
-obj_player.phy_rotation = -90
+	player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
+player.controls_disabled = false
+player.phy_rotation = -90
 	
-instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_mouse_cursor)
+// instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_mouse_cursor)
    
 // Create some enemies
 

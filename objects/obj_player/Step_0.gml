@@ -8,7 +8,6 @@ if controls_disabled == false{
 	if abs(gamepad_axis_value(0,gp_axislh)) > 0.2 or abs(gamepad_axis_value(0,gp_axislv)) > 0.2
 		target_rotation = point_direction(0,0, gamepad_axis_value(0,gp_axislh), gamepad_axis_value(0,gp_axislv))
 	
-	
 	gamepad_set_axis_deadzone(0, 0);
 
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
@@ -90,11 +89,10 @@ if add_thrust
 // Health
 
 if obj_health <= 0{
-	with(obj_module)
-		instance_destroy();
-	effect_create_above(ef_explosion,phy_position_x,phy_position_y,1,c_white)
-	effect_create_above(ef_explosion,phy_position_x,phy_position_y,1,c_red)
-	effect_create_above(ef_explosion,phy_position_x,phy_position_y,1,c_yellow)
+	for(var i = 0; i < 7; i+=1;)
+		with(ship_modules[i])
+			instance_destroy();
+	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
 	}
 
