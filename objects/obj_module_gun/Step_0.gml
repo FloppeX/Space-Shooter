@@ -1,6 +1,6 @@
 event_inherited();
 
-script_execute(test_script)
+
 
 if image_index == 0
 	image_speed = 0

@@ -1,0 +1,1 @@
+bullet_speed += argument0

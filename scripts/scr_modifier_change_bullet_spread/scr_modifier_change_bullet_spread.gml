@@ -1,0 +1,1 @@
+bullet_spread += argument0
