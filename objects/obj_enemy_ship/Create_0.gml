@@ -29,18 +29,20 @@ direction_randomizer = 0
 invisible = false
 
 target = noone;
-targeting_arc = 225;
+starting_target_object = obj_player
+target_object = starting_target_object
+
+targeting_arc = 360;
 seek_range = 1800;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0
 avoiding_obstacle = false;
 
+
 target_point_x = irandom(global.wrap_border_left + global.play_area_width)
 target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 
 gun = instance_create_depth(x,y,0,obj_module_gun);
 gun.owner = self;
-gun.bullet_type = obj_bullet_enemy
-gun.muzzle_velocity = 7;
-gun.bullet_interval = 18;
+gun.bullet_type_base = obj_bullet_enemy

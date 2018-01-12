@@ -8,6 +8,7 @@ if timer <= 0{
 	exit;
 	}
 	
+travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
 phy_rotation = -point_direction(0, 0, phy_speed_x, phy_speed_y)
 
 // Particle effect

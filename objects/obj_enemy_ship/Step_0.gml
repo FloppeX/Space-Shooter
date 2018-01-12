@@ -25,7 +25,7 @@ if ai_mode == 1 {
 	ai_timer -= 1;
 	min_standoff_distance = 500
 	max_standoff_distance = 800
-	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180,seek_range)
+	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if target != noone{
 		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
 		if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
@@ -42,7 +42,7 @@ if ai_mode == 1 {
 
 		if ai_timer <= 0{
 
-			ai_timer = 240
+			ai_timer = 120
 			if irandom(4) == 0{
 				ai_mode = 2
 				ai_timer = 600
@@ -53,9 +53,9 @@ if ai_mode == 1 {
 	
 if ai_mode == 2 {
 
-	target = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,180,seek_range)
+	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if target != noone{
-		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.muzzle_velocity)
+		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.bullet_speed)
 		target_point_x = scr_wrap_closest_x(target);
 		target_point_y = scr_wrap_closest_y(target);
 

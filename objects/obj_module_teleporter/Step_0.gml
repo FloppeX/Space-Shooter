@@ -41,16 +41,21 @@ if teleporting{
 	
 	// Create teleport out effect
 	if duration_timer > 0{
-	part_type_orientation(global.teleport_out_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);   
-	part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y, global.teleport_out_particle, 5);
-	if x > 0.5 * room_width
-		part_particles_create(global.part_system_below, owner.phy_position_x-global.play_area_width, owner.phy_position_y, global.teleport_out_particle, 1);
-	else
-		part_particles_create(global.part_system_below, owner.phy_position_x+global.play_area_width, owner.phy_position_y, global.teleport_out_particle, 1);
-	if y > 0.5 * room_height
-		part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y-global.play_area_height, global.teleport_out_particle, 1);
-	else
-		part_particles_create(global.part_system_below, owner.phy_position_x, owner.phy_position_y+global.play_area_height, global.teleport_out_particle, 1);
+	x_pos_diff = phy_position_x - phy_position_xprevious
+	y_pos_diff = phy_position_y - phy_position_yprevious
+	for (var p= 0; p <= 1; p += (1/10)){
+		part_type_orientation(global.teleport_out_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);   
+		part_particles_create(global.part_system_below, owner.phy_position_x-p*x_pos_diff, owner.phy_position_y-p*y_pos_diff, global.teleport_out_particle, 1);
+		
+		if x > 0.5 * room_width
+			part_particles_create(global.part_system_below, owner.phy_position_x-global.play_area_width-p*x_pos_diff, owner.phy_position_y-p*y_pos_diff, global.teleport_out_particle, 1);
+		else
+			part_particles_create(global.part_system_below, owner.phy_position_x+global.play_area_width-p*x_pos_diff, owner.phy_position_y-p*y_pos_diff, global.teleport_out_particle, 1);
+		if y > 0.5 * room_height
+			part_particles_create(global.part_system_below, owner.phy_position_x-p*x_pos_diff, owner.phy_position_y-global.play_area_height-p*y_pos_diff, global.teleport_out_particle, 1);
+		else
+			part_particles_create(global.part_system_below, owner.phy_position_x-p*x_pos_diff, owner.phy_position_y+global.play_area_height-p*y_pos_diff, global.teleport_out_particle, 1);
+		}
 	}
 	
 	if duration_timer <= 0{

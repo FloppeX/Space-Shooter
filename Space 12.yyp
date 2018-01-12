@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "1690aab5-3179-4d35-a010-fee6635b00d1",
+            "Value": {
+                "id": "0abc2c59-7761-4cbc-be5c-2f01b2b0bdc9",
+                "resourcePath": "scripts\\scr_bullet_modifier_wavy\\scr_bullet_modifier_wavy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "16bd7919-85c5-4301-b3e5-a733e2c6a049",
             "Value": {
                 "id": "bd2e1414-8fa8-4ee3-b669-b30148f6e856",
@@ -412,6 +420,14 @@
                 "id": "ca9e66ec-1380-432a-8d93-64988a33b68c",
                 "resourcePath": "shaders\\shader0\\shader0.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "389bc69a-f39e-4737-828e-7ebd7144a7a5",
+            "Value": {
+                "id": "75df0e19-2413-4233-8818-ef9911317d2f",
+                "resourcePath": "scripts\\scr_bullet_modifier_posess\\scr_bullet_modifier_posess.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1599,6 +1615,14 @@
             }
         },
         {
+            "Key": "fdc3b5e5-be1c-4d0e-99f8-6d532637a8bf",
+            "Value": {
+                "id": "69d7274b-087b-443a-b890-024809b296ad",
+                "resourcePath": "scripts\\scr_bullet_modifier_seek\\scr_bullet_modifier_seek.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe4a6401-4b24-451e-a82c-3d84af95783c",
             "Value": {
                 "id": "c9bc54d4-c5ed-477a-b1d6-dbad0e6282dc",
@@ -1662,7 +1686,10 @@
         "a83ce681-cfc1-4de0-90fa-4cfce0cd7970",
         "a90aa241-01ac-4c31-ace4-69398ed3699c",
         "66767565-49ad-4c40-9f86-5b059b31e454",
-        "1b35b03a-7982-4408-8edb-c7b188c03e9a"
+        "1b35b03a-7982-4408-8edb-c7b188c03e9a",
+        "1690aab5-3179-4d35-a010-fee6635b00d1",
+        "fdc3b5e5-be1c-4d0e-99f8-6d532637a8bf",
+        "389bc69a-f39e-4737-828e-7ebd7144a7a5"
     ],
     "tutorial": ""
 }

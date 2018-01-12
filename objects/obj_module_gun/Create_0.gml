@@ -2,8 +2,8 @@ event_inherited();
 
 bullet_type_base = obj_bullet_player;
 bullet_damage_base = 6;
-bullet_range_base = 640
-bullet_speed_base = 7;
+bullet_range_base = 1640
+bullet_speed_base = 17;
 bullet_interval_base = 18;
 bullet_spread_base = 2
 energy_cost_base = 10

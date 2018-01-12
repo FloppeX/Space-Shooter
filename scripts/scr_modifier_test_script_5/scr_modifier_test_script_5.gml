@@ -3,4 +3,4 @@ if event_number != ev_step_end
 
 if shoot == true
 	with(bullet)
-		modifiers[0] = scr_bullet_modifier_color
+		modifiers[0] = scr_bullet_modifier_posess

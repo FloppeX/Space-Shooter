@@ -1,6 +1,7 @@
 // Bullet properties
 
 obj_rotation = 0;
+travel_direction = 0;
 
 range = 640;
 timer = range;

@@ -16,6 +16,8 @@ add_thrust = 0;
 shoot_1 = 0;
 shoot_2 = 0;
 
+target_object = obj_enemy_ship
+
 // Ship variables
 
 depth = -5
