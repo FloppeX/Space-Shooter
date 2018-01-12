@@ -1,21 +1,37 @@
 event_inherited();
 
-bullet_damage = 6;
-bullet_range = 640
-bullet_speed = 7;
-bullet_interval = 18;
-bullet_spread = 2	// Max misalignment of bullet when leaving barrel. 0 = most accurate
+bullet_type_base = obj_bullet_player;
+bullet_damage_base = 6;
+bullet_range_base = 640
+bullet_speed_base = 7;
+bullet_interval_base = 18;
+bullet_spread_base = 2
+energy_cost_base = 10
+
+bullet_type = bullet_type_base
+bullet_damage = bullet_damage_base
+bullet_range = bullet_range_base
+bullet_speed = bullet_speed_base
+bullet_interval = bullet_interval_base
+bullet_spread = bullet_spread_base
+energy_cost = energy_cost_base
 
 activation_button = 3
 activated = false
 barrel_length = 10
 shoot = false
 bullet_timer = bullet_interval;
-bullet_type = obj_bullet_player;
+
 bullet_depth = 10
 bullet_color = c_lime
 
+modifiers[0] = scr_modifier_test_script_1
+modifiers[1] = scr_modifier_test_script_2
+modifiers[2] = scr_modifier_test_script_3
+modifiers[3] = scr_modifier_test_script_5
 
+/*
+repeat(13){
 var h = irandom(5)
 	switch (h){
 		case 0: test_script = scr_modifier_bullet_color_random; break;
@@ -27,3 +43,4 @@ var h = irandom(5)
 		}
 
 script_execute(test_script)
+}

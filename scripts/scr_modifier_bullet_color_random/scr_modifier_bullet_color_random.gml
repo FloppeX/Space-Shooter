@@ -1,1 +1,1 @@
-bullet_color = make_color_hsv(random(255),255,255)
+bullet_color = make_color_hsv(bullet_color = make_color_hsv(random(255),255,255)random(255),255,255)
