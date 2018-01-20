@@ -1,38 +1,38 @@
 {
-    "id": "d21693b5-32fe-478b-b1f7-38dabffa5f8d",
+    "id": "f4a0a4ca-3253-4f0c-93b0-7e0f7801565d",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_bullet_player",
     "eventList": [
         {
-            "id": "81c5664f-9c58-40f1-9de0-42483df41c91",
+            "id": "a621d0f9-a25b-4a61-b89c-162f3bab30cf",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "b6d730be-81e0-42a3-883b-de76ad2cb591",
             "enumb": 0,
             "eventtype": 4,
-            "m_owner": "d21693b5-32fe-478b-b1f7-38dabffa5f8d"
+            "m_owner": "f4a0a4ca-3253-4f0c-93b0-7e0f7801565d"
         },
         {
-            "id": "c9a23809-b5b8-4575-9020-7ed358b9417c",
+            "id": "9587f6f4-7ced-4ac9-86e0-6f3b9c71d88e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "fe4a6401-4b24-451e-a82c-3d84af95783c",
             "enumb": 0,
             "eventtype": 4,
-            "m_owner": "d21693b5-32fe-478b-b1f7-38dabffa5f8d"
+            "m_owner": "f4a0a4ca-3253-4f0c-93b0-7e0f7801565d"
         },
         {
-            "id": "e72ac1f2-dcc1-4e2f-afcf-a95b85311823",
+            "id": "11ab1cdd-2cc0-4cf2-9bbc-74416b5594a8",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "d21693b5-32fe-478b-b1f7-38dabffa5f8d"
+            "m_owner": "f4a0a4ca-3253-4f0c-93b0-7e0f7801565d"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -51,14 +51,14 @@
     "physicsShape": 0,
     "physicsShapePoints": [
         {
-            "id": "782a3d85-5ff7-447e-a90d-25c9c7cd6266",
+            "id": "2be301fa-570e-4e7c-bd18-9d69a68240d6",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 12,
             "y": 4
         },
         {
-            "id": "beee5f07-0183-4e08-b97c-25c2036ef455",
+            "id": "071f1a8e-db3b-45f2-a352-d6bd8a3602eb",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 12,

@@ -1,6 +1,7 @@
 remaining_steps = 10;
 step_timer = 1
-damage = 1;
+damage = 0;
+target_object_type = obj_enemy_ship
 victim = noone;
 target_dir = -phy_rotation
 max_turn = 15

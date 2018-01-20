@@ -4,8 +4,9 @@ if obj_health <= 0{
 	phy_active = false
 	scr_explode_object();
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
-	with(gun)
-		instance_destroy();
+	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+		with(ship_modules[i])
+			instance_destroy();
 	instance_destroy();
 	exit;
 	}
@@ -55,7 +56,7 @@ if ai_mode == 2 {
 
 	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if target != noone{
-		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun.bullet_speed)
+		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
 		target_point_x = scr_wrap_closest_x(target);
 		target_point_y = scr_wrap_closest_y(target);
 
@@ -135,16 +136,11 @@ if controls_disabled == false{
 	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	}
 // Gun
-if instance_exists(gun){
-	gun.phy_position_x = phy_position_x 
-	gun.phy_position_y = phy_position_y 
-	gun.phy_rotation = phy_rotation;
-	gun.phy_speed_x = phy_speed_x
-	gun.phy_speed_y = phy_speed_y
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 	if shoot_1 and controls_disabled == false
-		gun.activated = true
+		ship_modules[i].activated = true
 	else
-		gun.activated = false
+		ship_modules[i].activated = false
 	}
 	
 // Energy

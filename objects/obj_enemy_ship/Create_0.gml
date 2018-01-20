@@ -43,6 +43,8 @@ avoiding_obstacle = false;
 target_point_x = irandom(global.wrap_border_left + global.play_area_width)
 target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 
+
+/*
 gun = instance_create_depth(x,y,0,obj_module_gun);
 gun.owner = self;
 gun.bullet_type_base = obj_bullet_enemy

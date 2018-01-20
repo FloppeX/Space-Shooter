@@ -25,10 +25,11 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
-modifiers[0] = scr_modifier_test_script_1
-modifiers[1] = scr_modifier_test_script_2
-modifiers[2] = scr_modifier_test_script_3
-modifiers[3] = scr_modifier_test_script_5
+modifiers[0] = scr_modifier_script_do_nothing
+//modifiers[0] = scr_modifier_test_script_1
+//modifiers[1] = scr_modifier_test_script_2
+//modifiers[2] = scr_modifier_test_script_3
+//modifiers[3] = scr_modifier_test_script_4
 
 /*
 repeat(13){

@@ -5,7 +5,7 @@
 event_inherited();
 bullet_interval = 30;
 muzzle_velocity = 0;
-bullet_type = obj_lightning_bolt
+bullet_type = obj_lightning_bolt_player
 spread = 0
 bullet_color = c_blue
 barrel_length = 40
