@@ -1,1 +1,1 @@
-bullet_speed += argument0
+bullet_speed_bonus += argument0

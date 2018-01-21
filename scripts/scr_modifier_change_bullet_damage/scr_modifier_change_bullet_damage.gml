@@ -1,0 +1,1 @@
+bullet_damage_bonus += argument0

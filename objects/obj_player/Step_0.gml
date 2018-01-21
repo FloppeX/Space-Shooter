@@ -144,3 +144,25 @@ if energy < max_energy
 	energy += energy_increase
 if energy > max_energy
 	energy = max_energy
+	
+// Apply modifiers for modules!
+
+// First reset the variables for each module
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	with (ship_modules[i])
+		scr_reset_module_variables();
+
+// Then apply all modifiers for each module
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
+	with (ship_modules[i]){
+		for(var h = 0; h < array_length_1d(modifiers); h+=1;)
+			if modifiers[h] != noone
+				script_execute(modifiers[h])
+		}
+	}
+	
+// Then calculate new values for the variables
+
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	with (ship_modules[i])
+		scr_calculate_module_variables();

@@ -19,7 +19,10 @@
         "1690aab5-3179-4d35-a010-fee6635b00d1",
         "fdc3b5e5-be1c-4d0e-99f8-6d532637a8bf",
         "389bc69a-f39e-4737-828e-7ebd7144a7a5",
-        "0f74c0b3-ca6c-425f-bf6d-4cf953d9f049"
+        "0f74c0b3-ca6c-425f-bf6d-4cf953d9f049",
+        "67b3422c-4941-401a-aed6-813f9e5d6a82",
+        "03a53b2e-5512-4063-b6bc-d4b0d60915da",
+        "4ddc6a50-4dfc-4dc3-985b-b2db16f2cf0e"
     ],
     "filterType": "GMScript",
     "folderName": "Test scripts",

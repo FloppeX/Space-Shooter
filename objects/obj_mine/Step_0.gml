@@ -29,7 +29,7 @@ if explode{
 					temp_distance = point_distance(phy_position_x,phy_position_y,temp_instance.phy_position_x,temp_instance.phy_position_y)
 					if temp_distance <= explosion_range{
 						with(temp_instance){
-							obj_health -= damage
+							obj_health -= other.damage
 							disabled_timer += 10;
 							}
 						}

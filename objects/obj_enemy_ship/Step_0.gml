@@ -50,9 +50,9 @@ if ai_mode == 1 {
 		if ai_timer <= 0{
 
 			ai_timer = 120
-			if irandom(4) == 0{
+			if irandom(2) == 0{
 				ai_mode = 2
-				ai_timer = 600
+				ai_timer = 480
 				}
 			}
 	}
