@@ -1,4 +1,10 @@
 
+// Disabled?
+disabled_timer -= 1;
+if disabled_timer > 0 
+	controls_disabled = true
+else controls_disabled = false
+
 //Health
 if obj_health <= 0{
 	phy_active = false

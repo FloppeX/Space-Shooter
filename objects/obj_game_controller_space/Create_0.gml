@@ -137,7 +137,7 @@ part_type_speed(global.bullet_glow_particle,0,0,0,0);
 part_type_direction(global.bullet_glow_particle,0,0,0,1);            
 part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
 part_type_blend(global.bullet_glow_particle,true);                      
-part_type_life(global.bullet_glow_particle,5,10);
+part_type_life(global.bullet_glow_particle,1,2);
 
 global.laser_particle  = part_type_create();
 part_type_sprite(global.laser_particle,spr_laser_glow,false,false,false);            

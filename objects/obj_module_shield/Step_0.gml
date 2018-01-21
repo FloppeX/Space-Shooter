@@ -2,6 +2,30 @@ event_inherited();
 
 //
 
+// Animation
+
+if image_index == 0
+	mechanism_retracted = true;
+	
+if image_index == image_number -1 
+	mechanism_extended = true;
+
+if activated and !mechanism_extended{
+	image_speed = 1;
+	mechanism_retracted = false;
+	}
+	
+if activated and mechanism_extended
+	image_speed = 0;
+	
+if !activated and !mechanism_retracted{
+	image_speed = -1;
+	mechanism_extended = false;
+	}
+	
+if !activated and mechanism_retracted
+	image_speed = 0;	
+
 // Shield properties
 
 

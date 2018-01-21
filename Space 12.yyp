@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "0725674a-bdb4-46fc-a227-203cf5b4ec35",
+            "Value": {
+                "id": "c6d199a1-6ef3-4c5f-a2e5-48005936589f",
+                "resourcePath": "sprites\\spr_shield_2\\spr_shield_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "08d317cf-cac2-4634-9fa9-2fb70e7b23e6",
             "Value": {
                 "id": "e6479a2d-101a-407e-ae1a-668946a7198d",
@@ -796,6 +804,14 @@
                 "id": "ebaf2692-4aa7-450e-ba00-23268dda7bf8",
                 "resourcePath": "objects\\obj_lightning_bolt_player\\obj_lightning_bolt_player.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6dca2c77-916c-4186-948b-f71b9bb28654",
+            "Value": {
+                "id": "7187df9c-c21d-4f7f-877b-8a1cb74adbb3",
+                "resourcePath": "sprites\\spr_shield_1\\spr_shield_1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

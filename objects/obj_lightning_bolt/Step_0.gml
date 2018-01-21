@@ -27,13 +27,17 @@ part_particles_create(global.part_system_below, phy_position_x, phy_position_y,g
 if step_timer == 0{
 	if remaining_steps > 0{
 			// create new bolt(s)
-			new_bolt = instance_create_depth(phy_position_x+lengthdir_x(sprite_width-4,-phy_rotation),phy_position_y+lengthdir_y(sprite_width-4,-phy_rotation),10,obj_lightning_bolt)
+			new_bolt = instance_create_depth(phy_position_x+lengthdir_x(sprite_width-4,-phy_rotation),phy_position_y+lengthdir_y(sprite_width-4,-phy_rotation),10,object_index)
 			new_bolt.phy_rotation = -new_dir
 			new_bolt.remaining_steps = remaining_steps-1
+			new_bolt.phy_speed_x = 0
+			new_bolt.phy_speed_y = 0
 			if random(100) < chance_new_branch{
-				new_bolt = instance_create_depth(phy_position_x+lengthdir_x(sprite_width-4,-phy_rotation),phy_position_y+lengthdir_y(sprite_width-4,-phy_rotation),10,obj_lightning_bolt)
+				new_bolt = instance_create_depth(phy_position_x+lengthdir_x(sprite_width-4,-phy_rotation),phy_position_y+lengthdir_y(sprite_width-4,-phy_rotation),10,object_index)
 				new_bolt.phy_rotation = -new_dir + new_branch_angle * sign(random(2)-1)
 				new_bolt.remaining_steps = remaining_steps-1
+				new_bolt.phy_speed_x = 0
+				new_bolt.phy_speed_y = 0
 				}
 			}
 	instance_destroy();

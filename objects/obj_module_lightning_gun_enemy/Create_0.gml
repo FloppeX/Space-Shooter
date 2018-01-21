@@ -1,3 +1,3 @@
 event_inherited();
 
-bullet_type = obj_lightning_bolt_enemy
+bullet_type_base = obj_lightning_bolt_enemy

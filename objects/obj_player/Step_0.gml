@@ -1,4 +1,19 @@
+// Disabled?
+disabled_timer -= 1;
+if disabled_timer > 0 
+	controls_disabled = true
+else controls_disabled = false
+
 // Gamepad controls
+// Reset them first
+
+rotation_value = 0
+left_stick_value = 0
+add_thrust = 0
+gamepad_button[1] = false
+gamepad_button[2] = false
+gamepad_button[3] = false
+gamepad_button[4] = false
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
@@ -14,27 +29,21 @@ if controls_disabled == false{
 
 	if gamepad_button_check(0,gp_face1)
 		gamepad_button[1] = true
-	else gamepad_button[1] = false
 	
 	if gamepad_button_check(0,gp_face2)
 		gamepad_button[2] = true
-	else gamepad_button[2] = false
 	
 	if gamepad_button_check(0,gp_face3)
 		gamepad_button[3] = true
-	else gamepad_button[3] = false
 		
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
-	else gamepad_button[4] = false
 
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
-	else gamepad_button[4] = false
 	
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
-	else gamepad_button[4] = false
 }
 
 if keyboard_check(vk_right){

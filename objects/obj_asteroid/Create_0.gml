@@ -1,3 +1,4 @@
+event_inherited();
 
 phy_rotation = random(360);
 phy_angular_velocity = random(200)-100

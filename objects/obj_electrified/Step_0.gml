@@ -2,7 +2,7 @@ destruction_timer -= 1
 if instance_exists(target){
 	x = target.phy_position_x
 	y = target.phy_position_y
-	target.controls_disabled = true
+	target.disabled_timer = 10
 	
 	// Particle effect
 	effect_timer -= 1

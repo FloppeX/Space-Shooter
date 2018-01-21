@@ -3,7 +3,7 @@ event_inherited();
 max_speed = 3.5
 max_thrust = 440
 
-ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun_enemy);
+ship_modules[0] = instance_create_depth(x,y,-10,obj_module_lightning_gun_enemy);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].offset_distance = 22
 ship_modules[0].offset_angle = 45

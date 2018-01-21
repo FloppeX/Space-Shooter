@@ -10,6 +10,7 @@ max_energy = 100;
 energy = max_energy;
 energy_increase = 1;
 
+disabled_timer = 0
 controls_disabled = false
 
 target_speed = 0
