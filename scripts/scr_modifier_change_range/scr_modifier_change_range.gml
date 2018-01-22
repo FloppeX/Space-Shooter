@@ -1,0 +1,1 @@
+bullet_range += argument0
