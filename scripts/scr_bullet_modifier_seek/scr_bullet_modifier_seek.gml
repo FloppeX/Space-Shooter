@@ -1,3 +1,4 @@
+
 var seek_range = 600
 var force = 15
 
@@ -7,3 +8,8 @@ if target != noone{
 	var angle_diff = angle_difference(-phy_rotation,target_dir)
 	physics_apply_local_force(0,0,0,force*sign(angle_diff))
 	}
+
+if event_number != ev_step_end
+	exit
+
+
