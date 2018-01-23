@@ -1,3 +1,5 @@
+event_inherited();
+
 remaining_steps = 10;
 step_timer = 1
 damage = 0;

@@ -1,4 +1,3 @@
-if event_number != ev_step_begin
-	exit
-
-bullet_damage_bonus = 3
+if instance_exists(bullet)
+	with(bullet)
+		modifiers[0] = scr_bullet_modifier_wavy

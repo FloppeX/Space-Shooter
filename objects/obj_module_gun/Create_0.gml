@@ -26,11 +26,21 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
-modifiers[0] = noone ///scr_modifier_bullet_color_random
-modifiers[1] = scr_modifier_script_do_nothing // script_execute(scr_modifier_change_bullet_damage,1)
-modifiers[2] = scr_modifier_change_bullet_damage_plus_2
-modifiers[3] = scr_modifier_test_script_5
-modifiers[4] = scr_modifier_increase_all_modules_damage
+
+modifiers[0] = scr_modifier_test_script_5
+//modifiers[1] = scr_modifier_test_script_5
+/*
+scr_add_modifier(scr_modifier_change_bullet_damage_plus_2)
+scr_add_modifier(scr_modifier_bullet_color_random)
+scr_add_modifier(scr_modifier_test_script_5)
+scr_add_modifier(scr_modifier_test_script_3)
+
+modifiers[0] = scr_modifier_change_bullet_damage_plus_2
+modifiers[1] = scr_modifier_bullet_color_random
+modifiers[2] = scr_modifier_test_script_5
+modifiers[3] = scr_modifier_test_script_3
+*/
+//modifiers[4] = scr_modifier_increase_all_modules_damage
 
 /*
 repeat(13){

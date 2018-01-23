@@ -1,8 +1,10 @@
+timer += 1
+
 // Bullet stuff
-timer -= phy_speed;
+range_timer -= phy_speed;
 phy_bullet = true;
 
-if timer <= 0{
+if range_timer <= 0{
 	with (self) instance_destroy();
 	exit;
 	}

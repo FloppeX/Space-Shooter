@@ -4,7 +4,8 @@ obj_rotation = 0;
 travel_direction = 0;
 
 range = 640;
-timer = range;
+range_timer = range;
+timer = 0
 
 damage = 10;
 

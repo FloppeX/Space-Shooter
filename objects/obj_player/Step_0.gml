@@ -152,7 +152,7 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	with (ship_modules[i])
 		scr_reset_module_variables();
 
-// Then apply all modifiers for each module
+// Then apply all the modifiers that each module has
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 	with (ship_modules[i]){
 		for(var h = 0; h < array_length_1d(modifiers); h+=1;)
@@ -161,7 +161,7 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 		}
 	}
 	
-// Then calculate new values for the variables
+// Then calculate new values for the variables that each module has
 
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	with (ship_modules[i])
