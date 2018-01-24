@@ -519,6 +519,14 @@
             }
         },
         {
+            "Key": "3ca6fcec-5446-4539-b8b0-64b12ef39f18",
+            "Value": {
+                "id": "a7746435-bdb5-461d-ae6a-ac93398cce4e",
+                "resourcePath": "scripts\\scr_module_modifier_aim_towards_enemy\\scr_module_modifier_aim_towards_enemy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3d8ce846-5d05-4218-a675-f76156751f9e",
             "Value": {
                 "id": "127a62ec-9f55-4e85-8a9a-da203492cd4c",
@@ -1901,6 +1909,7 @@
         "44906033-e957-4816-bb8d-7a610eb54397",
         "a83ce681-cfc1-4de0-90fa-4cfce0cd7970",
         "66767565-49ad-4c40-9f86-5b059b31e454",
+        "3ca6fcec-5446-4539-b8b0-64b12ef39f18",
         "1b35b03a-7982-4408-8edb-c7b188c03e9a",
         "fdc3b5e5-be1c-4d0e-99f8-6d532637a8bf",
         "c94d0668-6a31-41ea-8c35-7401337c56e2",

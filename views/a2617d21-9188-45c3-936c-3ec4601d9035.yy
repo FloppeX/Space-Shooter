@@ -11,7 +11,8 @@
         "72669d56-804d-4182-9063-0270d596fdea",
         "44906033-e957-4816-bb8d-7a610eb54397",
         "a83ce681-cfc1-4de0-90fa-4cfce0cd7970",
-        "66767565-49ad-4c40-9f86-5b059b31e454"
+        "66767565-49ad-4c40-9f86-5b059b31e454",
+        "3ca6fcec-5446-4539-b8b0-64b12ef39f18"
     ],
     "filterType": "GMScript",
     "folderName": "Module modifiers",
