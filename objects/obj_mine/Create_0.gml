@@ -5,4 +5,5 @@ sensor_range = 60
 explosion_range = 120
 explode = false
 
+light_color = c_red
 light_timer = 60

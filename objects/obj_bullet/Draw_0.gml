@@ -6,4 +6,4 @@ gpu_set_blendmode(bm_normal)
 */
 draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,color,1);
 
-draw_text(x,y+30,array_length_1d(modifiers))
+//draw_text(x,y+30,array_length_1d(modifiers))

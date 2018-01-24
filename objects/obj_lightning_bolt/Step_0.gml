@@ -32,12 +32,14 @@ if step_timer == 0{
 			new_bolt.remaining_steps = remaining_steps-1
 			new_bolt.phy_speed_x = 0
 			new_bolt.phy_speed_y = 0
+			new_bolt.color = color
 			if random(100) < chance_new_branch{
 				new_bolt = instance_create_depth(phy_position_x+lengthdir_x(sprite_width-4,-phy_rotation),phy_position_y+lengthdir_y(sprite_width-4,-phy_rotation),10,object_index)
 				new_bolt.phy_rotation = -new_dir + new_branch_angle * sign(random(2)-1)
 				new_bolt.remaining_steps = remaining_steps-1
 				new_bolt.phy_speed_x = 0
 				new_bolt.phy_speed_y = 0
+				new_bolt.color = color
 				}
 			}
 	instance_destroy();

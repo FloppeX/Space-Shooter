@@ -28,7 +28,7 @@ bullet_color = c_lime
 
 
 modifiers[0] = scr_modifier_test_script_5
-//modifiers[1] = scr_modifier_test_script_5
+modifiers[1] = scr_modifier_bullet_color_random
 /*
 scr_add_modifier(scr_modifier_change_bullet_damage_plus_2)
 scr_add_modifier(scr_modifier_bullet_color_random)

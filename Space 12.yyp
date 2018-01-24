@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "0b20b3f0-461b-49be-a754-592e9ad1bf31",
+            "Value": {
+                "id": "cc5ff7ae-5dfa-4fae-9cc6-ac8fc8c5dbc2",
+                "resourcePath": "sprites\\spr_mine\\spr_mine.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0bf600db-c93d-475f-8127-3efc63ec6183",
             "Value": {
                 "id": "5f538101-1479-47bd-9c5f-144414361480",
@@ -810,7 +818,7 @@
             "Key": "6bcd901f-2b96-4280-800a-9842fcbdf734",
             "Value": {
                 "id": "a0b0fede-e1b3-4a04-aaa6-3a7021ff73ff",
-                "resourcePath": "sprites\\spr_mine\\spr_mine.yy",
+                "resourcePath": "sprites\\spr_mine_blinking_light\\spr_mine_blinking_light.yy",
                 "resourceType": "GMSprite"
             }
         },
