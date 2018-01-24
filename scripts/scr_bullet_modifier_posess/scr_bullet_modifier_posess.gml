@@ -1,6 +1,3 @@
-if event_number != ev_step_end
-	exit
-
 target_object = obj_enemy_ship
 
 if hit_enemy{

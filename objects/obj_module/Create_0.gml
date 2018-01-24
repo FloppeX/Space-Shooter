@@ -41,4 +41,4 @@ bullet_interval_bonus = 0
 energy_cost_bonus = 0
 
 
-modifiers[0] = noone
+modifiers = noone
