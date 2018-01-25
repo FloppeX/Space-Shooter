@@ -1,1 +1,1 @@
-bullet_interval += argument0
+bullet_interval_bonus += argument0

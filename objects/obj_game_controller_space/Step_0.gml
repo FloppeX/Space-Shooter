@@ -54,7 +54,7 @@ if gamepad_button_check(0,gp_select)
 	game_restart();
 	
 if gamepad_button_check_pressed(0,gp_shoulderl)
-new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_ship)
+new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_assault_ship)
 
 // Set background speed
 

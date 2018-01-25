@@ -1,1 +1,1 @@
-bullet_spread += argument0
+bullet_spread_bonus += argument0

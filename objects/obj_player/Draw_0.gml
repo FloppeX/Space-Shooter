@@ -14,7 +14,7 @@ ship_modules[5].phy_position_x = phy_position_x + lengthdir_x(25,-phy_rotation-9
 ship_modules[5].phy_position_y = phy_position_y + lengthdir_y(25,-phy_rotation-90);
 ship_modules[6].phy_position_x = phy_position_x + lengthdir_x(25,-phy_rotation+180);
 ship_modules[6].phy_position_y = phy_position_y + lengthdir_y(25,-phy_rotation+180);
-ship_modules[6].phy_rotation= phy_rotation;
+//ship_modules[6].phy_rotation= phy_rotation;
 
 // Draw ship and modules
 
@@ -61,7 +61,7 @@ for(var i = 0; i < 7; i+=1;){
 			persistent = true
 	//draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,alpha)
 	
-	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
+	//ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	ship_modules[i].phy_speed_x = phy_speed_x
 	ship_modules[i].phy_speed_y = phy_speed_y
 	}

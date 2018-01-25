@@ -1,4 +1,1 @@
-// Modifier variables
-
-bullet_damage_modifier = 0
-bullet_speed_modifier = 0
+phy_rotation = owner.phy_rotation + offset_angle + rotation_add
