@@ -141,7 +141,8 @@ if controls_disabled == false{
 	part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	}
-// Gun
+	
+// Modules
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 	if shoot_1 and controls_disabled == false
 		ship_modules[i].activated = true

@@ -17,7 +17,7 @@ temp_zoom = 400
 // Graphics settings
 
 draw_enable_swf_aa(true);
-global.aa_level = 0
+global.aa_level = 3
 draw_set_swf_aa_level(global.aa_level);
 
 //global.obj_to_center_view_on = noone; // This is the object that the view centers on. Will be set to player

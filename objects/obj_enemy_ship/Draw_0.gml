@@ -1,8 +1,8 @@
 // Place modules
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-	ship_modules[i].phy_position_x = phy_position_x + lengthdir_x(ship_modules[i].offset_distance,-phy_rotation+ship_modules[i].offset_angle);
-	ship_modules[i].phy_position_y = phy_position_y + lengthdir_y(ship_modules[i].offset_distance,-phy_rotation+ship_modules[i].offset_angle);
-	ship_modules[i].phy_rotation = phy_rotation
+	ship_modules[i].phy_position_x = phy_position_x + lengthdir_x(ship_modules[i].placement_offset_distance,-phy_rotation+ship_modules[i].placement_offset_angle);
+	ship_modules[i].phy_position_y = phy_position_y + lengthdir_y(ship_modules[i].placement_offset_distance,-phy_rotation+ship_modules[i].placement_offset_angle);
+	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
 	}
 
 // scr_draw_vision_cone();

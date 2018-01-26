@@ -10,3 +10,4 @@ for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 
 if already_has_this_modifier == false
 	modifiers[array_length_1d(modifiers)] = modifier
+	

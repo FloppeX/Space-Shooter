@@ -1,11 +1,12 @@
 event_inherited();
 
 bullet_type_base = obj_bullet_player;
-bullet_damage_base = 6;
-bullet_range_base = 1640
+bullet_damage_base = 8;
+bullet_range_base = 640
 bullet_speed_base = 17;
-bullet_interval_base = 18;
+bullet_interval_base = 16;
 bullet_spread_base = 2
+bullet_number_base = 1
 energy_cost_base = 10
 
 bullet_type = bullet_type_base
@@ -14,21 +15,25 @@ bullet_range = bullet_range_base
 bullet_speed = bullet_speed_base
 bullet_interval = bullet_interval_base
 bullet_spread = bullet_spread_base
+bullet_number = bullet_number_base
 energy_cost = energy_cost_base
 
 activation_button = 3
 activated = false
-barrel_length = 10
+barrel_length = 20
 shoot = false
 
-bullet = noone
+bullets[0] = noone
 bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
-scr_add_modifier(scr_module_modifier_aim_towards_enemy)
-//scr_add_modifier(scr_module_modifier_homing_bullets)
+/*
+scr_add_modifier(scr_module_modifier_wavy_bullets)
+
+scr_add_modifier(scr_module_modifier_homing_bullets)
 scr_add_modifier(scr_modifier_bullet_color_random)
+scr_add_modifier(scr_modifier_shotgun)
 
 /*
 scr_add_modifier(scr_modifier_change_bullet_damage_plus_2)

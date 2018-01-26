@@ -20,7 +20,7 @@ ship_modules[6].phy_position_y = phy_position_y + lengthdir_y(25,-phy_rotation+1
 
 draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,c_white,alpha)
 for(var i = 0; i < 7; i+=1;)
-	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(ship_modules[i].phy_rotation),c_white,alpha)
+	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-ship_modules[i].phy_rotation,c_white,alpha)
 
 // Draw sprite at mirror_positions
 

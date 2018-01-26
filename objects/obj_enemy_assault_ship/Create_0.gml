@@ -5,13 +5,13 @@ max_thrust = 440
 
 ship_modules[0] = instance_create_depth(x,y,-10,obj_module_gun_enemy);
 ship_modules[0].offset_angle = 0;
-ship_modules[0].offset_distance = 22
-ship_modules[0].offset_angle = 45
+ship_modules[0].placement_offset_distance = 22
+ship_modules[0].placement_offset_angle = 45
 
 ship_modules[1] = instance_create_depth(x,y,-10,obj_module_lightning_gun_enemy);
 ship_modules[1].offset_angle = 0;
-ship_modules[1].offset_distance = 22
-ship_modules[1].offset_angle = -45
+ship_modules[1].placement_offset_distance = 22
+ship_modules[1].placement_offset_angle = -45
 
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 	ship_modules[i].owner= id;

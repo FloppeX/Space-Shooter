@@ -1,10 +1,11 @@
 // Bullet properties
 
+phy_bullet = true
+
 obj_rotation = 0;
 travel_direction = 0;
 
 range = 640;
-range_timer = range;
 timer = 0
 
 damage = 10;
@@ -13,6 +14,7 @@ invisible = false
 
 hit_enemy = false;
 
+draw_scale = 1
 color = c_lime
 
 modifiers = noone
