@@ -48,6 +48,7 @@ part_type_speed(global.part_rocket_smoke_small,0,0,0,0);
 temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
 part_type_direction(global.part_rocket_smoke_small,temp_dir+180,temp_dir+180,0,0);
 part_type_orientation(global.part_rocket_smoke_small,temp_dir,temp_dir,0,0,0)
+part_type_color1(global.part_rocket_smoke_small,color)
 offset_distance = 12
 part_particles_create(global.part_system_above, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);
 part_particles_create(global.part_system_above, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke_small, 3);

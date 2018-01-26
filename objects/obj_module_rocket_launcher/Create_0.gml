@@ -8,4 +8,5 @@ bullet_interval_base = 160;
 bullet_spread_base = 0
 bullet_number_base = 1
 energy_cost_base = 10
+
 //image_index = image_number-2

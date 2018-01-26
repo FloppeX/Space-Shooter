@@ -1,5 +1,5 @@
 scr_draw_vision_cone();
-draw_self();
+draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,c_white,1);
 /*
 if global.view_mode == 2{
 	target_dir = scr_rocket_find_target_direction_in_arc(obj_asteroid,-phy_rotation,90)

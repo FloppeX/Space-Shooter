@@ -12,6 +12,8 @@ activate_shield = false
 
 energy_cost = 0
 
+modifiers[0] = noone
+
 // Modifier variables
 
 bullet_damage_modifier = 0
@@ -46,4 +48,3 @@ bullet_interval_bonus = 0
 energy_cost_bonus = 0
 
 
-modifiers = noone

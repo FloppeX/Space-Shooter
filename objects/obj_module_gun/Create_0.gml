@@ -28,11 +28,10 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
-/*
-scr_add_modifier(scr_module_modifier_wavy_bullets)
-
 scr_add_modifier(scr_module_modifier_homing_bullets)
+scr_add_modifier(scr_module_modifier_wavy_bullets)
 scr_add_modifier(scr_modifier_bullet_color_random)
+/*
 scr_add_modifier(scr_modifier_shotgun)
 
 /*

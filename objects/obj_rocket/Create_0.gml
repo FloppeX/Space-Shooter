@@ -1,3 +1,5 @@
+event_inherited();
+
 // Rocket properties
 obj_rotation = 0
 obj_health = 1
