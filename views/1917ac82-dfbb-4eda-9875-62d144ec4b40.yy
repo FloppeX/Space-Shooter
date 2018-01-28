@@ -13,7 +13,11 @@
         "5a24bedd-1938-4775-9266-c77b3dfaee25",
         "4e5caa52-d55a-4bc1-8b1e-7ac09a95fb20",
         "2dc8a844-4827-4704-8557-836e8504467c",
-        "999bf287-f42f-4eb8-84e1-59eecce15f95"
+        "999bf287-f42f-4eb8-84e1-59eecce15f95",
+        "053a0943-9c76-4426-96ee-6d472055fdf0",
+        "85e491a2-9073-400e-beb1-e4f5ba96d55c",
+        "ab69cdaf-5385-4b7f-ba50-e2eacb505c08",
+        "1a13c1f7-1e1e-4a3e-995e-aec19996edbf"
     ],
     "filterType": "GMSprite",
     "folderName": "Spaceships",

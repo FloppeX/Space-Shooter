@@ -7,10 +7,16 @@ if image_index == 0
 bullet_timer -= 1;
 shoot = false
 if activated and bullet_timer <= 0 and owner.energy > energy_cost{
-		shoot = true
-		scr_shoot();
-		image_index = 1;
-		image_speed = 1;
-		owner.energy -= energy_cost;
-		}
+	shoot = true
+	scr_shoot();
+	image_index = 1;
+	image_speed = 1;
+	owner.energy -= energy_cost;
+	
+	// Recoil
+
+	with(owner)
+		physics_apply_impulse(other.phy_position_x,other.phy_position_y,lengthdir_x(other.recoil_force,-other.phy_rotation+180),lengthdir_y(other.recoil_force,-other.phy_rotation+180))
+	
+	}
  

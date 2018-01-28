@@ -18,9 +18,11 @@ bullet_spread = bullet_spread_base
 bullet_number = bullet_number_base
 energy_cost = energy_cost_base
 
+recoil_force = 50
+
 activation_button = 3
 activated = false
-barrel_length = 20
+barrel_length = 10
 shoot = false
 
 bullets[0] = noone
@@ -28,10 +30,12 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
+
+/*
 scr_add_modifier(scr_module_modifier_homing_bullets)
 scr_add_modifier(scr_module_modifier_wavy_bullets)
 scr_add_modifier(scr_modifier_bullet_color_random)
-/*
+
 scr_add_modifier(scr_modifier_shotgun)
 
 /*

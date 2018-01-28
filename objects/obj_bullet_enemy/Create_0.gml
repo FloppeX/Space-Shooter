@@ -1,2 +1,2 @@
 event_inherited();
-color = c_fuchsia
+color = c_lime

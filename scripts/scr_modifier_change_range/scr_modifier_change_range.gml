@@ -1,1 +1,1 @@
-bullet_range += argument0
+bullet_range_bonus += argument0

@@ -1,5 +1,7 @@
 event_inherited();
 
+depth = -10
+
 // Rocket properties
 obj_rotation = 0
 obj_health = 1

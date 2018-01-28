@@ -105,6 +105,7 @@ if add_thrust
 // Health
 
 if obj_health <= 0{
+	scr_explode_object_new();
 	for(var i = 0; i < 7; i+=1;)
 		with(ship_modules[i])
 			instance_destroy();

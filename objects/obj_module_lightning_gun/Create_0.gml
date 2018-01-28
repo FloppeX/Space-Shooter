@@ -13,3 +13,4 @@ barrel_length = 40
 boom_extended = false
 boom_retracted = true
 energy_cost = 30
+recoil_force = 0

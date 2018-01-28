@@ -45,7 +45,7 @@ target_point_x = irandom(global.wrap_border_left + global.play_area_width)
 target_point_y = irandom(global.wrap_border_left + global.play_area_width)
 
 
-/*
-gun = instance_create_depth(x,y,0,obj_module_gun);
-gun.owner = self;
-gun.bullet_type_base = obj_bullet_enemy
+debris_parts[0] = spr_debris_enemy_interceptor_1
+debris_parts[1] = spr_debris_enemy_interceptor_2
+debris_parts[2] = spr_debris_enemy_interceptor_3
+debris_parts[3] = spr_debris_enemy_interceptor_4

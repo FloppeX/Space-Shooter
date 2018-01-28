@@ -8,7 +8,7 @@ else controls_disabled = false
 //Health
 if obj_health <= 0{
 	phy_active = false
-	scr_explode_object();
+	scr_explode_object_new();
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
@@ -143,12 +143,36 @@ if controls_disabled == false{
 	}
 	
 // Modules
+
+// First reset the variables for each module
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	with (ship_modules[i])
+		scr_reset_module_variables();
+
+// Then apply all the modifiers that each module has
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
+	with (ship_modules[i]){
+		for(var h = 0; h < array_length_1d(modifiers); h+=1;)
+			if modifiers[h] != noone
+				script_execute(modifiers[h])
+		}
+	}
+	
+// Then calculate new values for the variables that each module has
+
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	with (ship_modules[i])
+		scr_calculate_module_variables();
+	
+// Check if they are activated
+
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 	if shoot_1 and controls_disabled == false
 		ship_modules[i].activated = true
 	else
 		ship_modules[i].activated = false
 	}
+
 	
 // Energy
 
@@ -164,3 +188,4 @@ scr_find_mirror_positions();
 // Wrap movement
 
 scr_wrap_room();
+
