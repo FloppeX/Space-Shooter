@@ -2,7 +2,7 @@
     "id": "1a13c1f7-1e1e-4a3e-995e-aec19996edbf",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_cockpit_cargo",
+    "name": "spr_module_cockpit_1",
     "For3D": false,
     "HTile": false,
     "VTile": false,

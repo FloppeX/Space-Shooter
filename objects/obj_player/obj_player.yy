@@ -81,51 +81,44 @@
     "physicsShape": 2,
     "physicsShapePoints": [
         {
-            "id": "6c98200f-b4ed-4767-af08-7c7b376322d1",
+            "id": "b67c75f5-2e94-4137-a229-54fe5ec23ef3",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 14,
-            "y": 76
+            "x": 2,
+            "y": 54
         },
         {
-            "id": "3d3444d5-490d-45f9-a08c-06cc5ba8b33c",
+            "id": "b052b69e-2bf8-47b6-9ce5-dda37dcf1b36",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 13.3333435,
-            "y": 22.9999962
+            "x": 3.33334351,
+            "y": 2.99999619
         },
         {
-            "id": "84417705-a4c3-4903-9c88-e24794270fba",
+            "id": "3b1ffb5a-57df-405b-9c57-9d68f41b4479",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 66.12947,
-            "y": 23.1222382
+            "x": 52.12947,
+            "y": 3.12223816
         },
         {
-            "id": "6b7a64f9-343c-4f02-9cf8-de8c4017e1ec",
+            "id": "4118c5e0-265c-4ec3-83ff-b1d50b05c989",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 99.90221,
-            "y": 46.48768
+            "x": 77.90221,
+            "y": 27.5911255
         },
         {
-            "id": "a85724d6-efe2-48f8-88b8-98efc0d4576c",
+            "id": "e122a1c4-fd8c-4ee1-9d5e-550897aa281d",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 99.90221,
-            "y": 54.5911255
-        },
-        {
-            "id": "819588fd-d879-495a-bf70-dc40ca9da3a6",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 65.85295,
-            "y": 74.65517
+            "x": 53.85295,
+            "y": 50.6551666
         }
     ],
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "0bf600db-c93d-475f-8127-3efc63ec6183",
+    "spriteId": "52f074f0-d131-408b-aa7c-53752247c6d9",
     "visible": true
 }

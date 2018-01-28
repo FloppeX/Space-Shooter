@@ -7,4 +7,5 @@ bullet_interval_base = 3
 bullet_range_base = 640
 energy_cost_base = 2
 recoil_force = 10
+barrel_length = 11
 bullet_color = c_orange

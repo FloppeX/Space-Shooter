@@ -77,6 +77,15 @@ if control_mode == 2{
 	
 // Moving
 
+if phy_speed > max_speed
+	add_thrust = 0
+	
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	if ship_modules[i].object_index == obj_module_engine
+		with(ship_modules[i])
+			add_thrust = other.add_thrust
+
+/*
 if add_thrust
 	{
 	if phy_speed < max_speed
@@ -94,9 +103,9 @@ if add_thrust
 	part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(offset_distance,-phy_rotation-offset_angle), phy_position_y+ lengthdir_y(offset_distance,-phy_rotation-offset_angle), part_engine_flame_player, 8);
 	//part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-38,-phy_rotation), phy_position_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke, 3);
 	//part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-38,-phy_rotation), mirror_y+ lengthdir_y(-38,-phy_rotation), global.part_rocket_smoke,3);
-
-
 	}
+	
+*/
 	
 // Stop ship from skidding
 if add_thrust
@@ -106,7 +115,7 @@ if add_thrust
 
 if obj_health <= 0{
 	scr_explode_object_new();
-	for(var i = 0; i < 7; i+=1;)
+	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
 			instance_destroy();
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)

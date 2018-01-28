@@ -54,39 +54,52 @@ map_scale = 2
 
 // Modules
 
-
-ship_modules[0] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
+ship_modules[0] = instance_create_depth(x,y,-10,obj_module_cockpit);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
-with (ship_modules[0])
-	scr_add_modifier(scr_module_modifier_homing_bullets)
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
+
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
+with (ship_modules[1])
+	scr_add_modifier(scr_modifier_bullet_color_random)
+	
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
-ship_modules[3] = instance_create_depth(x,y,-10,obj_module_shotgun);
-ship_modules[3].offset_angle = -90;
-ship_modules[3].activation_button = 3
-with (ship_modules[3])
+
+ship_modules[3] = instance_create_depth(x,y,-10,obj_module_empty);
+ship_modules[3].offset_angle = 0;
+ship_modules[3].activation_button = 4
+
+ship_modules[4] = instance_create_depth(x,y,-10,obj_module_shotgun);
+ship_modules[4].offset_angle = -90;
+ship_modules[4].activation_button = 3
+with (ship_modules[4])
 	scr_add_modifier(scr_module_modifier_wavy_bullets)
-ship_modules[4] = instance_create_depth(x,y,-10,obj_module_shield);
-ship_modules[4].offset_angle = 0;
-ship_modules[4].activation_button = 2
-ship_modules[5] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
-ship_modules[5].offset_angle = 90;
+	
+ship_modules[5] = instance_create_depth(x,y,-10,obj_module_shield);
+ship_modules[5].offset_angle = 0;
 ship_modules[5].activation_button = 2
-ship_modules[6] = instance_create_depth(x,y,-10,obj_module_mine_layer);
-ship_modules[6].offset_angle = 180; 
-ship_modules[6].activation_button = 1
-for(var i = 0; i < 7; i+=1;){
+
+ship_modules[6] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[6].offset_angle = 90;
+ship_modules[6].activation_button = 2
+
+ship_modules[7] = instance_create_depth(x,y,-10,obj_module_engine);
+ship_modules[7].offset_angle = 0; 
+ship_modules[7].activation_button = 1
+
+ship_modules[8] = instance_create_depth(x,y,-10,obj_module_empty);
+ship_modules[8].offset_angle = 0; 
+ship_modules[8].activation_button = 1
+
+ship_modules[9] = instance_create_depth(x,y,-10,obj_module_engine);
+ship_modules[9].offset_angle = 0; 
+ship_modules[9].activation_button = 1
+
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	ship_modules[i].owner= id;
-	}
-
-// Modifiers
-
-//ship_modifiers[0] = 
 
 // Particles
 
@@ -103,4 +116,4 @@ dust_emitter = part_emitter_create(global.part_system_below);
 debris_parts[0] = spr_debris_player_1
 debris_parts[1] = spr_debris_player_2
 debris_parts[2] = spr_debris_player_3
-debris_parts[3] = spr_cockpit_cargo
+debris_parts[3] = spr_module_cockpit_1

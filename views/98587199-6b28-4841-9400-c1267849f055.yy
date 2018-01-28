@@ -23,7 +23,8 @@
         "0725674a-bdb4-46fc-a227-203cf5b4ec35",
         "0eabc9ec-4b64-4e41-b981-57591812adb6",
         "e9e681b1-3504-4b31-8355-5ae3b57cb7d7",
-        "6003ea02-ef6c-4f8a-8ae6-10d6c783caaf"
+        "6003ea02-ef6c-4f8a-8ae6-10d6c783caaf",
+        "1a13c1f7-1e1e-4a3e-995e-aec19996edbf"
     ],
     "filterType": "GMSprite",
     "folderName": "Module sprites",

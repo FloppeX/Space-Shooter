@@ -17,7 +17,7 @@
         "053a0943-9c76-4426-96ee-6d472055fdf0",
         "85e491a2-9073-400e-beb1-e4f5ba96d55c",
         "ab69cdaf-5385-4b7f-ba50-e2eacb505c08",
-        "1a13c1f7-1e1e-4a3e-995e-aec19996edbf"
+        "52f074f0-d131-408b-aa7c-53752247c6d9"
     ],
     "filterType": "GMSprite",
     "folderName": "Spaceships",

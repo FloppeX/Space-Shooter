@@ -282,7 +282,7 @@
             "Key": "1a13c1f7-1e1e-4a3e-995e-aec19996edbf",
             "Value": {
                 "id": "ef4de98b-4822-471d-b5bf-0828a43f3319",
-                "resourcePath": "sprites\\spr_cockpit_cargo\\spr_cockpit_cargo.yy",
+                "resourcePath": "sprites\\spr_module_cockpit_1\\spr_module_cockpit_1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -691,6 +691,14 @@
             "Value": {
                 "id": "c58c255f-9025-4d41-87d3-989ad6a1d07a",
                 "resourcePath": "sprites\\spr_background_stars_2\\spr_background_stars_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "52f074f0-d131-408b-aa7c-53752247c6d9",
+            "Value": {
+                "id": "fecde4f6-7561-4390-a2e2-50977166ab6e",
+                "resourcePath": "sprites\\spr_ship_frame\\spr_ship_frame.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1178,7 +1186,7 @@
             "Key": "8e507044-144f-4111-a4b6-db35f5e3b6a4",
             "Value": {
                 "id": "6c712795-b36e-4059-8319-f11597330f37",
-                "resourcePath": "objects\\obj_module_shield1\\obj_module_shield1.yy",
+                "resourcePath": "objects\\obj_module_engine\\obj_module_engine.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1559,6 +1567,14 @@
             }
         },
         {
+            "Key": "c819ae29-f3d3-4d12-b791-d2077da70919",
+            "Value": {
+                "id": "4c445321-a1e6-476d-96ab-26a4cf2d9015",
+                "resourcePath": "objects\\obj_module_cockpit\\obj_module_cockpit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c93b5683-e74c-49b7-9492-cba4ece1a533",
             "Value": {
                 "id": "38828487-6139-424a-a220-9e5c66ff4b2a",
@@ -1602,7 +1618,7 @@
             "Key": "cfb7d2d0-eef3-4dcb-a909-79100f486283",
             "Value": {
                 "id": "f7d61996-d559-43f6-ae7a-f19966b4cc12",
-                "resourcePath": "objects\\obj_module_engine\\obj_module_engine.yy",
+                "resourcePath": "objects\\obj_module_shield\\obj_module_shield.yy",
                 "resourceType": "GMObject"
             }
         },
