@@ -78,11 +78,11 @@ ship_modules[4].activation_button = 3
 with (ship_modules[4])
 	scr_add_modifier(scr_module_modifier_wavy_bullets)
 	
-ship_modules[5] = instance_create_depth(x,y,-10,obj_module_shield);
+ship_modules[5] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[5].offset_angle = 0;
 ship_modules[5].activation_button = 2
 
-ship_modules[6] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[6] = instance_create_depth(x,y,-10,obj_module_cannon);
 ship_modules[6].offset_angle = 90;
 ship_modules[6].activation_button = 2
 
@@ -117,3 +117,10 @@ debris_parts[0] = spr_debris_player_1
 debris_parts[1] = spr_debris_player_2
 debris_parts[2] = spr_debris_player_3
 debris_parts[3] = spr_module_cockpit_1
+
+//Sounds
+
+explosion_sound = snd_explosion_2
+ship_audio_emitter = audio_emitter_create()
+audio_emitter_falloff(ship_audio_emitter, 200, 1000, 1);
+

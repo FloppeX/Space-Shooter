@@ -8,3 +8,5 @@ bullet_range_base = 960
 bullet_color = c_red
 
 recoil_force = 300
+
+sound = snd_cannon

@@ -10,6 +10,8 @@ game_paused = false;
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
 global.view_mode = 1
+global.max_zoom = 1600
+global.min_zoom = 200
 global.zoom = 600
 temp_zoom = 400
 
@@ -44,6 +46,15 @@ global.wrap_border_left = global.wrap_margin_player
 global.wrap_border_right = room_width - global.wrap_margin_player
 global.wrap_border_top = global.wrap_margin_player
 global.wrap_border_bottom = room_height - global.wrap_margin_player
+
+// Sound
+
+ambient_sound = snd_space_sound
+game_controller_audio_emitter = audio_emitter_create()
+audio_emitter_falloff(game_controller_audio_emitter, 200, 1600, 1);
+audio_play_sound_on(game_controller_audio_emitter,snd_space_sound,1,0)
+
+//audio_play_sound(ambient_sound,0,1)
 
 // Create particle systems
 

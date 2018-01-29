@@ -19,11 +19,13 @@ if gamepad_button_check(0,gp_select)
 if keyboard_check(vk_escape)
 	game_end();
 	
-if gamepad_button_check(0,gp_padu)
-	global.zoom = global.zoom - 100
+if gamepad_button_check_pressed(0,gp_padu)
+	global.zoom = global.zoom - 400
 
-if gamepad_button_check(0,gp_padd)
-	global.zoom = global.zoom + 100
+if gamepad_button_check_pressed(0,gp_padd)
+	global.zoom = global.zoom + 400
+	
+global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
 
 if gamepad_button_check_pressed(0,gp_padl){
 	if global.aa_level  <= 3
@@ -71,3 +73,8 @@ layer_vspeed(layer_get_id("background_layer_3"), view_object.phy_speed_y*0)
 
 layer_hspeed(layer_get_id("background_layer_4"), view_object.phy_speed_x*0)
 layer_vspeed(layer_get_id("background_layer_4"), view_object.phy_speed_y*0)
+
+// Sound
+
+audio_emitter_position(game_controller_audio_emitter,view_object.phy_position_x, view_object.phy_position_y,global.max_zoom);
+

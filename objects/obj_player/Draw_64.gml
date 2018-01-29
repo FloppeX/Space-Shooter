@@ -1,6 +1,6 @@
 // TEST
 
-draw_text(50,100,map_scale)
+draw_text(50,100,global.zoom)
 
 // MAP
 

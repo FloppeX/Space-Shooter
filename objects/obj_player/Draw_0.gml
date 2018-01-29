@@ -19,7 +19,9 @@ ship_modules[8].phy_position_x = phy_position_x + lengthdir_x(25,-phy_rotation+1
 ship_modules[8].phy_position_y = phy_position_y + lengthdir_y(25,-phy_rotation+180);
 ship_modules[9].phy_position_x = phy_position_x + lengthdir_x(35,-phy_rotation-135);
 ship_modules[9].phy_position_y = phy_position_y + lengthdir_y(35,-phy_rotation-135);
-//ship_modules[6].phy_rotation= phy_rotation;
+
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle + ship_modules[i].rotation_add
 
 // Draw ship and modules
 

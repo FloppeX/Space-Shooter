@@ -9,6 +9,7 @@ else controls_disabled = false
 if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
+	explosion_sound = audio_play_sound_on(ship_audio_emitter,explosion_sound,0,1)
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
@@ -67,11 +68,10 @@ if ai_mode == 2 {
 		target_point_y = scr_wrap_closest_y(target);
 
 		angle_diff = abs(angle_difference(-phy_rotation,target_dir));
+		shoot_1 = false
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
 			and angle_diff < 5
 			shoot_1 = true
-		else 
-			shoot_1 = false
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
 			ai_mode = 1
 			shoot_1 = false
@@ -189,3 +189,8 @@ scr_find_mirror_positions();
 
 scr_wrap_room();
 
+// Sound
+
+audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
+//if !audio_is_playing(engine_noise)
+//	engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,1)

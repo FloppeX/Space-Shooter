@@ -47,4 +47,9 @@ bullet_number_bonus = 0
 bullet_interval_bonus = 0
 energy_cost_bonus = 0
 
+//Sounds
+
+sound = noone
+module_audio_emitter = audio_emitter_create()
+audio_emitter_falloff(module_audio_emitter, 200, 1000, 1);
 

@@ -30,6 +30,8 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
+sound = snd_blaster
+//
 
 /*
 scr_add_modifier(scr_module_modifier_homing_bullets)
@@ -65,3 +67,5 @@ var h = irandom(5)
 
 script_execute(test_script)
 }
+*/
+
