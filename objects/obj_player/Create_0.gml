@@ -58,25 +58,30 @@ ship_modules[0] = instance_create_depth(x,y,-10,obj_module_cockpit);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
 
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
-with (ship_modules[1])
-	scr_add_modifier(scr_modifier_bullet_color_random)
+
 	
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
 
-ship_modules[3] = instance_create_depth(x,y,-10,obj_module_empty);
+ship_modules[3] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
 ship_modules[3].offset_angle = 0;
 ship_modules[3].activation_button = 4
-
+with (ship_modules[3])
+	scr_add_modifier(scr_modifier_bullet_color_random)
+	
 ship_modules[4] = instance_create_depth(x,y,-10,obj_module_shotgun);
 ship_modules[4].offset_angle = -90;
 ship_modules[4].activation_button = 3
 with (ship_modules[4])
-	scr_add_modifier(scr_module_modifier_wavy_bullets)
+	scr_add_modifier(scr_modifier_bullet_color_random)
+
+with (ship_modules[4])
+	scr_add_modifier(scr_module_modifier_faster_rof)
+
 	
 ship_modules[5] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[5].offset_angle = 0;

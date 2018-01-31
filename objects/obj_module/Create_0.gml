@@ -14,6 +14,8 @@ energy_cost = 0
 
 modifiers[0] = noone
 
+description_lines[0] = "1"
+
 // Modifier variables
 
 bullet_damage_modifier = 0
@@ -46,6 +48,16 @@ bullet_spread_bonus = 0
 bullet_number_bonus = 0
 bullet_interval_bonus = 0
 energy_cost_bonus = 0
+
+// Calculate values
+
+bullet_damage = round((bullet_damage_base * bullet_damage_multiplier) + bullet_damage_bonus)
+bullet_range = round((bullet_range_base * bullet_range_multiplier) + bullet_range_bonus)
+bullet_speed = round((bullet_speed_base * bullet_speed_multiplier) + bullet_speed_bonus)
+bullet_interval = round((bullet_interval_base * bullet_interval_multiplier) + bullet_interval_bonus)
+bullet_spread = round((bullet_spread_base * bullet_spread_multiplier) + bullet_spread_bonus)
+bullet_number = round((bullet_number_base * bullet_number_multiplier) + bullet_number_bonus)
+energy_cost = round((energy_cost_base * energy_cost_multiplier) + energy_cost_bonus)
 
 //Sounds
 

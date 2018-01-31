@@ -29,6 +29,12 @@ draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-ship_modules[i].phy_rotation,c_white,alpha)
 
+// TEST! Draw module descriptions...
+/*
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+	for(var h = 0; h < array_length_1d(ship_modules[i].description_lines); h+=1;)
+		draw_text(ship_modules[i].phy_position_x,ship_modules[i].phy_position_y+20*h,ship_modules[i].description_lines[h])
+*/
 // Draw sprite at mirror_positions
 
 if phy_position_x > room_width - 1.1 * global.wrap_margin_player{

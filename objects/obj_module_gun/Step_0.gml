@@ -1,8 +1,10 @@
 event_inherited();
 phy_rotation = owner.phy_rotation + offset_angle + rotation_add
 
+/*
 if image_index == 0
 	image_speed = 0
+*/
 
 bullet_timer -= 1;
 shoot = false
@@ -10,7 +12,7 @@ if activated and bullet_timer <= 0 and owner.energy > energy_cost{
 	shoot = true
 	scr_shoot();
 	image_index = 1;
-	image_speed = 1;
+	image_speed = image_number/bullet_interval;
 	owner.energy -= energy_cost;
 	
 	// Recoil
@@ -20,6 +22,6 @@ if activated and bullet_timer <= 0 and owner.energy > energy_cost{
 	// Sound
 	if sound != noone
 		weapon_sound = audio_play_sound_on(module_audio_emitter,sound,0,1)
-	
+	audio_sound_pitch(weapon_sound,bullet_interval_base/bullet_interval)
 	}
  

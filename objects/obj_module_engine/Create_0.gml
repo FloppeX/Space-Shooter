@@ -16,4 +16,5 @@ part_type_speed(part_engine_flame,0,10,0,0);
 part_type_life(part_engine_flame,1,5);
 
 sound = snd_engine_1
-engine_noise = snd_engine_1
+
+engine_noise = audio_play_sound_on(module_audio_emitter,sound,1,1)

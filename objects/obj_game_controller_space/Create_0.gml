@@ -517,6 +517,7 @@ player.phy_rotation = -90
    
 // Create some enemies
 
+/*
 repeat(0)
 	new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_interceptor)
 
@@ -525,3 +526,5 @@ repeat(2)
 
 repeat(6)
 	new_asteroid_1 = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_asteroid_big)
+	
+*/

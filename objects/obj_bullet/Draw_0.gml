@@ -8,3 +8,7 @@ gpu_set_blendmode(bm_normal)
 /*
 for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 	draw_text(x,y+20+20*i,modifiers[i])//asset_get_index(modifiers[i]
+	
+
+draw_text(x,y+20,phy_mass)
+draw_text(x,y+40,phy_inertia)

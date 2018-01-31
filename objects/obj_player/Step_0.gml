@@ -94,6 +94,7 @@ if add_thrust
 if obj_health <= 0{
 	scr_explode_object_new();
 	explosion_sound = audio_play_sound_on(ship_audio_emitter,explosion_sound,0,1)
+	phy_active = false
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
 			instance_destroy();

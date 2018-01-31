@@ -1,5 +1,5 @@
-var seek_range = 1000
-var force = 1500 * phy_mass
+var seek_range = 300
+var force = 200 * phy_mass
 
 var target = scr_rocket_find_target_in_arc(obj_enemy_ship,-phy_rotation,180,seek_range)
 if target != noone{

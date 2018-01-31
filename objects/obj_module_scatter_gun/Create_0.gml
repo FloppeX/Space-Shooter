@@ -3,11 +3,11 @@ event_inherited();
 bullet_damage_base = 1
 bullet_spread_base = 4
 bullet_number_base = 1
-bullet_interval_base = 3
-bullet_range_base = 640
+bullet_interval_base = 6
+bullet_range_base = 480
 energy_cost_base = 2
 recoil_force = 10
 barrel_length = 11
 bullet_color = c_orange
 
-sound = snd_scatter_gun
+sound = snd_scatter_gun_2

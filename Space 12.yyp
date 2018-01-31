@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "04f68d4c-d955-4258-9694-57c9bbd5dd6e",
+            "Value": {
+                "id": "bb77dac8-4701-4094-8804-796cdab51a97",
+                "resourcePath": "sounds\\snd_shotgun_2\\snd_shotgun_2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "053a0943-9c76-4426-96ee-6d472055fdf0",
             "Value": {
                 "id": "97988eb5-8e3a-4c65-9132-9a7c17513d5b",
@@ -604,6 +612,14 @@
                 "id": "ab4dd0ab-8183-4d22-8096-cc509608eb3e",
                 "resourcePath": "views\\3fccb891-ef09-43c7-b0ec-535b38aa1b80.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "404929d3-680b-4f8d-a386-effed84b1f02",
+            "Value": {
+                "id": "674c4748-8b68-4cd8-a3b8-e8541688ab99",
+                "resourcePath": "sounds\\snd_scatter_gun_2\\snd_scatter_gun_2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1287,6 +1303,14 @@
             }
         },
         {
+            "Key": "91b1ab2d-fb14-4ca9-a964-62330c827103",
+            "Value": {
+                "id": "bdb9d0a6-144d-4e6c-8b6d-381a66354c1d",
+                "resourcePath": "scripts\\scr_module_modifier_faster_rof\\scr_module_modifier_faster_rof.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "920e0912-17b7-4d6f-9607-3b6bd48635ef",
             "Value": {
                 "id": "7eaceaa6-bbe3-4b13-88bb-0ec1b3c66177",
@@ -1386,7 +1410,7 @@
             "Key": "9ac8c140-fd37-40df-80f1-82ec848d0581",
             "Value": {
                 "id": "27a5dc87-9ae4-4d1c-a170-53d3053eac75",
-                "resourcePath": "scripts\\scr_modifier_change_bullet_interval\\scr_modifier_change_bullet_interval.yy",
+                "resourcePath": "scripts\\scr_module_modifier_change_rof\\scr_module_modifier_change_rof.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1492,6 +1516,14 @@
                 "id": "8b4e7798-71c5-44c1-99f3-073cafb11ba8",
                 "resourcePath": "scripts\\scr_modifier_test_script_4\\scr_modifier_test_script_4.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
+            "Value": {
+                "id": "0fc41fd9-61f9-421d-9870-7d64b33fa606",
+                "resourcePath": "options\\linux\\options_linux.yy",
+                "resourceType": "GMLinuxOptions"
             }
         },
         {
@@ -1975,6 +2007,14 @@
             }
         },
         {
+            "Key": "f039b261-d142-43cb-8862-6e6882918c38",
+            "Value": {
+                "id": "73f2b462-838c-4b31-8a6b-a84a614447fe",
+                "resourcePath": "sprites\\spr_bullet\\spr_bullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f2fd4e48-306f-4b3c-87a2-b2c7c892d5d6",
             "Value": {
                 "id": "150e8b16-78ad-4f8c-abdc-5afc499dd270",
@@ -2012,6 +2052,14 @@
                 "id": "6e9cf753-cf27-477f-82b8-eae4202d51a0",
                 "resourcePath": "rooms\\rm_space\\rm_space.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
+            "Value": {
+                "id": "04b36523-d8df-4809-895a-fd47b2cba40e",
+                "resourcePath": "options\\mac\\options_mac.yy",
+                "resourceType": "GMMacOptions"
             }
         },
         {
@@ -2208,6 +2256,7 @@
         "66767565-49ad-4c40-9f86-5b059b31e454",
         "3ca6fcec-5446-4539-b8b0-64b12ef39f18",
         "ff48e256-8180-4aff-8bb5-851300bbac73",
+        "91b1ab2d-fb14-4ca9-a964-62330c827103",
         "1b35b03a-7982-4408-8edb-c7b188c03e9a",
         "fdc3b5e5-be1c-4d0e-99f8-6d532637a8bf",
         "c94d0668-6a31-41ea-8c35-7401337c56e2",

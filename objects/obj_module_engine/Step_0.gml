@@ -17,11 +17,11 @@ if add_thrust
 	}
 	
 // Sound
-if add_thrust{
+//if add_thrust{
 	//audio_emitter_pitch(module_audio_emitter, add_thrust);
 	audio_emitter_gain(module_audio_emitter, add_thrust);
-	if !audio_is_playing(engine_noise)
-		engine_noise = audio_play_sound_on(module_audio_emitter,sound,1,1)
-	}
-else
-	audio_stop_sound(engine_noise);
+	//if !audio_is_playing(engine_noise)
+	//	engine_noise = audio_play_sound_on(module_audio_emitter,sound,1,1)
+//	}
+//else
+	//audio_stop_sound(engine_noise);

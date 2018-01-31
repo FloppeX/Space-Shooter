@@ -10,10 +10,12 @@ if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
 	explosion_sound = audio_play_sound_on(ship_audio_emitter,explosion_sound,0,1)
-	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
+	phy_active = false
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
 			instance_destroy();
+	audio_emitter_free(ship_audio_emitter)
+	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
 	exit;
 	}
@@ -192,5 +194,5 @@ scr_wrap_room();
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
-//if !audio_is_playing(engine_noise)
+audio_emitter_velocity(ship_audio_emitter,phy_speed_x,phy_speed_y,0)
 //	engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,1)

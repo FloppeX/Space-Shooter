@@ -2,10 +2,10 @@ event_inherited();
 
 bullet_type_base = obj_bullet_player;
 bullet_damage_base = 8;
-bullet_range_base = 640
-bullet_speed_base = 17;
+bullet_range_base = 560
+bullet_speed_base = 7;
 bullet_interval_base = 16;
-bullet_spread_base = 2
+bullet_spread_base = 2	// the total spread angle, adds randomness to bullet direction
 bullet_number_base = 1
 energy_cost_base = 10
 
