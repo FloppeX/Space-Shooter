@@ -14,7 +14,7 @@ disabled_timer = 0
 controls_disabled = false
 
 target_speed = 0
-max_speed = 6
+max_speed = 5
 thrust = 0
 max_thrust = 360
 

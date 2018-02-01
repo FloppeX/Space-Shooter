@@ -33,12 +33,12 @@ energy = max_energy;
 energy_increase = 0.5;
 
 thrust = 800;
-rotation_force = 100;
+rotation_force = 70;
 drift_resistance = 800
 target_rotation = 0
 left_stick_value = 0
 
-max_speed = 6;
+max_speed = 4;
 
 obj_rotation = 0;
 col = 0;

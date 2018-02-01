@@ -1,6 +1,6 @@
 event_inherited();
 
-max_speed = 3.5
+max_speed = 3
 max_thrust = 440
 
 i = irandom(3)

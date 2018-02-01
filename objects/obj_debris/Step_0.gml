@@ -5,7 +5,7 @@ if destruction_timer <= 0
 	instance_destroy();
 
 if phy_speed > max_speed
-	phy_linear_damping = 0.2
+	phy_linear_damping = 0.6
 else 
 	phy_linear_damping = 0
 	

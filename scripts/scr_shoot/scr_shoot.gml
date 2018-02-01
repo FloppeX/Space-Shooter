@@ -12,7 +12,7 @@ bullets[i].range = bullet_range
 bullet_scale = 0.5+ 0.5*(bullets[i].damage/6)
 bullet_fixture = physics_fixture_create();
 physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)
-physics_fixture_set_density(bullet_fixture,0.2)
+physics_fixture_set_density(bullet_fixture,0.05)
 physics_fixture_bind(bullet_fixture,bullets[i])
 physics_fixture_delete(bullet_fixture)
 bullet_timer = bullet_interval;
