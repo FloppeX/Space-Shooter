@@ -10,22 +10,15 @@ else {
 	// view_object.phy_speed_x = 0
 	// view_object.phy_speed_y = 0
 	}
-
-
-/*	
-if gamepad_button_check(0,gp_start){
-	physics_pause_enable(true);
-   instance_deactivate_all(true);
-   game_paused = true
-	}
-else 
-	if game_paused == true{
-		physics_pause_enable(false);
-	   instance_activate_all();
-	   game_paused = false
-		}
-*/	
 	
+// Game controls
+	
+if keyboard_check(vk_escape)
+	game_end();
+	
+if gamepad_button_check(0,gp_start)
+	game_restart();
+
 if gamepad_button_check_pressed(0,gp_select){
 	var i = irandom(2);
 	switch(i){

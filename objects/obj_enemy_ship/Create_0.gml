@@ -34,7 +34,7 @@ starting_target_object = obj_player
 target_object = starting_target_object
 
 targeting_arc = 360;
-seek_range = 1800;
+seek_range = 6000;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0

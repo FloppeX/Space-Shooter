@@ -20,6 +20,8 @@ target_object = obj_enemy_ship
 
 // Ship variables
 
+physics_mass_properties(phy_mass, 0, 0, phy_inertia)
+
 depth = -5
 
 phy_rotation = -90
@@ -48,6 +50,7 @@ controls_disabled = false
 
 invisible = false
 alpha = 1
+
 // Map
 
 map_scale = 2
@@ -62,7 +65,7 @@ ship_modules[1] = instance_create_depth(x,y,-10,obj_module_shotgun);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
 with (ship_modules[1])
-	scr_add_modifier(scr_module_modifier_homing_bullets)
+	scr_add_modifier(scr_module_modifier_destroy_enemy_bullets)
 
 	
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
@@ -74,7 +77,7 @@ ship_modules[3] = instance_create_depth(x,y,-10,obj_module_shotgun);
 ship_modules[3].offset_angle = 0;
 ship_modules[3].activation_button = 4
 with (ship_modules[3])
-	scr_add_modifier(scr_module_modifier_aim_towards_enemy)
+	scr_add_modifier(scr_module_modifier_destroy_enemy_bullets)
 	
 ship_modules[4] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
 ship_modules[4].offset_angle = -90;
@@ -130,4 +133,3 @@ debris_parts[3] = spr_module_cockpit_1
 explosion_sound = snd_explosion_2
 ship_audio_emitter = audio_emitter_create()
 audio_emitter_falloff(ship_audio_emitter, 200, 1000, 1);
-

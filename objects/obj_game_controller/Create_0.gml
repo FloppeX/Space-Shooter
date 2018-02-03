@@ -10,10 +10,10 @@ game_paused = false;
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
 global.view_mode = 1
-global.max_zoom = 1600
+global.max_zoom = 1800
 global.min_zoom = 200
 global.zoom = 0.5 * (global.max_zoom - global.min_zoom)
-temp_zoom = 400
+temp_zoom = global.zoom
 
 
 // Graphics settings
@@ -21,8 +21,6 @@ temp_zoom = 400
 draw_enable_swf_aa(true);
 global.aa_level = 3
 draw_set_swf_aa_level(global.aa_level);
-
-//global.obj_to_center_view_on = noone; // This is the object that the view centers on. Will be set to player
 
 // Depth
 
@@ -506,6 +504,7 @@ for (var i = 0; i< 5; i++;){
 	
    }
    
+// Set global.level to 1 
 
 // instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_mouse_cursor)
    

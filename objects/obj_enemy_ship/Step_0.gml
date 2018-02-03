@@ -35,7 +35,7 @@ if ai_mode == 1 {
 	ai_timer -= 1;
 	min_standoff_distance = 500
 	max_standoff_distance = 800
-	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
+	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,360,seek_range)
 	if target != noone{
 		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
 		if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width

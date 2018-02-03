@@ -10,8 +10,7 @@ if selected_item < 0
 if selected_item >= array_length_1d(menu_items)
 	selected_item = 0
 	
-if gamepad_button_check_pressed(0,gp_face1)
+if gamepad_button_check_pressed(0,gp_face1) and menu_active == true
 	switch(selected_item){
 		case 0 : break;
-		case 1 : break;
 	}
