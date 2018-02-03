@@ -16,12 +16,4 @@ if add_thrust
 	//part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(flame_offset_distance,-phy_rotation-flame_offset_angle), phy_position_y+ lengthdir_y(flame_offset_distance,-phy_rotation-flame_offset_angle), part_engine_flame, 8);
 	}
 	
-// Sound
-//if add_thrust{
-	//audio_emitter_pitch(module_audio_emitter, add_thrust);
-	audio_emitter_gain(module_audio_emitter, add_thrust);
-	//if !audio_is_playing(engine_noise)
-	//	engine_noise = audio_play_sound_on(module_audio_emitter,sound,1,1)
-//	}
-//else
-	//audio_stop_sound(engine_noise);
+audio_emitter_pitch(module_audio_emitter, add_thrust);

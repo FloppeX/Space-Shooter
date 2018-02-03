@@ -6,4 +6,4 @@ if array_length_1d(description_lines) < array_length_1d(modifiers)
 	
 // Modifier script
 
-bullet_interval_multiplier -= 0.75
+bullet_interval_multiplier -= 0.90

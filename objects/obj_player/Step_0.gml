@@ -17,14 +17,22 @@ gamepad_button[4] = false
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
-
 	rotation_value = gamepad_axis_value(0,gp_axislh);
 	left_stick_value = sqrt(power(gamepad_axis_value(0,gp_axislh),2) + power(gamepad_axis_value(0,gp_axislv),2))
 	if abs(gamepad_axis_value(0,gp_axislh)) > 0.2 or abs(gamepad_axis_value(0,gp_axislv)) > 0.2
 		target_rotation = point_direction(0,0, gamepad_axis_value(0,gp_axislh), gamepad_axis_value(0,gp_axislv))
-	
 	gamepad_set_axis_deadzone(0, 0);
-
+	
+	if gamepad_button_check(0,gp_shoulderl){
+		target_rotation = -phy_rotation+90
+		left_stick_value = 1
+		}
+		
+	if gamepad_button_check(0,gp_shoulderr){
+		target_rotation = -phy_rotation-90
+		left_stick_value = 1
+		}
+		
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
 	if gamepad_button_check(0,gp_face1)

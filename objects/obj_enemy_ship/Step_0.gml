@@ -79,6 +79,7 @@ if ai_mode == 2 {
 			shoot_1 = false
 			}
 		}
+	else shoot_1 = false
 	}
 	
 // Avoid teammates

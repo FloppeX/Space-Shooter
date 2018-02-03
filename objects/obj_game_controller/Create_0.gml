@@ -12,7 +12,7 @@ view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_vi
 global.view_mode = 1
 global.max_zoom = 1600
 global.min_zoom = 200
-global.zoom = 600
+global.zoom = 0.5 * (global.max_zoom - global.min_zoom)
 temp_zoom = 400
 
 
@@ -506,13 +506,7 @@ for (var i = 0; i< 5; i++;){
 	
    }
    
-// Place player in the center of the room
 
-if !instance_exists(obj_player)
-	player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-player.controls_disabled = false
-player.phy_rotation = -90
-	
 // instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_mouse_cursor)
    
 // Create some enemies

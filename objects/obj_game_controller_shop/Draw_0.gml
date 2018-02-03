@@ -1,9 +1,11 @@
 // Zooming
 
+/*
 if gamepad_button_check_pressed(0,gp_shoulderr)
 	if global.view_mode == 1
 		global.view_mode = 2
 	else global.view_mode = 1
+*/
 
 aspect_ratio = display_get_width()/display_get_height(); 
 
