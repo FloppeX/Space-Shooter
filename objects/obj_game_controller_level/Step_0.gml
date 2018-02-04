@@ -65,7 +65,7 @@ if !instance_exists(obj_player)
 	death_timer -= 1
 	
 if death_timer <= 0 and !instance_exists(obj_death_menu){
-	death_menu = instance_create_depth(0.5*display_get_width(),0.3*display_get_height(),0,obj_death_menu)
+	death_menu = instance_create_depth(0.5*display_get_width(),0.4*display_get_height(),0,obj_death_menu)
 	death_menu.alignment = "center"
 	}
 	
