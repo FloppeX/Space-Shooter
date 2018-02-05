@@ -39,8 +39,10 @@ if activated and bullet_timer <= 0 and owner.energy > energy_cost{
 		physics_apply_impulse(other.phy_position_x,other.phy_position_y,lengthdir_x(other.recoil_force,-other.phy_rotation+180),lengthdir_y(other.recoil_force,-other.phy_rotation+180))
 	
 	// Sound
-	if sound != noone
-		weapon_sound = audio_play_sound_on(module_audio_emitter,sound,0,1)
+	if sound[0] != noone{
+		sound_number = irandom(array_length_1d(sound)-1)
+		weapon_sound = audio_play_sound_on(module_audio_emitter,sound[sound_number],0,owner.sound_priority)
+		}
 	audio_sound_pitch(weapon_sound,bullet_interval_base/bullet_interval)
 	}
  

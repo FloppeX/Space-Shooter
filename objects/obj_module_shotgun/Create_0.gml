@@ -7,4 +7,4 @@ bullet_range_base = 480
 bullet_color = c_fuchsia
 recoil_force = 100
 
-sound = snd_shotgun_2
+sound[0] = snd_shotgun_2

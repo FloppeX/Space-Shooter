@@ -10,4 +10,7 @@ recoil_force = 10
 barrel_length = 11
 bullet_color = c_orange
 
-sound = snd_scatter_gun_2
+sound[0] = snd_scatter_gun_1
+sound[1] = snd_scatter_gun_2
+sound[2] = snd_scatter_gun_3
+sound[3] = snd_scatter_gun_4

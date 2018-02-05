@@ -2,7 +2,7 @@ event_inherited();
 
 i = irandom(4)
 switch (i){
-	case 0: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_gun_enemy); break;
+	case 0: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
 	case 1: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
 	case 2: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
 	case 3: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;

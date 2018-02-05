@@ -2,7 +2,7 @@
     "id": "5428a362-5dea-47e9-8c13-e489941f8437",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_scatter_gun",
+    "name": "snd_scatter_gun_1",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,

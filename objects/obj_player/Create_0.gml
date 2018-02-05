@@ -61,38 +61,40 @@ ship_modules[0] = instance_create_depth(x,y,-10,obj_module_cockpit);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
 
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_shotgun);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
+/*
 with (ship_modules[1])
 	scr_add_modifier(scr_module_modifier_destroy_enemy_bullets)
-
+*/
 	
 ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[2].offset_angle = 0;
 ship_modules[2].activation_button = 4
 
 	
-ship_modules[3] = instance_create_depth(x,y,-10,obj_module_shotgun);
+ship_modules[3] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
 ship_modules[3].offset_angle = 0;
 ship_modules[3].activation_button = 4
 with (ship_modules[3])
 	scr_add_modifier(scr_module_modifier_destroy_enemy_bullets)
 	
-ship_modules[4] = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+ship_modules[4] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[4].offset_angle = -90;
 ship_modules[4].activation_button = 3
+/*
 with (ship_modules[4])
 	scr_add_modifier(scr_modifier_bullet_color_random)
 with (ship_modules[4])
 	scr_add_modifier(scr_module_modifier_faster_rof)
-
+*/
 	
 ship_modules[5] = instance_create_depth(x,y,-10,obj_module_empty);
 ship_modules[5].offset_angle = 0;
 ship_modules[5].activation_button = 2
 
-ship_modules[6] = instance_create_depth(x,y,-10,obj_module_cannon);
+ship_modules[6] = instance_create_depth(x,y,-10,obj_module_blaster);
 ship_modules[6].offset_angle = 90;
 ship_modules[6].activation_button = 2
 
@@ -129,6 +131,8 @@ debris_parts[2] = spr_debris_player_3
 debris_parts[3] = spr_module_cockpit_1
 
 //Sounds
+
+sound_priority = 1
 
 explosion_sound = snd_explosion_2
 ship_audio_emitter = audio_emitter_create()

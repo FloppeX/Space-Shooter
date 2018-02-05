@@ -30,7 +30,8 @@ bullet_timer = bullet_interval;
 bullet_depth = 10
 bullet_color = c_lime
 
-sound = snd_blaster
+sound[0] = snd_blaster_1
+
 //
 
 /*

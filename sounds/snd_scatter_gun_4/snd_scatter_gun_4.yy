@@ -1,8 +1,8 @@
 {
-    "id": "e58155d8-4f9e-47a6-9131-c49c2ba72032",
+    "id": "965544b3-241c-45f0-ae5f-858857c496b9",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_blaster",
+    "name": "snd_scatter_gun_4",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,

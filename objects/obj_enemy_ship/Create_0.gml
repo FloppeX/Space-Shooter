@@ -52,6 +52,8 @@ debris_parts[3] = spr_debris_enemy_interceptor_4
 
 //Sounds
 
+sound_priority = 0.5
+
 explosion_sound = snd_explosion_2
 engine_sound = snd_engine_1
 engine_noise = noone
@@ -59,4 +61,4 @@ engine_noise = noone
 ship_audio_emitter = audio_emitter_create()
 audio_emitter_falloff(ship_audio_emitter, 200, 1000, 1);
 
-engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,1)
+engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,sound_priority)

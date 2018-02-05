@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "06d8e07e-579d-413f-b665-0ea3b91979f9",
+            "Value": {
+                "id": "1e77decc-04c7-48e5-b6a6-0d7bc8e0590f",
+                "resourcePath": "sounds\\snd_blaster_2\\snd_blaster_2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "0725674a-bdb4-46fc-a227-203cf5b4ec35",
             "Value": {
                 "id": "c6d199a1-6ef3-4c5f-a2e5-48005936589f",
@@ -170,7 +178,7 @@
             "Key": "0c7ffc31-1314-4f1b-80de-2b39c9f13600",
             "Value": {
                 "id": "538b5514-e429-4e58-a81e-44ef0bad426a",
-                "resourcePath": "objects\\obj_module_gun_enemy\\obj_module_gun_enemy.yy",
+                "resourcePath": "objects\\obj_module_blaster_enemy\\obj_module_blaster_enemy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -463,6 +471,14 @@
             }
         },
         {
+            "Key": "2cad1c8b-156e-4c9f-aa9e-3bc292602d92",
+            "Value": {
+                "id": "cbbc4533-35a7-4fe8-80a6-2324cd50330f",
+                "resourcePath": "sounds\\snd_blaster_3\\snd_blaster_3.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "2cfb3c9e-a4d7-4515-bab7-0caba5b556ae",
             "Value": {
                 "id": "2fc25128-0834-4875-9226-0381c9d14b0f",
@@ -647,11 +663,27 @@
             }
         },
         {
+            "Key": "40414b0f-c0c0-4436-b982-05087071f890",
+            "Value": {
+                "id": "c5f2db3c-0a62-4267-a477-c169dff61b2c",
+                "resourcePath": "sounds\\snd_scatter_gun_3\\snd_scatter_gun_3.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "404929d3-680b-4f8d-a386-effed84b1f02",
             "Value": {
                 "id": "674c4748-8b68-4cd8-a3b8-e8541688ab99",
                 "resourcePath": "sounds\\snd_scatter_gun_2\\snd_scatter_gun_2.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "4233fb3a-7ccf-42ba-a82f-a9f0d365b298",
+            "Value": {
+                "id": "694955ba-dac1-447f-bce0-066e33d0757a",
+                "resourcePath": "objects\\obj_module_blaster\\obj_module_blaster.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -810,7 +842,7 @@
             "Key": "5428a362-5dea-47e9-8c13-e489941f8437",
             "Value": {
                 "id": "fa7ce1ec-8d04-4099-845b-6610ae5e6471",
-                "resourcePath": "sounds\\snd_scatter_gun\\snd_scatter_gun.yy",
+                "resourcePath": "sounds\\snd_scatter_gun_1\\snd_scatter_gun_1.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -1431,6 +1463,14 @@
             }
         },
         {
+            "Key": "965544b3-241c-45f0-ae5f-858857c496b9",
+            "Value": {
+                "id": "173a5ab7-468f-43e6-8aaa-fc5ed3858a0f",
+                "resourcePath": "sounds\\snd_scatter_gun_4\\snd_scatter_gun_4.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "969dd6cf-7fa2-48af-bac7-61a4280173ee",
             "Value": {
                 "id": "17d5a47d-0bbd-4a33-ac58-6fd3986f7825",
@@ -1580,6 +1620,14 @@
                 "id": "85cce5b3-c8b9-421a-bb72-fd6d2e58de6e",
                 "resourcePath": "scripts\\scr_module_modifier_wavy_bullets\\scr_module_modifier_wavy_bullets.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a8dbd3ec-7ce4-4145-abcb-c1922c721be9",
+            "Value": {
+                "id": "19af5d81-43be-45bf-916d-6bbfc1df238c",
+                "resourcePath": "sounds\\snd_blaster_4\\snd_blaster_4.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2018,7 +2066,7 @@
             "Key": "e58155d8-4f9e-47a6-9131-c49c2ba72032",
             "Value": {
                 "id": "8f168125-16c6-4cdd-bd20-6b537dfe9dd6",
-                "resourcePath": "sounds\\snd_blaster\\snd_blaster.yy",
+                "resourcePath": "sounds\\snd_blaster_1\\snd_blaster_1.yy",
                 "resourceType": "GMSound"
             }
         },

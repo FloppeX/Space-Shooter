@@ -9,4 +9,4 @@ bullet_color = c_red
 
 recoil_force = 300
 
-sound = snd_cannon
+sound[0] = snd_cannon
