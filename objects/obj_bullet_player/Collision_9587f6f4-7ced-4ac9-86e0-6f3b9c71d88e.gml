@@ -9,4 +9,4 @@ switch (i){
 	case 2: bullet_impact_sound = snd_bullet_vs_ship_3 ; break;
 	}
 
-audio_play_sound_at(bullet_impact_sound,phy_position_x,phy_position_y,0,100,1000,1,0,1)
+audio_play_sound_at(bullet_impact_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)

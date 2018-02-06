@@ -8,6 +8,7 @@ bullet_spread_base = 2
 bullet_number_base = 1
 energy_cost_base = 10
 
+
 sound[0] = snd_blaster_1
 sound[1] = snd_blaster_2
 sound[2] = snd_blaster_3

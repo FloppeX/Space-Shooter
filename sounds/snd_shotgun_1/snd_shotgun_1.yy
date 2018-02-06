@@ -1,8 +1,8 @@
 {
-    "id": "6e816d67-0d4b-4a74-9f67-5b62f6c928a9",
+    "id": "053a909a-c45b-44c5-acac-d57748086fbd",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_shotgun_new_test",
+    "name": "snd_shotgun_1",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
