@@ -61,7 +61,7 @@ ship_modules[0] = instance_create_depth(x,y,-10,obj_module_cockpit);
 ship_modules[0].offset_angle = 0;
 ship_modules[0].activation_button = 4
 
-ship_modules[1] = instance_create_depth(x,y,-10,obj_module_cannon);
+ship_modules[1] = instance_create_depth(x,y,-10,obj_module_scatter_gun);
 ship_modules[1].offset_angle = 0;
 ship_modules[1].activation_button = 4
 /*

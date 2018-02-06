@@ -719,14 +719,6 @@
             }
         },
         {
-            "Key": "4233fb3a-7ccf-42ba-a82f-a9f0d365b298",
-            "Value": {
-                "id": "694955ba-dac1-447f-bce0-066e33d0757a",
-                "resourcePath": "objects\\obj_module_blaster\\obj_module_blaster.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "448b3891-9d3e-4c4d-9354-979edc3afe7d",
             "Value": {
                 "id": "86896552-9f2d-467a-8532-cf0c99f2045c",
@@ -1263,6 +1255,14 @@
             }
         },
         {
+            "Key": "6e816d67-0d4b-4a74-9f67-5b62f6c928a9",
+            "Value": {
+                "id": "8cc8d6ae-d8b5-4954-9cbb-46569d0110d3",
+                "resourcePath": "sounds\\snd_shotgun_new_test\\snd_shotgun_new_test.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "6ea83281-b35f-4070-85e4-558e49443211",
             "Value": {
                 "id": "1f027a58-8420-4d24-a6bb-9b7624749b35",
@@ -1668,6 +1668,14 @@
                 "id": "2eff4d2e-3b96-4f14-a0f2-fe0a68a76146",
                 "resourcePath": "sprites\\sprite31\\sprite31.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "973fedff-2192-4ba8-a677-a4675fcecab3",
+            "Value": {
+                "id": "4b8e643c-3b0a-418a-9cf4-89b164b60e9b",
+                "resourcePath": "objects\\obj_module_blaster\\obj_module_blaster.yy",
+                "resourceType": "GMObject"
             }
         },
         {
