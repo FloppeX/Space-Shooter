@@ -101,7 +101,7 @@ if add_thrust
 
 if obj_health <= 0{
 	scr_explode_object_new();
-	explosion_sound = audio_play_sound_on(ship_audio_emitter,explosion_sound,0,1)
+	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])
@@ -158,4 +158,4 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 
-audio_listener_position(phy_position_x,phy_position_y,global.zoom)
+audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)

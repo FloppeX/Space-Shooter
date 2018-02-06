@@ -16,4 +16,4 @@ if add_thrust
 	//part_particles_create(global.part_system_below , phy_position_x+lengthdir_x(flame_offset_distance,-phy_rotation-flame_offset_angle), phy_position_y+ lengthdir_y(flame_offset_distance,-phy_rotation-flame_offset_angle), part_engine_flame, 8);
 	}
 	
-audio_emitter_gain(module_audio_emitter, add_thrust);
+audio_emitter_gain(module_audio_emitter,0.5* add_thrust);

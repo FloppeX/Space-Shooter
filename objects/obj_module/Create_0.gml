@@ -63,5 +63,5 @@ energy_cost = round((energy_cost_base * energy_cost_multiplier) + energy_cost_bo
 
 sound = noone
 module_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(module_audio_emitter, 200, 1000, 1);
+audio_emitter_falloff(module_audio_emitter, 100, 800, 1);
 

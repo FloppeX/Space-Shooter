@@ -9,7 +9,8 @@ else controls_disabled = false
 if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
-	explosion_sound = audio_play_sound_on(ship_audio_emitter,explosion_sound,0,1)
+	audio_stop_sound(engine_noise)
+	//audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
 	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 		with(ship_modules[i])

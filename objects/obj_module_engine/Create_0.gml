@@ -16,7 +16,7 @@ part_type_speed(part_engine_flame,0,10,0,0);
 part_type_life(part_engine_flame,1,5);
 
 
-sound_priority = 1
+sound_priority = random(0.5)+0.5
 
 sound = snd_engine_1
 

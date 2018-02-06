@@ -1,8 +1,8 @@
 {
-    "id": "fc79c833-4c2c-4a21-8385-fa4ade4c2294",
+    "id": "4c80c2fa-c2b5-419d-8807-30f834fcb09d",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_explosion_2",
+    "name": "snd_explosion_large_01",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,

@@ -31,9 +31,6 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 
 // TEST! Draw module descriptions...
 
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	for(var h = 0; h < array_length_1d(ship_modules[i].description_lines); h+=1;)
-		draw_text(ship_modules[i].phy_position_x,ship_modules[i].phy_position_y+20*h,array_length_1d(ship_modules[i].sound))
 /*
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	for(var h = 0; h < array_length_1d(ship_modules[i].description_lines); h+=1;)
