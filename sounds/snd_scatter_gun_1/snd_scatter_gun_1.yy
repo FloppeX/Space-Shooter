@@ -1,5 +1,5 @@
 {
-    "id": "5428a362-5dea-47e9-8c13-e489941f8437",
+    "id": "34785860-f946-4910-a02a-a4fd3249bd45",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_scatter_gun_1",

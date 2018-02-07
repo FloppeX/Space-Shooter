@@ -18,4 +18,4 @@ level = 1
 // Enemies
 
 number_of_asteroids = 6
-number_of_enemies = 3 * global.difficulty_level;
+number_of_enemies = 1// 3 * global.difficulty_level;

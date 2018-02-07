@@ -9,7 +9,7 @@ bullet_color = c_red
 
 recoil_force = 300
 
-sound[0] = snd_cannon_01
-sound[1] = snd_cannon_02
-sound[2] = snd_cannon_03
-sound[3] = snd_cannon_04
+sound[0] = snd_cannon_1
+sound[1] = snd_cannon_2
+sound[2] = snd_cannon_3
+sound[3] = snd_cannon_4

@@ -1,5 +1,5 @@
 {
-    "id": "e58155d8-4f9e-47a6-9131-c49c2ba72032",
+    "id": "68a6282f-0121-411a-bd9c-920257449b67",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_blaster_1",

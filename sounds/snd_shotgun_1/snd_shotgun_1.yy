@@ -1,5 +1,5 @@
 {
-    "id": "053a909a-c45b-44c5-acac-d57748086fbd",
+    "id": "fd66f0cf-3c23-4873-bf4f-f55263a29783",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_shotgun_1",

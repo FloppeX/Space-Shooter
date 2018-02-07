@@ -27,6 +27,7 @@ part_type_speed(bullet_glow_particle,phy_speed-0.1,phy_speed+0.1,0,0.3);
 part_type_color3(bullet_glow_particle,c_gray,color,c_black);
 part_type_scale(bullet_glow_particle,bullet_scale,bullet_scale)
 part_type_direction(bullet_glow_particle,-phy_rotation,-phy_rotation,0,0);
+part_type_life(bullet_glow_particle,5,10);
 part_particles_create(global.part_system_below, phy_position_x, phy_position_y, bullet_glow_particle, 6);
 // Hit an enemy
 

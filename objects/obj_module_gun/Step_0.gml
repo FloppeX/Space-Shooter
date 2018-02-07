@@ -31,7 +31,7 @@ if activated and bullet_timer <= 0 and owner.energy > energy_cost{
 		bullet_timer = bullet_interval;
 		}
 	image_index = 1;
-	image_speed = image_number/bullet_interval;
+	image_speed = (image_number+5)/bullet_interval;
 	owner.energy -= energy_cost;
 	
 	// Recoil

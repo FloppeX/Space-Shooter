@@ -9,7 +9,7 @@ switch (i){
 	case 1: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
 	case 2: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
 	case 3: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_lightning_gun_enemy); break;
+	case 4: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
 
 ship_modules[0].offset_angle = 0;
@@ -22,7 +22,7 @@ switch (i){
 	case 1: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
 	case 2: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
 	case 3: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_lightning_gun_enemy); break;
+	case 4: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
 
 ship_modules[1].offset_angle = 0;
