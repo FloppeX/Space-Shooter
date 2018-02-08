@@ -4,9 +4,9 @@
 // Inherit the parent event
 event_inherited();
 bullet_range_base = 560
-bullet_speed_base = 30;
+bullet_speed_base = 100;
 bullet_speed = bullet_speed_base
-bullet_interval_base = 30;
+bullet_interval_base = 40;
 bullet_interval = bullet_interval_base;
 bullet_type_base = obj_lightning_bolt_new;
 bullet_damage_base = 0;

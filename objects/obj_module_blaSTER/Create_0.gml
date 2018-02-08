@@ -2,7 +2,7 @@ event_inherited();
 
 bullet_damage_base = 8;
 bullet_range_base = 560
-bullet_speed_base = 7;
+bullet_speed_base = 20//7;
 bullet_interval_base = 16;
 bullet_spread_base = 2
 bullet_number_base = 1
