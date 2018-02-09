@@ -1,21 +1,32 @@
 phy_position_x = obj_player.phy_position_x + 100
 phy_position_y = obj_player.phy_position_y - 60
 for(var i = 0; i < 9; i+=1;){
-	var h = irandom(9)
+	var h = irandom(7)
 	switch (h){
-		case 0: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gun); break;
+		case 0: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_blaster); break;
 		case 1: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_shield); break;
 		case 2: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
-		case 3: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_laser); break;
-		case 4: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_rainbow_laser); break;
-		case 5: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
-		case 6: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_zapper); break;
-		case 7: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
-		case 8: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_teleporter); break;
-		case 9: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
+		case 3: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
+		case 4: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_zapper_new); break;
+		case 5: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
+		case 6: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_teleporter); break;
+		case 7: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
 		}
+		
+		/*
+	if object_get_parent(shop_modules[i].object_index) == obj_module_gun{
+		with (shop_modules[i].object_index)
+			scr_add_random_modifier_common();
 
+		with (shop_modules[i].object_index)
+			scr_add_random_modifier_uncommon();
+
+		with (shop_modules[i].object_index)
+			scr_add_random_modifier_rare();
+		}
+*/
 	shop_modules[i].offset_angle = irandom(3) * 90;
+	
 	switch (shop_modules[i].offset_angle){
 		case 0: shop_modules[i].activation_button = 4; break;
 		case 90: shop_modules[i].activation_button = 2; break;

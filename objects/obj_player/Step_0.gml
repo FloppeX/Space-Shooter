@@ -63,24 +63,27 @@ if keyboard_check(vk_left){
 	}
 	
 if keyboard_check_pressed(vk_up){
-		map_scale += 0.1
+		draw_scale += 0.1
 	}
 if keyboard_check_pressed(vk_down){
-		map_scale -= 0.1
+		draw_scale -= 0.1
 	}
 
 // Turn
-control_mode = 2
 
-phy_rotation = (phy_rotation + 360) mod 360
-if control_mode == 1
-	phy_angular_velocity = rotation_value * rotation_force;
-if control_mode == 2{
+if controls_disabled == false{
+	control_mode = 2
+
+	phy_rotation = (phy_rotation + 360) mod 360
+	if control_mode == 1
+		phy_angular_velocity = rotation_value * rotation_force;
+	if control_mode == 2{
 	
-	rotation_value = angle_difference(-phy_rotation,target_rotation)/10
-	rotation_value = clamp(rotation_value,-1,1)
-	rotation_value = rotation_value * left_stick_value
-	phy_angular_velocity = rotation_value * rotation_force
+		rotation_value = angle_difference(-phy_rotation,target_rotation)/10
+		rotation_value = clamp(rotation_value,-1,1)
+		rotation_value = rotation_value * left_stick_value
+		phy_angular_velocity = rotation_value * rotation_force
+		}
 	}
 	
 // Moving - activate the engines

@@ -1,6 +1,6 @@
 // TEST
 
-draw_text(50,100,global.zoom)
+draw_text(50,100,controls_disabled)
 
 // MAP
 

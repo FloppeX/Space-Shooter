@@ -18,4 +18,8 @@ level = 1
 // Enemies
 
 number_of_asteroids = 6
-number_of_enemies = 1// 3 * global.difficulty_level;
+number_of_enemies = 0// 3 * global.difficulty_level;
+
+// TEST Wormhole
+
+wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-200,-5,obj_wormhole)

@@ -15,7 +15,11 @@
         "3ca6fcec-5446-4539-b8b0-64b12ef39f18",
         "ff48e256-8180-4aff-8bb5-851300bbac73",
         "91b1ab2d-fb14-4ca9-a964-62330c827103",
-        "92c18efc-bf54-46ef-a05e-cd23b544a6d0"
+        "92c18efc-bf54-46ef-a05e-cd23b544a6d0",
+        "1703b764-0b3b-451e-8182-bf3971eb9537",
+        "ca6aaf19-3dc4-4c68-a4a8-74dae3d3b6df",
+        "cc563385-a988-4ea5-bd8c-2c8e912255a8",
+        "95d4685d-969c-471e-9d19-7eb3718ab84b"
     ],
     "filterType": "GMScript",
     "folderName": "Module modifiers",
