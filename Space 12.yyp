@@ -639,6 +639,14 @@
             }
         },
         {
+            "Key": "3847c2a5-255f-48d2-ad4c-e25220d74138",
+            "Value": {
+                "id": "11c3705e-425a-4329-a652-fe0fe273665c",
+                "resourcePath": "sprites\\spr_wormhole_3\\spr_wormhole_3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "387ebb1a-855a-4d73-8d19-9ea36e835e93",
             "Value": {
                 "id": "6ffc68c8-4c5f-4fe4-9fa8-873092a923d7",
