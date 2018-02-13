@@ -14,7 +14,9 @@ energy_cost = 0
 
 modifiers[0] = noone
 
-description_lines[0] = "1"
+modifiers_new[0] = noone
+
+description_lines[0] = noone
 
 // Modifier variables
 

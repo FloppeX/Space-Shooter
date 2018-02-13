@@ -37,6 +37,7 @@ if turn_timer <= 0{
 		new_bolt.damage = damage
 		new_bolt.color = color
 		new_bolt.maximum_branches = maximum_branches -1;
+		
 		}
 	
 	// Sprite

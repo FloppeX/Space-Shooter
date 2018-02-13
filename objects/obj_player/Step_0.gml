@@ -76,13 +76,13 @@ if controls_disabled == false{
 
 	phy_rotation = (phy_rotation + 360) mod 360
 	if control_mode == 1
-		phy_angular_velocity = rotation_value * rotation_force;
+		physics_apply_torque(rotation_value * rotation_force) // phy_angular_velocity = rotation_value * rotation_force;
 	if control_mode == 2{
 	
 		rotation_value = angle_difference(-phy_rotation,target_rotation)/10
 		rotation_value = clamp(rotation_value,-1,1)
 		rotation_value = rotation_value * left_stick_value
-		phy_angular_velocity = rotation_value * rotation_force
+		phy_angular_velocity = rotation_value * rotation_force // physics_apply_angular_impulse(rotation_value * rotation_force) //
 		}
 	}
 	

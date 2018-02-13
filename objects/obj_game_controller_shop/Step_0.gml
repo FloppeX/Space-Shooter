@@ -26,6 +26,7 @@ if gamepad_button_check_pressed(0,gp_padr)
 	else global.view_mode = 2
 
 // Make the players modules visible
-	
+/*
+for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	with (ship_modules[i])
 		visible = true

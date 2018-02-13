@@ -1,18 +1,39 @@
 phy_position_x = obj_player.phy_position_x + 100
 phy_position_y = obj_player.phy_position_y - 60
-for(var i = 0; i < 9; i+=1;){
-	var h = irandom(7)
+for(var i = 0; i < 3; i+=1;){
+	var h = irandom(10)
 	switch (h){
 		case 0: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_blaster); break;
-		case 1: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_shield); break;
-		case 2: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
-		case 3: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
+		case 1: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
+		case 2: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_shotgun); break;
+		case 3: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_cannon); break;
 		case 4: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_zapper_new); break;
-		case 5: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
-		case 6: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_teleporter); break;
-		case 7: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
+		case 5: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
+		case 6: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
+		case 7: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_shield); break;
+		case 8: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
+		case 9: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_teleporter); break;
+		case 10: shop_modules[i] = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
 		}
 		
+	/*
+	if object_get_parent(shop_modules[i].object_index) == obj_module_gun{
+		var g = irandom(99)
+		if g <= 74
+			with(shop_modules[i])
+				scr_add_random_modifier_common()
+				
+		g = irandom(99)
+		if g <= 49
+			with(shop_modules[i])
+				scr_add_random_modifier_uncommon()
+		
+		g = irandom(99)
+		if g <= 24
+			with(shop_modules[i])
+				scr_add_random_modifier_rare()
+
+	}
 		/*
 	if object_get_parent(shop_modules[i].object_index) == obj_module_gun{
 		with (shop_modules[i].object_index)
@@ -24,7 +45,7 @@ for(var i = 0; i < 9; i+=1;){
 		with (shop_modules[i].object_index)
 			scr_add_random_modifier_rare();
 		}
-*/
+		*/
 	shop_modules[i].offset_angle = irandom(3) * 90;
 	
 	switch (shop_modules[i].offset_angle){
@@ -51,6 +72,7 @@ shop_modules[1].phy_position_x = phy_position_x + x_starting_offset + x_step_off
 shop_modules[1].phy_position_y = phy_position_y + y_starting_offset;
 shop_modules[2].phy_position_x = phy_position_x + x_starting_offset + 2 * x_step_offset;
 shop_modules[2].phy_position_y = phy_position_y + y_starting_offset;
+/*
 shop_modules[3].phy_position_x = phy_position_x + x_starting_offset;
 shop_modules[3].phy_position_y = phy_position_y + y_starting_offset + y_step_offset;
 shop_modules[4].phy_position_x = phy_position_x + x_starting_offset + x_step_offset;

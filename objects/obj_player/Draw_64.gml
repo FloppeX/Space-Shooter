@@ -22,6 +22,7 @@ player_y = phy_position_y-global.wrap_border_top
 scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid);
 scr_draw_object_type_on_map(obj_rocket,spr_map_marker_rocket);
 scr_draw_object_type_on_map(obj_enemy_ship,spr_map_marker_enemy_ship);
+scr_draw_object_type_on_map(obj_wormhole,spr_map_wormhole);
 draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,map_scale,map_scale,-phy_rotation,c_white,1)
 
 // Health bar + energy_bar

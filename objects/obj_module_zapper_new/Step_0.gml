@@ -3,6 +3,13 @@
 
 event_inherited();
 
+// Assign an owner to the bullet
+
+if instance_exists(bullets[0])
+	for(var i = 0; i < array_length_1d(bullets); i+=1;)
+		with(bullets[i])
+			owner = other;
+
 //
 
 if image_index < 1

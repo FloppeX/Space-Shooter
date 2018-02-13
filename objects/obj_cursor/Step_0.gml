@@ -18,11 +18,15 @@ if mouse_check_button_pressed(mb_left){
 			instance_change(global.selected_module.object_index,true)
 			offset_angle = global.selected_module.offset_angle
 			phy_rotation = -90 + offset_angle
+			for(var i = 0; i < array_length_1d(global.selected_module.modifiers); i+=1;)
+				modifiers[i] = global.selected_module.modifiers[i]
 			}
 		with(global.selected_module){
 			instance_change(global.active_module.object_index,true)
 			offset_angle = global.active_module.offset_angle
 			phy_rotation = -90 + offset_angle
+			for(var i = 0; i < array_length_1d(global.active_module.modifiers); i+=1;)
+				modifiers[i] = global.active_module.modifiers[i]
 
 			}
 		with(global.active_module){
@@ -30,6 +34,8 @@ if mouse_check_button_pressed(mb_left){
 			offset_angle = global.swap_module.offset_angle
 			phy_rotation = -90
 			persistent = false
+			for(var i = 0; i < array_length_1d(global.swap_module.modifiers); i+=1;)
+				modifiers[i] = global.swap_module.modifiers[i]
 			}
 		}
 	}

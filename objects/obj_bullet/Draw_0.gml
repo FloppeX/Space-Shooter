@@ -1,4 +1,4 @@
-draw_text(x,y+40,phy_speed)
+//draw_text(x,y+40,phy_speed)
 /*
 temp_alpha = 0.6
 gpu_set_blendmode(bm_add)

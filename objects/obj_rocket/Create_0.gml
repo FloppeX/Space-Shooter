@@ -17,10 +17,10 @@ thrust = 140
 range = 3600;
 
 rotation_force = 80;
-drift_resistance = 10;
+drift_resistance = 15;
 
 hit_enemy = false;
-damage = 10;
+damage = 25;
 damage_color = c_lime;
 min_damage = 4;
 max_damage = 8;
