@@ -13,9 +13,7 @@ activate_shield = false
 energy_cost = 0
 
 modifiers[0] = noone
-
-modifiers_new[0] = noone
-
+bullets[0] = noone
 description_lines[0] = noone
 
 // Modifier variables

@@ -136,7 +136,7 @@ if energy > max_energy
 	energy = max_energy
 	
 // Apply modifiers for modules!
-
+/*
 // First reset the variables for each module
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	with (ship_modules[i])
@@ -156,7 +156,7 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 	with (ship_modules[i])
 		scr_calculate_module_variables();
-		
+*/		
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
