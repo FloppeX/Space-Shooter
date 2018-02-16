@@ -31,11 +31,13 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 
 // TEST! Draw module descriptions...
 
-/*
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	for(var h = 0; h < array_length_1d(ship_modules[i].description_lines); h+=1;)
-		draw_text(ship_modules[i].phy_position_x,ship_modules[i].phy_position_y+20*h,ship_modules[i].description_lines[h])
-*/
+if global.view_mode == 2{
+	draw_set_font(font_test_text)
+	draw_set_color(c_white)
+	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
+		for(var h = 0; h < array_length_1d(ship_modules[i].description_lines); h+=1;)
+			draw_text(ship_modules[i].phy_position_x,ship_modules[i].phy_position_y+20*h,ship_modules[i].description_lines[h])
+}
 // Draw sprite at mirror_positions
 
 if phy_position_x > room_width - 1.1 * global.wrap_margin_player{
