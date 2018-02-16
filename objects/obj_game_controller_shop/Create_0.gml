@@ -13,9 +13,10 @@ if instance_exists(obj_player)
 		phy_position_y = 0.5 * room_height
 		controls_disabled = true
 		phy_rotation = -90
-		for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-			with (ship_modules[i])
-				visible = true
+		for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+			with (module_holders[i])
+				if module != noone
+					module.visible = true
 		}
 
 if !instance_exists(obj_player){

@@ -36,8 +36,8 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 				module.phy_rotation = owner.phy_rotation + module.offset_angle + module.rotation_add
 		}
 
-for (var p = -room_width; p <= room_width; p += room_width)
-	for (var q = -room_height; q <= room_height; q+= room_height){
+for (var p = -global.play_area_width; p <= global.play_area_width; p += global.play_area_width)
+	for (var q = -global.play_area_height; q <= global.play_area_height; q+= global.play_area_height){
 		draw_sprite_ext(sprite_index,-1,phy_position_x+p,phy_position_y+q,draw_scale,draw_scale,-phy_rotation,c_white,alpha)
 		for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 			with(module_holders[i]){
