@@ -60,48 +60,95 @@ map_scale = 2
 
 // Modules
 
-ship_modules[0] = instance_create_depth(x,y,-10,obj_module_cockpit);
-ship_modules[0].offset_angle = 0;
-ship_modules[0].activation_button = 4
+/*
+ship_modules[0].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 50,-phy_rotation);
+ship_modules[0].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 50,-phy_rotation);
+ship_modules[1].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation+45);
+ship_modules[1].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation+45);
+ship_modules[2].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation);
+ship_modules[2].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation);
+ship_modules[3].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation-45);
+ship_modules[3].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation-45);
+ship_modules[4].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation+90);
+ship_modules[4].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation+90);
+ship_modules[5].phy_position_x = phy_position_x
+ship_modules[5].phy_position_y = phy_position_y
+ship_modules[6].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation-90);
+ship_modules[6].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation-90);
+ship_modules[7].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation+135);
+ship_modules[7].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation+135);
+ship_modules[8].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation+180);
+ship_modules[8].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation+180);
+ship_modules[9].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation-135);
+ship_modules[9].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation-135);
+*/
 
-ship_modules[1] = scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
-ship_modules[1].offset_angle = 0;
-ship_modules[1].activation_button = 4
+module_holders[0] = instance_create_depth(x,y,-10,obj_module_holder);
+module_holders[0].placement_offset_angle = 0
+module_holders[0].placement_offset_distance = 50
+module_holders[0].module = instance_create_depth(x,y,-10,obj_module_cockpit);
+module_holders[0].module.owner = id;
 
-ship_modules[2] = instance_create_depth(x,y,-10,obj_module_empty);
-ship_modules[2].offset_angle = 0;
-ship_modules[2].activation_button = 4
+module_holders[1] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
+module_holders[1].placement_offset_angle = 45
+module_holders[1].placement_offset_distance = 35
+module_holders[1].module = scr_create_random_module();
+module_holders[1].activation_button = 4;
 
-ship_modules[3] = scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
-ship_modules[3].offset_angle = 0;
-ship_modules[3].activation_button = 4
 
-ship_modules[4] = scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
-ship_modules[4].offset_angle = -90;
-ship_modules[4].activation_button = 3
+module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[2].placement_offset_angle = 0
+module_holders[2].placement_offset_distance = 25
+module_holders[2].module = noone;
+
+module_holders[3] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[3].placement_offset_angle = -45
+module_holders[3].placement_offset_distance = 35
+module_holders[3].module = scr_create_random_module();
+module_holders[3].activation_button = 4;
+
+module_holders[4] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
+module_holders[4].placement_offset_angle = 90
+module_holders[4].placement_offset_distance = 25
+module_holders[4].module = scr_create_random_module();
+module_holders[4].module.offset_angle = -90
+module_holders[4].activation_button = 3;
+
 	
-ship_modules[5] = instance_create_depth(x,y,-10,obj_module_empty);
-ship_modules[5].offset_angle = 0;
-ship_modules[5].activation_button = 2
+module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[5].placement_offset_angle = 0
+module_holders[5].placement_offset_distance = 0
+module_holders[5].module = noone;
 
-ship_modules[6] = scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
-ship_modules[6].offset_angle = 90;
-ship_modules[6].activation_button = 2
+module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
+module_holders[6].placement_offset_angle = -90
+module_holders[6].placement_offset_distance = 25
+module_holders[6].module = scr_create_random_module();
+module_holders[6].module.offset_angle = 90
+module_holders[6].activation_button = 2;
 
-ship_modules[7] = instance_create_depth(x,y,-10,obj_module_engine);
-ship_modules[7].offset_angle = 0; 
-ship_modules[7].activation_button = 1
+module_holders[7] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[7].placement_offset_angle = 135
+module_holders[7].placement_offset_distance = 35
+module_holders[7].module = instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[7].module.owner = id;
 
-ship_modules[8] = scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_shotgun);
-ship_modules[8].offset_angle = 180; 
-ship_modules[8].activation_button = 1
+module_holders[8] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_shotgun);
+module_holders[8].placement_offset_angle = 180
+module_holders[8].placement_offset_distance = 25
+module_holders[8].module = scr_create_random_module();
+module_holders[8].module.offset_angle = 180
+module_holders[8].activation_button = 1;
 
-ship_modules[9] = instance_create_depth(x,y,-10,obj_module_engine);
-ship_modules[9].offset_angle = 0; 
-ship_modules[9].activation_button = 1
 
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	ship_modules[i].owner= id;
+module_holders[9] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[9].placement_offset_angle = -135
+module_holders[9].placement_offset_distance = 35
+module_holders[9].module = instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[9].module.owner = id;
+
+for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+	module_holders[i].owner= id;
 	
 // Apply some random modifiers
 /*

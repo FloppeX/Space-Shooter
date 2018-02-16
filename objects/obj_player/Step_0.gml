@@ -46,12 +46,6 @@ if controls_disabled == false{
 		
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
-
-	if gamepad_button_check(0,gp_face4)
-		gamepad_button[4] = true
-	
-	if gamepad_button_check(0,gp_face4)
-		gamepad_button[4] = true
 }
 
 if keyboard_check(vk_right){
@@ -91,10 +85,8 @@ if controls_disabled == false{
 if phy_speed > max_speed
 	add_thrust = 0
 	
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	if ship_modules[i].object_index == obj_module_engine
-		with(ship_modules[i])
-			add_thrust = other.add_thrust
+for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+	module_holders[i].add_thrust = add_thrust
 	
 // Stop ship from skidding
 if add_thrust
@@ -106,8 +98,8 @@ if obj_health <= 0{
 	scr_explode_object_new();
 	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
-	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-		with(ship_modules[i])
+	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+		with(module_holders[i])
 			instance_destroy();
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
@@ -135,30 +127,16 @@ if energy < max_energy
 if energy > max_energy
 	energy = max_energy
 	
-// Apply modifiers for modules!
-/*
-// First reset the variables for each module
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	with (ship_modules[i])
-		scr_reset_module_variables();
-
-// Then apply all the modifiers that each module has
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-	with (ship_modules[i]){
-		for(var h = 0; h < array_length_1d(modifiers); h+=1;)
-			if modifiers[h] != noone
-				script_execute(modifiers[h])
-		}
-	}
-	
-// Then calculate new values for the variables that each module has
-
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	with (ship_modules[i])
-		scr_calculate_module_variables();
-*/		
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 
 audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
+
+// Send control inputs to module holders
+	
+for(var i = 0; i < array_length_1d(module_holders); i+=1;){
+	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
+	module_holders[i].gamepad_button[h] = gamepad_button[h]
+	module_holders[i].add_thrust = add_thrust
+	}

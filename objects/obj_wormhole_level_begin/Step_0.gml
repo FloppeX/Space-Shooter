@@ -24,9 +24,7 @@ warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 				//physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(force,temp_dir),lengthdir_y(force,temp_dir))
 				phy_angular_velocity = 800
 				}
-			if draw_scale >= 1{
-				draw_scale = 1
-				other.done_warping = true
-				}
+			}
 		}
-	}
+	else 
+		done_warping = true

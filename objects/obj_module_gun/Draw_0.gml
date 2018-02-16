@@ -3,5 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-
-warp_start_timer = 5
+/*
+draw_text(phy_position_x-300,phy_position_y-300,temp_speed_x)
+draw_text(phy_position_x-300,phy_position_y-250,temp_speed_y)

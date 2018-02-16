@@ -24,6 +24,8 @@ activation_button = 3
 activated = false
 barrel_length = 10
 shoot = false
+temp_speed_x = 0
+temp_speed_y = 0
 
 bullets[0] = noone
 bullet_timer = bullet_interval;

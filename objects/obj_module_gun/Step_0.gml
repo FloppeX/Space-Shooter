@@ -1,5 +1,7 @@
 event_inherited();
 phy_rotation = owner.phy_rotation + offset_angle + rotation_add
+temp_speed_x = phy_position_x - phy_position_xprevious
+temp_speed_y = phy_position_y - phy_position_yprevious
 
 /*
 if image_index == 0
@@ -31,9 +33,10 @@ if ready_to_shoot{
 		physics_fixture_bind(bullet_fixture,bullets[i])
 		physics_fixture_delete(bullet_fixture)
 		
+
 		bullets[i].phy_rotation = phy_rotation + random(2 * bullet_spread) - bullet_spread
-		bullets[i].phy_speed_x = phy_speed_x + lengthdir_x(bullet_speed,-bullets[i].phy_rotation)
-		bullets[i].phy_speed_y = phy_speed_y + lengthdir_y(bullet_speed,-bullets[i].phy_rotation)
+		bullets[i].phy_speed_x = temp_speed_x + lengthdir_x(bullet_speed,-bullets[i].phy_rotation)
+		bullets[i].phy_speed_y = temp_speed_y + lengthdir_y(bullet_speed,-bullets[i].phy_rotation)
 		bullets[i].color = bullet_color
 		bullets[i].damage = bullet_damage
 		bullets[i].range = bullet_range
