@@ -3,7 +3,7 @@
 activation_button = 2
 activated = false
 
-owner = obj_player;
+owner = id;
 offset_angle = 0;
 placement_offset_angle = 0
 placement_offset_distance = 0

@@ -1,31 +1,34 @@
-phy_position_x = obj_player.phy_position_x + 100
-phy_position_y = obj_player.phy_position_y - 60
+x = obj_player.phy_position_x + 400
+x = obj_player.phy_position_y
+//phy_rotation = -90
 
 energy = 100
-phy_rotation = -90
 
-x_starting_offset = 0
-y_starting_offset = 0
-x_step_offset = 34
-y_step_offset = 34
+x_starting_offset = 120
+y_starting_offset = -60
+x_step_offset = 0
+y_step_offset = 60
 
-for(var i = 0; i < 1; i+=1;){
+for(var i = 0; i < 3; i+=1;){
 	module_holders[i] = instance_create_depth(x,y,-10,obj_module_holder);
-	module_holders[i].owner= id;
+	module_holders[i].owner= obj_player
 	module_holders[i].placement_offset_angle = 0
 	module_holders[i].placement_offset_distance = 0
-	module_holders[i].module = scr_create_random_module();
-	module_holders[i].module.offset_angle = -90
-	module_holders[i].module.offset_angle = irandom(3) * 90;
 	module_holders[i].x = x + x_starting_offset + i * x_step_offset;
-	module_holders[i].y = y + y_starting_offset;
-	
-	switch (module_holders[i].module.offset_angle){
-		case 0: module_holders[i].activation_button = 4; break;
-		case 90: module_holders[i].activation_button = 2; break;
-		case 180: module_holders[i].activation_button = 1; break;
-		case 270: module_holders[i].activation_button = 3; break;
+	module_holders[i].y = x + y_starting_offset + i * y_step_offset;
+
+	temp_module = scr_create_random_module();
+	temp_module.owner = obj_player
+	temp_module.offset_angle = irandom(3) * 90;
+	switch (temp_module.offset_angle){
+		case 0: temp_module.activation_button = 4; break;
+		case 90: temp_module.activation_button = 2; break;
+		case 180: temp_module.activation_button = 1; break;
+		case 270: temp_module.activation_button = 3; break;
 		}
+		
+	module_holders[i].module = temp_module
+
 	}
 
 

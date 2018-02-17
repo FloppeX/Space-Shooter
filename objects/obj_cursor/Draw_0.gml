@@ -1,7 +1,7 @@
 draw_self();
 
-module_under_cursor = instance_place(phy_position_x,phy_position_y,obj_module)
+module_under_cursor = instance_place(x,y,obj_module)
 if module_under_cursor != noone
 	with(module_under_cursor)
 		for(var i = 0; i < array_length_1d(description_lines); i+=1;)
-			draw_text(phy_position_x,phy_position_y+20*i,description_lines[i])
+			draw_text(x,y+20*i,description_lines[i])

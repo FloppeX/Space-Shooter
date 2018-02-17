@@ -40,5 +40,3 @@ number_of_enemies = 0// 3 * global.difficulty_level;
 // Shop
 
 shop = instance_create_depth(0,0,12,obj_shop)
-shop.phy_position_x = 0.5 * room_width + 80
-shop.phy_position_y = 0.5 * room_height - 80
