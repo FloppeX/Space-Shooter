@@ -12,6 +12,7 @@ number_of_items = 3
 for(var i = 0; i < number_of_items; i+=1;){
 	module_holders[i] = instance_create_depth(x,y,-10,obj_module_holder);
 	module_holders[i].owner= obj_player
+	module_holders[i].visible = true
 	module_holders[i].persistent = false
 	module_holders[i].placement_offset_angle = 0
 	module_holders[i].placement_offset_distance = 0
