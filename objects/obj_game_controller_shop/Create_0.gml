@@ -10,7 +10,7 @@ part_particles_clear(global.part_system_below)
 if instance_exists(obj_player)
 	with(global.player){
 		phy_position_x = 0.5 * room_width
-		phy_position_y = 0.5 * room_height
+		phy_position_y = 0.5 * room_height+300
 		phy_speed_x = 0
 		phy_speed_y = 0
 		phy_angular_velocity = 0
@@ -47,7 +47,4 @@ wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,10
 
 //
 
-if !instance_exists(obj_wormhole_level_begin){
-	wormhole_end = instance_create_depth(0.5 * room_width,0.5 * room_height-300,100,obj_wormhole_level_end)
-	wormhole_end.next_level = rm_space
-	}
+

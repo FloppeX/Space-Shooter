@@ -30,8 +30,8 @@ if gamepad_button_check_pressed(0,gp_padr)
 if instance_exists(obj_player)
 	with(obj_player)
 		controls_disabled_timer = 30
-// Make the players modules visible
-/*
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	with (ship_modules[i])
-		visible = true
+		
+if !instance_exists(obj_wormhole){
+	wormhole_end = instance_create_depth(0.5 * room_width,0.5 * room_height-300,100,obj_wormhole_level_end)
+	wormhole_end.next_level = rm_space
+	}
