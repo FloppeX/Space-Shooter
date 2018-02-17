@@ -26,6 +26,10 @@ if gamepad_button_check_pressed(0,gp_padr)
 		global.view_mode = 1
 	else global.view_mode = 2
 
+
+if instance_exists(obj_player)
+	with(obj_player)
+		controls_disabled_timer = 30
 // Make the players modules visible
 /*
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)

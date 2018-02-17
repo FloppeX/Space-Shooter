@@ -99,9 +99,10 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	
 	// disable visibility of modules and draw them directly, so they dont wiggle around
 	with (module_holders[i])
-			visible = false
-	with (module_holders[i])
-			persistent = true
+		if module != noone{
+			module.visible = false
+			module.persistent = true
+		}
 	//draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,alpha)
 	/*
 	//ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle

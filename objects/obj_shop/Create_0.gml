@@ -1,21 +1,22 @@
 x = obj_player.phy_position_x + 400
 x = obj_player.phy_position_y
-//phy_rotation = -90
 
-energy = 100
+number_of_items = 3
 
-x_starting_offset = 120
-y_starting_offset = -60
+x_starting_offset = 200
+y_starting_offset = 0
 x_step_offset = 0
 y_step_offset = 60
+number_of_items = 3
 
-for(var i = 0; i < 3; i+=1;){
+for(var i = 0; i < number_of_items; i+=1;){
 	module_holders[i] = instance_create_depth(x,y,-10,obj_module_holder);
 	module_holders[i].owner= obj_player
+	module_holders[i].persistent = false
 	module_holders[i].placement_offset_angle = 0
 	module_holders[i].placement_offset_distance = 0
 	module_holders[i].x = x + x_starting_offset + i * x_step_offset;
-	module_holders[i].y = x + y_starting_offset + i * y_step_offset;
+	module_holders[i].y = x + y_starting_offset - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
 
 	temp_module = scr_create_random_module();
 	temp_module.owner = obj_player

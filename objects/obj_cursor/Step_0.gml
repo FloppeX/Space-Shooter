@@ -10,6 +10,8 @@ if mouse_check_button_pressed(mb_left){
 	if selected_module != noone {
 		swap_module = selected_module_holder.module
 		selected_module_holder.module = active_module
+		selected_module_holder.module.visible = false
+		selected_module_holder.module.persistent = true
 		active_module = swap_module
 		}
 	active_module.phy_position_x = 0
