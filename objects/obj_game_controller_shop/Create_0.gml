@@ -8,11 +8,15 @@ part_particles_clear(global.part_system_below)
 // Place player in the center of the room
 
 if instance_exists(obj_player)
-	with(obj_player){
+	with(global.player){
 		phy_position_x = 0.5 * room_width
-		phy_position_y = 0.5 * room_height	
-		phy_rotation = -90
-		visible = true			
+		phy_position_y = 0.5 * room_height
+		phy_speed_x = 0
+		phy_speed_y = 0
+		phy_angular_velocity = 0
+		phy_rotation = -90		
+		draw_scale = 1
+		visible = true
 		}
 
 if !instance_exists(obj_player){
@@ -35,9 +39,15 @@ number_of_enemies = 0// 3 * global.difficulty_level;
 
 // Shop
 
-shop = instance_create_depth(0,0,12,obj_shop)
+shop = instance_create_depth(0.5 * room_width,0.5 * room_height-300,12,obj_shop)
 
 // Wormhole
 
-wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
-wormhole.next_level = rm_space
+wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,100,obj_wormhole_level_begin)
+
+//
+
+if !instance_exists(obj_wormhole_level_begin){
+	wormhole_end = instance_create_depth(0.5 * room_width,0.5 * room_height-300,100,obj_wormhole_level_end)
+	wormhole_end.next_level = rm_space
+	}

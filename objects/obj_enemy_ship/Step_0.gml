@@ -56,7 +56,7 @@ if ai_mode == 1 {
 			ai_timer = 120
 			if irandom(2) == 0{
 				ai_mode = 2
-				ai_timer = 480
+				ai_timer = 120
 				}
 			}
 	}

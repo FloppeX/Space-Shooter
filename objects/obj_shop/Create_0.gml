@@ -1,5 +1,4 @@
-x = obj_player.phy_position_x + 400
-x = obj_player.phy_position_y
+
 
 number_of_items = 3
 

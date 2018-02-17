@@ -26,9 +26,14 @@ warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 			
 if death_timer <= 0{
 	with(global.player){
+		phy_position_x = 0.5 * room_width
+		phy_position_y = 0.5 * room_height
+		phy_speed_x = 0
+		phy_speed_y = 0
+		phy_angular_velocity = 0
+		phy_rotation = -90		
 		draw_scale = 1
 		visible = true
 		}
 	room_goto (next_level)
-	
 	}
