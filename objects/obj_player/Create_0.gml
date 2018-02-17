@@ -4,12 +4,12 @@ gamepad_button[1] = false
 gamepad_button[2] = false
 gamepad_button[3] = false
 gamepad_button[4] = false
-
+/*
 global.gamepad_button_x = false;
 global.gamepad_button_y = false;
 global.gamepad_button_a = false;
 global.gamepad_button_b = false;
-
+*/
 turn_clockwise = 0;
 turn_counter_clockwise = 0;
 add_thrust = 0;
@@ -92,7 +92,7 @@ module_holders[0].module.owner = id;
 module_holders[1] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
 module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
-module_holders[1].module = scr_create_random_module();
+module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[1].activation_button = 4;
 
 module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
@@ -103,15 +103,16 @@ module_holders[2].module = noone;
 module_holders[3] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[3].placement_offset_angle = -45
 module_holders[3].placement_offset_distance = 34
-module_holders[3].module = scr_create_random_module();
-module_holders[3].activation_button = 4;
+module_holders[3].module = noone //scr_create_random_module();
+//module_holders[3].activation_button = 4;
 
 module_holders[4] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
 module_holders[4].placement_offset_angle = 90
 module_holders[4].placement_offset_distance = 24
-module_holders[4].module = scr_create_random_module();
+module_holders[4].module = noone /* scr_create_random_module();
 module_holders[4].module.offset_angle = -90
 module_holders[4].activation_button = 3;
+*/
 
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[5].placement_offset_angle = 0
@@ -121,28 +122,24 @@ module_holders[5].module = noone;
 module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[6].placement_offset_angle = -90
 module_holders[6].placement_offset_distance = 24
-module_holders[6].module = scr_create_random_module();
+module_holders[6].module = noone /*scr_create_random_module();
 module_holders[6].module.offset_angle = 90
 module_holders[6].activation_button = 2;
-
+*/
 module_holders[7] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
 module_holders[7].placement_offset_angle = 135
 module_holders[7].placement_offset_distance = 34
 module_holders[7].module = instance_create_depth(x,y,-10,obj_module_engine);
-module_holders[7].module.owner = id;
 
 module_holders[8] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_shotgun);
 module_holders[8].placement_offset_angle = 180
 module_holders[8].placement_offset_distance = 24
-module_holders[8].module = scr_create_random_module();
-module_holders[8].module.offset_angle = 180
-module_holders[8].activation_button = 1;
+module_holders[8].module = noone
 
 module_holders[9] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
 module_holders[9].placement_offset_angle = -135
 module_holders[9].placement_offset_distance = 34
 module_holders[9].module = instance_create_depth(x,y,-10,obj_module_engine);
-module_holders[9].module.owner = id;
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 	module_holders[i].owner= id;

@@ -8,18 +8,18 @@ part_particles_clear(global.part_system_below)
 // Place player in the center of the room
 
 if instance_exists(obj_player){
-	player = instance_find(obj_player,0)
-	player.controls_disabled_timer = 60
-	player.phy_position_x = 0.5 * room_width
-	player.phy_position_y = 0.5 * room_height
-	player.phy_rotation = -90
-	player.draw_scale = 0.01
+	global.player = instance_find(obj_player,0)
+	global.player.controls_disabled_timer = 60
+	global.player.phy_position_x = 0.5 * room_width
+	global.player.phy_position_y = 0.5 * room_height
+	global.player.phy_rotation = -90
+	global.player.draw_scale = 0.01
 	}
 if !instance_exists(obj_player){
-	player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-	player.controls_disabled_timer = 60
-	player.phy_rotation = -90
-	player.draw_scale = 0.01
+	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
+	global.player.controls_disabled_timer = 60
+	global.player.phy_rotation = -90
+	global.player.draw_scale = 0.01
 	}
 	
 // Wormhole
@@ -37,6 +37,6 @@ level = 1
 
 // Enemies
 
-number_of_asteroids = 0
-number_of_enemies = 0// 3 * global.difficulty_level;
+number_of_asteroids = irandom(2) * global.difficulty_level;
+number_of_enemies = 1 * global.difficulty_level;
 

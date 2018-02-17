@@ -29,8 +29,11 @@ ship_modules[1].offset_angle = 0;
 ship_modules[1].placement_offset_distance = 22
 ship_modules[1].placement_offset_angle = -45
 
+
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-	ship_modules[i].owner= id;
+
+	ship_modules[i].owner = id;
+	ship_modules[i].persistent = false;
 	}
 
 gun_bullet_speed = ship_modules[0].bullet_speed

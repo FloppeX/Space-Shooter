@@ -25,7 +25,10 @@ warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 			}
 			
 if death_timer <= 0{
-	next_level = room_duplicate(rm_space)
+	with(global.player){
+		draw_scale = 1
+		visible = true
+		}
 	room_goto (next_level)
-	global.difficulty_level += 1;
+	
 	}

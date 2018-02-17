@@ -74,5 +74,8 @@ if death_timer <= 0 and !instance_exists(obj_death_menu){
 if !instance_exists(obj_enemy_ship)
 	next_level_timer -= 1
 	
-if next_level_timer <= 0 and !instance_exists(obj_wormhole)
-	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-200,100,obj_wormhole_level_end)
+if next_level_timer <= 0 and !instance_exists(obj_wormhole){
+	global.difficulty_level += 1;
+	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
+	wormhole.next_level = rm_shop
+	}

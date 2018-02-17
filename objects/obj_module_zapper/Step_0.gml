@@ -1,6 +1,3 @@
-phy_rotation = owner.phy_rotation + offset_angle + rotation_add
-//
-
 bullet_timer -= 1;
 
 if image_index == 0

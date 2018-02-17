@@ -1,5 +1,5 @@
 event_inherited();
-phy_rotation = owner.phy_rotation + offset_angle + rotation_add
+
 temp_speed_x = phy_position_x - phy_position_xprevious
 temp_speed_y = phy_position_y - phy_position_yprevious
 
