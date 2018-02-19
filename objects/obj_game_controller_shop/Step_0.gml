@@ -1,7 +1,6 @@
 event_inherited();
 
 // Game controls
-global.zoom = 600
 
 if instance_exists(obj_player){
 	

@@ -39,7 +39,7 @@ number_of_enemies = 0// 3 * global.difficulty_level;
 
 // Shop
 
-shop = instance_create_depth(0.5 * room_width,0.5 * room_height-300,12,obj_shop)
+shop = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_shop)
 
 // Wormhole
 

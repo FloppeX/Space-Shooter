@@ -4,8 +4,6 @@ image_angle = rotation
 if module != noone and instance_exists(module){
 	module.owner = owner
 	module.persistent = true
-	//module.visible = true
-
 	module.phy_speed_x = hspeed
 	module.phy_speed_y = vspeed
 	module.phy_position_x = x

@@ -423,6 +423,14 @@
             }
         },
         {
+            "Key": "235ef8f5-8a10-4f9d-b73e-094d0a465085",
+            "Value": {
+                "id": "2864f6b1-8f06-4bc8-8f01-4cabc5d58d95",
+                "resourcePath": "sprites\\spr_module_holder_invisible\\spr_module_holder_invisible.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "24065fdc-7414-449a-a218-62eaf9c90654",
             "Value": {
                 "id": "76d768b9-27e9-47d7-aa5d-100fcbeb5634",

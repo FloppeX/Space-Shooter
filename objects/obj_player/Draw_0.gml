@@ -99,6 +99,7 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	
 	// disable visibility of modules and draw them directly, so they dont wiggle around
 	with (module_holders[i])
+		//visible = false
 		if module != noone{
 			module.visible = false
 			module.persistent = true

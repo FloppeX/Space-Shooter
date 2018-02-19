@@ -1,25 +1,27 @@
-
+// junk variables..
+energy = 0
+phy_rotation = -90
+//
 
 number_of_items = 3
 
 x_starting_offset = 200
-y_starting_offset = 0
+y_starting_offset = 200
 x_step_offset = 0
 y_step_offset = 60
-number_of_items = 1
 
 for(var i = 0; i < number_of_items; i+=1;){
 	module_holders[i] = instance_create_depth(x,y,-10,obj_module_holder);
-	module_holders[i].owner = global.player
+	module_holders[i].owner = id
 	module_holders[i].visible = true
 	module_holders[i].persistent = false
 	module_holders[i].placement_offset_angle = 0
 	module_holders[i].placement_offset_distance = 0
-	module_holders[i].x = x + x_starting_offset + i * x_step_offset;
-	module_holders[i].y = x + y_starting_offset - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
+	module_holders[i].x = phy_position_x + x_starting_offset + i * x_step_offset;
+	module_holders[i].y = phy_position_y + y_starting_offset - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
 
 	temp_module = scr_create_random_module();
-	temp_module.owner = global.player
+	temp_module.owner = id
 	temp_module.offset_angle = irandom(3) * 90;
 	switch (temp_module.offset_angle){
 		case 0: temp_module.activation_button = 4; break;
