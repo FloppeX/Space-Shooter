@@ -13,10 +13,12 @@ shoot = false
 
 if !activated 
 	ready_to_shoot = false
-if !(bullet_timer <= 0) 
-	ready_to_shoot = false
-if !(owner.energy > energy_cost)
-	ready_to_shoot = false
+if activated {
+	if !(bullet_timer <= 0) 
+		ready_to_shoot = false
+	if !(owner.energy > energy_cost)
+		ready_to_shoot = false
+	}
 		
 if ready_to_shoot{
 	shoot = true

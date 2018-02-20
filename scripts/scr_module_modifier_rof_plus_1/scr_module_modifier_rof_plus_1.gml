@@ -1,10 +1,7 @@
 // Description text
 
-modifier_description = "Range +100"
-/*
-if array_length_1d(description_lines) < array_length_1d(modifiers)
-	description_lines[array_length_1d(description_lines)] = modifier_description
-*/
+modifier_description = "Rate of fire +1"
+
 // Modifier script
 
-bullet_range_bonus += 100
+bullet_interval_bonus -= 1

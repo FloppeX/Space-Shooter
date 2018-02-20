@@ -21,17 +21,15 @@ var h = irandom(10)
 		*/
 		}
 	
-var p = irandom(99)
-if p <= 49 and p > 24
-	with (temp_module)
-		scr_add_random_modifier_common();
-		
-if p <= 24 and p > 9
-	with (temp_module)
-		scr_add_random_modifier_uncommon();
-		
-if p <= 9
-	with (temp_module)
-		scr_add_random_modifier_rare();
-
+repeat(irandom(2)+1){
+	var p = irandom(99)
+	if p <= 49 and p > 14
+		with (temp_module)
+			scr_add_random_modifier_common();
+	var p = irandom(99)
+	if p <= 14 and p >= 0
+		with (temp_module)
+			scr_add_random_modifier_uncommon();
+	}	
+	
 return temp_module;

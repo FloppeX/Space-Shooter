@@ -1,4 +1,7 @@
 event_inherited();
+
+description_lines[0] = "Shotgun"
+
 bullet_damage_base = 2
 bullet_spread_base = 8
 bullet_number_base = 6

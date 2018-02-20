@@ -1,5 +1,7 @@
 event_inherited();
 
+description_lines[0] = "Missile launcher"
+
 bullet_type_base = obj_rocket;
 bullet_damage_base = 15;
 bullet_range_base = 1640

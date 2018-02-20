@@ -1,8 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
 event_inherited();
+
+description_lines[0] = "Mine layer"
+
 barrel_length = 10
 bullet_speed_base = 1;
 bullet_type_base = obj_mine

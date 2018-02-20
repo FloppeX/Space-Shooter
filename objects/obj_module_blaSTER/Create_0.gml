@@ -1,5 +1,7 @@
 event_inherited();
 
+description_lines[0] = "Blaster"
+
 bullet_damage_base = 8;
 bullet_range_base = 560
 bullet_speed_base = 7;

@@ -1,8 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
 event_inherited();
+
+description_lines[0] = "Zapper"
+
 bullet_range_base = 560
 bullet_speed_base = 100;
 bullet_speed = bullet_speed_base
