@@ -96,13 +96,17 @@ if add_thrust
 
 if obj_health <= 0{
 	scr_explode_object_new();
-	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
 	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
-		with(module_holders[i])
+		with(module_holders[i]){
+			with(module)
+				instance_destroy();
 			instance_destroy();
+			}
+	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
+	exit;
 	}
 
 // Set wrap boundaries for other objects

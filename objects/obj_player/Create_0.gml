@@ -4,12 +4,7 @@ gamepad_button[1] = false
 gamepad_button[2] = false
 gamepad_button[3] = false
 gamepad_button[4] = false
-/*
-global.gamepad_button_x = false;
-global.gamepad_button_y = false;
-global.gamepad_button_a = false;
-global.gamepad_button_b = false;
-*/
+
 turn_clockwise = 0;
 turn_counter_clockwise = 0;
 add_thrust = 0;
@@ -59,29 +54,6 @@ draw_scale = 1
 map_scale = 2
 
 // Modules
-
-/*
-ship_modules[0].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 50,-phy_rotation);
-ship_modules[0].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 50,-phy_rotation);
-ship_modules[1].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation+45);
-ship_modules[1].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation+45);
-ship_modules[2].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation);
-ship_modules[2].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation);
-ship_modules[3].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation-45);
-ship_modules[3].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation-45);
-ship_modules[4].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation+90);
-ship_modules[4].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation+90);
-ship_modules[5].phy_position_x = phy_position_x
-ship_modules[5].phy_position_y = phy_position_y
-ship_modules[6].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation-90);
-ship_modules[6].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation-90);
-ship_modules[7].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation+135);
-ship_modules[7].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation+135);
-ship_modules[8].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 25,-phy_rotation+180);
-ship_modules[8].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 25,-phy_rotation+180);
-ship_modules[9].phy_position_x = phy_position_x + lengthdir_x(draw_scale * 35,-phy_rotation-135);
-ship_modules[9].phy_position_y = phy_position_y + lengthdir_y(draw_scale * 35,-phy_rotation-135);
-*/
 
 module_holders[0] = instance_create_depth(x,y,-10,obj_module_holder);
 module_holders[0].placement_offset_angle = 0

@@ -1,11 +1,11 @@
 // Place modules
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-	ship_modules[i].phy_position_x = phy_position_x + lengthdir_x(ship_modules[i].placement_offset_distance,-phy_rotation+ship_modules[i].placement_offset_angle);
-	ship_modules[i].phy_position_y = phy_position_y + lengthdir_y(ship_modules[i].placement_offset_distance,-phy_rotation+ship_modules[i].placement_offset_angle);
-	ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
-	ship_modules[i].phy_speed_x = phy_speed_x
-	ship_modules[i].phy_speed_y = phy_speed_y
-	}
+for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+	with(module_holders[i]){
+		x = other.phy_position_x + lengthdir_x(other.draw_scale * placement_offset_distance,-other.phy_rotation+placement_offset_angle);
+		y = other.phy_position_y + lengthdir_y(other.draw_scale * placement_offset_distance,-other.phy_rotation+placement_offset_angle);
+		if module != noone
+				module.phy_rotation = owner.phy_rotation + module.offset_angle + module.rotation_add
+		}
 
 // scr_draw_vision_cone();
 draw_self();

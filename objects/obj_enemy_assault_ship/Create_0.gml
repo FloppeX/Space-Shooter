@@ -3,40 +3,44 @@ event_inherited();
 max_speed = 3
 max_thrust = 440
 
-i = irandom(4)
-switch (i){
-	case 0: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
-	case 1: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
-	case 2: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
-	case 3: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: ship_modules[0] = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
-	}
+// Modules
 
-ship_modules[0].offset_angle = 0;
-ship_modules[0].placement_offset_distance = 22
-ship_modules[0].placement_offset_angle = 45
+module_holders[0] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
+module_holders[0].placement_offset_angle = 45
+module_holders[0].placement_offset_distance = 22
+module_holders[0].activation_button = 4;
+module_holders[0].owner = id;
+module_holders[0].persistent = false;
 
 i = irandom(4)
 switch (i){
-	case 0: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
-	case 1: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
-	case 2: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
-	case 3: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: ship_modules[1] = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
+	case 0: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
+	case 1: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
+	case 2: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
+	case 3: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
+	case 4: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
+module_holders[0].module.persistent = false;
 
-ship_modules[1].offset_angle = 0;
-ship_modules[1].placement_offset_distance = 22
-ship_modules[1].placement_offset_angle = -45
+	
+module_holders[1] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
+module_holders[1].placement_offset_angle = -45
+module_holders[1].placement_offset_distance = 22
+module_holders[1].activation_button = 4;
+module_holders[1].owner = id;
+module_holders[1].persistent = false;
 
-
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-
-	ship_modules[i].owner = id;
-	ship_modules[i].persistent = false;
+i = irandom(4)
+switch (i){
+	case 0: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
+	case 1: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
+	case 2: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
+	case 3: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
+	case 4: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
+module_holders[1].module.persistent = false;
 
-gun_bullet_speed = ship_modules[0].bullet_speed
+gun_bullet_speed = module_holders[0].module.bullet_speed
 
 //Sounds
 

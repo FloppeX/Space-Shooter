@@ -1,3 +1,10 @@
+// Controls
+// Reset them first
+
+gamepad_button[1] = false
+gamepad_button[2] = false
+gamepad_button[3] = false
+gamepad_button[4] = false
 
 // Disabled?
 disabled_timer -= 1;
@@ -12,9 +19,12 @@ if obj_health <= 0{
 	audio_stop_sound(engine_noise)
 	//audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
-	for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-		with(ship_modules[i])
+	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
+		with(module_holders[i]){
+			with(module)
+				instance_destroy();
 			instance_destroy();
+			}
 	audio_emitter_free(ship_audio_emitter)
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
@@ -71,16 +81,16 @@ if ai_mode == 2 {
 		target_point_y = scr_wrap_closest_y(target);
 
 		angle_diff = abs(angle_difference(-phy_rotation,target_dir));
-		shoot_1 = false
+		shoot = false
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
-			and angle_diff < 5
-			shoot_1 = true
+			and angle_diff < 5 and !controls_disabled
+			shoot = true
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
 			ai_mode = 1
-			shoot_1 = false
+			shoot = false
 			}
 		}
-	else shoot_1 = false
+	else shoot = false
 	}
 	
 // Avoid teammates
@@ -145,36 +155,21 @@ if controls_disabled == false{
 	part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
 	}
-	
-// Modules
 
-// First reset the variables for each module
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	with (ship_modules[i])
-		scr_reset_module_variables();
-
-// Then apply all the modifiers that each module has
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
-	with (ship_modules[i]){
-		for(var h = 0; h < array_length_1d(modifiers); h+=1;)
-			if modifiers[h] != noone
-				script_execute(modifiers[h])
-		}
-	}
-	
-// Then calculate new values for the variables that each module has
-
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
-	with (ship_modules[i])
-		scr_calculate_module_variables();
-	
 // Check if they are activated
-
-for(var i = 0; i < array_length_1d(ship_modules); i+=1;){
+/*
+for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	if shoot_1 and controls_disabled == false
-		ship_modules[i].activated = true
+		module_holders[i].module.activated = true
 	else
-		ship_modules[i].activated = false
+		module_holders[i].module.activated = false
+	}
+*/
+if shoot
+	gamepad_button[4] = true
+for(var i = 0; i < array_length_1d(module_holders); i+=1;){
+	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
+	module_holders[i].gamepad_button[h] = gamepad_button[h]
 	}
 
 	

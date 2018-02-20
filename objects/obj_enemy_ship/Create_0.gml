@@ -3,6 +3,8 @@
 mirror_x = 0
 mirror_y = 0
 
+draw_scale = 1
+
 obj_rotation = 0
 obj_health = 20
 
@@ -24,7 +26,7 @@ drift_resistance = 80;
 damage = 4;
 
 ai_mode = 1
-shoot_1 = false
+shoot = false
 direction_randomizer = 0
 
 invisible = false
