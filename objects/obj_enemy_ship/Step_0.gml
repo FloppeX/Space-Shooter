@@ -85,7 +85,7 @@ if ai_mode == 2 {
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
 			and angle_diff < 5 and !controls_disabled
 			shoot = true
-		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 300 {
+		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 200 {
 			ai_mode = 1
 			shoot = false
 			}
