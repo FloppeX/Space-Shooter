@@ -4,6 +4,8 @@ activation_button = 2
 activated = false
 
 owner = obj_player;
+owned_by_shop = false // used when selecting modules in the shop
+
 offset_angle = 0;
 placement_offset_angle = 0
 placement_offset_distance = 0

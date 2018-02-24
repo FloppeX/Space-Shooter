@@ -22,6 +22,3 @@ while(number_of_asteroids > 0){
 	number_of_asteroids -= 1
 	}
 	
-// Difficulty - increases with each room
-
-global.difficulty_level = 1;

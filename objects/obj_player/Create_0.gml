@@ -4,6 +4,7 @@ gamepad_button[1] = false
 gamepad_button[2] = false
 gamepad_button[3] = false
 gamepad_button[4] = false
+gamepad_button[5] = false
 
 turn_clockwise = 0;
 turn_counter_clockwise = 0;
@@ -66,8 +67,6 @@ module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
 module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[1].activation_button = 4;
-with(module_holders[1].module)
-	scr_add_modifier(scr_module_modifier_electrifying_bullets);
 
 module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[2].placement_offset_angle = 0
@@ -91,7 +90,7 @@ module_holders[4].activation_button = 3;
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[5].placement_offset_angle = 0
 module_holders[5].placement_offset_distance = 0
-module_holders[5].module = noone;
+module_holders[5].module = instance_create_depth(x,y,-10,obj_module_shield);
 
 module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[6].placement_offset_angle = -90

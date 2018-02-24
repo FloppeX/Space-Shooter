@@ -1,4 +1,16 @@
 target_object = obj_enemy_ship
+damage = 0
+color = c_navy
+
+var i = irandom(2)
+switch (i){
+	case 0: part_type_sprite(global.lightning_particle,spr_lightning_1,false,false,false); break;
+	case 1: part_type_sprite(global.lightning_particle,spr_lightning_2,false,false,false); break;
+	case 2: part_type_sprite(global.lightning_particle,spr_lightning_3,false,false,false); break;
+	}
+part_type_color2(global.lightning_particle,color,c_black);
+part_type_orientation(global.lightning_particle,0,360,0,0,0);
+part_particles_create(global.part_system_above,x,y,global.lightning_particle, 1);
 
 if hit_enemy{
 	victim = collision_line(phy_position_x,phy_position_y,phy_position_x+lengthdir_x(20,-phy_rotation),phy_position_x+lengthdir_x(10,-phy_rotation),target_object,false,true)

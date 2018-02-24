@@ -11,9 +11,8 @@ if mouse_check_button_pressed(mb_left){
 			selected_module_holder.module.persistent = true
 			}
 		active_module = swap_module
+
 		}
-	//active_module.phy_position_x = 0
-	//active_module.phy_position_y = 0
 	}
 
 if swap_module != noone{

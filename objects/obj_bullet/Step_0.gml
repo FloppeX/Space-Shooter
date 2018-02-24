@@ -23,7 +23,7 @@ travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious
 phy_rotation = -point_direction(0, 0, phy_speed_x, phy_speed_y)
 
 // Particle effect
-//part_type_speed(bullet_glow_particle,phy_speed-0.1,phy_speed+0.1,0,0.3);  
+part_type_sprite(bullet_glow_particle,sprite_index,false,false,false);    
 part_type_color2(bullet_glow_particle,color,c_black);
 part_type_scale(bullet_glow_particle,bullet_scale,bullet_scale)
 part_type_direction(bullet_glow_particle,-phy_rotation,-phy_rotation,0,0);

@@ -38,5 +38,5 @@ level = 1
 // Enemies
 
 number_of_asteroids = irandom(2) * global.difficulty_level;
-number_of_enemies = 1 * global.difficulty_level;
+number_of_enemies = 2 * global.difficulty_level;
 

@@ -4,6 +4,8 @@ phy_rotation = -90
 //
 
 number_of_items = 3
+number_of_items_left = 3
+number_of_items_to_select = 1
 
 x_starting_offset = 200
 y_starting_offset = 200
@@ -22,12 +24,15 @@ for(var i = 0; i < number_of_items; i+=1;){
 
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
-	temp_module.offset_angle = irandom(3) * 90;
-	switch (temp_module.offset_angle){
-		case 0: temp_module.activation_button = 4; break;
-		case 90: temp_module.activation_button = 2; break;
-		case 180: temp_module.activation_button = 1; break;
-		case 270: temp_module.activation_button = 3; break;
+	temp_module.owned_by_shop = true
+	if temp_module == obj_module_gun{
+		temp_module.offset_angle = irandom(3) * 90;
+		switch (temp_module.offset_angle){
+			case 0: temp_module.activation_button = 4; break;
+			case 90: temp_module.activation_button = 2; break;
+			case 180: temp_module.activation_button = 1; break;
+			case 270: temp_module.activation_button = 3; break;
+			}
 		}
 		
 	module_holders[i].module = temp_module

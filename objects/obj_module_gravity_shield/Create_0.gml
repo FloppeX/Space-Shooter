@@ -2,7 +2,7 @@ event_inherited();
 
 depth = -12
 
-activation_button = 2
+activation_button = 5
 activated = false
 
 energy_cost = 1.5

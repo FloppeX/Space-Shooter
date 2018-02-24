@@ -1,5 +1,7 @@
 event_inherited();
 
+activation_button = 5
+
 mechanism_retracted = true;
 mechanism_extended = false;
 

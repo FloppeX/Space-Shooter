@@ -20,6 +20,7 @@ camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 cam = camera_get_active()
 
 camera_set_view_pos(cam,view_object.phy_com_x -0.5*camera_get_view_width(cam),view_object.phy_com_y-0.5*camera_get_view_height(cam))
+/*
 view_rotation_value = gamepad_button_value(0,gp_shoulderlb)
 if view_rotation_value > 0 
 	target_rotation = ((view_object.phy_rotation+90)mod 360)
@@ -31,7 +32,7 @@ cam_rotation = (view_rotation_value * sign(angle_diff) * target_rotation) mod 36
 camera_set_view_angle(cam, cam_rotation)
 if view_rotation_value > 0
 	global.zoom = 1000 - 800 * view_rotation_value
-
+*/
 // Drav lines if view mode 2 
 
 if global.view_mode == 2{

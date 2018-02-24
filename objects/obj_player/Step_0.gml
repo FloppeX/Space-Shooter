@@ -14,6 +14,7 @@ gamepad_button[1] = false
 gamepad_button[2] = false
 gamepad_button[3] = false
 gamepad_button[4] = false
+gamepad_button[5] = false
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
@@ -46,6 +47,9 @@ if controls_disabled == false{
 		
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
+		
+	if gamepad_button_value(0, gp_shoulderlb) > 0
+		gamepad_button[5] = true
 }
 
 if keyboard_check(vk_right){
