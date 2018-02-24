@@ -18,7 +18,7 @@ var h = irandom(16)
 		case 15: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
 		case 16: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
 		}
-	if temp_module == obj_module_gun{
+	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		repeat(irandom(2)+1){
 			var p = irandom(99)
 			if p <= 49 and p > 14
@@ -29,7 +29,7 @@ var h = irandom(16)
 				with (temp_module)
 					scr_add_random_modifier_uncommon();
 		}
-	if temp_module == obj_module_engine
+	if  object_is_ancestor(temp_module.object_index, obj_module_engine)
 		with(temp_module)
 			offset_angle = 180
 	}	

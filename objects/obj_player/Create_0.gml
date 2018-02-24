@@ -90,15 +90,15 @@ module_holders[4].activation_button = 3;
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[5].placement_offset_angle = 0
 module_holders[5].placement_offset_distance = 0
-module_holders[5].module = instance_create_depth(x,y,-10,obj_module_shield);
+module_holders[5].module = noone;
 
 module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[6].placement_offset_angle = -90
 module_holders[6].placement_offset_distance = 24
-module_holders[6].module = noone /*scr_create_random_module();
+module_holders[6].module = instance_create_depth(x,y,-10,obj_module_shield_test);
 module_holders[6].module.offset_angle = 90
-module_holders[6].activation_button = 2;
-*/
+module_holders[6].activation_button = 5;
+
 module_holders[7] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
 module_holders[7].placement_offset_angle = 135
 module_holders[7].placement_offset_distance = 34
