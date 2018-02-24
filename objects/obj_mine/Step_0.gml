@@ -30,7 +30,8 @@ if explode{
 					if temp_distance <= explosion_range{
 						with(temp_instance){
 							obj_health -= other.damage
-							disabled_timer += 10;
+							if object_is_ancestor(object_index, obj_player) or object_is_ancestor(object_index, obj_enemy_ship)
+								disabled_timer += 10;
 							}
 						}
 					}

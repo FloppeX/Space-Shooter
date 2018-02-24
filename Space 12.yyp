@@ -1183,6 +1183,14 @@
             }
         },
         {
+            "Key": "640b36dd-fef9-464e-b12e-6be3704fb097",
+            "Value": {
+                "id": "a57b4e78-07dd-4362-8803-1b2b2d1d1424",
+                "resourcePath": "objects\\obj_module_zapper_new_enemy\\obj_module_zapper_new_enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "648799b2-d0b4-4bc6-a3b6-cd572e6c9f23",
             "Value": {
                 "id": "5b30e1b1-7e9f-4783-a8f1-df5fed13ac8f",
@@ -1634,7 +1642,7 @@
             "Key": "8836a78c-51c5-431a-9b5a-535c01d4c1f5",
             "Value": {
                 "id": "fb04d78f-463f-47f4-bbfa-8444f3732ca8",
-                "resourcePath": "objects\\obj_module_shield_test\\obj_module_shield_test.yy",
+                "resourcePath": "objects\\obj_module_shield\\obj_module_shield.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2287,6 +2295,14 @@
             }
         },
         {
+            "Key": "c2e1476a-53fc-4215-95bd-bd4cb4df473a",
+            "Value": {
+                "id": "9b1dd798-3683-4f51-9b0f-753ff5ee7605",
+                "resourcePath": "objects\\obj_lightning_bolt_new_enemy\\obj_lightning_bolt_new_enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c406900e-c66b-4118-8342-effa2a5317f1",
             "Value": {
                 "id": "b52d17fb-8f4b-4c21-9f9a-8218f6366ce4",
@@ -2419,14 +2435,6 @@
             "Value": {
                 "id": "9018d2df-cd2b-48b8-b97d-dd1757b022ee",
                 "resourcePath": "objects\\obj_module_empty\\obj_module_empty.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "cfb7d2d0-eef3-4dcb-a909-79100f486283",
-            "Value": {
-                "id": "f7d61996-d559-43f6-ae7a-f19966b4cc12",
-                "resourcePath": "objects\\obj_module_shield\\obj_module_shield.yy",
                 "resourceType": "GMObject"
             }
         },

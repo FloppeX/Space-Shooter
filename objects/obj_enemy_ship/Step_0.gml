@@ -166,7 +166,8 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	}
 */
 if shoot
-	gamepad_button[4] = true
+	for(var i = 0; i < array_length_1d(gamepad_button); i+=1;)
+		gamepad_button[i] = true
 for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
 	module_holders[i].gamepad_button[h] = gamepad_button[h]

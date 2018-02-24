@@ -36,7 +36,7 @@ drift_resistance = 800
 target_rotation = 0
 left_stick_value = 0
 
-max_speed = 4;
+max_speed = 5;
 
 obj_rotation = 0;
 col = 0;
@@ -66,7 +66,7 @@ module_holders[1] = instance_create_depth(x,y,-10,obj_module_holder);// scr_crea
 module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
 module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
-module_holders[1].activation_button = 4;
+module_holders[1].module.activation_button = 4;
 
 module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[2].placement_offset_angle = 0
@@ -95,7 +95,7 @@ module_holders[5].module = noone;
 module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[6].placement_offset_angle = -90
 module_holders[6].placement_offset_distance = 24
-module_holders[6].module = instance_create_depth(x,y,-10,obj_module_shield_test);
+module_holders[6].module = instance_create_depth(x,y,-10,obj_module_shield);
 module_holders[6].module.offset_angle = 90
 module_holders[6].activation_button = 5;
 

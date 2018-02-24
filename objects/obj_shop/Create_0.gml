@@ -25,7 +25,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
-	if temp_module == obj_module_gun{
+	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		temp_module.offset_angle = irandom(3) * 90;
 		switch (temp_module.offset_angle){
 			case 0: temp_module.activation_button = 4; break;
@@ -33,13 +33,21 @@ for(var i = 0; i < number_of_items; i+=1;){
 			case 180: temp_module.activation_button = 1; break;
 			case 270: temp_module.activation_button = 3; break;
 			}
+		switch (temp_module.offset_angle){
+			case 0: temp_module.activation_button = 4; break;
+			case 90: temp_module.activation_button = 2; break;
+			case 180: temp_module.activation_button = 1; break;
+			case 270: temp_module.activation_button = 3; break;
+			}
 		}
-		
 	module_holders[i].module = temp_module
-
 	}
+	
+// Get module identities - used to check if more items can be taken...
 
-
+module_identities[number_of_items] = noone
+for(var i = 0; i < number_of_items; i+=1;)
+	module_identities[i] = module_holders[i].module.id
 
 /*
 shop_modules[0].x = phy_position_x + x_starting_offset;
