@@ -67,6 +67,8 @@ module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
 module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[1].module.activation_button = 4;
+with(module_holders[1].module)
+	scr_add_modifier(scr_module_modifier_heavy_bullets);
 
 module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[2].placement_offset_angle = 0

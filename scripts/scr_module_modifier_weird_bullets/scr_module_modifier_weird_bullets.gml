@@ -1,6 +1,6 @@
 // Description text
 
-modifier_description = "Weird bullets"
+modifier_description = "More knockback"
 
 // Modifier actions
 

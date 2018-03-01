@@ -1,68 +1,68 @@
 {
-    "id": "a4ef8577-4c38-4775-b160-8799ea512c54",
+    "id": "c2e1476a-53fc-4215-95bd-bd4cb4df473a",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_lightning_bolt_enemy",
     "eventList": [
         {
-            "id": "c947ab77-4679-4f50-b265-02e5835cda15",
+            "id": "bfc19796-1ee1-42d1-b8d0-35413fca0827",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "a4ef8577-4c38-4775-b160-8799ea512c54"
+            "m_owner": "c2e1476a-53fc-4215-95bd-bd4cb4df473a"
         },
         {
-            "id": "fd6b9bbe-5338-410b-b35b-f9f3b3e8b372",
+            "id": "8d0c0124-4730-4f90-8688-d1d56385ef92",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "2aa63072-0c94-43fc-ad07-a497977ab2ca",
             "enumb": 0,
             "eventtype": 4,
-            "m_owner": "a4ef8577-4c38-4775-b160-8799ea512c54"
+            "m_owner": "c2e1476a-53fc-4215-95bd-bd4cb4df473a"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "48c0461f-d3d2-4ec5-8efd-69be05a0d27b",
+    "parentObjectId": "f77ec46b-8dd3-4f1f-ad3d-2360a4c0da48",
     "persistent": false,
-    "physicsAngularDamping": 0,
-    "physicsDensity": 0,
+    "physicsAngularDamping": 0.1,
+    "physicsDensity": 0.01,
     "physicsFriction": 0,
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 0,
     "physicsObject": true,
-    "physicsRestitution": 0,
+    "physicsRestitution": 1,
     "physicsSensor": true,
     "physicsShape": 1,
     "physicsShapePoints": [
         {
-            "id": "bdd3e474-0834-4979-8c5e-83d34a882163",
+            "id": "f562f7fe-021f-4fd0-94f2-c3fa3dfbcdff",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0,
             "y": 0
         },
         {
-            "id": "d6d3f894-7b49-43c9-8f38-a3b222705d47",
+            "id": "1f4ff6e6-6a48-4fe5-834c-fcbef669d851",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 36,
             "y": 0
         },
         {
-            "id": "ce6616a9-80c6-4b56-babf-a6fe49188594",
+            "id": "eb884dd6-6d03-42f8-a9f8-8734d776fe85",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 36,
             "y": 11
         },
         {
-            "id": "80c3a94c-826a-4405-8027-2a4456a696d7",
+            "id": "48654c4e-7a88-4206-95b5-d9826083c09e",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0,

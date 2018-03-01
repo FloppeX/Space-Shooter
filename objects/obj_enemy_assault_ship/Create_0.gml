@@ -18,7 +18,7 @@ switch (i){
 	case 1: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
 	case 2: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
 	case 3: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_zapper_new_enemy); break;
+	case 4: module_holders[0].module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
 module_holders[0].module.persistent = false;
 
@@ -36,7 +36,7 @@ switch (i){
 	case 1: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
 	case 2: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
 	case 3: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-	case 4: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_zapper_new_enemy); break;
+	case 4: module_holders[1].module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 	}
 module_holders[1].module.persistent = false;
 

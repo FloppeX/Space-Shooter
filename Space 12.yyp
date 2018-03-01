@@ -362,7 +362,7 @@
             "Key": "1edb7e2b-f58f-4f9f-b7bb-0f164bb905ed",
             "Value": {
                 "id": "2cf1f323-138b-4e90-a29f-284755eede9d",
-                "resourcePath": "objects\\obj_module_zapper\\obj_module_zapper.yy",
+                "resourcePath": "objects\\obj_module_zapper_OLD\\obj_module_zapper_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -500,6 +500,14 @@
                 "id": "8fb0ca38-2d8b-4a4e-9ed9-75c5684b1213",
                 "resourcePath": "sprites\\spr_module_gun_OLD\\spr_module_gun_OLD.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2bb97d76-9632-42a4-9a36-c15167f0e809",
+            "Value": {
+                "id": "c5dc3f38-0d8e-4ee6-adfe-e6c7175e1f26",
+                "resourcePath": "views\\2bb97d76-9632-42a4-9a36-c15167f0e809.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -826,7 +834,7 @@
             "Key": "48c0461f-d3d2-4ec5-8efd-69be05a0d27b",
             "Value": {
                 "id": "c207869c-321d-4448-ab67-8309e888ad0c",
-                "resourcePath": "objects\\obj_lightning_bolt\\obj_lightning_bolt.yy",
+                "resourcePath": "objects\\obj_lightning_bolt_OLD\\obj_lightning_bolt_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1186,7 +1194,7 @@
             "Key": "640b36dd-fef9-464e-b12e-6be3704fb097",
             "Value": {
                 "id": "a57b4e78-07dd-4362-8803-1b2b2d1d1424",
-                "resourcePath": "objects\\obj_module_zapper_new_enemy\\obj_module_zapper_new_enemy.yy",
+                "resourcePath": "objects\\obj_module_zapper_enemy\\obj_module_zapper_enemy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1330,7 +1338,7 @@
             "Key": "6c39874f-74b1-4ecb-86f0-2ed3719304eb",
             "Value": {
                 "id": "8fe6c76b-d1e2-4713-a4c9-2ac9734ba80a",
-                "resourcePath": "objects\\obj_module_zapper_enemy\\obj_module_zapper_enemy.yy",
+                "resourcePath": "objects\\obj_module_zapper_enemy_OLD\\obj_module_zapper_enemy_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1362,7 +1370,7 @@
             "Key": "6d8a6407-755b-463e-9a75-c75c06a02c63",
             "Value": {
                 "id": "ebaf2692-4aa7-450e-ba00-23268dda7bf8",
-                "resourcePath": "objects\\obj_lightning_bolt_player\\obj_lightning_bolt_player.yy",
+                "resourcePath": "objects\\obj_lightning_bolt_player_OLD\\obj_lightning_bolt_player_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1746,7 +1754,7 @@
             "Key": "912ba23f-1679-4a0b-9243-0e38ab944f94",
             "Value": {
                 "id": "d7f2acd7-a570-4d4f-99fa-5ee9a6ad7e99",
-                "resourcePath": "objects\\obj_module_zapper_new\\obj_module_zapper_new.yy",
+                "resourcePath": "objects\\obj_module_zapper\\obj_module_zapper.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1967,6 +1975,14 @@
             }
         },
         {
+            "Key": "a0961e3a-40f1-425d-a118-25d981d2b767",
+            "Value": {
+                "id": "99d10b64-1450-4e35-ad8b-a31e81eb7afe",
+                "resourcePath": "scripts\\scr_module_modifier_heavy_bullets\\scr_module_modifier_heavy_bullets.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a1127128-5b38-48b7-b36e-ce0c8a4a5612",
             "Value": {
                 "id": "a246834f-e428-4de2-a84a-b67bf3dc644f",
@@ -2026,7 +2042,7 @@
             "Key": "a4ef8577-4c38-4775-b160-8799ea512c54",
             "Value": {
                 "id": "35a63484-f97c-41f3-9e74-12389d216ffa",
-                "resourcePath": "objects\\obj_lightning_bolt_enemy\\obj_lightning_bolt_enemy.yy",
+                "resourcePath": "objects\\obj_lightning_bolt_enemy_OLD\\obj_lightning_bolt_enemy_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2231,6 +2247,14 @@
             }
         },
         {
+            "Key": "bd38e11a-1c42-4fd9-8cc9-a2381bdd237d",
+            "Value": {
+                "id": "31de42d2-ab49-4418-8d9b-f48c03fbcb8b",
+                "resourcePath": "views\\bd38e11a-1c42-4fd9-8cc9-a2381bdd237d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bd7b63e9-f674-4120-acce-86d6ef36e3d3",
             "Value": {
                 "id": "f12d66aa-74b2-4490-be65-aa2d84987e7e",
@@ -2298,7 +2322,7 @@
             "Key": "c2e1476a-53fc-4215-95bd-bd4cb4df473a",
             "Value": {
                 "id": "9b1dd798-3683-4f51-9b0f-753ff5ee7605",
-                "resourcePath": "objects\\obj_lightning_bolt_new_enemy\\obj_lightning_bolt_new_enemy.yy",
+                "resourcePath": "objects\\obj_lightning_bolt_enemy\\obj_lightning_bolt_enemy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2523,6 +2547,14 @@
             "Value": {
                 "id": "ca35ab63-54d4-458f-875a-d5b2866d2081",
                 "resourcePath": "objects\\obj_module_gravity_shield\\obj_module_gravity_shield.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d8e620fd-7621-4eb9-8cef-4a74cc60dfd5",
+            "Value": {
+                "id": "cf862d35-cac6-47c1-83aa-52d3cca0f22d",
+                "resourcePath": "objects\\obj_lightning_bolt_player\\obj_lightning_bolt_player.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2863,6 +2895,14 @@
             }
         },
         {
+            "Key": "f423eaf5-ad3f-4bc6-b9d0-bcc7762720c4",
+            "Value": {
+                "id": "8eef81ac-69d0-4c78-aba0-f18318a53c39",
+                "resourcePath": "scripts\\scr_bullet_modifier_heavy_bullets\\scr_bullet_modifier_heavy_bullets.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f4a0a4ca-3253-4f0c-93b0-7e0f7801565d",
             "Value": {
                 "id": "b91d7c91-69d1-4956-a2a0-ea72157ab2d4",
@@ -2954,7 +2994,7 @@
             "Key": "f77ec46b-8dd3-4f1f-ad3d-2360a4c0da48",
             "Value": {
                 "id": "f4138dcc-d2ce-4fae-9552-28d3eb1ce876",
-                "resourcePath": "objects\\obj_lightning_bolt_new\\obj_lightning_bolt_new.yy",
+                "resourcePath": "objects\\obj_lightning_bolt\\obj_lightning_bolt.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3093,6 +3133,7 @@
         "389bc69a-f39e-4737-828e-7ebd7144a7a5",
         "0de06d6c-a093-484d-bb11-c0e85d95a430",
         "e453a62e-0a97-44b9-b1e3-121ac8325c04",
+        "f423eaf5-ad3f-4bc6-b9d0-bcc7762720c4",
         "dec0c950-ffb6-4bf7-a67b-955505251ee7",
         "a83ce681-cfc1-4de0-90fa-4cfce0cd7970",
         "66767565-49ad-4c40-9f86-5b059b31e454",
@@ -3102,6 +3143,7 @@
         "c9598a5e-3439-48fc-8726-087cdb2af5bf",
         "1bb2f6cf-ebf5-4eca-b6de-747e4559e6c2",
         "ef854f16-b0a0-4399-8e3a-fea2209ed33f",
+        "a0961e3a-40f1-425d-a118-25d981d2b767",
         "91b1ab2d-fb14-4ca9-a964-62330c827103",
         "67d51fa1-5011-476f-8e39-d20e6e9645fc",
         "e3f79931-40cc-484e-b900-6bca83a81d63",

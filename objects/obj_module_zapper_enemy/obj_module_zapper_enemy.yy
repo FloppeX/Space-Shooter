@@ -1,23 +1,23 @@
 {
-    "id": "6c39874f-74b1-4ecb-86f0-2ed3719304eb",
+    "id": "640b36dd-fef9-464e-b12e-6be3704fb097",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_module_zapper_enemy",
     "eventList": [
         {
-            "id": "ac2ed2c0-b392-4ece-bae5-64c8462d749e",
+            "id": "cc6d049b-d95e-49f9-9414-656d24ffc9c8",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "6c39874f-74b1-4ecb-86f0-2ed3719304eb"
+            "m_owner": "640b36dd-fef9-464e-b12e-6be3704fb097"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "1edb7e2b-f58f-4f9f-b7bb-0f164bb905ed",
+    "parentObjectId": "912ba23f-1679-4a0b-9243-0e38ab944f94",
     "persistent": true,
     "physicsAngularDamping": 0,
     "physicsDensity": 0,
@@ -31,28 +31,28 @@
     "physicsShape": 1,
     "physicsShapePoints": [
         {
-            "id": "295664cd-325d-4415-8728-afc80bc12fb9",
+            "id": "5643e697-accf-4470-9295-e0179f25a046",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0,
             "y": 0
         },
         {
-            "id": "882a1615-6298-48eb-b8e5-0283546a5582",
+            "id": "1892253f-8bbb-4364-af04-bf6389cd614c",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 36,
             "y": 0
         },
         {
-            "id": "6dfab56a-8a11-4cc4-838d-4a3072f2393a",
+            "id": "f9f2bc02-2908-403d-aa51-cd1021280fe3",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 36,
             "y": 24
         },
         {
-            "id": "845de715-a3ba-4a3b-9db8-fee01f1e8d88",
+            "id": "ae2cf093-53d3-4c9e-835f-12f02f292ed1",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0,
