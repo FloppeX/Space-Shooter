@@ -9,6 +9,7 @@ mechanism_extended = false;
 depth = -12
 
 shield_health = 30
+recharge_each_step = 0.2
 recharge_delay = 120
 recharge_timer = recharge_delay
 

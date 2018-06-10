@@ -22,3 +22,7 @@ while(number_of_asteroids > 0){
 	number_of_asteroids -= 1
 	}
 	
+// Sound
+
+start_menu_music = music_urban_jungle_looping
+audio_play_sound_on(game_controller_audio_emitter,start_menu_music,1,1)

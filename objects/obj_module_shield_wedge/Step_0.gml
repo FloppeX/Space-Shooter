@@ -51,6 +51,9 @@ if my_shield.obj_health <= 0 {
 		audio_play_sound_on(module_audio_emitter,snd_shield_power_up,0,owner.sound_priority)
 		}
 	}
+else 
+	if my_shield.obj_health < shield_health
+		my_shield.obj_health += recharge_each_step
 	
 if shield_active{
 	if shield_current_size < shield_max_size
