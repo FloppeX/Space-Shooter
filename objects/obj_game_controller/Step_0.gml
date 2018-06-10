@@ -43,5 +43,5 @@ layer_vspeed(layer_get_id("background_layer_4"), view_object.phy_speed_y*0)
 
 // Sound
 
-audio_emitter_position(game_controller_audio_emitter,view_object.phy_position_x, view_object.phy_position_y,global.max_zoom);
+//audio_emitter_position(game_controller_audio_emitter,view_object.phy_position_x, view_object.phy_position_y,global.max_zoom);
 

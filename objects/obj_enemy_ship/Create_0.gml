@@ -28,6 +28,9 @@ damage = 4;
 ai_mode = 1
 shoot = false
 direction_randomizer = 0
+abort_attack = false
+attack_duration = 180
+attack_timer = attack_duration
 
 invisible = false
 

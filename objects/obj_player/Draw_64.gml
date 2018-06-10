@@ -8,7 +8,7 @@ display_set_gui_size(1920, 1080);
 
 map_width = 100 * map_scale;
 map_height = 100 * map_scale;
-map_edge_right = display_get_width() - 25 * map_scale
+map_edge_right = /*display_get_width()*/ 1920 - 25 * map_scale
 map_edge_left = map_edge_right - map_width
 map_edge_top = 25 * map_scale
 map_center_x = map_edge_left+ 0.5*map_width

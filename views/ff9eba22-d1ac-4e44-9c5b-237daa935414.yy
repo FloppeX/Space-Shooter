@@ -11,7 +11,8 @@
         "aaae2d30-b539-42b4-bc80-c52a2d35653a",
         "cdaf3bb0-60a0-4718-94df-1cf4cffb1532",
         "7e8bf36c-4909-4408-842b-92ea7e902a83",
-        "2bb97d76-9632-42a4-9a36-c15167f0e809"
+        "2bb97d76-9632-42a4-9a36-c15167f0e809",
+        "37357242-943d-4ecb-a78e-8964fff022dc"
     ],
     "filterType": "GMObject",
     "folderName": "Modules",

@@ -1,3 +1,7 @@
+/*draw_set_halign(fa_center);
+draw_text(x,y+100,"TEST")
+draw_set_halign(fa_left);
+*/
 // Update module positions
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)

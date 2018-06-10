@@ -10,7 +10,7 @@ color = 0
 particle_speed = random(2)-1// 0.9
 particle_speed_change = random(0.02) * -sign(particle_speed)// -0.015
 
-death_timer = 60//180
+death_timer = 60
 done_warping = false
 
 

@@ -1,1 +1,1 @@
-draw_text(x,y+40,phy_mass)
+//draw_text(x,y+40,phy_inertia)

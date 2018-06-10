@@ -49,10 +49,10 @@ global.wrap_border_bottom = room_height - global.wrap_margin_player
 
 audio_falloff_set_model(audio_falloff_linear_distance_clamped)
 
-ambient_sound = snd_space_sound
+start_menu_music = music_urban_jungle_looping
 game_controller_audio_emitter = audio_emitter_create()
 audio_emitter_falloff(game_controller_audio_emitter, 100, 1600, 1);
-//audio_play_sound_on(game_controller_audio_emitter,snd_space_sound,1,0)
+audio_play_sound_on(game_controller_audio_emitter,start_menu_music,1,1)
 
 //audio_play_sound(ambient_sound,0,1)
 

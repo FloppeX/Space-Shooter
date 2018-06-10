@@ -7,11 +7,14 @@ var h = irandom(11)
 		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_zapper); break;
 		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
 		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
-		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_shield); break;
+		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge); break;
 		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
-		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
-		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
-		case 11: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
+		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
+		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge); break;
+		/*case 10: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
+		case 11: temp_module = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
+		*/
+		
 		}
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		repeat(irandom(2)+1){
@@ -27,9 +30,8 @@ var h = irandom(11)
 	if object_is_ancestor(temp_module.object_index, obj_module_engine)
 		with(temp_module)
 			offset_angle = 180
-	if object_is_ancestor(temp_module.object_index, obj_module_shield){
+	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge){
 		temp_module.offset_angle = irandom(3) * 90;
-		temp_module.activation_button = 5
 		}
 	if object_is_ancestor(temp_module.object_index, obj_module_gravity_shield){
 		temp_module.activation_button = 5

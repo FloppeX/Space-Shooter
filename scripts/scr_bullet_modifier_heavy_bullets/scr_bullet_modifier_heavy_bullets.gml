@@ -1,1 +1,1 @@
-physics_mass_properties(1,0,0,1)
+physics_mass_properties(phy_mass,0,0,10)

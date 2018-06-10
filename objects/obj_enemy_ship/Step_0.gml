@@ -45,7 +45,7 @@ target_speed = max_speed
 if ai_mode == 1 {
 	ai_timer -= 1;
 	min_standoff_distance = 500
-	max_standoff_distance = 800
+	max_standoff_distance = 1200
 	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,360,seek_range)
 	if target != noone{
 		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
@@ -64,16 +64,17 @@ if ai_mode == 1 {
 		if ai_timer <= 0{
 
 			ai_timer = 120
-			if irandom(2) == 0{
+			if irandom(4) == 0{
 				ai_mode = 2
-				ai_timer = 120
+				ai_timer = 60
 				}
 			}
 	}
 	}
 	
 if ai_mode == 2 {
-
+	
+	
 	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if target != noone{
 		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
@@ -83,14 +84,22 @@ if ai_mode == 2 {
 		angle_diff = abs(angle_difference(-phy_rotation,target_dir));
 		shoot = false
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
-			and angle_diff < 5 and !controls_disabled
+			and angle_diff < 30 and !controls_disabled
 			shoot = true
-		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 200 {
-			ai_mode = 1
-			shoot = false
-			}
+		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 200
+			abort_attack = true
+			
+		if attack_timer <= 0
+			abort_attack = true
 		}
 	else shoot = false
+	
+	if abort_attack{
+			ai_mode = 1
+			shoot = false
+			abort_attack = false
+			attack_timer = attack_duration // Reset attack timer for the next attack
+			}
 	}
 	
 // Avoid teammates
