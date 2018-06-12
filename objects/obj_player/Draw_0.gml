@@ -1,7 +1,7 @@
-/*draw_set_halign(fa_center);
-draw_text(x,y+100,"TEST")
+draw_set_halign(fa_center);
+draw_text(x,y+100,string(max_speed))
 draw_set_halign(fa_left);
-*/
+
 // Update module positions
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
@@ -27,17 +27,22 @@ for (var p = -global.play_area_width; p <= global.play_area_width; p += global.p
 	
 for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	// Check if the module is activated
-	if gamepad_button[module_holders[i].activation_button] == true
-			module_holders[i].activated = true
-	else module_holders[i].activated = false
+	with (module_holders[i]){
+		if owner.gamepad_button[activation_button] == true
+				activated = true
+		else activated = false
+	
+	// Make the module holder persistent
+	
+	persistent = true
 	
 	// disable visibility of modules and draw them directly, so they dont wiggle around
-	with (module_holders[i])
-		//visible = false
+	
 		if module != noone{
 			module.visible = false
 			module.persistent = true
-		}
+			}
+	}
 	//draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,alpha)
 	/*
 	//ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle

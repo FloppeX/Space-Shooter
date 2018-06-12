@@ -5,6 +5,8 @@ phy_bullet = true
 obj_rotation = 0;
 travel_direction = 0;
 
+max_speed = 8
+
 range = 640;
 timer = 0
 

@@ -37,8 +37,11 @@ if ready_to_shoot{
 		
 
 		bullets[i].phy_rotation = phy_rotation + random(2 * bullet_spread) - bullet_spread
-		bullets[i].phy_speed_x = temp_speed_x + lengthdir_x(bullet_speed,-bullets[i].phy_rotation)
-		bullets[i].phy_speed_y = temp_speed_y + lengthdir_y(bullet_speed,-bullets[i].phy_rotation)
+		
+		temp_bullet_speed = bullet_speed + random(2 * bullet_speed_randomness) - bullet_speed_randomness
+		bullets[i].phy_speed_x = temp_speed_x + lengthdir_x(temp_bullet_speed,-bullets[i].phy_rotation)
+		bullets[i].phy_speed_y = temp_speed_y + lengthdir_y(temp_bullet_speed,-bullets[i].phy_rotation)
+		
 		bullets[i].color = bullet_color
 		bullets[i].damage = bullet_damage
 		bullets[i].range = bullet_range

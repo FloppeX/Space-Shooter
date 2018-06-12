@@ -40,3 +40,8 @@ level = 1
 number_of_asteroids = irandom(2) * global.difficulty_level;
 number_of_enemies = 2 * global.difficulty_level;
 
+	
+// Sound
+
+level_music = music_quirky_action_2
+//audio_play_sound_on(game_controller_audio_emitter,level_music,1,1)

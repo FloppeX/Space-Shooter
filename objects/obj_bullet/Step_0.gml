@@ -17,6 +17,12 @@ for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 	if modifiers[i] != noone
 		script_execute(modifiers[i])
 		
+// TEST
+
+//if phy_speed < max_speed
+		physics_apply_local_force(0,0,10,0)
+		
+		
 // Movement
 
 travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)

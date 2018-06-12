@@ -10,7 +10,9 @@ if !menu_active
 if gamepad_button_check_pressed(0,gp_face1)
 	switch(selected_item){
 		case 0 : {
-				room_goto(rm_space) 
+				//global.player = instance_create_layer(0.5 * room_width,0.5 * room_height,"instance_layer",obj_player)
+				level_1 = room_duplicate(rm_space)
+				room_goto(level_1) 
 				break;
 				}
 				

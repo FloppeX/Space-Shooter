@@ -3,7 +3,8 @@ event_inherited();
 description_lines[0] = "Shotgun"
 
 bullet_damage_base = 2
-bullet_spread_base = 8
+bullet_speed_randomness_base = 1.2
+bullet_spread_base = 7
 bullet_number_base = 6
 bullet_interval_base = 50
 bullet_range_base = 480

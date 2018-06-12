@@ -4,6 +4,7 @@ mirror_x = 0
 mirror_y = 0
 
 draw_scale = 1
+alpha = 1
 
 obj_rotation = 0
 obj_health = 20
@@ -19,6 +20,10 @@ target_speed = 0
 max_speed = 5
 thrust = 0
 max_thrust = 360
+
+max_speed_base = 5
+max_speed_multiplier = 0 
+max_speed_bonus = 0
 
 rotation_force = 100;
 drift_resistance = 80;
@@ -55,3 +60,11 @@ debris_parts[1] = spr_debris_enemy_interceptor_2
 debris_parts[2] = spr_debris_enemy_interceptor_3
 debris_parts[3] = spr_debris_enemy_interceptor_4
 
+// Sounds
+sound_priority = 0.5
+explosion_sound = snd_explosion_large_02
+engine_sound = snd_engine_2
+engine_noise = noone
+
+ship_audio_emitter = audio_emitter_create()
+audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);

@@ -44,13 +44,5 @@ gun_bullet_speed = module_holders[0].module.bullet_speed
 
 //Sounds
 
-sound_priority = 0.5
-
 explosion_sound = snd_explosion_large_03
 engine_sound = snd_engine_3
-engine_noise = noone
-
-ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
-
-engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,sound_priority)

@@ -1,9 +1,16 @@
 // junk variables..
 energy = 0
 phy_rotation = -90
+add_thrust = 0
+
+// Variables that really below to ships but that this object needs
+max_speed_base = 5
+max_speed_multiplier = 0 
+max_speed_bonus = 0
+
 //
 
-number_of_items = 3
+number_of_items = 6
 number_of_items_left = 3
 number_of_items_to_select = 1
 
@@ -40,6 +47,9 @@ for(var i = 0; i < number_of_items; i+=1;){
 			case 270: temp_module.activation_button = 3; break;
 			}
 		}
+	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge)
+		with(temp_module)
+			offset_angle = irandom(3) * 90;
 	module_holders[i].module = temp_module
 	}
 	

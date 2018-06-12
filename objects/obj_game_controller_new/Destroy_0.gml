@@ -1,0 +1,1 @@
+audio_emitter_free(global.music_emitter);

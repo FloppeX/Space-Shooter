@@ -7,6 +7,12 @@ rotation = 0
 
 module = noone
 activated = false
+module_holder_above = noone
+module_holder_below = noone
+module_holder_left = noone
+module_holder_right = noone
+
+
 activation_button = 1
 
 gamepad_button[1] = false

@@ -17,7 +17,6 @@ if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
 	audio_stop_sound(engine_noise)
-	//audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	phy_active = false
 	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 		with(module_holders[i]){
@@ -74,7 +73,7 @@ if ai_mode == 1 {
 	
 if ai_mode == 2 {
 	
-	
+	attack_timer -= 1;
 	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if target != noone{
 		target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
@@ -140,11 +139,17 @@ if controls_disabled == false{
 	phy_angular_velocity = turn_value * rotation_force;	
 
 	// Apply thrust
-
+	
+	if phy_speed < target_speed 
+		add_thrust = 1
+	else add_thrust = 0
+	
+	/*
 	if phy_speed < target_speed 
 		thrust = max_thrust
 	else thrust = 0
 	physics_apply_local_force(0,0, thrust,0)
+	*/
 	}
 
 // Counter drift

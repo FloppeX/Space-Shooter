@@ -1,5 +1,7 @@
 x = mouse_x
 y = mouse_y
 
-if mouse_check_button_pressed(mb_left)
-	instance_create_depth(x,y,-10,obj_explosion)
+bullet_spread  =30
+bullet_speed_randomness = 1
+bullet_speed = 9
+

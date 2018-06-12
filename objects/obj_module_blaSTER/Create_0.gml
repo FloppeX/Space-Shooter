@@ -4,7 +4,8 @@ description_lines[0] = "Blaster"
 
 bullet_damage_base = 8;
 bullet_range_base = 560
-bullet_speed_base = 15//7;
+bullet_speed_base = 11//15//7;
+bullet_speed_randomness_base = 0.4
 bullet_interval_base = 16;
 bullet_spread_base = 2
 bullet_number_base = 1

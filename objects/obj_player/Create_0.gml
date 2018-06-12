@@ -36,7 +36,9 @@ drift_resistance = 800
 target_rotation = 0
 left_stick_value = 0
 
-max_speed = 5;
+max_speed_base = 5
+max_speed_multiplier = 0 
+max_speed_bonus = 0
 
 obj_rotation = 0;
 col = 0;
@@ -78,8 +80,10 @@ module_holders[2].module = noone;
 module_holders[3] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
 module_holders[3].placement_offset_angle = -45
 module_holders[3].placement_offset_distance = 34
-module_holders[3].module = noone //scr_create_random_module();
-//module_holders[3].activation_button = 4;
+module_holders[3].module = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+module_holders[3].module.activation_button = 4;
+with(module_holders[1].module)
+	scr_add_random_modifiers()
 
 module_holders[4] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
 module_holders[4].placement_offset_angle = 90
@@ -119,6 +123,58 @@ module_holders[9].module = instance_create_depth(x,y,-10,obj_module_engine);
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 	module_holders[i].owner= id;
+	
+// Set spatial relationship between module holders
+
+module_holders[0].module_holder_above = noone
+module_holders[0].module_holder_below = module_holders[2]
+module_holders[0].module_holder_left = noone
+module_holders[0].module_holder_right = noone
+
+module_holders[1].module_holder_above = noone
+module_holders[1].module_holder_below = module_holders[4]
+module_holders[1].module_holder_left = noone
+module_holders[1].module_holder_right = module_holders[2]
+
+module_holders[2].module_holder_above = module_holders[0]
+module_holders[2].module_holder_below = module_holders[5]
+module_holders[2].module_holder_left = module_holders[1]
+module_holders[2].module_holder_right = module_holders[3]
+
+module_holders[3].module_holder_above = noone
+module_holders[3].module_holder_below = module_holders[6]
+module_holders[3].module_holder_left = module_holders[2]
+module_holders[3].module_holder_right = noone
+
+module_holders[4].module_holder_above = module_holders[1]
+module_holders[4].module_holder_below = module_holders[7]
+module_holders[4].module_holder_left = noone
+module_holders[4].module_holder_right = module_holders[5]
+
+module_holders[5].module_holder_above = module_holders[2]
+module_holders[5].module_holder_below = module_holders[8]
+module_holders[5].module_holder_left = module_holders[4]
+module_holders[5].module_holder_right = module_holders[6]
+
+module_holders[6].module_holder_above = module_holders[3]
+module_holders[6].module_holder_below = module_holders[9]
+module_holders[6].module_holder_left = module_holders[5]
+module_holders[6].module_holder_right = noone
+
+module_holders[7].module_holder_above = module_holders[4]
+module_holders[7].module_holder_below = noone
+module_holders[7].module_holder_left = noone
+module_holders[7].module_holder_right = module_holders[8]
+
+module_holders[8].module_holder_above = module_holders[5]
+module_holders[8].module_holder_below = noone
+module_holders[8].module_holder_left = module_holders[7]
+module_holders[8].module_holder_right = module_holders[9]
+
+module_holders[9].module_holder_above = module_holders[6]
+module_holders[9].module_holder_below = noone
+module_holders[9].module_holder_left = module_holders[8]
+module_holders[9].module_holder_right = noone
 	
 // Apply some random modifiers
 /*

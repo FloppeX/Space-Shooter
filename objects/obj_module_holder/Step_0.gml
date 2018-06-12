@@ -1,3 +1,6 @@
+if owner == noone or !instance_exists(owner)
+	instance_destroy()
+
 rotation = -owner.phy_rotation
 image_angle = rotation
 

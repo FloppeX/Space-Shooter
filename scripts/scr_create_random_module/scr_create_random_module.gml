@@ -1,4 +1,4 @@
-var h = irandom(11)
+var h = irandom(10)
 	switch (h){
 		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
 		case 1: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
@@ -7,10 +7,14 @@ var h = irandom(11)
 		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_zapper); break;
 		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
 		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
-		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge); break;
-		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
-		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
-		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge); break;
+		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
+		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
+		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge);
+			temp_module.offset_angle = irandom(3) * 90;
+			break;
+		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge);
+			temp_module.offset_angle = irandom(3) * 90;
+			break;
 		/*case 10: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
 		case 11: temp_module = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
 		*/
@@ -30,9 +34,9 @@ var h = irandom(11)
 	if object_is_ancestor(temp_module.object_index, obj_module_engine)
 		with(temp_module)
 			offset_angle = 180
-	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge){
-		temp_module.offset_angle = irandom(3) * 90;
-		}
+	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge)
+		with(temp_module)
+			offset_angle = irandom(3) * 90;
 	if object_is_ancestor(temp_module.object_index, obj_module_gravity_shield){
 		temp_module.activation_button = 5
 		}

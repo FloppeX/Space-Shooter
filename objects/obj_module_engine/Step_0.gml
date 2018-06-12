@@ -1,9 +1,13 @@
 event_inherited();
 
-if add_thrust
+add_thrust = owner.add_thrust
+
+if owner != noone and add_thrust
 	{
-	with(owner)
+	with(owner){
+		if phy_speed < max_speed
 		physics_apply_local_force(0,0,other.add_thrust * other.thrust,0)
+		}
 		//physics_apply_force(other.phy_position_x,other.phy_position_y,lengthdir_x(other.add_thrust * other.thrust,-other.phy_rotation),lengthdir_y(other.add_thrust * other.thrust,-other.phy_rotation))
 	flame_offset_distance = 10
 	flame_offset_angle = 180

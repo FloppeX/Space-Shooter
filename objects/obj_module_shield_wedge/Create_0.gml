@@ -19,7 +19,9 @@ shield_max_size = 1
 shield_current_size = 0
 size_change_coefficient = 8
 
-my_shield = instance_create_depth(phy_position_x,phy_position_y,-10,obj_shield_wedge_player);
+shield_wedge_object = obj_shield_wedge_player
+
+my_shield = instance_create_depth(phy_position_x,phy_position_y,-10,shield_wedge_object);
 my_shield.obj_health = shield_health
 
 shield_particle = part_type_create();

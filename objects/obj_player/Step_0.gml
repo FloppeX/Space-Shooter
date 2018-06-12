@@ -1,3 +1,8 @@
+// Calculate variables that may be changed by modifiers
+
+max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
+// Add other variables too!
+
 // Disabled?
 disabled_timer -= 1;
 if disabled_timer > 0 
@@ -53,7 +58,17 @@ if controls_disabled == false{
 }
 
 if keyboard_check(vk_right){
-		room_goto(rm_shop)
+	with(global.player){
+		phy_position_x = 0.5 * room_width
+		phy_position_y = 0.5 * room_height
+		phy_speed_x = 0
+		phy_speed_y = 0
+		phy_angular_velocity = 0
+		phy_rotation = -90		
+		draw_scale = 1
+		visible = true
+		}
+	room_goto (rm_shop)
 	}
 	
 if keyboard_check(vk_left){
@@ -86,11 +101,15 @@ if controls_disabled == false{
 	
 // Moving - activate the engines
 
+/*
 if phy_speed > max_speed
 	add_thrust = 0
-	
+*/
+
+/*
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 	module_holders[i].add_thrust = add_thrust
+*/	
 	
 // Stop ship from skidding
 if add_thrust
@@ -144,7 +163,7 @@ audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
 // Send control inputs to module holders
 	
 for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
-	module_holders[i].gamepad_button[h] = gamepad_button[h]
+	for(var h = 1; h < array_length_1d(gamepad_button); h+=1;)
+		module_holders[i].gamepad_button[h] = gamepad_button[h]
 	module_holders[i].add_thrust = add_thrust
 	}
