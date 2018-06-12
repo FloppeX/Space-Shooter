@@ -7,7 +7,7 @@ var h = irandom(4)
 		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
 		}
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
-		repeat(irandom(2)+1){
+		/*repeat(irandom(2)+1){
 			var p = irandom(99)
 			if p <= 20 and p > 10
 				with (temp_module)
@@ -16,7 +16,8 @@ var h = irandom(4)
 			if p <= 10 and p >= 0
 				with (temp_module)
 					scr_add_random_modifier_uncommon();
-		}
+					
+		}*/
 	temp_module.persistent = false
 	}	
 	

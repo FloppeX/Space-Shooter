@@ -161,9 +161,9 @@ audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
 
 // Send control inputs to module holders
-	
+
 for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	for(var h = 1; h < array_length_1d(gamepad_button); h+=1;)
+	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
 		module_holders[i].gamepad_button[h] = gamepad_button[h]
 	module_holders[i].add_thrust = add_thrust
 	}

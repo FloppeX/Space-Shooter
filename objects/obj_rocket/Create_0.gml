@@ -16,8 +16,8 @@ thrust = 240
 
 range = 3600;
 
-rotation_force = 80;
-drift_resistance = 15;
+rotation_force = 75;
+drift_resistance = 20;
 
 hit_enemy = false;
 damage = 25;

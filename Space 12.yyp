@@ -1311,6 +1311,14 @@
             }
         },
         {
+            "Key": "6501368c-1761-4097-ac73-7ecf243fa01a",
+            "Value": {
+                "id": "9ad324cc-c2d3-4b14-8fc2-43cb74f818d7",
+                "resourcePath": "objects\\obj_level_controller_shop\\obj_level_controller_shop.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "657032a8-4f1a-4a04-b99d-8d4d657f6284",
             "Value": {
                 "id": "ad9ffdca-1f33-4d8a-8d97-93ec7dc9e69c",

@@ -51,11 +51,13 @@ global.wrap_border_top = global.wrap_margin_player
 global.wrap_border_bottom = room_height - global.wrap_margin_player
 
 // Sound
-
+audio_stop_all();
+audio_listener_position(0.5 * room_width,0.5 * room_height,1000);
+/*
 audio_falloff_set_model(audio_falloff_linear_distance_clamped)
 global.music_emitter = audio_emitter_create()
 audio_emitter_falloff(global.music_emitter, 100, 1600, 1);
-
+*/
 // Create particle systems
 
 global.part_system_below = part_system_create();

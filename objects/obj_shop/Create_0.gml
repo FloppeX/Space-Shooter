@@ -2,6 +2,13 @@
 energy = 0
 phy_rotation = -90
 add_thrust = 0
+gamepad_button[0] = false
+gamepad_button[1] = false
+gamepad_button[2] = false
+gamepad_button[3] = false
+gamepad_button[4] = false
+gamepad_button[5] = false
+
 
 // Variables that really below to ships but that this object needs
 max_speed_base = 5

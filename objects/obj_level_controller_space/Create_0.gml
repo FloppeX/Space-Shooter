@@ -5,7 +5,6 @@ part_particles_clear(global.part_system_below)
 
 // Place player in the center of the room
 
-/*
 if instance_exists(obj_player){
 	global.player = instance_find(obj_player,0)
 	global.player.controls_disabled_timer = 60
@@ -20,7 +19,7 @@ if !instance_exists(obj_player){
 	global.player.phy_rotation = -90
 	global.player.draw_scale = 0.01
 	}
-	*/
+	
 // Wormhole
 
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)

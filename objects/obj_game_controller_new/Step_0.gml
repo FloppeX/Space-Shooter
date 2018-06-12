@@ -39,4 +39,4 @@ layer_vspeed(layer_get_id("background_layer_4"), view_object.phy_speed_y*0)
 // Sound
 
 //audio_emitter_position(global.music_emitter,view_object.phy_position_x,view_object.phy_position_y,0)
-//audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
+

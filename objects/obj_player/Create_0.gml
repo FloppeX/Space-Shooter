@@ -1,5 +1,5 @@
 // Gamepad controls
-
+gamepad_button[0] = false
 gamepad_button[1] = false
 gamepad_button[2] = false
 gamepad_button[3] = false
@@ -59,64 +59,78 @@ map_scale = 2
 // Modules
 
 module_holders[0] = instance_create_depth(x,y,-10,obj_module_holder);
+module_holders[0].owner = id;
+module_holders[0].persistent = true;
 module_holders[0].placement_offset_angle = 0
 module_holders[0].placement_offset_distance = 48
 module_holders[0].module = instance_create_depth(x,y,-10,obj_module_cockpit);
 module_holders[0].module.owner = id;
 
 module_holders[1] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
+module_holders[1].owner = id;
+module_holders[1].persistent = true;
 module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
 module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
 module_holders[1].module.activation_button = 4;
-with(module_holders[1].module)
-	scr_add_modifier(scr_module_modifier_heavy_bullets);
+//with(module_holders[1].module)
+//	scr_add_modifier(scr_module_modifier_heavy_bullets);
 
 module_holders[2] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[2].owner = id;
+module_holders[2].persistent = true;
 module_holders[2].placement_offset_angle = 0
 module_holders[2].placement_offset_distance = 24
 module_holders[2].module = noone;
 
 module_holders[3] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[3].owner = id;
+module_holders[3].persistent = true;
 module_holders[3].placement_offset_angle = -45
 module_holders[3].placement_offset_distance = 34
-module_holders[3].module = instance_create_depth(x,y,-10,obj_module_rocket_launcher);
+module_holders[3].module = instance_create_depth(x,y,-10,obj_module_rocket_launcher)
 module_holders[3].module.activation_button = 4;
-with(module_holders[1].module)
-	scr_add_random_modifiers()
 
 module_holders[4] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
+module_holders[4].owner = id;
+module_holders[4].persistent = true;
 module_holders[4].placement_offset_angle = 90
 module_holders[4].placement_offset_distance = 24
 module_holders[4].module = instance_create_depth(x,y,-10,obj_module_shield_wedge)
 module_holders[4].module.offset_angle = -90
-module_holders[4].activation_button = 3;
 
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[5].owner = id;
+module_holders[5].persistent = true;
 module_holders[5].placement_offset_angle = 0
 module_holders[5].placement_offset_distance = 0
-module_holders[5].module = instance_create_depth(x,y,-10,obj_module_battery_pack);
-module_holders[5].module.offset_angle = 90
-module_holders[5].activation_button = 5;
-
+module_holders[5].module = noone
 
 module_holders[6] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
+module_holders[6].owner = id;
+module_holders[6].persistent = true;
 module_holders[6].placement_offset_angle = -90
 module_holders[6].placement_offset_distance = 24
 module_holders[6].module = noone;
 
 
 module_holders[7] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[7].owner = id;
+module_holders[7].persistent = true;
 module_holders[7].placement_offset_angle = 135
 module_holders[7].placement_offset_distance = 34
 module_holders[7].module = instance_create_depth(x,y,-10,obj_module_engine);
 
 module_holders[8] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_shotgun);
+module_holders[8].owner = id;
+module_holders[8].persistent = true;
 module_holders[8].placement_offset_angle = 180
 module_holders[8].placement_offset_distance = 24
 module_holders[8].module = noone
 
 module_holders[9] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
+module_holders[9].owner = id;
+module_holders[9].persistent = true;
 module_holders[9].placement_offset_angle = -135
 module_holders[9].placement_offset_distance = 34
 module_holders[9].module = instance_create_depth(x,y,-10,obj_module_engine);

@@ -27,7 +27,7 @@ if number_of_enemies >= 1{
 	var i = irandom(0);
 	switch(i){
 		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_interceptor); break;
+		//case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_interceptor); break;
 		}
 	number_of_enemies -= 1
 	}

@@ -10,6 +10,9 @@ var temp_direction = angle;
 var closest_direction = angle;
 var temp_x,temp_y,i;
 
+if instance_number(target_type) <= 0
+	return noone;
+
 for (i=0;i<instance_number(target_type);i+=1){
 target = instance_find(target_type,i)
 if target.invisible == false{

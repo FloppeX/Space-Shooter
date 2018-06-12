@@ -14,7 +14,7 @@ warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 				phy_speed_x = lengthdir_x(temp_speed,temp_dir-90) + lengthdir_x(temp_speed,temp_dir)
 				phy_speed_y = lengthdir_y(temp_speed,temp_dir-90) + lengthdir_y(temp_speed,temp_dir)
 				//physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(force,temp_dir),lengthdir_y(force,temp_dir))
-				phy_angular_velocity = 600
+				phy_angular_velocity = 500
 				}
 			if draw_scale < 0.05{
 				visible = false
