@@ -38,5 +38,6 @@ if death_timer <= 0{
 	room_goto (next_level)
 	}
 	
+/*
 if instance_exists(obj_player)
 	global.zoom = global.min_zoom + obj_player.draw_scale * 0.5 * (global.max_zoom - global.min_zoom)

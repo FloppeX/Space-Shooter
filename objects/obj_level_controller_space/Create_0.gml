@@ -41,8 +41,8 @@ number_of_enemies = 2 * global.difficulty_level;
 	
 // Sound
 
-
-level_music = music_quirky_action_2
+audio_stop_all()
+level_music = music_funky_gameplay_looping
 audio_play_sound(level_music,1,1)
 
 

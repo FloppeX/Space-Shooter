@@ -45,17 +45,18 @@ with(module_holders[3].module){
 	persistent = false
 	}
 
+for (var i = 0; i < array_length_1d(module_holders); i+=1;)
+	with(module_holders[i]){
+		persistent = false
+		if module != noone{
+			module.visible = false
+			module.persistent = false
+			}
+		}
+
 gun_bullet_speed = 8
 
 //Sounds
 
-sound_priority = 0.5
-
 explosion_sound = snd_explosion_large_02
 engine_sound = snd_engine_2
-engine_noise = noone
-
-ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
-
-//engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,sound_priority)

@@ -7,12 +7,18 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 				module.phy_rotation = owner.phy_rotation + module.offset_angle + module.rotation_add
 		}
 
-// scr_draw_vision_cone();
 draw_self();
 
-//draw_text(x,y+50,object_get_name(target_object))
-/*
-if global.view_mode == 2{
-	draw_circle(phy_position_x+lengthdir_x(100,-phy_rotation),phy_position_y+lengthdir_y(100,-phy_rotation),75,true) 
-	draw_circle(phy_position_x+lengthdir_x(100,-phy_rotation),phy_position_y+lengthdir_y(100,-phy_rotation),150,true) 
+for (var p = -global.play_area_width; p <= global.play_area_width; p += global.play_area_width)
+	for (var q = -global.play_area_height; q <= global.play_area_height; q+= global.play_area_height){
+		draw_sprite_ext(sprite_index,-1,phy_position_x+p,phy_position_y+q,draw_scale,draw_scale,-phy_rotation,c_white,alpha)
+		for(var i = 0; i < array_length_1d(module_holders); i+=1;){
+			with(module_holders[i]){
+				draw_sprite_ext(sprite_index,image_index,x+p,y+q,other.draw_scale,other.draw_scale,rotation,c_white,other.alpha)	
+				if module != noone{
+					draw_sprite_ext(module.sprite_index,module.image_index,x+p,y+q,other.draw_scale,other.draw_scale,-module.phy_rotation,c_white,other.alpha)
+					}
+				}
+			}
 	}
+	

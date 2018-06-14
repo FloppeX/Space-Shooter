@@ -9,10 +9,10 @@ var h = irandom(10)
 		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
 		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
 		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
-		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge);
+		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_shield_player);
 			temp_module.offset_angle = irandom(3) * 90;
 			break;
-		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_shield_wedge);
+		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_shield_player);
 			temp_module.offset_angle = irandom(3) * 90;
 			break;
 		/*case 10: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
@@ -34,7 +34,7 @@ var h = irandom(10)
 	if object_is_ancestor(temp_module.object_index, obj_module_engine)
 		with(temp_module)
 			offset_angle = 180
-	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge)
+	if object_is_ancestor(temp_module.object_index, obj_module_shield_player)
 		with(temp_module)
 			offset_angle = irandom(3) * 90;
 	if object_is_ancestor(temp_module.object_index, obj_module_gravity_shield){

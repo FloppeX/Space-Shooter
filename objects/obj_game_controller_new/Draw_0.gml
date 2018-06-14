@@ -1,10 +1,12 @@
 // Control zoom
-
+/*
 if global.zoom > 0.55 * global.play_area_width
 	global.zoom =  0.55 * global.play_area_width
 	
 if global.zoom < 120
 	global.zoom = 120
+	
+*/
 	
 aspect_ratio = display_get_width()/display_get_height(); 
 view_set_wport(view_current,1920)

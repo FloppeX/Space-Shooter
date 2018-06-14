@@ -1,6 +1,7 @@
 // TEST
 
-draw_text(50,100,controls_disabled)
+draw_set_font(font_damage_number)
+draw_text(50,50,global.zoom)
 
 // MAP
 

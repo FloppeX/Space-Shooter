@@ -3,11 +3,6 @@ event_inherited();
 temp_speed_x = phy_position_x - phy_position_xprevious
 temp_speed_y = phy_position_y - phy_position_yprevious
 
-/*
-if image_index == 0
-	image_speed = 0
-*/
-
 bullet_timer -= 1;
 shoot = false
 

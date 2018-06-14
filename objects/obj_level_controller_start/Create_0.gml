@@ -37,8 +37,9 @@ while(number_of_enemies > 0){
 	
 // Sound
 
-level_music = music_urban_jungle_looping
-//audio_play_sound(level_music,1,1)
+audio_stop_all()
+level_music = music_sci_fi_open_looping
+audio_play_sound(level_music,1,1)
 
 // Create background sprites
 

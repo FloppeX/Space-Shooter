@@ -33,6 +33,11 @@ shop = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_shop)
 
 wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,100,obj_wormhole_level_begin)
 
+// Sound
+
+audio_stop_all()
+level_music = music_sci_fi_close_2_looping
+audio_play_sound(level_music,1,1)
 
 // Create background sprites
 

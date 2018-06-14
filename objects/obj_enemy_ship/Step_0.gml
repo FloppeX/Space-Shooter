@@ -101,6 +101,18 @@ if ai_mode == 2 {
 			}
 	}
 	
+// Shooting
+
+for(var i = 0; i < array_length_1d(module_holders); i+=1;){
+		temp_module = module_holders[i].module
+		if object_is_ancestor(temp_module.object_index, obj_module_gun){
+			target = scr_rocket_find_target_in_arc(target_object,-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+			if target == noone or controls_disabled
+				temp_module.activated = false	
+			else temp_module.activated = true
+			}
+}
+	
 // Avoid teammates
 
 collision_check_distance = 100
@@ -156,29 +168,8 @@ if controls_disabled == false{
 
 scr_counter_lateral_drift();
 
-// Smoke effect
-
-if controls_disabled == false{
-	offset_distance = 25
-
-	part_type_speed(global.part_rocket_smoke,1,1,0,0);  
-	temp_dir = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
-	part_type_direction(global.part_rocket_smoke,temp_dir+180,temp_dir+180,0,0);
-	part_type_orientation(global.part_rocket_smoke,temp_dir,temp_dir,0,0,0)
-	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-	part_particles_create(global.part_system_below, mirror_x+lengthdir_x(-offset_distance,-phy_rotation), phy_position_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-	part_particles_create(global.part_system_below, phy_position_x+lengthdir_x(-offset_distance,-phy_rotation), mirror_y+ lengthdir_y(-offset_distance,-phy_rotation), global.part_rocket_smoke, 3);
-	}
-
-// Check if they are activated
+//
 /*
-for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	if shoot_1 and controls_disabled == false
-		module_holders[i].module.activated = true
-	else
-		module_holders[i].module.activated = false
-	}
-*/
 if shoot
 	for(var i = 0; i < array_length_1d(gamepad_button); i+=1;)
 		gamepad_button[i] = true
@@ -186,7 +177,7 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
 	module_holders[i].gamepad_button[h] = gamepad_button[h]
 	}
-
+*/
 	
 // Energy
 

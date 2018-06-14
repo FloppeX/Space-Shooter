@@ -23,8 +23,10 @@ if module != noone and instance_exists(module){
 		
 	activation_button = module.activation_button
 
-	if owner.gamepad_button[activation_button] == true
-			module.activated = true
-	else module.activated = false
-	//module.add_thrust = add_thrust
+	if owner.object_index == obj_player{
+		if owner.gamepad_button[activation_button] == true
+				module.activated = true
+		else module.activated = false
+		}
+
 	}

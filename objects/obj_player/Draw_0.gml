@@ -1,5 +1,5 @@
 draw_set_halign(fa_center);
-draw_text(x,y+100,string(max_speed))
+draw_text(x,y+100,phy_rotation)
 draw_set_halign(fa_left);
 
 // Update module positions
@@ -36,17 +36,9 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 	
 	persistent = true
 	
-	// disable visibility of modules and draw them directly, so they dont wiggle around
-	
 		if module != noone{
 			module.visible = false
 			module.persistent = true
 			}
 	}
-	//draw_sprite_ext(ship_modules[i].sprite_index,ship_modules[i].image_index,ship_modules[i].phy_position_x,ship_modules[i].phy_position_y,1,1,-(phy_rotation+ship_modules[i].offset_angle),c_white,alpha)
-	/*
-	//ship_modules[i].phy_rotation = phy_rotation + ship_modules[i].offset_angle
-	ship_modules[i].phy_speed_x = phy_speed_x
-	ship_modules[i].phy_speed_y = phy_speed_y
-	*/
 	}

@@ -13,7 +13,7 @@ view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_vi
 global.view_mode = 1
 global.max_zoom = 1800
 global.min_zoom = 200
-global.zoom = 0.5 * (global.max_zoom - global.min_zoom)
+global.zoom = 400
 temp_zoom = global.zoom
 
 
@@ -100,7 +100,7 @@ part_type_speed(global.part_rocket_smoke_small,0.2,0.4,-0.10,1);            //Th
 part_type_direction(global.part_rocket_smoke_small,0,0,0,1);            //The direction
 part_type_orientation(global.part_rocket_smoke_small,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_rocket_smoke_small,true);                         //This is the blend mode, either additive or normal
-part_type_life(global.part_rocket_smoke_small,60,120);                       //this is its lifespan in steps
+part_type_life(global.part_rocket_smoke_small,10,12);                       //this is its lifespan in steps
 
 global.dust_particle = part_type_create();
 part_type_shape(global.dust_particle,spr_star_test11);

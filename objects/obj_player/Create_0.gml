@@ -96,10 +96,10 @@ module_holders[4].owner = id;
 module_holders[4].persistent = true;
 module_holders[4].placement_offset_angle = 90
 module_holders[4].placement_offset_distance = 24
-module_holders[4].module = instance_create_depth(x,y,-10,obj_module_shield_wedge)
+module_holders[4].module = instance_create_depth(x,y,-10,obj_module_shield_player)
 module_holders[4].module.offset_angle = -90
 
-module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
+module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder)
 module_holders[5].owner = id;
 module_holders[5].persistent = true;
 module_holders[5].placement_offset_angle = 0

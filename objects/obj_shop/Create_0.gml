@@ -54,7 +54,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 			case 270: temp_module.activation_button = 3; break;
 			}
 		}
-	if object_is_ancestor(temp_module.object_index, obj_module_shield_wedge)
+	if object_is_ancestor(temp_module.object_index, obj_module_shield_player)
 		with(temp_module)
 			offset_angle = irandom(3) * 90;
 	module_holders[i].module = temp_module
