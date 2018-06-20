@@ -9,7 +9,7 @@ bullet_interval = round((bullet_interval_base * bullet_interval_multiplier) + bu
 bullet_spread = round((bullet_spread_base * bullet_spread_multiplier) + bullet_spread_bonus)
 bullet_number = round((bullet_number_base * bullet_number_multiplier) + bullet_number_bonus)
 energy_cost = round((energy_cost_base * energy_cost_multiplier) + energy_cost_bonus)
-
+particle_cost = round((particle_cost_base * particle_cost_multiplier) + particle_cost_bonus)
 
 //
 

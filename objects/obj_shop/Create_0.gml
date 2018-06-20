@@ -1,4 +1,5 @@
 // junk variables..
+draw_scale = 1
 energy = 0
 phy_rotation = -90
 add_thrust = 0
@@ -10,20 +11,32 @@ gamepad_button[4] = false
 gamepad_button[5] = false
 
 
-// Variables that really below to ships but that this object needs
-max_speed_base = 5
+// Variables that really belong to ships but that this object needs
 max_speed_multiplier = 0 
 max_speed_bonus = 0
 
-//
+rotation_speed_multiplier = 1 
+rotation_speed_bonus = 0
 
-number_of_items = 6
+max_health_multiplier = 1
+max_health_bonus = 0
+
+max_energy_multiplier = 1
+max_energy_bonus = 0
+
+energy_increase_multiplier = 1
+energy_increase_bonus = 0
+
+////
+
+number_of_items = 4
 number_of_items_left = 3
 number_of_items_to_select = 1
 
-x_starting_offset = 200
-y_starting_offset = 200
-x_step_offset = 0
+enter_shop = true
+exit_shop = false
+
+x_step_offset = 60
 y_step_offset = 60
 
 for(var i = 0; i < number_of_items; i+=1;){
@@ -33,8 +46,8 @@ for(var i = 0; i < number_of_items; i+=1;){
 	module_holders[i].persistent = false
 	module_holders[i].placement_offset_angle = 0
 	module_holders[i].placement_offset_distance = 0
-	module_holders[i].x = phy_position_x + x_starting_offset + i * x_step_offset;
-	module_holders[i].y = phy_position_y + y_starting_offset - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
+	module_holders[i].x = phy_position_x + 200 + 0 * x_step_offset;
+	module_holders[i].y = phy_position_y - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
 
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
@@ -66,24 +79,8 @@ module_identities[number_of_items] = noone
 for(var i = 0; i < number_of_items; i+=1;)
 	module_identities[i] = module_holders[i].module.id
 
-/*
-shop_modules[0].x = phy_position_x + x_starting_offset;
-shop_modules[0].phy_position_y = phy_position_y + y_starting_offset;
-shop_modules[1].phy_position_x = phy_position_x + x_starting_offset + x_step_offset;
-shop_modules[1].phy_position_y = phy_position_y + y_starting_offset;
-shop_modules[2].phy_position_x = phy_position_x + x_starting_offset + 2 * x_step_offset;
-shop_modules[2].phy_position_y = phy_position_y + y_starting_offset;
-/*
-shop_modules[3].phy_position_x = phy_position_x + x_starting_offset;
-shop_modules[3].phy_position_y = phy_position_y + y_starting_offset + y_step_offset;
-shop_modules[4].phy_position_x = phy_position_x + x_starting_offset + x_step_offset;
-shop_modules[4].phy_position_y = phy_position_y + y_starting_offset + y_step_offset;
-shop_modules[5].phy_position_x = phy_position_x + x_starting_offset + 2 * x_step_offset;
-shop_modules[5].phy_position_y = phy_position_y + y_starting_offset + y_step_offset;
-shop_modules[6].phy_position_x = phy_position_x + x_starting_offset;
-shop_modules[6].phy_position_y = phy_position_y + y_starting_offset + 2 * y_step_offset;
-shop_modules[7].phy_position_x = phy_position_x + x_starting_offset + x_step_offset;
-shop_modules[7].phy_position_y = phy_position_y + y_starting_offset + 2 * y_step_offset;
-shop_modules[8].phy_position_x = phy_position_x + x_starting_offset + 2 * x_step_offset;
-shop_modules[8].phy_position_y = phy_position_y + y_starting_offset + 2 * y_step_offset;
+// Create buttons
 
+repair_button = instance_create_depth(x-200,y-30,-10,obj_shop_button_repair);
+reload_button = instance_create_depth(x-260,y-30,-10,obj_shop_button_reload);
+exit_button = instance_create_depth(x-200,y+30,-10,obj_shop_button_exit);

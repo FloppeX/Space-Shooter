@@ -1,6 +1,11 @@
 event_inherited();
 
-add_thrust = false
+// Ship stats
+
+obj_health = 30
+max_health = 30
+max_rotation_speed = 100;
+
 
 ///
 

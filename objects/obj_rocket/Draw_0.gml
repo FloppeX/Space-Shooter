@@ -1,4 +1,5 @@
-scr_draw_vision_cone();
+event_inherited();
+
 draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,1,1,-phy_rotation,c_white,1);
 /*
 if global.view_mode == 2{

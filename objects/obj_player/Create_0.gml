@@ -24,21 +24,51 @@ phy_rotation = -90
 mirror_x = 0
 mirror_y = 0
 
-max_health = 100;
-obj_health = max_health;
-max_energy = 100;
-energy = max_energy;
-energy_increase = 0.5;
-
-thrust = 900;
-rotation_force = 80 // 10
-drift_resistance = 800
+drift_resistance = 25//800
 target_rotation = 0
 left_stick_value = 0
 
-max_speed_base = 5
+max_speed_base = 4
 max_speed_multiplier = 0 
 max_speed_bonus = 0
+
+rotation_speed_base = 80
+rotation_speed_multiplier = 1 
+rotation_speed_bonus = 0
+
+max_health_base = 100 
+max_health_multiplier = 1
+max_health_bonus = 0
+
+max_energy_base = 100
+max_energy_multiplier = 1
+max_energy_bonus = 0
+
+max_particles_base = 100
+max_particles_multiplier = 1
+max_particles_bonus = 0
+
+energy_increase_base = 0.5;
+energy_increase_multiplier = 1
+energy_increase_bonus = 0
+
+//
+
+// Calculate variables that may be changed by modifiers
+
+max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
+rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
+max_health = (max_health_base * max_health_multiplier) + max_health_bonus
+max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
+max_particles = (max_particles_base * max_particles_multiplier) + max_particles_bonus
+energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
+
+
+///
+
+obj_health = max_health;
+energy = max_energy;
+particles = max_particles
 
 obj_rotation = 0;
 col = 0;
@@ -51,6 +81,10 @@ controls_disabled = false
 invisible = false
 alpha = 1
 draw_scale = 1
+
+// View
+
+close_up_view = false
 
 // Map
 
@@ -96,7 +130,7 @@ module_holders[4].owner = id;
 module_holders[4].persistent = true;
 module_holders[4].placement_offset_angle = 90
 module_holders[4].placement_offset_distance = 24
-module_holders[4].module = instance_create_depth(x,y,-10,obj_module_shield_player)
+module_holders[4].module = instance_create_depth(x,y,-10,obj_module_reflective_shield_player)
 module_holders[4].module.offset_angle = -90
 
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder)

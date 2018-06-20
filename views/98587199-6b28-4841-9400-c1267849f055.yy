@@ -22,6 +22,8 @@
         "d9f03159-80b8-4991-8fd4-a225b2f56773",
         "205e6f12-8007-4da2-be64-66cc1b434a09",
         "18195490-d88f-44ca-955c-f719cc7b7ced",
+        "48a1b23e-8045-4c0c-aaed-2e239694e3b5",
+        "b992f2cc-8ef6-456b-bab3-e4b670e8bfa7",
         "c705ee8b-d014-45b9-aa0b-57d459b2171e",
         "7b82b0f7-c5bb-42fe-85ed-2f73f6023c17",
         "d0668e9a-40ef-4357-aa7a-abd3128f26c2",
@@ -34,7 +36,12 @@
         "de6285fe-3c1d-4572-ab01-a48b8bc9ed8d",
         "6b1ae469-2cf7-4478-91c8-e96e0518d3c5",
         "2ddfae37-9aca-427a-91ac-1f43d547430a",
-        "161bc683-8562-43d1-8c8b-fc36d6441a61"
+        "161bc683-8562-43d1-8c8b-fc36d6441a61",
+        "1d2b8489-8738-4b5b-b83b-0569c5302f01",
+        "074cdedf-b5db-4a23-a34e-419fa8ca2200",
+        "d3af1ffe-fb71-4efc-8770-e0df48561b5a",
+        "be6904a7-f9f6-48de-b785-f8c44601bb7a",
+        "808fc69b-6de6-4dde-9e7c-a8cd22c9065a"
     ],
     "filterType": "GMSprite",
     "folderName": "Module sprites",

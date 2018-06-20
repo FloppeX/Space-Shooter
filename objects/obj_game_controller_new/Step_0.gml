@@ -47,6 +47,8 @@ if gamepad_button_check_pressed(0,gp_padr)
 		global.view_mode = 1
 	else global.view_mode = 2
 	
+
+	
 // Set background speed
 
 layer_hspeed(layer_get_id("background_layer_1"), view_object.phy_speed_x*0.8)

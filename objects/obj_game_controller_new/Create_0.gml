@@ -1,3 +1,7 @@
+// Test
+
+physics_world_create(1/10)
+
 //
 
 randomize();
@@ -13,7 +17,7 @@ view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_vi
 global.view_mode = 1
 global.max_zoom = 1800
 global.min_zoom = 200
-global.zoom = 400
+global.zoom = 800
 temp_zoom = global.zoom
 
 
@@ -26,10 +30,6 @@ draw_set_swf_aa_level(global.aa_level);
 draw_set_lighting(true);
 draw_light_define_direction(1, 1, 1, 0, c_yellow);
 draw_light_enable(1, true);
-
-// Depth
-
-depth = 20
 
 // Play area settings
 
@@ -58,6 +58,13 @@ audio_falloff_set_model(audio_falloff_linear_distance_clamped)
 global.music_emitter = audio_emitter_create()
 audio_emitter_falloff(global.music_emitter, 100, 1600, 1);
 */
+
+
+
+// Difficulty - increases with each room
+
+global.difficulty_level = 1;
+
 // Create particle systems
 
 global.part_system_below = part_system_create();
@@ -89,6 +96,18 @@ part_type_direction(global.part_rocket_smoke,0,0,0,1);            //The directio
 part_type_orientation(global.part_rocket_smoke,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_rocket_smoke,true);                         //This is the blend mode, either additive or normal
 part_type_life(global.part_rocket_smoke,6,20);                       //this is its lifespan in steps
+
+global.part_rocket_smoke_2=part_type_create();
+part_type_sprite(global.part_rocket_smoke_2,spr_flame_particle_3,false,false,false);            //This defines the particles shape
+part_type_size(global.part_rocket_smoke_2,0.4,0.6,-0.02,0);                    //This is for the size
+part_type_scale(global.part_rocket_smoke_2,1,1);                       //This is for scaling
+part_type_color1(global.part_rocket_smoke_2,c_yellow);
+part_type_alpha2(global.part_rocket_smoke_2,1,0);
+part_type_speed(global.part_rocket_smoke_2,0.2,0.4,-0.10,1);            //The particles speed
+part_type_direction(global.part_rocket_smoke_2,0,0,0,1);            //The direction
+part_type_orientation(global.part_rocket_smoke_2,0,0,0,0,1);           //This changes the rotation of the particle
+part_type_blend(global.part_rocket_smoke_2,true);                         //This is the blend mode, either additive or normal
+part_type_life(global.part_rocket_smoke_2,6,12);                       //this is its lifespan in steps
 
 global.part_rocket_smoke_small=part_type_create();
 part_type_sprite(global.part_rocket_smoke_small,spr_flame_particle,false,false,false);            //This defines the particles shape

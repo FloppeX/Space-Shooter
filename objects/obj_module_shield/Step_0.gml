@@ -65,8 +65,9 @@ else
 			shield_current_size = shield_current_size - shield_current_size/size_change_coefficient	
 		}
 		
+
 if shield_current_size > 0.01{
-	part_type_size(shield_particle,shield_current_size,shield_current_size,0,0.02);
+	part_type_size(shield_particle,shield_current_size*owner.draw_scale,shield_current_size*owner.draw_scale,0,0.02);
 	part_type_speed(shield_particle,travel_speed,travel_speed,0,0.1);  
 	part_type_direction(shield_particle,travel_direction,travel_direction,0,0);
 	part_type_orientation(shield_particle,-phy_rotation,-phy_rotation,0,0,0);

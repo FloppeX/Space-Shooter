@@ -20,7 +20,7 @@ for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 // TEST
 
 //if phy_speed < max_speed
-		physics_apply_local_force(0,0,10,0)
+//		physics_apply_local_force(0,0,10,0)
 		
 		
 // Movement

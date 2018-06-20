@@ -1,6 +1,16 @@
 // Create a menu
 
-start_menu = instance_create_depth(0.2*display_get_width(),0.4*display_get_height(),0,obj_start_menu)
+start_menu = instance_create_depth(0.3*display_get_width(),0.4*display_get_height(),0,obj_start_menu)
+
+// Zoom settings
+
+global.zoom = 800
+zoom_timer = 0
+
+// Clear particles
+
+part_particles_clear(global.part_system_above)
+part_particles_clear(global.part_system_below)
 
 // Create some asteroids
 
@@ -31,7 +41,12 @@ while(number_of_enemies > 0){
 		temp_xpos = global.wrap_border_left +100
 		temp_ypos = global.wrap_border_top + random(global.play_area_height)
 		}
-	new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1)
+	var i = irandom(2);
+	switch(i){
+		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1); break;
+		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_2); break;
+		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_3); break;
+		}
 	number_of_enemies -= 1
 	}
 	

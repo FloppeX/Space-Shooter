@@ -2,7 +2,7 @@ event_inherited();
 
 description_lines[0] = "Zapper"
 
-bullet_range_base = 560
+bullet_range_base = 250
 bullet_speed_base = 100;
 bullet_speed = bullet_speed_base
 bullet_interval_base = 40;

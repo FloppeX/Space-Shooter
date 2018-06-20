@@ -9,7 +9,7 @@ bullet_number_base = 6
 bullet_interval_base = 50
 bullet_range_base = 480
 bullet_color = c_fuchsia
-recoil_force = 100
+recoil_force = 20//100
 
 sound[0] = snd_shotgun_1
 sound[1] = snd_shotgun_2

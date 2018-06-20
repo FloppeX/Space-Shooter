@@ -11,19 +11,17 @@ mirror_y = 0
 
 invisible = false
 
-cruise_speed = 8
-thrust = 240
+cruise_speed = 12
+thrust = 20//240
 
 range = 3600;
 
-rotation_force = 75;
-drift_resistance = 20;
+rotation_speed = 60;
+drift_resistance = 6//25;
 
 hit_enemy = false;
 damage = 25;
 damage_color = c_lime;
-min_damage = 4;
-max_damage = 8;
 
 target = noone;
 targeting_arc = 120;

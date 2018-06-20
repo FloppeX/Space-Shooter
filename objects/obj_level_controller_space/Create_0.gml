@@ -1,3 +1,7 @@
+// Zoom
+
+global.zoom = 800
+
 // Clear particles
 
 part_particles_clear(global.part_system_above)
@@ -10,13 +14,13 @@ if instance_exists(obj_player){
 	global.player.controls_disabled_timer = 60
 	global.player.phy_position_x = 0.5 * room_width
 	global.player.phy_position_y = 0.5 * room_height
-	global.player.phy_rotation = -90
+	global.player.phy_rotation = -180
 	global.player.draw_scale = 0.01
 	}
 if !instance_exists(obj_player){
 	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
 	global.player.controls_disabled_timer = 60
-	global.player.phy_rotation = -90
+	global.player.phy_rotation = -180
 	global.player.draw_scale = 0.01
 	}
 	
@@ -24,9 +28,10 @@ if !instance_exists(obj_player){
 
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
 
-//
-	
+// timers
+
 death_timer = 120
+
 next_level_timer = 120
 
 // Level
@@ -35,7 +40,7 @@ next_level_timer = 120
 
 // Enemies
 
-number_of_asteroids = irandom(2) * global.difficulty_level;
+number_of_asteroids = 10 // irandom(2) * global.difficulty_level;
 number_of_enemies = 2 * global.difficulty_level;
 
 	

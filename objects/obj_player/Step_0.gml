@@ -1,10 +1,17 @@
 // Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
+rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
+max_health = (max_health_base * max_health_multiplier) + max_health_bonus
+max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
+energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
+
 // Add other variables too!
 
 // Disabled?
 disabled_timer -= 1;
+if disabled_timer < 0 
+	disabled_timer = 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
@@ -57,7 +64,7 @@ if controls_disabled == false{
 		gamepad_button[5] = true
 }
 
-if keyboard_check(vk_right){
+if keyboard_check(vk_right)/*{
 	with(global.player){
 		phy_position_x = 0.5 * room_width
 		phy_position_y = 0.5 * room_height
@@ -67,9 +74,9 @@ if keyboard_check(vk_right){
 		phy_rotation = -90		
 		draw_scale = 1
 		visible = true
-		}
+		}*/
 	room_goto (rm_shop)
-	}
+
 	
 if keyboard_check(vk_left){
 		room_goto(rm_space)
@@ -81,6 +88,17 @@ if keyboard_check_pressed(vk_up){
 if keyboard_check_pressed(vk_down){
 		draw_scale -= 0.1
 	}
+	
+// Close-up view
+
+if gamepad_button_check_pressed(0,gp_select)
+	if !close_up_view
+		close_up_view = true
+	else 
+		close_up_view = false
+		
+if close_up_view
+	zoom = 200
 
 // Turn
 
@@ -88,14 +106,19 @@ if controls_disabled == false{
 	control_mode = 1
 
 	phy_rotation = (phy_rotation + 360) mod 360
-	if control_mode == 1
-		phy_angular_velocity = rotation_value * rotation_force // phy_angular_velocity = rotation_value * rotation_force;
+	if control_mode == 1{
+		if rotation_value < 0 and phy_angular_velocity > rotation_speed * rotation_value 
+			physics_apply_angular_impulse(10 * rotation_value)
+		if rotation_value > 0 and phy_angular_velocity < rotation_speed * rotation_value
+			physics_apply_angular_impulse(10 * rotation_value)
+		}
+		//phy_angular_velocity = rotation_value * rotation_speed // phy_angular_velocity = rotation_value * rotation_speed;
 	if control_mode == 2{
 	
 		rotation_value = angle_difference(-phy_rotation,target_rotation)/10
 		rotation_value = clamp(rotation_value,-1,1)
 		rotation_value = rotation_value * left_stick_value
-		phy_angular_velocity = rotation_value * rotation_force // physics_apply_angular_impulse(rotation_value * rotation_force) //
+		phy_angular_velocity = rotation_value * rotation_speed // physics_apply_angular_impulse(rotation_value * rotation_speed) //
 		}
 	}
 	
@@ -147,12 +170,19 @@ scr_find_mirror_positions();
 
 scr_wrap_room_player();
 
-// Energy
+// Energy, health, particles
 
 if energy < max_energy
 	energy += energy_increase
+	
 if energy > max_energy
 	energy = max_energy
+	
+if obj_health > max_health
+	obj_health = max_health
+	
+if particles > max_particles
+	particles = max_particles	
 	
 // Sound
 

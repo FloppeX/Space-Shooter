@@ -8,10 +8,11 @@ gamepad_button[4] = false
 
 // Disabled?
 disabled_timer -= 1;
+if disabled_timer < 0 
+	disabled_timer = 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
-
 //Health
 if obj_health <= 0{
 	phy_active = false
@@ -147,8 +148,14 @@ if closest_obstacle != noone{
 if controls_disabled == false{
 	// Turn
 	angle_diff = angle_difference(-phy_rotation,target_dir);
-	turn_value = clamp(angle_diff/20, -1, 1)
-	phy_angular_velocity = turn_value * rotation_force;	
+	
+	rotation_value = clamp(angle_diff/20, -1, 1)
+	if rotation_value < 0 and phy_angular_velocity > max_rotation_speed * rotation_value 
+			physics_apply_angular_impulse(4 * rotation_value)
+	if rotation_value > 0 and phy_angular_velocity < max_rotation_speed * rotation_value
+			physics_apply_angular_impulse(4 * rotation_value)
+			
+	//phy_angular_velocity = turn_value * max_rotation_speed;	
 
 	// Apply thrust
 	

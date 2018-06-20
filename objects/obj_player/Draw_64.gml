@@ -1,7 +1,17 @@
 // TEST
+if global.view_mode == 2{
+	draw_set_font(font_small_text)
+	draw_set_color(c_white)
+	draw_text(50,90,"zoom: " + string(global.zoom))
+	draw_text(50,120,"difficulty: " + string(global.difficulty_level))
+	draw_text(50,150,"max speed: " + string(max_speed))
+	draw_text(50,180,"rotation_speed: " + string(rotation_speed))
+	draw_text(50,210,"max_health: " + string(max_health))
+	draw_text(50,240,"max_energy: " + string(max_energy))
+	draw_text(50,270,"energy_increase: " + string(energy_increase))
+	draw_text(50,300,"controls_disabled timer: " + string(disabled_timer))
+}
 
-draw_set_font(font_damage_number)
-draw_text(50,50,global.zoom)
 
 // MAP
 
@@ -42,3 +52,10 @@ energy_bar_height = 300
 energy_bar_width = 20
 
 draw_healthbar(energy_bar_x-0.5 * health_bar_width,energy_bar_y-0.5 * health_bar_height,energy_bar_x+0.5 * health_bar_width,energy_bar_y+0.5 * energy_bar_height,100 * energy/max_energy,c_dkgray,c_lime,c_lime,3,true,true)
+
+particles_bar_x = 110
+particles_bar_y = 540
+particles_bar_height = 300
+particles_bar_width = 20
+
+draw_healthbar(particles_bar_x-0.5 * health_bar_width,particles_bar_y-0.5 * particles_bar_height,particles_bar_x+0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height,100 * particles/max_particles,c_dkgray,c_aqua,c_aqua,3,true,true)

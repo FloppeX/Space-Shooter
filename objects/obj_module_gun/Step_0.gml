@@ -13,6 +13,8 @@ if activated {
 		ready_to_shoot = false
 	if !(owner.energy > energy_cost)
 		ready_to_shoot = false
+	if !(owner.particles > particle_cost)
+		ready_to_shoot = false
 	}
 		
 if ready_to_shoot{
@@ -22,6 +24,7 @@ if ready_to_shoot{
 		bullets[i] = instance_create_depth(phy_position_x+lengthdir_x(barrel_length,-phy_rotation),phy_position_y+lengthdir_y(barrel_length,-phy_rotation),bullet_depth,bullet_type);
 		
 		bullet_scale = 0.5+ 0.5*(bullets[i].damage/6)
+		
 		bullet_fixture = physics_fixture_create();
 		physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)
 		physics_fixture_set_density(bullet_fixture,0.03)
@@ -30,6 +33,7 @@ if ready_to_shoot{
 		physics_fixture_bind(bullet_fixture,bullets[i])
 		physics_fixture_delete(bullet_fixture)
 		
+		bullets[i].phy_bullet = true
 
 		bullets[i].phy_rotation = phy_rotation + random(2 * bullet_spread) - bullet_spread
 		
@@ -37,16 +41,17 @@ if ready_to_shoot{
 		bullets[i].phy_speed_x = temp_speed_x + lengthdir_x(temp_bullet_speed,-bullets[i].phy_rotation)
 		bullets[i].phy_speed_y = temp_speed_y + lengthdir_y(temp_bullet_speed,-bullets[i].phy_rotation)
 		
+		
 		bullets[i].color = bullet_color
 		bullets[i].damage = bullet_damage
 		bullets[i].range = bullet_range
 
-		
 		bullet_timer = bullet_interval;
 		}
 	//image_index = 1;
 	image_speed = (image_number+5)/bullet_interval;
 	owner.energy -= energy_cost;
+	owner.particles -= particle_cost;
 	
 	// Recoil
 	with(owner)

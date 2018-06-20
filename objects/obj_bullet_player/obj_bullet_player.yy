@@ -49,7 +49,7 @@
     "overriddenProperties": null,
     "parentObjectId": "c93b5683-e74c-49b7-9492-cba4ece1a533",
     "persistent": false,
-    "physicsAngularDamping": 0.1,
+    "physicsAngularDamping": 0,
     "physicsDensity": 0.01,
     "physicsFriction": 0,
     "physicsGroup": 0,

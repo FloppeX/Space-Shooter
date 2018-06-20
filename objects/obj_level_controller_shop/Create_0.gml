@@ -1,3 +1,7 @@
+// zoom
+
+global.zoom = 400
+
 // Clear particles
 
 part_particles_clear(global.part_system_above)
@@ -5,29 +9,29 @@ part_particles_clear(global.part_system_below)
 
 // Place player in the center of the room
 
-if instance_exists(obj_player)
-	with(global.player){
-		phy_position_x = 0.5 * room_width
-		phy_position_y = 0.5 * room_height+300
-		phy_speed_x = 0
-		phy_speed_y = 0
-		phy_angular_velocity = 0
-		phy_rotation = -90		
-		draw_scale = 1
-		visible = true
-		}
 
-if !instance_exists(obj_player){
-	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
-	global.player.phy_rotation = -90
+if instance_exists(obj_player){
+	global.player = instance_find(obj_player,0)
+	global.player.disabled_timer = 60
+	global.player.phy_position_x = 0.5 * room_width
+	global.player.phy_position_y = 0.5 * room_height + 300
+	global.player.phy_rotation = -180
+	global.player.draw_scale = 0.01
 	}
-	
+if !instance_exists(obj_player){
+	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height + 300,-5,obj_player)
+	global.player.disabled_timer = 60
+	global.player.phy_rotation = -180
+	global.player.draw_scale = 0.01
+	}
+
 death_timer = 120
 next_level_timer = 120
 
 // Shop
 
 shop = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_shop)
+cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor)
 
 // Wormhole
 

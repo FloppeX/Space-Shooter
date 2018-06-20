@@ -1,6 +1,5 @@
-draw_set_halign(fa_center);
-draw_text(x,y+100,phy_rotation)
-draw_set_halign(fa_left);
+if global.view_mode == 2
+	draw_text(x,y+100,phy_speed)
 
 // Update module positions
 

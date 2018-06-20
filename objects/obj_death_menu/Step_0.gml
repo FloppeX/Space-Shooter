@@ -6,7 +6,10 @@ event_inherited();
 
 if gamepad_button_check_pressed(0,gp_face1)
 	switch(selected_item){
-		case 0 : room_goto(rm_space) break;
+		case 0 : 
+			global.difficulty_level = 1;
+			room_goto(rm_space)
+			break;
 		case 1 : 
 			with(all)
 					instance_destroy()

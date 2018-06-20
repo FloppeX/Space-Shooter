@@ -21,7 +21,7 @@ camera_set_view_size(view_camera[0],temp_zoom*aspect_ratio,temp_zoom)
 // Center camera
 cam = camera_get_active()
 
-camera_set_view_pos(cam,view_object.phy_com_x -0.5*camera_get_view_width(cam),view_object.phy_com_y-0.5*camera_get_view_height(cam))
+camera_set_view_pos(cam,view_object.phy_position_x -0.5*camera_get_view_width(cam),view_object.phy_position_y-0.5*camera_get_view_height(cam))
 /*
 view_rotation_value = gamepad_button_value(0,gp_shoulderlb)
 if view_rotation_value > 0 

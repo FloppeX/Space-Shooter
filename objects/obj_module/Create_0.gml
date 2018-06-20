@@ -33,6 +33,7 @@ bullet_interval_base = 0;
 bullet_spread_base = 0
 bullet_number_base = 0
 energy_cost_base = 0
+particle_cost_base = 0
 
 // Reset multipliers and bonuses
 bullet_type = bullet_type_base
@@ -45,6 +46,7 @@ bullet_interval_multiplier = 1
 bullet_spread_multiplier = 1
 bullet_number_multiplier = 1
 energy_cost_multiplier = 1
+particle_cost_multiplier = 1
 
 bullet_damage_bonus = 0
 bullet_range_bonus = 0
@@ -54,6 +56,7 @@ bullet_spread_bonus = 0
 bullet_number_bonus = 0
 bullet_interval_bonus = 0
 energy_cost_bonus = 0
+particle_cost_bonus = 0
 
 // Calculate values
 
@@ -65,6 +68,7 @@ bullet_interval = round((bullet_interval_base * bullet_interval_multiplier) + bu
 bullet_spread = round((bullet_spread_base * bullet_spread_multiplier) + bullet_spread_bonus)
 bullet_number = round((bullet_number_base * bullet_number_multiplier) + bullet_number_bonus)
 energy_cost = round((energy_cost_base * energy_cost_multiplier) + energy_cost_bonus)
+particle_cost = round((particle_cost_base * particle_cost_multiplier) + particle_cost_bonus)
 
 //Sounds
 

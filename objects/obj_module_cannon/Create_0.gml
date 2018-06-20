@@ -9,7 +9,7 @@ bullet_interval_base = 30
 bullet_range_base = 640
 bullet_color = c_red
 
-recoil_force = 300
+recoil_force = 50//300
 
 sound[0] = snd_cannon_1
 sound[1] = snd_cannon_2

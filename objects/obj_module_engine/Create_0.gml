@@ -1,12 +1,12 @@
 event_inherited();
 
-thrust = 400;
+thrust = 60//400;
 add_thrust = 0;
 
 // Particles
 
 part_engine_flame = part_type_create();
-part_engine_flame = global.part_rocket_smoke
+part_engine_flame = global.part_rocket_smoke_2
 /*
 part_type_shape(part_engine_flame,pt_shape_disk);
 part_type_size(part_engine_flame,0.08,0.12,0,0);

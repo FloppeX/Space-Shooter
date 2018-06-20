@@ -33,16 +33,7 @@ if number_of_enemies >= 1{
 	number_of_enemies -= 1
 	}
 
-// Is the player dead? Then count down and restart
 
-if !instance_exists(obj_player)
-	death_timer -= 1
-	
-if death_timer <= 0 and !instance_exists(obj_death_menu){
-	death_menu = instance_create_depth(0.5*global.play_area_width,0.4*global.play_area_width,0,obj_death_menu)
-	death_menu.alignment = "center"
-	}
-	
 // Are all enemies dead? Then count down and move to next level
 	
 if !instance_exists(obj_enemy_ship)
@@ -53,3 +44,16 @@ if next_level_timer <= 0 and !instance_exists(obj_wormhole){
 	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
 	wormhole.next_level = rm_shop
 	}
+
+// Is the player dead? Then count down and restart
+
+if !instance_exists(obj_player){
+	death_timer -= 1
+	global.difficulty_level = 1
+	}
+	
+if death_timer <= 0 and !instance_exists(obj_death_menu){
+	death_menu = instance_create_depth(0.5*1920,0.4*1080,0,obj_death_menu)
+	death_menu.alignment = "center"
+	}
+	

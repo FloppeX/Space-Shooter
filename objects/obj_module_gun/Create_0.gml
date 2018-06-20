@@ -9,6 +9,7 @@ bullet_interval_base = 16;
 bullet_spread_base = 2	// the total spread angle, adds randomness to bullet direction
 bullet_number_base = 1
 energy_cost_base = 10
+particle_cost_base = 0
 
 bullet_type = bullet_type_base
 
@@ -20,8 +21,9 @@ bullet_interval = bullet_interval_base
 bullet_spread = bullet_spread_base
 bullet_number = bullet_number_base
 energy_cost = energy_cost_base
+particle_cost = particle_cost_base
 
-recoil_force = 50
+recoil_force = 15
 
 activation_button = 3
 activated = false

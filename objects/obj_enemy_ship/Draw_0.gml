@@ -22,3 +22,18 @@ for (var p = -global.play_area_width; p <= global.play_area_width; p += global.p
 			}
 	}
 	
+//  health bar
+
+if obj_health < old_obj_health
+	health_bar_timer = 120
+	
+if health_bar_timer > 0{
+	health_bar_x = phy_position_x
+	health_bar_y = phy_position_y - 80
+	health_bar_height = 8
+	health_bar_width = 36
+	
+	draw_healthbar(health_bar_x-0.5 * health_bar_width,health_bar_y-0.5 * health_bar_height,health_bar_x+0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height,100 * obj_health/max_health,c_dkgray,c_red,c_red,0,true,true)
+	health_bar_timer -= 1
+}
+old_obj_health = obj_health

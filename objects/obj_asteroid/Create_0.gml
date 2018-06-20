@@ -12,7 +12,7 @@ mirror_x = 0;
 mirror_y = 0;
 
 damage = 10
-push_force = 30
+push_force = 80//900
 
 child_object = obj_asteroid_medium;
 obj_health = 8;
