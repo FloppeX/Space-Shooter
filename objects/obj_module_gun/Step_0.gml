@@ -11,9 +11,9 @@ if !activated
 if activated {
 	if !(bullet_timer <= 0) 
 		ready_to_shoot = false
-	if !(owner.energy > energy_cost)
+	if !(owner.energy >= energy_cost)
 		ready_to_shoot = false
-	if !(owner.particles > particle_cost)
+	if !(owner.particles >= particle_cost)
 		ready_to_shoot = false
 	}
 		

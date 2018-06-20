@@ -9,7 +9,7 @@ bullet_number_base = 1
 bullet_interval_base = 6
 bullet_range_base = 480
 energy_cost_base = 2
-recoil_force = 6
+recoil_force = 3
 barrel_length = 11
 bullet_color = c_orange
 

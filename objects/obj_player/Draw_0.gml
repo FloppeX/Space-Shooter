@@ -1,6 +1,3 @@
-if global.view_mode == 2
-	draw_text(x,y+100,phy_speed)
-
 // Update module positions
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)

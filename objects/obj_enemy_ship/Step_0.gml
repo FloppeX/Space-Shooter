@@ -44,8 +44,8 @@ target_speed = max_speed
 
 if ai_mode == 1 {
 	ai_timer -= 1;
-	min_standoff_distance = 500
-	max_standoff_distance = 1200
+	min_standoff_distance = 200
+	max_standoff_distance = 400
 	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,360,seek_range)
 	if target != noone{
 		distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
@@ -64,9 +64,9 @@ if ai_mode == 1 {
 		if ai_timer <= 0{
 
 			ai_timer = 120
-			if irandom(4) == 0{
+			if irandom(2) == 0{
 				ai_mode = 2
-				ai_timer = 60
+				attack_timer = attack_duration
 				}
 			}
 	}
@@ -86,7 +86,7 @@ if ai_mode == 2 {
 		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
 			and angle_diff < 30 and !controls_disabled
 			shoot = true
-		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 200
+		if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 50
 			abort_attack = true
 			
 		if attack_timer <= 0
@@ -98,7 +98,7 @@ if ai_mode == 2 {
 			ai_mode = 1
 			shoot = false
 			abort_attack = false
-			attack_timer = attack_duration // Reset attack timer for the next attack
+			ai_timer = 120
 			}
 	}
 	

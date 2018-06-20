@@ -1,6 +1,6 @@
 event_inherited();
 
-thrust = 60//400;
+thrust = 70//400;
 add_thrust = 0;
 
 // Particles

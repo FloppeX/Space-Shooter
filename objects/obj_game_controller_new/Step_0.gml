@@ -16,13 +16,18 @@ if gamepad_button_check(0,gp_start)
 	game_restart();
 
 if gamepad_button_check_pressed(0,gp_select){
-	var i = irandom(2)
+	repeat(10)
+		instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_pickup_credit);
+	/*
+	var i = irandom(0)
 	switch(i){
 		case 0: new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_modular_1); break;
 		case 1: new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_modular_2); break;
 		case 2: new_enemy = instance_create_depth(global.wrap_border_left + random(global.play_area_width),global.wrap_border_top + random(global.play_area_height),0,obj_enemy_modular_3); break;
 		}
+	*/
 	}
+	
 	
 if instance_exists(obj_player){
 	

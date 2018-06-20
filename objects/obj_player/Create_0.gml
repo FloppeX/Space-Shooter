@@ -1,3 +1,7 @@
+// Credits
+
+credits = 0;
+
 // Gamepad controls
 gamepad_button[0] = false
 gamepad_button[1] = false
@@ -24,7 +28,7 @@ phy_rotation = -90
 mirror_x = 0
 mirror_y = 0
 
-drift_resistance = 25//800
+drift_resistance = 35//800
 target_rotation = 0
 left_stick_value = 0
 
@@ -105,7 +109,7 @@ module_holders[1].owner = id;
 module_holders[1].persistent = true;
 module_holders[1].placement_offset_angle = 45
 module_holders[1].placement_offset_distance = 34
-module_holders[1].module = instance_create_depth(x,y,-10,obj_module_blaster);
+module_holders[1].module = instance_create_depth(x,y,-10,obj_module_cannon);
 module_holders[1].module.activation_button = 4;
 //with(module_holders[1].module)
 //	scr_add_modifier(scr_module_modifier_heavy_bullets);
@@ -130,7 +134,7 @@ module_holders[4].owner = id;
 module_holders[4].persistent = true;
 module_holders[4].placement_offset_angle = 90
 module_holders[4].placement_offset_distance = 24
-module_holders[4].module = instance_create_depth(x,y,-10,obj_module_reflective_shield_player)
+module_holders[4].module = instance_create_depth(x,y,-10,obj_module_shield_player)
 module_holders[4].module.offset_angle = -90
 
 module_holders[5] = instance_create_depth(x,y,-10,obj_module_holder)

@@ -1,3 +1,7 @@
+// Credits
+
+credits = irandom(7) + 3
+
 // Ship properties
 
 mirror_x = 0
