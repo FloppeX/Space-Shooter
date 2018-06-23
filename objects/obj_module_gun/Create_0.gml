@@ -1,5 +1,7 @@
 event_inherited();
 
+baseplate_sprite = spr_baseplate
+
 bullet_type_base = obj_bullet_player;
 bullet_damage_base = 8;
 bullet_range_base = 560

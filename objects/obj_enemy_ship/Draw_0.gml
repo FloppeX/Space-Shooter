@@ -16,6 +16,8 @@ for (var p = -global.play_area_width; p <= global.play_area_width; p += global.p
 			with(module_holders[i]){
 				draw_sprite_ext(sprite_index,image_index,x+p,y+q,other.draw_scale,other.draw_scale,rotation,c_white,other.alpha)	
 				if module != noone{
+					if module.baseplate_sprite != noone
+						draw_sprite_ext(module.baseplate_sprite,-1,x+p,y+q,other.draw_scale,other.draw_scale,-module.phy_rotation,c_white,other.alpha)
 					draw_sprite_ext(module.sprite_index,module.image_index,x+p,y+q,other.draw_scale,other.draw_scale,-module.phy_rotation,c_white,other.alpha)
 					}
 				}

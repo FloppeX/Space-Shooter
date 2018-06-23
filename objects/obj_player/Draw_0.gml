@@ -1,3 +1,12 @@
+// Move view object
+/*
+with(obj_view_object){
+	phy_position_x = other.phy_com_x
+	phy_position_y = other.phy_com_y
+	phy_speed_x = other.phy_speed_x
+	phy_speed_y = other.phy_speed_y
+	}
+*/
 // Update module positions
 
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
@@ -15,6 +24,8 @@ for (var p = -global.play_area_width; p <= global.play_area_width; p += global.p
 			with(module_holders[i]){
 				draw_sprite_ext(sprite_index,image_index,x+p,y+q,other.draw_scale,other.draw_scale,rotation,c_white,other.alpha)	
 				if module != noone{
+					if module.baseplate_sprite != noone
+						draw_sprite_ext(module.baseplate_sprite,-1,x+p,y+q,other.draw_scale,other.draw_scale,-module.phy_rotation,c_white,other.alpha)
 					draw_sprite_ext(module.sprite_index,module.image_index,x+p,y+q,other.draw_scale,other.draw_scale,-module.phy_rotation,c_white,other.alpha)
 					}
 				}

@@ -17,7 +17,7 @@ if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face
 	if selected_module_holder != noone {
 		swap_module = selected_module_holder.module
 		selected_module_holder.module = active_module
-		if selected_module_holder.module != noone{
+		if selected_module_holder.module != noone {
 			selected_module_holder.module.visible = true
 			selected_module_holder.module.persistent = true
 			}

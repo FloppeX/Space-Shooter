@@ -65,9 +65,9 @@ draw_healthbar(particles_bar_x-0.5 * health_bar_width,particles_bar_y-0.5 * part
 
 // Credits
 
-draw_sprite_ext(spr_pickup_credit,-1,health_bar_x,health_bar_y + 60,2,2,0,c_white,1)
+draw_sprite_ext(spr_pickup_credit,-1,health_bar_x,health_bar_y + 0.5 * health_bar_height + 60,2,2,0,c_white,1)
 draw_set_font(font_damage_number)
 draw_set_color(c_white)
 draw_set_valign(fa_center)
 draw_set_halign(fa_center)
-draw_text(health_bar_x+60,health_bar_y + 60,credits)
+draw_text(health_bar_x+60,health_bar_y + 0.5 * health_bar_height + 60,credits)

@@ -1,6 +1,6 @@
 // Credits
 
-credits = irandom(7) + 3
+credits = irandom(3)
 
 // Ship properties
 

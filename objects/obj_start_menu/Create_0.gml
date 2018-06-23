@@ -5,6 +5,7 @@
 event_inherited();
 
 menu_items[0] = "New game"
-menu_items[1] = "Options"
-menu_items[2] = "Credits"
-menu_items[3] = "Quit"
+menu_items[1] = "Spectator mode"
+menu_items[2] = "Options"
+menu_items[3] = "Credits"
+menu_items[4] = "Quit"

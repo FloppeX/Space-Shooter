@@ -1,4 +1,6 @@
-// Zoom
+// View settings
+
+view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
 global.zoom = 800
 

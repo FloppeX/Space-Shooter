@@ -11,7 +11,7 @@ mirror_y = 0
 
 invisible = false
 
-cruise_speed = 12
+cruise_speed = 30//12
 thrust = 20//240
 
 range = 3600;

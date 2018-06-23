@@ -31,7 +31,7 @@ energy_increase_bonus = 0
 
 number_of_items = 4
 number_of_items_left = 3
-number_of_items_to_select = 1
+number_of_items_to_select = 4
 
 enter_shop = true
 exit_shop = false
@@ -52,6 +52,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
+	temp_module.cost = 15
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		temp_module.offset_angle = irandom(3) * 90;
 		switch (temp_module.offset_angle){

@@ -1,3 +1,9 @@
+baseplate_sprite = noone
+draw_scale = 1
+
+//
+
+cost = 0
 
 //
 activation_button = 2

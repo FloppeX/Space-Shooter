@@ -2,9 +2,11 @@
 
 start_menu = instance_create_depth(0.3*display_get_width(),0.4*display_get_height(),0,obj_start_menu)
 
-// Zoom settings
+// View settings
 
-global.zoom = 800
+view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
+
+global.zoom = 1200
 zoom_timer = 0
 
 // Clear particles
@@ -15,7 +17,7 @@ part_particles_clear(global.part_system_below)
 // Create some asteroids
 
 number_of_asteroids = 10
-number_of_enemies = 10
+number_of_enemies = 0
 
 while(number_of_asteroids > 0){
 	var i = irandom(1)
