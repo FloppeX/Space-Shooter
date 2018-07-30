@@ -1,6 +1,6 @@
 // Credits
 
-credits = irandom(3)
+credits = irandom(5)+1
 
 // Ship properties
 
@@ -46,7 +46,7 @@ ai_mode = 1
 shoot = false
 direction_randomizer = 0
 abort_attack = false
-attack_duration = 180
+attack_duration = 300
 attack_timer = attack_duration
 
 invisible = false
@@ -60,6 +60,9 @@ seek_range = 6000;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0
+
+closest_obstacle = noone
+closest_teammate = noone
 avoiding_obstacle = false;
 
 

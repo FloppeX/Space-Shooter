@@ -17,3 +17,4 @@ max_particles_bonus = 0
 
 energy_increase_multiplier = 1
 energy_increase_bonus = 0
+

@@ -19,9 +19,11 @@
         "bd7b63e9-f674-4120-acce-86d6ef36e3d3",
         "3847c2a5-255f-48d2-ad4c-e25220d74138",
         "3aaef1c4-183c-4321-8ca0-9915744851b2",
-        "58add8b2-45b5-4cf1-9711-ba01ddc8d2d0",
         "42600e2a-ea74-4a4e-84ce-df1f28b2b815",
-        "88dc0761-91af-4fcb-9824-945ef4cc5ea4"
+        "88dc0761-91af-4fcb-9824-945ef4cc5ea4",
+        "14a3a74f-9885-47d4-b4cf-fedba51b38cf",
+        "dea19865-a6d1-4bd7-9b7b-9c3108845e66",
+        "06cc00aa-ecc6-4fba-83ea-8fc7bcebf16b"
     ],
     "filterType": "GMSprite",
     "folderName": "Effect sprites",

@@ -1,7 +1,7 @@
 event_inherited();
 
-temp_speed_x = phy_position_x - phy_position_xprevious
-temp_speed_y = phy_position_y - phy_position_yprevious
+//temp_speed_x = phy_position_x - phy_position_xprevious
+//temp_speed_y = phy_position_y - phy_position_yprevious
 
 bullet_timer -= 1;
 shoot = false
@@ -38,8 +38,8 @@ if ready_to_shoot{
 		bullets[i].phy_rotation = phy_rotation + random(2 * bullet_spread) - bullet_spread
 		
 		temp_bullet_speed = bullet_speed + random(2 * bullet_speed_randomness) - bullet_speed_randomness
-		bullets[i].phy_speed_x = temp_speed_x + lengthdir_x(temp_bullet_speed,-bullets[i].phy_rotation)
-		bullets[i].phy_speed_y = temp_speed_y + lengthdir_y(temp_bullet_speed,-bullets[i].phy_rotation)
+		bullets[i].phy_speed_x = phy_speed_x + lengthdir_x(temp_bullet_speed,-bullets[i].phy_rotation)
+		bullets[i].phy_speed_y = phy_speed_y + lengthdir_y(temp_bullet_speed,-bullets[i].phy_rotation)
 		
 		
 		bullets[i].color = bullet_color
@@ -54,8 +54,10 @@ if ready_to_shoot{
 	owner.particles -= particle_cost;
 	
 	// Recoil
-	with(owner)
-		physics_apply_impulse(other.phy_position_x,other.phy_position_y,lengthdir_x(other.recoil_force,-other.phy_rotation+180),lengthdir_y(other.recoil_force,-other.phy_rotation+180))
+	//with(owner)
+	//	physics_apply_impulse(other.phy_position_x,other.phy_position_y,lengthdir_x(other.recoil_force,-other.phy_rotation+180),lengthdir_y(other.recoil_force,-other.phy_rotation+180))
+	physics_apply_impulse(phy_position_x,phy_position_y,lengthdir_x(recoil_force,-phy_rotation+180),lengthdir_y(recoil_force,-phy_rotation+180))
+	
 	
 	// Sound
 	if sound[0] != noone{

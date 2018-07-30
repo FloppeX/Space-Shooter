@@ -6,6 +6,8 @@ placement_offset_distance = 0
 rotation = 0
 
 module = noone
+module_cost = 0
+
 activated = false
 module_holder_above = noone
 module_holder_below = noone

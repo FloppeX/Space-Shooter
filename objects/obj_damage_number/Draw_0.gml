@@ -1,5 +1,5 @@
 var alpha = duration_timer / duration
-var size = 2-duration_timer / duration
+var size = 0.3 * (2-duration_timer / duration)
 draw_set_font(font_damage_number);
 draw_set_color(color)
 draw_set_halign(fa_center);

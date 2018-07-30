@@ -1,0 +1,1 @@
+other.color = c_fuchsia

@@ -47,5 +47,8 @@ audio_listener_position(view_object.phy_position_x,view_object.phy_position_y,0.
 
 // Go back to start menu
 
-if gamepad_button_check_pressed(0,gp_start)
+if gamepad_button_check_pressed(0,gp_start){
+	with(all)
+		instance_destroy()
 	room_goto(rm_start)
+	}

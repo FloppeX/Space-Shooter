@@ -1,4 +1,5 @@
 draw_self()
+if global.view_mode == 2
 {
 	draw_set_font(font_small_text)
 	draw_set_color(c_white)

@@ -3,7 +3,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 	draw_sprite(spr_module_holder,-1,module_holders[i].x,module_holders[i].y)
 	}
 	
-// TEST
+if global.view_mode == 2
 {
 	draw_set_font(font_small_text)
 	draw_set_color(c_white)

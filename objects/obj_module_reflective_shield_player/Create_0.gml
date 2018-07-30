@@ -1,5 +1,11 @@
 event_inherited();
 
+description_lines[0] = "Reflector shield"
+shield_health = 15
+recharge_each_step = 0.2
+recharge_delay = 240
+recharge_timer = recharge_delay
+
 shield_object = obj_reflective_shield_player
 
 my_shield = instance_create_depth(phy_position_x,phy_position_y,-9,shield_object);

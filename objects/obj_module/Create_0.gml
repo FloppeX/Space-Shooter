@@ -6,6 +6,11 @@ draw_scale = 1
 cost = 0
 
 //
+
+mirror_x = 0
+mirror_y = 0
+
+//
 activation_button = 2
 activated = false
 
@@ -15,7 +20,6 @@ owned_by_shop = false // used when selecting modules in the shop
 offset_angle = 0;
 placement_offset_angle = 0
 placement_offset_distance = 0
-rotation_add = 0
 shoot = false
 activate_shield = false
 
@@ -36,6 +40,7 @@ bullet_range_base = 0
 bullet_speed_base = 0;
 bullet_speed_randomness_base = 0;
 bullet_interval_base = 0;
+recoil_force_base = 0
 bullet_spread_base = 0
 bullet_number_base = 0
 energy_cost_base = 0
@@ -49,6 +54,7 @@ bullet_range_multiplier = 1
 bullet_speed_multiplier = 1
 bullet_speed_randomness_multiplier = 1
 bullet_interval_multiplier = 1
+recoil_force_multiplier = 1
 bullet_spread_multiplier = 1
 bullet_number_multiplier = 1
 energy_cost_multiplier = 1
@@ -58,6 +64,7 @@ bullet_damage_bonus = 0
 bullet_range_bonus = 0
 bullet_speed_bonus = 0
 bullet_speed_randomness_bonus = 0
+recoil_force_bonus = 0
 bullet_spread_bonus = 0
 bullet_number_bonus = 0
 bullet_interval_bonus = 0
@@ -71,6 +78,7 @@ bullet_range = round((bullet_range_base * bullet_range_multiplier) + bullet_rang
 bullet_speed = (bullet_speed_base * bullet_speed_multiplier) + bullet_speed_bonus
 bullet_speed_randomness = (bullet_speed_randomness_base * bullet_speed_randomness_multiplier) + bullet_speed_randomness_bonus
 bullet_interval = round((bullet_interval_base * bullet_interval_multiplier) + bullet_interval_bonus)
+recoil_force = (recoil_force_base + recoil_force_bonus) * recoil_force_multiplier
 bullet_spread = round((bullet_spread_base * bullet_spread_multiplier) + bullet_spread_bonus)
 bullet_number = round((bullet_number_base * bullet_number_multiplier) + bullet_number_bonus)
 energy_cost = round((energy_cost_base * energy_cost_multiplier) + energy_cost_bonus)

@@ -1,1 +1,1 @@
-//
+other.color = c_aqua

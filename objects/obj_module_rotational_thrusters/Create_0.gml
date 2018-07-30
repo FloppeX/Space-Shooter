@@ -1,3 +1,3 @@
 event_inherited();
-
-description_lines[0] = "Rotation speed +1"
+description_lines[0] = "Turn thrusters"
+description_lines[1] = "Handling +1"

@@ -1,5 +1,5 @@
 var t = 10 * timer mod 360;
-var force = 100
+var force = 10
 var dir 
 
 var pulling_force = force * dsin(t+90);

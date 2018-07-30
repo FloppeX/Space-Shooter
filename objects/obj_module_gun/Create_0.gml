@@ -2,12 +2,15 @@ event_inherited();
 
 baseplate_sprite = spr_baseplate
 
+ready_to_shoot = true
+
 bullet_type_base = obj_bullet_player;
 bullet_damage_base = 8;
 bullet_range_base = 560
-bullet_speed_base = 7;
+bullet_speed_base = 9;
 bullet_speed_randomness_base = 0;
 bullet_interval_base = 16;
+recoil_force_base = 10
 bullet_spread_base = 2	// the total spread angle, adds randomness to bullet direction
 bullet_number_base = 1
 energy_cost_base = 10
@@ -20,6 +23,7 @@ bullet_range = bullet_range_base
 bullet_speed = bullet_speed_base
 bullet_speed_randomness = bullet_speed_randomness_base;
 bullet_interval = bullet_interval_base
+recoil_force = recoil_force_base
 bullet_spread = bullet_spread_base
 bullet_number = bullet_number_base
 energy_cost = energy_cost_base

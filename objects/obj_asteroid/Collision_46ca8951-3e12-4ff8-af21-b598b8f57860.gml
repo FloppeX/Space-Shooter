@@ -1,4 +1,5 @@
 with (other){
+	audio_play_sound_on(ship_audio_emitter,snd_asteroid_smash_1,0,1)
 	obj_health -= other.damage
 	//disabled_timer += 30
 	temp_dir = point_direction(other.phy_position_x,other.phy_position_y,phy_position_x,phy_position_y)

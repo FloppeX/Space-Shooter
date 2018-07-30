@@ -1,6 +1,7 @@
 event_inherited();
 
 destruction_timer = 30 + random(90)
+destruction_timer_start = destruction_timer
 obj_health = 1
 max_speed = 6
 max_rotation_speed = 100

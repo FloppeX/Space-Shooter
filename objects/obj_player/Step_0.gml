@@ -1,4 +1,5 @@
 // Calculate variables that may be changed by modifiers
+// Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
 rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
@@ -15,6 +16,7 @@ if disabled_timer < 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
+
 
 // Gamepad controls
 // Reset them first
@@ -82,11 +84,15 @@ if keyboard_check(vk_left){
 		room_goto(rm_space)
 	}
 	
+if keyboard_check(vk_space){
+		credits += 10
+	}
+	
 if keyboard_check_pressed(vk_up){
-		draw_scale += 0.1
+		rotation_speed_base += 5//draw_scale += 0.1
 	}
 if keyboard_check_pressed(vk_down){
-		draw_scale -= 0.1
+		rotation_speed_base -= 5//draw_scale -= 0.1
 	}
 	
 // Close-up view
@@ -105,12 +111,13 @@ if close_up_view
 if controls_disabled == false{
 	control_mode = 1
 
-	phy_rotation = (phy_rotation + 360) mod 360
+	//phy_rotation = (phy_rotation + 360) mod 360
 	if control_mode == 1{
-		if rotation_value < 0 and phy_angular_velocity > rotation_speed * rotation_value 
-			physics_apply_angular_impulse(10 * rotation_value)
-		if rotation_value > 0 and phy_angular_velocity < rotation_speed * rotation_value
-			physics_apply_angular_impulse(10 * rotation_value)
+		if rotation_value < 0 and abs(phy_angular_velocity) < rotation_speed * abs(rotation_value) 
+			physics_apply_torque(rotation_force * rotation_value)//phy_angular_velocity -= min(20,abs(phy_angular_velocity - rotation_speed * rotation_value))//physics_apply_angular_impulse(rotation_force * rotation_value)
+			
+		if rotation_value > 0 and abs(phy_angular_velocity) < rotation_speed * abs(rotation_value) 
+			physics_apply_torque(rotation_force * rotation_value)//phy_angular_velocity += min(20,abs(phy_angular_velocity - rotation_speed * rotation_value))//physics_apply_angular_impulse(rotation_force * rotation_value)
 		}
 		//phy_angular_velocity = rotation_value * rotation_speed // phy_angular_velocity = rotation_value * rotation_speed;
 	if control_mode == 2{
@@ -140,6 +147,13 @@ if add_thrust
 
 // Health
 
+health_difference = obj_health_old - obj_health
+if health_difference > 0{
+	global.screen_shake_intensity = health_difference
+	global.screen_shake_duration = health_difference 
+	}
+	
+	
 if obj_health <= 0{
 	scr_explode_object_new();
 	phy_active = false
@@ -172,17 +186,27 @@ scr_wrap_room();//scr_wrap_room_player();
 
 // Energy, health, particles
 
-if energy < max_energy
+if energy_disabled
+	energy_disabled_timer -=1
+
+if round(energy) <= 0{
+	energy_disabled = true
+	energy_disabled_timer -= 1
+	}
+	
+if energy_disabled_timer <= 0{
+	energy_disabled = false
+	energy_disabled_timer = energy_disabled_duration
+	}
+	
+if !energy_disabled
 	energy += energy_increase
 	
-if energy > max_energy
-	energy = max_energy
+energy = clamp(energy,0,max_energy)
+
+obj_health = clamp(obj_health,0,max_health)
 	
-if obj_health > max_health
-	obj_health = max_health
-	
-if particles > max_particles
-	particles = max_particles	
+particles = clamp(particles,0,max_particles)	
 	
 // Sound
 
@@ -197,3 +221,7 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;){
 		module_holders[i].gamepad_button[h] = gamepad_button[h]
 	module_holders[i].add_thrust = add_thrust
 	}
+	
+// Save health value to check if taken damage	
+	
+obj_health_old = obj_health

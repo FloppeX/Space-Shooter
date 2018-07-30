@@ -1,6 +1,6 @@
 // Test
 
-physics_world_create(1/10)
+//physics_world_create(1/10)
 
 //
 
@@ -9,6 +9,9 @@ randomize();
 // Base settings
 
 game_set_speed(60,gamespeed_fps)
+global.game_timer = 0
+
+
 
 // View settings
 
@@ -19,6 +22,11 @@ global.max_zoom = 4400
 global.min_zoom = 200
 global.zoom = 1600
 temp_zoom = global.zoom
+
+// Screen shake settings
+
+global.screen_shake_intensity = 0
+global.screen_shake_duration = 0
 
 
 // Graphics settings
@@ -53,9 +61,9 @@ global.wrap_border_bottom = room_height - global.wrap_margin_player
 // Sound
 audio_stop_all();
 audio_listener_position(0.5 * room_width,0.5 * room_height,1000);
-/*
+
 audio_falloff_set_model(audio_falloff_linear_distance_clamped)
-global.music_emitter = audio_emitter_create()
+/*global.music_emitter = audio_emitter_create()
 audio_emitter_falloff(global.music_emitter, 100, 1600, 1);
 */
 

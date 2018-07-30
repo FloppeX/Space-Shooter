@@ -1,4 +1,4 @@
-var h = irandom(13)
+var h = irandom(16)
 	switch (h){
 		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
 		case 1: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
@@ -6,8 +6,6 @@ var h = irandom(13)
 		case 3: temp_module = instance_create_depth(0,0,-10,obj_module_cannon); break;
 		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_zapper); break;
 		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
-		//case 6: temp_module = instance_create_depth(0,0,-10,obj_module_mine_layer); break;
-		//case 7: temp_module = instance_create_depth(0,0,-10,obj_module_gravity_shield); break;
 		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_engine); break;
 		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_shield_player);
 			temp_module.offset_angle = irandom(3) * 90;
@@ -20,23 +18,31 @@ var h = irandom(13)
 			break;
 		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_rotational_thrusters); break;
 		case 11: temp_module = instance_create_depth(0,0,-10,obj_module_turbocharger); break;
-		case 12: temp_module = instance_create_depth(0,0,-10,obj_module_high_powered_ammo); break;
-		case 13: temp_module = instance_create_depth(0,0,-10,obj_module_armor_plating); break;
+		case 12: temp_module = instance_create_depth(0,0,-10,obj_module_deaths_head); break;
+		case 13: temp_module = instance_create_depth(0,0,-10,obj_module_patchwork_plating); break;
+		case 14: temp_module = instance_create_depth(0,0,-10,obj_module_fluxative_capacitor); break;
+		case 15: temp_module = instance_create_depth(0,0,-10,obj_module_double_cell_batteries); break;
+		case 16: temp_module = instance_create_depth(0,0,-10,obj_module_triple_cell_batteries); break;
 		/*case 10: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
 		case 11: temp_module = instance_create_depth(0,0,-10,obj_module_cloaking_device); break;
 		*/
 		
 		}
+	temp_module.cost = 10
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		repeat(global.difficulty_level){
 			var p = irandom(99)
-			if p <= 49 and p > 14
-				with (temp_module)
+			if p <= 49 and p > 19
+				with (temp_module){
 					scr_add_random_modifier_common();
+					cost += 2
+					}
 			var p = irandom(99)
-			if p <= 14 and p >= 0
-				with (temp_module)
+			if p <= 19 and p >= 0
+				with (temp_module){
 					scr_add_random_modifier_uncommon();
+					cost += 4
+					}
 		}
 	if object_is_ancestor(temp_module.object_index, obj_module_engine)
 		with(temp_module)

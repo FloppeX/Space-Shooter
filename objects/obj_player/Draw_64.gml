@@ -11,6 +11,7 @@ if global.view_mode == 2{
 	draw_text(50,270,"energy_increase: " + string(energy_increase))
 	draw_text(50,300,"controls_disabled timer: " + string(disabled_timer))
 	draw_text(50,330,"phy_angular_velocity: " + string(phy_angular_velocity))
+	draw_text(50,360,"rotation_value: " + string(rotation_value))
 }
 
 

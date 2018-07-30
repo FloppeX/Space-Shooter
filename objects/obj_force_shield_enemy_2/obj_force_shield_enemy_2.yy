@@ -5,36 +5,6 @@
     "name": "obj_force_shield_enemy_2",
     "eventList": [
         {
-            "id": "8053535d-7d1d-4815-8345-139c83e3349b",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "f425dd55-5780-404d-9f4e-9e5ab4633926"
-        },
-        {
-            "id": "00ce57d9-76c3-418e-9632-6b4c66fbbfd2",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "f425dd55-5780-404d-9f4e-9e5ab4633926"
-        },
-        {
-            "id": "d5220242-f3f9-4dae-9dde-25bc538c8be1",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "f425dd55-5780-404d-9f4e-9e5ab4633926"
-        },
-        {
             "id": "dc0174d9-7259-47f0-b166-93052df64085",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -43,12 +13,22 @@
             "enumb": 0,
             "eventtype": 4,
             "m_owner": "f425dd55-5780-404d-9f4e-9e5ab4633926"
+        },
+        {
+            "id": "2a5f076c-060a-4580-a652-1434e4c596b7",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "4b7ff823-1469-4fa0-8b29-12908b6d8560",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "f425dd55-5780-404d-9f4e-9e5ab4633926"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": true,
+    "parentObjectId": "cb540b14-97cc-456e-a970-49fcc36b1962",
+    "persistent": false,
     "physicsAngularDamping": 0,
     "physicsDensity": 0,
     "physicsFriction": 0,

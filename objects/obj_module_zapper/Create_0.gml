@@ -7,6 +7,7 @@ bullet_speed_base = 100;
 bullet_speed = bullet_speed_base
 bullet_interval_base = 40;
 bullet_interval = bullet_interval_base;
+recoil_force_base = 0
 bullet_type_base = obj_lightning_bolt_player;
 bullet_damage_base = 0;
 spread = 0
@@ -15,7 +16,6 @@ barrel_length = 35
 boom_extended = false
 boom_retracted = true
 energy_cost = 30
-recoil_force = 0
 
 
 sound[0] = snd_zapper_1

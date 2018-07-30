@@ -29,7 +29,7 @@ if instance_exists(obj_enemy_ship){
 			}
 		}
 	}
-	
+/*	
 cam = camera_get_active()
 
 camera_set_view_pos(cam,view_object.phy_position_x -0.5*camera_get_view_width(cam),view_object.phy_position_y-0.5*camera_get_view_height(cam))

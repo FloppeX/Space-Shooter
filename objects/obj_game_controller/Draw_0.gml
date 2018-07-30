@@ -1,12 +1,4 @@
 // Control zoom
-/*
-if global.zoom > 0.55 * global.play_area_width
-	global.zoom =  0.55 * global.play_area_width
-	
-if global.zoom < 120
-	global.zoom = 120
-	
-*/
 	
 aspect_ratio = display_get_width()/display_get_height(); 
 view_set_wport(view_current,1920)
@@ -54,6 +46,7 @@ if global.view_mode == 2{
 	draw_line_width(global.wrap_margin_player,global.wrap_margin_player,global.wrap_margin_player,room_height - global.wrap_margin_player,5)
 	draw_line_width(room_width- global.wrap_margin_player,global.wrap_margin_player,room_width- global.wrap_margin_player,room_height - global.wrap_margin_player,5)
 	}
+
 
 // Draw black borders
 

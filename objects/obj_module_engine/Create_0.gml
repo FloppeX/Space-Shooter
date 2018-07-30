@@ -1,7 +1,11 @@
 event_inherited();
 
+description_lines[0] = "Engine"
+
 thrust = 70//400;
 add_thrust = 0;
+
+energy_cost_base = 0
 
 // Particles
 
@@ -22,4 +26,4 @@ sound_priority = random(0.5)+0.5
 sound = snd_engine_1
 
 engine_noise = audio_play_sound_on(module_audio_emitter,sound,1,sound_priority)
-audio_emitter_gain(module_audio_emitter,0.8)
+audio_emitter_gain(module_audio_emitter,1)

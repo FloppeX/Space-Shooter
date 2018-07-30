@@ -1,16 +1,16 @@
-/*
-// Draw black borders
+cam = camera_get_active()
 
-if global.view_mode == 1{
-draw_set_color(c_black)
-draw_rectangle(global.wrap_border_left-3000,global.wrap_border_top-1000,global.wrap_border_left,global.wrap_border_bottom+1000,0)
+camera_set_view_pos(cam,view_object.phy_position_x -0.5*camera_get_view_width(cam),view_object.phy_position_y-0.5*camera_get_view_height(cam))
 
-draw_set_color(c_black)
-draw_rectangle(global.wrap_border_left-3000,global.wrap_border_top-1000,global.wrap_border_right+3000,global.wrap_border_top,0)
+// Screen shake and rumble
 
-draw_set_color(c_black)
-draw_rectangle(global.wrap_border_right,global.wrap_border_top-1000,global.wrap_border_right+3000,global.wrap_border_bottom+1000,0)
-
-draw_set_color(c_black)
-draw_rectangle(global.wrap_border_left-3000,global.wrap_border_bottom,global.wrap_border_right+3000,global.wrap_border_bottom+1000,0)
-}
+if (global.screen_shake_duration > 0){
+	camera_x_temp = camera_get_view_x(cam) + choose(random(global.screen_shake_intensity), -random(global.screen_shake_intensity))
+	camera_y_temp = camera_get_view_y(cam) + choose(random(global.screen_shake_intensity), -random(global.screen_shake_intensity))
+    camera_set_view_pos(cam,camera_x_temp,camera_y_temp)
+	gamepad_set_vibration(0,1,1)
+	global.screen_shake_duration -= 1
+	global.screen_shake_intensity -= 1
+	}
+else 
+	gamepad_set_vibration(0,0,0)

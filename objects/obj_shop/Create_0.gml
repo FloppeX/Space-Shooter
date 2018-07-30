@@ -10,6 +10,8 @@ gamepad_button[3] = false
 gamepad_button[4] = false
 gamepad_button[5] = false
 
+target_object = obj_enemy_ship
+
 
 // Variables that really belong to ships but that this object needs
 max_speed_multiplier = 0 
@@ -52,7 +54,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
-	temp_module.cost = 15
+	//temp_module.cost = 10
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		temp_module.offset_angle = irandom(3) * 90;
 		switch (temp_module.offset_angle){
@@ -79,6 +81,12 @@ for(var i = 0; i < number_of_items; i+=1;){
 module_identities[number_of_items] = noone
 for(var i = 0; i < number_of_items; i+=1;)
 	module_identities[i] = module_holders[i].module.id
+	
+// Audio
+
+shop_audio_emitter = audio_emitter_create()
+audio_emitter_falloff(shop_audio_emitter, 100, 800, 1);
+audio_emitter_position(shop_audio_emitter,phy_position_x,phy_position_y,0)
 
 // Create buttons
 
