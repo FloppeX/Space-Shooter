@@ -3,7 +3,7 @@ color = c_navy;
 target_type = obj_enemy_ship
 targeting_arc = 90;
 seek_range = 800
-force = 100
+force = 0
 spread = 40
 
 time_counter = 0

@@ -50,7 +50,7 @@ if global.view_mode == 2{
 
 // Draw black borders
 
-if global.view_mode == 1{
+if global.view_mode == 1 and global.zoom > 2160{
 draw_set_color(c_black)
 draw_rectangle(global.wrap_border_left-3000,global.wrap_border_top-1000,global.wrap_border_left,global.wrap_border_bottom+1000,0)
 

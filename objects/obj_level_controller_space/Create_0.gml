@@ -1,3 +1,7 @@
+// test
+
+//instance_create_layer(0,0,layer_get_id("instance_layer"),obj_mouse_cursor)
+
 // View settings
 
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
@@ -16,13 +20,13 @@ if instance_exists(obj_player){
 	global.player.controls_disabled_timer = 60
 	global.player.phy_position_x = 0.5 * room_width
 	global.player.phy_position_y = 0.5 * room_height
-	global.player.phy_rotation = -180
+	global.player.phy_rotation = 0
 	global.player.draw_scale = 0.01
 	}
 if !instance_exists(obj_player){
 	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_player)
 	global.player.controls_disabled_timer = 60
-	global.player.phy_rotation = -180
+	global.player.phy_rotation = 0
 	global.player.draw_scale = 0.01
 	}
 	
@@ -31,6 +35,8 @@ if !instance_exists(obj_player){
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
 
 // timers
+
+enemy_wave_timer = 6000
 
 death_timer = 120
 
@@ -42,8 +48,9 @@ next_level_timer = 120
 
 // Enemies
 
-number_of_asteroids = 10 // irandom(2) * global.difficulty_level;
-number_of_enemies = 2 * global.difficulty_level;
+number_of_asteroids = 4 // irandom(2) * global.difficulty_level;
+number_of_explosive_barrels = irandom(3)
+number_of_enemies = 3 * global.difficulty_level;
 
 	
 // Sound

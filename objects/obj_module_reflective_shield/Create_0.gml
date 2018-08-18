@@ -1,7 +1,7 @@
 event_inherited();
 
 description_lines[0] = "Reflector shield"
-shield_health = 15
+shield_health = 10
 recharge_each_step = 0.2
 recharge_delay = 240
 recharge_timer = recharge_delay

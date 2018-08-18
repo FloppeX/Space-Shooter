@@ -11,15 +11,16 @@ var h = irandom(10)
 		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_shield_enemy); break;
 		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_force_shield_enemy); break;
 		case 10: temp_module = instance_create_depth(0,0,-10,obj_module_reflective_shield_enemy); break;
+
 		}
 	temp_module.persistent = false
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		repeat(global.difficulty_level){
-			var p = irandom(99)
+			var p = 99//irandom(99)
 			if p <= 20 and p > 10
 				with (temp_module)
 					scr_add_random_modifier_common();
-			var p = irandom(99)
+			var p = 99//irandom(99)
 			if p <= 10 and p >= 0
 				with (temp_module)
 					scr_add_random_modifier_uncommon();					

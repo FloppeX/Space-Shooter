@@ -1,5 +1,4 @@
 // Calculate variables that may be changed by modifiers
-// Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
 rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
@@ -38,6 +37,8 @@ if controls_disabled == false{
 		target_rotation = point_direction(0,0, gamepad_axis_value(0,gp_axislh), gamepad_axis_value(0,gp_axislv))
 	gamepad_set_axis_deadzone(0, 0);
 	
+	rotation_value = sign(rotation_value) * left_stick_value
+	
 	if gamepad_button_check(0,gp_shoulderl){
 		target_rotation = -phy_rotation+90
 		left_stick_value = 1
@@ -66,22 +67,15 @@ if controls_disabled == false{
 		gamepad_button[5] = true
 }
 
-if keyboard_check(vk_right)/*{
-	with(global.player){
-		phy_position_x = 0.5 * room_width
-		phy_position_y = 0.5 * room_height
-		phy_speed_x = 0
-		phy_speed_y = 0
-		phy_angular_velocity = 0
-		phy_rotation = -90		
-		draw_scale = 1
-		visible = true
-		}*/
-	room_goto (rm_shop)
+if keyboard_check(vk_right){
+	shop = room_duplicate(rm_shop)
+	room_goto (shop)
+	}
 
 	
 if keyboard_check(vk_left){
-		room_goto(rm_space)
+	space = room_duplicate(rm_space)
+	room_goto (space)
 	}
 	
 if keyboard_check(vk_space){
@@ -164,18 +158,13 @@ if obj_health <= 0{
 			instance_destroy();
 			}
 	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
-	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
+	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
+	boom.radius = 300
+	boom.damage = 50
 	instance_destroy();
 	exit;
 	}
 
-// Set wrap boundaries for other objects
-/*
-global.wrap_border_left = phy_position_x - 0.5 * global.play_area_width;
-global.wrap_border_right = phy_position_x + 0.5 * global.play_area_width;
-global.wrap_border_top = phy_position_y - 0.5 * global.play_area_height;
-global.wrap_border_bottom = phy_position_y + 0.5 * global.play_area_height;
-*/
 // Find mirror positions
 
 scr_find_mirror_positions();
@@ -214,14 +203,27 @@ audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 
 audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
 
-// Send control inputs to module holders
+// Update module holders
 
-for(var i = 0; i < array_length_1d(module_holders); i+=1;){
+for(var i = 0; i < array_height_2d(modules); i+=1;){
+		modules[i,0] = modules[i,1].module
+		modules[i,1].persistent = true
+		modules[i,1].x = phy_position_x + lengthdir_x(modules[i,3],-phy_rotation + modules[i,2])
+		modules[i,1].y = phy_position_y + lengthdir_y(modules[i,3],-phy_rotation + modules[i,2])
+		}
+
+// Update modules
+
+for(var i = 0; i < array_height_2d(modules); i+=1;)
 	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
-		module_holders[i].gamepad_button[h] = gamepad_button[h]
-	module_holders[i].add_thrust = add_thrust
-	}
-	
+		if scr_exists(modules[i,0]){
+			modules[i,0].module_holder = modules[i,1]
+			if gamepad_button[modules[i,0].activation_button] == true
+				modules[i,0].activated = true
+			else modules[i,0].activated = false
+			modules[i,0].add_thrust = add_thrust
+		}
+		
 // Save health value to check if taken damage	
 	
 obj_health_old = obj_health

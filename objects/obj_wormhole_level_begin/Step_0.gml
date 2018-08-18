@@ -18,11 +18,12 @@ if warping_ship != noone and !done_warping{
 		phy_speed_x = 0//lengthdir_x(temp_speed,temp_dir-90) + lengthdir_x(temp_speed,temp_dir)
 		phy_speed_y = 0//lengthdir_y(temp_speed,temp_dir-90) + lengthdir_y(temp_speed,temp_dir)
 		angle_diff_temp = angle_difference(phy_rotation,-90)
+		/*
 		if draw_scale > 0.8 and (angle_diff_temp < 30)
 			phy_angular_velocity = min(abs(angle_diff_temp * 50),600)
 		else 		
 			phy_angular_velocity = 600
-			
+			*/
 		if draw_scale < 1{
 			draw_scale += 0.01 //temp_dist/(0.5 * sprite_width)
 			draw_scale = clamp(draw_scale,0,1)

@@ -1,12 +1,12 @@
 event_inherited();
 
-description_lines[0] = "Blaster"
+module_name = "Blaster"
 
 bullet_damage_base = 8;
 bullet_range_base = 560
 //bullet_speed_base = 8;
 bullet_speed_randomness_base = 0.4
-bullet_interval_base = 16;
+bullet_interval_base = 25;
 bullet_spread_base = 2
 bullet_number_base = 1
 energy_cost_base = 12

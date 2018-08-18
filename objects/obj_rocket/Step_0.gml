@@ -18,7 +18,8 @@ if obj_health = 0{
 
 // Accellerate
 
-physics_apply_local_force(0,0, thrust,0)
+if phy_speed < max_speed
+	physics_apply_local_force(0,0, thrust,0)
 	
 // Targeting & turning
 

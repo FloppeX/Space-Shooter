@@ -12,6 +12,8 @@ if global.view_mode == 2{
 	draw_text(50,300,"controls_disabled timer: " + string(disabled_timer))
 	draw_text(50,330,"phy_angular_velocity: " + string(phy_angular_velocity))
 	draw_text(50,360,"rotation_value: " + string(rotation_value))
+	draw_text(50,390,"display width: " + string(display_get_width()))
+	draw_text(50,420,"display height: " + string(display_get_height()))
 }
 
 

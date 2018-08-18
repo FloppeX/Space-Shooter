@@ -1,6 +1,6 @@
 target_object = obj_enemy_ship
 damage = 0
-color = c_navy
+color = c_aqua
 
 var i = irandom(2)
 switch (i){
@@ -17,6 +17,6 @@ if hit_enemy{
 	if victim != noone{
 			electrification_effect = instance_create_layer(phy_position_x,phy_position_y,layer_get_id("instance_layer"),obj_electrified)
 			electrification_effect.target = victim
-			electrification_effect.color = c_navy
+			electrification_effect.color = c_aqua
 		}
 	}

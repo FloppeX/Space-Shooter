@@ -1,3 +1,14 @@
+// Calculate variables that may be changed by modifiers
+// Calculate variables that may be changed by modifiers
+
+max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
+rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
+max_health = (max_health_base * max_health_multiplier) + max_health_bonus
+max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
+energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
+
+
+
 // Controls
 // Reset them first
 
@@ -183,17 +194,14 @@ if controls_disabled == false{
 
 scr_counter_lateral_drift();
 
-//
-/*
-if shoot
-	for(var i = 0; i < array_length_1d(gamepad_button); i+=1;)
-		gamepad_button[i] = true
+// Upidate positions and settings for module holders
+
 for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
-	module_holders[i].gamepad_button[h] = gamepad_button[h]
+	with (module_holders[i]){
+		x = owner.phy_position_x + lengthdir_x(placement_offset_distance,-owner.phy_rotation+placement_offset_angle)
+		y = owner.phy_position_y + lengthdir_y(placement_offset_distance,-owner.phy_rotation+placement_offset_angle)
+		}
 	}
-*/
-	
 // Energy
 
 if energy < max_energy

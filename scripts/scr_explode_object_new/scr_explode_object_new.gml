@@ -1,4 +1,4 @@
-// Needs to be changed to a for-to statement using an array of debris particles
+
 var temp_angle_offset = irandom(360)
 for(var i = 0; i < array_length_1d(debris_parts); i+=1;){
 	tempdir = i * 360/(array_length_1d(debris_parts)) + temp_angle_offset

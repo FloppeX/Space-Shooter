@@ -1,6 +1,6 @@
 // Place modules
 
-draw_self();
+//draw_self();
 
 for (var p = -global.play_area_width; p <= global.play_area_width; p += global.play_area_width)
 	for (var q = -global.play_area_height; q <= global.play_area_height; q+= global.play_area_height)
@@ -29,5 +29,5 @@ if global.view_mode == 2{
 	draw_set_font(font_big_text)
 	draw_set_color(c_white)
 	draw_set_halign(fa_center)
-	draw_text(phy_position_x,phy_position_y + 80,"credits: " + string(credits))
+	draw_text(phy_position_x,phy_position_y + 80,"credits: " + string(pickup_objects))
 }

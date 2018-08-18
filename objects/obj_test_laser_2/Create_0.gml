@@ -14,7 +14,7 @@ hit_enemy = false;
 
 color = c_lime
 
-modifiers[0] = noone
+modifiers[0,0] = noone
 
 bullet_glow_particle = part_type_create();
 part_type_sprite(bullet_glow_particle,spr_bullet_glow,false,false,false);            

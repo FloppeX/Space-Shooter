@@ -17,7 +17,8 @@ if gamepad_button_check_pressed(0,gp_face1)
 				}
 				
 		case 1 : {
-				room_goto(rm_spectator) 
+				arena = room_duplicate(rm_spectator)
+				room_goto(arena) 
 				break;
 				}
 				

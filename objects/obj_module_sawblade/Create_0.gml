@@ -1,6 +1,6 @@
 event_inherited();
 
-max_arm_length = 80
+max_arm_length = 60
 current_arm_length = 0
 arm_speed = 2
 target = noone

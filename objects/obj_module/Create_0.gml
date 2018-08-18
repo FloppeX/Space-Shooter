@@ -1,14 +1,19 @@
 baseplate_sprite = noone
 draw_scale = 1
+alpha = 1
 
 //
 
-cost = 0
+cost = 8
 
 //
 
 mirror_x = 0
 mirror_y = 0
+
+//
+
+joint = noone
 
 //
 activation_button = 2
@@ -17,6 +22,7 @@ activated = false
 owner = obj_player;
 owned_by_shop = false // used when selecting modules in the shop
 
+target_angle = 0;
 offset_angle = 0;
 placement_offset_angle = 0
 placement_offset_distance = 0
@@ -25,8 +31,13 @@ activate_shield = false
 
 energy_cost = 0
 
-modifiers[0] = noone
+for(var h = 0; h <= 0; h+=1;)
+	for(var i = 0; i <= 2; i+=1;)
+		modifiers[h,i] = noone
+		
 bullets[0] = noone
+
+module_name = "Module description here"
 description_lines[0] = "Module description here"
 
 // Modifier variables
@@ -88,5 +99,5 @@ particle_cost = round((particle_cost_base * particle_cost_multiplier) + particle
 
 sound = noone
 module_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(module_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(module_audio_emitter, 100, 400, 1);
 

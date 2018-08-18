@@ -83,15 +83,15 @@ part_system_depth(global.part_system_above,-10);
 
 global.part_weapon_splat=part_type_create();
 part_type_shape(global.part_weapon_splat,pt_shape_spark);            //This defines the particles shape
-part_type_size(global.part_weapon_splat,0.1,0.1,-0.01,1);                    //This is for the size
+part_type_size(global.part_weapon_splat,0.5,1,-0.01,1);                    //This is for the size
 part_type_scale(global.part_weapon_splat,1,1);                       //This is for scaling
 part_type_color1(global.part_weapon_splat,c_lime);                  //This sets its colour. There are three different codes for this
 part_type_alpha1(global.part_weapon_splat,0.5);                        //This is its alpha. There are three different codes for this
-part_type_speed(global.part_weapon_splat,0.50,2,-0.10,0);            //The particles speed
+part_type_speed(global.part_weapon_splat,0,0,0,0);            //The particles speed
 part_type_direction(global.part_weapon_splat,0,359,0,10);            //The direction
 part_type_orientation(global.part_weapon_splat,0,0,0,0,1);           //This changes the rotation of the particle
 part_type_blend(global.part_weapon_splat,1);                         //This is the blend mode, either additive or normal
-part_type_life(global.part_weapon_splat,1,10);                         //this is its lifespan in steps
+part_type_life(global.part_weapon_splat,6,10);                         //this is its lifespan in steps
 
 global.part_rocket_smoke=part_type_create();
 part_type_sprite(global.part_rocket_smoke,spr_flame_particle,false,false,false);            //This defines the particles shape

@@ -11,9 +11,23 @@ bullet_number = round((bullet_number_base + bullet_number_bonus) * bullet_number
 energy_cost = (energy_cost_base + energy_cost_bonus) * energy_cost_multiplier
 particle_cost = round((particle_cost_base + particle_cost_bonus) * particle_cost_multiplier)
 
+// Activate?
+
+if owner.gamepad_button[activation_button] == true
+	activated = true
+else activated = false	
+
+// orient to correct angle
+
+angle_diff = angle_difference(-phy_rotation, target_angle)
+if joint != noone
+	physics_joint_set_value(joint,phy_joint_motor_speed,angle_diff)
+target_angle = -owner.phy_rotation + offset_angle
+
 //
 
 audio_emitter_position(module_audio_emitter,phy_position_x,phy_position_y,0)
+
 
 // Find mirror positions
 

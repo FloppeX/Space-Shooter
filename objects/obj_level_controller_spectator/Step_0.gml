@@ -50,5 +50,6 @@ audio_listener_position(view_object.phy_position_x,view_object.phy_position_y,0.
 if gamepad_button_check_pressed(0,gp_start){
 	with(all)
 		instance_destroy()
-	room_goto(rm_start)
+	new_start_room = room_duplicate(rm_start)
+	room_goto(new_start_room)
 	}

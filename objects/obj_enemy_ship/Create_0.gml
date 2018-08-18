@@ -1,6 +1,7 @@
 // Credits
 
-credits = irandom(5)+1
+//credits = irandom(5)+1
+pickup_objects = irandom(2)+1
 
 // Ship properties
 
@@ -33,9 +34,33 @@ thrust = 0
 max_thrust = 360
 add_thrust = false
 
+// Changeable ship variables
+
 max_speed_base = 4
 max_speed_multiplier = 0 
 max_speed_bonus = 0
+
+rotation_speed_base = 85
+rotation_speed_multiplier = 1 
+rotation_speed_bonus = 0
+
+max_health_base = 100 
+max_health_multiplier = 1
+max_health_bonus = 0
+
+max_energy_base = 100
+max_energy_multiplier = 1
+max_energy_bonus = 0
+
+max_particles_base = 100
+max_particles_multiplier = 1
+max_particles_bonus = 0
+
+energy_increase_base = 0.5;
+energy_increase_multiplier = 1
+energy_increase_bonus = 0
+
+///
 
 max_rotation_speed = 100;
 drift_resistance = 14//80;

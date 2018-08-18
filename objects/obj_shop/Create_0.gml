@@ -54,26 +54,12 @@ for(var i = 0; i < number_of_items; i+=1;){
 	temp_module = scr_create_random_module();
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
-	//temp_module.cost = 10
-	if object_is_ancestor(temp_module.object_index, obj_module_gun){
-		temp_module.offset_angle = irandom(3) * 90;
-		switch (temp_module.offset_angle){
-			case 0: temp_module.activation_button = 4; break;
-			case 90: temp_module.activation_button = 2; break;
-			case 180: temp_module.activation_button = 1; break;
-			case 270: temp_module.activation_button = 3; break;
-			}
-		switch (temp_module.offset_angle){
-			case 0: temp_module.activation_button = 4; break;
-			case 90: temp_module.activation_button = 2; break;
-			case 180: temp_module.activation_button = 1; break;
-			case 270: temp_module.activation_button = 3; break;
-			}
-		}
-	if object_is_ancestor(temp_module.object_index, obj_module_shield_player)
-		with(temp_module)
-			offset_angle = irandom(3) * 90;
+
 	module_holders[i].module = temp_module
+	temp_module.phy_position_x = module_holders[i].x
+	temp_module.phy_position_y = module_holders[i].y
+	temp_module.phy_rotation = ( phy_rotation - temp_module.offset_angle)
+	temp_module.joint = physics_joint_revolute_create(id, temp_module,temp_module.phy_position_x,temp_module.phy_position_y,0, 360, 0, 10,3,1,0);
 	}
 	
 // Get module identities - used to check if more items can be taken...

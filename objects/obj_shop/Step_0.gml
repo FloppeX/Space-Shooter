@@ -36,10 +36,10 @@ if exit_shop and instance_exists(obj_wormhole_level_end) {
 
 ///
 
-for(var i = 0; i < number_of_items; i+=1;){
-	if module_holders[i].module != noone
+for(var i = 0; i < number_of_items; i+=1;)
+	if scr_exists(module_holders[i].module){
 		module_holders[i].module.persistent = false
-	}
+		}
 	
 
 // How many items are left in the shop?

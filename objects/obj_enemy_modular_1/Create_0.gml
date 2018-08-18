@@ -5,9 +5,12 @@ event_inherited();
 obj_health = 30
 max_health = 30
 max_rotation_speed = 90;
+max_speed_base = 5
 
 
 ///
+
+var randomizer = irandom (1)
 
 var module_number = 0
 
@@ -18,7 +21,7 @@ module_holders[module_number].placement_offset_distance = 24
 module_holders[module_number].module = scr_create_random_enemy_cockpit();
 module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
 module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.joint = physics_joint_weld_create(id, module_holders[module_number].module,phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle) ,phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle), 0, 2, 1, 0);
+module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 0,10,3,1,0);
 
 module_number = 1
 
@@ -26,19 +29,25 @@ module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder)
 module_holders[module_number].owner = id
 module_holders[module_number].placement_offset_angle = 90
 module_holders[module_number].placement_offset_distance = 24
-module_holders[module_number].module = scr_create_random_enemy_module();
-with(module_holders[module_number].module){
-	var i = irandom(3)
-	switch (i){
-		case 0:
-		case 1:	offset_angle = 0; break;
-		case 2:	offset_angle = 180; break;
-		case 3: offset_angle = 270; break;
+if randomizer == 0{
+	module_holders[module_number].module = instance_create_depth(x,y,-10,obj_module_engine_enemy);
+	module_holders[module_number].module.offset_angle = 0
+	}
+else {
+	module_holders[module_number].module = scr_create_random_enemy_module();
+	with(module_holders[module_number].module){
+		var i = irandom(3)
+		switch (i){
+			case 0: offset_angle = 0; break;
+			case 1:	offset_angle = 0; break;
+			case 2:	offset_angle = 180; break;
+			case 3: offset_angle = 90; break;
+			}
 		}
 	}
 module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
 module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
+module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 0,10,3,1,0);
 
 module_number = 2
 
@@ -46,10 +55,17 @@ module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder)
 module_holders[module_number].owner = id
 module_holders[module_number].placement_offset_angle = 0
 module_holders[module_number].placement_offset_distance = 0
-module_holders[module_number].module = instance_create_depth(x,y,-10,obj_module_engine_enemy);
+if randomizer == 1{
+	module_holders[module_number].module = instance_create_depth(x,y,-10,obj_module_engine_enemy);
+	module_holders[module_number].module.offset_angle = 0
+	}
+else {
+	module_holders[module_number].module = scr_create_random_enemy_module();
+	module_holders[module_number].module.offset_angle = 180
+	}
 module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
 module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
+module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 0,10,3,1,0);
 
 module_number = 3
 
@@ -57,19 +73,25 @@ module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder)
 module_holders[module_number].owner = id
 module_holders[module_number].placement_offset_angle = -90
 module_holders[module_number].placement_offset_distance = 24
-module_holders[module_number].module = scr_create_random_enemy_module();
-with(module_holders[module_number].module){
-	var i = irandom(3)
-	switch (i){
-		case 0:
+if randomizer == 0{
+	module_holders[module_number].module = instance_create_depth(x,y,-10,obj_module_engine_enemy);
+	module_holders[module_number].module.offset_angle = 0
+	}
+else {
+	module_holders[module_number].module = scr_create_random_enemy_module();
+	with(module_holders[module_number].module){
+		var i = irandom(3)
+		switch (i){
+		case 0: offset_angle = 0; break;
 		case 1:	offset_angle = 0; break;
 		case 2:	offset_angle = 180; break;
-		case 3: offset_angle = 90; break;
+		case 3: offset_angle = -90; break;
 		}
+	}
 	}
 module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
 module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
+module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 0,10,3,1,0);
 
 
 for (var i = 0; i < array_length_1d(module_holders); i+=1;)
