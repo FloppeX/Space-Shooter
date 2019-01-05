@@ -1,12 +1,12 @@
 // Create a menu
 
-start_menu = instance_create_depth(0.3*display_get_width(),0.4*display_get_height(),0,obj_start_menu)
+start_menu = instance_create_depth(0,0,0,obj_start_menu)
 
 // View settings
 
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
-global.zoom = 1200
+global.zoom = 1100
 zoom_timer = 0
 
 // Clear particles

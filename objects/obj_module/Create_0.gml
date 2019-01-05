@@ -4,7 +4,7 @@ alpha = 1
 
 //
 
-cost = 8
+cost = 6
 
 //
 
@@ -16,8 +16,12 @@ mirror_y = 0
 joint = noone
 
 //
+
+active = false // Is this an active or passive item? Guns are neither.
+
 activation_button = 2
 activated = false
+activation_timer = 0
 
 owner = obj_player;
 owned_by_shop = false // used when selecting modules in the shop

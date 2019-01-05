@@ -15,7 +15,6 @@ var h = irandom(11)
 		}
 		
 
-
 if object_is_ancestor(temp_module.object_index, obj_module_engine)
 	temp_module.offset_angle = 0
 		
@@ -38,13 +37,13 @@ if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		if p <= 49 and p > 19
 			with (temp_module){
 				scr_add_random_modifier_common();
-				cost += 2
+				cost += irandom(1)+1
 				}
 		var p = 99//irandom(99)
 		if p <= 19 and p >= 0
 			with (temp_module){
 				scr_add_random_modifier_uncommon();
-				cost += 4
+				cost += irandom(3)+1
 				}
 		}
 	}	

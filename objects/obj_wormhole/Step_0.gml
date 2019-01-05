@@ -10,7 +10,7 @@ hue_shift_timer -= 1;
 if hue_shift_timer <= 0{
 	hue_shift_timer = hue_shift_interval;
 	hue += hue_shift_amount
-	//hue = hue mod 20
+	hue = hue mod 255
 	}
 	
 color = make_color_hsv(hue,255,255)	

@@ -1,9 +1,12 @@
-if global.view_mode == 2
+if global.view_mode == 2{
+	draw_set_font(font_small_text)
+	draw_set_color(c_white)
 	draw_text(x,y+40,phy_speed)
-
+	}
+	
 gpu_set_blendmode(bm_add)
-draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale*2,bullet_scale*2,-phy_rotation,color,0.1)
-draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale*1.5,bullet_scale*1.5,-phy_rotation,color,0.2)
+//draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale*2,bullet_scale*2,-phy_rotation,color,0.1)
+//draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale*1.5,bullet_scale*1.5,-phy_rotation,color,0.2)
 draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale,bullet_scale,-phy_rotation,color,1)
 gpu_set_blendmode(bm_normal)
 

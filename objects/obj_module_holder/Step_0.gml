@@ -8,3 +8,4 @@ image_angle = rotation
 
 if module != noone
 	module_cost = module.cost
+else module_cost = 0

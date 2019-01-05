@@ -14,7 +14,7 @@ zoom_timer += 0.2
 if zoom_timer > 360
 	zoom_timer = 1
 
-global.zoom = 800 + 200 * sin(degtorad(zoom_timer)) 
+global.zoom = 1100 + 200 * sin(degtorad(zoom_timer)) 
 
 
 // Create more enemies?

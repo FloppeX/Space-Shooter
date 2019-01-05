@@ -1,5 +1,8 @@
 if !scr_exists(owner)
 	instance_destroy()
+
+if !owner.visible
+	exit;
 	
 owner_dir = point_direction(owner.phy_position_x,owner.phy_position_y,phy_position_x,phy_position_y)
 owner_dist = point_distance(phy_position_x,phy_position_y,owner.phy_position_x,owner.phy_position_y)

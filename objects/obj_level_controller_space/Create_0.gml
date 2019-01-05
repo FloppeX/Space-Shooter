@@ -4,9 +4,12 @@
 
 // View settings
 
+with(obj_view_object)
+	instance_destroy();
+	
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
-global.zoom = 800
+global.zoom = 1100
 
 // Clear particles
 
@@ -32,6 +35,7 @@ if !instance_exists(obj_player){
 	
 // Wormhole
 
+// Temporarily disabled starting wormholes!!
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
 
 // timers
@@ -48,9 +52,9 @@ next_level_timer = 120
 
 // Enemies
 
-number_of_asteroids = 4 // irandom(2) * global.difficulty_level;
-number_of_explosive_barrels = irandom(3)
-number_of_enemies = 3 * global.difficulty_level;
+number_of_asteroids = 3 + irandom(global.difficulty_level)
+number_of_explosive_barrels = irandom(3+global.difficulty_level)
+number_of_enemies = 2 + 2 * global.difficulty_level;
 
 	
 // Sound

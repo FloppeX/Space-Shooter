@@ -1,5 +1,7 @@
 event_inherited();
 
-activation_button = 3
+active = true
+
+activation_button = 0
 activated = false
 

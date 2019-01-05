@@ -24,3 +24,7 @@ energy_cost_bonus = 0
 particle_cost_bonus = 0
 recoil_force_bonus = 0
 
+// deactivate
+
+activated = false
+

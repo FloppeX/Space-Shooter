@@ -236,11 +236,11 @@ for (var i = 0; i< 600; i++;)
    
 for (var i = 0; i< 5; i++;){
 	var sprite, x_pos, y_pos, x_scale,y_scale,col,alpha,angle;
-	sprite = spr_background_1
+	sprite = spr_background_2
 	x_pos = global.wrap_border_left + random( global.play_area_width)
 	y_pos = global.wrap_border_top + random( global.play_area_height)
-	x_scale =  random(6)+4
-	y_scale =  random(6)+4
+	x_scale =  random(3)+1
+	y_scale =  random(3)+1
 	color = make_color_hsv(random(255),255,255)
 	alpha =  random(0.1)+0.9
 	angle = random(360)

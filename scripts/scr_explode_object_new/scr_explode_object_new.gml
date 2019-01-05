@@ -10,11 +10,11 @@ for(var i = 0; i < array_length_1d(debris_parts); i+=1;){
 	}
 	
 var temp_angle_offset = irandom(360)
-for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	if module_holders[i].module != noone{
-		debris = instance_create_depth(module_holders[i].module.phy_position_x,module_holders[i].module.phy_position_y,5,obj_debris); //we create a particle relative to the object, offset by the proper amount
-		debris.phy_speed_x = module_holders[i].module.phy_speed_x
-		debris.phy_speed_y = module_holders[i].module.phy_speed_y
-		debris.sprite_index = module_holders[i].module.sprite_index
+for(var i = 0; i < array_height_2d(modules); i+=1;){
+	if modules[i,0] != noone{
+		debris = instance_create_depth(modules[i,0].phy_position_x,modules[i,0].phy_position_y,5,obj_debris); //we create a particle relative to the object, offset by the proper amount
+		debris.phy_speed_x = modules[i,0].phy_speed_x
+		debris.phy_speed_y = modules[i,0].phy_speed_y
+		debris.sprite_index = modules[i,0].sprite_index
 	}
 }

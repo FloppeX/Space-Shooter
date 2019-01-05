@@ -10,6 +10,9 @@ gamepad_button[3] = false
 gamepad_button[4] = false
 gamepad_button[5] = false
 
+use_active_item = false
+select_next_active_item = false
+
 turn_clockwise = 0;
 turn_counter_clockwise = 0;
 add_thrust = 0;
@@ -19,7 +22,12 @@ rotation_value = 0;
 
 target_object = obj_enemy_ship
 
+selected_active_module = noone
+
 // Ship variables
+
+phy_active = true
+visible = true
 
 physics_mass_properties(phy_mass, 0, 0, phy_inertia)
 
@@ -118,200 +126,68 @@ map_scale = 2
 modules[0,0] = noone
 
 var module_number = 0
-
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 0
-module_holders[module_number].placement_offset_distance = 48
-module_holders[module_number].module = instance_create_depth(phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),-10,obj_module_cockpit);
-module_holders[module_number].module.placement_offset_angle = 0
-module_holders[module_number].module.placement_offset_distance = 48
-//module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
-module_holders[module_number].module.owner = id;
-
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_cockpit);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 0
 /* placement dist */	modules[module_number,3] = 48
-/* offset angle */		modules[module_number,4] = 0
 
 module_number = 1
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);// scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun); //scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_zapper_new);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 45
-module_holders[module_number].placement_offset_distance = 34
-module_holders[module_number].module = instance_create_depth(phy_position_x,phy_position_y,-10,obj_module_blaster)//noone//instance_create_depth(x,y,-10,obj_module_biomechanical_actuator)
-module_holders[module_number].module.offset_angle = 0
-module_holders[module_number].module.placement_offset_angle = 45
-module_holders[module_number].module.placement_offset_distance = 34
-module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-//module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
-module_holders[module_number].module.activation_button = 4;
-	
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_blaster);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 45
 /* placement dist */	modules[module_number,3] = 34
-/* offset angle */		modules[module_number,4] = 0
 	
 	
 module_number = 2
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_empty);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 0
-module_holders[module_number].placement_offset_distance = 24
-//module_holders[module_number].module.placement_offset_angle = 0
-//module_holders[module_number].module.placement_offset_distance = 24
-module_holders[module_number].module = noone;
-
 /* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 0
 /* placement dist */	modules[module_number,3] = 24
-/* offset angle */		modules[module_number,4] = 0
-
 
 module_number = 3
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_empty);// instance_create_depth(x,y,-10,obj_module_empty);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = -45
-module_holders[module_number].placement_offset_distance = 34
-module_holders[module_number].module = instance_create_depth(phy_position_x,phy_position_y,-10,obj_module_blaster)//noone//instance_create_depth(x,y,-10,obj_module_biomechanical_actuator)
-module_holders[module_number].module.offset_angle = 0
-module_holders[module_number].module.placement_offset_angle = -45
-module_holders[module_number].module.placement_offset_distance = 34
-module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.activation_button = 4;
-
-/* module */			modules[module_number,0] = noone
+/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_teleporter);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -45
 /* placement dist */	modules[module_number,3] = 34
-/* offset angle */		modules[module_number,4] = 0
-
+modules[module_number,0].offset_angle = 90
 
 module_number = 4
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_scatter_gun);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 90
-module_holders[module_number].placement_offset_distance = 24
-module_holders[module_number].module = noone /*instance_create_depth(x,y,-10,obj_module_blaster)
-module_holders[module_number].module.placement_offset_angle = 90
-module_holders[module_number].module.placement_offset_distance = 24
-module_holders[module_number].module.offset_angle = 90
-module_holders[module_number].module.phy_position_x = phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.phy_position_y = phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle)
-module_holders[module_number].module.activation_button = 3;
-*/
-//module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
-
-/* module */			modules[module_number,0] = noone
+/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_cloaking_device);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 90
 /* placement dist */	modules[module_number,3] = 24
-/* offset angle */		modules[module_number,4] = 0
 
 module_number = 5
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder)
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 0
-module_holders[module_number].placement_offset_distance = 0
-//module_holders[module_number].module.placement_offset_angle = 0
-//module_holders[module_number].module.placement_offset_distance = 0
-module_holders[module_number].module = noone//instance_create_depth(x,y,-10,obj_module_deaths_head)
-
 /* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 0
 /* placement dist */	modules[module_number,3] = 0
-/* offset angle */		modules[module_number,4] = 0
 
 module_number = 6
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_blaster);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = -90
-module_holders[module_number].placement_offset_distance = 24
-module_holders[module_number].module = instance_create_depth(phy_position_x,phy_position_y,-10,obj_armor_player)//noone//instance_create_depth(x,y,-10,obj_module_biomechanical_actuator)
-module_holders[module_number].module.offset_angle = 0
-module_holders[module_number].module.placement_offset_angle = -90
-module_holders[module_number].module.placement_offset_distance = 24
-//module_holders[module_number].module = noone //instance_create_depth(x,y,-10,obj_module_sawblade)//noone;
-//module_holders[6].module.offset_angle = 90
 
 /* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -90
 /* placement dist */	modules[module_number,3] = 24
-/* offset angle */		modules[module_number,4] = 0
 
 module_number = 7 
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 135
-module_holders[module_number].placement_offset_distance = 34
-module_holders[module_number].module = instance_create_depth(phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),-10,obj_module_engine);
-module_holders[module_number].module.placement_offset_angle = 135
-module_holders[module_number].module.placement_offset_distance = 34
-//module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
-
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 135
 /* placement dist */	modules[module_number,3] = 34
-/* offset angle */		modules[module_number,4] = 0
+
 
 module_number = 8 
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//scr_create_random_module();// instance_create_depth(x,y,-10,obj_module_shotgun);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = 180
-module_holders[module_number].placement_offset_distance = 24
-//module_holders[module_number].module.placement_offset_angle = 180
-//module_holders[module_number].module.placement_offset_distance = 24
-module_holders[module_number].module = noone
-
 /* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 180
 /* placement dist */	modules[module_number,3] = 24
-/* offset angle */		modules[module_number,4] = 0
 
 module_number = 9 
-/*
-module_holders[module_number] = instance_create_depth(x,y,-10,obj_module_holder);//instance_create_depth(x,y,-10,obj_module_engine);
-module_holders[module_number].owner = id;
-module_holders[module_number].persistent = true;
-module_holders[module_number].placement_offset_angle = -135
-module_holders[module_number].placement_offset_distance = 34
-module_holders[module_number].module = instance_create_depth(phy_position_x + lengthdir_x(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),phy_position_y + lengthdir_y(module_holders[module_number].placement_offset_distance,-phy_rotation+module_holders[module_number].placement_offset_angle),-10,obj_module_engine);
-module_holders[module_number].module.placement_offset_angle = -135
-module_holders[module_number].module.placement_offset_distance = 34
-//module_holders[module_number].module.joint = physics_joint_revolute_create(id, module_holders[module_number].module,module_holders[module_number].module.phy_position_x,module_holders[module_number].module.phy_position_y,module_holders[module_number].module.offset_angle, module_holders[module_number].module.offset_angle, 1, 0,0,0,0);
-
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -135
 /* placement dist */	modules[module_number,3] = 34
-/* offset angle */		modules[module_number,4] = 0
 
 for(var i = 0; i < array_height_2d(modules); i+=1;){
 		modules[i,1].module = modules[i,0]
@@ -331,10 +207,24 @@ for(var i = 0; i < array_height_2d(modules); i+=1;){
 		modules[i,0].phy_position_x = modules[i,1].x
 		modules[i,0].phy_position_y = modules[i,1].y
 		modules[i,0].phy_rotation = phy_rotation + modules[i,0].offset_angle
-		with (modules[i,0])
+		with (modules[i,0]){
 			joint = physics_joint_revolute_create(other, id,phy_position_x,phy_position_y,0, 360, 0, 10,0,1,0);
-		}
+			switch (offset_angle){
+				case 0: activation_button = 4; break;
+				case 90: activation_button = 3; break;
+				case 180: activation_button = 1; break;
+				case 270: activation_button = 2; break;
+				}
+			}
+			}
 	}
+	
+// Select an active module if there is one
+for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone; i+=1;)
+	if scr_exists(modules[i,0])
+		if modules[i,0].active == true
+			selected_active_module = i
+	
 /*
 for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 	module_holders[i].owner= id;

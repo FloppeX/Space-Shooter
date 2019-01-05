@@ -1,6 +1,8 @@
+draw_self();
+
 cam = camera_get_active()
 
-camera_set_view_pos(cam,view_object.phy_position_x -0.5*camera_get_view_width(cam),view_object.phy_position_y-0.5*camera_get_view_height(cam))
+camera_set_view_pos(cam,phy_position_x -0.5*camera_get_view_width(cam),phy_position_y-0.5*camera_get_view_height(cam))
 
 // Screen shake and rumble
 

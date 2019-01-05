@@ -11,7 +11,12 @@
         "3ec693d1-dab6-4e84-982b-69eee10a0df2",
         "9caacdaf-991d-4f72-9e09-12f760c94987",
         "79058955-e2bf-4e7d-9432-1afd200beaa0",
-        "a1d94924-711b-4c27-99b9-c4dfeee5ebaa"
+        "d4043d79-508b-49e7-b29c-f7221de8bbfe",
+        "a1d94924-711b-4c27-99b9-c4dfeee5ebaa",
+        "25de5b43-f50b-44a3-a5c8-86e70ff6e4ce",
+        "8e661a6c-07dd-4fd0-b197-71985536123a",
+        "e634a54c-3844-49fb-aca7-e85280b992ac",
+        "6c65d798-4e20-410e-8e0b-b51fa211b339"
     ],
     "filterType": "GMObject",
     "folderName": "Effect objects",

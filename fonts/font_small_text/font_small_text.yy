@@ -5,6 +5,7 @@
     "name": "font_small_text",
     "AntiAlias": 1,
     "TTFName": "",
+    "ascenderOffset": 0,
     "bold": true,
     "charset": 0,
     "first": 0,

@@ -5,8 +5,7 @@ for (var p = -global.play_area_width; p <= global.play_area_width; p += global.p
 
 if global.view_mode == 2{
 	draw_set_font(font_small_text)
-	draw_text(phy_position_x,phy_position_y +40,"offset_angle: " + string(offset_angle))
-	draw_text(phy_position_x,phy_position_y +60,"angle_diff: " + string(angle_diff))
+	draw_text(phy_position_x,phy_position_y +70,"activation_button: " + string(activation_button))
 	}
 /*
 for(var i = 0; i < array_length_1d(description_lines); i+=1;)

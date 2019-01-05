@@ -10,9 +10,8 @@ if !menu_active
 if gamepad_button_check_pressed(0,gp_face1)
 	switch(selected_item){
 		case 0 : {
-				//global.player = instance_create_layer(0.5 * room_width,0.5 * room_height,"instance_layer",obj_player)
-				level_1 = room_duplicate(rm_space)
-				room_goto(level_1) 
+				global.difficulty_level = 1;
+				room_goto(rm_space)
 				break;
 				}
 				
@@ -23,7 +22,9 @@ if gamepad_button_check_pressed(0,gp_face1)
 				}
 				
 		case 2 : {
-				options_menu = instance_create_depth(0.3*display_get_width(),0.4*display_get_height()+item_distance,0,obj_options_menu)
+				options_menu = instance_create_depth(0,0,0,obj_options_menu)
+				options_menu.y_pos = 0.4*display_get_height()+ 2 * item_distance
+				options_menu.x_pos = 0.3*display_get_width()+ 4 * item_distance
 				options_menu.previous_menu = id;
 				menu_active = false;
 				}

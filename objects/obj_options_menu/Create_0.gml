@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+x_pos = 0.3*display_get_width() + 180
+
 menu_items[0] = "Controls"
 menu_items[1] = "Anti aliasing"
 menu_items[2] = "Difficulty"

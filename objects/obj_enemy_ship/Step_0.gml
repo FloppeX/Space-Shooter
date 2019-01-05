@@ -24,20 +24,39 @@ if disabled_timer < 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
+
 //Health
+
 if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
 	audio_stop_sound(engine_noise)
 	phy_active = false
-	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
-		with(module_holders[i]){
-			with(module)
-				instance_destroy();
+	for(var i = 0; i < array_height_2d(modules); i+=1;){
+		with(modules[i,0])
 			instance_destroy();
-			}
+		with(modules[i,1])	
+			instance_destroy();
+		}
 	audio_emitter_free(ship_audio_emitter)
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
+	// Create credits
+	temp_distance = 48
+	temp_speed_modifier = 0.4
+	for(i = 0; i <= pickup_objects; i += 1){
+		var h = irandom(5)
+		if h <= 3
+			pickup_object = instance_create_depth(0,0,-10,obj_pickup_credit);
+		if h == 4
+			pickup_object = instance_create_depth(0,0,-10,obj_pickup_health);
+		if h == 5
+			pickup_object = instance_create_depth(0,0,-10,obj_pickup_particles);
+
+		pickup_object.phy_position_x = phy_position_x+irandom(temp_distance)-0.5*temp_distance
+		pickup_object.phy_position_y = phy_position_y+irandom(temp_distance)-0.5*temp_distance
+		pickup_object.phy_speed_x = phy_speed_x * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
+		pickup_object.phy_speed_y = phy_speed_y * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
+		}
 	instance_destroy();
 	exit;
 	}
@@ -91,19 +110,26 @@ if ai_mode == 2 {
 	if scr_timer(30)
 		target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if scr_timer(10){
-		if target != noone and instance_exists(target){
-			target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
+		if scr_exists(target){
 			target_point_x = scr_wrap_closest_x(target);
 			target_point_y = scr_wrap_closest_y(target);
+			target_distance = scr_wrap_distance_to_point(phy_position_x,phy_position_y,target_point_x,target_point_y)
+			target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
+			if target_dir == -1
+				target_dir = point_direction(phy_position_x,phy_position_y,target_point_x,target_point_y)
 
-			angle_diff = abs(angle_difference(-phy_rotation,target_dir));
-			shoot = false
-			if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 600
-				and angle_diff < 30 and !controls_disabled
-				shoot = true
-			if point_distance(phy_position_x,phy_position_y,target_point_x,target_point_y) < 50
-				abort_attack = true
-			
+			// find weapon to attack with
+			var temp_distance = target_distance
+			var temp_angle = angle_difference(-phy_rotation,target_dir)
+			var selected_weapon = noone
+			for(var i = 0; i < array_height_2d(modules); i+=1;){
+				module_angle = angle_difference(-modules[i,0].phy_rotation,target_dir)
+				if module_angle < temp_angle{
+					temp_angle = module_angle
+					target_dir = target_dir + modules[i,0].offset_angle
+					}
+				}
+			// Check if its time to abort attack
 			if attack_timer <= 0
 				abort_attack = true
 			}
@@ -120,14 +146,13 @@ if ai_mode == 2 {
 	
 // Shooting
 
-for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-		temp_module = module_holders[i].module
+for(var i = 0; i < array_height_2d(modules); i+=1;){
+		temp_module = modules[i,0]
 		if object_is_ancestor(temp_module.object_index, obj_module_gun)
 			if temp_module.ready_to_shoot == true{
 				target = scr_rocket_find_target_in_arc(target_object,-temp_module.phy_rotation,30,temp_module.bullet_range * 1.2)
-				if target == noone or controls_disabled
-					temp_module.activated = false	
-				else temp_module.activated = true
+				if target != noone and !controls_disabled
+					temp_module.activation_timer = 30
 				}
 }
 	
@@ -196,12 +221,11 @@ scr_counter_lateral_drift();
 
 // Upidate positions and settings for module holders
 
-for(var i = 0; i < array_length_1d(module_holders); i+=1;){
-	with (module_holders[i]){
-		x = owner.phy_position_x + lengthdir_x(placement_offset_distance,-owner.phy_rotation+placement_offset_angle)
-		y = owner.phy_position_y + lengthdir_y(placement_offset_distance,-owner.phy_rotation+placement_offset_angle)
+for(var i = 0; i < array_height_2d(modules); i+=1;){
+		modules[i,1].x = phy_position_x + lengthdir_x(modules[i,3],-phy_rotation + modules[i,2])
+		modules[i,1].y = phy_position_y + lengthdir_y(modules[i,3],-phy_rotation + modules[i,2])
 		}
-	}
+		
 // Energy
 
 if energy < max_energy
@@ -220,5 +244,6 @@ scr_wrap_room();
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
-audio_emitter_velocity(ship_audio_emitter,phy_speed_x,phy_speed_y,0)
+//audio_emitter_velocity(ship_audio_emitter,phy_speed_x,phy_speed_y,0)
+
 //	engine_noise = audio_play_sound_on(ship_audio_emitter,engine_sound,1,1)

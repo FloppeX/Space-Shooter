@@ -41,7 +41,7 @@ if number_of_enemies >= 1{
 		temp_xpos = global.wrap_border_left
 		temp_ypos = global.wrap_border_top + random(global.play_area_height)
 		}
-	var i = irandom(4);
+	var i = irandom(2);
 	switch(i){
 		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1); break;
 		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_2); break;
@@ -59,6 +59,12 @@ if number_of_enemies >= 1{
 
 if keyboard_check_pressed(vk_enter)
 	number_of_enemies += 1
+
+if keyboard_check_pressed(vk_backspace)
+	if instance_number(obj_enemy_ship) > 0
+		with (instance_find(obj_enemy_ship, 0))
+			obj_health = 0
+
 
 // Are all enemies dead? Or is the timer 0? Then count down and move to next level
 	

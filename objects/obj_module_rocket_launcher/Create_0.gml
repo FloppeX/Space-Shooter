@@ -2,7 +2,7 @@ event_inherited();
 
 description_lines[0] = "Missile launcher"
 
-cost = 12
+cost = 10
 
 bullet_type_base = obj_rocket;
 bullet_damage_base = 15;

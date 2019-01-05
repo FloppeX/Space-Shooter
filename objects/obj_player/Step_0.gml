@@ -1,3 +1,6 @@
+
+	
+#region Variables
 // Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
@@ -5,8 +8,9 @@ rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_sp
 max_health = (max_health_base * max_health_multiplier) + max_health_bonus
 max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
 energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
+#endregion
 
-// Add other variables too!
+#region Disabled?
 
 // Disabled?
 disabled_timer -= 1;
@@ -15,7 +19,9 @@ if disabled_timer < 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
+#endregion
 
+#region Controls
 
 // Gamepad controls
 // Reset them first
@@ -28,6 +34,8 @@ gamepad_button[2] = false
 gamepad_button[3] = false
 gamepad_button[4] = false
 gamepad_button[5] = false
+use_active_item = false
+select_next_active_item = false
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
@@ -51,6 +59,9 @@ if controls_disabled == false{
 		
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
+	if gamepad_button_value(0, gp_shoulderlb)
+		use_active_item = true
+
 	if gamepad_button_check(0,gp_face1)
 		gamepad_button[1] = true
 	
@@ -65,7 +76,10 @@ if controls_disabled == false{
 		
 	if gamepad_button_value(0, gp_shoulderlb) > 0
 		gamepad_button[5] = true
-}
+		
+	if gamepad_button_check_pressed(0,gp_shoulderl)
+		select_next_active_item = true
+	}
 
 if keyboard_check(vk_right){
 	shop = room_duplicate(rm_shop)
@@ -78,8 +92,8 @@ if keyboard_check(vk_left){
 	room_goto (space)
 	}
 	
-if keyboard_check(vk_space){
-		credits += 10
+if keyboard_check_pressed(vk_space){
+		credits += 4
 	}
 	
 if keyboard_check_pressed(vk_up){
@@ -89,17 +103,36 @@ if keyboard_check_pressed(vk_down){
 		rotation_speed_base -= 5//draw_scale -= 0.1
 	}
 	
-// Close-up view
+#endregion
 
-if gamepad_button_check_pressed(0,gp_select)
-	if !close_up_view
-		close_up_view = true
-	else 
-		close_up_view = false
+// Are there any activated modules, and if so, which one is selected?
+if scr_timer(30) // if no active module is selected, check for one periodically
+	if selected_active_module == noone or !scr_exists(modules[selected_active_module,0]){
+		selected_active_module = noone
+		for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone; i+=1;)
+			if scr_exists(modules[i,0])
+				if modules[i,0].active == true
+					selected_active_module = i
+			}
+else
+	if select_next_active_item == true{
+		// Check for the next active module
+		h = selected_active_module + 1
+		repeat(array_height_2d(modules)-1){
+			if h >= array_height_2d(modules)
+				h -= array_height_2d(modules)
+			if scr_exists(modules[h,0])
+				if modules[h,0].active == true
+					selected_active_module = h
+			h += 1
+			}
+		}
 		
-if close_up_view
-	zoom = 200
+		
+	
 
+
+#region Turning & moving
 // Turn
 
 if controls_disabled == false{
@@ -138,6 +171,10 @@ for(var i = 0; i < array_length_1d(module_holders); i+=1;)
 // Stop ship from skidding
 if add_thrust
 	scr_counter_lateral_drift();
+	
+#endregion
+
+#region Health
 
 // Health
 
@@ -150,13 +187,14 @@ if health_difference > 0{
 	
 if obj_health <= 0{
 	scr_explode_object_new();
-	phy_active = false
-	for(var i = 0; i < array_length_1d(module_holders); i+=1;)
-		with(module_holders[i]){
-			with(module)
-				instance_destroy();
-			instance_destroy();
-			}
+	//phy_active = false
+	for(var i = 0; i < array_height_2d(modules); i+=1;){
+		if scr_exists(modules[i,0])
+			with(modules[i,0])
+				instance_destroy() 
+		with(modules[i,1])
+				instance_destroy()
+		}
 	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	boom.radius = 300
@@ -164,6 +202,8 @@ if obj_health <= 0{
 	instance_destroy();
 	exit;
 	}
+
+#endregion
 
 // Find mirror positions
 
@@ -194,6 +234,8 @@ if !energy_disabled
 energy = clamp(energy,0,max_energy)
 
 obj_health = clamp(obj_health,0,max_health)
+// Save health value to check later if taken damage	
+obj_health_old = obj_health
 	
 particles = clamp(particles,0,max_particles)	
 	
@@ -212,18 +254,35 @@ for(var i = 0; i < array_height_2d(modules); i+=1;){
 		modules[i,1].y = phy_position_y + lengthdir_y(modules[i,3],-phy_rotation + modules[i,2])
 		}
 
-// Update modules
+// Update modules and make sure they have the right activation button
 
 for(var i = 0; i < array_height_2d(modules); i+=1;)
-	for(var h = 0; h < array_length_1d(gamepad_button); h+=1;)
-		if scr_exists(modules[i,0]){
-			modules[i,0].module_holder = modules[i,1]
-			if gamepad_button[modules[i,0].activation_button] == true
-				modules[i,0].activated = true
-			else modules[i,0].activated = false
-			modules[i,0].add_thrust = add_thrust
+	if scr_exists(modules[i,0]){
+		modules[i,0].cost = 0
+		modules[i,0].owner = id
+		if modules[i,0].active == true
+			modules[i,0].activation_button = 0
+		else
+			switch (modules[i,0].offset_angle){
+				case 0: modules[i,0].activation_button = 4; break;
+				case 90: modules[i,0].activation_button = 3; break;
+				case 180: modules[i,0].activation_button = 1; break;
+				case 270: modules[i,0].activation_button = 2; break;
+				}
+		}
+
+// Update modules and activate them!
+
+for(var i = 0; i < array_height_2d(modules); i+=1;)
+	if scr_exists(modules[i,0]){
+		modules[i,0].module_holder = modules[i,1]
+		if gamepad_button[modules[i,0].activation_button] == true and modules[i,0].activation_button != 0
+			modules[i,0].activated = true
+		modules[i,0].add_thrust = add_thrust
 		}
 		
-// Save health value to check if taken damage	
-	
-obj_health_old = obj_health
+if selected_active_module != noone and scr_exists(modules[selected_active_module,0]){
+	if use_active_item == true
+		modules[selected_active_module,0].activated = true
+	else modules[selected_active_module,0].activated = false	
+	}

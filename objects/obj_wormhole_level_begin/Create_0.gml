@@ -5,3 +5,9 @@
 event_inherited();
 
 warp_start_timer = 5
+
+fake_player_ship = noone
+
+done_warping = false
+
+ship_rotation_speed = 400

@@ -1,5 +1,7 @@
 //draw_self();
-
+if !owner.visible
+	exit
+	
 numer_of_lines = 2
 
 temp_scale = (timer mod 60) / 60

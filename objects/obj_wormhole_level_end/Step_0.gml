@@ -1,44 +1,58 @@
 event_inherited();
-	
-warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
-	if warping_ship != noone
-		with(warping_ship){
-			disabled_timer = 10
-			if draw_scale > 0{
-				temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-				temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-				draw_scale -= 0.01 // temp_dist/(0.5 * sprite_width)
-				draw_scale = clamp(draw_scale,0,1)
-			
-				temp_speed = 3 * temp_dist/(0.5 * other.sprite_width)
-				phy_speed_x = lengthdir_x(temp_speed,temp_dir/*-90*/) + lengthdir_x(temp_speed,temp_dir)
-				phy_speed_y = lengthdir_y(temp_speed,temp_dir/*-90*/) + lengthdir_y(temp_speed,temp_dir)
-			/*
-				phy_angular_velocity = 600
-				*/
+
+player_ship = instance_place(phy_position_x,phy_position_y,obj_player)
+if scr_exists(player_ship){
+	with(player_ship){
+		disabled_timer = 10
+		phy_active = false
+		visible = false
+		for(var i = 0; i < array_height_2d(modules); i+=1;){
+			if scr_exists(modules[i,0]){
+				modules[i,0].phy_active = false
+				modules[i,0].visible = false
 				}
-			if draw_scale < 0.05{
-				visible = false
-				other.done_warping = true
-				//phy_linear_damping = 0.4
-				}
-			
 			}
+		}
+		
+	// Create a fake ship object that will spin and shrink
+	if fake_player_ship == noone{
+		fake_player_ship = instance_create_depth(player_ship.phy_position_x,player_ship.phy_position_y,-10,obj_wormhole_traveller_level_end_player)
+		fake_player_ship.phy_rotation = player_ship.phy_rotation
+		fake_player_ship.sprite_index = player_ship.sprite_index
+		for(var i = 0; i < array_height_2d(player_ship.modules); i+=1;)
+			if scr_exists(player_ship.modules[i,0]){
+				fake_player_ship.modules[i,0] = player_ship.modules[i,0].sprite_index
+				fake_player_ship.modules[i,2] = player_ship.modules[i,2]
+				fake_player_ship.modules[i,3] = player_ship.modules[i,3]
+				fake_player_ship.modules[i,4] = player_ship.modules[i,0].offset_angle
+				}
+			else fake_player_ship.modules[i,0] = noone
+		}
+	
+	// Move the player ship to the center of the wormhole
+
+	var temp_dir = point_direction(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
+	var temp_dist = point_distance(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
+	var step_coefficient = 0.02
+
+	player_ship.phy_position_x = player_ship.phy_position_x + lengthdir_x(temp_dist * step_coefficient, temp_dir)
+	player_ship.phy_position_y = player_ship.phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir)
+	player_ship.phy_speed_x = player_ship.phy_position_x - player_ship.phy_position_xprevious
+	player_ship.phy_speed_y = player_ship.phy_position_y - player_ship.phy_position_yprevious
+	
+	}
+
+	
+	
+// Check when done warping
+if scr_exists(fake_player_ship){
+	//global.zoom = 200 //+ (600 * fake_player_ship.draw_scale)
+	if fake_player_ship.draw_scale <= 0{
+		done_warping = true
+		//global.zoom = 200
+		}
+	}
 			
 if death_timer <= 0{
-	with(global.player){
-		phy_position_x = 0.5 * room_width
-		phy_position_y = 0.5 * room_height
-		phy_speed_x = 0
-		phy_speed_y = 0
-		phy_angular_velocity = 0
-		phy_rotation = -90		
-		draw_scale = 1
-		visible = true
-		}
 	room_goto (next_level)
 	}
-	
-/*
-if instance_exists(obj_player)
-	global.zoom = global.min_zoom + obj_player.draw_scale * 0.5 * (global.max_zoom - global.min_zoom)

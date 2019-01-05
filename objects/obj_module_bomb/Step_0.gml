@@ -10,10 +10,9 @@ if scr_exists(closest_ship){
 if obj_health <= 0{
 	with(owner)
 		obj_health = 0;
+
 	
 	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	boom.radius = 200
 	boom.damage = 20
-	module_holder.module = noone
-	instance_destroy();
 	}

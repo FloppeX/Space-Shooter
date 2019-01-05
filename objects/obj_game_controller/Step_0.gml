@@ -19,6 +19,10 @@ if gamepad_button_check_pressed(0,gp_select){
 	
 if instance_exists(obj_player){
 	
+	if keyboard_check_pressed(vk_end)
+		with(obj_player)
+			obj_health = 0
+			
 	if global.view_mode == 2
 		global.max_zoom = 6000
 	else global.max_zoom = 4400

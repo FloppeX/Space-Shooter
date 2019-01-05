@@ -19,11 +19,10 @@ if global.view_mode == 2{
 
 // MAP
 
-display_set_gui_size(1920, 1080);
 
 map_width = 100 * map_scale;
 map_height = 100 * map_scale;
-map_edge_right = /*display_get_width()*/ 1920 - 25 * map_scale
+map_edge_right = /*display_get_width()*/ display_get_width() - 25 * map_scale
 map_edge_left = map_edge_right - map_width
 map_edge_top = 25 * map_scale
 map_center_x = map_edge_left+ 0.5*map_width
@@ -74,3 +73,10 @@ draw_set_color(c_white)
 draw_set_valign(fa_center)
 draw_set_halign(fa_center)
 draw_text(health_bar_x+60,health_bar_y + 0.5 * health_bar_height + 60,credits)
+
+// Active item
+
+if selected_active_module != noone and scr_exists(modules[selected_active_module,0]){
+	draw_sprite_ext(spr_module_holder,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,0,c_white,1)
+	draw_sprite_ext(modules[selected_active_module,0].sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,modules[selected_active_module,0].offset_angle+90,c_white,1)
+	}

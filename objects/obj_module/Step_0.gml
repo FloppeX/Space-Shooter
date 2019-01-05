@@ -15,7 +15,11 @@ particle_cost = round((particle_cost_base + particle_cost_bonus) * particle_cost
 
 if owner.gamepad_button[activation_button] == true
 	activated = true
-else activated = false	
+	
+if activation_timer > 0{
+	activated = true
+	activation_timer -= 1
+	}
 
 // orient to correct angle
 

@@ -1,8 +1,8 @@
 // Control zoom
 	
-aspect_ratio = display_get_width()/display_get_height(); 
-view_set_wport(view_current,1920)
-view_set_hport(view_current,1080)
+var aspect_ratio = display_get_width()/display_get_height(); 
+view_set_wport(view_current,display_get_width())
+view_set_hport(view_current,display_get_height())
 
 if temp_zoom > global.zoom
 	temp_zoom -= 0.1 * abs(temp_zoom-global.zoom)

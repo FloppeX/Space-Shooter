@@ -4,3 +4,4 @@ invisible = false
 
 alpha = 1
 draw_scale = 1
+color = c_white

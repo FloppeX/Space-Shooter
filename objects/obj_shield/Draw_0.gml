@@ -1,3 +1,6 @@
+if !owner.visible
+	exit;
+
 //draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,owner.owner.draw_scale,owner.owner.draw_scale,-phy_rotation,c_white,0.4)
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);

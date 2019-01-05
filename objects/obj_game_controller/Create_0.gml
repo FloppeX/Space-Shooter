@@ -17,10 +17,13 @@ global.game_timer = 0
 
 //view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
+display_set_gui_size(display_get_width(), display_get_height());
+
+
 global.view_mode = 1
 global.max_zoom = 4400
 global.min_zoom = 200
-global.zoom = 1600
+global.zoom = 1100
 temp_zoom = global.zoom
 
 // Screen shake settings
@@ -39,6 +42,7 @@ draw_set_lighting(true);
 draw_light_define_direction(1, 1, 1, 0, c_yellow);
 draw_light_enable(1, true);
 
+
 // Play area settings
 
 room_width = 6000;
@@ -47,8 +51,8 @@ room_height = 6000;
 global.wrap_margin_player = 1000;
 global.wrap_margin_objects = 1000;
 
-global.viewport_width = view_get_wport(0);
-global.viewport_height = view_get_hport(0);
+global.viewport_width = display_get_width(); //view_get_wport(0);
+global.viewport_height = display_get_height(); //view_get_hport(0);
 
 global.play_area_width = room_width - 2 * global.wrap_margin_player;
 global.play_area_height = room_height - 2 * global.wrap_margin_player;

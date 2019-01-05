@@ -1,5 +1,5 @@
 {
-    "id": "c94d0668-6a31-41ea-8c35-7401337c56e2",
+    "id": "a909c69a-8532-43bf-92b0-6b7ea3e2955a",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_bullet_modifier_wavy",

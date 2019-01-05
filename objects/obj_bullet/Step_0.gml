@@ -3,7 +3,8 @@ timer += 1
 // Bullet stuff
 range -= phy_speed;
 phy_bullet = true;
-bullet_scale = 0.5+ 0.5*(damage/6)
+bullet_scale = 1 + (damage/4)
+draw_scale = bullet_scale
 
 if range <= 0{
 	instance_destroy();

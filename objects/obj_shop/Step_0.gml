@@ -17,6 +17,10 @@ if enter_shop and !instance_exists(obj_wormhole_level_begin){
 			phy_speed_y += 0.1
 		if phy_speed_y > 0
 			phy_speed_y = 0
+			
+		// Zoom in when docked
+		if y_diff < 100 and phy_speed_y == 0
+			global.zoom = 400
 		}
 	}
 		
@@ -28,8 +32,8 @@ if exit_shop and instance_exists(obj_wormhole_level_end) {
 		//phy_rotation = -90
 		
 		y_diff = abs(phy_position_y- 0.5 * room_height)
-			if y_diff < 250 and phy_speed_y >= -3
-				phy_speed_y -= 0.1
+			if y_diff < 250 and phy_speed_y >= -3 //and !instance_place(phy_position_x,phy_position_y,obj_wormhole_level_end)
+				physics_apply_local_force(0,0,200,0)//phy_speed_y -= 0.1
 		}	
 	}
 
