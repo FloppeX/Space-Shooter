@@ -11,7 +11,6 @@ switch (i){
 
 audio_play_sound_at(bullet_impact_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 
-push_force = damage
 with (other){
 	temp_dir = point_direction(other.phy_position_x,other.phy_position_y,phy_position_x,phy_position_y)
 	var x_force = lengthdir_x(other.push_force,temp_dir)

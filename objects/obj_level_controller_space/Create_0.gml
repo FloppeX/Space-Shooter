@@ -52,9 +52,9 @@ next_level_timer = 120
 
 // Enemies
 
-number_of_asteroids = 3 + irandom(global.difficulty_level)
-number_of_explosive_barrels = irandom(3+global.difficulty_level)
-number_of_enemies = 2 + 2 * global.difficulty_level;
+number_of_asteroids = 4 + 2 * irandom(global.difficulty_level)
+number_of_explosive_barrels = 3 + irandom(global.difficulty_level)
+number_of_enemies = 3 * global.difficulty_level
 
 	
 // Sound

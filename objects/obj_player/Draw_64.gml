@@ -11,9 +11,8 @@ if global.view_mode == 2{
 	draw_text(50,270,"energy_increase: " + string(energy_increase))
 	draw_text(50,300,"controls_disabled timer: " + string(disabled_timer))
 	draw_text(50,330,"phy_angular_velocity: " + string(phy_angular_velocity))
-	draw_text(50,360,"rotation_value: " + string(rotation_value))
-	draw_text(50,390,"display width: " + string(display_get_width()))
-	draw_text(50,420,"display height: " + string(display_get_height()))
+	draw_text(50,360,"drift_resistance: " + string(drift_resistance))
+
 }
 
 
@@ -80,3 +79,11 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 	draw_sprite_ext(spr_module_holder,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,0,c_white,1)
 	draw_sprite_ext(modules[selected_active_module,0].sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,modules[selected_active_module,0].offset_angle+90,c_white,1)
 	}
+	
+// Modifiers
+draw_set_font(font_big_text)
+draw_set_color(c_white)
+draw_set_halign(fa_left)
+for(var i = 0; i < array_height_2d(modifiers); i+=1;)
+			if modifiers[i,2] != noone
+				draw_text_ext_transformed(health_bar_x,health_bar_y + 0.5 * health_bar_height + 230+20*i,modifiers[i,2],0,800,1,1,0)

@@ -23,7 +23,7 @@ if ready_to_shoot{
 		{
 		bullets[i] = instance_create_depth(phy_position_x+lengthdir_x(barrel_length,-phy_rotation),phy_position_y+lengthdir_y(barrel_length,-phy_rotation),bullet_depth,bullet_type);
 		
-		bullet_scale = 0.5+ 0.5*(bullets[i].damage/6)
+		bullet_scale = 0.8 +(bullets[i].damage/4)
 		
 		bullet_fixture = physics_fixture_create();
 		physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)

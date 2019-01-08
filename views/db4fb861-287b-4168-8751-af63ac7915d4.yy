@@ -20,7 +20,8 @@
         "62a4bfe8-bf9e-49b5-88ca-4eb7cb371b11",
         "2ecf5162-7a1e-44ad-bd3f-a154e143de8a",
         "a4518dfb-248d-4cf4-af96-66ce394e4c9e",
-        "36bec796-8bc5-4b66-886e-731ffd1afe3a"
+        "36bec796-8bc5-4b66-886e-731ffd1afe3a",
+        "18ef2cc6-e2c2-4093-b4e8-11721c1821df"
     ],
     "filterType": "GMSprite",
     "folderName": "Misc modules",

@@ -10,3 +10,4 @@ for(var i = 0; i < array_height_2d(module_holders); i+=1;)
 			modules[i,0].phy_position_y = phy_position_y + lengthdir_y(modules[i,2],-phy_rotation + modules[i,1])
 			modules[i,0].phy_rotation = phy_rotation + modules[i,3]
 			}
+*/

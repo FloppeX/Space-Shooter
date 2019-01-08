@@ -5,7 +5,7 @@ obj_health = 32;
 child_object = obj_asteroid_medium;
 death_effect_size = 2;
 
-var i = irandom(5)
+var i = irandom(4)
 
 if i == 0{
 	pickup_object_number = irandom(2)+1

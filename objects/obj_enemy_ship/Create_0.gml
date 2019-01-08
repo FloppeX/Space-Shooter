@@ -1,7 +1,7 @@
 // Credits
 
 //credits = irandom(5)+1
-pickup_objects = 2+irandom(global.difficulty_level+1)
+pickup_objects = 3+irandom(global.difficulty_level)
 
 // Ship properties
 

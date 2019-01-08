@@ -16,7 +16,7 @@ child_object = noone;
 death_effect_size = 0;
 
 
-var i = irandom(5)
+var i = irandom(4)
 
 if i == 0{
 	pickup_object_number = 1//irandom(1)+1

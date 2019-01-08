@@ -22,5 +22,7 @@
     if (abs(beta) >= 1)
         return (-1);
     dir += radtodeg(arcsin(beta));
+	dir += 360
+	dir = dir mod 360
     return dir;
 }

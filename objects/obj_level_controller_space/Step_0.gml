@@ -74,7 +74,10 @@ if !instance_exists(obj_enemy_ship) or enemy_wave_timer <= 0
 if next_level_timer <= 0 and !instance_exists(obj_wormhole){
 	global.difficulty_level += 1;
 	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
-	wormhole.next_level = rm_shop
+	if global.difficulty_level <= 5
+		wormhole.next_level = rm_shop
+	else 
+		wormhole.next_level = rm_end
 	}
 
 // Is the player dead? Then count down and restart
@@ -87,6 +90,8 @@ if !instance_exists(obj_player){
 if death_timer <= 0 and !instance_exists(obj_death_menu){
 	death_menu = instance_create_depth(0.5*display_get_width(),0.4*display_get_height(),0,obj_death_menu)
 	death_menu.alignment = "center"
+	death_menu.x_pos = 0.3*display_get_width()
+	death_menu.y_pos = 0.5*display_get_height()
 	}
 	
 // If the timer is 0, spawn lots of enemies

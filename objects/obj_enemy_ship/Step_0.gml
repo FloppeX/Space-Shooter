@@ -30,6 +30,7 @@ else controls_disabled = false
 if obj_health <= 0{
 	phy_active = false
 	scr_explode_object_new();
+	scr_create_pickups_after_death();
 	audio_stop_sound(engine_noise)
 	phy_active = false
 	for(var i = 0; i < array_height_2d(modules); i+=1;){
@@ -39,24 +40,9 @@ if obj_health <= 0{
 			instance_destroy();
 		}
 	audio_emitter_free(ship_audio_emitter)
-	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
-	// Create credits
-	temp_distance = 48
-	temp_speed_modifier = 0.4
-	for(i = 0; i <= pickup_objects; i += 1){
-		var h = irandom(5)
-		if h <= 3
-			pickup_object = instance_create_depth(0,0,-10,obj_pickup_credit);
-		if h == 4
-			pickup_object = instance_create_depth(0,0,-10,obj_pickup_health);
-		if h == 5
-			pickup_object = instance_create_depth(0,0,-10,obj_pickup_particles);
 
-		pickup_object.phy_position_x = phy_position_x+irandom(temp_distance)-0.5*temp_distance
-		pickup_object.phy_position_y = phy_position_y+irandom(temp_distance)-0.5*temp_distance
-		pickup_object.phy_speed_x = phy_speed_x * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
-		pickup_object.phy_speed_y = phy_speed_y * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
-		}
+
+	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	instance_destroy();
 	exit;
 	}

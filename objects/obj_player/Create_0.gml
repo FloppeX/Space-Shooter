@@ -37,9 +37,12 @@ phy_rotation = 0
 mirror_x = 0
 mirror_y = 0
 
-drift_resistance = 35//800
 target_rotation = 0
 left_stick_value = 0
+
+// Modifiers
+
+modifiers[0,0] = noone
 
 // Energy
 
@@ -60,6 +63,10 @@ max_speed_bonus = 0
 rotation_speed_base = 85
 rotation_speed_multiplier = 1 
 rotation_speed_bonus = 0
+
+drift_resistance_base = 35
+drift_resistance_multiplier = 1
+drift_resistance_bonus = 0
 
 max_health_base = 100 
 max_health_multiplier = 1
@@ -83,6 +90,7 @@ energy_increase_bonus = 0
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
 rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
+drift_resistance = (drift_resistance_base * drift_resistance_multiplier) + drift_resistance_bonus
 max_health = (max_health_base * max_health_multiplier) + max_health_bonus
 max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
 max_particles = (max_particles_base * max_particles_multiplier) + max_particles_bonus
@@ -118,10 +126,11 @@ close_up_view = false
 
 map_scale = 2
 
+// Modifiers
+
+modifiers[0,0] = noone
+
 // Modules
-
-
-// TEST adding new 2d-array "modules" that will replace module holders
 
 modules[0,0] = noone
 
@@ -131,8 +140,23 @@ var module_number = 0
 /* placement angle */	modules[module_number,2] = 0
 /* placement dist */	modules[module_number,3] = 48
 
+
 module_number = 1
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_blaster);
+var h = irandom(7)
+	switch (h){
+		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
+		case 1: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
+		case 2: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun); break;
+		case 3: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
+		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
+		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun); break;
+		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_cannon); break;
+		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
+		}
+with(temp_module){
+	//scr_add_modifier_new(scr_module_modifier_aim_towards_enemy,90);
+	}
+/* module */			modules[module_number,0] = temp_module
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 45
 /* placement dist */	modules[module_number,3] = 34
@@ -145,14 +169,13 @@ module_number = 2
 /* placement dist */	modules[module_number,3] = 24
 
 module_number = 3
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_teleporter);
+/* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -45
 /* placement dist */	modules[module_number,3] = 34
-modules[module_number,0].offset_angle = 90
 
 module_number = 4
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_cloaking_device);
+/* module */			modules[module_number,0] = noone
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 90
 /* placement dist */	modules[module_number,3] = 24
@@ -225,20 +248,10 @@ for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone;
 		if modules[i,0].active == true
 			selected_active_module = i
 	
-/*
-for(var i = 0; i < array_length_1d(module_holders); i+=1;)
-	module_holders[i].owner= id;
-	
-for(var i = 0; i < array_height_2d(modules); i+=1;)
-		if scr_exists(modules[i,0]){
-			modules[i,0].owner = id
-			modules[i,0].persistent = true
-			modules[i,0].visible = true
-			modules[i,0].joint = noone
-			//with (modules[i,0])
-			//	joint = physics_joint_revolute_create(other, id,phy_position_x,phy_position_y,0, 360, 0, 10,3,1,0);
-			}
-		*/
+// Add ship modifiers
+
+scr_add_modifier_new(scr_ship_modifier_ratling_gunner,0);
+
 // Set spatial relationship between module holders
 /*
 module_holders[0].module_holder_above = noone

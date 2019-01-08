@@ -1,19 +1,25 @@
 event_inherited();
+
 color = c_navy;
 target_type = obj_enemy_ship
 targeting_arc = 90;
-seek_range = 800
+seek_range =400
 force = 0
-spread = 40
+spread = 30//40
+step_length = 30
 
 time_counter = 0
-turn_timer_base = 5
-turn_timer = turn_timer_base
+turn_timer_base = 30
+turn_timer = 0//turn_timer_base
+target_dir = -phy_rotation
 
-chance_new_branch = 10
+
+chance_new_branch = 0//10
 new_branch_angle = 30
 maximum_branches = 5
 current_branches = 0
+
+// particle
 
 part_type_sprite(bullet_glow_particle,sprite_index,false,false,false);            
 part_type_size(bullet_glow_particle,0.6,1.2,0,0.1);                   

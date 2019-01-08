@@ -5,6 +5,7 @@
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
 rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
+drift_resistance = (drift_resistance_base * drift_resistance_multiplier) + drift_resistance_bonus
 max_health = (max_health_base * max_health_multiplier) + max_health_bonus
 max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
 energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
@@ -24,18 +25,7 @@ else controls_disabled = false
 #region Controls
 
 // Gamepad controls
-// Reset them first
 
-rotation_value = 0
-left_stick_value = 0
-add_thrust = 0
-gamepad_button[1] = false
-gamepad_button[2] = false
-gamepad_button[3] = false
-gamepad_button[4] = false
-gamepad_button[5] = false
-use_active_item = false
-select_next_active_item = false
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
@@ -96,6 +86,10 @@ if keyboard_check_pressed(vk_space){
 		credits += 4
 	}
 	
+if keyboard_check_pressed(vk_control){
+		obj_health += 50
+	}
+	
 if keyboard_check_pressed(vk_up){
 		rotation_speed_base += 5//draw_scale += 0.1
 	}
@@ -106,14 +100,15 @@ if keyboard_check_pressed(vk_down){
 #endregion
 
 // Are there any activated modules, and if so, which one is selected?
-if scr_timer(30) // if no active module is selected, check for one periodically
+if scr_timer(30){ // if no active module is selected, check for one periodically
 	if selected_active_module == noone or !scr_exists(modules[selected_active_module,0]){
 		selected_active_module = noone
-		for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone; i+=1;)
+		for(var i = 0; (i < array_height_2d(modules)) and selected_active_module == noone; i+=1;)
 			if scr_exists(modules[i,0])
 				if modules[i,0].active == true
 					selected_active_module = i
 			}
+		}
 else
 	if select_next_active_item == true{
 		// Check for the next active module
@@ -156,18 +151,7 @@ if controls_disabled == false{
 		}
 	}
 	
-// Moving - activate the engines
 
-/*
-if phy_speed > max_speed
-	add_thrust = 0
-*/
-
-/*
-for(var i = 0; i < array_length_1d(module_holders); i+=1;)
-	module_holders[i].add_thrust = add_thrust
-*/	
-	
 // Stop ship from skidding
 if add_thrust
 	scr_counter_lateral_drift();
@@ -278,7 +262,6 @@ for(var i = 0; i < array_height_2d(modules); i+=1;)
 		modules[i,0].module_holder = modules[i,1]
 		if gamepad_button[modules[i,0].activation_button] == true and modules[i,0].activation_button != 0
 			modules[i,0].activated = true
-		modules[i,0].add_thrust = add_thrust
 		}
 		
 if selected_active_module != noone and scr_exists(modules[selected_active_module,0]){

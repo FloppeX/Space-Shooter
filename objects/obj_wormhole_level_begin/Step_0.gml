@@ -35,8 +35,10 @@ if scr_exists(player_ship){
 	// Check the fake ship to see if done warping
 	if scr_exists(fake_player_ship){
 		fake_player_ship.draw_scale = clamp(fake_player_ship.draw_scale,0,1)
-		//global.zoom = 800 //200 + (600 * fake_player_ship.draw_scale)
-		if fake_player_ship.draw_scale == 1 {
+		var temp_angle_diff = angle_difference(player_ship.phy_rotation,fake_player_ship.phy_rotation)
+		if temp_angle_diff < 30 and fake_player_ship.draw_scale == 1
+			fake_player_ship.ship_rotation_speed = min(400,20 * temp_angle_diff)
+		if fake_player_ship.draw_scale == 1 and abs(temp_angle_diff) < 0.5{
 			done_warping = true
 			//global.zoom = 800
 			}	
@@ -45,7 +47,7 @@ if scr_exists(player_ship){
 
 	var temp_dir = point_direction(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
 	var temp_dist = point_distance(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
-	var step_coefficient = 0.02
+	var step_coefficient = 0.04
 	player_ship.phy_position_x = player_ship.phy_position_x + lengthdir_x(temp_dist * step_coefficient, temp_dir)
 	player_ship.phy_position_y = player_ship.phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir)
 	}

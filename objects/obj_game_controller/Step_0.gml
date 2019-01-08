@@ -1,3 +1,27 @@
+// TEST graphics...
+/*
+var s_width, s_height, g_width, g_height, aspect, c_scale, offSET;
+
+g_width = view_wport[0];
+
+g_height = view_hport[0];
+
+aspect = (g_width / g_height);
+
+s_height = display_get_height();
+
+s_width = (s_height * aspect);
+
+c_scale = (s_height / g_height);
+
+offSET = 256;
+
+if !window_get_fullscreen()
+
+{ window_set_size((s_width - offSET),(s_height - offSET)); }
+
+display_set_gui_size(s_width,s_height);
+*/
 // Update game timer
 
 global.game_timer += 1
@@ -27,10 +51,10 @@ if instance_exists(obj_player){
 		global.max_zoom = 6000
 	else global.max_zoom = 4400
 	
-	if gamepad_button_check(0,gp_padu)
+	if gamepad_button_check(0,vk_up)
 		global.zoom = global.zoom -10
 
-	if gamepad_button_check(0,gp_padd)
+	if gamepad_button_check(0,vk_down)
 		global.zoom = global.zoom + 10
 	
 	global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)

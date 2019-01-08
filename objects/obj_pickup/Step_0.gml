@@ -18,6 +18,15 @@ if life_timer <= 300{
 		else visible = true
 	}
 		
+		
+// Apply max speed
+
+if phy_speed > max_speed
+	phy_linear_damping = 4
+else 
+	phy_linear_damping = 2
+	
+//
 
 if scr_exists(closest_ship){
 	dist = point_distance(phy_position_x,phy_position_y,closest_ship.phy_position_x,closest_ship.phy_position_y)

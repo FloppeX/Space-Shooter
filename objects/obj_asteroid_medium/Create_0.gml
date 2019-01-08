@@ -11,7 +11,7 @@ if i == 1
 child_object = obj_asteroid_small;
 death_effect_size = 1;
 
-var i = irandom(5)
+var i = irandom(4)
 
 if i == 0{
 	pickup_object_number = irandom(1)+1

@@ -5,6 +5,8 @@ life_timer = 900
 seek_range = 200
 pull_force = 120
 
+max_speed = 6
+
 closest_ship = noone
 
 

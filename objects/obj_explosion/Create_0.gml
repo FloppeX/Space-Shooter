@@ -1,6 +1,6 @@
 radius = 90
 damage = 8
-force = 10//100
+force = 30//10//100
 destruction_timer = 8
 radius_increase_factor = 1/destruction_timer
 temp_radius = 0

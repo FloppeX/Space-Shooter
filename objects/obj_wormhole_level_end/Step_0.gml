@@ -30,13 +30,14 @@ if scr_exists(player_ship){
 		}
 	
 	// Move the player ship to the center of the wormhole
-
+	
 	var temp_dir = point_direction(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
 	var temp_dist = point_distance(player_ship.phy_position_x,player_ship.phy_position_y,phy_position_x,phy_position_y)
-	var step_coefficient = 0.02
+	var step_coefficient = 0.04
+	var step_coefficient_side = 0//0.12
 
-	player_ship.phy_position_x = player_ship.phy_position_x + lengthdir_x(temp_dist * step_coefficient, temp_dir)
-	player_ship.phy_position_y = player_ship.phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir)
+	player_ship.phy_position_x = player_ship.phy_position_x + lengthdir_x(temp_dist * step_coefficient, temp_dir) + lengthdir_x(temp_dist * step_coefficient_side, temp_dir -90)
+	player_ship.phy_position_y = player_ship.phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir) + lengthdir_y(temp_dist * step_coefficient_side, temp_dir -90)
 	player_ship.phy_speed_x = player_ship.phy_position_x - player_ship.phy_position_xprevious
 	player_ship.phy_speed_y = player_ship.phy_position_y - player_ship.phy_position_yprevious
 	
@@ -45,11 +46,10 @@ if scr_exists(player_ship){
 	
 	
 // Check when done warping
+
 if scr_exists(fake_player_ship){
-	//global.zoom = 200 //+ (600 * fake_player_ship.draw_scale)
 	if fake_player_ship.draw_scale <= 0{
 		done_warping = true
-		//global.zoom = 200
 		}
 	}
 			

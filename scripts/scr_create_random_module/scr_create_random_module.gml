@@ -33,17 +33,17 @@ if object_is_ancestor(temp_module.object_index, obj_module_gun){
 			}
 			
 	repeat(global.difficulty_level){
-		var p = 25//irandom(99)
+		var p = irandom(99)
 		if p <= 49 and p > 19
 			with (temp_module){
 				scr_add_random_modifier_common();
-				cost += irandom(1)+1
+				cost += 1
 				}
-		var p = 99//irandom(99)
+		var p = irandom(99)
 		if p <= 19 and p >= 0
 			with (temp_module){
 				scr_add_random_modifier_uncommon();
-				cost += irandom(3)+1
+				cost += 2
 				}
 		}
 	}	

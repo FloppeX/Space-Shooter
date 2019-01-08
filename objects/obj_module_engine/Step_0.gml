@@ -1,6 +1,5 @@
 event_inherited();
 
-
 add_thrust = owner.add_thrust
 
 if scr_exists(owner) and add_thrust > 0{
@@ -8,12 +7,7 @@ if scr_exists(owner) and add_thrust > 0{
 		owner.energy -= add_thrust * energy_cost
 		if owner.phy_speed < owner.max_speed
 				physics_apply_local_force(0,0,add_thrust * thrust,0)
-		/*
-		with(owner){
-			if phy_speed < max_speed
-				physics_apply_local_force(0,0,other.add_thrust * other.thrust,0)
-			}
-			*/
+
 		flame_offset_distance = 18
 		flame_offset_angle = 180
 		part_type_speed(part_engine_flame,add_thrust,6*add_thrust,0,2);

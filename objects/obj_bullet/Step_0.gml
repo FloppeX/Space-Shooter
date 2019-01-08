@@ -3,7 +3,7 @@ timer += 1
 // Bullet stuff
 range -= phy_speed;
 phy_bullet = true;
-bullet_scale = 1 + (damage/4)
+bullet_scale = 0.8 + (damage/4)
 draw_scale = bullet_scale
 
 if range <= 0{
@@ -29,15 +29,10 @@ for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
 phy_rotation = -point_direction(0, 0, phy_speed_x, phy_speed_y)
 
-// Particle effect
-/*
-part_type_sprite(bullet_glow_particle,sprite_index,false,false,false);    
-part_type_color2(bullet_glow_particle,color,c_black);
-part_type_scale(bullet_glow_particle,bullet_scale,bullet_scale)
-part_type_direction(bullet_glow_particle,-phy_rotation,-phy_rotation,0,0);
-part_type_life(bullet_glow_particle,2,3);
-part_particles_create(global.part_system_below, phy_position_x, phy_position_y, bullet_glow_particle, 8);
-*/
+// Push force
+
+push_force = damage
+
 // Hit an enemy
 
 if hit_enemy == true{

@@ -16,12 +16,12 @@ var h = irandom(10)
 	temp_module.persistent = false
 	if object_is_ancestor(temp_module.object_index, obj_module_gun){
 		repeat(global.difficulty_level){
-			var p = 99//irandom(99)
-			if p <= 20 and p > 10
+			var p = irandom(99)
+			if p <= 30 and p > 15
 				with (temp_module)
 					scr_add_random_modifier_common();
-			var p = 99//irandom(99)
-			if p <= 10 and p >= 0
+			var p = irandom(99)
+			if p <= 15 and p >= 0
 				with (temp_module)
 					scr_add_random_modifier_uncommon();					
 		}
