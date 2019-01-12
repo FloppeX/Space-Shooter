@@ -13,16 +13,19 @@ if obj_health <= 0
 	boom.radius = 60
 	boom.damage = 0
 	
-	if pickup_object_number > 0
-		for(var i = pickup_object_number; i > 0; i -= 1){
-			pickup_object = instance_create_depth(0,0,-10,pickup_object_type);
-			temp_distance = irandom(30)
-			temp_speed_modifier = 0.4
-			pickup_object.phy_position_x = phy_position_x+irandom(temp_distance)-0.5*temp_distance
-			pickup_object.phy_position_y = phy_position_y+irandom(temp_distance)-0.5*temp_distance
-			pickup_object.phy_speed_x = phy_speed_x * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
-			pickup_object.phy_speed_y = phy_speed_y * (random(temp_speed_modifier)-0.5 * temp_speed_modifier)
-			}
+	// Create credits after an enemy dies
+
+	var temp_angle_offset = 360/pickup_objects
+	for(var i = 0; i < pickup_objects; i+=1;){
+		tempdir = random(360) + i * temp_angle_offset
+		tempdist = random(30) + 30
+		pickup_object = instance_create_depth(phy_position_x,phy_position_y,-10,pickup_object_type);
+		pickup_object.phy_position_x = phy_position_x+lengthdir_x(tempdist,tempdir)
+		pickup_object.phy_position_y = phy_position_y+lengthdir_y(tempdist,tempdir)
+		pickup_object.phy_speed_x = phy_speed_x
+		pickup_object.phy_speed_y = phy_speed_y
+		}
+	
 	instance_destroy();
 	exit;
 	}

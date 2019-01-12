@@ -1,8 +1,5 @@
-timer += 1
+event_inherited()
 
-// Bullet stuff
-range -= phy_speed;
-phy_bullet = true;
 bullet_scale = 0.8 + (damage/4)
 draw_scale = bullet_scale
 
@@ -10,29 +7,17 @@ if range <= 0{
 	instance_destroy();
 	exit;
 	}
-	
-
-// Apply effects of modifiers
-
-for(var i = 0; i < array_length_1d(modifiers); i+=1;)
-	if modifiers[i,0] != noone
-		script_execute(modifiers[i,0])
-		
-// TEST
-
-//if phy_speed < max_speed
-//		physics_apply_local_force(0,0,10,0)
-		
-		
+			
 // Movement
 
 travel_direction = point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y)
 phy_rotation = -point_direction(0, 0, phy_speed_x, phy_speed_y)
 
+/*
 // Push force
 
 push_force = damage
-
+*/
 // Hit an enemy
 
 if hit_enemy == true{
@@ -53,7 +38,7 @@ if hit_enemy == true{
 	instance_destroy();
 	exit;
 	}
-
+/*
 // Wrap movement
 
 scr_find_mirror_positions();

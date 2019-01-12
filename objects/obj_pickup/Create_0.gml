@@ -2,13 +2,7 @@ event_inherited();
 
 life_timer = 900
 
-seek_range = 200
-pull_force = 120
-
-max_speed = 6
-
-closest_ship = noone
-
+max_speed = 8
 
 pickup_glow_particle = part_type_create();
 part_type_sprite(pickup_glow_particle,sprite_index,false,false,false);            

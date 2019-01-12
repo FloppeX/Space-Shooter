@@ -1,3 +1,23 @@
+// TEST!
+module_under_cursor = instance_place(x,y,obj_module)
+if scr_exists(module_under_cursor){
+	if object_get_parent(module_under_cursor) == obj_crew{
+		draw_set_font(font_big_text)
+		draw_set_valign(fa_middle)
+		draw_set_halign(fa_left)
+		draw_set_color(c_white)
+		draw_text_ext_transformed(x-50,y-50,"Crew",0,800,0.3,0.3,0)
+		}
+	else{
+		draw_set_font(font_big_text)
+		draw_set_valign(fa_middle)
+		draw_set_halign(fa_left)
+		draw_set_color(c_white)
+		draw_text_ext_transformed(x-50,y-50,"Not crew",0,800,0.3,0.3,0)
+		}
+	}
+//
+
 draw_self();
 draw_set_font(font_small_text)
 draw_set_color(c_white)
@@ -24,10 +44,10 @@ if module_under_cursor != noone
 			if module_under_cursor.modifiers[i,2] != noone
 				draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+25+20*i,module_under_cursor.modifiers[i,2],0,800,0.3,0.3,0)
 		if object_is_ancestor(module_under_cursor.object_index, obj_module_gun){
-			draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+25+20*array_height_2d(module_under_cursor.modifiers),"Damage: " + string(module_under_cursor.bullet_damage),0,800,0.3,0.3,0)
-			draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+45+20*array_height_2d(module_under_cursor.modifiers),"Range: " + string(module_under_cursor.bullet_range),0,800,0.3,0.3,0)
-			draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+65+20*array_height_2d(module_under_cursor.modifiers),"Rate of fire: " + string(module_under_cursor.bullet_interval),0,800,0.3,0.3,0)
-			draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+85+20*array_height_2d(module_under_cursor.modifiers),"Recoil: " + string(module_under_cursor.recoil_force),0,800,0.3,0.3,0)
+			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+25+20*array_height_2d(module_under_cursor.modifiers),"Damage: " + string(module_under_cursor.bullet_damage),0,800,0.3,0.3,0)
+			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+45+20*array_height_2d(module_under_cursor.modifiers),"Range: " + string(module_under_cursor.bullet_range),0,800,0.3,0.3,0)
+			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+65+20*array_height_2d(module_under_cursor.modifiers),"Rate of fire: " + string(module_under_cursor.bullet_interval),0,800,0.3,0.3,0)
+			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+85+20*array_height_2d(module_under_cursor.modifiers),"Recoil: " + string(module_under_cursor.recoil_force),0,800,0.3,0.3,0)
 			}
 		draw_set_halign(fa_right)
 		if module_under_cursor.cost > 0

@@ -1,6 +1,6 @@
 // Description text
 value = argument0
-modifier_description = ("Damage +" + string(value))
+//modifier_description = ("Damage +" + string(value))
 
 // Modifier script
 

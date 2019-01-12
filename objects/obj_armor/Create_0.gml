@@ -1,5 +1,7 @@
 event_inherited()
 
+module_name = "Armor plating"
+
 max_health = 30
 obj_health = max_health
 

@@ -40,9 +40,18 @@ mirror_y = 0
 target_rotation = 0
 left_stick_value = 0
 
+lateral_drift_direction = 0
+drift_resistance_force= 0
+
 // Modifiers
 
-modifiers[0,0] = noone
+modifiers[0,4] = noone
+
+// Pickups
+
+pickup_seek_range = 200
+pickup_pull_force = 120
+
 
 // Energy
 
@@ -154,7 +163,7 @@ var h = irandom(7)
 		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
 		}
 with(temp_module){
-	//scr_add_modifier_new(scr_module_modifier_aim_towards_enemy,90);
+	//scr_add_modifier(scr_module_modifier_rof_multiplier,-0.5);
 	}
 /* module */			modules[module_number,0] = temp_module
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
@@ -169,7 +178,7 @@ module_number = 2
 /* placement dist */	modules[module_number,3] = 24
 
 module_number = 3
-/* module */			modules[module_number,0] = noone
+/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_rotational_thrusters);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -45
 /* placement dist */	modules[module_number,3] = 34
@@ -250,7 +259,7 @@ for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone;
 	
 // Add ship modifiers
 
-scr_add_modifier_new(scr_ship_modifier_ratling_gunner,0);
+//scr_add_modifier_new(scr_ship_modifier_ratling_gunner,0,"Ratling gunner","Rate of fire +++",spr_crew_ratling_1);
 
 // Set spatial relationship between module holders
 /*
@@ -348,3 +357,7 @@ sound_priority = 1
 explosion_sound = snd_explosion_large_01
 ship_audio_emitter = audio_emitter_create()
 audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
+
+// Misc variables, perhaps used for modules/modifiers/crew
+
+number_of_enemies = 0

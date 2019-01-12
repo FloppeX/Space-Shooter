@@ -25,14 +25,18 @@ if ready_to_shoot{
 		
 		bullet_scale = 0.8 +(bullets[i].damage/4)
 		
-		bullet_fixture = physics_fixture_create();
-		physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)
-		physics_fixture_set_density(bullet_fixture,0.03)
-		physics_fixture_set_restitution(bullet_fixture,1)
-		physics_fixture_set_linear_damping(bullet_fixture,0)
-		physics_fixture_bind(bullet_fixture,bullets[i])
-		physics_fixture_delete(bullet_fixture)
-		
+		object_is_ancestor(bullet_type, obj_bullet){
+			bullet_fixture = physics_fixture_create();
+			physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)
+			//Test!
+			physics_fixture_set_sensor(bullet_fixture,true)
+			physics_fixture_set_density(bullet_fixture,0.03)
+			physics_fixture_set_restitution(bullet_fixture,1)
+			physics_fixture_set_linear_damping(bullet_fixture,0)
+			physics_fixture_bind(bullet_fixture,bullets[i])
+			physics_fixture_delete(bullet_fixture)
+			}
+			
 		bullets[i].phy_bullet = true
 
 		bullets[i].phy_rotation = phy_rotation + random(2 * bullet_spread) - bullet_spread

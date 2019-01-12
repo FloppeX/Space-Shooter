@@ -4,12 +4,13 @@ color = c_aqua
 
 var i = irandom(2)
 switch (i){
-	case 0: part_type_sprite(global.lightning_particle,spr_lightning_1,false,false,false); break;
-	case 1: part_type_sprite(global.lightning_particle,spr_lightning_2,false,false,false); break;
-	case 2: part_type_sprite(global.lightning_particle,spr_lightning_3,false,false,false); break;
+	case 0: part_type_sprite(global.lightning_particle,spr_lightning_small_1,false,false,false); break;
+	case 1: part_type_sprite(global.lightning_particle,spr_lightning_small_2,false,false,false); break;
+	case 2: part_type_sprite(global.lightning_particle,spr_lightning_small_3,false,false,false); break;
 	}
 part_type_color2(global.lightning_particle,color,c_black);
 part_type_orientation(global.lightning_particle,0,360,0,0,0);
+part_type_scale(global.lightning_particle,0.8*bullet_scale,1.2*bullet_scale)
 part_particles_create(global.part_system_above,x,y,global.lightning_particle, 1);
 
 if hit_enemy{

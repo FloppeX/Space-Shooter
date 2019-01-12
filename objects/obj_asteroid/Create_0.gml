@@ -21,4 +21,4 @@ death_effect_size = 2;
 secondary_color = make_colour_rgb(94,228,174)
 
 pickup_object_type = noone
-pickup_object_number = 0
+pickup_objects = 0

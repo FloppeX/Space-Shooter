@@ -19,7 +19,7 @@ death_effect_size = 0;
 var i = irandom(4)
 
 if i == 0{
-	pickup_object_number = 1//irandom(1)+1
+	pickup_objects = 1//irandom(1)+1
 	var h = irandom(2)
 	switch(h){
 	case 0:

@@ -189,6 +189,8 @@ if obj_health <= 0{
 
 #endregion
 
+#region updating position and modules
+
 // Find mirror positions
 
 scr_find_mirror_positions();
@@ -269,3 +271,42 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 		modules[selected_active_module,0].activated = true
 	else modules[selected_active_module,0].activated = false	
 	}
+
+#endregion
+
+//#region Pickups
+
+// Credits
+var pickup_type = obj_pickup_credit
+
+if instance_number(pickup_type) > 0
+	for(var i = 0; i < instance_number(pickup_type); i+=1;)
+		with (instance_find(pickup_type,i)){
+			var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+			var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+			if temp_dist <= other.pickup_seek_range
+				physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
+		}
+		
+var pickup_type = obj_pickup_health
+if obj_health < max_health
+	if instance_number(pickup_type) > 0
+		for(var i = 0; i < instance_number(pickup_type); i+=1;)
+			with (instance_find(pickup_type,i)){
+				var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+				var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+				if temp_dist <= other.pickup_seek_range
+					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
+			}
+		
+var pickup_type = obj_pickup_particles
+if particles < max_particles
+	if instance_number(pickup_type) > 0
+		for(var i = 0; i < instance_number(pickup_type); i+=1;)
+			with (instance_find(pickup_type,i)){
+				var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+				var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+				if temp_dist <= other.pickup_seek_range
+					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
+			}
+			

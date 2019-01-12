@@ -12,12 +12,12 @@ mirror_y = 0
 invisible = false
 
 max_speed = 15//12
-thrust = 60//240
+thrust = 240//240
 
 range = 3600;
 
 rotation_speed = 60;
-drift_resistance = 9//25;
+drift_resistance = 16//25;
 
 hit_enemy = false;
 damage = 25;

@@ -181,17 +181,7 @@ part_type_speed(global.bullet_glow_particle,0,0,0,0);
 part_type_direction(global.bullet_glow_particle,0,0,0,1);            
 part_type_orientation(global.bullet_glow_particle,0,0,0,0,1);      
 part_type_blend(global.bullet_glow_particle,true);                      
-part_type_life(global.bullet_glow_particle,0,0);
-
-global.laser_particle  = part_type_create();
-part_type_sprite(global.laser_particle,spr_laser_glow,false,false,false);            
-part_type_size(global.laser_particle  ,1,1,0,0);                                  
-part_type_alpha3(global.laser_particle ,0.1,0.2,0);
-part_type_speed(global.laser_particle ,0,0,0,0);         
-part_type_direction(global.laser_particle ,0,0,0,1);            
-part_type_orientation(global.laser_particle ,0,0,0,0,1);      
-part_type_blend(global.laser_particle ,true);                      
-part_type_life(global.laser_particle ,4,8);     
+part_type_life(global.bullet_glow_particle,0,0);   
 
 global.lightning_particle  = part_type_create();
 part_type_sprite(global.lightning_particle,spr_lightning_2,false,false,false);            
@@ -215,7 +205,6 @@ part_type_orientation(global.lightning_blob ,0,0,0,0,1);
 part_type_blend(global.lightning_blob ,true);                      
 part_type_life(global.lightning_blob ,1,3);     
 
-
 global.teleport_out_particle  = part_type_create();
 part_type_sprite(global.teleport_out_particle ,spr_player_ship,false,false,false);            
 part_type_size(global.teleport_out_particle   ,0.8,1.2,0,0.01);
@@ -225,4 +214,16 @@ part_type_speed(global.teleport_out_particle ,0,0,0,0);
 part_type_direction(global.teleport_out_particle ,0,0,0,1);            
 part_type_orientation(global.teleport_out_particle ,0,0,0,0,1);      
 part_type_blend(global.teleport_out_particle ,true);                      
-part_type_life(global.teleport_out_particle ,5,40);     
+part_type_life(global.teleport_out_particle ,5,40);
+
+global.thruster_spray_particle = part_type_create();
+part_type_sprite(global.thruster_spray_particle,spr_thruster_spray,false,false,false);            //This defines the particles shape
+part_type_size(global.thruster_spray_particle,0.5,0.8,-0.15,1);                    //This is for the size
+part_type_scale(global.thruster_spray_particle,1,1);                       //This is for scaling
+part_type_color1(global.thruster_spray_particle,c_white);
+part_type_alpha2(global.thruster_spray_particle,1,0);
+part_type_speed(global.thruster_spray_particle,0.2,0.4,-0.10,1);            //The particles speed
+part_type_direction(global.thruster_spray_particle,0,0,0,1);            //The direction
+part_type_orientation(global.thruster_spray_particle,0,0,0,0,1);           //This changes the rotation of the particle
+part_type_blend(global.thruster_spray_particle,false);                         //This is the blend mode, either additive or normal
+part_type_life(global.thruster_spray_particle,3,5); 

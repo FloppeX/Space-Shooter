@@ -1,6 +1,6 @@
 event_inherited();
 
-description_lines[0] = "Shield"
+module_name = "Shield"
 
 mechanism_retracted = true;
 mechanism_extended = false;

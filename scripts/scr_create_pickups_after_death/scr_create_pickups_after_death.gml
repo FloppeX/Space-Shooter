@@ -1,8 +1,8 @@
 // Create credits after an enemy dies
 
-var temp_angle_offset = irandom(360)
+var temp_angle_offset = 360/pickup_objects
 for(var i = 0; i < pickup_objects; i+=1;){
-	tempdir = i * 360/pickup_objects + temp_angle_offset
+	tempdir = random(360) //+ i * temp_angle_offset
 	tempdist = random(30) + 30
 	var h = irandom(5)
 		if h <= 3

@@ -3,6 +3,7 @@ if instance_exists(target){
 	x = target.phy_position_x
 	y = target.phy_position_y
 	target.disabled_timer = 10
+	target.add_thrust = 0
 	
 	// Particle effect
 	effect_timer -= 1
@@ -15,7 +16,7 @@ if instance_exists(target){
 			}
 		part_type_color2(global.lightning_particle,color,c_black);
 		part_type_orientation(global.lightning_particle,0,360,0,0,0);
-		part_particles_create(global.part_system_above,x,y,global.lightning_particle, 1);
+		part_particles_create(global.part_system_above,x,y,global.lightning_particle, 8);
 		effect_timer = effect_delay
 		}
 	}

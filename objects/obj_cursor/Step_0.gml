@@ -14,6 +14,8 @@ gamepad_set_axis_deadzone(0, 0.1);
 
 if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face1){
 	selected_module_holder = instance_place(x,y,obj_module_holder)
+	
+	
 	if selected_module_holder != noone {
 		if obj_player.credits >= selected_module_holder.module_cost{
 				// Delete the modules joint
@@ -49,6 +51,7 @@ if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face
 					// Deduct the cost
 					obj_player.credits -= selected_module_holder.module_cost
 					audio_play_sound_on(obj_shop.shop_audio_emitter,snd_purchase,0,1)
+					//active_module.owner = obj_player
 					}
 				}
 		else 

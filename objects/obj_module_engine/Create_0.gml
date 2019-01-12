@@ -1,6 +1,6 @@
 event_inherited();
 
-description_lines[0] = "Engine"
+module_name = "Engine"
 
 thrust = 70//400;
 add_thrust = 0;

@@ -1,15 +1,15 @@
 event_inherited();
 
-description_lines[0] = "Cannon"
+module_name = "Cannon"
 
 cost = 10
 
-bullet_damage_base = 25
+bullet_damage_base = 16
 bullet_spread_base = 2
 bullet_number_base = 1
-bullet_interval_base = 60
-bullet_range_base = 640
-energy_cost_base = 25
+bullet_interval_base = 64
+bullet_range_base = 480
+energy_cost_base = 24
 particle_cost_base = 5
 
 bullet_color = c_lime

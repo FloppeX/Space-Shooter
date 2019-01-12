@@ -31,7 +31,10 @@ energy_increase_bonus = 0
 
 ////
 
-number_of_items = 4
+number_of_guns = 3
+number_of_utility = 2
+number_of_crew = 1
+number_of_items = number_of_guns + number_of_utility + number_of_crew
 number_of_items_left = 3
 number_of_items_to_select = 4
 
@@ -51,7 +54,14 @@ for(var i = 0; i < number_of_items; i+=1;){
 	module_holders[i].x = phy_position_x + 200 + 0 * x_step_offset;
 	module_holders[i].y = phy_position_y - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
 
-	temp_module = scr_create_random_module();
+	if i < number_of_guns
+		temp_module = scr_create_random_gun();
+	else {
+		if i < number_of_guns + number_of_utility
+		temp_module = scr_create_random_item();
+		else 
+			temp_module = scr_create_random_crew();
+		}
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
 

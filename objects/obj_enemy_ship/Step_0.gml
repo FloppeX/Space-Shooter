@@ -136,7 +136,7 @@ for(var i = 0; i < array_height_2d(modules); i+=1;){
 		temp_module = modules[i,0]
 		if object_is_ancestor(temp_module.object_index, obj_module_gun)
 			if temp_module.ready_to_shoot == true{
-				target = scr_rocket_find_target_in_arc(target_object,-temp_module.phy_rotation,30,temp_module.bullet_range * 1.2)
+				target = scr_rocket_find_target_in_arc(target_object,-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
 				if target != noone and !controls_disabled
 					temp_module.activation_timer = 30
 				}

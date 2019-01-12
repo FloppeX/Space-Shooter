@@ -1,4 +1,4 @@
 event_inherited();
 
-description_lines[0] = "Gravity shield"
+module_name = "Gravity shield"
 
