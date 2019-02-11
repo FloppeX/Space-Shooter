@@ -2,6 +2,13 @@
 
 credits = 0;
 
+// Variables for keeping track of stats
+
+enemies_killed = 0
+bullets_fired = 0
+credits_gained = 0
+credits_old = 0
+
 // Gamepad controls
 gamepad_button[0] = false
 gamepad_button[1] = false
@@ -42,6 +49,10 @@ left_stick_value = 0
 
 lateral_drift_direction = 0
 drift_resistance_force= 0
+
+// collisions!
+
+collision_target = noone
 
 // Modifiers
 
@@ -133,7 +144,7 @@ close_up_view = false
 
 // Map
 
-map_scale = 2
+map_scale = 3
 
 // Modifiers
 
@@ -151,6 +162,7 @@ var module_number = 0
 
 
 module_number = 1
+/*
 var h = irandom(7)
 	switch (h){
 		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
@@ -163,13 +175,17 @@ var h = irandom(7)
 		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
 		}
 with(temp_module){
-	//scr_add_modifier(scr_module_modifier_rof_multiplier,-0.5);
+	//scr_add_modifier_new(scr_module_modifier_damage_multiplier,1.3,noone,noone,noone);
 	}
-/* module */			modules[module_number,0] = temp_module
+*/
+/* module */			modules[module_number,0] = scr_create_random_gun()
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 45
 /* placement dist */	modules[module_number,3] = 34
-	
+with(modules[module_number,0])
+	offset_angle = 0
+//with(modules[module_number,0])
+//	scr_add_modifier_new(scr_module_modifier_aim_towards_enemy,45,-4,-4,-4)
 	
 module_number = 2
 /* module */			modules[module_number,0] = noone
@@ -178,7 +194,7 @@ module_number = 2
 /* placement dist */	modules[module_number,3] = 24
 
 module_number = 3
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_rotational_thrusters);
+/* module */			modules[module_number,0] = noone //instance_create_depth(x,y,-10,obj_module_rotational_thrusters);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -45
 /* placement dist */	modules[module_number,3] = 34
@@ -259,60 +275,60 @@ for(var i = 0; i < array_height_2d(modules) and selected_active_module == noone;
 	
 // Add ship modifiers
 
-//scr_add_modifier_new(scr_ship_modifier_ratling_gunner,0,"Ratling gunner","Rate of fire +++",spr_crew_ratling_1);
+//scr_add_modifier_new(scr_ship_modifier_brawler,600,"Brawler","Throws punches",spr_crew_brawler);
 
 // Set spatial relationship between module holders
-/*
-module_holders[0].module_holder_above = noone
-module_holders[0].module_holder_below = module_holders[2]
-module_holders[0].module_holder_left = noone
-module_holders[0].module_holder_right = noone
 
-module_holders[1].module_holder_above = noone
-module_holders[1].module_holder_below = module_holders[4]
-module_holders[1].module_holder_left = noone
-module_holders[1].module_holder_right = module_holders[2]
+modules[0,1].module_holder_above = noone
+modules[0,1].module_holder_below = modules[2,1]
+modules[0,1].module_holder_left = noone
+modules[0,1].module_holder_right = noone
 
-module_holders[2].module_holder_above = module_holders[0]
-module_holders[2].module_holder_below = module_holders[5]
-module_holders[2].module_holder_left = module_holders[1]
-module_holders[2].module_holder_right = module_holders[3]
+modules[1,1].module_holder_above = noone
+modules[1,1].module_holder_below = modules[4,1]
+modules[1,1].module_holder_left = noone
+modules[1,1].module_holder_right = modules[2,1]
 
-module_holders[3].module_holder_above = noone
-module_holders[3].module_holder_below = module_holders[6]
-module_holders[3].module_holder_left = module_holders[2]
-module_holders[3].module_holder_right = noone
+modules[2,1].module_holder_above = modules[0,1]
+modules[2,1].module_holder_below = modules[5,1]
+modules[2,1].module_holder_left = modules[1,1]
+modules[2,1].module_holder_right = modules[3,1]
 
-module_holders[4].module_holder_above = module_holders[1]
-module_holders[4].module_holder_below = module_holders[7]
-module_holders[4].module_holder_left = noone
-module_holders[4].module_holder_right = module_holders[5]
+modules[3,1].module_holder_above = noone
+modules[3,1].module_holder_below = modules[6,1]
+modules[3,1].module_holder_left = modules[2,1]
+modules[3,1].module_holder_right = noone
 
-module_holders[5].module_holder_above = module_holders[2]
-module_holders[5].module_holder_below = module_holders[8]
-module_holders[5].module_holder_left = module_holders[4]
-module_holders[5].module_holder_right = module_holders[6]
+modules[4,1].module_holder_above = modules[1,1]
+modules[4,1].module_holder_below = modules[7,1]
+modules[4,1].module_holder_left = noone
+modules[4,1].module_holder_right = modules[5,1]
 
-module_holders[6].module_holder_above = module_holders[3]
-module_holders[6].module_holder_below = module_holders[9]
-module_holders[6].module_holder_left = module_holders[5]
-module_holders[6].module_holder_right = noone
+modules[5,1].module_holder_above = modules[2,1]
+modules[5,1].module_holder_below = modules[8,1]
+modules[5,1].module_holder_left = modules[4,1]
+modules[5,1].module_holder_right = modules[6,1]
 
-module_holders[7].module_holder_above = module_holders[4]
-module_holders[7].module_holder_below = noone
-module_holders[7].module_holder_left = noone
-module_holders[7].module_holder_right = module_holders[8]
+modules[6,1].module_holder_above = modules[3,1]
+modules[6,1].module_holder_below = modules[8,1]
+modules[6,1].module_holder_left = modules[5,1]
+modules[6,1].module_holder_right = noone
 
-module_holders[8].module_holder_above = module_holders[5]
-module_holders[8].module_holder_below = noone
-module_holders[8].module_holder_left = module_holders[7]
-module_holders[8].module_holder_right = module_holders[9]
+modules[7,1].module_holder_above = modules[4,1]
+modules[7,1].module_holder_below = noone
+modules[7,1].module_holder_left = noone
+modules[7,1].module_holder_right = modules[8,1]
 
-module_holders[9].module_holder_above = module_holders[6]
-module_holders[9].module_holder_below = noone
-module_holders[9].module_holder_left = module_holders[8]
-module_holders[9].module_holder_right = noone
-	*/
+modules[8,1].module_holder_above = modules[5,1]
+modules[8,1].module_holder_below = noone
+modules[8,1].module_holder_left = modules[7,1]
+modules[8,1].module_holder_right = modules[8,1]
+
+modules[9,1].module_holder_above = modules[6,1]
+modules[9,1].module_holder_below = noone
+modules[9,1].module_holder_left = modules[8,1]
+modules[9,1].module_holder_right = noone
+	
 // Apply some random modifiers
 /*
 for(var i = 0; i < array_length_1d(ship_modules); i+=1;)

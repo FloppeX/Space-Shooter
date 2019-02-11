@@ -13,6 +13,15 @@ mirror_y = 0
 
 //
 
+// Placement
+
+placement_req_above = 1 // any placement allowed
+placement_req_right = 1
+placement_req_below = 1
+placement_req_left = 1
+
+//
+
 joint = noone
 
 //

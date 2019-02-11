@@ -2,8 +2,8 @@ event_inherited();
 
 module_name = "Zapper"
 
-bullet_range_base = 320
-bullet_speed_base = 14;
+bullet_range_base = 600
+bullet_speed_base = 10;
 bullet_speed = bullet_speed_base
 bullet_interval_base = 60;
 bullet_interval = bullet_interval_base;

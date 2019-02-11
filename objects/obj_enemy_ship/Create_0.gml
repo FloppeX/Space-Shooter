@@ -1,7 +1,12 @@
 // Credits
 
 //credits = irandom(5)+1
-pickup_objects = 3+irandom(global.difficulty_level)
+pickup_objects = 3//+irandom(global.difficulty_level)
+
+
+// Stats variables, for keeping track of stuff
+
+the_one_that_killed_me = noone
 
 // Ship properties
 
@@ -32,7 +37,7 @@ target_speed = 0
 max_speed = 5
 thrust = 0
 max_thrust = 360
-add_thrust = false
+add_thrust = 0
 
 // Changeable ship variables
 
@@ -68,6 +73,7 @@ drift_resistance = 14//80;
 damage = 4;
 
 ai_mode = 1
+ai_disabled_timer = 0
 shoot = false
 direction_randomizer = 0
 abort_attack = false

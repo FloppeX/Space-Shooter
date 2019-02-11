@@ -1,6 +1,6 @@
 radius = 90
-damage = 8
-force = 30//10//100
+damage = 15
+force = 12//10//100
 destruction_timer = 8
 radius_increase_factor = 1/destruction_timer
 temp_radius = 0
@@ -11,23 +11,27 @@ mirror_y = 0;
 temp_distance = 0;
 temp_angle = 0;
 
+collision_coords[2] = 0
+x_force = 0
+y_force = 0
+
 
 //
 
-temp_distance = irandom(temp_distance)
-temp_angle = random(360)
-part_particles_create(global.part_system_above,x+lengthdir_x(temp_distance,temp_angle), y+lengthdir_y(temp_distance,temp_angle), global.flame_particle, 12);
-part_particles_create(global.part_system_above,x+lengthdir_x(temp_distance,temp_angle), mirror_y+lengthdir_y(temp_distance,temp_angle), global.flame_particle, 12);
-part_particles_create(global.part_system_above,mirror_x+lengthdir_x(temp_distance,temp_angle), mirror_y+lengthdir_y(temp_distance,temp_angle), global.flame_particle, 12);
-part_particles_create(global.part_system_above,mirror_x+lengthdir_x(temp_distance,temp_angle), mirror_y+lengthdir_y(temp_distance,temp_angle), global.flame_particle, 12);
+scr_find_mirror_positions();
+scr_explosion_flame_particles(12)
 
-
-smoke_emitter = part_emitter_create(global.part_system_below);
-part_emitter_region(global.part_system_below,smoke_emitter,x-40,x+40,y-40,y+40,ps_shape_ellipse,1);
-part_emitter_stream(global.part_system_below,smoke_emitter,global.smoke_particle,0);
-
-
-
+// TEST NEW COLLISION 
+/*
+explosion_fixture = physics_fixture_create();
+physics_fixture_set_circle_shape(explosion_fixture,radius)
+physics_fixture_set_sensor(explosion_fixture,true)
+physics_fixture_set_density(explosion_fixture,0)
+physics_fixture_set_restitution(explosion_fixture,0)
+physics_fixture_set_linear_damping(explosion_fixture,0)
+physics_fixture_bind(explosion_fixture,id)
+physics_fixture_delete(explosion_fixture)
+*/
 // Sound
 var i = irandom(9)
 switch (i){
@@ -43,4 +47,4 @@ switch (i){
 	case 9: explosion_sound = snd_explosion_large_10; break;
 	}
 	
-audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
+audio_play_sound_at_wrap(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)

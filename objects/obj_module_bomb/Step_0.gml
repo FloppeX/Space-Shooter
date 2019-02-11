@@ -3,7 +3,7 @@ event_inherited()
 if scr_timer(20)
 	closest_ship = scr_rocket_find_target_in_arc(obj_player,-phy_rotation,360,seek_range)
 	
-if scr_exists(closest_ship){
+if scr_exists(closest_ship) and owner.phy_active == true{
 	obj_health = 0
 	}
 	

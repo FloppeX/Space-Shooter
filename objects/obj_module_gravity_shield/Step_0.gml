@@ -2,31 +2,41 @@ event_inherited();
 
 //
 
-// Shield properties
+// Animation
 
-/*
-if global.gamepad_button_b 
-	activate_shield = true
+if image_index < 1
+	casing_retracted = true;
 else 
-	activate_shield = false
-*/
-/*
-if activate_shield
-	if shield_active == false
-		shield_active = true;
-else {
-	if shield_active == true
-		shield_active = false;
-		
-	}
-*/
+	casing_retracted = false;
+	
+if image_index > image_number -2
+	casing_extended = true;
+else
+	casing_extended = false;
+
+if activated and !casing_extended
+	image_speed = 1;
+
+if activated and casing_extended
+	image_speed = 0;
+	
+if !activated and !casing_retracted
+	image_speed = -1;
+	
+if !activated and casing_retracted
+	image_speed = 0;	
+ 
+if casing_extended
+	ready_to_go = true
+else ready_to_go = false
+
+//
 if activated and owner.energy < energy_cost
 	activated = false
-if activated 
+if activated and ready_to_go{
 	owner.energy -= energy_cost
-	
-if activated{
 	scr_gravity_push(obj_parent_physical,gravity_radius,gravity_force)
+	scr_gravity_push(obj_projectile,gravity_radius,gravity_force)
 	/*
 	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
 	scr_gravity_push(obj_enemy_ship,gravity_radius,gravity_force)
@@ -34,7 +44,7 @@ if activated{
 	*/
 	}
 
-if activated
+if activated and ready_to_go
 		shield_current_size = shield_current_size + (shield_max_size - shield_current_size)/size_change_coefficient	
 else 
 		shield_current_size = shield_current_size - shield_current_size/size_change_coefficient	

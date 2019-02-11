@@ -15,7 +15,7 @@ if i == 3
 child_object = noone;
 death_effect_size = 0;
 
-
+/*
 var i = irandom(4)
 
 if i == 0{

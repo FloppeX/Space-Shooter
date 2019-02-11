@@ -7,7 +7,7 @@ for(var i = 0; i < array_height_2d(modules); i+=1;)
 				draw_sprite_ext(modules[i,0],-1,temp_x,temp_y,draw_scale,draw_scale,temp_rot,c_white,alpha)
 				}
 /*				
-draw_set_font(font_small_text)
+draw_set_font(global.font_small_text)
 draw_set_color(c_white)
 draw_text(phy_position_x,phy_position_y+90,"phy_rotation: " + string(phy_rotation))
 draw_text(phy_position_x,phy_position_y+120,"phy_angular_velocity: " + string(phy_angular_velocity))

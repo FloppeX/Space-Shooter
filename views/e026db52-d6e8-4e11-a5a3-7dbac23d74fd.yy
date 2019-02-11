@@ -12,7 +12,12 @@
         "3beff857-8413-4b83-a052-3ff833287342",
         "705cbb76-7fb5-480e-82a0-8b57efd13929",
         "de42ce75-0646-49c2-8361-640b355f518e",
-        "1b55cc76-f403-430b-9912-0f9abd44e904"
+        "1b55cc76-f403-430b-9912-0f9abd44e904",
+        "bb924cb2-fb40-40d7-b599-aa1249bc93d7",
+        "b5932f26-4696-4a50-b124-2f52ef97d313",
+        "118b37ee-701e-49c4-920c-7630dc6b6e32",
+        "39df0637-5585-4ef5-8669-70a718129a32",
+        "72ff7b33-79ef-44e5-b6d3-8f2f69cc57c6"
     ],
     "filterType": "GMScript",
     "folderName": "Ship modifiers (crew)",

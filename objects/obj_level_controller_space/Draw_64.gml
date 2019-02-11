@@ -1,12 +1,19 @@
-draw_set_font(font_big_text_gameplay)
+draw_set_font(global.font_bigger_text)
 draw_set_valign(fa_middle)
 draw_set_halign(fa_middle)
 draw_set_color(c_white)
 temp_width = 0.5 * display_get_gui_width()
-temp_timer = round(enemy_wave_timer/60)
-if enemy_wave_timer >= 0
-	draw_text_ext_transformed(temp_width,60,temp_timer,0,800,1,1,0)
+temp_timer = max(0,round(stage_timer/60)) // At least 0...
+
+if enemy_wave_timer <= 240 and stage_timer > 0
+	draw_text_ext_transformed(temp_width,140,"ENEMY WAVE INCOMING",0,3200,1,1,0)
+
+
+if stage_timer >= 0{
+	draw_set_color(c_white)
+	draw_text_ext_transformed(temp_width,60,"WORMHOLE READY IN " + string(temp_timer) + " SECONDS",0,3200,1,1,0)
+	}
 else {
 	draw_set_color(c_red)
-	draw_text_ext_transformed(temp_width,60,"GET IN THE WORMHOLE!",0,800,1,1,0)
+	draw_text_ext_transformed(temp_width,140,"GET TO THE WORMHOLE",0,3200,1,1,0)
 	}

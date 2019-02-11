@@ -1,6 +1,6 @@
 // TEST
 if global.view_mode == 2{
-	draw_set_font(font_small_text)
+	draw_set_font(global.font_menu)
 	draw_set_color(c_white)
 	draw_text(50,90,"zoom: " + string(global.zoom))
 	draw_text(50,120,"difficulty: " + string(global.difficulty_level))
@@ -9,10 +9,9 @@ if global.view_mode == 2{
 	draw_text(50,210,"max_health: " + string(max_health))
 	draw_text(50,240,"max_energy: " + string(max_energy))
 	draw_text(50,270,"energy_increase: " + string(energy_increase))
-	draw_text(50,300,"controls_disabled timer: " + string(disabled_timer))
-	draw_text(50,330,"phy_angular_velocity: " + string(phy_angular_velocity))
-	draw_text(50,360,"has modifier test: " + string(scr_check_has_modifier(id,scr_ship_modifier_ratling_gunner)))
-
+	draw_text(50,300,"enemies killed: " + string(enemies_killed))
+	draw_text(50,330,"bullets fired: " + string(bullets_fired))
+	draw_text(50,360,"credits gained: " + string(credits_gained))
 }
 
 
@@ -21,7 +20,7 @@ if global.view_mode == 2{
 
 map_width = 100 * map_scale;
 map_height = 100 * map_scale;
-map_edge_right = /*display_get_width()*/ display_get_width() - 25 * map_scale
+map_edge_right = /*display_get_width()*/ display_get_gui_width() - 25 * map_scale
 map_edge_left = map_edge_right - map_width
 map_edge_top = 25 * map_scale
 map_center_x = map_edge_left+ 0.5*map_width
@@ -35,9 +34,9 @@ player_y = phy_position_y-global.wrap_border_top
 scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid,c_white);
 scr_draw_object_type_on_map(obj_rocket,spr_map_marker_rocket,c_white);
 scr_draw_object_type_on_map(obj_enemy_ship,spr_map_marker_enemy_ship,c_white);
-wormhole = instance_find(obj_wormhole,0)
+wormhole = instance_find(obj_wormhole_level_end,0)
 if wormhole != noone
-	scr_draw_object_type_on_map(obj_wormhole,spr_map_wormhole,wormhole.color);
+	scr_draw_object_type_on_map(obj_wormhole_level_end,spr_map_wormhole,wormhole.color);
 draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,map_scale,map_scale,-phy_rotation,c_white,1)
 
 // Health bar + energy_bar + particle bar
@@ -81,7 +80,7 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 	}
 	
 // Crew
-draw_set_font(font_big_text)
+draw_set_font(global.font_big_text)
 draw_set_color(c_white)
 draw_set_halign(fa_left)
 for(var i = 0; i < array_height_2d(modifiers); i+=1;)

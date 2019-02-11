@@ -8,7 +8,7 @@ bullet_type_base = obj_bullet_player;
 bullet_damage_base = 8;
 bullet_range_base = 560
 bullet_speed_base = 9;
-bullet_speed_randomness_base = 0;
+bullet_speed_randomness_base = 0.25;
 bullet_interval_base = 16;
 recoil_force_base = 10
 bullet_spread_base = 2	// the total spread angle, adds randomness to bullet direction
@@ -28,6 +28,8 @@ bullet_spread = bullet_spread_base
 bullet_number = bullet_number_base
 energy_cost = energy_cost_base
 particle_cost = particle_cost_base
+
+bullet_range_randomness = 20
 
 recoil_force = 15
 

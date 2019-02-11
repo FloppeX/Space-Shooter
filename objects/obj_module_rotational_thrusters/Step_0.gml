@@ -1,11 +1,13 @@
 event_inherited();
 
 var spray_thrust = 4
-var temp_dir = point_direction(phy_position_x,phy_position_y,owner.phy_position_x,owner.phy_position_y)//point_direction(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
+var temp_dir = angle_difference(-owner.phy_rotation,point_direction(owner.phy_position_x,owner.phy_position_y,phy_position_x,phy_position_y))//point_direction(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
+temp_dir = round( temp_dir / 91 ) * 90 // round to nearest multiple of 90
 var spray_direction = owner.lateral_drift_direction * sign(owner.drift_resistance_force)
+distance_to_com = point_distance(owner.phy_position_x,owner.phy_position_y,phy_position_x,phy_position_y)
 
 if abs(owner.rotation_value) > 0.1
-	target_angle = temp_dir + 90 * sign(owner.rotation_value)//-offset_angle //-owner.phy_rotation +offset_angle + temp_dir
+	target_angle = -(owner.phy_rotation + temp_dir + 90 * sign(owner.rotation_value))//-offset_angle //-owner.phy_rotation +offset_angle + temp_dir
 else target_angle = -owner.phy_rotation
 
 if abs(owner.rotation_value) > 0.1{

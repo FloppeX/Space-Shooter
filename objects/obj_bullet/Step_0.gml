@@ -38,7 +38,7 @@ if hit_enemy == true{
 	instance_destroy();
 	exit;
 	}
-/*
+
 // Wrap movement
 
 scr_find_mirror_positions();

@@ -1,18 +1,18 @@
 {
-    "id": "8ebe5b4e-d78e-4909-a7f0-e2eca9814d5c",
+    "id": "11e4c5a2-24d6-44df-b523-6ffa5372b1e1",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_enemy_modular_2",
     "eventList": [
         {
-            "id": "323459a5-60e5-4b94-9c9b-f3249875e9eb",
+            "id": "aaafa72d-4d55-40a6-abfb-018a640abf83",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "8ebe5b4e-d78e-4909-a7f0-e2eca9814d5c"
+            "m_owner": "11e4c5a2-24d6-44df-b523-6ffa5372b1e1"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -31,44 +31,30 @@
     "physicsShape": 2,
     "physicsShapePoints": [
         {
-            "id": "2ffafc12-9057-4d35-82ac-de9eb6e69a97",
+            "id": "dc605e4c-2476-443d-ad57-3312288fd139",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0.8339691,
-            "y": 1.77950287
+            "y": 29.7795029
         },
         {
-            "id": "86ecc360-8ccf-472b-afac-6d80b130d4c0",
+            "id": "2dee6b30-edd2-452a-8d78-e8f063f78dba",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 26.67044,
-            "y": 2.666031
+            "x": 0.6704407,
+            "y": -2.333969
         },
         {
-            "id": "45c3ac4e-62b5-4612-aff2-9aacf9fa1aca",
+            "id": "e8b0994a-04fd-4840-86f1-e37653d9bd3f",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 52.61801,
-            "y": 27.7607231
-        },
-        {
-            "id": "ba5d28e2-5f8a-4efa-936e-e42e7f275fb0",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 30.2259827,
-            "y": 52.3327026
-        },
-        {
-            "id": "24a00c0e-7ecc-4d51-8a63-ae8782c408e8",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 1.25390244,
-            "y": 54.8859138
+            "x": 32.94876,
+            "y": -1.747345
         }
     ],
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "4ceec91e-41d4-4d63-81ee-4c37f467cd50",
+    "spriteId": "59b87027-1e9f-452e-a2ca-d9512d7e5ae3",
     "visible": true
 }

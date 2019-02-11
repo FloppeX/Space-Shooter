@@ -9,7 +9,7 @@ var max_rotation = argument0
 var starting_dir = -owner.phy_rotation+offset_angle
 var target = scr_rocket_find_target_in_arc(owner.target_object ,starting_dir,2*max_rotation,seek_range)
 if scr_exists(target){
-
+	bullet_speed = (bullet_speed_base + bullet_speed_bonus) * bullet_speed_multiplier
 	var target_dir = scr_wrap_intercept_course(id,target,bullet_speed) // point_direction(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y) //scr_wrap_intercept_course(id,target,bullet_speed)
 	//var target_dir = point_direction(phy_position_x,phy_position_y,scr_wrap_closest_x(target),scr_wrap_closest_y(target))
 	if 	target_dir == -1

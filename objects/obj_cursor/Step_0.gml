@@ -17,7 +17,9 @@ if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face
 	
 	
 	if selected_module_holder != noone {
-		if obj_player.credits >= selected_module_holder.module_cost{
+		
+		
+		if obj_player.credits >= selected_module_holder.module_cost and scr_check_module_placement(active_module,selected_module_holder){
 				// Delete the modules joint
 				if scr_exists(selected_module_holder.module)
 					if selected_module_holder.module.joint != noone{
@@ -65,6 +67,8 @@ if swap_module != noone{
 	swap_module.phy_position_x = x 
 	swap_module.phy_position_y = y
 	swap_module.phy_rotation = -90 -swap_module.offset_angle
+	
+	
 	}
 	
 //

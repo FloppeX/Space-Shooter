@@ -41,10 +41,10 @@ if teleporting{
 	
 	// Create teleport out effect
 	if duration_timer > 0{
-	temp_angle = point_direction(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
-	temp_distance = point_distance(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
-	x_pos_diff = phy_position_x - phy_position_xprevious
-	y_pos_diff = phy_position_y - phy_position_yprevious
+	temp_angle = scr_wrap_direction_to_point(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
+	temp_distance = scr_wrap_distance_to_point(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
+	x_pos_diff = phy_position_x - scr_wrap_closest_x_non_object(phy_position_x,phy_position_xprevious)
+	y_pos_diff = phy_position_y - scr_wrap_closest_x_non_object(phy_position_y,phy_position_yprevious)
 	part_type_orientation(global.teleport_out_particle ,-owner.phy_rotation,-owner.phy_rotation,0,0,1);   
 	for (var p= 0; p <= temp_distance; p += 1){
 		part_particles_create(global.part_system_below, owner.phy_position_x-lengthdir_x(p,temp_angle), owner.phy_position_y-lengthdir_y(p,temp_angle), global.teleport_out_particle, 1);

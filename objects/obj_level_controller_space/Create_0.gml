@@ -4,10 +4,8 @@
 
 // View settings
 
-with(obj_view_object)
-	instance_destroy();
-	
-view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
+global.camera.phy_position_x = 0.5 * room_width
+global.camera.phy_position_y = 0.5 * room_height
 
 global.zoom = 1100
 
@@ -33,14 +31,23 @@ if !instance_exists(obj_player){
 	global.player.draw_scale = 0.01
 	}
 	
+// Camera
+
+global.camera.x = 3000
+global.camera.y = 3000
+global.camera.follow_object = obj_player
+	
 // Wormhole
 
 // Temporarily disabled starting wormholes!!
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
 
 // timers
+stage_timer_start = 6000
+stage_timer = stage_timer_start
 
-enemy_wave_timer = 6000
+number_of_waves = 3
+enemy_wave_timer = 360
 
 death_timer = 120
 
@@ -52,16 +59,18 @@ next_level_timer = 120
 
 // Enemies
 
-number_of_asteroids = 4 + 2 * irandom(global.difficulty_level)
+
+number_of_asteroids = 4 + irandom(2 * global.difficulty_level)
 number_of_explosive_barrels = 3 + irandom(global.difficulty_level)
-number_of_enemies = 3 * global.difficulty_level
+number_of_enemies = 0
 
 	
 // Sound
 
 audio_stop_all()
 level_music = music_funky_gameplay_looping
-audio_play_sound(level_music,1,1)
+if global.music_on 
+	audio_play_sound(level_music,1,1)
 
 
 // Create background sprites

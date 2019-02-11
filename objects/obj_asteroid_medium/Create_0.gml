@@ -11,24 +11,14 @@ if i == 1
 child_object = obj_asteroid_small;
 death_effect_size = 1;
 
-var i = irandom(4)
 
-if i == 0{
-	pickup_objects = irandom(1)+1
-	var h = irandom(2)
-	switch(h){
-	case 0:
-		pickup_object_type = obj_pickup_credit;
-		sprite_index = spr_asteroid_med_credit;
-		break;
-	case 1:
-		pickup_object_type = obj_pickup_health;
-		sprite_index = spr_asteroid_med_health;
-		break;	
-	case 2:
-		pickup_object_type = obj_pickup_particles;
-		sprite_index = spr_asteroid_med_particles;
-		break;
-	}
-}
+var random_number = irandom(99)
+if random_number <= global.asteroid_chance_credit
+	child_object =  obj_asteroid_small_credit
+	else {if random_number <= (global.asteroid_chance_credit + global.asteroid_chance_health)
+		child_object =  obj_asteroid_small_health
+		else {if random_number<= (global.asteroid_chance_credit + global.asteroid_chance_health + global.asteroid_chance_particles)
+			child_object =  obj_asteroid_small_particles
+			}
+		}
 	

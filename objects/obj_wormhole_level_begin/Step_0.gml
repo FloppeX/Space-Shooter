@@ -1,8 +1,16 @@
 event_inherited();
 
 warp_start_timer -= 1;
-
-player_ship = instance_place(phy_position_x,phy_position_y,obj_player)
+if player_ship == noone and !done_warping
+	player_ship = instance_place(phy_position_x,phy_position_y,obj_player)
+/*
+if !scr_exists(player_ship){
+	if scr_exists(fake_player_ship)
+		with(fake_player_ship)
+			instance_destroy()
+	instance_destroy()
+	}*/
+	
 if scr_exists(player_ship){
 	with(player_ship){
 		disabled_timer = 10
@@ -21,7 +29,7 @@ if scr_exists(player_ship){
 		fake_player_ship = instance_create_depth(player_ship.phy_position_x,player_ship.phy_position_y,-10,obj_wormhole_traveller_level_begin_player)
 		fake_player_ship.phy_rotation = player_ship.phy_rotation
 		fake_player_ship.sprite_index = player_ship.sprite_index
-		fake_player_ship.draw_scale = 0.001
+		fake_player_ship.draw_scale = 0
 		for(var i = 0; i < array_height_2d(player_ship.modules); i+=1;)
 			if scr_exists(player_ship.modules[i,0]){
 				fake_player_ship.modules[i,0] = player_ship.modules[i,0].sprite_index
@@ -33,9 +41,11 @@ if scr_exists(player_ship){
 		}
 		
 	// Check the fake ship to see if done warping
-	if scr_exists(fake_player_ship){
+	if scr_exists(fake_player_ship) and warp_start_timer <= 0{
+		fake_player_ship.draw_scale += 0.01
 		fake_player_ship.draw_scale = clamp(fake_player_ship.draw_scale,0,1)
 		var temp_angle_diff = angle_difference(player_ship.phy_rotation,fake_player_ship.phy_rotation)
+		fake_player_ship.ship_rotation_speed = ship_rotation_speed
 		if temp_angle_diff < 30 and fake_player_ship.draw_scale == 1
 			fake_player_ship.ship_rotation_speed = min(400,20 * temp_angle_diff)
 		if fake_player_ship.draw_scale == 1 and abs(temp_angle_diff) < 0.5{
@@ -58,17 +68,19 @@ if done_warping{
 	if scr_exists(fake_player_ship)
 		with(fake_player_ship)
 			instance_destroy();
-	
-	with(player_ship){
-		disabled_timer = 5
-		phy_rotation = -90
-		phy_active = true
-		visible = true
-		for(var i = 0; i < array_height_2d(modules); i+=1;){
-			if scr_exists(modules[i,0]){
-				modules[i,0].phy_active = true
-				modules[i,0].visible = true
+	if scr_exists(player_ship){
+		with(player_ship){
+			disabled_timer = 1
+			phy_rotation = -90
+			phy_active = true
+			visible = true
+			for(var i = 0; i < array_height_2d(modules); i+=1;){
+				if scr_exists(modules[i,0]){
+					modules[i,0].phy_active = true
+					modules[i,0].visible = true
+					}
 				}
-			}
+		}
+		player_ship = noone
 		}
 	}

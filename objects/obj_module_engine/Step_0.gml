@@ -2,7 +2,7 @@ event_inherited();
 
 add_thrust = owner.add_thrust
 
-if scr_exists(owner) and add_thrust > 0{
+if scr_exists(owner) and add_thrust > 0 and visible{
 	if owner.energy > add_thrust * energy_cost{
 		owner.energy -= add_thrust * energy_cost
 		if owner.phy_speed < owner.max_speed

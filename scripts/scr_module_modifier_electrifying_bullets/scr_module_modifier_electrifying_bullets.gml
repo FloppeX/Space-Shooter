@@ -1,7 +1,5 @@
 // Description text
 
-modifier_description = "Electric bullets"
-
 // Modifier actions
 
 chance_for_electric_bullet = 30

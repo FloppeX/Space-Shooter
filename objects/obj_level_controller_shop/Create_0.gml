@@ -1,8 +1,8 @@
 // View settings
-
+/*
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
-
-global.zoom = 1100
+*/
+global.zoom = 1000
 
 // Clear particles
 
@@ -43,7 +43,8 @@ wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,10
 
 audio_stop_all()
 level_music = music_sci_fi_close_2_looping
-audio_play_sound(level_music,1,1)
+if global.music_on 
+	audio_play_sound(level_music,1,1)
 
 // Create background sprites
 

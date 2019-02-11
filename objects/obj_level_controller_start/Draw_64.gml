@@ -1,0 +1,8 @@
+draw_set_font(global.font_title_2)
+draw_set_color(c_lime)
+draw_set_halign(fa_center)
+draw_text(0.5 * display_get_gui_width(),0.15 * display_get_gui_height()+120,"GET TO THE")
+draw_set_font(global.font_title)
+draw_set_color(c_white)
+draw_set_halign(fa_center)
+draw_text(0.5 * display_get_gui_width(),0.15 * display_get_gui_height()+180,"W RMH LE")

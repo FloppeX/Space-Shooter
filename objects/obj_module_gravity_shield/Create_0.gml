@@ -2,8 +2,18 @@ event_inherited();
 
 depth = -12
 
-activation_button = 5
+active = true 
+
+activation_button = 0
 activated = false
+
+// Animation
+
+ready_to_go = false
+casing_retracted = true
+casing_extended = false
+
+//
 
 energy_cost = 1.5
 

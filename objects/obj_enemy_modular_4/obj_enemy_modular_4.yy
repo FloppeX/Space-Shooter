@@ -1,18 +1,18 @@
 {
-    "id": "11e4c5a2-24d6-44df-b523-6ffa5372b1e1",
+    "id": "8bcb697f-bd05-4ffe-9b42-914144c27637",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_enemy_modular_4",
     "eventList": [
         {
-            "id": "aaafa72d-4d55-40a6-abfb-018a640abf83",
+            "id": "d61ca025-0dc8-4eb4-b169-64ad2cbb1970",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "11e4c5a2-24d6-44df-b523-6ffa5372b1e1"
+            "m_owner": "8bcb697f-bd05-4ffe-9b42-914144c27637"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -31,30 +31,30 @@
     "physicsShape": 2,
     "physicsShapePoints": [
         {
-            "id": "dc605e4c-2476-443d-ad57-3312288fd139",
+            "id": "b44421f2-19f3-4a82-b48e-10053ae9f151",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0.8339691,
-            "y": 29.7795029
+            "y": 1.77950287
         },
         {
-            "id": "2dee6b30-edd2-452a-8d78-e8f063f78dba",
+            "id": "4565c15a-c91a-40d4-8ecb-2370dc3a2423",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 0.6704407,
-            "y": -2.333969
+            "x": 31.6180115,
+            "y": 28.7607231
         },
         {
-            "id": "e8b0994a-04fd-4840-86f1-e37653d9bd3f",
+            "id": "f53298ba-595e-4df5-b935-a1cdbc0e900d",
             "modelName": "GMPoint",
             "mvc": "1.0",
-            "x": 32.94876,
-            "y": -1.747345
+            "x": 1.25390244,
+            "y": 54.8859138
         }
     ],
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "59b87027-1e9f-452e-a2ca-d9512d7e5ae3",
+    "spriteId": "4b1b9b19-2974-48e6-8eb0-98bad0b57b5d",
     "visible": true
 }

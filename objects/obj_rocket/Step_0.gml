@@ -6,7 +6,7 @@ if timer <= 0
 	
 //Health
 
-if obj_health = 0{
+if obj_health <= 0{
 	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	damage_number = instance_create_depth(phy_position_x,phy_position_y,-1,obj_damage_number)
 	damage_number.damage = damage;
@@ -23,7 +23,7 @@ if phy_speed < max_speed
 	
 // Targeting & turning
 
-target = scr_rocket_find_target_in_arc(obj_enemy_ship,-phy_rotation,targeting_arc,seek_range)
+target = scr_rocket_find_target_in_arc(target_type,-phy_rotation,targeting_arc,seek_range)
 if target != noone
 	target_dir = scr_wrap_intercept_course(id,target,phy_speed)
 else target_dir = -phy_rotation

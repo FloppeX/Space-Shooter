@@ -70,9 +70,14 @@ number_of_enemies = 0// power(2,global.difficulty_level)
 
 audio_stop_all()
 level_music = music_sci_fi_close_2_looping
-audio_play_sound(level_music,1,1)
+if global.music_on 
+	audio_play_sound(level_music,1,1)
 
 
 // Create background sprites
 
 scr_create_background_layers()
+
+// Update player stats
+
+scr_write_stats_to_file()

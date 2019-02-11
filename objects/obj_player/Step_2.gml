@@ -23,3 +23,7 @@ energy_increase_bonus = 0
 
 drift_resistance_multiplier = 1
 drift_resistance_bonus = 0
+
+// Reset collision object
+
+collision_target = noone

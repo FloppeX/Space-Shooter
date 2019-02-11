@@ -1,10 +1,10 @@
-x_pos = 0.3*display_get_width()
-y_pos = 0.4*display_get_height()
+x_pos = 0.5*display_get_gui_width()
+y_pos = 0.5*display_get_gui_height()
 
 item_distance = 64
 marker_offset_h = 16
 marker_offset_v = 8
-alignment = "left"
+alignment = "center"
 
 color = c_white
 

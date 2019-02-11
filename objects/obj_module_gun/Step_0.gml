@@ -25,7 +25,7 @@ if ready_to_shoot{
 		
 		bullet_scale = 0.8 +(bullets[i].damage/4)
 		
-		object_is_ancestor(bullet_type, obj_bullet){
+		if object_is_ancestor(bullet_type, obj_bullet){
 			bullet_fixture = physics_fixture_create();
 			physics_fixture_set_circle_shape(bullet_fixture,bullet_scale*0.5*bullets[i].sprite_width)
 			//Test!
@@ -48,9 +48,17 @@ if ready_to_shoot{
 		
 		bullets[i].color = bullet_color
 		bullets[i].damage = bullet_damage
-		bullets[i].range = bullet_range
+		bullets[i].push_force = bullet_damage
+		bullets[i].range = bullet_range + random(2 * bullet_range_randomness) - bullet_range_randomness
 
 		bullet_timer = bullet_interval;
+		
+		if scr_exists(obj_player)
+			if !object_is_ancestor(owner,obj_enemy_ship){ // if the owner is the player
+				obj_player.bullets_fired += bullet_number
+				global.total_bullets += bullet_number
+				}
+		
 		}
 	//image_index = 1;
 	image_speed = (image_number+5)/bullet_interval;
@@ -58,8 +66,8 @@ if ready_to_shoot{
 	owner.particles -= particle_cost;
 	
 	// Recoil
-	//with(owner)
-	//	physics_apply_impulse(other.phy_position_x,other.phy_position_y,lengthdir_x(other.recoil_force,-other.phy_rotation+180),lengthdir_y(other.recoil_force,-other.phy_rotation+180))
+	if recoil_force < 0
+		recoil_force = 0
 	physics_apply_impulse(phy_position_x,phy_position_y,lengthdir_x(recoil_force,-phy_rotation+180),lengthdir_y(recoil_force,-phy_rotation+180))
 	
 	

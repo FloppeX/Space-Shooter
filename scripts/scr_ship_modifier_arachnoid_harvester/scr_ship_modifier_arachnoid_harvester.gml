@@ -1,6 +1,6 @@
 // Description text
 value = argument0
-modifier_description = ("Outlaw")
+modifier_description = ("Arachnoid Harvester")
 
 // Modifier script
 

@@ -1,5 +1,5 @@
 // Control view
-
+/*
 with(view_object){
 	phy_position_x = obj_player.phy_com_x
 	phy_position_y = obj_player.phy_com_y

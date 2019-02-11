@@ -3,12 +3,12 @@
 #region Variables
 // Calculate variables that may be changed by modifiers
 
-max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
-rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
-drift_resistance = (drift_resistance_base * drift_resistance_multiplier) + drift_resistance_bonus
-max_health = (max_health_base * max_health_multiplier) + max_health_bonus
-max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
-energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
+max_speed = (max_speed_base + max_speed_bonus) * max_speed_multiplier
+rotation_speed = (rotation_speed_base + rotation_speed_bonus) * rotation_speed_multiplier
+drift_resistance = (drift_resistance_base + drift_resistance_bonus) * drift_resistance_multiplier
+max_health = (max_health_base + max_health_bonus) * max_health_multiplier
+max_energy = (max_energy_base + max_energy_bonus) * max_energy_multiplier
+energy_increase = (energy_increase_base + energy_increase_bonus) * energy_increase_multiplier
 #endregion
 
 #region Disabled?
@@ -49,8 +49,7 @@ if controls_disabled == false{
 		
 	add_thrust = gamepad_button_value(0, gp_shoulderrb)
 
-	if gamepad_button_value(0, gp_shoulderlb)
-		use_active_item = true
+	use_active_item = gamepad_button_value(0, gp_shoulderlb)
 
 	if gamepad_button_check(0,gp_face1)
 		gamepad_button[1] = true
@@ -64,11 +63,9 @@ if controls_disabled == false{
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
 		
-	if gamepad_button_value(0, gp_shoulderlb) > 0
-		gamepad_button[5] = true
-		
 	if gamepad_button_check_pressed(0,gp_shoulderl)
 		select_next_active_item = true
+		
 	}
 
 if keyboard_check(vk_right){
@@ -88,13 +85,6 @@ if keyboard_check_pressed(vk_space){
 	
 if keyboard_check_pressed(vk_control){
 		obj_health += 50
-	}
-	
-if keyboard_check_pressed(vk_up){
-		rotation_speed_base += 5//draw_scale += 0.1
-	}
-if keyboard_check_pressed(vk_down){
-		rotation_speed_base -= 5//draw_scale -= 0.1
 	}
 	
 #endregion
@@ -183,6 +173,9 @@ if obj_health <= 0{
 	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	boom.radius = 300
 	boom.damage = 50
+	
+	scr_write_stats_to_file()
+	
 	instance_destroy();
 	exit;
 	}
@@ -274,7 +267,7 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 
 #endregion
 
-//#region Pickups
+#region Pickups
 
 // Credits
 var pickup_type = obj_pickup_credit
@@ -309,4 +302,10 @@ if particles < max_particles
 				if temp_dist <= other.pickup_seek_range
 					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
 			}
-			
+
+#endregion
+
+if credits > credits_old
+credits_gained += (credits - credits_old)
+global.total_credits += (credits - credits_old)
+credits_old = credits

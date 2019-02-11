@@ -1,7 +1,5 @@
 // Description text
 
-modifier_description = "Destroys enemy bullets"
-
 // Modifier actions
 
 if instance_exists(bullets[0])

@@ -1,6 +1,9 @@
 //
 hit_enemy = true;
 other.obj_health -= damage;
+if other.obj_health <= 0
+	if scr_exists(obj_player)
+		other.the_one_that_killed_me = obj_player
 
 var i = irandom(2)
 switch (i){

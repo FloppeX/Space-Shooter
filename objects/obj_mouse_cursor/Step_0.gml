@@ -1,13 +1,9 @@
 x = mouse_x
 y = mouse_y
 
-bullet_spread  =30
-bullet_speed_randomness = 1
-bullet_speed = 9
-
 if mouse_check_button_pressed(mb_left){
-	boom = instance_create_layer(x,y,layer_get_id("instance_layer"),obj_explosion);
-	boom.radius = 200
+	boom = instance_create_depth(x,y,100,obj_explosion);
+	boom.radius = 90
 }
 
 if mouse_check_button_pressed(mb_right){

@@ -1,5 +1,8 @@
 if obj_health <= 0
 	{
+	
+
+	
 	if child_object != noone{	
 		travel_direction = point_direction(0, 0, phy_speed_x, phy_speed_y)
 		new_asteroid_1 = instance_create_depth(phy_position_x,phy_position_y,0,child_object)
@@ -9,22 +12,20 @@ if obj_health <= 0
 		new_asteroid_2.phy_speed_x = lengthdir_x(phy_speed+1,travel_direction-45)
 		new_asteroid_2.phy_speed_y = lengthdir_y(phy_speed+1,travel_direction-45)
 		}
-	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
-	boom.radius = 60
-	boom.damage = 0
+	
 	
 	// Create credits after an enemy dies
 
-	var temp_angle_offset = 360/pickup_objects
 	for(var i = 0; i < pickup_objects; i+=1;){
-		tempdir = random(360) + i * temp_angle_offset
-		tempdist = random(30) + 30
+		var tempdir = random(360) //+ i * temp_angle_offset
+		var tempdist = random(20) + 20
 		pickup_object = instance_create_depth(phy_position_x,phy_position_y,-10,pickup_object_type);
 		pickup_object.phy_position_x = phy_position_x+lengthdir_x(tempdist,tempdir)
 		pickup_object.phy_position_y = phy_position_y+lengthdir_y(tempdist,tempdir)
 		pickup_object.phy_speed_x = phy_speed_x
 		pickup_object.phy_speed_y = phy_speed_y
 		}
+	scr_explosion_smoke_particles(6)
 	
 	instance_destroy();
 	exit;

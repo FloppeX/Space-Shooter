@@ -14,7 +14,9 @@
         "a56eb526-0ff6-477b-9677-923cce322254",
         "8335bfce-c5b8-49a6-8d84-7372e3493a5e",
         "682fe78d-8ff7-4f59-ac57-0ea63be92fd0",
-        "1ca081ce-f202-4a65-91aa-e2ea80268c56"
+        "1ca081ce-f202-4a65-91aa-e2ea80268c56",
+        "74045dc9-2e8a-4de5-8ea1-0035c5170d37",
+        "7a3125ca-667a-455e-96ea-06eed5ba9c62"
     ],
     "filterType": "GMObject",
     "folderName": "Crew",

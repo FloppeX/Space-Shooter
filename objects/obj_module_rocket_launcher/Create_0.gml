@@ -1,13 +1,13 @@
 event_inherited();
 
-description_lines[0] = "Missile launcher"
+module_name = "Missile launcher"
 
 cost = 10
 
-bullet_type_base = obj_rocket;
+bullet_type_base = obj_rocket_player;
 bullet_damage_base = 15;
 bullet_range_base = 1640
-bullet_speed_base = 3;
+bullet_speed_base = 4;
 bullet_interval_base = 120;
 recoil_force_base = 20
 bullet_spread_base = 0

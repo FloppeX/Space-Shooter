@@ -12,6 +12,11 @@ gamepad_button[5] = false
 
 target_object = obj_enemy_ship
 
+alpha = 1
+
+lateral_drift_direction = 0
+drift_resistance_force = 0
+rotation_value = 0
 
 // Variables that really belong to ships but that this object needs
 max_speed_multiplier = 0 
@@ -19,6 +24,10 @@ max_speed_bonus = 0
 
 rotation_speed_multiplier = 1 
 rotation_speed_bonus = 0
+
+drift_resistance_multiplier = 1
+drift_resistance_bonus = 0
+
 
 max_health_multiplier = 1
 max_health_bonus = 0
@@ -33,10 +42,10 @@ energy_increase_bonus = 0
 
 number_of_guns = 3
 number_of_utility = 2
-number_of_crew = 1
+number_of_crew = 2
 number_of_items = number_of_guns + number_of_utility + number_of_crew
 number_of_items_left = 3
-number_of_items_to_select = 4
+number_of_items_to_select = 99
 
 enter_shop = true
 exit_shop = false
@@ -58,7 +67,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 		temp_module = scr_create_random_gun();
 	else {
 		if i < number_of_guns + number_of_utility
-		temp_module = scr_create_random_item();
+		temp_module = scr_create_random_device();
 		else 
 			temp_module = scr_create_random_crew();
 		}

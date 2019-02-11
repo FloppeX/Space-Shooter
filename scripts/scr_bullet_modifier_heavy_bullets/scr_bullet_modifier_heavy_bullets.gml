@@ -1,1 +1,2 @@
-physics_mass_properties(phy_mass,0,0,10)
+if timer == 0
+	push_force = 2 * push_force

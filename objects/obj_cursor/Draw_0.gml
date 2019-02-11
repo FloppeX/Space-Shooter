@@ -1,25 +1,24 @@
-// TEST!
-module_under_cursor = instance_place(x,y,obj_module)
-if scr_exists(module_under_cursor){
-	if object_get_parent(module_under_cursor) == obj_crew{
-		draw_set_font(font_big_text)
-		draw_set_valign(fa_middle)
-		draw_set_halign(fa_left)
-		draw_set_color(c_white)
-		draw_text_ext_transformed(x-50,y-50,"Crew",0,800,0.3,0.3,0)
-		}
-	else{
-		draw_set_font(font_big_text)
-		draw_set_valign(fa_middle)
-		draw_set_halign(fa_left)
-		draw_set_color(c_white)
-		draw_text_ext_transformed(x-50,y-50,"Not crew",0,800,0.3,0.3,0)
-		}
-	}
 //
 
 draw_self();
-draw_set_font(font_small_text)
+
+// Show where module can be placed
+
+if swap_module != noone{
+	with(obj_player)
+		for(var i = 0; i < array_height_2d(modules); i+=1;){
+			if scr_check_module_placement(other.swap_module,modules[i,1])
+				draw_sprite(spr_module_holder_green,-1,modules[i,1].x,modules[i,1].y)
+			else 
+				draw_sprite(spr_module_holder_red,-1,modules[i,1].x,modules[i,1].y)
+		}
+	}
+
+
+// UI
+
+
+draw_set_font(global.font_small_text)
 draw_set_color(c_white)
 module_under_cursor = instance_place(x,y,obj_module)
 if module_under_cursor != noone
@@ -35,14 +34,18 @@ if module_under_cursor != noone
 		draw_rectangle(x+tmp_offset_x,y+tmp_offset_y,x+tmp_offset_x + tmp_box_width,y+tmp_offset_y+tmp_box_height,0)
 		draw_set_color(c_white)
 		draw_rectangle(x+tmp_offset_x,y+tmp_offset_y,x+tmp_offset_x + tmp_box_width,y+tmp_offset_y+tmp_box_height,1)
-		draw_set_font(font_big_text)
+		draw_set_font(global.font_big_text)
 		draw_set_valign(fa_middle)
 		draw_set_halign(fa_left)
 		draw_set_color(c_white)
 		draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+5,module_under_cursor.module_name,0,800,0.3,0.3,0)
 		for(var i = 0; i < array_height_2d(module_under_cursor.modifiers); i+=1;)
-			if module_under_cursor.modifiers[i,2] != noone
+			if module_under_cursor.modifiers[i,2] != noone{
 				draw_text_ext_transformed(x+tmp_offset_x+5,y+tmp_offset_y+25+20*i,module_under_cursor.modifiers[i,2],0,800,0.3,0.3,0)
+				draw_set_halign(fa_right)
+				draw_text_ext_transformed(x+tmp_offset_x + tmp_box_width -5,y+tmp_offset_y+25+20*i,module_under_cursor.modifiers[i,3],0,800,0.3,0.3,0)
+				draw_set_halign(fa_left)
+				}
 		if object_is_ancestor(module_under_cursor.object_index, obj_module_gun){
 			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+25+20*array_height_2d(module_under_cursor.modifiers),"Damage: " + string(module_under_cursor.bullet_damage),0,800,0.3,0.3,0)
 			draw_text_ext_transformed(x+tmp_offset_x+5,y-20+tmp_offset_y+45+20*array_height_2d(module_under_cursor.modifiers),"Range: " + string(module_under_cursor.bullet_range),0,800,0.3,0.3,0)
@@ -68,7 +71,7 @@ if button_under_cursor != noone
 		draw_rectangle(x+tmp_offset_x,y+tmp_offset_y,x+tmp_offset_x + tmp_box_width,y+tmp_offset_y+tmp_box_height,0)
 		draw_set_color(c_white)
 		draw_rectangle(x+tmp_offset_x,y+tmp_offset_y,x+tmp_offset_x + tmp_box_width,y+tmp_offset_y+tmp_box_height,1)
-		draw_set_font(font_big_text)
+		draw_set_font(global.font_big_text)
 		draw_set_valign(fa_middle)
 		draw_set_halign(fa_left)
 		draw_set_color(c_white)

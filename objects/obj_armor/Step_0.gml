@@ -10,8 +10,6 @@ if obj_health <= 0.25 * max_health
 	sprite_index = spr_armor_damage_3
 
 if obj_health <= 0{
-	with(module_holder)
-		module  = noone
 		
 	var temp_angle_offset = irandom(360)
 	for(var i = 0; i < array_length_1d(debris_parts); i+=1;){

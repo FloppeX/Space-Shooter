@@ -2,6 +2,12 @@ event_inherited();
 
 module_name = "Engine"
 
+cost = 4
+
+placement_req_below = noone
+
+//
+
 thrust = 70//400;
 add_thrust = 0;
 

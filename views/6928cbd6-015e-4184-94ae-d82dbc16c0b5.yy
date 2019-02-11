@@ -13,8 +13,10 @@
         "acc4a5e9-96bb-43ca-8658-79f7fe1074a2",
         "c27c55d5-7c37-4b5b-8594-425925775c6d",
         "0d290cfb-d3dc-4ba9-8f34-53a7dc938363",
-        "d3a7b52f-2a64-4410-bd24-460e0c9285a4",
-        "3f5372d5-af4d-4e01-893c-843f729e5c41"
+        "3f5372d5-af4d-4e01-893c-843f729e5c41",
+        "9767c1e5-b185-467c-bac5-79d2070c2ffd",
+        "821ee077-23d3-4e3d-b195-eb901ecd7122",
+        "4589d560-c9a7-4618-9fea-11d8b13902db"
     ],
     "filterType": "GMSprite",
     "folderName": "Crew sprites",

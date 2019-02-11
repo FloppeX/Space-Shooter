@@ -1,5 +1,6 @@
+
 // Control zoom
-	
+/*	
 var aspect_ratio = display_get_width()/display_get_height(); 
 view_set_wport(view_current,display_get_width())
 view_set_hport(view_current,display_get_height())

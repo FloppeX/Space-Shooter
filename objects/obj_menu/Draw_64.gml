@@ -1,5 +1,5 @@
 draw_set_color(color)
-draw_set_font(font_menu);
+draw_set_font(global.font_menu);
 draw_set_valign(fa_top);
 
 if alignment == "left"{

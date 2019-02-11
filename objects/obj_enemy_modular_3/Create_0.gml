@@ -5,10 +5,9 @@ event_inherited();
 obj_health = 25
 max_health = 25
 max_rotation_speed = 100;
-max_speed_base = 6
+max_speed_base = 5
 
 ///
-
 
 var module_number = 0
 
@@ -19,27 +18,29 @@ var module_number = 0
 
 module_number = 1
 
+/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
+/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
+/* placement angle */	modules[module_number,2] = 0
+/* placement dist */	modules[module_number,3] = 0
+
+module_number = 2
+
 if irandom(2) == 0
 	/* module */			modules[module_number,0] = instance_create_depth(0,0,-10,obj_module_bomb)
 else 
 	/* module */			modules[module_number,0] = scr_create_random_enemy_weapon();
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
-/* placement angle */	modules[module_number,2] = 0
-/* placement dist */	modules[module_number,3] = 0
+/* placement angle */	modules[module_number,2] = 90
+/* placement dist */	modules[module_number,3] = 24
 with(modules[module_number,0]){
-	i = irandom(1)
+	i = irandom(3)
 	switch (i){
-		case 0:	offset_angle = 90; break;
-		case 1: offset_angle = 270; break;
+		case 0:	offset_angle = 0; break;
+		case 1:	offset_angle = 0; break;
+		case 2: offset_angle = 90; break;
+		case 3: offset_angle = 180; break;
 		}
 	}
-	
-module_number = 2
-
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
-/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
-/* placement angle */	modules[module_number,2] = 180
-/* placement dist */	modules[module_number,3] = 24
 
 //
 

@@ -19,8 +19,8 @@ if enter_shop and !instance_exists(obj_wormhole_level_begin){
 			phy_speed_y = 0
 			
 		// Zoom in when docked
-		if y_diff < 100 and phy_speed_y == 0
-			global.zoom = 600
+		if y_diff <= 400 //and phy_speed_y == 0
+			global.zoom = 600+y_diff
 		}
 	}
 		

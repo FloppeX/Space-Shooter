@@ -1,6 +1,5 @@
 // Description text
 value = argument0
-modifier_description = "Magnum bullets!"
 
 // Modifier actions
 
