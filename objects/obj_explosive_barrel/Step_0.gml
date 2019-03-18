@@ -1,9 +1,7 @@
 if obj_health <= 0
 	{
 
-	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
-	boom.radius = 300
-	boom.damage = 50
+	scr_create_explosion_medium(phy_position_x,phy_position_y)
 	instance_destroy();
 	exit;
 	}

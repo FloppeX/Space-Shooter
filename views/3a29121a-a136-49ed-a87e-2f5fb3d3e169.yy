@@ -11,7 +11,11 @@
         "0de06d6c-a093-484d-bb11-c0e85d95a430",
         "e453a62e-0a97-44b9-b1e3-121ac8325c04",
         "436be31e-31fd-41e1-9f55-628b2177b1db",
-        "f423eaf5-ad3f-4bc6-b9d0-bcc7762720c4"
+        "f423eaf5-ad3f-4bc6-b9d0-bcc7762720c4",
+        "0adc9c4a-75e1-422d-ac68-7a577657f746",
+        "7acc720d-4a91-41bf-8538-0c6273bc2c24",
+        "79dd8cef-5225-443c-8c3b-d2e3a79416a8",
+        "70dd3e37-ee3e-495a-bf0e-5918fbc42147"
     ],
     "filterType": "GMScript",
     "folderName": "Bullet modifiers",

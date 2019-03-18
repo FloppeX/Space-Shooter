@@ -19,7 +19,7 @@ var module_number = 0
 
 module_number = 1
 
-if irandom(2) == 0
+if irandom(4) == 0
 	/* module */			modules[module_number,0] = instance_create_depth(0,0,-10,obj_module_bomb)
 else 
 	/* module */			modules[module_number,0] = scr_create_random_enemy_weapon();

@@ -85,6 +85,8 @@ invisible = false
 target = noone;
 starting_target_object = obj_player
 target_object = starting_target_object
+target_objects[0] = obj_player
+target_objects[1] = obj_enemy_ship_team_2
 
 targeting_arc = 360;
 seek_range = 6000;

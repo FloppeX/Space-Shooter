@@ -1,11 +1,8 @@
 
 if global.view_mode == 2{
-
 	draw_set_font(global.font_big_text)
 	draw_set_color(c_white)
 	draw_set_halign(fa_center)
-	draw_text(2000,1000,"TEST")
-
 	draw_set_font(global.font_big_text)
 	draw_set_color(c_white)
 	draw_set_halign(fa_left)
@@ -23,4 +20,5 @@ if global.view_mode == 2{
 	draw_text(860,480,"total_credits: " + string(global.total_credits))
 	//for(var i = 0; i < array_length_1d(text) ; i+=1;)
 	//	draw_text(860,400+i*40,text[i])
+	
 }

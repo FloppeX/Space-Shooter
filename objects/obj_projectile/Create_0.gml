@@ -2,6 +2,7 @@
 
 phy_bullet = true
 
+owner = noone
 obj_rotation = 0;
 travel_direction = 0;
 

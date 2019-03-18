@@ -16,36 +16,26 @@ h = clamp(h,0,8)
 	repeat(global.difficulty_level-1){
 		var p = irandom(99)
 		if p <= 59 and p >= 40
-			with (temp_module){
-				scr_add_random_modifier_common();
-				cost += 1
-				}
+			with (temp_module)
+				scr_add_random_modifier_common()
 		if p <= 39 and p >= 25
-			with (temp_module){
+			with (temp_module)
 				scr_add_random_modifier_uncommon();
-				cost += 2
-				}
 		var p = irandom(99)
 		if p <= 24 and p >= 10
-			with (temp_module){
+			with (temp_module)
 				scr_add_random_modifier_rare();
-				cost += 4
-				}
 		var p = irandom(99)
 		if p <= 9 and p >= 0
-			with (temp_module){
+			with (temp_module)
 				scr_add_random_modifier_exotic();
-				cost += 4
-				}
 				
 	// Chance for negative modifier
 	repeat(4-global.difficulty_level){
 		var p = irandom(99)
 		if p <= 29 and p >= 0
-			with (temp_module){
+			with (temp_module)
 				scr_add_random_modifier_negative();
-				cost -= 2
-				}
 		}
 	}
 

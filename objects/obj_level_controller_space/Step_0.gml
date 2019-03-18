@@ -74,7 +74,7 @@ if number_of_enemies >= 1{
 	new_enemy.visible = false
 	new_enemy.phy_active = false
 	
-	new_enemy_wormhole = instance_create_depth(temp_x,temp_y,7,obj_wormhole_level_begin_enemy);
+	new_enemy_wormhole = instance_create_depth(temp_x,temp_y,15,obj_wormhole_level_begin_enemy);
 	new_enemy_wormhole.warping_ship = new_enemy
 	
 	number_of_enemies -= 1
@@ -117,8 +117,8 @@ if !instance_exists(obj_player){
 if death_timer <= 0 and !instance_exists(obj_death_menu){
 	death_menu = instance_create_depth(0.5*display_get_gui_width(),0.4*display_get_gui_height(),0,obj_death_menu)
 	death_menu.alignment = "center"
-	death_menu.x_pos = 0.3*display_get_width()
-	death_menu.y_pos = 0.5*display_get_height()
+	death_menu.x_pos = 0.5*display_get_width()
+	death_menu.y_pos = 0.4*display_get_height()
 	}
 	
 // If the timer is 0, spawn lots of enemies

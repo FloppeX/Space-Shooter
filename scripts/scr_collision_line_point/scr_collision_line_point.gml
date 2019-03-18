@@ -1,4 +1,4 @@
-/// collision_line_point(x1, y1, x2, y2, obj, prec, notme)
+/// collision_line_point(x1, y1, x2, y2, obj, prec, notme) 
 var x1 = argument0;
 var y1 = argument1;
 var x2 = argument2;

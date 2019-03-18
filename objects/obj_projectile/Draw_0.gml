@@ -10,6 +10,11 @@ gpu_set_blendmode(bm_add)
 draw_sprite_ext(sprite_index,-1,phy_position_x,phy_position_y,bullet_scale,bullet_scale,-phy_rotation,color,1)
 gpu_set_blendmode(bm_normal)
 
+if scr_exists(owner){
+	draw_set_font(global.font_small_text)
+	draw_set_color(c_white)
+	draw_text(owner.phy_position_x,owner.phy_position_y+100,phy_speed)
+	}
 /*
 // Particle effect
 part_type_sprite(bullet_glow_particle,sprite_index,false,false,false);    

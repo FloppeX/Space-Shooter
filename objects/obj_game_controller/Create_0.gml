@@ -116,7 +116,7 @@ global.camera = instance_create_depth(0.5 * global.play_area_width, 0.5 * global
 
 // Sound
 
-global.music_on = true
+global.music_on = false
 audio_stop_all();
 audio_listener_position(0.5 * room_width,0.5 * room_height,1000);
 
@@ -243,7 +243,7 @@ part_type_blend(global.smoke_particle,0);
 part_type_life(global.smoke_particle,80,120);
 
 global.bullet_glow_particle = part_type_create();
-part_type_sprite(global.bullet_glow_particle,spr_bullet_glow,false,false,false);            
+part_type_sprite(global.bullet_glow_particle,spr_bullet,false,false,false);            
 part_type_size(global.bullet_glow_particle,0.6,1.2,0,0.1);                   
 part_type_scale(global.bullet_glow_particle,1,1);                     
 part_type_color2(global.bullet_glow_particle,c_white,c_lime);
@@ -334,6 +334,7 @@ part_type_direction(global.wormhole_particle_end,0,0,0,1);
 part_type_orientation(global.wormhole_particle_end,0,0,0,0,1);      
 part_type_blend(global.wormhole_particle_end,false);                      
 part_type_life(global.wormhole_particle_end,50,50);
+
 
 // Module arrays
 

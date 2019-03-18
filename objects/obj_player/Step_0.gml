@@ -66,6 +66,14 @@ if controls_disabled == false{
 	if gamepad_button_check_pressed(0,gp_shoulderl)
 		select_next_active_item = true
 		
+	// Zoom
+
+	if gamepad_button_check(0,gp_padu)
+		zoom_out = true
+		
+	if gamepad_button_check(0,gp_padd)
+		zoom_in = true
+	
 	}
 
 if keyboard_check(vk_right){

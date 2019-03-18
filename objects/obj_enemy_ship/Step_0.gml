@@ -44,8 +44,8 @@ if obj_health <= 0{
 
 	
 	scr_create_pickups_after_death();
-
-	instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
+	scr_create_explosion_medium(phy_position_x,phy_position_y)
+	//instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	if the_one_that_killed_me == obj_player{
 		obj_player.enemies_killed += 1
 		global.total_kills += 1
@@ -83,14 +83,21 @@ target_speed = max_speed
 
 if ai_disabled_timer <= 0{ // set this to > 0 to control the enemy from another object
 
+// Find target
+	if scr_timer(30){
+		target = noone
+		for(var i = 0; i < array_length_1d(target_objects); i+=1;)
+			if target == noone
+				target = scr_rocket_find_target_in_arc(target_objects[i],-phy_rotation,360,seek_range)
+		}
+
 if ai_mode == 1 {
 	ai_timer -= 1;
-	min_standoff_distance = 200
+	min_standoff_distance = 100
 	max_standoff_distance = 400
-	if scr_timer(30)
-		target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,360,seek_range)
+	
 	if scr_timer(20)
-		if target != noone and instance_exists(target) {
+		if scr_exists(target) {
 			distance_to_target = point_distance(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y)
 			if distance_to_target > min_standoff_distance and distance_to_target < max_standoff_distance{ //0.3 * global.play_area_width
 				dir_to_target = scr_wrap_direction_to_closest_instance(target)
@@ -118,8 +125,8 @@ if ai_mode == 1 {
 if ai_mode == 2 {
 	
 	attack_timer -= 1;
-	if scr_timer(30)
-		target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
+	//if scr_timer(30)
+	//	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
 	if scr_timer(10){
 		if scr_exists(target){
 			target_point_x = scr_wrap_closest_x(target);
@@ -145,12 +152,12 @@ if ai_mode == 2 {
 			if attack_timer <= 0
 				abort_attack = true
 			}
-		else shoot = false
+		//else shoot = false
 		}
 	
 	if abort_attack{
 			ai_mode = 1
-			shoot = false
+			//shoot = false
 			abort_attack = false
 			ai_timer = 120
 			}
@@ -161,16 +168,24 @@ if ai_mode == 2 {
 // Shooting
 
 for(var i = 0; i < array_height_2d(modules); i+=1;){
-		temp_module = modules[i,0]
-		if scr_exists(temp_module)
-			if object_is_ancestor(temp_module.object_index, obj_module_gun)
-				if temp_module.ready_to_shoot == true{
-					target = scr_rocket_find_target_in_arc(target_object,-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
-					if target != noone and !controls_disabled and !ai_disabled_timer
+		var temp_module = modules[i,0]
+		if scr_exists(temp_module) and object_is_ancestor(temp_module.object_index, obj_module_gun)
+			if temp_module.ready_to_shoot and !controls_disabled and !ai_disabled_timer 
+				{
+					var temp_target
+					temp_target = scr_rocket_find_target_in_arc(target_objects[0],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+					if temp_target == noone 
+						temp_target = scr_rocket_find_target_in_arc(target_objects[1],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+					if temp_target != noone 
 						temp_module.activation_timer = 30
-					}
+				}		
 			
-}
+				/*for(var i = 0; i < array_length_1d(target_objects); i+=1;){
+					var temp_target = scr_rocket_find_target_in_arc(target_objects[i],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+					if temp_target != noone 
+						temp_module.activation_timer = 30
+				}	*/	
+	}
 
 
 
@@ -181,7 +196,7 @@ collision_check_radius= 75
 if scr_timer(10)
 	closest_teammate = collision_circle(phy_position_x+lengthdir_x(collision_check_distance,-phy_rotation),phy_position_y+lengthdir_y(collision_check_distance,-phy_rotation),collision_check_radius,obj_enemy_ship,false,true) 
 if scr_exists(closest_teammate){
-	temp_direction = point_direction(phy_position_x,phy_position_y,closest_teammate.phy_position_x,closest_teammate.phy_position_y)
+	var temp_direction = point_direction(phy_position_x,phy_position_y,closest_teammate.phy_position_x,closest_teammate.phy_position_y)
 	if angle_difference(-phy_rotation,temp_direction) >	0
 		target_dir = temp_direction+120
 	else 
@@ -192,8 +207,8 @@ if scr_exists(closest_teammate){
 // Avoid obstacles
 
 
-collision_check_distance = 140
-collision_check_radius= 200
+var collision_check_distance = 140
+var collision_check_radius= 200
 if scr_timer(10)
 	closest_obstacle = collision_circle(phy_position_x+lengthdir_x(collision_check_distance,-phy_rotation),phy_position_y+lengthdir_y(collision_check_distance,-phy_rotation),collision_check_radius,obj_asteroid,false,true) 
 if scr_exists(closest_obstacle){

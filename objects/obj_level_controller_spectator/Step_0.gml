@@ -7,14 +7,6 @@ camera_set_view_pos(cam,view_object_spectate.phy_position_x -0.5*camera_get_view
 
 // Zoom
 
-if gamepad_button_check_pressed(0,gp_padu)
-		global.zoom = global.zoom - 200
-
-if gamepad_button_check_pressed(0,gp_padd)
-		global.zoom = global.zoom + 200
-	
-global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
-
 // Create more enemies?
 
 if gamepad_button_check_pressed(0,gp_shoulderl){

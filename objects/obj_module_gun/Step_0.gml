@@ -50,6 +50,8 @@ if ready_to_shoot{
 		bullets[i].damage = bullet_damage
 		bullets[i].push_force = bullet_damage
 		bullets[i].range = bullet_range + random(2 * bullet_range_randomness) - bullet_range_randomness
+		with(bullets[i])
+			owner = other
 
 		bullet_timer = bullet_interval;
 		

@@ -11,7 +11,8 @@
         "1660423f-a9b6-4c49-82e9-e06517f04493",
         "68bdf5e9-2931-442b-ba37-0548fa41a21e",
         "d0668e9a-40ef-4357-aa7a-abd3128f26c2",
-        "d9f03159-80b8-4991-8fd4-a225b2f56773"
+        "d9f03159-80b8-4991-8fd4-a225b2f56773",
+        "e4f57018-03dd-4ce0-b04b-bfc798b39cbe"
     ],
     "filterType": "GMSprite",
     "folderName": "Guns",

@@ -178,14 +178,14 @@ with(temp_module){
 	//scr_add_modifier_new(scr_module_modifier_damage_multiplier,1.3,noone,noone,noone);
 	}
 */
-/* module */			modules[module_number,0] = scr_create_random_gun()
+/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_blaster);//scr_create_random_gun()
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 45
 /* placement dist */	modules[module_number,3] = 34
 with(modules[module_number,0])
 	offset_angle = 0
 //with(modules[module_number,0])
-//	scr_add_modifier_new(scr_module_modifier_aim_towards_enemy,45,-4,-4,-4)
+//	scr_add_modifier_new(scr_module_modifier_rainbow_bullets,45,-4,-4,-4)
 	
 module_number = 2
 /* module */			modules[module_number,0] = noone

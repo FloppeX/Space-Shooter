@@ -3,10 +3,12 @@
 zoom_in = 0
 zoom_out = 0
 
-// Gamepad
 
-if gamepad_button_check(0,gp_padu)
-	zoom_in = 1
-		
-if gamepad_button_check(0,gp_padd)
-	zoom_out = 1
+	
+// Keyboard
+
+if keyboard_check_pressed(vk_up)
+	global.difficulty_level += 1
+	
+if keyboard_check_pressed(vk_down)
+	global.difficulty_level -= 1

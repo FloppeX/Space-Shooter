@@ -19,16 +19,11 @@ var module_number = 0
 
 module_number = 1
 
-
 var randomizer = irandom (2)
 if randomizer == 0
 	modules[module_number,0] = scr_create_random_enemy_device();
 else						
 	modules[module_number,0] = scr_create_random_enemy_weapon();
-/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
-/* placement angle */	modules[module_number,2] = 90
-/* placement dist */	modules[module_number,3] = 24
-
 with(modules[module_number,0]){
 	i = irandom(2)
 	switch (i){
@@ -37,7 +32,10 @@ with(modules[module_number,0]){
 		case 2: offset_angle = 90; break;
 		}
 	}
-
+/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
+/* placement angle */	modules[module_number,2] = 90
+/* placement dist */	modules[module_number,3] = 24
+	
 module_number = 2
 
 var randomizer = irandom (2)
@@ -48,15 +46,15 @@ if randomizer == 1
 /* module */			modules[module_number,0] = scr_create_random_enemy_device();
 if randomizer == 2				
 						modules[module_number,0] = scr_create_random_enemy_weapon();
-/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
-/* placement angle */	modules[module_number,2] = 0
-/* placement dist */	modules[module_number,3] = 0
 if randomizer == 0
 	with(modules[module_number,0])
 		offset_angle = 0
 else
 	with(modules[module_number,0])
 		offset_angle = 180
+/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
+/* placement angle */	modules[module_number,2] = 0
+/* placement dist */	modules[module_number,3] = 0
 
 module_number = 3
 
@@ -65,10 +63,6 @@ if randomizer == 0
 	modules[module_number,0] = scr_create_random_enemy_device();
 else						
 	modules[module_number,0] = scr_create_random_enemy_weapon();
-/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
-/* placement angle */	modules[module_number,2] = -90
-/* placement dist */	modules[module_number,3] = 24
-
 with(modules[module_number,0]){
 	i = irandom(2)
 	switch (i){
@@ -77,9 +71,11 @@ with(modules[module_number,0]){
 		case 2: offset_angle = -90; break;
 		}
 	}
+/* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
+/* placement angle */	modules[module_number,2] = -90
+/* placement dist */	modules[module_number,3] = 24
 
 module_number = 4
-
 
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
@@ -88,7 +84,6 @@ module_number = 4
 	
 module_number = 5
 	
-
 /* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = -135

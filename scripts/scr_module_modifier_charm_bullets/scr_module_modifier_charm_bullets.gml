@@ -2,7 +2,7 @@
 
 // Modifier actions
 
-chance_for_charm_bullet = 30
+var chance_for_charm_bullet = 30
 
 if bullets[0] != noone
 	for(var i = 0; i < array_length_1d(bullets); i+=1;)

@@ -8,13 +8,15 @@ if gamepad_button_check_pressed(0,gp_padd)
 	
 global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
 
-// Zoom
+// Enemies
 
-zoom_timer += 0.2
-if zoom_timer > 360
-	zoom_timer = 1
+if scr_timer(30){	
+	if(instance_number(obj_enemy_ship_team_1) < number_of_enemies)
+		new_enemy = scr_create_random_enemy();
 
-global.camera.zoom = 1100 + 200 * sin(degtorad(zoom_timer)) 
+	if(instance_number(obj_enemy_ship_team_2) < number_of_enemies_2)
+		new_enemy = scr_create_random_enemy_2();
+}
 
 // Camera follow
 /*

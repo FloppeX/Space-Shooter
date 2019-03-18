@@ -9,7 +9,7 @@ max_speed_base = 4
 
 ///
 
-var randomizer = irandom (2)
+var randomizer = 1 //irandom (2)
 
 var module_number = 0
 
@@ -22,21 +22,18 @@ module_number = 1
 
 if randomizer == 0{
 	/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
-	modules[module_number,0].offset_angle = 0
+	//modules[module_number,0].offset_angle = 0
 	}
 else{
-	if irandom(1) == 0
-	/* module */			modules[module_number,0] = scr_create_random_enemy_device();
-	else					modules[module_number,0] = scr_create_random_enemy_weapon();
-	with(modules[module_number,0]){
-			var i = irandom(3)
-			switch (i){
-				case 0: offset_angle = 0; break;
-				case 1:	offset_angle = 0; break;
-				case 2:	offset_angle = 180; break;
-				case 3: offset_angle = 90; break;
-				}
-			}
+	modules[module_number,0] = scr_create_random_enemy_weapon();
+	var h = irandom(4)
+	switch (h){
+		case 0: modules[module_number,0].offset_angle = 0 break;
+		case 1:	modules[module_number,0].offset_angle = 0; break;
+		case 2:	modules[module_number,0].offset_angle = 0; break;
+		case 3:	modules[module_number,0].offset_angle = 180; break;
+		case 4: modules[module_number,0].offset_angle = 90; break;
+		}
 	}
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 90
@@ -50,7 +47,7 @@ if randomizer > 0{
 	modules[module_number,0].offset_angle = 0
 	}
 else {
-	/* module */			modules[module_number,0] = scr_create_random_enemy_weapon();
+	/* module */			modules[module_number,0] = scr_create_random_enemy_device();
 	modules[module_number,0].offset_angle = 180
 	}
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
@@ -61,20 +58,17 @@ module_number = 3
 
 if randomizer == 0{
 	/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_engine_enemy);
-	modules[module_number,0].offset_angle = 0
+	//modules[module_number,0].offset_angle = 0
 	}
-else {
-	if irandom(1) == 0
-	/* module */			modules[module_number,0] = scr_create_random_enemy_device();
-	else					modules[module_number,0] = scr_create_random_enemy_weapon();
-	with(modules[module_number,0]){
-		var i = irandom(3)
-		switch (i){
-			case 0: offset_angle = 0; break;
-			case 1:	offset_angle = 0; break;
-			case 2:	offset_angle = 180; break;
-			case 3: offset_angle = -90; break;
-			}
+else{
+	modules[module_number,0] = scr_create_random_enemy_weapon();
+	var h = irandom(4)
+	switch (h){
+		case 0: modules[module_number,0].offset_angle = 0 break;
+		case 1:	modules[module_number,0].offset_angle = 0; break;
+		case 2:	modules[module_number,0].offset_angle = 0; break;
+		case 3:	modules[module_number,0].offset_angle = 180; break;
+		case 4: modules[module_number,0].offset_angle = -90; break;
 		}
 	}
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);

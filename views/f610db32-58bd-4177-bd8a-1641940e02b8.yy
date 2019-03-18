@@ -32,7 +32,15 @@
         "d25f1120-073e-4f79-a86b-3e51f621f513",
         "4e99375e-53a5-4c25-8458-41e0cc09ad7b",
         "4e4701b4-c815-4d21-a30c-3c8e7ddb160d",
-        "60e3d3ab-1056-46cf-9d32-6286742559dc"
+        "60e3d3ab-1056-46cf-9d32-6286742559dc",
+        "7cb37b2e-6a78-4c39-909f-1d791f0df48c",
+        "c490629c-bb6c-4be4-8c0f-1ed32fef6c4f",
+        "f8ce8594-d195-43a2-bf71-50646cb14688",
+        "8bc07a94-86de-45af-bfa3-48f95b1d847a",
+        "5698d946-14c0-40f9-b0c5-b7cd0576416f",
+        "d0141f2b-610a-425b-b7bd-951c1e0a285d",
+        "9edce4f0-f439-426d-b222-d609259e364c",
+        "2fa3845e-dea1-4dc0-bd81-6163a27a2f08"
     ],
     "filterType": "GMSound",
     "folderName": "Weapon sounds",

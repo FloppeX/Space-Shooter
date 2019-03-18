@@ -11,6 +11,7 @@ color = 0;
 
 depth = 7
 
+wormhole_segments = 6
 wormhole_size = 0
 particle_speed = 0//random(2)-1// 0.9
 particle_speed_change = 0//random(0.02) * -sign(particle_speed)// -0.015

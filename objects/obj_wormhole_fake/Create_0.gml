@@ -11,6 +11,7 @@ color = 0;
 
 depth = -100
 
+wormhole_segments = 6
 wormhole_size = 0
 
 life_timer = 0

@@ -14,9 +14,8 @@ if health_bar_timer > 0
 
 // Debug stuff
 
+
 if global.view_mode == 2{
-	draw_set_font(global.font_big_text)
-	draw_set_color(c_white)
-	draw_set_halign(fa_center)
-	draw_text(phy_position_x,phy_position_y + 80,"credits: " + string(pickup_objects))
+	if scr_exists(target)
+		draw_line_color(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y,c_red,c_fuchsia)
 }
