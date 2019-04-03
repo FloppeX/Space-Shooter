@@ -5,7 +5,9 @@
     "name": "fb26531c-d726-4168-85d8-ebef88fa9c71",
     "children": [
         "34fc56fa-93f3-40f5-96c4-c3e734e5364a",
-        "2aa63072-0c94-43fc-ad07-a497977ab2ca"
+        "2aa63072-0c94-43fc-ad07-a497977ab2ca",
+        "1acbec08-8afa-4f21-acda-50475e76db07",
+        "0c0d996d-0b73-4f43-8d26-4935ad5ed09b"
     ],
     "filterType": "GMObject",
     "folderName": "Friendlies",

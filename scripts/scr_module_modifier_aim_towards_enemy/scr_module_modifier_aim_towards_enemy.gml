@@ -6,7 +6,8 @@ modifier_description = "Auto aim"
 
 var seek_range = 800
 var max_rotation = argument0
-var starting_dir = -owner.phy_rotation+offset_angle
+var rotation_speed = 2
+var starting_dir = -phy_rotation//-owner.phy_rotation+offset_angle
 var target = scr_rocket_find_target_in_arc(owner.target_object ,starting_dir,2*max_rotation,seek_range)
 if scr_exists(target){
 	bullet_speed = (bullet_speed_base + bullet_speed_bonus) * bullet_speed_multiplier
@@ -15,13 +16,23 @@ if scr_exists(target){
 	if 	target_dir == -1
 		target_dir = starting_dir
 	}
-else target_dir = starting_dir
-
+else target_dir = -owner.phy_rotation+offset_angle//starting_dir
+/*
 if abs (angle_difference(target_dir,starting_dir)) > max_rotation
-	target_dir = starting_dir
+	target_dir = starting_dir*/
+if abs(angle_difference(-owner.phy_rotation+offset_angle,target_dir)) > max_rotation
+	target_dir = -owner.phy_rotation+offset_angle
 
+	var angle_diff = angle_difference(starting_dir,target_dir)
 
-target_angle = target_dir
+	if abs(angle_diff) <= rotation_speed
+		target_angle = target_dir
+	else {
+		if angle_diff > 0
+			target_angle = starting_dir - rotation_speed
+		else target_angle = starting_dir + rotation_speed
+		}
+
 
 /*
 var seek_range = 800

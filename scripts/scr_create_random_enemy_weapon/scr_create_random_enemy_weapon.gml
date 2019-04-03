@@ -1,15 +1,16 @@
-var h = irandom(global.difficulty_level+2)
-h = clamp(h,0,8)
+var h = irandom(global.difficulty_level+3)
+h = clamp(h,0,9)
 	switch (h){
-		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
+		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_sawblade_enemy); break;
 		case 1: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
-		case 2: temp_module = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
+		case 2: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun_enemy); break;
 		case 3: temp_module = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
-		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
+		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_blaster_enemy); break;
 		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
-		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_zapper_enemy); break;
-		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
-		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher_enemy); break;
+		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun_enemy); break;
+		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_sawblade_enemy); break;
+		case 8: temp_module = instance_create_depth(0,0,-10,obj_module_cannon_enemy); break;
+		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher_enemy); break;
 		}
 	temp_module.persistent = false
 

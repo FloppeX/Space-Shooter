@@ -11,7 +11,8 @@ bullet_range_base = 480
 energy_cost_base = 16
 
 bullet_color = c_lime
-recoil_force_base = 24//100
+bullet_push_force_base = 8
+recoil_force_base = 12//100
 
 sound[0] = snd_shotgun_1
 sound[1] = snd_shotgun_2

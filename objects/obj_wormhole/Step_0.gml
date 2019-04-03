@@ -12,10 +12,10 @@ if done_warping {
 	death_timer -= 1
 
 	}
-if death_timer <= 0{
+if death_timer < 0{
 	instance_destroy();
 	}
-	
+	/*
 hue_shift_timer -= 1;
 if hue_shift_timer <= 0{
 	hue_shift_timer = hue_shift_interval;
@@ -27,16 +27,13 @@ if hue_shift_timer <= 0{
 	}
 	
 color = make_color_hsv(hue,255,255)	
-color_2 = make_color_hsv(hue_2,255,255)	
+color_2 = make_color_hsv(hue_2,255,255)	*/
 rotation += rotation_speed
 
 // Find mirror positions
 
 scr_find_mirror_positions();
 
-// Wrap movement
-
 scr_wrap_room();
-
 
 

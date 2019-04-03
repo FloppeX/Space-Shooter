@@ -63,3 +63,4 @@ fake_wormhole_1.draw_position_y = 0.15 * display_get_gui_height()+280
 
 fake_wormhole_2.draw_position_x = 0.5 * display_get_gui_width() + 250
 fake_wormhole_2.draw_position_y = 0.15 * display_get_gui_height()+280
+

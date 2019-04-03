@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "0c0d996d-0b73-4f43-8d26-4935ad5ed09b",
+            "Value": {
+                "id": "39169b47-0c09-4449-b476-c33502069882",
+                "resourcePath": "objects\\obj_ship_new\\obj_ship_new.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0c21e8fd-90ec-49ff-b67b-48a99e163aa8",
             "Value": {
                 "id": "1cd04837-4211-4dfd-b3cb-72995f33b359",
@@ -620,6 +628,14 @@
                 "id": "ef4de98b-4822-471d-b5bf-0828a43f3319",
                 "resourcePath": "sprites\\spr_module_cockpit_1\\spr_module_cockpit_1.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1acbec08-8afa-4f21-acda-50475e76db07",
+            "Value": {
+                "id": "b757dd05-848e-4617-94c6-029a678f5852",
+                "resourcePath": "objects\\obj_ship_segment\\obj_ship_segment.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1082,7 +1098,7 @@
             "Key": "2f207148-d4ec-4363-96fe-1bf493010685",
             "Value": {
                 "id": "56237b4f-4579-45f4-86ef-229523988fc1",
-                "resourcePath": "objects\\obj_module_battery_pack\\obj_module_battery_pack.yy",
+                "resourcePath": "objects\\obj_module_high_speed_ammo\\obj_module_high_speed_ammo.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1399,6 +1415,14 @@
             }
         },
         {
+            "Key": "39b94c17-b6ea-4a0f-b853-87a65e51c15f",
+            "Value": {
+                "id": "b9729d53-89b5-4f46-a3cd-f190f62b093f",
+                "resourcePath": "sprites\\spr_segment_connector\\spr_segment_connector.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "39df0637-5585-4ef5-8669-70a718129a32",
             "Value": {
                 "id": "6d5d7056-e9d7-49e1-bdf8-a4f85382ad04",
@@ -1475,6 +1499,14 @@
             "Value": {
                 "id": "c5496a03-e4b4-4820-927f-38f461715d9f",
                 "resourcePath": "objects\\obj_wormhole_old\\obj_wormhole_old.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3f3a30ff-1d44-4ba3-8284-b490c7963c37",
+            "Value": {
+                "id": "2d0f5450-60ab-423d-9be4-c574ed2ca837",
+                "resourcePath": "objects\\obj_cursor\\obj_cursor.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2471,6 +2503,14 @@
             }
         },
         {
+            "Key": "65d369fb-e902-48c5-a217-b61c831c6b5d",
+            "Value": {
+                "id": "eab6ed6d-fd90-44dc-8610-5d7a4daef214",
+                "resourcePath": "objects\\obj_sawblade_enemy\\obj_sawblade_enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6638f4e9-e819-4541-91d5-d6dd147f34c6",
             "Value": {
                 "id": "5c80043a-488f-43aa-aa1a-ed15cb0d33c4",
@@ -2812,6 +2852,14 @@
                 "id": "df7a5395-7054-4ddf-abf8-87535a9a20c7",
                 "resourcePath": "scripts\\scr_ship_modifier_mechanoid_prospector\\scr_ship_modifier_mechanoid_prospector.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "73a284bf-ee56-40b9-9e39-e8d95bec8a62",
+            "Value": {
+                "id": "61d53ef6-ecb5-4af7-9fd8-8b46a2af8516",
+                "resourcePath": "sprites\\spr_segment\\spr_segment.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3335,6 +3383,14 @@
             }
         },
         {
+            "Key": "8988acd0-bc91-4529-b357-b6be1a0b6c05",
+            "Value": {
+                "id": "78b3f419-a114-4795-8956-cb2f10adac3f",
+                "resourcePath": "objects\\obj_module_sawblade_player\\obj_module_sawblade_player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8a136852-3dd3-4847-b9df-16d7a5f1f994",
             "Value": {
                 "id": "e84d02c4-0477-4949-82ed-ae7a3499eb68",
@@ -3658,7 +3714,7 @@
             "Key": "99489252-f415-4fbf-9cce-5f735685aa4c",
             "Value": {
                 "id": "01a78ca7-deb9-4673-b369-a03063be1869",
-                "resourcePath": "objects\\obj_cursor\\obj_cursor.yy",
+                "resourcePath": "objects\\obj_cursor_old\\obj_cursor_old.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3980,6 +4036,14 @@
                 "id": "5d5fc6b9-3d23-4b9c-8389-c7374e99bd93",
                 "resourcePath": "sprites\\spr_module_holder\\spr_module_holder.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a62c4325-f368-4f3c-8168-27da3062eb4a",
+            "Value": {
+                "id": "a7c299bd-fba4-4de8-86df-0ab46e6069e8",
+                "resourcePath": "objects\\obj_shop\\obj_shop.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4735,6 +4799,14 @@
             }
         },
         {
+            "Key": "caa7097b-ec70-4ca6-a8cb-c09352f04f23",
+            "Value": {
+                "id": "92a3f72b-0980-4008-bf50-c853b122c03f",
+                "resourcePath": "objects\\obj_sawblade_player\\obj_sawblade_player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "caf31c26-4294-4e60-a6d6-11a3c0490832",
             "Value": {
                 "id": "c14af4c4-b21d-4d2f-81cb-aac7d5d71201",
@@ -4767,6 +4839,14 @@
             }
         },
         {
+            "Key": "cb71bec8-4a29-436a-9ee5-e16422ca845f",
+            "Value": {
+                "id": "969ccb6c-bbda-4f27-829d-45b00335fddc",
+                "resourcePath": "objects\\obj_module_sawblade_enemy\\obj_module_sawblade_enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cc563385-a988-4ea5-bd8c-2c8e912255a8",
             "Value": {
                 "id": "1820d8c8-452a-44a4-9a58-e1c02a3f534a",
@@ -4778,7 +4858,7 @@
             "Key": "cc8b9680-5e0d-49b6-8514-66e845a4ba5c",
             "Value": {
                 "id": "792d2349-c5c6-4a40-a25d-3f8017a2b666",
-                "resourcePath": "objects\\obj_shop\\obj_shop.yy",
+                "resourcePath": "objects\\obj_shop_old\\obj_shop_old.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -5812,6 +5892,14 @@
                 "id": "2e63e051-d576-4061-944c-84b26052321b",
                 "resourcePath": "sounds\\snd_shield_power_down\\snd_shield_power_down.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "fa623eaf-c232-42a6-a818-662ebdb748bb",
+            "Value": {
+                "id": "852382c4-193e-4bf5-b89f-4b3e7e072b85",
+                "resourcePath": "objects\\obj_module_laser_old\\obj_module_laser_old.yy",
+                "resourceType": "GMObject"
             }
         },
         {

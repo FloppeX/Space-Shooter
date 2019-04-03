@@ -11,7 +11,8 @@ bullet_number_base = 1
 bullet_interval_base = 8
 bullet_range_base = 480
 energy_cost_base = 3
-recoil_force_base = 4
+bullet_push_force_base = 2
+recoil_force_base = 2
 barrel_length = 11
 bullet_color = c_lime
 

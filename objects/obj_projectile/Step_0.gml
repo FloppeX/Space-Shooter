@@ -17,7 +17,7 @@ for(var i = 0; i < array_length_1d(modifiers); i+=1;)
 	
 // Push force
 
-push_force = damage
+//push_force = damage
 
 // Wrap movement
 

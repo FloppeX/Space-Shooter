@@ -11,12 +11,12 @@ if scr_exists(follow_object){
 	phy_position_x = follow_object.phy_position_x
 	phy_position_y = follow_object.phy_position_y
 	}
-else
+/*else
 	if point_distance(0,0,gp_axisrh,gp_axisrv) > 0.2{
 		phy_position_x += 10 * gamepad_axis_value(0,gp_axisrh)
 		phy_position_y += 10 * gamepad_axis_value(0,gp_axisrv)
 		}
-		
+*/		
 // Wrap room
 
 scr_find_mirror_positions();

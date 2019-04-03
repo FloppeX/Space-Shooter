@@ -11,6 +11,7 @@ bullet_number_multiplier = 1
 bullet_interval_multiplier = 1
 energy_cost_multiplier = 1
 particle_cost_multiplier = 1
+bullet_push_force_multiplier = 1
 recoil_force_multiplier = 1
 
 
@@ -22,6 +23,7 @@ bullet_number_bonus = 0
 bullet_interval_bonus = 0
 energy_cost_bonus = 0
 particle_cost_bonus = 0
+bullet_push_force_bonus = 0
 recoil_force_bonus = 0
 
 // deactivate

@@ -9,7 +9,7 @@
 //
 /// GMLscripts.com/license
 {
-    var origin,target,target_x,target_y,pspeed,dir,alpha,phi,beta;
+    var origin,target,target_x,target_y,target_travel_dir,pspeed,dir,alpha,phi,beta;
     origin = argument0;
     target = argument1;
     pspeed = argument2;
@@ -17,7 +17,8 @@
 	target_y = scr_wrap_closest_y(target);
     dir = point_direction(origin.phy_position_x,origin.phy_position_y,target_x,target_y);
     alpha = target.phy_speed / pspeed;
-    phi = degtorad(-target.phy_rotation - dir);
+	target_travel_dir = scr_wrap_direction_to_point(target.phy_position_xprevious,target.phy_position_yprevious,target.phy_position_x,target.phy_position_y)
+    phi = degtorad(target_travel_dir - dir);
     beta = alpha * sin(phi);
     if (abs(beta) >= 1)
         return (-1);

@@ -39,7 +39,7 @@ global.array_player_devices[module_number,3] = module_rarity
 
 module_number = 3
 
-module_id = obj_module_sawblade
+module_id = obj_module_sawblade_player
 module_type = 0
 module_cost = 6
 module_rarity = 8
@@ -109,6 +109,83 @@ module_id = obj_module_gravity_shield
 module_type = 0
 module_cost = 12
 module_rarity = 1
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 10
+
+module_id = obj_module_high_speed_ammo
+module_type = 0
+module_cost = 8
+module_rarity = 3
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 11
+
+module_id = obj_module_turbocharger
+module_type = 0
+module_cost = 8
+module_rarity = 3
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 12
+
+module_id = obj_module_deaths_head
+module_type = 0
+module_cost = 8
+module_rarity = 3
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 13
+
+module_id = obj_module_biomechanical_actuator
+module_type = 0
+module_cost = 8
+module_rarity = 3
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 14
+
+module_id = obj_module_fluxative_capacitor
+module_type = 0
+module_cost = 8
+module_rarity = 3
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 15
+
+module_id = obj_module_double_cell_batteries
+module_type = 0
+module_cost = 6
+module_rarity = 4
+global.array_player_devices[module_number,0] = module_id
+global.array_player_devices[module_number,1] = module_type
+global.array_player_devices[module_number,2] = module_cost
+global.array_player_devices[module_number,3] = module_rarity
+
+module_number = 16
+
+module_id = obj_module_triple_cell_batteries
+module_type = 0
+module_cost = 8
+module_rarity = 4
 global.array_player_devices[module_number,0] = module_id
 global.array_player_devices[module_number,1] = module_type
 global.array_player_devices[module_number,2] = module_cost

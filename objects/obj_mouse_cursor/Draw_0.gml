@@ -1,4 +1,4 @@
-
+/*
 scr_find_mirror_positions()
 draw_sprite(sprite_index,-1,x,y)
 draw_sprite(sprite_index,-1,mirror_x,y)

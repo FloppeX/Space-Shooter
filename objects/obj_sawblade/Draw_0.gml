@@ -6,6 +6,8 @@ if !owner.visible
 	
 owner_dir = point_direction(owner.phy_position_x,owner.phy_position_y,phy_position_x,phy_position_y)
 owner_dist = point_distance(phy_position_x,phy_position_y,owner.phy_position_x,owner.phy_position_y)
+owner_dist = min(owner_dist,100)
+
 
 draw_sprite_ext(spr_sawblade_arm,-1,owner.phy_position_x,owner.phy_position_y,owner_dist/22,0.5,owner_dir,c_white,1)
 draw_sprite_ext(spr_sawblade_arm,-1,owner.phy_position_x,owner.phy_position_y,0.66 * owner_dist/22,0.75,owner_dir,c_white,1)

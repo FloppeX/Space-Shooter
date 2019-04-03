@@ -41,8 +41,8 @@ if exit_shop and instance_exists(obj_wormhole_level_end) {
 ///
 
 for(var i = 0; i < number_of_items; i+=1;)
-	if scr_exists(module_holders[i].module){
-		module_holders[i].module.persistent = false
+	if scr_exists(shop_segments[i].module){
+		shop_segments[i].module.persistent = false
 		}
 	
 
@@ -51,17 +51,17 @@ for(var i = 0; i < number_of_items; i+=1;)
 number_of_items_left = 0
 	// add up the items left that belong to the shop
 for(var i = 0; i < number_of_items; i+=1;)
-	if module_holders[i].module != noone
-		with(module_holders[i].module)
+	if shop_segments[i].module != noone
+		with(shop_segments[i].module)
 			if owned_by_shop == true
 				other.number_of_items_left += 1
 	// if no more items are left to select, close the shop
 if number_of_items_left <= (number_of_items - number_of_items_to_select)
 	for(var i = 0; i < number_of_items; i+=1;)
-		if module_holders[i].module != noone{
-			with(module_holders[i].module)
+		if shop_segments[i].module != noone{
+			with(shop_segments[i].module)
 				instance_destroy();
-			module_holders[i].module = noone
+			shop_segments[i].module = noone
 			}
 			
 // Wormhole

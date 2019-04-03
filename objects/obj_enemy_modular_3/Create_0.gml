@@ -2,8 +2,9 @@ event_inherited();
 
 // Ship stats
 
+max_health_base = 25
 obj_health = 25
-max_health = 25
+
 max_rotation_speed = 100;
 max_speed_base = 5
 
@@ -26,7 +27,7 @@ module_number = 1
 module_number = 2
 
 if irandom(4) == 0
-	/* module */			modules[module_number,0] = instance_create_depth(0,0,-10,obj_module_bomb)
+	/* module */			modules[module_number,0] = instance_create_depth(0,0,-10,obj_module_sawblade_enemy)
 else 
 	/* module */			modules[module_number,0] = scr_create_random_enemy_weapon();
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);

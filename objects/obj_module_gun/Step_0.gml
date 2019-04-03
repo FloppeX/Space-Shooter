@@ -48,7 +48,7 @@ if ready_to_shoot{
 		
 		bullets[i].color = bullet_color
 		bullets[i].damage = bullet_damage
-		bullets[i].push_force = bullet_damage
+		bullets[i].push_force = bullet_push_force
 		bullets[i].range = bullet_range + random(2 * bullet_range_randomness) - bullet_range_randomness
 		with(bullets[i])
 			owner = other

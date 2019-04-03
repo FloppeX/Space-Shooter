@@ -2,8 +2,8 @@ event_inherited();
 
 // Ship stats
 
+max_health_base = 30
 obj_health = 30
-max_health = 30
 max_rotation_speed = 90;
 max_speed_base = 4
 

@@ -100,14 +100,14 @@
     "parentObjectId": "c93b5683-e74c-49b7-9492-cba4ece1a533",
     "persistent": false,
     "physicsAngularDamping": 0,
-    "physicsDensity": 0.01,
+    "physicsDensity": 1E-08,
     "physicsFriction": 0,
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 0,
     "physicsObject": true,
     "physicsRestitution": 1,
-    "physicsSensor": false,
+    "physicsSensor": true,
     "physicsShape": 0,
     "physicsShapePoints": [
         {

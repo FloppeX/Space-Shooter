@@ -46,7 +46,7 @@ health_bar_y = 540
 health_bar_height = 300
 health_bar_width = 20
 
-draw_healthbar(health_bar_x-0.5 * health_bar_width,health_bar_y-0.5 * health_bar_height,health_bar_x+0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height,100 * obj_health/max_health,c_dkgray,c_maroon,c_maroon,3,true,true)
+draw_healthbar(health_bar_x-0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height - health_bar_height * max_health/max_health_base ,health_bar_x+0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height,100 * obj_health/max_health,c_dkgray,c_maroon,c_maroon,3,true,true)
 
 
 energy_bar_x = 70
@@ -54,14 +54,14 @@ energy_bar_y = 540
 energy_bar_height = 300
 energy_bar_width = 20
 
-draw_healthbar(energy_bar_x-0.5 * health_bar_width,energy_bar_y-0.5 * health_bar_height,energy_bar_x+0.5 * health_bar_width,energy_bar_y+0.5 * energy_bar_height,100 * energy/max_energy,c_dkgray,c_lime,c_lime,3,true,true)
+draw_healthbar(energy_bar_x-0.5 * health_bar_width,energy_bar_y+0.5 * energy_bar_height - energy_bar_height * max_energy/max_energy_base,energy_bar_x+0.5 * health_bar_width,energy_bar_y+0.5 * health_bar_height,100 * energy/max_energy,c_dkgray,c_lime,c_lime,3,true,true)
 
 particles_bar_x = 110
 particles_bar_y = 540
 particles_bar_height = 300
 particles_bar_width = 20
 
-draw_healthbar(particles_bar_x-0.5 * health_bar_width,particles_bar_y-0.5 * particles_bar_height,particles_bar_x+0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height,100 * particles/max_particles,c_dkgray,c_aqua,c_aqua,3,true,true)
+draw_healthbar(particles_bar_x-0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height - particles_bar_height * max_particles/max_particles_base,particles_bar_x+0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height,100 * particles/max_particles,c_dkgray,c_aqua,c_aqua,3,true,true)
 
 // Credits
 

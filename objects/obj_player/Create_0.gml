@@ -125,7 +125,6 @@ energy = max_energy;
 particles = max_particles
 
 obj_rotation = 0;
-col = 0;
 
 disabled_timer = 0
 controls_disabled = false
@@ -137,10 +136,6 @@ target_object = obj_enemy_ship
 invisible = false
 alpha = 1
 draw_scale = 1
-
-// View
-
-close_up_view = false
 
 // Map
 
@@ -162,8 +157,8 @@ var module_number = 0
 
 
 module_number = 1
-/*
-var h = irandom(7)
+
+var h = irandom(5)
 	switch (h){
 		case 0: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
 		case 1: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
@@ -171,19 +166,17 @@ var h = irandom(7)
 		case 3: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
 		case 4: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
 		case 5: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun); break;
-		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_cannon); break;
-		case 7: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher); break;
+		case 6: temp_module = instance_create_depth(0,0,-10,obj_module_laser); break;
 		}
 with(temp_module){
 	//scr_add_modifier_new(scr_module_modifier_damage_multiplier,1.3,noone,noone,noone);
+	offset_angle = 0
 	}
-*/
-/* module */			modules[module_number,0] = instance_create_depth(x,y,-10,obj_module_blaster);//scr_create_random_gun()
+
+/* module */			modules[module_number,0] = temp_module//scr_create_random_gun()
 /* module holder */		modules[module_number,1] = instance_create_depth(x,y,-10,obj_module_holder);
 /* placement angle */	modules[module_number,2] = 45
 /* placement dist */	modules[module_number,3] = 34
-with(modules[module_number,0])
-	offset_angle = 0
 //with(modules[module_number,0])
 //	scr_add_modifier_new(scr_module_modifier_rainbow_bullets,45,-4,-4,-4)
 	
@@ -354,11 +347,12 @@ for(var i = 0; i < array_length_1d(ship_modules); i+=1;)
 part_engine_flame_player = part_type_create();
 part_engine_flame_player = global.part_rocket_smoke
 
+/*
 engine_flame_emitter_1 = part_emitter_create(global.part_system_below);
 engine_flame_emitter_2 = part_emitter_create(global.part_system_below);
 
 dust_emitter = part_emitter_create(global.part_system_below);
-
+*/
 // Debris particles for if it blows up
 
 debris_parts[0] = spr_debris_player_1

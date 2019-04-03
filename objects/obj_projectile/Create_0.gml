@@ -15,7 +15,7 @@ bullet_scale = 1
 draw_scale = 1
 
 damage = 10
-push_force = 20
+push_force = 0
 
 bullet_fixture = noone
 color = c_lime

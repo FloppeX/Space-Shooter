@@ -10,6 +10,7 @@ bullet_interval = bullet_interval_base;
 recoil_force_base = 0
 bullet_type_base = obj_lightning_bolt_player;
 bullet_damage_base = 0;
+push_force_base = 0
 spread = 0
 bullet_color = c_lime
 barrel_length = 35

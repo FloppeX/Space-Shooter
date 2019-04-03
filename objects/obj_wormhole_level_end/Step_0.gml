@@ -1,6 +1,6 @@
 event_inherited();
 
-player_ship = instance_place(phy_position_x,phy_position_y,obj_player)
+var player_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 if scr_exists(player_ship){
 	with(player_ship){
 		disabled_timer = 10
@@ -53,6 +53,8 @@ if scr_exists(fake_player_ship){
 		}
 	}
 			
-if death_timer <= 0{
-	room_goto (next_level)
+if death_timer == 0 {
+	if scr_exists(player_ship)
+		room_goto (next_level)
+	else instance_destroy();
 	}

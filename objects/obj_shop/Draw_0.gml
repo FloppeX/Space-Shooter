@@ -1,6 +1,6 @@
 draw_self();
 for(var i = 0; i < number_of_items; i+=1;){
-	draw_sprite(spr_module_holder,-1,module_holders[i].x,module_holders[i].y)
+	draw_sprite(spr_module_holder,-1,shop_segments[i].x,shop_segments[i].y)
 	}
 	
 if global.view_mode == 2

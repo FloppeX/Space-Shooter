@@ -6,8 +6,8 @@ if scr_exists(obj_player){
 	}
 
 if enemy_wave_timer <= 0{
-	number_of_enemies = 1+global.difficulty_level
-	enemy_wave_timer = stage_timer_start/number_of_waves
+	number_of_enemies = global.difficulty_level
+	enemy_wave_timer = stage_timer_start/(number_of_waves+1)
 	}
 
 // Add enemies and asteroids if needed
@@ -49,7 +49,8 @@ if number_of_explosive_barrels >= 1{
 	number_of_explosive_barrels -= 1
 	}
 
-if number_of_enemies >= 1{
+ship_interval_timer -= 1
+if number_of_enemies >= 1 and ship_interval_timer <= 0 and scr_exists(obj_player){
 
 	var tempdist = 200 + random(300)
 	var tempdir = random(359)
@@ -67,17 +68,19 @@ if number_of_enemies >= 1{
 		case 3: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_4); break;
 		case 4: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_5); break;
 		}
-	
-	new_enemy.obj_health = new_enemy.obj_health * (1 + 0.2 * global.difficulty_level)
+
+	new_enemy.max_health_base = new_enemy.max_health_base * (1 + 0.2 * global.difficulty_level)
+	new_enemy.obj_health = new_enemy.max_health_base
 	new_enemy.pickup_objects = 3
 	new_enemy.disabled_timer = 10
 	new_enemy.visible = false
 	new_enemy.phy_active = false
 	
-	new_enemy_wormhole = instance_create_depth(temp_x,temp_y,15,obj_wormhole_level_begin_enemy);
+	new_enemy_wormhole = instance_create_depth(temp_x,temp_y,100,obj_wormhole_level_begin_enemy);
 	new_enemy_wormhole.warping_ship = new_enemy
 	
 	number_of_enemies -= 1
+	ship_interval_timer = ship_interval_timer_start
 	}
 
 
@@ -98,14 +101,26 @@ if !instance_exists(obj_enemy_ship) or enemy_wave_timer <= 0
 	next_level_timer -= 1
 */
 	
-if stage_timer <= 0 and !instance_exists(obj_wormhole){
+if stage_timer <= 0 and end_wormhole_created == false{
 	global.difficulty_level += 1;
 	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
+	end_wormhole_created = true
 	if global.difficulty_level <= global.number_of_levels
 		wormhole.next_level = rm_shop
 	else 
 		wormhole.next_level = rm_end
 	}
+	
+	
+if instance_exists(obj_wormhole_level_end){
+	wormhole_end_timer -= 1
+	if wormhole_end_timer <= 0{
+		with(obj_wormhole_level_end)
+			done_warping = true
+		wormhole_end_gone = true
+		}
+	}
+
 
 // Is the player dead? Then count down and restart
 
@@ -123,5 +138,5 @@ if death_timer <= 0 and !instance_exists(obj_death_menu){
 	
 // If the timer is 0, spawn lots of enemies
 
-if stage_timer == 0
-	number_of_enemies += 10
+if stage_timer == 0 and number_of_enemies < 10
+	number_of_enemies = 10

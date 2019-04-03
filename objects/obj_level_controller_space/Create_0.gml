@@ -43,15 +43,21 @@ global.camera.follow_object = obj_player
 wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
 
 // timers
-stage_timer_start = 6000
+stage_timer_start = 200//5400
 stage_timer = stage_timer_start
 
 number_of_waves = 3
 enemy_wave_timer = 360
+ship_interval_timer_start = 60
+ship_interval_timer = ship_interval_timer_start
 
 death_timer = 120
 
 next_level_timer = 120
+
+end_wormhole_created = false
+wormhole_end_timer = 1200
+wormhole_end_gone = false
 
 // Level
 
@@ -60,8 +66,8 @@ next_level_timer = 120
 // Enemies
 
 
-number_of_asteroids = 4 + irandom(2 * global.difficulty_level)
-number_of_explosive_barrels = 3 + irandom(global.difficulty_level)
+number_of_asteroids = 6 + irandom(2 * global.difficulty_level)
+number_of_explosive_barrels = 4 + irandom(global.difficulty_level)
 number_of_enemies = 0
 
 	
@@ -76,3 +82,7 @@ if global.music_on
 // Create background sprites
 
 scr_create_background_layers()
+
+//
+
+instance_create_depth(0,0,0,obj_mouse_cursor)

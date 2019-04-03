@@ -36,16 +36,16 @@ if scr_exists(warping_ship){
 		
 	// Check the fake ship to see if done warping
 	if scr_exists(fake_warping_ship) and warp_start_timer <= 0{
+		fake_warping_ship.phy_position_x = phy_position_x
+		fake_warping_ship.phy_position_y = phy_position_y
 		fake_warping_ship.draw_scale += 0.01
 		fake_warping_ship.draw_scale = clamp(fake_warping_ship.draw_scale,0,1)
 		var temp_angle_diff = angle_difference(warping_ship.phy_rotation,fake_warping_ship.phy_rotation)
 		fake_warping_ship.ship_rotation_speed = ship_rotation_speed
 		if temp_angle_diff < 30 and fake_warping_ship.draw_scale == 1
 			fake_warping_ship.ship_rotation_speed = min(ship_rotation_speed,20 * temp_angle_diff)
-		if fake_warping_ship.draw_scale == 1 and abs(temp_angle_diff) < 0.5{
+		if fake_warping_ship.draw_scale == 1 and abs(temp_angle_diff) < 0.5
 			done_warping = true
-
-			}	
 		}
 	// Move the player ship to the center of the wormhole
 

@@ -10,7 +10,8 @@ bullet_interval_base = 32;
 bullet_spread_base = 2
 bullet_number_base = 1
 energy_cost_base = 12
-recoil_force_base = 16
+bullet_push_force_base = 6
+recoil_force_base = 8
 
 
 sound[0] = snd_blaster_1

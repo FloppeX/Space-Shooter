@@ -58,7 +58,7 @@ if obj_health <= 0{
 // Health bar - drawn in draw step
 
 if obj_health < old_obj_health
-	health_bar_timer = 120
+	health_bar_timer = 180
 	
 if health_bar_timer > 0{
 	health_bar_x = phy_position_x

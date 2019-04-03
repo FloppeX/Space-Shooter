@@ -9,6 +9,7 @@ bullet_damage_base = 15;
 bullet_range_base = 1640
 bullet_speed_base = 4;
 bullet_interval_base = 120;
+bullet_push_force_base = 0
 recoil_force_base = 20
 bullet_spread_base = 0
 bullet_number_base = 1

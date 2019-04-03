@@ -4,6 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
+hue_min = 200
+hue_max = 270
+hue = hue_min
+
+
 warp_start_timer = 60
 
 warping_ship = noone

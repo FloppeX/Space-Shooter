@@ -27,7 +27,7 @@
     "physicsLinearDamping": 2,
     "physicsObject": true,
     "physicsRestitution": 0.5,
-    "physicsSensor": true,
+    "physicsSensor": false,
     "physicsShape": 1,
     "physicsShapePoints": [
         {

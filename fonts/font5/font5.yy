@@ -1,7 +1,7 @@
 {
     "id": "9242a77f-c132-406a-aea3-f00ec714b234",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "font5",
     "AntiAlias": 1,
     "TTFName": "",
@@ -10,6 +10,7 @@
     "charset": 0,
     "first": 0,
     "fontName": "PMingLiU-ExtB",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1467,13 +1468,16 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

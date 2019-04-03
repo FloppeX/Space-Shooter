@@ -1,6 +1,5 @@
 var temp_module = scr_create_random_module(global.array_player_weapons)
 
-var i = irandom(3)
 temp_module.offset_angle = irandom(3) * 90;
 
 if temp_module.offset_angle == 0

@@ -17,3 +17,4 @@ if hue_shift_timer <= 0{
 color = make_color_hsv(hue,255,255)	
 color_2 = make_color_hsv(hue_2,255,255)	
 rotation += rotation_speed
+

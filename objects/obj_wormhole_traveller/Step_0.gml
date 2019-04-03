@@ -22,3 +22,9 @@ if draw_scale <= 0
 	instance_destroy();
 
 depth = -round(100-100*draw_scale)
+
+//
+
+scr_find_mirror_positions();
+
+scr_wrap_room();

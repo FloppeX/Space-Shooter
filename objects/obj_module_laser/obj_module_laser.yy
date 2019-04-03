@@ -5,7 +5,7 @@
     "name": "obj_module_laser",
     "eventList": [
         {
-            "id": "c4415945-5ea6-41ab-beba-78e561ecd257",
+            "id": "382e1d1a-c0d7-420d-bfe4-9055aacee968",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,

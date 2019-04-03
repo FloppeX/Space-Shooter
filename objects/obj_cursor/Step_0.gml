@@ -13,7 +13,7 @@ gamepad_set_axis_deadzone(0, 0.1);
 //
 
 if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face1){
-	selected_module_holder = instance_place(x,y,obj_module_holder)
+	selected_module_holder = instance_place(x,y,obj_ship_segment)
 	
 	
 	if selected_module_holder != noone {
@@ -36,8 +36,8 @@ if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face
 						other.selected_module_holder.module = id
 						phy_position_x = other.selected_module_holder.x
 						phy_position_y = other.selected_module_holder.y
-						placement_offset_angle = other.selected_module_holder.placement_offset_angle
-						placement_offset_distance = other.selected_module_holder.placement_offset_distance
+						//placement_offset_angle = other.selected_module_holder.placement_offset_angle
+						//placement_offset_distance = other.selected_module_holder.placement_offset_distance
 						joint = physics_joint_revolute_create(module_holder.owner, id,phy_position_x,phy_position_y,0, 360, 0, 10,3,1,0);
 						visible = true
 						persistent = true

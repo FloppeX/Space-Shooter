@@ -54,14 +54,14 @@ x_step_offset = 60
 y_step_offset = 60
 
 for(var i = 0; i < number_of_items; i+=1;){
-	module_holders[i] = instance_create_depth(x,y,-10,obj_module_holder);
-	module_holders[i].owner = id
-	module_holders[i].visible = true
-	module_holders[i].persistent = false
-	module_holders[i].placement_offset_angle = 0
-	module_holders[i].placement_offset_distance = 0
-	module_holders[i].x = phy_position_x + 200 + 0 * x_step_offset;
-	module_holders[i].y = phy_position_y - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
+	shop_segments[i] = instance_create_depth(x,y,10,obj_ship_segment);
+	shop_segments[i].owner = id
+	shop_segments[i].visible = true
+	shop_segments[i].persistent = false
+	//module_holders[i].placement_offset_angle = 0
+	//module_holders[i].placement_offset_distance = 0
+	shop_segments[i].phy_position_x = phy_position_x + 200 + 0 * x_step_offset;
+	shop_segments[i].phy_position_y = phy_position_y - (0.5 * y_step_offset * (number_of_items-1)) + i * y_step_offset;
 
 	if i < number_of_guns
 		temp_module = scr_create_random_gun();
@@ -74,9 +74,9 @@ for(var i = 0; i < number_of_items; i+=1;){
 	temp_module.owner = id
 	temp_module.owned_by_shop = true
 
-	module_holders[i].module = temp_module
-	temp_module.phy_position_x = module_holders[i].x
-	temp_module.phy_position_y = module_holders[i].y
+	shop_segments[i].module = temp_module
+	temp_module.phy_position_x = shop_segments[i].phy_position_x
+	temp_module.phy_position_y = shop_segments[i].phy_position_y
 	temp_module.phy_rotation = ( phy_rotation - temp_module.offset_angle)
 	temp_module.joint = physics_joint_revolute_create(id, temp_module,temp_module.phy_position_x,temp_module.phy_position_y,0, 360, 0, 10,3,1,0);
 	}
@@ -85,7 +85,7 @@ for(var i = 0; i < number_of_items; i+=1;){
 
 module_identities[number_of_items] = noone
 for(var i = 0; i < number_of_items; i+=1;)
-	module_identities[i] = module_holders[i].module.id
+	module_identities[i] = shop_segments[i].module.id
 	
 // Audio
 

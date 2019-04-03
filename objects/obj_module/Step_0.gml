@@ -5,6 +5,7 @@ bullet_range = (bullet_range_base + bullet_range_bonus) * bullet_range_multiplie
 bullet_speed = (bullet_speed_base + bullet_speed_bonus) * bullet_speed_multiplier
 bullet_speed_randomness = (bullet_speed_randomness_base + bullet_speed_randomness_bonus) * bullet_speed_randomness_multiplier
 bullet_interval = (bullet_interval_base + bullet_interval_bonus) * bullet_interval_multiplier
+bullet_push_force = (bullet_push_force_base + bullet_push_force_bonus) * bullet_push_force_multiplier
 recoil_force = (recoil_force_base + recoil_force_bonus) * recoil_force_multiplier
 bullet_spread = (bullet_spread_base + bullet_spread_bonus) * bullet_spread_multiplier
 bullet_number = round((bullet_number_base + bullet_number_bonus) * bullet_number_multiplier)

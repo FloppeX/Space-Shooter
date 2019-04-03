@@ -13,7 +13,8 @@ energy_cost_base = 24
 particle_cost_base = 5
 
 bullet_color = c_lime
-recoil_force_base = 50//300
+bullet_push_force_base = 16
+recoil_force_base = 24//300
 
 sound[0] = snd_cannon_1
 sound[1] = snd_cannon_2
