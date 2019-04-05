@@ -1,6 +1,3 @@
-
-	
-#region Variables
 // Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base + max_speed_bonus) * max_speed_multiplier
@@ -9,23 +6,17 @@ drift_resistance = (drift_resistance_base + drift_resistance_bonus) * drift_resi
 max_health = (max_health_base + max_health_bonus) * max_health_multiplier
 max_energy = (max_energy_base + max_energy_bonus) * max_energy_multiplier
 energy_increase = (energy_increase_base + energy_increase_bonus) * energy_increase_multiplier
-#endregion
-
-#region Disabled?
 
 // Disabled?
+
 disabled_timer -= 1;
 if disabled_timer < 0 
 	disabled_timer = 0
 if disabled_timer > 0 
 	controls_disabled = true
 else controls_disabled = false
-#endregion
-
-#region Controls
 
 // Gamepad controls
-
 
 if controls_disabled == false{
 	gamepad_set_axis_deadzone(0, 0.1);
@@ -53,18 +44,23 @@ if controls_disabled == false{
 
 	if gamepad_button_check(0,gp_face1)
 		gamepad_button[1] = true
+	else gamepad_button[1] = false
 	
 	if gamepad_button_check(0,gp_face2)
 		gamepad_button[2] = true
+	else gamepad_button[2] = false
 	
 	if gamepad_button_check(0,gp_face3)
 		gamepad_button[3] = true
+	else gamepad_button[3] = false
 		
 	if gamepad_button_check(0,gp_face4)
 		gamepad_button[4] = true
+	else gamepad_button[4] = false
 		
 	if gamepad_button_check_pressed(0,gp_shoulderl)
 		select_next_active_item = true
+	else select_next_active_item = false
 		
 	// Zoom
 
@@ -95,68 +91,30 @@ if keyboard_check_pressed(vk_control){
 		obj_health += 50
 	}
 	
-#endregion
-
-// Are there any activated modules, and if so, which one is selected?
-if scr_timer(30){ // if no active module is selected, check for one periodically
-	if selected_active_module == noone or !scr_exists(modules[selected_active_module,0]){
-		selected_active_module = noone
-		for(var i = 0; (i < array_height_2d(modules)) and selected_active_module == noone; i+=1;)
-			if scr_exists(modules[i,0])
-				if modules[i,0].active == true
-					selected_active_module = i
-			}
-		}
-else
-	if select_next_active_item == true{
-		// Check for the next active module
-		h = selected_active_module + 1
-		repeat(array_height_2d(modules)-1){
-			if h >= array_height_2d(modules)
-				h -= array_height_2d(modules)
-			if scr_exists(modules[h,0])
-				if modules[h,0].active == true
-					selected_active_module = h
-			h += 1
-			}
-		}
-		
-		
-	
-
-
-#region Turning & moving
 // Turn
 
 if controls_disabled == false{
-	control_mode = 1
-
-	//phy_rotation = (phy_rotation + 360) mod 360
-	if control_mode == 1{
-		if rotation_value < 0 and abs(phy_angular_velocity) < rotation_speed * abs(rotation_value) 
-			physics_apply_torque(rotation_force * rotation_value)//phy_angular_velocity -= min(20,abs(phy_angular_velocity - rotation_speed * rotation_value))//physics_apply_angular_impulse(rotation_force * rotation_value)
 			
-		if rotation_value > 0 and abs(phy_angular_velocity) < rotation_speed * abs(rotation_value) 
-			physics_apply_torque(rotation_force * rotation_value)//phy_angular_velocity += min(20,abs(phy_angular_velocity - rotation_speed * rotation_value))//physics_apply_angular_impulse(rotation_force * rotation_value)
-		}
-		//phy_angular_velocity = rotation_value * rotation_speed // phy_angular_velocity = rotation_value * rotation_speed;
-	if control_mode == 2{
+	rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
 	
-		rotation_value = angle_difference(-phy_rotation,target_rotation)/10
-		rotation_value = clamp(rotation_value,-1,1)
-		rotation_value = rotation_value * left_stick_value
-		phy_angular_velocity = rotation_value * rotation_speed // physics_apply_angular_impulse(rotation_value * rotation_speed) //
-		}
-	}
+	if abs(phy_angular_velocity) < rotation_speed * abs(rotation_value)
+		physics_apply_torque(rotation_force * rotation_value)
+	else
+		physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
+}
 	
-
 // Stop ship from skidding
 if add_thrust
 	scr_counter_lateral_drift();
 	
-#endregion
+// Update modules and activate them!
 
-#region Health
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+	if scr_exists(ship_segment[i].module){
+		if gamepad_button[ship_segment[i].module.activation_button] == true and ship_segment[i].module.activation_button != 0
+			ship_segment[i].module.activated = true
+		}
+	
 
 // Health
 
@@ -168,13 +126,13 @@ if health_difference > 0{
 	
 	
 if obj_health <= 0{
-	scr_explode_object_new();
+	scr_explode_object_new_new();
 	//phy_active = false
-	for(var i = 0; i < array_height_2d(modules); i+=1;){
-		if scr_exists(modules[i,0])
-			with(modules[i,0])
+	for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+		if scr_exists(ship_segment[i].module)
+			with(ship_segment[i].module)
 				instance_destroy() 
-		with(modules[i,1])
+		with(ship_segment[i])
 				instance_destroy()
 		}
 	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
@@ -186,19 +144,8 @@ if obj_health <= 0{
 	
 	instance_destroy();
 	exit;
-	}
-
-#endregion
-
-#region updating position and modules
-
-// Find mirror positions
-
-scr_find_mirror_positions();
-
-// Wrap room if needed
-
-scr_wrap_room();//scr_wrap_room_player();
+	}	
+		
 
 // Energy, health, particles
 
@@ -221,61 +168,23 @@ if !energy_disabled
 energy = clamp(energy,0,max_energy)
 
 obj_health = clamp(obj_health,0,max_health)
-// Save health value to check later if taken damage	
 obj_health_old = obj_health
 	
 particles = clamp(particles,0,max_particles)	
-	
+
+// Find mirror positions
+
+scr_find_mirror_positions();
+
+// Wrap room if needed
+
+scr_wrap_room();//scr_wrap_room_player();
+
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 
 audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
-
-// Update module holders
-
-for(var i = 0; i < array_height_2d(modules); i+=1;){
-		modules[i,0] = modules[i,1].module
-		modules[i,1].persistent = true
-		modules[i,1].x = phy_position_x + lengthdir_x(modules[i,3],-phy_rotation + modules[i,2])
-		modules[i,1].y = phy_position_y + lengthdir_y(modules[i,3],-phy_rotation + modules[i,2])
-		}
-
-// Update modules and make sure they have the right activation button
-
-for(var i = 0; i < array_height_2d(modules); i+=1;)
-	if scr_exists(modules[i,0]){
-		modules[i,0].cost = 0
-		modules[i,0].owner = id
-		if modules[i,0].active == true
-			modules[i,0].activation_button = 0
-		else
-			switch (modules[i,0].offset_angle){
-				case 0: modules[i,0].activation_button = 4; break;
-				case 90: modules[i,0].activation_button = 3; break;
-				case 180: modules[i,0].activation_button = 1; break;
-				case 270: modules[i,0].activation_button = 2; break;
-				}
-		}
-
-// Update modules and activate them!
-
-for(var i = 0; i < array_height_2d(modules); i+=1;)
-	if scr_exists(modules[i,0]){
-		modules[i,0].module_holder = modules[i,1]
-		if gamepad_button[modules[i,0].activation_button] == true and modules[i,0].activation_button != 0
-			modules[i,0].activated = true
-		}
-		
-if selected_active_module != noone and scr_exists(modules[selected_active_module,0]){
-	if use_active_item == true
-		modules[selected_active_module,0].activated = true
-	else modules[selected_active_module,0].activated = false	
-	}
-
-#endregion
-
-#region Pickups
 
 // Credits
 var pickup_type = obj_pickup_credit
@@ -310,10 +219,15 @@ if particles < max_particles
 				if temp_dist <= other.pickup_seek_range
 					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
 			}
-
-#endregion
-
+			
 if credits > credits_old
 credits_gained += (credits - credits_old)
 global.total_credits += (credits - credits_old)
 credits_old = credits
+
+// Update costs
+
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+	if scr_exists(ship_segment[i].module){
+		ship_segment[i].module.cost = 0
+		}

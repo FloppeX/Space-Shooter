@@ -1,4 +1,6 @@
 // junk variables..
+
+obj_health = 0
 draw_scale = 1
 energy = 0
 phy_rotation = -90

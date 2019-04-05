@@ -79,7 +79,6 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 	draw_sprite_ext(modules[selected_active_module,0].sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,modules[selected_active_module,0].offset_angle+90,c_white,1)
 	}
 	
-/*
 // Crew
 draw_set_font(global.font_big_text)
 draw_set_color(c_white)

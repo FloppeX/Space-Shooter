@@ -1,0 +1,1 @@
+owner.obj_health += obj_health

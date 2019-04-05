@@ -37,7 +37,7 @@ cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor)
 
 // Wormhole
 
-wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,100,obj_wormhole_level_begin)
+wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,100,obj_wormhole_level_begin_new)
 
 // Sound
 

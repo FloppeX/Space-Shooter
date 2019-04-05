@@ -1,3 +1,10 @@
+if instance_exists(obj_player)
+	global.camera.follow_object = obj_player //obj_player
+else
+	global.camera.follow_object = obj_player_old
+	
+//
+
 if scr_exists(obj_player){
 
 	stage_timer -= 1
@@ -103,7 +110,7 @@ if !instance_exists(obj_enemy_ship) or enemy_wave_timer <= 0
 	
 if stage_timer <= 0 and end_wormhole_created == false{
 	global.difficulty_level += 1;
-	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end)
+	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end_new)
 	end_wormhole_created = true
 	if global.difficulty_level <= global.number_of_levels
 		wormhole.next_level = rm_shop
@@ -112,10 +119,10 @@ if stage_timer <= 0 and end_wormhole_created == false{
 	}
 	
 	
-if instance_exists(obj_wormhole_level_end){
+if instance_exists(obj_wormhole_level_end_new){
 	wormhole_end_timer -= 1
 	if wormhole_end_timer <= 0{
-		with(obj_wormhole_level_end)
+		with(obj_wormhole_level_end_new)
 			done_warping = true
 		wormhole_end_gone = true
 		}

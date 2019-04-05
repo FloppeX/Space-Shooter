@@ -4,13 +4,14 @@ draw_self();
 
 // Show where module can be placed
 
+
 if swap_module != noone{
 	with(obj_player)
-		for(var i = 0; i < array_height_2d(modules); i+=1;){
-			if scr_check_module_placement(other.swap_module,modules[i,1])
-				draw_sprite(spr_module_holder_green,-1,modules[i,1].x,modules[i,1].y)
+		for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+			if scr_check_module_placement(other.swap_module,ship_segment[i])
+				draw_sprite(spr_module_holder_green,-1,ship_segment[i].phy_position_x,ship_segment[i].phy_position_y)
 			else 
-				draw_sprite(spr_module_holder_red,-1,modules[i,1].x,modules[i,1].y)
+				draw_sprite(spr_module_holder_red,-1,ship_segment[i].phy_position_x,ship_segment[i].phy_position_y)
 		}
 	}
 

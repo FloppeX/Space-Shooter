@@ -40,10 +40,10 @@ global.camera.follow_object = obj_player
 // Wormhole
 
 // Temporarily disabled starting wormholes!!
-wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
+wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin_new)
 
 // timers
-stage_timer_start = 200//5400
+stage_timer_start = 5400
 stage_timer = stage_timer_start
 
 number_of_waves = 3

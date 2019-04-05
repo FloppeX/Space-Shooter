@@ -14,8 +14,8 @@ particle_cost = (particle_cost_base + particle_cost_bonus) * particle_cost_multi
 
 // Activate?
 
-if owner.gamepad_button[activation_button] == true
-	activated = true
+//if owner.gamepad_button[activation_button] == true
+//	activated = true
 	
 if activation_timer > 0{
 	activated = true

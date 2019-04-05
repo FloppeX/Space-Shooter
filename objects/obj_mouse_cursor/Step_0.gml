@@ -7,5 +7,6 @@ if mouse_check_button_pressed(mb_left){
 }
 
 if mouse_check_button_pressed(mb_right){
-	instance_create_depth(x,y,10,obj_ship_new);
+	ship = instance_create_depth(x,y,10,obj_player);
+	ship.phy_rotation = -90
 }

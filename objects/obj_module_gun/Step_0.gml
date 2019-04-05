@@ -82,3 +82,21 @@ if ready_to_shoot{
 	}
  
 ready_to_shoot = true // reset for next turn
+
+// Activation button
+
+switch (offset_angle){
+	case 0: activation_button = 4; break;
+	case 90: activation_button = 3; break;
+	case 180: activation_button = 1; break;
+	case 270: activation_button = 2; break;
+	}
+			
+// Placement
+
+switch (offset_angle){
+	case 0: placement_req_above = noone; break;
+	case 90: placement_req_left = noone; break;
+	case 180: placement_req_below = noone; break;
+	case 270: placement_req_right = noone; break;
+	}

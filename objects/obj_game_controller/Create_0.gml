@@ -1,6 +1,6 @@
 // Test
 
-cursor = instance_create_depth(0,0,10,obj_mouse_cursor)
+cursor = instance_create_depth(0,0,-1000,obj_mouse_cursor)
 
 //
 

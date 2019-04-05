@@ -34,8 +34,8 @@ if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face
 						owner = other.selected_module_holder.owner
 						module_holder = other.selected_module_holder
 						other.selected_module_holder.module = id
-						phy_position_x = other.selected_module_holder.x
-						phy_position_y = other.selected_module_holder.y
+						phy_position_x = other.selected_module_holder.phy_position_x
+						phy_position_y = other.selected_module_holder.phy_position_y
 						//placement_offset_angle = other.selected_module_holder.placement_offset_angle
 						//placement_offset_distance = other.selected_module_holder.placement_offset_distance
 						joint = physics_joint_revolute_create(module_holder.owner, id,phy_position_x,phy_position_y,0, 360, 0, 10,3,1,0);
