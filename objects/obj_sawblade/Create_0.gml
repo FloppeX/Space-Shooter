@@ -6,7 +6,7 @@ rotation_speed = 0
 rotation_speed_change = 0.5
 target_rotation_speed = 10
 
-damage = 3
+damage = 1
 
 play_sound = false
 current_sound = noone

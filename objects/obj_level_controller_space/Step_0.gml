@@ -56,6 +56,8 @@ if number_of_explosive_barrels >= 1{
 	number_of_explosive_barrels -= 1
 	}
 
+//
+
 ship_interval_timer -= 1
 if number_of_enemies >= 1 and ship_interval_timer <= 0 and scr_exists(obj_player){
 
@@ -65,16 +67,10 @@ if number_of_enemies >= 1 and ship_interval_timer <= 0 and scr_exists(obj_player
 	var temp_y = obj_player.phy_position_y + lengthdir_y(tempdist,tempdir)
 
 	
-	var i = irandom(global.difficulty_level);
-	i = clamp(i,0,4)
+	global.temp_number_of_segments = irandom(global.difficulty_level)+2;
+	global.temp_number_of_segments = clamp(global.temp_number_of_segments,3,8)
 	
-	switch(i){
-		case 0: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_2); break;
-		case 2: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_3); break;
-		case 3: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_4); break;
-		case 4: new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_5); break;
-		}
+	new_enemy = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular);
 
 	new_enemy.max_health_base = new_enemy.max_health_base * (1 + 0.2 * global.difficulty_level)
 	new_enemy.obj_health = new_enemy.max_health_base

@@ -1,4 +1,5 @@
 // Calculate variables that may be changed by modifiers
+// Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base + max_speed_bonus) * max_speed_multiplier
 rotation_speed = (rotation_speed_base + rotation_speed_bonus) * rotation_speed_multiplier

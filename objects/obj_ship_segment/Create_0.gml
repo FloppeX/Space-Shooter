@@ -1,4 +1,4 @@
-owner = obj_player;
+owner = noone;
 
 //
 

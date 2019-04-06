@@ -7,6 +7,7 @@ if mouse_check_button_pressed(mb_left){
 }
 
 if mouse_check_button_pressed(mb_right){
-	ship = instance_create_depth(x,y,10,obj_player);
+	global.temp_number_of_segments = irandom(8)+2;
+	ship = instance_create_depth(x,y,10,obj_enemy_modular);
 	ship.phy_rotation = -90
 }

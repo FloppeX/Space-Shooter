@@ -17,6 +17,11 @@ global.total_kills = -1
 global.total_bullets = -1
 global.total_credits = -1
 
+// Misc global variables
+
+global.temp_number_of_segments = 3
+
+
 // Open file to read initial settings
 
 stats_file = file_text_open_read(working_directory+"stats.txt");

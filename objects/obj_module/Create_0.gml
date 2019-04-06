@@ -32,7 +32,7 @@ activation_button = 2
 activated = false
 activation_timer = 0
 
-owner = obj_player;
+owner = noone;
 owned_by_shop = false // used when selecting modules in the shop
 
 target_angle = 0;

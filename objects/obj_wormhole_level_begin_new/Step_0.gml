@@ -73,7 +73,7 @@ if done_warping{
 			instance_destroy();
 	if scr_exists(player_ship){
 		with(player_ship){
-			disabled_timer = 1
+			disabled_timer = 30
 			phy_rotation = -90
 			phy_active = true
 			visible = true

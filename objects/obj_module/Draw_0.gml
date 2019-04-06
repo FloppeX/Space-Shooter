@@ -1,13 +1,15 @@
 
-if owner.phy_active = false
-	phy_active = false
-else
-	phy_active = true
+if scr_exists(owner){
+	if owner.phy_active = false
+		phy_active = false
+	else
+		phy_active = true
 	
-if owner.visible = false
-	visible = false
-else
-	visible = true
+	if owner.visible = false
+		visible = false
+	else
+		visible = true
+	}
 		
 
 if visible

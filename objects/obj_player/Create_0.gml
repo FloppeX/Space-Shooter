@@ -87,7 +87,7 @@ particles = max_particles
 
 // Rotating & moving
 
-rotation_force = 800
+rotation_force = 200
 rotation_value = 0;
 add_thrust = 0;
 
@@ -133,11 +133,14 @@ modifiers[0,4] = noone
 
 // Segments
 
+scr_create_ship_segments(10,24,obj_ship_segment_player)
+
+/*
 var segment_distance = 24
 number_of_segments = 10
 //ship_segment[number_of_segments-1] = noone
 
-ship_segment[0] = instance_create_depth(phy_position_x,phy_position_y,-6,obj_ship_segment)
+ship_segment[0] = instance_create_depth(phy_position_x,phy_position_y,-6,obj_ship_segment_player)
 number_segments_placed = 1;
 var segment_placed = false;
 
@@ -148,26 +151,26 @@ repeat(100)
 			if segment_placed == false{
 				var direction_randomizer = irandom(11)
 				if direction_randomizer >= 0 and direction_randomizer <= 2
-					if !instance_place(ship_segment[i].phy_position_x+segment_distance,ship_segment[i].phy_position_y,obj_ship_segment){
-						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x+segment_distance,ship_segment[i].phy_position_y,-6,obj_ship_segment)
+					if !instance_place(ship_segment[i].phy_position_x+segment_distance,ship_segment[i].phy_position_y,obj_ship_segment_player){
+						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x+segment_distance,ship_segment[i].phy_position_y,-6,obj_ship_segment_player)
 						number_segments_placed += 1
 						segment_placed = true
 						}
 				if direction_randomizer >= 3 and direction_randomizer <= 5
-					if !instance_place(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y-segment_distance,obj_ship_segment){
-						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y-segment_distance,-6,obj_ship_segment)
+					if !instance_place(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y-segment_distance,obj_ship_segment_player){
+						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y-segment_distance,-6,obj_ship_segment_player)
 						number_segments_placed += 1
 						segment_placed = true
 						}
 				if direction_randomizer >= 6 and direction_randomizer <= 8
-					if !instance_place(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y+segment_distance,obj_ship_segment){
-						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y+segment_distance,-6,obj_ship_segment)
+					if !instance_place(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y+segment_distance,obj_ship_segment_player){
+						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x,ship_segment[i].phy_position_y+segment_distance,-6,obj_ship_segment_player)
 						number_segments_placed += 1
 						segment_placed = true
 						}
 				if direction_randomizer >= 9 //and direction_randomizer <= 15
-					if !instance_place(ship_segment[i].phy_position_x-segment_distance,ship_segment[i].phy_position_y,obj_ship_segment){
-						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x-segment_distance,ship_segment[i].phy_position_y,-6,obj_ship_segment)
+					if !instance_place(ship_segment[i].phy_position_x-segment_distance,ship_segment[i].phy_position_y,obj_ship_segment_player){
+						ship_segment[array_length_1d(ship_segment)] = instance_create_depth(ship_segment[i].phy_position_x-segment_distance,ship_segment[i].phy_position_y,-6,obj_ship_segment_player)
 						number_segments_placed += 1
 						segment_placed = true
 						}
@@ -176,13 +179,13 @@ repeat(100)
 					for(var h = 0; h < number_segments_placed; h += 1)
 						if ship_segment[h] != noone
 							with(ship_segment[h]){
-								temp_segment = instance_place(phy_position_x,phy_position_y-segment_distance,obj_ship_segment)
+								temp_segment = instance_place(phy_position_x,phy_position_y-segment_distance,obj_ship_segment_player)
 									ship_segment_left = temp_segment
-								temp_segment = instance_place(phy_position_x+segment_distance,phy_position_y,obj_ship_segment)
+								temp_segment = instance_place(phy_position_x+segment_distance,phy_position_y,obj_ship_segment_player)
 									ship_segment_above = temp_segment
-								temp_segment = instance_place(phy_position_x,phy_position_y+segment_distance,obj_ship_segment)
+								temp_segment = instance_place(phy_position_x,phy_position_y+segment_distance,obj_ship_segment_player)
 									ship_segment_right = temp_segment
-								temp_segment = instance_place(phy_position_x-segment_distance,phy_position_y,obj_ship_segment)
+								temp_segment = instance_place(phy_position_x-segment_distance,phy_position_y,obj_ship_segment_player)
 									ship_segment_below = temp_segment
 								}
 			}
@@ -207,17 +210,22 @@ for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 /*
 for(i = 0; i < number_of_segments; i += 1)
 	with(ship_segment[i]){
-		temp_segment = instance_place(phy_position_x,phy_position_y-segment_distance,obj_ship_segment)
+		temp_segment = instance_place(phy_position_x,phy_position_y-segment_distance,obj_ship_segment_player)
 			ship_segment_left = temp_segment
-		temp_segment = instance_place(phy_position_x+segment_distance,phy_position_y,obj_ship_segment)
+		temp_segment = instance_place(phy_position_x+segment_distance,phy_position_y,obj_ship_segment_player)
 			ship_segment_above = temp_segment
-		temp_segment = instance_place(phy_position_x,phy_position_y+segment_distance,obj_ship_segment)
+		temp_segment = instance_place(phy_position_x,phy_position_y+segment_distance,obj_ship_segment_player)
 			ship_segment_right = temp_segment
-		temp_segment = instance_place(phy_position_x-segment_distance,phy_position_y,obj_ship_segment)
+		temp_segment = instance_place(phy_position_x-segment_distance,phy_position_y,obj_ship_segment_player)
 			ship_segment_below = temp_segment
 		}
 */
 //
+
+scr_place_engine_player()
+scr_place_engine_player()
+
+scr_place_weapon_player()
 
 var segment_placed = false
 temp_module = instance_create_depth(0,0,-10,obj_module_cockpit);
@@ -228,7 +236,7 @@ repeat(100){
 		segment_placed = true
 		}
 	}
-
+/*
 var segment_placed = false
 temp_module = instance_create_depth(0,0,-10,obj_module_blaster);
 repeat(100){
@@ -238,27 +246,30 @@ repeat(100){
 		segment_placed = true
 		}
 	}
-	
-var segment_placed = false
-temp_module = instance_create_depth(0,0,-10,obj_module_engine_player);
-repeat(100){
-	var i = irandom(array_length_1d(ship_segment)-1)
-	if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !segment_placed{
-		ship_segment[i].module = temp_module
-		segment_placed = true
-		}
-	}
-	
-var segment_placed = false
-temp_module = instance_create_depth(0,0,-10,obj_module_engine_player);
-repeat(100){
-	var i = irandom(array_length_1d(ship_segment)-1)
-	if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !segment_placed{
-		ship_segment[i].module = temp_module
-		segment_placed = true
-		}
-	}
+*/	
 
+	
+/*
+var segment_placed = false
+temp_module = instance_create_depth(0,0,-10,obj_module_engine_player);
+repeat(100){
+	var i = irandom(array_length_1d(ship_segment)-1)
+	if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !segment_placed{
+		ship_segment[i].module = temp_module
+		segment_placed = true
+		}
+	}
+	
+var segment_placed = false
+temp_module = instance_create_depth(0,0,-10,obj_module_engine_player);
+repeat(100){
+	var i = irandom(array_length_1d(ship_segment)-1)
+	if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !segment_placed{
+		ship_segment[i].module = temp_module
+		segment_placed = true
+		}
+	}
+*/
 
 
 for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
