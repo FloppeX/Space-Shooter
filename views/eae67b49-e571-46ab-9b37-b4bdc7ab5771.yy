@@ -10,8 +10,9 @@
         "3b7d8807-02df-4a7e-8a7b-eac05cc15c2a",
         "b6caef3b-267e-4db7-a731-2592b35bc5b0",
         "7a80cfb3-9a49-42d3-bc0f-ddf5e48f709e",
-        "99489252-f415-4fbf-9cce-5f735685aa4c",
-        "3f3a30ff-1d44-4ba3-8284-b490c7963c37"
+        "51f95d88-b345-4026-a378-7eae0b754873",
+        "3f3a30ff-1d44-4ba3-8284-b490c7963c37",
+        "59d4463d-3962-4dfc-877a-04f765ef8b6d"
     ],
     "filterType": "GMObject",
     "folderName": "Shop objects",

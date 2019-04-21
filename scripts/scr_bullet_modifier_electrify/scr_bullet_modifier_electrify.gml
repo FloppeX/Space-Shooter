@@ -1,4 +1,4 @@
-target_object = obj_enemy_ship
+target_object = obj_enemy_ship_new
 damage = 0
 
 var i = irandom(2)

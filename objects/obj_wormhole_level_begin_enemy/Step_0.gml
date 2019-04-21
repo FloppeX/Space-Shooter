@@ -3,7 +3,7 @@ event_inherited();
 warp_start_timer -= 1;
 
 if warping_ship == noone and !done_warping
-	warping_ship = instance_place(phy_position_x,phy_position_y,obj_enemy_ship)
+	warping_ship = instance_place(phy_position_x,phy_position_y,obj_enemy_ship_new)
 	
 if scr_exists(warping_ship){
 	with(warping_ship){
@@ -33,6 +33,12 @@ if scr_exists(warping_ship){
 				fake_warping_ship.modules[i,2] = warping_ship.ship_segment[i].placement_angle
 				fake_warping_ship.modules[i,3] = warping_ship.ship_segment[i].placement_distance
 				fake_warping_ship.modules[i,4] = warping_ship.ship_segment[i].module.offset_angle
+				if warping_ship.ship_segment[i].ship_segment_right != noone
+					fake_warping_ship.modules[i,5] = 1
+				else fake_warping_ship.modules[i,5] = 0
+				if warping_ship.ship_segment[i].ship_segment_below != noone
+					fake_warping_ship.modules[i,6] = 1
+				else fake_warping_ship.modules[i,6] = 0
 				}
 			else fake_warping_ship.modules[i,0] = noone
 		}

@@ -2,7 +2,7 @@
 /*
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 */
-global.zoom = 1000
+//global.zoom = 1000
 
 // Clear particles
 
@@ -33,7 +33,7 @@ next_level_timer = 120
 // Shop
 
 shop = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_shop)
-cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor)
+cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor_new)
 
 // Wormhole
 

@@ -5,26 +5,6 @@
     "name": "obj_laser_blast_player",
     "eventList": [
         {
-            "id": "58995ccf-9688-4f56-bb61-924b622cfe90",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "ddc57113-261d-4b3c-bf0c-f0ab9870f92e"
-        },
-        {
-            "id": "f3c74269-0bb5-4bb5-a136-b0633f428468",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "ddc57113-261d-4b3c-bf0c-f0ab9870f92e"
-        },
-        {
             "id": "92886987-77f2-4cd2-97e8-b01a4763ae78",
             "modelName": "GMEvent",
             "mvc": "1.0",

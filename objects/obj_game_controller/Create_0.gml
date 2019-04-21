@@ -11,11 +11,18 @@ randomize();
 game_set_speed(60,gamespeed_fps)
 global.game_timer = 0
 
+//physics_world_update_speed(60)
+//physics_world_update_iterations(20)
+
 // Global stats variables
 
 global.total_kills = -1
 global.total_bullets = -1
 global.total_credits = -1
+
+global.enemies_killed = 0	// Enemies killed previous step
+number_of_enemies = 0		// Used for this check
+number_of_enemies_old = 0	// Used for this check
 
 // Misc global variables
 
@@ -65,7 +72,7 @@ display_set_gui_size(3840,2160)//(s_width,s_height);
 global.view_mode = 1
 global.max_zoom = 4400
 global.min_zoom = 200
-global.zoom = 4400//1100
+global.zoom = 1100
 temp_zoom = global.zoom
 
 // Screen shake settings
@@ -140,14 +147,27 @@ global.asteroid_chance_particles = 7
 
 global.difficulty_level = 1;
 
-// How many levels?
+// List of levels
 
-global.number_of_levels = 6
+global.active_level = 0
+
+global.levels[0] = rm_space
+global.levels[1] = rm_shop
+global.levels[2] = rm_space
+global.levels[3] = rm_shop
+global.levels[4] = rm_boss
+global.levels[5] = rm_shop
+global.levels[6] = rm_space
+global.levels[7] = rm_shop
+global.levels[8] = rm_space
+global.levels[7] = rm_shop
+global.levels[8] = rm_boss
+global.levels[9] = rm_end
 
 // Controls
 
-if instance_number(obj_input) == 0
-	input_controller = instance_create_depth(0,0,10,obj_input)
+if !scr_exists(obj_input_controller)
+	input_controller = instance_create_depth(0,0,10,obj_input_controller)
 
 // Create particle systems
 

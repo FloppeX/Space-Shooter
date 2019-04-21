@@ -9,7 +9,7 @@ with(obj_view_object)
 	
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
-global.zoom = 1100
+//global.zoom = 1100
 
 // Clear particles
 
@@ -43,7 +43,7 @@ with(view_object){
 // Wormhole
 
 // Temporarily disabled starting wormholes!!
-wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin)
+wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin_new)
 
 // timers
 

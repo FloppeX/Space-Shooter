@@ -2,7 +2,7 @@ event_inherited();
 
 depth = -10
 
-target_type = obj_enemy_ship
+target_type = obj_ship_segment_enemy
 
 // Rocket properties
 obj_rotation = 0

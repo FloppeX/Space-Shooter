@@ -1,7 +1,7 @@
 event_inherited();
 
 color = c_lime;
-target_type = obj_enemy_ship
+target_type = obj_enemy_ship_new
 targeting_arc = 90;
 seek_range = 500
 force = 0

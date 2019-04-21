@@ -1,12 +1,11 @@
-// Control view
-/*
-with(view_object){
-	phy_position_x = obj_player.phy_com_x
-	phy_position_y = obj_player.phy_com_y
-	phy_speed_x = obj_player.phy_speed_x
-	phy_speed_y = obj_player.phy_speed_y
+if global.view_mode == 2{
+	with(obj_player)
+		for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+			if scr_exists(ship_segment[i].module)
+				draw_line_color(0,0,ship_segment[i].module.phy_position_x,ship_segment[i].module.phy_position_y,c_red,c_red)
+			
+	with(obj_shop)
+		for(var i = 0; i < array_length_1d(shop_segments); i+=1;)
+			if scr_exists(shop_segments[i].module)
+				draw_line_color(6000,6000,shop_segments[i].module.phy_position_x,shop_segments[i].module.phy_position_y,c_green,c_green)
 	}
-/*
-cam = camera_get_active()
-
-camera_set_view_pos(cam,view_object.phy_position_x -0.5*camera_get_view_width(cam),view_object.phy_position_y-0.5*camera_get_view_height(cam))

@@ -1,3 +1,15 @@
+// Zoom
+
+if gamepad_button_check_pressed(0,gp_padu)
+		global.zoom = global.zoom - 100
+
+if gamepad_button_check_pressed(0,gp_padd)
+		global.zoom = global.zoom + 100
+	
+global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
+
+//
+
 if instance_exists(obj_player)
 	global.camera.follow_object = obj_player //obj_player
 else
@@ -99,19 +111,12 @@ if keyboard_check_pressed(vk_backspace){
 
 // Are all enemies dead? Or is the timer 0? Then count down and move to next level
 
-/*
-if !instance_exists(obj_enemy_ship) or enemy_wave_timer <= 0
-	next_level_timer -= 1
-*/
-	
 if stage_timer <= 0 and end_wormhole_created == false{
 	global.difficulty_level += 1;
+	global.active_level += 1
 	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end_new)
+	wormhole.next_level = global.levels[global.active_level]
 	end_wormhole_created = true
-	if global.difficulty_level <= global.number_of_levels
-		wormhole.next_level = rm_shop
-	else 
-		wormhole.next_level = rm_end
 	}
 	
 	

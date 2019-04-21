@@ -7,7 +7,7 @@
 global.camera.phy_position_x = 0.5 * room_width
 global.camera.phy_position_y = 0.5 * room_height
 
-global.zoom = 1100
+//global.zoom = 1100
 
 // Clear particles
 

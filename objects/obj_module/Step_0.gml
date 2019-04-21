@@ -26,7 +26,7 @@ if activation_timer > 0{
 
 angle_diff = angle_difference(-phy_rotation, target_angle)
 if joint != noone
-	physics_joint_set_value(joint,phy_joint_motor_speed,angle_diff)
+	physics_joint_set_value(joint,phy_joint_motor_speed,0.5 * angle_diff)
 target_angle = -owner.phy_rotation + offset_angle
 
 // Mirror owners alpha

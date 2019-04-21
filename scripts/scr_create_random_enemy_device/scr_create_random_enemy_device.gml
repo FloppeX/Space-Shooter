@@ -8,5 +8,7 @@ switch (i){
 	case 4: temp_module = instance_create_depth(0,0,-10,obj_module_reflective_shield_enemy); break;
 	}
 temp_module.persistent = false
-
+	
+temp_module.offset_angle = irandom(3) * 90;
+	
 return temp_module;

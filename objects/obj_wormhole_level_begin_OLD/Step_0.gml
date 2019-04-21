@@ -33,7 +33,7 @@ if warping_ship != noone and !done_warping{
 
 	
 if !done_warping{
-	global.zoom = global.min_zoom + obj_player.draw_scale * 400
+	//global.zoom = global.min_zoom + obj_player.draw_scale * 400
 	if obj_player.draw_scale == 1{
 		done_warping = true
 		obj_player.disabled_timer = 0

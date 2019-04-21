@@ -10,6 +10,9 @@ for(var i = 0; i < array_height_2d(other.modules); i+=1;)
 		new_wormhole_traveller.modules[i,2] = other.modules[i,2]
 		new_wormhole_traveller.modules[i,3] = other.modules[i,3]
 		new_wormhole_traveller.modules[i,4] = other.modules[i,0].offset_angle
+		if other.modules[i,0].offset_angle
+		new_wormhole_traveller.modules[i,5] = other.modules[i,0].offset_angle
+		new_wormhole_traveller.modules[i,6] = other.modules[i,0].offset_angle
 		}
 	else new_wormhole_traveller.modules[i,0] = noone
 

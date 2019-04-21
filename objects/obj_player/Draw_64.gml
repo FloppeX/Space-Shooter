@@ -33,7 +33,7 @@ player_y = phy_position_y-global.wrap_border_top
 
 scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid,c_white);
 scr_draw_object_type_on_map(obj_rocket,spr_map_marker_rocket,c_white);
-scr_draw_object_type_on_map(obj_enemy_ship,spr_map_marker_enemy_ship,c_white);
+scr_draw_object_type_on_map(obj_enemy_ship_new,spr_map_marker_enemy_ship,c_white);
 wormhole = instance_find(obj_wormhole_level_end_new,0)
 if wormhole != noone
 	scr_draw_object_type_on_map(obj_wormhole_level_end_new,spr_map_wormhole,wormhole.color);
@@ -79,7 +79,7 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 	draw_sprite_ext(modules[selected_active_module,0].sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,modules[selected_active_module,0].offset_angle+90,c_white,1)
 	}
 	
-/*
+
 // Crew
 draw_set_font(global.font_big_text)
 draw_set_color(c_white)

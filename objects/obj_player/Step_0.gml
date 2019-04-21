@@ -65,12 +65,14 @@ if controls_disabled == false{
 		
 	// Zoom
 
-	if gamepad_button_check(0,gp_padu)
-		zoom_out = true
-		
-	if gamepad_button_check(0,gp_padd)
-		zoom_in = true
+if gamepad_button_check(0,gp_padu)
+		global.zoom = global.zoom - 20
+
+if gamepad_button_check(0,gp_padd)
+		global.zoom = global.zoom + 20
 	
+global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
+
 	}
 
 if keyboard_check(vk_right){
@@ -89,7 +91,23 @@ if keyboard_check_pressed(vk_space){
 	}
 	
 if keyboard_check_pressed(vk_control){
-		obj_health += 50
+		scr_add_ship_segment(id,24,obj_ship_segment_player)
+	}
+	
+if keyboard_check_pressed(ord("Q")){
+		scr_ship_update_segments(id,segment_distance)
+	}
+	
+if keyboard_check_pressed(ord("1")){
+		scr_add_ship_segment_test_1(id,24,obj_ship_segment_player)
+	}
+
+if keyboard_check_pressed(ord("2")){
+		scr_add_ship_segment_test_2(id,24,obj_ship_segment_player)
+	}
+	
+if keyboard_check_pressed(ord("3")){
+		scr_add_ship_segment_test_3(id,24,obj_ship_segment_player)
 	}
 	
 // Turn
@@ -232,3 +250,16 @@ for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 	if scr_exists(ship_segment[i].module){
 		ship_segment[i].module.cost = 0
 		}
+		
+// TEST
+
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+	if scr_exists(ship_segment[i]){
+			ship_segment[i].owner = id
+			ship_segment[i].persistent = true
+			if scr_exists(ship_segment[i].module){
+				ship_segment[i].module.owner = id
+				ship_segment[i].module.persistent = true
+				ship_segment[i].module.cost = 0
+				}
+			}

@@ -1,12 +1,12 @@
 // Control view
 
-if instance_exists(obj_enemy_ship){
-	number_of_ships = instance_number(obj_enemy_ship)
+if instance_exists(obj_enemy_ship_new){
+	number_of_ships = instance_number(obj_enemy_ship_new)
 	if ship_to_follow == noone
-		ship_to_follow = instance_find(obj_enemy_ship,number_of_ships-1)
+		ship_to_follow = instance_find(obj_enemy_ship_new,number_of_ships-1)
 	
 	if gamepad_button_check_pressed(0,gp_padr)
-		ship_to_follow = instance_find(obj_enemy_ship,irandom(number_of_ships-1))
+		ship_to_follow = instance_find(obj_enemy_ship_new,irandom(number_of_ships-1))
 	
 	if ship_to_follow != noone{
 		with(view_object){

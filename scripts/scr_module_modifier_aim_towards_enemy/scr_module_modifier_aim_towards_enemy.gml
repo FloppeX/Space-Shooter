@@ -4,11 +4,17 @@ modifier_description = "Auto aim"
 
 // Modifier actions
 
+if !scr_exists(owner)
+	exit
+else 
+
 var seek_range = 800
 var max_rotation = argument0
 var rotation_speed = 2
 var starting_dir = -phy_rotation//-owner.phy_rotation+offset_angle
-var target = scr_rocket_find_target_in_arc(owner.target_object ,starting_dir,2*max_rotation,seek_range)
+var target = scr_rocket_find_target_in_arc(owner.target_objects[0] ,starting_dir,2*max_rotation,seek_range)
+if target == noone
+	target = scr_rocket_find_target_in_arc(owner.target_objects[1] ,starting_dir,2*max_rotation,seek_range)
 if scr_exists(target){
 	bullet_speed = (bullet_speed_base + bullet_speed_bonus) * bullet_speed_multiplier
 	var target_dir = scr_wrap_intercept_course(id,target,bullet_speed) // point_direction(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y) //scr_wrap_intercept_course(id,target,bullet_speed)

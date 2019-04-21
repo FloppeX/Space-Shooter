@@ -70,7 +70,7 @@
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": true,
     "physicsAngularDamping": 0,
-    "physicsDensity": 0.1,
+    "physicsDensity": 0.2,
     "physicsFriction": 0,
     "physicsGroup": 0,
     "physicsKinematic": false,
@@ -98,6 +98,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "73a284bf-ee56-40b9-9e39-e8d95bec8a62",
+    "spriteId": "3acd87aa-29ed-4cd3-91cd-e4e9dae47ca8",
     "visible": true
 }

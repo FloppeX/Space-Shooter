@@ -1,6 +1,6 @@
-target_type = argument0
-angle = argument1
-angle_arc = argument2
+var target_type = argument0
+var angle = argument1
+var angle_arc = argument2
 var range = argument3
 var target = noone
 var temp_distance = range;
@@ -9,6 +9,10 @@ var temp_object = noone;
 var temp_direction = angle;
 var closest_direction = angle;
 var temp_x,temp_y,i;
+
+
+if target_type == noone
+	return noone
 
 if instance_number(target_type) <= 0
 	return noone;

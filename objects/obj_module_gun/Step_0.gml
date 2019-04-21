@@ -56,7 +56,7 @@ if ready_to_shoot{
 		bullet_timer = bullet_interval;
 		
 		if scr_exists(obj_player)
-			if !object_is_ancestor(owner,obj_enemy_ship){ // if the owner is the player
+			if !object_is_ancestor(owner,obj_enemy_modular){ // if the owner is the player
 				obj_player.bullets_fired += bullet_number
 				global.total_bullets += bullet_number
 				}

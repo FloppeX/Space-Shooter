@@ -8,7 +8,7 @@ if global.view_mode == 2{
 	draw_set_halign(fa_left)
 	draw_text(860,80,"FPS: " + string(fps))
 	draw_text(860,120,"Real FPS: " + string(fps_real))
-	draw_text(860,160,"Ships: " + string(instance_number(obj_enemy_ship)))
+	draw_text(860,160,"Ships: " + string(instance_number(obj_enemy_modular)))
 	draw_text(860,200,"Total instances: " + string(instance_number(all)))
 	if scr_timer(60)
 		draw_text(860,240,"BEEP")
@@ -18,6 +18,7 @@ if global.view_mode == 2{
 	draw_text(860,400,"total_kills: " + string(global.total_kills))
 	draw_text(860,440,"total_bullets: " + string(global.total_bullets))
 	draw_text(860,480,"total_credits: " + string(global.total_credits))
+	draw_text(860,520,"Modules: " + string(instance_number(obj_module)))
 	//for(var i = 0; i < array_length_1d(text) ; i+=1;)
 	//	draw_text(860,400+i*40,text[i])
 	

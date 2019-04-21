@@ -40,13 +40,14 @@ else
 // Zoom
 
 
-	
-if obj_input.zoom_out
+if obj_input_controller.zoom_out
 	zoom -= 10
 		
-if obj_input.zoom_in
+if obj_input_controller.zoom_in
 	zoom += 10
 
+
+zoom = global.zoom
 zoom = clamp(zoom,global.min_zoom,global.max_zoom)
 
 temp_zoom += (zoom - temp_zoom)/25

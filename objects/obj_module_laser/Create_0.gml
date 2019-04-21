@@ -2,7 +2,7 @@ event_inherited();
 
 module_name = "Laser"
 
-bullet_type_base = obj_bullet_player;
+bullet_type_base = obj_laser_blast_player
 bullet_damage_base = 0.5;
 bullet_range_base = 240
 bullet_speed_base = 30;

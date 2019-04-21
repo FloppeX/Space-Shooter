@@ -1,5 +1,8 @@
+wormhole_type = obj_wormhole // The type of wormhole that this object is looking for
+
 modules = noone
 
+depth = -11
 draw_scale = 1
 alpha = 1
 color = c_white

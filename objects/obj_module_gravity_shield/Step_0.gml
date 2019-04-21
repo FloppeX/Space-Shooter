@@ -37,11 +37,7 @@ if activated and ready_to_go{
 	owner.energy -= energy_cost
 	scr_gravity_push(obj_parent_physical,gravity_radius,gravity_force)
 	scr_gravity_push(obj_projectile,gravity_radius,gravity_force)
-	/*
-	scr_gravity_push(obj_bullet,gravity_radius,gravity_force)
-	scr_gravity_push(obj_enemy_ship,gravity_radius,gravity_force)
-	scr_gravity_push(obj_asteroid,gravity_radius,gravity_force)
-	*/
+
 	}
 
 if activated and ready_to_go

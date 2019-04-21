@@ -5,7 +5,7 @@ if !scr_exists(owner)
 // fake motion
 
 if owner.target != noone 
-	target_rotation_speed = 60
+	target_rotation_speed = 30
 else target_rotation_speed = 5
 
 if rotation_speed < target_rotation_speed

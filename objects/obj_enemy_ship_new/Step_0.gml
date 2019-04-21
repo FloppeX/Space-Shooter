@@ -1,5 +1,4 @@
 // Calculate variables that may be changed by modifiers
-// Calculate variables that may be changed by modifiers
 
 max_speed = (max_speed_base * max_speed_multiplier) + max_speed_bonus
 rotation_speed = (rotation_speed_base * rotation_speed_multiplier) + rotation_speed_bonus
@@ -7,18 +6,10 @@ max_health = (max_health_base * max_health_multiplier) + max_health_bonus
 max_energy = (max_energy_base * max_energy_multiplier) + max_energy_bonus
 energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_increase_bonus
 
-
-
-// Controls
-// Reset them first
-
-gamepad_button[1] = false
-gamepad_button[2] = false
-gamepad_button[3] = false
-gamepad_button[4] = false
-
 // Disabled?
+
 disabled_timer -= 1;
+
 if disabled_timer < 0 
 	disabled_timer = 0
 if disabled_timer > 0 
@@ -26,6 +17,9 @@ if disabled_timer > 0
 else controls_disabled = false
 
 ai_disabled_timer -= 1;
+if ai_disabled_timer < 0 
+	ai_disabled_timer = 0
+	
 //Health
 
 if obj_health <= 0{
@@ -45,7 +39,6 @@ if obj_health <= 0{
 	
 	scr_create_pickups_after_death();
 	scr_create_explosion_medium(phy_position_x,phy_position_y)
-	//instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	if the_one_that_killed_me == obj_player{
 		obj_player.enemies_killed += 1
 		global.total_kills += 1
@@ -86,14 +79,14 @@ if ai_disabled_timer <= 0{ // set this to > 0 to control the enemy from another 
 // Find target
 	if scr_timer(30){
 		target = noone
-		for(var i = 0; i < array_length_1d(target_objects); i+=1;)
-			if target == noone
-				target = scr_rocket_find_target_in_arc(target_objects[i],-phy_rotation,360,seek_range)
+		target = scr_rocket_find_target_in_arc(target_objects[0],-phy_rotation,360,seek_range)
+		if target == noone
+			target = scr_rocket_find_target_in_arc(target_objects[1],-phy_rotation,360,seek_range)
 		}
 
 if ai_mode == 1 {
 	ai_timer -= 1;
-	min_standoff_distance = 100
+	min_standoff_distance = 0 //100
 	max_standoff_distance = 400
 	
 	if scr_timer(20)
@@ -133,19 +126,26 @@ if ai_mode == 2 {
 			target_point_y = scr_wrap_closest_y(target);
 			target_distance = scr_wrap_distance_to_point(phy_position_x,phy_position_y,target_point_x,target_point_y)
 			target_dir = scr_wrap_intercept_course(id,target,phy_speed + gun_bullet_speed)
+			if abs(angle_difference(-phy_rotation,target_dir)) > 45
+				target_speed = 0.2 * max_speed
+			if abs(angle_difference(-phy_rotation,target_dir)) > 90
+				target_speed = 0
 			if target_dir == -1
 				target_dir = point_direction(phy_position_x,phy_position_y,target_point_x,target_point_y)
 
 			// find weapon to attack with
-			var temp_angle = angle_difference(-phy_rotation,target_dir)
-			for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
-				if scr_exists(ship_segment[i].module){
-					module_angle = angle_difference(-ship_segment[i].module.phy_rotation,target_dir)
-					if module_angle < temp_angle{
-						temp_angle = module_angle
-						target_dir = target_dir + ship_segment[i].module.offset_angle
-						}
-					}
+			if scr_timer(240){
+				var temp_angle = angle_difference(-phy_rotation,target_dir)
+				for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+					if scr_exists(ship_segment[i].module)
+						if object_is_ancestor(ship_segment[i].module, obj_module_gun){
+							module_angle = angle_difference(-ship_segment[i].module.phy_rotation,target_dir)
+							if module_angle < temp_angle{
+								temp_angle = module_angle
+								target_dir = target_dir + ship_segment[i].module.offset_angle
+								}
+							}
+				}
 			// Check if its time to abort attack
 			if attack_timer <= 0
 				abort_attack = true
@@ -164,35 +164,30 @@ if ai_mode == 2 {
 
 
 // Shooting
-
-for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
-		var temp_module = ship_segment[i]
-		if scr_exists(temp_module) and object_is_ancestor(temp_module.object_index, obj_module_gun)
-			if temp_module.ready_to_shoot and !controls_disabled and !ai_disabled_timer 
-				{
-					var temp_target
-					temp_target = scr_rocket_find_target_in_arc(target_objects[0],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+var target_arc = 30 //30
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+		if ship_segment[i].module != noone
+			if object_is_ancestor(ship_segment[i].module.object_index, obj_module_gun)
+				if ship_segment[i].module.ready_to_shoot and !controls_disabled and !ai_disabled_timer{
+					var temp_target = scr_rocket_find_target_in_arc(target_objects[0],-ship_segment[i].module.phy_rotation,target_arc,ship_segment[i].module.bullet_range * 1.5)
 					if temp_target == noone 
-						temp_target = scr_rocket_find_target_in_arc(target_objects[1],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+						temp_target = scr_rocket_find_target_in_arc(target_objects[1],-ship_segment[i].module.phy_rotation,target_arc,ship_segment[i].module.bullet_range * 1.5)
 					if temp_target != noone 
-						temp_module.activation_timer = 30
-				}		
-			
-				/*for(var i = 0; i < array_length_1d(target_objects); i+=1;){
-					var temp_target = scr_rocket_find_target_in_arc(target_objects[i],-temp_module.phy_rotation,30,temp_module.bullet_range * 1.5)
+						ship_segment[i].module.activation_timer = 30
+					}		
+			/*
+				for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+					var temp_target = scr_rocket_find_target_in_arc(target_objects[i],-temp_module.phy_rotation,target_arc,temp_module.bullet_range * 1.5)
 					if temp_target != noone 
-						temp_module.activation_timer = 30
-				}	*/	
-	}
-
-
+						ship_segment[i].module.activation_timer = 30
+				}	*/
 
 // Avoid teammates
 
 collision_check_distance = 140
 collision_check_radius= 75
 if scr_timer(10)
-	closest_teammate = collision_circle(phy_position_x+lengthdir_x(collision_check_distance,-phy_rotation),phy_position_y+lengthdir_y(collision_check_distance,-phy_rotation),collision_check_radius,obj_enemy_ship,false,true) 
+	closest_teammate = collision_circle(phy_position_x+lengthdir_x(collision_check_distance,-phy_rotation),phy_position_y+lengthdir_y(collision_check_distance,-phy_rotation),collision_check_radius,obj_enemy_ship_new,false,true) 
 if scr_exists(closest_teammate){
 	var temp_direction = point_direction(phy_position_x,phy_position_y,closest_teammate.phy_position_x,closest_teammate.phy_position_y)
 	if angle_difference(-phy_rotation,temp_direction) >	0
@@ -215,7 +210,7 @@ if scr_exists(closest_obstacle){
 		target_dir = temp_direction+90
 	else 
 		target_dir = temp_direction-90
-	target_speed = 1 * max_speed
+	target_speed = 0.5 * max_speed
 	}
 	
 }
@@ -226,11 +221,19 @@ if controls_disabled == false{
 	angle_diff = angle_difference(-phy_rotation,target_dir);
 	
 	rotation_value = clamp(angle_diff/20, -1, 1)
+	
+	rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
+	
+	if abs(phy_angular_velocity) < rotation_speed * abs(rotation_value)
+		physics_apply_torque(rotation_force * rotation_value)
+	else
+		physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
+	/*
 	if rotation_value < 0 and phy_angular_velocity > max_rotation_speed * rotation_value 
 			phy_angular_velocity -= 10//physics_apply_angular_impulse(4 * rotation_value)
 	if rotation_value > 0 and phy_angular_velocity < max_rotation_speed * rotation_value
 			phy_angular_velocity += 10//physics_apply_angular_impulse(4 * rotation_value)
-			
+			*/
 	//phy_angular_velocity = turn_value * max_rotation_speed;	
 
 	// Apply thrust
@@ -272,3 +275,16 @@ scr_wrap_room();
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 //audio_emitter_velocity(ship_audio_emitter,phy_speed_x,phy_speed_y,0)
 
+// TEST
+
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+	if scr_exists(ship_segment[i]){
+			ship_segment[i].owner = id
+			ship_segment[i].persistent = false
+			ship_segment[i].visible = true
+			if ship_segment[i].module != noone{
+				ship_segment[i].module.owner = id
+				ship_segment[i].module.persistent = false
+				ship_segment[i].module.visible = true
+				}
+			}

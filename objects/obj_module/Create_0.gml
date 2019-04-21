@@ -23,7 +23,7 @@ placement_req_left = 1
 //
 
 joint = noone
-
+angle_diff = 0
 //
 
 active = false // Is this an active or passive item? Guns are neither.

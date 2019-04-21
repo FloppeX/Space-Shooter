@@ -14,8 +14,8 @@ if scr_timer(60){ // Check every second
 	var temp_distance = 0
 	var target = noone;
 	
-	for(var i = 0; i < instance_number(obj_enemy_ship); i+=1;){
-		target = instance_find(obj_enemy_ship,i)
+	for(var i = 0; i < instance_number(obj_enemy_ship_new); i+=1;){
+		target = instance_find(obj_enemy_ship_new,i)
 		temp_distance = scr_wrap_closest_distance_to_instance(target)
 		if temp_distance <= range
 			if irandom(99) < 10{ // base chance of enemies falling in love
@@ -23,13 +23,6 @@ if scr_timer(60){ // Check every second
 				love_effect.target = target
 				}
 		}
-	/*
-	for(var i = 0; i < instance_number(obj_enemy_ship); i+=1;)
-		temp_distance = scr_wrap_closest_distance_to_instance(instance_find(obj_enemy_ship,i))
-		if temp_distance <= closest_distance{
-			target = instance_find(obj_enemy_ship,i)
-			closest_distance = temp_distance
-			}
-	*/
+	
 
 	}

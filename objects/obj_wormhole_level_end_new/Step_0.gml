@@ -31,6 +31,12 @@ if scr_exists(player_ship){
 				if scr_exists(player_ship.ship_segment[i].module)
 					fake_player_ship.modules[i,4] = player_ship.ship_segment[i].module.offset_angle
 				else fake_player_ship.modules[i,4] = 0
+				if player_ship.ship_segment[i].ship_segment_right != noone
+					fake_player_ship.modules[i,5] = 1
+				else fake_player_ship.modules[i,5] = 0
+				if player_ship.ship_segment[i].ship_segment_below != noone
+					fake_player_ship.modules[i,6] = 1
+				else fake_player_ship.modules[i,6] = 0
 				}
 			else fake_player_ship.modules[i,0] = noone
 		}

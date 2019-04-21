@@ -1,3 +1,4 @@
+var temp_module
 var h = irandom(global.difficulty_level+3)
 h = clamp(h,0,9)
 	switch (h){
@@ -13,7 +14,17 @@ h = clamp(h,0,9)
 		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher_enemy); break;
 		}
 	temp_module.persistent = false
+	temp_module.offset_angle = irandom(3) * 90;
 
+	if temp_module.offset_angle == 0
+		temp_module.placement_req_above = noone
+	if temp_module.offset_angle == 90
+		temp_module.placement_req_left = noone
+	if temp_module.offset_angle == 180
+		temp_module.placement_req_below = noone
+	if temp_module.offset_angle == 270
+		temp_module.placement_req_right = noone
+		
 	repeat(global.difficulty_level-1){
 		var p = irandom(99)
 		if p <= 59 and p >= 40

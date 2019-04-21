@@ -85,14 +85,12 @@ ai_disabled_timer = 0
 shoot = false
 direction_randomizer = 0
 abort_attack = false
-attack_duration = 300
+attack_duration = 600
 attack_timer = attack_duration
 
 invisible = false
 
 target = noone;
-starting_target_object = obj_player
-target_object = starting_target_object
 target_objects[0] = obj_player
 target_objects[1] = obj_enemy_ship_team_2
 

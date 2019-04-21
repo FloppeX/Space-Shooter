@@ -12,13 +12,16 @@ gamepad_button[3] = false
 gamepad_button[4] = false
 gamepad_button[5] = false
 
-target_object = obj_enemy_ship
+target_object = obj_enemy_ship_new
 
 alpha = 1
 
 lateral_drift_direction = 0
 drift_resistance_force = 0
 rotation_value = 0
+
+target_objects[0] = obj_enemy_ship_team_1_new
+target_objects[1] = obj_enemy_ship_team_1_new
 
 // Variables that really belong to ships but that this object needs
 max_speed_multiplier = 0 
@@ -100,3 +103,4 @@ audio_emitter_position(shop_audio_emitter,phy_position_x,phy_position_y,0)
 repair_button = instance_create_depth(x-200,y-30,-10,obj_shop_button_repair);
 reload_button = instance_create_depth(x-260,y-30,-10,obj_shop_button_reload);
 exit_button = instance_create_depth(x-200,y+30,-10,obj_shop_button_exit);
+segment_button = instance_create_depth(x-260,y+30,-10,obj_shop_button_segment);

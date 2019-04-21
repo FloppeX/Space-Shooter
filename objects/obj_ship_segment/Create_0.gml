@@ -1,4 +1,6 @@
 owner = noone;
+invisible = false
+visible = true;
 
 //
 

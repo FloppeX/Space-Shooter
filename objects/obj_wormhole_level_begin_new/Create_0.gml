@@ -11,4 +11,4 @@ fake_player_ship = noone
 
 done_warping = false
 
-ship_rotation_speed = 600
+ship_rotation_speed = 200

@@ -8,7 +8,7 @@ if !phy_active
 	exit;
 
 var punch_damage = 15
-var enemy_ship = instance_place(phy_position_x,phy_position_y,obj_enemy_ship)
+var enemy_ship = instance_place(phy_position_x,phy_position_y,obj_enemy_ship_new)
 if scr_exists(enemy_ship) and enemy_ship.phy_active == true{
 	with(enemy_ship){
 		temp_dir = point_direction(other.phy_position_x,other.phy_position_y,phy_position_x,phy_position_y)

@@ -1,3 +1,3 @@
 event_inherited();
 
-target_type = obj_enemy_ship
+target_type = obj_ship_segment_enemy
