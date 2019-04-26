@@ -1,3 +1,8 @@
+if timer == 0{
+	starting_range = range
+	starting_damage = damage
+	}
+
 timer += 1
 
 // projectile stuff

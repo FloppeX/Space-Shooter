@@ -25,7 +25,7 @@ if scr_exists(obj_player){
 	}
 
 if enemy_wave_timer <= 0{
-	number_of_enemies = global.difficulty_level
+	number_of_enemies = random_range(1,global.difficulty_level)
 	enemy_wave_timer = stage_timer_start/(number_of_waves+1)
 	}
 
@@ -72,11 +72,15 @@ if number_of_explosive_barrels >= 1{
 
 ship_interval_timer -= 1
 if number_of_enemies >= 1 and ship_interval_timer <= 0 and scr_exists(obj_player){
-
-	var tempdist = 200 + random(300)
-	var tempdir = random(359)
-	var temp_x = obj_player.phy_position_x + lengthdir_x(tempdist,tempdir)
-	var temp_y = obj_player.phy_position_y + lengthdir_y(tempdist,tempdir)
+	var random_placement_ok = false
+	while !random_placement_ok{
+		var tempdist = 200 + random(300)
+		var tempdir = random(359)
+		var temp_x = obj_player.phy_position_x + lengthdir_x(tempdist,tempdir)
+		var temp_y = obj_player.phy_position_y + lengthdir_y(tempdist,tempdir)
+		if !collision_circle(temp_x,temp_y,200,obj_wormhole,false,true) // Check so that no other wormholes are nearby
+			random_placement_ok = true
+		}
 
 	
 	global.temp_number_of_segments = irandom(global.difficulty_level)+2;
@@ -88,8 +92,19 @@ if number_of_enemies >= 1 and ship_interval_timer <= 0 and scr_exists(obj_player
 	new_enemy.obj_health = new_enemy.max_health_base
 	new_enemy.pickup_objects = 3
 	new_enemy.disabled_timer = 10
-	new_enemy.visible = false
-	new_enemy.phy_active = false
+	with(new_enemy){
+	phy_active = false
+		visible = false
+		for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+			ship_segment[i].phy_active = false
+			ship_segment[i].visible = false
+			if scr_exists(ship_segment[i].module){
+				ship_segment[i].module.phy_active = false
+				ship_segment[i].module.visible = false
+				ship_segment[i].module.phy_rotation = -phy_rotation + ship_segment[i].module.offset_angle
+				}
+		}
+	}
 	
 	new_enemy_wormhole = instance_create_depth(temp_x,temp_y,100,obj_wormhole_level_begin_enemy);
 	new_enemy_wormhole.warping_ship = new_enemy
@@ -148,3 +163,4 @@ if death_timer <= 0 and !instance_exists(obj_death_menu){
 
 if stage_timer == 0 and number_of_enemies < 10
 	number_of_enemies = 10
+

@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "03d50e1f-a42e-44bc-828c-6bc7a2ec9c0c",
+            "Value": {
+                "id": "d15f36a5-b502-49e8-b718-9780ee0b16d0",
+                "resourcePath": "views\\03d50e1f-a42e-44bc-828c-6bc7a2ec9c0c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "03f9f2f8-a5e6-48a6-a1f0-e4ec94b9c29d",
             "Value": {
                 "id": "82c3b39f-4ece-4a79-a743-cd5724867260",
@@ -231,6 +239,14 @@
             }
         },
         {
+            "Key": "0a532241-3244-491a-a98d-15685cd631b4",
+            "Value": {
+                "id": "19f978dc-f14f-4167-b687-8f79bc89a7e5",
+                "resourcePath": "objects\\obj_wormhole_traveller_level_end_ship\\obj_wormhole_traveller_level_end_ship.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0a5b0ebe-106c-4f09-8fbf-72b98a3640c6",
             "Value": {
                 "id": "f151be55-fa42-4f6e-bc9c-7a2e719a134e",
@@ -260,6 +276,14 @@
                 "id": "5f538101-1479-47bd-9c5f-144414361480",
                 "resourcePath": "sprites\\spr_player_ship\\spr_player_ship.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0c0a3148-5bdf-446f-bde9-3591d929ba9d",
+            "Value": {
+                "id": "b1b6ab22-9dd7-4626-8041-6c48fb96139f",
+                "resourcePath": "objects\\obj_enemy_modular_boss_2\\obj_enemy_modular_boss_2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -887,6 +911,14 @@
             }
         },
         {
+            "Key": "24b580f3-7046-4010-8649-b05bc041c46a",
+            "Value": {
+                "id": "3f979977-d175-45df-a7e8-6a0a35216fb8",
+                "resourcePath": "rooms\\rm_boss_2\\rm_boss_2.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "24bde98b-d0bb-4e9a-8918-bdda5a7f85c0",
             "Value": {
                 "id": "ac11b97e-cee9-4ed8-b55a-4aa22969a9fb",
@@ -1004,6 +1036,14 @@
                 "id": "72ea2b60-59db-4e17-a4f3-973d741970d7",
                 "resourcePath": "objects\\obj_reflective_shield_enemy\\obj_reflective_shield_enemy.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "29e63dcb-0053-4a2d-a600-face54fc5688",
+            "Value": {
+                "id": "9e125942-b72b-47a9-b6a5-148b1169acc0",
+                "resourcePath": "scripts\\scr_module_modifier_decreasing_damage\\scr_module_modifier_decreasing_damage.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1162,7 +1202,7 @@
             "Key": "300b3641-c1d8-45ec-8c75-e9a88e3b4f42",
             "Value": {
                 "id": "68011b3a-dc52-4412-8646-3b6f65b37f59",
-                "resourcePath": "sprites\\spr_shop\\spr_shop.yy",
+                "resourcePath": "sprites\\spr_shop_structure_left\\spr_shop_structure_left.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1615,6 +1655,14 @@
             }
         },
         {
+            "Key": "42a958f5-4ce2-4fa2-9b18-4c70fb23b672",
+            "Value": {
+                "id": "6198f628-91da-4838-8ca9-602cc2c19715",
+                "resourcePath": "scripts\\scr_bullet_modifier_decreasing_damage\\scr_bullet_modifier_decreasing_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "42f67a3c-89ed-48ed-9214-a50c4faaa2fc",
             "Value": {
                 "id": "5d38750c-1e76-46f7-986b-a4dcdf3c8526",
@@ -1668,6 +1716,14 @@
                 "id": "81d053fd-6f5c-451f-b2a8-2be47e610b44",
                 "resourcePath": "scripts\\scr_create_random_gun\\scr_create_random_gun.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4530e7c7-3a01-4aae-ad94-ccd8b97df74e",
+            "Value": {
+                "id": "6628bc97-d468-459c-9724-b798823cdb00",
+                "resourcePath": "rooms\\rm_boss1\\rm_boss1.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -2503,6 +2559,14 @@
             }
         },
         {
+            "Key": "62260e1c-4a3c-4397-a1fe-aee4d00883f9",
+            "Value": {
+                "id": "3ee43e53-f12c-42de-ab2b-32bcad15400e",
+                "resourcePath": "sprites\\spr_shop_structure_bars\\spr_shop_structure_bars.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6249bc1b-46ac-4fe3-83a1-9d5f60dfd405",
             "Value": {
                 "id": "55a51118-3339-49a6-af01-ab723729d846",
@@ -2695,6 +2759,14 @@
             }
         },
         {
+            "Key": "67c7749e-1ab0-4fe1-8fb7-b56577d755eb",
+            "Value": {
+                "id": "5d56b28d-a699-4f9b-a2a2-3604ff40f325",
+                "resourcePath": "objects\\obj_wormhole_traveller_level_begin_ship\\obj_wormhole_traveller_level_begin_ship.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "67d51fa1-5011-476f-8e39-d20e6e9645fc",
             "Value": {
                 "id": "c7d9624e-c0b5-46d3-aca8-be575d2d51db",
@@ -2866,7 +2938,7 @@
             "Key": "6c65d798-4e20-410e-8e0b-b51fa211b339",
             "Value": {
                 "id": "5c89833a-8677-4b49-99a4-1c96e24b325d",
-                "resourcePath": "objects\\obj_wormhole_traveller_level_begin_player\\obj_wormhole_traveller_level_begin_player.yy",
+                "resourcePath": "objects\\obj_wormhole_traveller_level_begin_player_OLD\\obj_wormhole_traveller_level_begin_player_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2975,6 +3047,14 @@
             }
         },
         {
+            "Key": "715dc399-bbc3-4c6c-9341-338bae5a84e9",
+            "Value": {
+                "id": "c41ddf7e-f148-4ef7-ba87-60f1f27f9558",
+                "resourcePath": "sprites\\spr_shop_structure_right\\spr_shop_structure_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "720e3f0e-3359-461f-981b-618d8ac49ed0",
             "Value": {
                 "id": "679b4927-08e9-45c0-9097-a798d62a9c72",
@@ -3020,6 +3100,14 @@
                 "id": "a4c84a96-1c63-48ac-a758-375b4c882b00",
                 "resourcePath": "sprites\\sprite32\\sprite32.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "742a5132-b907-43db-8b7e-ea914e74e429",
+            "Value": {
+                "id": "e096c1f1-914f-49f5-8c0d-e856c3f53221",
+                "resourcePath": "rooms\\rm_boss_3\\rm_boss_3.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -3076,6 +3164,14 @@
                 "id": "96ee32d9-168d-4a92-b204-63d187ef852a",
                 "resourcePath": "sprites\\spr_flashing_light_particle\\spr_flashing_light_particle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7617a06d-fbbf-4426-bd2c-879441022c69",
+            "Value": {
+                "id": "de6c3971-3a52-4720-b510-5c086e6072e0",
+                "resourcePath": "objects\\obj_wormhole_traveller_ship\\obj_wormhole_traveller_ship.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3146,7 +3242,7 @@
             "Key": "79058955-e2bf-4e7d-9432-1afd200beaa0",
             "Value": {
                 "id": "211f123f-ac90-49e5-9105-f964a551053b",
-                "resourcePath": "objects\\obj_wormhole_level_begin\\obj_wormhole_level_begin.yy",
+                "resourcePath": "objects\\obj_wormhole_level_begin_OOOOLD\\obj_wormhole_level_begin_OOOOLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3535,6 +3631,14 @@
             }
         },
         {
+            "Key": "88eee5df-69e9-4714-a9ef-8c32542e4c8d",
+            "Value": {
+                "id": "afc2ad43-e75b-4d65-bb41-e4c14aa27581",
+                "resourcePath": "sprites\\spr_cross\\spr_cross.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "89728870-70f9-4439-8348-05dbf9269a33",
             "Value": {
                 "id": "d109a20b-1a69-43ec-bc0c-c4b182c7df7c",
@@ -3626,7 +3730,7 @@
             "Key": "8e661a6c-07dd-4fd0-b197-71985536123a",
             "Value": {
                 "id": "b9f9e104-129e-4f61-b515-4824fec3bfe9",
-                "resourcePath": "objects\\obj_wormhole_traveller_level_end_player\\obj_wormhole_traveller_level_end_player.yy",
+                "resourcePath": "objects\\obj_wormhole_traveller_level_end_player_OLD\\obj_wormhole_traveller_level_end_player_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3978,7 +4082,7 @@
             "Key": "9caacdaf-991d-4f72-9e09-12f760c94987",
             "Value": {
                 "id": "f5bec710-d2a2-45c2-9a08-45bd4a523325",
-                "resourcePath": "objects\\obj_wormhole_level_end\\obj_wormhole_level_end.yy",
+                "resourcePath": "objects\\obj_wormhole_level_end_OLD\\obj_wormhole_level_end_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4291,6 +4395,14 @@
             "Value": {
                 "id": "229aeb9f-aef7-4ee5-b6eb-734d6b102842",
                 "resourcePath": "objects\\obj_module_triple_cell_batteries\\obj_module_triple_cell_batteries.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a890c13c-c455-45c8-b953-349869474cd8",
+            "Value": {
+                "id": "096c39de-4d9d-4f85-a22a-8f990f127802",
+                "resourcePath": "objects\\obj_enemy_modular_boss_3\\obj_enemy_modular_boss_3.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4863,6 +4975,14 @@
             }
         },
         {
+            "Key": "c2101ee1-a489-43f0-a4f1-929164fdcffa",
+            "Value": {
+                "id": "55ef3e40-0d3f-48c4-9a06-838c28e82508",
+                "resourcePath": "objects\\obj_enemy_modular_boss_1\\obj_enemy_modular_boss_1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c246fdc2-296c-42f7-b8ed-56a348fee32f",
             "Value": {
                 "id": "1207fe50-80fb-4145-9ef5-ad31dcec1a27",
@@ -4995,6 +5115,14 @@
             "Value": {
                 "id": "4dffc82a-f77d-4c67-8564-cde046b4c92c",
                 "resourcePath": "scripts\\scr_draw_curve\\scr_draw_curve.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c8038eb5-af14-4e22-968d-a9646a0438b2",
+            "Value": {
+                "id": "28505c7f-287c-4415-97c2-f50832889a7f",
+                "resourcePath": "scripts\\scr_module_modifier_increasing_damage\\scr_module_modifier_increasing_damage.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5658,7 +5786,7 @@
             "Key": "e634a54c-3844-49fb-aca7-e85280b992ac",
             "Value": {
                 "id": "d107aea0-de6b-420c-bf35-e7bb9e0b4d12",
-                "resourcePath": "objects\\obj_wormhole_traveller_level_begin\\obj_wormhole_traveller_level_begin.yy",
+                "resourcePath": "objects\\obj_wormhole_traveller_level_begin_OLD\\obj_wormhole_traveller_level_begin_OLD.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6151,6 +6279,14 @@
             }
         },
         {
+            "Key": "f7f108ba-598a-48f3-a316-120d06511b11",
+            "Value": {
+                "id": "d0ebede9-4438-4ee6-854f-15691da0f8dc",
+                "resourcePath": "scripts\\scr_bullet_modifier_increasing_damage\\scr_bullet_modifier_increasing_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f80ad72c-cc76-4bd6-946f-afcedd38fe01",
             "Value": {
                 "id": "4e26edd0-0dbe-4a50-9f58-12f53648b083",
@@ -6377,6 +6513,8 @@
         "606b1a0a-0f0b-44d2-967e-3b7886bf960c",
         "b4c7da86-35e7-459d-a5e2-9c26a5e19d5b",
         "255f2adb-d0dc-44ed-9d0b-7c257faf33c6",
+        "c8038eb5-af14-4e22-968d-a9646a0438b2",
+        "29e63dcb-0053-4a2d-a600-face54fc5688",
         "a1b45939-db64-45b2-aea8-242ca2bc6f00",
         "eaa9e782-4ebc-46dd-b0e3-e8e954cd8ee3",
         "9c345688-65d5-4dac-81aa-328170342143",
@@ -6428,6 +6566,8 @@
         "f423eaf5-ad3f-4bc6-b9d0-bcc7762720c4",
         "0adc9c4a-75e1-422d-ac68-7a577657f746",
         "7acc720d-4a91-41bf-8538-0c6273bc2c24",
+        "f7f108ba-598a-48f3-a316-120d06511b11",
+        "42a958f5-4ce2-4fa2-9b18-4c70fb23b672",
         "79dd8cef-5225-443c-8c3b-d2e3a79416a8",
         "70dd3e37-ee3e-495a-bf0e-5918fbc42147",
         "7a0ae1d3-fdd3-48f4-a230-b517323ac3a8",

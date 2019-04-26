@@ -1,3 +1,3 @@
 event_inherited();
-
-draw_scale -= 0.01
+if draw_scale > 0
+	draw_scale -= 0.01

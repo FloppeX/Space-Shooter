@@ -16,7 +16,7 @@ if global.view_mode == 2{
 	draw_set_font(global.font_small_text)
 	draw_set_halign(fa_center)
 	draw_set_color(c_white)
-	draw_text(phy_position_x,phy_position_y+120,string(phy_rotation))
+	draw_text(phy_position_x,phy_position_y+80,string(phy_speed))
 	//draw_text(phy_position_x,phy_position_y+150,string(number_segments_placed))
 
 	for(var i = 0; i < array_length_1d(ship_segment); i+=1;){

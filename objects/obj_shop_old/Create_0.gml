@@ -90,7 +90,7 @@ for(var i = 0; i < number_of_items; i+=1;)
 // Audio
 
 shop_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(shop_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(shop_audio_emitter, 600, 800, 1);
 audio_emitter_position(shop_audio_emitter,phy_position_x,phy_position_y,0)
 
 // Create buttons

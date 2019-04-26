@@ -1,3 +1,3 @@
 event_inherited();
 
-thrust = 70
+thrust = 90

@@ -1,5 +1,6 @@
 // junk variables..
 
+controls_disabled = true
 obj_health = 0
 draw_scale = 1
 energy = 0
@@ -61,7 +62,7 @@ y_step_offset = 60
 for(var i = 0; i < number_of_items; i+=1;){
 	shop_segments[i] = instance_create_depth(x,y,10,obj_ship_segment);
 	shop_segments[i].owner = id
-	shop_segments[i].visible = true
+	shop_segments[i].visible = false
 	shop_segments[i].persistent = false
 	//module_holders[i].placement_offset_angle = 0
 	//module_holders[i].placement_offset_distance = 0
@@ -95,7 +96,7 @@ for(var i = 0; i < number_of_items; i+=1;)
 // Audio
 
 shop_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(shop_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(shop_audio_emitter, 600, 800, 1);
 audio_emitter_position(shop_audio_emitter,phy_position_x,phy_position_y,0)
 
 // Create buttons
@@ -104,3 +105,8 @@ repair_button = instance_create_depth(x-200,y-30,-10,obj_shop_button_repair);
 reload_button = instance_create_depth(x-260,y-30,-10,obj_shop_button_reload);
 exit_button = instance_create_depth(x-200,y+30,-10,obj_shop_button_exit);
 segment_button = instance_create_depth(x-260,y+30,-10,obj_shop_button_segment);
+
+// 
+
+player_target_position_x = 0.5 * room_width
+player_target_position_y = 0.5 * room_height

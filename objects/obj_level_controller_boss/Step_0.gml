@@ -56,9 +56,9 @@ if boss_creation_timer <= 0 and boss_created == false{
 	var temp_y = obj_player.phy_position_y + lengthdir_y(tempdist,tempdir)
 
 	
-	global.temp_number_of_segments = irandom(global.difficulty_level)+2;
+	global.temp_number_of_segments = irandom(global.difficulty_level);
 	
-	enemy_boss = instance_create_depth(temp_x,temp_y,0,obj_enemy_modular_boss);
+	enemy_boss = instance_create_depth(temp_x,temp_y,0,boss_object);
 
 	enemy_boss.pickup_objects = 12
 	enemy_boss.disabled_timer = 10
@@ -71,14 +71,17 @@ if boss_creation_timer <= 0 and boss_created == false{
 	boss_created = true
 	}
 
-if boss_created == true and !scr_exists(obj_enemy_modular_boss)
+if boss_created == true and !scr_exists(boss_object)
 	boss_killed = true
+
+if boss_killed
+	boss_killed_timer -= 1
 
 // Are all enemies dead? Or is the timer 0? Then count down and move to next level
 
 
 	
-if boss_killed and end_wormhole_created == false{
+if boss_killed_timer <= 0 and end_wormhole_created == false{
 	global.difficulty_level += 1;
 	global.active_level += 1
 	wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height-400,100,obj_wormhole_level_end_new)

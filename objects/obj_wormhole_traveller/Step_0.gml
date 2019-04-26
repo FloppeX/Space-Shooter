@@ -18,8 +18,8 @@ if scr_exists(wormhole){
 	phy_position_y = phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir) + lengthdir_y(temp_dist * step_coefficient_side, temp_dir -90)
 	phy_angular_velocity = ship_rotation_speed
 	}
-if draw_scale <= 0
-	instance_destroy();
+if draw_scale < 0
+	draw_scale = 0
 
 depth = -round(100-100*draw_scale)
 

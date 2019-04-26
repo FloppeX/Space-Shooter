@@ -1,6 +1,6 @@
-// test
+// Boss
 
-//instance_create_layer(0,0,layer_get_id("instance_layer"),obj_mouse_cursor)
+boss_object = obj_enemy_modular_boss_1
 
 // View settings
 
@@ -56,7 +56,7 @@ ship_interval_timer_start = 60
 ship_interval_timer = ship_interval_timer_start
 
 death_timer = 120
-
+boss_killed_timer = 300
 next_level_timer = 120
 
 end_wormhole_created = false

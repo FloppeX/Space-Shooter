@@ -1,6 +1,6 @@
 owner = obj_shop
 activated = false
-cost = 10
+cost = 8
+button_used = false
 
-description_lines[0] = "Add new segment to ship"
-description_lines[1] = "Will be placed in the optimal location"
+description_lines[0] = "Add new segment"

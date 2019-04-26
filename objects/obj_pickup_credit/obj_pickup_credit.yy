@@ -5,23 +5,13 @@
     "name": "obj_pickup_credit",
     "eventList": [
         {
-            "id": "4e9edc48-e8bb-4f1d-ba56-0e679dd2376c",
+            "id": "c770b355-6f11-49f0-8d6c-4d97177056de",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "2aa63072-0c94-43fc-ad07-a497977ab2ca",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "1ccef38a-eff3-43ef-a82d-e295181b9dc6"
-        },
-        {
-            "id": "d7efd4be-0002-448f-9597-e739ebe95fd4",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "0c0d996d-0b73-4f43-8d26-4935ad5ed09b",
-            "enumb": 0,
-            "eventtype": 4,
+            "eventtype": 3,
             "m_owner": "1ccef38a-eff3-43ef-a82d-e295181b9dc6"
         }
     ],

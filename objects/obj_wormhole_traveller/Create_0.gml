@@ -1,6 +1,6 @@
 wormhole_type = obj_wormhole // The type of wormhole that this object is looking for
 
-modules = noone
+modules = 0
 
 depth = -11
 draw_scale = 1

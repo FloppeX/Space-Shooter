@@ -5,23 +5,13 @@
     "name": "obj_pickup_particles",
     "eventList": [
         {
-            "id": "5bca0c22-01a0-4c2d-892b-00b5291367a6",
+            "id": "dba261f8-1e6f-44e4-9881-11c844dd59da",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "2aa63072-0c94-43fc-ad07-a497977ab2ca",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "b2d24d75-bbfb-4b7e-8549-b7f184394769"
-        },
-        {
-            "id": "b2738f09-e37a-4a70-9708-70a9c7943d91",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "0c0d996d-0b73-4f43-8d26-4935ad5ed09b",
-            "enumb": 0,
-            "eventtype": 4,
+            "eventtype": 3,
             "m_owner": "b2d24d75-bbfb-4b7e-8549-b7f184394769"
         }
     ],

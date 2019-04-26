@@ -1,8 +1,7 @@
-// View settings
-/*
-view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
-*/
-//global.zoom = 1000
+global.player_entering_shop = false
+global.player_in_shop = false
+global.player_exiting_shop = false
+
 
 // Clear particles
 
@@ -16,12 +15,12 @@ if instance_exists(obj_player){
 	global.player = instance_find(obj_player,0)
 	global.player.disabled_timer = 60
 	global.player.phy_position_x = 0.5 * room_width
-	global.player.phy_position_y = 0.5 * room_height + 300
-	global.player.phy_rotation = 0
+	global.player.phy_position_y = 0.5 * room_height + 500
+	//global.player.phy_rotation = 0
 	global.player.draw_scale = 0.01
 	}
 if !instance_exists(obj_player){
-	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height + 300,-5,obj_player)
+	global.player = instance_create_depth(0.5 * room_width,0.5 * room_height + 500,-5,obj_player)
 	global.player.disabled_timer = 60
 	global.player.phy_rotation = 0
 	global.player.draw_scale = 0.01
@@ -37,7 +36,7 @@ cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor_
 
 // Wormhole
 
-wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+300,100,obj_wormhole_level_begin_new)
+wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+500,100,obj_wormhole_level_begin_new)
 
 // Sound
 

@@ -1,4 +1,4 @@
-var i = irandom(13)
+var i = irandom(15)
 	switch (i){
 		case 0: scr_add_modifier_new(scr_module_modifier_magnum_bullets,0,"Magnum bullets",noone,noone); break;
 		case 1: scr_add_modifier_new(scr_module_modifier_multi_shot,1,"Double shot",noone,noone); break;
@@ -14,4 +14,6 @@ var i = irandom(13)
 		case 11: scr_add_modifier_new(scr_module_modifier_exploding_bullets,0,"Exploding bullets",noone,noone); break;
 		case 12: scr_add_modifier_new(scr_module_modifier_gravity_bullets,0,"Gravity bullets",noone,noone); break;
 		case 13: scr_add_modifier_new(scr_module_modifier_rainbow_bullets,0,"Random bullet effects",noone,noone); break;
+		case 14: scr_add_modifier_new(scr_module_modifier_decreasing_damage,1,"Decreasing damage",noone,noone); break;
+		case 15: scr_add_modifier_new(scr_module_modifier_increasing_damage,1,"Increasing damage",noone,noone); break;
 		}

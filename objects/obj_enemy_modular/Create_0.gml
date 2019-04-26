@@ -11,11 +11,12 @@ rotation_force = 200
 
 ///
 // Segments
-
+var segment_distance = 24
 var number_of_segments = global.temp_number_of_segments
 
-scr_create_ship_segments(number_of_segments,24,obj_ship_segment_enemy)
+scr_create_ship_segments(number_of_segments,segment_distance,obj_ship_segment_enemy)
 
+scr_ship_update_segments(id,segment_distance)
 
 repeat(round(number_of_segments/3))
 	scr_place_engine_enemy()
@@ -32,33 +33,41 @@ var module_placed = false
 	if module_placed == false
 		with(temp_module)
 			instance_destroy();
-		
+
 repeat(10){
-	var module_placed = false
-	var temp_module = scr_create_random_enemy_weapon();
-	repeat(100){
-		var i = irandom(array_length_1d(ship_segment)-1)
-		if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !module_placed{
-			ship_segment[i].module = temp_module
-			module_placed = true
-			}
+	var module_placed = false	
+	repeat(10){
+		if module_placed == false{
+			var temp_module = scr_create_random_enemy_weapon();
+			repeat(10){
+				var i = irandom(array_length_1d(ship_segment)-1)
+				if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !module_placed{
+					ship_segment[i].module = temp_module
+					module_placed = true
+					}
+				}
+			if module_placed == false
+				with(temp_module)
+					instance_destroy();
 		}
-	if module_placed == false
-		with(temp_module)
-			instance_destroy();
+	}
 		
-	var module_placed = false
-	var temp_module = scr_create_random_enemy_device();
-	repeat(100){
-		var i = irandom(array_length_1d(ship_segment)-1)
-		if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !module_placed{
-			ship_segment[i].module = temp_module
-			module_placed = true
-			}
+	var module_placed = false	
+	repeat(10){
+		if module_placed == false{
+			var temp_module = scr_create_random_enemy_weapon();
+			repeat(10){
+				var i = irandom(array_length_1d(ship_segment)-1)
+				if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !module_placed{
+					ship_segment[i].module = temp_module
+					module_placed = true
+					}
+				}
+			if module_placed == false
+				with(temp_module)
+					instance_destroy();
 		}
-	if module_placed == false
-		with(temp_module)
-			instance_destroy();
+	}
 }
 	
 	/*
@@ -74,8 +83,7 @@ repeat(100){
 	*/
 	
 
-for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
-	if scr_exists(ship_segment[i]){
+for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
 			ship_segment[i].owner = id
 			ship_segment[i].persistent = false
 			ship_segment[i].visible = true

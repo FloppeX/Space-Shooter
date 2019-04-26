@@ -116,5 +116,5 @@ particle_cost = round((particle_cost_base * particle_cost_multiplier) + particle
 
 sound = noone
 module_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(module_audio_emitter, 100, 400, 1);
+audio_emitter_falloff(module_audio_emitter, 600, 800, 1);
 

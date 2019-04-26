@@ -115,4 +115,4 @@ engine_sound = snd_engine_2
 engine_noise = noone
 
 ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(ship_audio_emitter, 600, 800, 1);

@@ -2,6 +2,9 @@ event_inherited();
 
 obj_health = 8;
 
+damage = 3
+push_force = 10//900
+
 i = irandom(4)
 if i == 0
 	sprite_index = spr_asteroid_small_1

@@ -20,6 +20,12 @@ ai_disabled_timer -= 1;
 if ai_disabled_timer < 0 
 	ai_disabled_timer = 0
 	
+	
+// Hit invulnerability
+
+if hit_invulnerable_timer > 0
+	hit_invulnerable_timer -= 1
+	
 //Health
 
 if obj_health <= 0{

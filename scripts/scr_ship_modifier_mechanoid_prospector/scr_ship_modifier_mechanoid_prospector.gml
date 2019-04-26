@@ -8,4 +8,4 @@ var range = argument0; // 300?
 
 // Find target
 
-global.asteroid_chance_credit = 0.14
+global.asteroid_chance_credit = 0.15

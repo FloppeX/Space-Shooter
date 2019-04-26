@@ -5,23 +5,13 @@
     "name": "obj_pickup_health",
     "eventList": [
         {
-            "id": "2b22bb4e-e3e9-43ef-9e58-3734cd45bd73",
+            "id": "45c4f19e-e04d-49c6-b29e-a863d72dd1cd",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "2aa63072-0c94-43fc-ad07-a497977ab2ca",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "c0684c72-e1ec-42c2-9807-0bd92fb2cde0"
-        },
-        {
-            "id": "4d85744c-fa6d-4922-9726-92e530e019c8",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "0c0d996d-0b73-4f43-8d26-4935ad5ed09b",
-            "enumb": 0,
-            "eventtype": 4,
+            "eventtype": 3,
             "m_owner": "c0684c72-e1ec-42c2-9807-0bd92fb2cde0"
         }
     ],

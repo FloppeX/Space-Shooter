@@ -90,6 +90,8 @@ attack_timer = attack_duration
 
 invisible = false
 
+hit_invulnerable_timer = 0
+
 target = noone;
 target_objects[0] = obj_player
 target_objects[1] = obj_enemy_ship_team_2
@@ -121,4 +123,4 @@ engine_sound = snd_engine_2
 engine_noise = noone
 
 ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(ship_audio_emitter, 600, 800, 1);

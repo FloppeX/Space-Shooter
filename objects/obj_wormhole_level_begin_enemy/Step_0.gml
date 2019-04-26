@@ -23,24 +23,30 @@ if scr_exists(warping_ship){
 		
 	// Create a fake ship object that will spin and shrink
 	if !scr_exists(fake_warping_ship){
-		fake_warping_ship = instance_create_depth(warping_ship.phy_position_x,warping_ship.phy_position_y,-10,obj_wormhole_traveller_level_begin_player)
+		fake_warping_ship = instance_create_depth(warping_ship.phy_position_x,warping_ship.phy_position_y,-10,obj_wormhole_traveller_level_begin_ship)
 		fake_warping_ship.phy_rotation = warping_ship.phy_rotation
 		fake_warping_ship.sprite_index = warping_ship.sprite_index
 		fake_warping_ship.draw_scale = 0
-		for(var i = 0; i < array_length_1d(warping_ship.ship_segment); i+=1;)
+		for(var i = 0; i < array_length_1d(warping_ship.ship_segment); i+=1;){
+			
 			if scr_exists(warping_ship.ship_segment[i].module){
 				fake_warping_ship.modules[i,0] = warping_ship.ship_segment[i].module.sprite_index
-				fake_warping_ship.modules[i,2] = warping_ship.ship_segment[i].placement_angle
-				fake_warping_ship.modules[i,3] = warping_ship.ship_segment[i].placement_distance
-				fake_warping_ship.modules[i,4] = warping_ship.ship_segment[i].module.offset_angle
-				if warping_ship.ship_segment[i].ship_segment_right != noone
-					fake_warping_ship.modules[i,5] = 1
-				else fake_warping_ship.modules[i,5] = 0
-				if warping_ship.ship_segment[i].ship_segment_below != noone
-					fake_warping_ship.modules[i,6] = 1
-				else fake_warping_ship.modules[i,6] = 0
-				}
-			else fake_warping_ship.modules[i,0] = noone
+				fake_warping_ship.modules[i,3] = warping_ship.ship_segment[i].module.offset_angle
+			}
+			else{
+				fake_warping_ship.modules[i,0] = spr_segment
+				fake_warping_ship.modules[i,3] = 0
+			}
+			fake_warping_ship.modules[i,1] = warping_ship.ship_segment[i].placement_angle
+			fake_warping_ship.modules[i,2] = warping_ship.ship_segment[i].placement_distance
+	
+			if warping_ship.ship_segment[i].ship_segment_right != noone
+				fake_warping_ship.modules[i,4] = 1
+			else fake_warping_ship.modules[i,4] = 0
+			if warping_ship.ship_segment[i].ship_segment_below != noone
+				fake_warping_ship.modules[i,5] = 1
+			else fake_warping_ship.modules[i,5] = 0
+		}
 		}
 		
 	// Check the fake ship to see if done warping

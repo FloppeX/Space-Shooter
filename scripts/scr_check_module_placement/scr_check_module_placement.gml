@@ -3,7 +3,9 @@
 var temp_module = argument0
 var temp_segment = argument1
 
-if temp_module == noone
+if !scr_exists(temp_module)
+	return true
+if !scr_exists(temp_segment)
 	return true
 	
 if temp_module.placement_req_above == noone

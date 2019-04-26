@@ -1,4 +1,13 @@
 draw_self();
+
+draw_sprite(spr_shop_structure_bars,-1,phy_position_x-80,phy_position_y-150)
+draw_sprite(spr_shop_structure_bars,-1,phy_position_x+80,phy_position_y-150)
+draw_sprite(spr_shop_structure_bars,-1,phy_position_x-80,phy_position_y+150)
+draw_sprite(spr_shop_structure_bars,-1,phy_position_x+80,phy_position_y+150)
+
+draw_sprite(spr_shop_structure_left,-1,phy_position_x-250,phy_position_y)
+draw_sprite(spr_shop_structure_right,-1,phy_position_x+250,phy_position_y)
+
 for(var i = 0; i < number_of_items; i+=1;){
 	draw_sprite(spr_module_holder,-1,shop_segments[i].x,shop_segments[i].y)
 	}

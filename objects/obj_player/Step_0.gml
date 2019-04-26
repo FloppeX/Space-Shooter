@@ -17,6 +17,11 @@ if disabled_timer > 0
 	controls_disabled = true
 else controls_disabled = false
 
+// Hit invulnerability
+
+if hit_invulnerable_timer > 0
+	hit_invulnerable_timer -= 1
+
 // Gamepad controls
 
 if controls_disabled == false{
@@ -202,8 +207,9 @@ scr_wrap_room();//scr_wrap_room_player();
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
-
-audio_listener_position(phy_position_x,phy_position_y,0.25*global.zoom)
+var listener_height = 0.25*global.zoom
+listener_height = clamp(listener_height,0,1000)
+audio_listener_position(phy_position_x,phy_position_y,listener_height)
 
 // Credits
 var pickup_type = obj_pickup_credit

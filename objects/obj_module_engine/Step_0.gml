@@ -5,9 +5,11 @@ add_thrust = owner.add_thrust
 if scr_exists(owner) and add_thrust > 0 and visible{
 	if owner.energy > add_thrust * energy_cost{
 		owner.energy -= add_thrust * energy_cost
-		if owner.phy_speed < owner.max_speed
-				physics_apply_local_force(0,0,add_thrust * thrust,0)
-
+		if owner.phy_speed < owner.max_speed{
+			//var temp_thrust = add_thrust * thrust * (1-(owner.phy_speed / owner.max_speed))
+			//physics_apply_local_force(0,0,temp_thrust,0)
+			physics_apply_local_force(0,0,add_thrust * thrust,0)
+		}
 		flame_offset_distance = 18
 		flame_offset_angle = 180
 		part_type_speed(part_engine_flame,add_thrust,6*add_thrust,0,2);

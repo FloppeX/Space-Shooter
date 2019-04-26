@@ -139,9 +139,9 @@ audio_emitter_falloff(global.music_emitter, 100, 1600, 1);
 
 // Other global game variables
 
-global.asteroid_chance_credit = 7//Percentage chance
-global.asteroid_chance_health = 7
-global.asteroid_chance_particles = 7
+global.asteroid_chance_credit = 10//Percentage chance
+global.asteroid_chance_health = 10
+global.asteroid_chance_particles = 10
 
 // Difficulty - increases with each room
 
@@ -155,14 +155,20 @@ global.levels[0] = rm_space
 global.levels[1] = rm_shop
 global.levels[2] = rm_space
 global.levels[3] = rm_shop
-global.levels[4] = rm_boss
+global.levels[4] = rm_boss1
 global.levels[5] = rm_shop
 global.levels[6] = rm_space
 global.levels[7] = rm_shop
 global.levels[8] = rm_space
 global.levels[7] = rm_shop
-global.levels[8] = rm_boss
-global.levels[9] = rm_end
+global.levels[8] = rm_boss_2
+global.levels[9] = rm_shop
+global.levels[10] = rm_space
+global.levels[11] = rm_shop
+global.levels[12] = rm_space
+global.levels[13] = rm_shop
+global.levels[14] = rm_boss_3
+global.levels[15] = rm_end
 
 // Controls
 

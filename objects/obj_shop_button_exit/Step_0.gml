@@ -1,4 +1,4 @@
 if activated{
-	owner.exit_shop = true
-	owner.enter_shop = false
+	global.player_exiting_shop = true
+	global.player_entering_shop = false
 	}

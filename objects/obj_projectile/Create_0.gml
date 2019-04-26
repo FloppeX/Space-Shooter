@@ -20,3 +20,6 @@ push_force = 0
 bullet_fixture = noone
 color = c_lime
 modifiers = noone
+
+starting_range = 0
+starting_damage = 0

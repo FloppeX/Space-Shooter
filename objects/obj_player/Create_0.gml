@@ -75,6 +75,10 @@ energy_increase = (energy_increase_base * energy_increase_multiplier) + energy_i
 obj_health = max_health;
 obj_health_old = obj_health
 
+// Hit invulnerability - to avoid getting hit lots of times in a row
+
+hit_invulnerable_timer = 0
+
 // Energy
 
 energy = max_energy;
@@ -136,11 +140,10 @@ modifiers[0,0] = noone
 // Segments
 
 segment_distance = 24
-scr_create_ship_segments(5,segment_distance,obj_ship_segment_player)
+scr_create_ship_segments(4,segment_distance,obj_ship_segment_player)
 
 //
 
-scr_place_engine_player()
 scr_place_engine_player()
 
 // TEST
@@ -164,6 +167,7 @@ repeat(20)
 
 scr_place_weapon_player()
 
+
 var segment_placed = false
 temp_module = instance_create_depth(0,0,-10,obj_module_cockpit);
 repeat(100){
@@ -174,6 +178,7 @@ repeat(100){
 		}
 	}
 
+scr_ship_update_segments(id,segment_distance)
 
 for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 	if scr_exists(ship_segment[i]){
@@ -199,7 +204,7 @@ sound_priority = 1
 
 explosion_sound = snd_explosion_large_01
 ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(ship_audio_emitter, 600, 800, 1);
 
 // Debris particles for if it blows up
 

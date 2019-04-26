@@ -12,4 +12,4 @@ play_sound = false
 current_sound = noone
 sawblade_sound = snd_sawblade
 sawblade_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(sawblade_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(sawblade_audio_emitter, 600, 800, 1);

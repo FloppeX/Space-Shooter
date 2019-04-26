@@ -23,10 +23,13 @@ if hit_enemy == true{
 		temp_length += 1
 	phy_position_x = phy_position_x+lengthdir_x((temp_distance-temp_length),-phy_rotation)
 	phy_position_y = phy_position_y+lengthdir_y((temp_distance-temp_length),-phy_rotation)
+	part_type_size(global.part_weapon_splat,2+4*bullet_scale,2+4*bullet_scale,-0.01,1); 
+	part_type_life(global.part_weapon_splat,2,8); 
+	part_type_color1(global.part_weapon_splat,color); 
 	part_particles_create_color(global.part_system_above, phy_position_x, phy_position_y, global.part_weapon_splat,color, 6);
 	
 	//
-	part_particles_create_color(global.part_system_above, phy_position_x+lengthdir_x(+10,-phy_rotation), phy_position_y+ lengthdir_y(+10,-phy_rotation), global.part_weapon_splat,color, 6);
+	//part_particles_create_color(global.part_system_above, phy_position_x+lengthdir_x(+10,-phy_rotation), phy_position_y+ lengthdir_y(+10,-phy_rotation), global.part_weapon_splat,color, 6);
 	damage_number = instance_create_depth(phy_position_x,phy_position_y,-1,obj_damage_number)
 	damage_number.damage = damage;
 	damage_number.color = color;

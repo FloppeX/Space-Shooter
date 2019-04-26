@@ -1,3 +1,5 @@
+phy_rotation = owner.phy_rotation
+
 // Find mirror positions
 
 scr_find_mirror_positions();

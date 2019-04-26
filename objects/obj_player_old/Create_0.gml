@@ -362,7 +362,7 @@ sound_priority = 1
 
 explosion_sound = snd_explosion_large_01
 ship_audio_emitter = audio_emitter_create()
-audio_emitter_falloff(ship_audio_emitter, 100, 800, 1);
+audio_emitter_falloff(ship_audio_emitter, 600, 800, 1);
 
 // Misc variables, perhaps used for modules/modifiers/crew
 
