@@ -1,7 +1,7 @@
 if global.view_mode == 2{
 	draw_set_font(global.font_small_text)
 	draw_set_color(c_white)
-	draw_text(x,y+40,push_force)
+	draw_text(x,y+40,depth)
 	}
 	
 gpu_set_blendmode(bm_add)

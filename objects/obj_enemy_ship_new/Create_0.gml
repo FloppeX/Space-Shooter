@@ -85,7 +85,7 @@ ai_disabled_timer = 0
 shoot = false
 direction_randomizer = 0
 abort_attack = false
-attack_duration = 600
+attack_duration = 240
 attack_timer = attack_duration
 
 invisible = false
@@ -97,7 +97,7 @@ target_objects[0] = obj_player
 target_objects[1] = obj_enemy_ship_team_2
 
 targeting_arc = 360;
-seek_range = 6000;
+seek_range = 1000;
 target_dir = 0
 angle_diff = 0
 ai_timer = 0

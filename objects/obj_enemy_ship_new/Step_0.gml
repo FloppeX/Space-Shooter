@@ -85,9 +85,9 @@ if ai_disabled_timer <= 0{ // set this to > 0 to control the enemy from another 
 // Find target
 	if scr_timer(30){
 		target = noone
-		target = scr_rocket_find_target_in_arc(target_objects[0],-phy_rotation,360,seek_range)
+		target = scr_rocket_find_target_in_arc(target_objects[0],-phy_rotation,targeting_arc,seek_range)
 		if target == noone
-			target = scr_rocket_find_target_in_arc(target_objects[1],-phy_rotation,360,seek_range)
+			target = scr_rocket_find_target_in_arc(target_objects[1],-phy_rotation,targeting_arc,seek_range)
 		}
 
 if ai_mode == 1 {
@@ -124,8 +124,7 @@ if ai_mode == 1 {
 if ai_mode == 2 {
 	
 	attack_timer -= 1;
-	//if scr_timer(30)
-	//	target = scr_rocket_find_target_in_arc(target_object,-phy_rotation,180,seek_range)
+
 	if scr_timer(10){
 		if scr_exists(target){
 			target_point_x = scr_wrap_closest_x(target);
@@ -163,7 +162,7 @@ if ai_mode == 2 {
 			ai_mode = 1
 			//shoot = false
 			abort_attack = false
-			ai_timer = 120
+			ai_timer = 300
 			}
 	}
 
@@ -174,19 +173,13 @@ var target_arc = 30 //30
 for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 		if ship_segment[i].module != noone
 			if object_is_ancestor(ship_segment[i].module.object_index, obj_module_gun)
-				if ship_segment[i].module.ready_to_shoot and !controls_disabled and !ai_disabled_timer{
+				if scr_timer(20) and !ship_segment[i].module.activation_timer and ship_segment[i].module.ready_to_shoot and !controls_disabled and !ai_disabled_timer{
 					var temp_target = scr_rocket_find_target_in_arc(target_objects[0],-ship_segment[i].module.phy_rotation,target_arc,ship_segment[i].module.bullet_range * 1.5)
 					if temp_target == noone 
 						temp_target = scr_rocket_find_target_in_arc(target_objects[1],-ship_segment[i].module.phy_rotation,target_arc,ship_segment[i].module.bullet_range * 1.5)
 					if temp_target != noone 
 						ship_segment[i].module.activation_timer = 30
 					}		
-			/*
-				for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
-					var temp_target = scr_rocket_find_target_in_arc(target_objects[i],-temp_module.phy_rotation,target_arc,temp_module.bullet_range * 1.5)
-					if temp_target != noone 
-						ship_segment[i].module.activation_timer = 30
-				}	*/
 
 // Avoid teammates
 
@@ -208,7 +201,7 @@ if scr_exists(closest_teammate){
 
 var collision_check_distance = 140
 var collision_check_radius= 200
-if scr_timer(10)
+if scr_timer(30)
 	closest_obstacle = collision_circle(phy_position_x+lengthdir_x(collision_check_distance,-phy_rotation),phy_position_y+lengthdir_y(collision_check_distance,-phy_rotation),collision_check_radius,obj_asteroid,false,true) 
 if scr_exists(closest_obstacle){
 	temp_direction = point_direction(phy_position_x,phy_position_y,closest_obstacle.phy_position_x,closest_obstacle.phy_position_y)
@@ -229,18 +222,9 @@ if controls_disabled == false{
 	rotation_value = clamp(angle_diff/20, -1, 1)
 	
 	rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
-	
-	if abs(phy_angular_velocity) < rotation_speed * abs(rotation_value)
+
+	if abs(phy_angular_velocity) < rotation_speed //* abs(rotation_value)
 		physics_apply_torque(rotation_force * rotation_value)
-	else
-		physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
-	/*
-	if rotation_value < 0 and phy_angular_velocity > max_rotation_speed * rotation_value 
-			phy_angular_velocity -= 10//physics_apply_angular_impulse(4 * rotation_value)
-	if rotation_value > 0 and phy_angular_velocity < max_rotation_speed * rotation_value
-			phy_angular_velocity += 10//physics_apply_angular_impulse(4 * rotation_value)
-			*/
-	//phy_angular_velocity = turn_value * max_rotation_speed;	
 
 	// Apply thrust
 	
@@ -248,12 +232,6 @@ if controls_disabled == false{
 		add_thrust = 1
 	else add_thrust = 0
 	
-	/*
-	if phy_speed < target_speed 
-		thrust = max_thrust
-	else thrust = 0
-	physics_apply_local_force(0,0, thrust,0)
-	*/
 	}
 else add_thrust = 0
 
@@ -268,13 +246,15 @@ if energy < max_energy
 if energy > max_energy
 	energy = max_energy
 
+
 // Find mirror positions
 
 scr_find_mirror_positions();
 
 // Wrap movement
 
-scr_wrap_room();
+scr_wrap_room_ship()//_test();
+
 
 // Sound
 

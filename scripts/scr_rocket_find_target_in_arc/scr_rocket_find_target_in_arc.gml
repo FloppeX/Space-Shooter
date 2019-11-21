@@ -23,93 +23,117 @@ for (i=0;i<instance_number(target_type);i+=1){
 		temp_x = target.phy_position_x - global.play_area_width
 		temp_y = target.phy_position_y - global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x 
 		temp_y = target.phy_position_y - global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x + global.play_area_width
 		temp_y = target.phy_position_y - global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x - global.play_area_width
 		temp_y = target.phy_position_y 
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x 
 		temp_y = target.phy_position_y
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x + global.play_area_width
 		temp_y = target.phy_position_y 
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x - global.play_area_width
 		temp_y = target.phy_position_y + global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x 
 		temp_y = target.phy_position_y + global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	
 		temp_x = target.phy_position_x + global.play_area_width
 		temp_y = target.phy_position_y + global.play_area_height
 		temp_distance = point_distance(phy_position_x,phy_position_y,temp_x,temp_y)
-		temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
-		if temp_distance < closest_distance and abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
-			temp_object = target;
-			closest_distance = temp_distance
-			closest_direction = temp_direction
+		if temp_distance < closest_distance{
+			temp_direction = point_direction(phy_position_x,phy_position_y,temp_x,temp_y)
+			if abs(angle_difference(angle, temp_direction)) < 0.5 * angle_arc{
+				temp_object = target;
+				closest_distance = temp_distance
+				closest_direction = temp_direction
+				}
 			}
 	}
 }
 
+// Check if line of sight is blocked
+
+if temp_object != noone
+	if collision_line(phy_position_x,phy_position_y,target.phy_position_x,target.phy_position_y,obj_parent_environment,0,1)
+		temp_object = noone
+		
 return temp_object;

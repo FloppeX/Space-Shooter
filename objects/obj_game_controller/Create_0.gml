@@ -1,6 +1,10 @@
-// Test
+// Depth - mostly relevant because of the black bars
 
-cursor = instance_create_depth(0,0,-1000,obj_mouse_cursor)
+depth = -10
+
+//
+
+cursor = instance_create_depth(0,0,-100,obj_mouse_cursor)
 
 //
 

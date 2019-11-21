@@ -2,7 +2,7 @@ event_inherited();
 
 life_timer = 900
 
-max_speed = 8
+max_speed = 10
 
 pickup_glow_particle = part_type_create();
 part_type_sprite(pickup_glow_particle,sprite_index,false,false,false);            

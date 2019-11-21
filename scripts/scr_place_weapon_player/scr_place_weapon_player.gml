@@ -1,5 +1,5 @@
 var temp_segment = ship_segment[0]
-var temp_module = scr_create_random_gun()
+var temp_module = scr_create_random_starting_gun()
 temp_module.offset_angle = 0
 temp_module.placement_req_above = noone
 temp_module.placement_req_left = 1

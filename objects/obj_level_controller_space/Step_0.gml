@@ -11,9 +11,7 @@ global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
 //
 
 if instance_exists(obj_player)
-	global.camera.follow_object = obj_player //obj_player
-else
-	global.camera.follow_object = obj_player_old
+	global.camera.follow_object = obj_player
 	
 //
 
@@ -147,7 +145,8 @@ if instance_exists(obj_wormhole_level_end_new){
 
 // Is the player dead? Then count down and restart
 
-if !instance_exists(obj_player){
+//if !instance_exists(obj_player){
+if obj_player.destroyed{
 	death_timer -= 1
 	global.difficulty_level = 1
 	}

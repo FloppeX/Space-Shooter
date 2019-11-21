@@ -12,9 +12,9 @@ hue = hue_min
 //hue_2_shift_amount = 1
 color = 0;
 
-depth = 7
+depth = 20
 
-wormhole_segments = 10
+wormhole_segments = 6
 wormhole_size = 0
 particle_speed = 0//random(2)-1// 0.9
 particle_speed_change = 0//random(0.02) * -sign(particle_speed)// -0.015
@@ -26,7 +26,6 @@ done_warping = false
 mirror_x = 0
 mirror_y = 0
 
-depth = 20
 /*
 wormhole_particle = part_type_create();
 part_type_sprite(wormhole_particle,effect_sprite,false,false,false);            

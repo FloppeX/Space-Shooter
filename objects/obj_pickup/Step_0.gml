@@ -24,7 +24,7 @@ if life_timer <= 150{
 if phy_speed > max_speed
 	phy_linear_damping = 4
 else 
-	phy_linear_damping = 2
+	phy_linear_damping = 1
 	
 //
 

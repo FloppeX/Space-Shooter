@@ -8,8 +8,7 @@
         "1acbec08-8afa-4f21-acda-50475e76db07",
         "e5f6f390-e089-4411-ab24-520cb013099a",
         "6c064ba0-a1f2-438e-9af6-4655d4dea170",
-        "0c0d996d-0b73-4f43-8d26-4935ad5ed09b",
-        "5245e7bb-560e-4daf-b688-d549ddaa3cfa"
+        "0c0d996d-0b73-4f43-8d26-4935ad5ed09b"
     ],
     "filterType": "GMObject",
     "folderName": "Friendlies",

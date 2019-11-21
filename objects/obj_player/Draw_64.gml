@@ -18,27 +18,22 @@ if global.view_mode == 2{
 // MAP
 
 
-map_width = 100 * map_scale;
-map_height = 100 * map_scale;
-map_edge_right = /*display_get_width()*/ display_get_gui_width() - 25 * map_scale
-map_edge_left = map_edge_right - map_width
-map_edge_top = 25 * map_scale
-map_center_x = map_edge_left+ 0.5*map_width
-map_center_y = map_edge_top+0.5*map_height
-map_range = 0.5 * global.play_area_width;
-
 draw_sprite_ext(spr_radar,-1, map_edge_left+ 0.5*map_width,map_edge_top+0.5*map_height,map_scale,map_scale,0,c_white,1)
 player_x = phy_position_x-global.wrap_border_left
 player_y = phy_position_y-global.wrap_border_top
-
-scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid,c_white);
-scr_draw_object_type_on_map(obj_rocket,spr_map_marker_rocket,c_white);
-scr_draw_object_type_on_map(obj_enemy_ship_new,spr_map_marker_enemy_ship,c_white);
-wormhole = instance_find(obj_wormhole_level_end_new,0)
-if wormhole != noone
-	scr_draw_object_type_on_map(obj_wormhole_level_end_new,spr_map_wormhole,wormhole.color);
+scr_draw_objects_on_map()
 draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,map_scale,map_scale,-phy_rotation,c_white,1)
-
+/*
+if global.view_mode == 1{
+	scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid,c_white);
+	scr_draw_object_type_on_map(obj_rocket,spr_map_marker_rocket,c_white);
+	scr_draw_object_type_on_map(obj_enemy_ship_new,spr_map_marker_enemy_ship,c_white);
+	wormhole = instance_find(obj_wormhole_level_end_new,0)
+	if wormhole != noone
+		scr_draw_object_type_on_map(obj_wormhole_level_end_new,spr_map_wormhole,wormhole.color);
+	draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,map_scale,map_scale,-phy_rotation,c_white,1)
+}
+*/
 // Health bar + energy_bar + particle bar
 
 health_bar_x = 30

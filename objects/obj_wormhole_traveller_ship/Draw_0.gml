@@ -1,5 +1,3 @@
-event_inherited();
-
 // First draw all the bars, then the segments and modules
 
 for(var i = 0; i < array_height_2d(modules); i+=1;){

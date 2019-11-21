@@ -4,7 +4,7 @@ owner = noone
 shield_max_size = 1
 timer = 0
 
-force = 30
+force = 15
 /*
 shield_particle = part_type_create();
 part_type_sprite(shield_particle,spr_force_shield,0,0,0);

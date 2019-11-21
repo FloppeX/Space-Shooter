@@ -46,8 +46,15 @@ if number_of_explosive_barrels >= 1{
 
 //
 
-if !scr_exists(obj_enemy_modular_boss)
+if boss_created == false
 	boss_creation_timer -= 1
+	
+if boss_created == true and !scr_exists(boss_object)
+	boss_killed = true
+
+if boss_killed
+	boss_killed_timer -= 1
+	
 if boss_creation_timer <= 0 and boss_created == false{
 
 	var tempdist = 200 + random(300)
@@ -71,11 +78,7 @@ if boss_creation_timer <= 0 and boss_created == false{
 	boss_created = true
 	}
 
-if boss_created == true and !scr_exists(boss_object)
-	boss_killed = true
 
-if boss_killed
-	boss_killed_timer -= 1
 
 // Are all enemies dead? Or is the timer 0? Then count down and move to next level
 
@@ -102,7 +105,7 @@ if instance_exists(obj_wormhole_level_end_new){
 
 // Is the player dead? Then count down and restart
 
-if !instance_exists(obj_player){
+if obj_player.destroyed{
 	death_timer -= 1
 	global.difficulty_level = 1
 	}

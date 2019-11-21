@@ -4,21 +4,22 @@ warp_start_timer -= 1;
 if warping_ship == noone and !done_warping
 	warping_ship = instance_place(phy_position_x,phy_position_y,obj_player)
 
-if scr_exists(warping_ship){
+if scr_exists(warping_ship){/*
 	with(warping_ship){
 		disabled_timer = 10
 		phy_active = true//false
 		visible = true//visible = false
+		scr_ship_update_segments(id,segment_distance)
 		for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
-			ship_segment[i].phy_active = false
+			ship_segment[i].phy_active = true
 			ship_segment[i].visible = true
 			if scr_exists(ship_segment[i].module){
-				ship_segment[i].module.phy_active = false
+				ship_segment[i].module.phy_active = true
 				ship_segment[i].module.visible = true//visible = false
 				ship_segment[i].module.phy_rotation = -phy_rotation + ship_segment[i].module.offset_angle
 				}
 			}
-		}
+		}*/
 		
 	// Create a fake ship object that will spin and shrink
 	if !scr_exists(fake_warping_ship){
@@ -45,11 +46,15 @@ if scr_exists(warping_ship){
 			if warping_ship.ship_segment[i].ship_segment_below != noone
 				fake_warping_ship.modules[i,5] = 1
 			else fake_warping_ship.modules[i,5] = 0
-		}
+			}
+			
+		
 		}
 		
 	// Check the fake ship to see if done warping
 	if scr_exists(fake_warping_ship) and warp_start_timer <= 0{
+		fake_warping_ship.phy_position_x = warping_ship.phy_position_x
+		fake_warping_ship.phy_position_y = warping_ship.phy_position_y
 		fake_warping_ship.draw_scale += 0.01
 		fake_warping_ship.draw_scale = clamp(fake_warping_ship.draw_scale,0,1)
 		var temp_angle_diff = angle_difference(warping_ship.phy_rotation,fake_warping_ship.phy_rotation)
@@ -63,13 +68,12 @@ if scr_exists(warping_ship){
 		}
 	// Move the player ship to the center of the wormhole
 
-	//warping_ship.phy_position_x = phy_position_x 
-	//warping_ship.phy_position_y = phy_position_y
 	with(warping_ship){
-			
+		
 		var angle_diff = angle_difference(-phy_rotation,90)
-		physics_apply_torque(1*angle_diff)
-
+		physics_apply_angular_impulse(0.8*angle_diff)
+		physics_apply_angular_impulse(-0.08*phy_angular_velocity)
+		
 		var x_diff = other.phy_position_x - phy_position_x
 		var x_force = 2*x_diff
 		physics_apply_force(phy_position_x,phy_position_y,x_force,0)
@@ -78,19 +82,19 @@ if scr_exists(warping_ship){
 		var y_diff = other.phy_position_y - phy_position_y
 		var y_force = 2*y_diff
 		physics_apply_force(phy_position_x,phy_position_y,0,y_force)
-		var y_braking_force = -20 * phy_speed_x
+		var y_braking_force = -20 * phy_speed_y
 		physics_apply_force(phy_position_x,phy_position_y,0,y_braking_force)
 		
 			disabled_timer = 30
 			phy_active = true
-			visible = false //true
+			visible = false//true
 			for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
 				ship_segment[i].phy_active = true
-				ship_segment[i].visible = false //true
+				ship_segment[i].visible = false//true
 				if scr_exists(ship_segment[i].module){
 					ship_segment[i].module.phy_active = true
-					ship_segment[i].module.visible = false //true
-					//ship_segment[i].module.phy_rotation = phy_rotation-ship_segment[i].module.offset_angle
+					ship_segment[i].module.visible = false//true
+					ship_segment[i].module.phy_rotation = phy_rotation-ship_segment[i].module.offset_angle
 					}
 				}
 		}

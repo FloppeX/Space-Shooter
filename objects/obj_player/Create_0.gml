@@ -1,6 +1,7 @@
 //
 
 obj_health = 100
+destroyed = false
 
 // Gamepad controls
 
@@ -116,6 +117,17 @@ draw_scale = 1
 // Map
 
 map_scale = 3
+map_width = 100 * map_scale;
+map_height = 100 * map_scale;
+map_edge_right = display_get_gui_width() - 25 * map_scale
+map_edge_left = map_edge_right - map_width
+map_edge_top = 25 * map_scale
+map_center_x = map_edge_left+ 0.5*map_width
+map_center_y = map_edge_top+0.5*map_height
+map_range = global.play_area_width //0.5 * global.play_area_width;
+
+map_objects[99,0] = noone
+number_of_map_objects = 0
 
 // Credits
 
@@ -131,7 +143,7 @@ credits_old = 0
 // Pickups
 
 pickup_seek_range = 200
-pickup_pull_force = 120
+pickup_pull_force = 160
 
 // Modifiers
 
@@ -164,10 +176,6 @@ repeat(20)
 		}
 */
 //
-
-scr_place_weapon_player()
-
-
 var segment_placed = false
 temp_module = instance_create_depth(0,0,-10,obj_module_cockpit);
 repeat(100){
@@ -177,6 +185,11 @@ repeat(100){
 		segment_placed = true
 		}
 	}
+	
+scr_place_weapon_player()
+
+
+
 
 scr_ship_update_segments(id,segment_distance)
 

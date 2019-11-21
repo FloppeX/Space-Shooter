@@ -5,7 +5,8 @@ var segment_distance = argument1
 
 for(var i = 0; i < array_length_1d(ship.ship_segment); i+=1;)
 	with(ship.ship_segment[i]){
-		physics_joint_delete(joint)
+		if joint != noone
+			physics_joint_delete(joint)
 		joint = noone
 	}
 	
@@ -49,3 +50,10 @@ ship.phy_position_y = y_total / array_length_1d(ship_segment)
 
 for(var i = 0; i < array_length_1d(ship.ship_segment); i+=1;)
 	ship.ship_segment[i].joint = physics_joint_weld_create(ship.ship_segment[i], ship, ship.ship_segment[i].phy_position_x,ship.ship_segment[i].phy_position_y,0, 10, 12,false);
+	
+// Update placement angle and distance (for creating fake ships when warping)
+
+for(var i = 0; i < array_length_1d(ship.ship_segment); i+=1;){
+		ship.ship_segment[i].placement_angle = ship.phy_rotation + point_direction(ship.phy_position_x,ship.phy_position_y,ship.ship_segment[i].phy_position_x,ship.ship_segment[i].phy_position_y)
+		ship.ship_segment[i].placement_distance = point_distance(ship.phy_position_x,ship.phy_position_y,ship.ship_segment[i].phy_position_x,ship.ship_segment[i].phy_position_y)
+	}

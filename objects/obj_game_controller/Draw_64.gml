@@ -18,7 +18,7 @@ if global.view_mode == 2{
 	draw_text(860,400,"total_kills: " + string(global.total_kills))
 	draw_text(860,440,"total_bullets: " + string(global.total_bullets))
 	draw_text(860,480,"total_credits: " + string(global.total_credits))
-	draw_text(860,520,"Modules: " + string(instance_number(obj_module)))
+	draw_text(860,520,"Play_area_width : " + string(global.play_area_width))
 	//for(var i = 0; i < array_length_1d(text) ; i+=1;)
 	//	draw_text(860,400+i*40,text[i])
 	

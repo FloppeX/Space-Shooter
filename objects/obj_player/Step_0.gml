@@ -119,17 +119,24 @@ if keyboard_check_pressed(ord("3")){
 
 if controls_disabled == false{
 			
-	rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
+	//rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
 	
-	if abs(phy_angular_velocity) < rotation_speed * abs(rotation_value)
+	if abs(phy_angular_velocity) < rotation_speed //* abs(rotation_value)
 		physics_apply_torque(rotation_force * rotation_value)
-	else
-		physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
+	//else
+	//	physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
 }
 	
 // Stop ship from skidding
 if add_thrust
 	scr_counter_lateral_drift();
+	
+// dont move faster than max speed
+if phy_speed > max_speed{
+	var friction_coeff = 15
+	//var temp_dir = point_direction(0,0,phy_speed_x,phy_speed_y)
+	physics_apply_force(phy_position_x,phy_position_y,friction_coeff * -phy_speed_x,friction_coeff * -phy_speed_y)
+	}
 	
 // Update modules and activate them!
 
@@ -149,7 +156,7 @@ if health_difference > 0{
 	}
 	
 	
-if obj_health <= 0{
+if obj_health <= 0 and destroyed == false{
 	scr_explode_object_new_new();
 	//phy_active = false
 	for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
@@ -159,14 +166,16 @@ if obj_health <= 0{
 		with(ship_segment[i])
 				instance_destroy()
 		}
+	ship_segment = noone
 	audio_play_sound_at(explosion_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
 	boom = instance_create_depth(phy_position_x,phy_position_y,-10,obj_explosion)
 	boom.radius = 300
 	boom.damage = 50
 	
 	scr_write_stats_to_file()
-	
-	instance_destroy();
+	destroyed = true
+	visible = false
+	//instance_destroy();
 	exit;
 	}	
 		
@@ -202,7 +211,7 @@ scr_find_mirror_positions();
 
 // Wrap room if needed
 
-scr_wrap_room();//scr_wrap_room_player();
+scr_wrap_room_ship();//scr_wrap_room_ship();
 
 // Sound
 
@@ -212,19 +221,9 @@ listener_height = clamp(listener_height,0,1000)
 audio_listener_position(phy_position_x,phy_position_y,listener_height)
 
 // Credits
-var pickup_type = obj_pickup_credit
+if obj_health > 0{
+	var pickup_type = obj_pickup_credit
 
-if instance_number(pickup_type) > 0
-	for(var i = 0; i < instance_number(pickup_type); i+=1;)
-		with (instance_find(pickup_type,i)){
-			var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-			var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-			if temp_dist <= other.pickup_seek_range
-				physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
-		}
-		
-var pickup_type = obj_pickup_health
-if obj_health < max_health
 	if instance_number(pickup_type) > 0
 		for(var i = 0; i < instance_number(pickup_type); i+=1;)
 			with (instance_find(pickup_type,i)){
@@ -234,21 +233,38 @@ if obj_health < max_health
 					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
 			}
 		
-var pickup_type = obj_pickup_particles
-if particles < max_particles
-	if instance_number(pickup_type) > 0
-		for(var i = 0; i < instance_number(pickup_type); i+=1;)
-			with (instance_find(pickup_type,i)){
-				var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-				var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
-				if temp_dist <= other.pickup_seek_range
-					physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
-			}
+	var pickup_type = obj_pickup_health
+	if obj_health < max_health
+		if instance_number(pickup_type) > 0
+			for(var i = 0; i < instance_number(pickup_type); i+=1;)
+				with (instance_find(pickup_type,i)){
+					var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+					var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+					if temp_dist <= other.pickup_seek_range
+						physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
+				}
+		
+	var pickup_type = obj_pickup_particles
+	if particles < max_particles
+		if instance_number(pickup_type) > 0
+			for(var i = 0; i < instance_number(pickup_type); i+=1;)
+				with (instance_find(pickup_type,i)){
+					var temp_dist = point_distance(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+					var temp_dir = point_direction(phy_position_x,phy_position_y,other.phy_position_x,other.phy_position_y)
+					if temp_dist <= other.pickup_seek_range
+						physics_apply_force(phy_position_x,phy_position_y,lengthdir_x(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir),lengthdir_y(other.pickup_pull_force*temp_dist/other.pickup_seek_range,temp_dir))
+				}
+	}
 			
 if credits > credits_old
 credits_gained += (credits - credits_old)
 global.total_credits += (credits - credits_old)
 credits_old = credits
+
+// MAP UI
+
+if scr_timer(40)
+	scr_populate_map_object_array(obj_asteroid,spr_map_marker_asteroid)
 
 // Update costs
 

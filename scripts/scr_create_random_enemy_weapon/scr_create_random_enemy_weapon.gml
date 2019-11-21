@@ -14,6 +14,12 @@ h = clamp(h,0,9)
 		case 9: temp_module = instance_create_depth(0,0,-10,obj_module_rocket_launcher_enemy); break;
 		}
 	temp_module.persistent = false
+	
+	temp_module.placement_req_above = 1 // any placement allowed
+	temp_module.placement_req_right = 1
+	temp_module.placement_req_below = 1
+	temp_module.placement_req_left = 1
+	
 	temp_module.offset_angle = irandom(3) * 90;
 
 	if temp_module.offset_angle == 0

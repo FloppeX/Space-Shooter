@@ -1,5 +1,5 @@
 var target = argument0
-if !instance_exists(target) or target == noone
+if target == noone or !instance_exists(target)
 	return false
 else 
 	return true

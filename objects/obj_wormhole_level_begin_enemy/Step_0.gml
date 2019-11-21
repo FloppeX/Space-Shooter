@@ -64,11 +64,11 @@ if scr_exists(warping_ship){
 		}
 	// Move the player ship to the center of the wormhole
 
-	var temp_dir = point_direction(warping_ship.phy_position_x,warping_ship.phy_position_y,phy_position_x,phy_position_y)
-	var temp_dist = point_distance(warping_ship.phy_position_x,warping_ship.phy_position_y,phy_position_x,phy_position_y)
-	var step_coefficient = 0.04
-	warping_ship.phy_position_x = warping_ship.phy_position_x + lengthdir_x(temp_dist * step_coefficient, temp_dir)
-	warping_ship.phy_position_y = warping_ship.phy_position_y + lengthdir_y(temp_dist * step_coefficient, temp_dir)
+	//var temp_dir = point_direction(warping_ship.phy_position_x,warping_ship.phy_position_y,phy_position_x,phy_position_y)
+	//var temp_dist = point_distance(warping_ship.phy_position_x,warping_ship.phy_position_y,phy_position_x,phy_position_y)
+	//var step_coefficient = 0.04
+	//warping_ship.phy_position_x = phy_position_x
+	//warping_ship.phy_position_y = phy_position_y
 	}
 
 	

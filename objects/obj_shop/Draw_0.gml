@@ -1,4 +1,3 @@
-draw_self();
 
 draw_sprite(spr_shop_structure_bars,-1,phy_position_x-80,phy_position_y-150)
 draw_sprite(spr_shop_structure_bars,-1,phy_position_x+80,phy_position_y-150)
