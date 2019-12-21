@@ -1,6 +1,6 @@
 // TEST
 if global.view_mode == 2{
-	draw_set_font(global.font_menu)
+	draw_set_font(global.font_small_text)
 	draw_set_color(c_white)
 	draw_text(50,90,"zoom: " + string(global.zoom))
 	draw_text(50,120,"difficulty: " + string(global.difficulty_level))
@@ -18,11 +18,11 @@ if global.view_mode == 2{
 // MAP
 
 
-draw_sprite_ext(spr_radar,-1, map_edge_left+ 0.5*map_width,map_edge_top+0.5*map_height,map_scale,map_scale,0,c_white,1)
-player_x = phy_position_x-global.wrap_border_left
-player_y = phy_position_y-global.wrap_border_top
+draw_sprite_ext(spr_radar,-1, map_edge_left+ 0.5*map_width,map_edge_top+0.5*map_height,global.gui_scale * map_scale * 0.9,global.gui_scale * map_scale * 0.9,0,c_white,1)
+//player_x = phy_position_x-global.wrap_border_left
+//player_y = phy_position_y-global.wrap_border_top
 scr_draw_objects_on_map()
-draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,map_scale,map_scale,-phy_rotation,c_white,1)
+draw_sprite_ext(spr_map_marker_player,-1, map_center_x,map_center_y,global.gui_scale * map_scale,global.gui_scale * map_scale,-phy_rotation,c_white,1)
 /*
 if global.view_mode == 1{
 	scr_draw_object_type_on_map(obj_asteroid,spr_map_marker_asteroid,c_white);
@@ -36,42 +36,26 @@ if global.view_mode == 1{
 */
 // Health bar + energy_bar + particle bar
 
-health_bar_x = 30
-health_bar_y = 540
-health_bar_height = 300
-health_bar_width = 20
-
 draw_healthbar(health_bar_x-0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height - health_bar_height * max_health/max_health_base ,health_bar_x+0.5 * health_bar_width,health_bar_y+0.5 * health_bar_height,100 * obj_health/max_health,c_dkgray,c_maroon,c_maroon,3,true,true)
 
-
-energy_bar_x = 70
-energy_bar_y = 540
-energy_bar_height = 300
-energy_bar_width = 20
-
 draw_healthbar(energy_bar_x-0.5 * health_bar_width,energy_bar_y+0.5 * energy_bar_height - energy_bar_height * max_energy/max_energy_base,energy_bar_x+0.5 * health_bar_width,energy_bar_y+0.5 * health_bar_height,100 * energy/max_energy,c_dkgray,c_lime,c_lime,3,true,true)
-
-particles_bar_x = 110
-particles_bar_y = 540
-particles_bar_height = 300
-particles_bar_width = 20
 
 draw_healthbar(particles_bar_x-0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height - particles_bar_height * max_particles/max_particles_base,particles_bar_x+0.5 * health_bar_width,particles_bar_y+0.5 * particles_bar_height,100 * particles/max_particles,c_dkgray,c_aqua,c_aqua,3,true,true)
 
 // Credits
 
-draw_sprite_ext(spr_pickup_credit,-1,health_bar_x,health_bar_y + 0.5 * health_bar_height + 60,2,2,0,c_white,1)
+draw_sprite_ext(spr_pickup_credit,-1,global.gui_unit * 0.2,health_bar_y + 0.5 * health_bar_height +  global.gui_unit * 0.25,4 * global.gui_scale,4 * global.gui_scale,0,c_white,1)
 draw_set_font(font_damage_number)
 draw_set_color(c_white)
-draw_set_valign(fa_center)
+draw_set_valign(fa_middle)
 draw_set_halign(fa_center)
-draw_text(health_bar_x+60,health_bar_y + 0.5 * health_bar_height + 60,credits)
+draw_text_transformed(global.gui_unit * 0.6,health_bar_y + 0.5 * health_bar_height + global.gui_unit * 0.25,credits,global.gui_scale,global.gui_scale,0)
 
 // Active item
 
-if selected_active_module != noone and scr_exists(modules[selected_active_module,0]){
-	draw_sprite_ext(spr_module_holder,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,0,c_white,1)
-	draw_sprite_ext(modules[selected_active_module,0].sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,modules[selected_active_module,0].offset_angle+90,c_white,1)
+if scr_exists(selected_active_module){//and scr_exists(modules[selected_active_module,0]){
+	draw_sprite_ext(spr_module_holder,-1,global.gui_unit * 0.2,health_bar_y + 0.5 * health_bar_height + 180,5,5,0,c_white,1)
+	draw_sprite_ext(selected_active_module.sprite_index,-1,energy_bar_x,health_bar_y + 0.5 * health_bar_height + 180,5,5,selected_active_module.offset_angle+90,c_white,1)
 	}
 	
 
@@ -79,8 +63,9 @@ if selected_active_module != noone and scr_exists(modules[selected_active_module
 draw_set_font(global.font_big_text)
 draw_set_color(c_white)
 draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
 for(var i = 0; i < array_height_2d(modifiers); i+=1;)
 			if modifiers[i,0] != noone{
-				draw_sprite_ext(modifiers[i,4],-1,health_bar_x + 22,health_bar_y + 0.5 * health_bar_height + 255+120*i,4,4,0,c_white,1)
-				draw_text_ext_transformed(health_bar_x + 80,health_bar_y + 0.5 * health_bar_height + 230+120*i,modifiers[i,2],0,800,1,1,0)
+				draw_sprite_ext(modifiers[i,4],-1,health_bar_x + global.gui_unit * 0.16,health_bar_y + 0.5 * health_bar_height + global.gui_unit * 2+global.gui_unit * 0.5*i,global.gui_scale * 4,global.gui_scale * 4,0,c_white,1)
+				draw_text_ext_transformed(health_bar_x + 80,health_bar_y + 0.5 * health_bar_height + global.gui_unit * 2+global.gui_unit * 0.5*i,modifiers[i,2],0,800,global.gui_scale,global.gui_scale,0)
 				}

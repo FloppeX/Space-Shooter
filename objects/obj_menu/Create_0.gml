@@ -1,9 +1,9 @@
 x_pos = 0.5*display_get_gui_width()
 y_pos = 0.5*display_get_gui_height()
 
-item_distance = 64
-marker_offset_h = 16
-marker_offset_v = 8
+item_distance = 0.5 * global.gui_unit// 64
+marker_offset_h = 0.1 * global.gui_unit//16
+marker_offset_v = 0.1 * global.gui_unit //8
 alignment = "center"
 
 color = c_white

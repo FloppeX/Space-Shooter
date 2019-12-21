@@ -51,6 +51,12 @@ repeat(4-global.difficulty_level){
 			}
 	}
 		
+// If forward facing, increase cost slightly
+with (temp_module)
+	if offset_angle == 0{
+		var cost_increase = min(round(cost * 0.2),1)
+		cost += cost_increase
+	}
 	}	
 	
 return temp_module;

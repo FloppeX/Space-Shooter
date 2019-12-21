@@ -36,7 +36,7 @@ alpha = owner.alpha
 //
 
 audio_emitter_position(module_audio_emitter,phy_position_x,phy_position_y,0)
-
+audio_emitter_velocity(module_audio_emitter, phy_speed_x, phy_speed_y, 0);
 
 // Find mirror positions
 

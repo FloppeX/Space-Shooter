@@ -1,6 +1,3 @@
-var obj_type = argument0;
-var map_sprite = argument1;
-
 for (var h=0;h<= 99;h+=1)
 	for (var i=0;i<= 3;i+=1)
 		map_objects[h,i] = noone
@@ -19,6 +16,7 @@ while(j<instance_number(obj_asteroid)){
 		map_objects[array_bookmark,1] = map_dist
 		map_objects[array_bookmark,2] = map_dir
 		map_objects[array_bookmark,3] = -temp_obj.phy_rotation
+		map_objects[array_bookmark,4] = c_white
 		}
 	j+=1;
 	array_bookmark+=1
@@ -36,6 +34,7 @@ while(j<instance_number(obj_enemy_ship_new)){
 		map_objects[array_bookmark,1] = map_dist
 		map_objects[array_bookmark,2] = map_dir
 		map_objects[array_bookmark,3] = -temp_obj.phy_rotation
+		map_objects[array_bookmark,4] = c_white
 		}
 	j+=1;
 	array_bookmark+=1
@@ -53,6 +52,7 @@ while(j<instance_number(obj_wormhole_level_end_new)){
 		map_objects[array_bookmark,1] = map_dist
 		map_objects[array_bookmark,2] = map_dir
 		map_objects[array_bookmark,3] = -temp_obj.phy_rotation
+		map_objects[array_bookmark,4] = c_aqua
 		}
 	j+=1;
 	array_bookmark+=1

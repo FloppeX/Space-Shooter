@@ -2,7 +2,7 @@ event_inherited();
 
 obj_health = 32;
 
-damage = 10
+damage = 20
 push_force = 30//900
 
 child_object = obj_asteroid_medium;

@@ -23,7 +23,8 @@ repeat(round(number_of_segments/3))
 	
 var module_placed = false
 	var temp_module = instance_create_depth(0,0,-10,obj_module_enemy_cockpit_1);
-	repeat(100){
+	repeat(100)
+		if module_placed == false{
 		var i = irandom(array_length_1d(ship_segment)-1)
 		if scr_check_module_placement(temp_module,ship_segment[i]) and ship_segment[i].module == noone and !module_placed{
 			ship_segment[i].module = temp_module

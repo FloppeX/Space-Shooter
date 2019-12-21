@@ -5,16 +5,6 @@
     "name": "obj_wormhole_level_begin_enemy",
     "eventList": [
         {
-            "id": "5a0a9b6a-3fc2-490f-9011-6286225dd76e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "831210fd-d017-4f75-bd21-7b89b36ca641"
-        },
-        {
             "id": "e5e6c6ee-ea5c-4799-9504-c0bc6271c58b",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -27,7 +17,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "253dec84-095c-4d14-a72a-9c07b80b52d6",
+    "parentObjectId": "3e5a7eff-6865-4a04-9e68-becaa8393b5c",
     "persistent": false,
     "physicsAngularDamping": 0,
     "physicsDensity": 0,

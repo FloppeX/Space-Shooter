@@ -19,9 +19,11 @@ if scr_exists(cursor_module){
 // UI
 
 
+
+module_under_cursor = instance_place(x,y,obj_module)
+
 draw_set_font(global.font_small_text)
 draw_set_color(c_white)
-module_under_cursor = instance_place(x,y,obj_module)
 if module_under_cursor != noone
 	{
 		var number_of_modifiers = array_height_2d(module_under_cursor.modifiers)

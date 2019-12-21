@@ -14,6 +14,9 @@ gamepad_set_axis_deadzone(0, 0.1);
 
 
 
+//
+
+
 if mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_face1){
 	selected_segment = instance_place(x,y,obj_ship_segment)
 	

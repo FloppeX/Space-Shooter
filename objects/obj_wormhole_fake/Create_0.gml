@@ -7,7 +7,7 @@ hue_max = 140
 hue = hue_min
 color = 0;
 
-depth = -100
+depth = 0
 
 wormhole_segments = 10
 wormhole_size = 0

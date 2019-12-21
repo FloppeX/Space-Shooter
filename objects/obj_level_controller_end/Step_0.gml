@@ -38,8 +38,8 @@ if end_timer > 480
 if end_timer > 1000 and !instance_exists(obj_death_menu){
 		death_menu = instance_create_depth(0.5*display_get_width(),0.5*display_get_height(),0,obj_death_menu)
 		death_menu.alignment = "center"
-		death_menu.x_pos = 0.3*display_get_width()
-		death_menu.y_pos = 0.5*display_get_height()
+		death_menu.x_pos = 0.5*display_get_gui_width()
+		death_menu.y_pos = 0.5*display_get_gui_width()
 
 		}
 

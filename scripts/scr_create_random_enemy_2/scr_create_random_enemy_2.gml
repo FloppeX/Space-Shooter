@@ -13,11 +13,11 @@ if i == 0{
 	i = clamp(i,0,4)
 	
 	switch(i){
-		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_2); break;
-		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_3); break;
-		case 3: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_4); break;
-		case 4: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_5); break;
+		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 3: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 4: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
 		}
 	
 	new_enemy.obj_health = new_enemy.obj_health * (1 + 0.2 * global.difficulty_level)

@@ -5,6 +5,6 @@ if hit_enemy{
 	if victim != noone
 		with(victim){
 			//instance_change(obj_enemy_ship_team_2,1)
-			target_object = obj_enemy_ship_team_1
+			target_object = obj_enemy_ship_team_1_new
 			}
 	}

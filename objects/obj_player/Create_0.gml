@@ -116,15 +116,15 @@ draw_scale = 1
 
 // Map
 
-map_scale = 3
-map_width = 100 * map_scale;
-map_height = 100 * map_scale;
-map_edge_right = display_get_gui_width() - 25 * map_scale
+map_scale = 4.5
+map_width = global.gui_scale * 100 * map_scale;
+map_height = global.gui_scale * 100 * map_scale;
+map_edge_right = 15.5 * global.gui_unit //display_get_gui_width() - 25 * map_scale
 map_edge_left = map_edge_right - map_width
-map_edge_top = 25 * map_scale
+map_edge_top = 0.5 * global.gui_unit //* map_scale
 map_center_x = map_edge_left+ 0.5*map_width
 map_center_y = map_edge_top+0.5*map_height
-map_range = global.play_area_width //0.5 * global.play_area_width;
+map_range = 0.8 * global.play_area_width;//global.play_area_width //
 
 map_objects[99,0] = noone
 number_of_map_objects = 0
@@ -218,6 +218,7 @@ sound_priority = 1
 explosion_sound = snd_explosion_large_01
 ship_audio_emitter = audio_emitter_create()
 audio_emitter_falloff(ship_audio_emitter, 600, 800, 1);
+
 
 // Debris particles for if it blows up
 

@@ -1,22 +1,11 @@
-
-
+if !scr_exists(follow_object)
+	follow_object = obj_player
 
 if scr_exists(follow_object){
-/*
-	var tempdir = scr_wrap_direction_to_point(phy_position_x,phy_position_y,follow_object.phy_position_x,follow_object.phy_position_y)
-	var tempdist = scr_wrap_distance_to_point(phy_position_x,phy_position_y,follow_object.phy_position_x,follow_object.phy_position_y)
-	phy_position_x += lengthdir_x(tempdist/10,tempdir)
-	phy_position_y += lengthdir_y(tempdist/10,tempdir)
-	*/
 	phy_position_x = follow_object.phy_position_x
 	phy_position_y = follow_object.phy_position_y
 	}
-/*else
-	if point_distance(0,0,gp_axisrh,gp_axisrv) > 0.2{
-		phy_position_x += 10 * gamepad_axis_value(0,gp_axisrh)
-		phy_position_y += 10 * gamepad_axis_value(0,gp_axisrv)
-		}
-*/		
+	
 // Wrap room
 
 scr_find_mirror_positions();
@@ -50,7 +39,7 @@ if obj_input_controller.zoom_in
 zoom = global.zoom
 zoom = clamp(zoom,global.min_zoom,global.max_zoom)
 
-temp_zoom += (zoom - temp_zoom)/25
+temp_zoom += (zoom - temp_zoom)/100//25
 
 
 ///

@@ -14,9 +14,9 @@ if gamepad_button_check_pressed(0,gp_shoulderl){
 	temp_ypos = global.wrap_border_top + 0.26 *global.play_area_height +random(200)-100
 	var i = irandom(2);
 	switch(i){
-		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_2); break;
-		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_3); break;
+		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
+		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
+		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
 		}
 	new_enemy.target_object = obj_enemy_ship_team_2
 }
@@ -26,11 +26,11 @@ if gamepad_button_check_pressed(0,gp_shoulderr){
 	temp_ypos = global.wrap_border_bottom - 0.26 *global.play_area_height +random(200)-100
 	var i = irandom(2);
 	switch(i){
-		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_2); break;
-		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_2_modular_3); break;
+		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
+		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_2); break;
 		}
-	new_enemy.target_object = obj_enemy_ship_team_1
+	new_enemy.target_object = obj_enemy_ship_team_1_new
 }
 
 // Audio

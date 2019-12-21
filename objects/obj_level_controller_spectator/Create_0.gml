@@ -47,9 +47,9 @@ while(number_of_enemies > 0){
 		}
 	var i = irandom(2);
 	switch(i){
-		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_1); break;
-		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_2); break;
-		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_modular_3); break;
+		case 0: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
+		case 1: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
+		case 2: new_enemy = instance_create_depth(temp_xpos,temp_ypos,0,obj_enemy_ship_team_1_new); break;
 		}
 	number_of_enemies -= 1
 	}

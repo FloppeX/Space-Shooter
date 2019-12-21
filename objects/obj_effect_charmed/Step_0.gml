@@ -9,9 +9,10 @@ if instance_exists(target){
 		target.target = obj_player
 		target.target_dir = scr_wrap_direction_to_point(target.phy_position_x,target.phy_position_y,obj_player.phy_position_x,obj_player.phy_position_y)
 		}
-	for(var i = 0; i < array_height_2d(target.modules); i+=1;)
-		if scr_exists(target.modules[i,0])
-			with(target.modules[i,0])
+	for(var i = 0; i < array_height_2d(target.ship_segment); i+=1;)
+	if scr_exists(target.ship_segment[i])
+		if scr_exists(target.ship_segment[i].module)
+			with(target.ship_segment[i].module)
 				ready_to_shoot = false
 		}
 else instance_destroy();

@@ -47,7 +47,7 @@ file_text_close(stats_file);
 
 
 // View settings
-
+/*
 var s_width, s_height, g_width, g_height, aspect, c_scale, offSET;
 
 g_width = view_wport[0];
@@ -67,8 +67,23 @@ offSET = 256;
 if !window_get_fullscreen()
 
 { window_set_size((s_width - offSET),(s_height - offSET)); }
+*/
 
-display_set_gui_size(3840,2160)//(s_width,s_height);
+var res_horizontal =3840// 1920
+var res_vertical = 2160//1080
+global.gui_scale = res_horizontal/3840
+global.gui_unit = res_horizontal/16
+
+camera_set_view_size(view_camera[0], res_horizontal, res_vertical)
+
+//display_set_gui_size(640,400)//display_set_gui_size(3840,2160)//(s_width,s_height);
+var _vx = camera_get_view_width(view_camera[0]);
+var _vy = camera_get_view_height(view_camera[0]);
+surface_resize(application_surface,_vx, _vy);
+display_set_gui_size(res_horizontal, res_vertical);
+//display_set_gui_maximise()//res_horizontal/640,res_vertical/380, 0, 0);
+//display_set_gui_size(3840, 2160);
+
 
 //display_set_gui_size(display_get_width(), display_get_height());
 
@@ -88,7 +103,7 @@ global.screen_shake_duration = 0
 // Graphics settings
 
 draw_enable_swf_aa(true);
-global.aa_level = 3
+global.aa_level = 1
 draw_set_swf_aa_level(global.aa_level);
 
 draw_set_lighting(true);
@@ -135,7 +150,6 @@ global.camera = instance_create_depth(0.5 * global.play_area_width, 0.5 * global
 global.music_on = false
 audio_stop_all();
 audio_listener_position(0.5 * room_width,0.5 * room_height,1000);
-
 audio_falloff_set_model(audio_falloff_linear_distance_clamped)
 /*global.music_emitter = audio_emitter_create()
 audio_emitter_falloff(global.music_emitter, 100, 1600, 1);

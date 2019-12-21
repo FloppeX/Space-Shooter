@@ -1,5 +1,7 @@
 event_inherited();
 
+module_name = "Teleporter"
+
 active = true 
 
 activation_button = 0

@@ -19,8 +19,7 @@ if global.view_mode == 2{
 	number_of_map_objects = 0
 	while(map_objects[number_of_map_objects,0] != noone)
 		number_of_map_objects += 1
-	draw_text(phy_position_x,phy_position_y+80,"asteroids in array: " + string(number_of_map_objects))
-	draw_text(phy_position_x,phy_position_y+120,"Actual asteroids: " + string(instance_number(obj_asteroid)))
+	draw_text(phy_position_x,phy_position_y+80,"disabled_timer: " + string(disabled_timer))
 	//draw_text(phy_position_x,phy_position_y+150,string(number_segments_placed))
 
 	for(var i = 0; i < array_length_1d(ship_segment); i+=1;){

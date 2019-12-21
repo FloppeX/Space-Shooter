@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_blaster_alt_04",
-    "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
+    "audioGroupGuid": "209525a9-46fa-4e2d-af71-93cf08e540fd",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

@@ -38,7 +38,7 @@ if gamepad_is_connected(0){
 	else select_next_active_item = false
 		
 	// Zoom
-
+/*
 	if gamepad_button_check(0,gp_padu)
 			global.zoom = global.zoom - 20
 
@@ -46,7 +46,7 @@ if gamepad_is_connected(0){
 			global.zoom = global.zoom + 20
 	
 	global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
-
+*/
 	}
 
 if keyboard_check(vk_right){

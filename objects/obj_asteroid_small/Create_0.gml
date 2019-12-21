@@ -2,7 +2,7 @@ event_inherited();
 
 obj_health = 8;
 
-damage = 3
+damage = 8
 push_force = 10//900
 
 i = irandom(4)

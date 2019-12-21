@@ -3,12 +3,12 @@
 instance_create_depth(3000,1800,10,obj_planet_earth)
 
 // View settings
-
+/*
 with(obj_view_object)
 	instance_destroy();
 	
 view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
-
+*/
 //global.zoom = 1100
 
 // Clear particles
@@ -32,18 +32,18 @@ if !instance_exists(obj_player){
 	global.player.phy_rotation = 0
 	global.player.draw_scale = 0.01
 	}
-	
+	/*
 with(view_object){
 	phy_position_x = obj_player.phy_com_x
 	phy_position_y = obj_player.phy_com_y
 	phy_speed_x = obj_player.phy_speed_x
 	phy_speed_y = obj_player.phy_speed_y
 	}
-	
+	*/
 // Wormhole
 
 // Temporarily disabled starting wormholes!!
-wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin_new)
+wormhole = instance_create_depth(0.5 * room_width,0.5 * room_height,100,obj_wormhole_level_begin_player)
 
 // timers
 

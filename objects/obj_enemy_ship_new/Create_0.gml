@@ -2,8 +2,9 @@
 
 //credits = irandom(5)+1
 pickup_objects = 3//+irandom(global.difficulty_level)
-
-
+pickup_objects_credits = 1
+pickup_objects_health = 1
+pickup_objects_particles = 1
 // Stats variables, for keeping track of stuff
 
 the_one_that_killed_me = noone

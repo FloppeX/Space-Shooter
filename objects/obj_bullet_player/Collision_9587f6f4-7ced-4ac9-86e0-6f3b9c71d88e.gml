@@ -12,7 +12,9 @@ switch (i){
 	case 2: bullet_impact_sound = snd_bullet_vs_ship_3 ; break;
 	}
 
-audio_play_sound_at(bullet_impact_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
+//audio_play_sound_at(bullet_impact_sound,phy_position_x,phy_position_y,0,100,800,1,0,1)
+audio_emitter_falloff(projectile_audio_emitter, 100, 800, 1);
+audio_play_sound_on(projectile_audio_emitter,bullet_impact_sound,0,1)
 
 with (other){
 	temp_dir = point_direction(other.phy_position_xprevious,other.phy_position_yprevious,other.phy_position_x,other.phy_position_y)

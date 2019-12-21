@@ -32,11 +32,11 @@ next_level_timer = 120
 // Shop
 
 shop = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_shop)
-cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor_new)
+cursor = noone//instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor_new)
 
 // Wormhole
 
-wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+500,100,obj_wormhole_level_begin_new)
+wormhole_begin = instance_create_depth(0.5 * room_width,0.5 * room_height+500,100,obj_wormhole_level_begin_player)
 
 // Sound
 

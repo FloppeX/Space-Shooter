@@ -23,6 +23,7 @@ if activated and use_timer <= 0 and teleporting == false{
 	temp_angular_velocity = owner.phy_angular_velocity
 	temp_speed_x = owner.phy_speed_x
 	temp_speed_y = owner.phy_speed_y
+	
 	owner.controls_disabled = true
 	owner.visible = false
 	owner.phy_active = false
@@ -30,6 +31,24 @@ if activated and use_timer <= 0 and teleporting == false{
 	owner.phy_rotation = temp_phy_rotation
 	owner.phy_speed_x = 0
 	owner.phy_speed_y = 0
+	
+	with(owner){
+	for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+			ship_segment[i].visible = false
+			ship_segment[i].phy_active = false
+			physics_joint_delete(ship_segment[i].joint)
+			ship_segment[i].joint = noone
+						
+			if scr_exists(ship_segment[i].module){
+				ship_segment[i].module.activated = false
+				ship_segment[i].module.persistent = true
+				ship_segment[i].module.visible = false
+				ship_segment[i].module.phy_active = false
+				physics_joint_delete(ship_segment[i].module.joint)
+				ship_segment[i].module.joint = noone
+			}
+			}
+		}
 	}
 	
 if teleporting{
@@ -40,6 +59,7 @@ if teleporting{
 	owner.phy_position_y = owner.phy_position_y + lengthdir_y(temp_speed,temp_dir)
 	
 	// Create teleport out effect
+	/*
 	if duration_timer > 0{
 	temp_angle = scr_wrap_direction_to_point(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
 	temp_distance = scr_wrap_distance_to_point(phy_position_x,phy_position_y,phy_position_xprevious,phy_position_yprevious)
@@ -58,7 +78,7 @@ if teleporting{
 			part_particles_create(global.part_system_below, owner.phy_position_x-lengthdir_x(p,temp_angle), owner.phy_position_y+global.play_area_height-lengthdir_y(p,temp_angle), global.teleport_out_particle, 1);
 		}
 	}
-	
+	*/
 	if duration_timer <= 0{
 		owner.phy_active = true
 		owner.phy_position_x = target_point_x
@@ -75,6 +95,31 @@ if teleporting{
 		target_point_x = 0
 		target_point_y = 0
 		
+		with(owner){
+			
+			
+			for(var i = 0; i < array_length_1d(ship_segment); i+=1;){
+				ship_segment[i].persistent = true
+				ship_segment[i].visible = true
+				ship_segment[i].phy_active = true
+				ship_segment[i].phy_position_x = phy_position_x + lengthdir_x(ship_segment[i].placement_distance,-phy_rotation+ship_segment[i].placement_angle)
+				ship_segment[i].phy_position_y = phy_position_y + lengthdir_y(ship_segment[i].placement_distance,-phy_rotation+ship_segment[i].placement_angle)
+				if !ship_segment[i].joint
+				ship_segment[i].joint = physics_joint_weld_create(id, ship_segment[i], ship_segment[i].phy_position_x,ship_segment[i].phy_position_y,0, 10, 10,false);
+				if scr_exists(ship_segment[i].module){
+					ship_segment[i].module.activated = false
+					ship_segment[i].module.persistent = true
+					ship_segment[i].module.visible = true
+					ship_segment[i].module.phy_active = true
+					ship_segment[i].module.phy_position_x = ship_segment[i].phy_position_x
+					ship_segment[i].module.phy_position_y = ship_segment[i].phy_position_y
+					ship_segment[i].module.phy_rotation = -phy_rotation+ship_segment[i].module.offset_angle
+					ship_segment[i].module.joint = physics_joint_revolute_create(ship_segment[i], ship_segment[i].module,ship_segment[i].phy_position_x,ship_segment[i].phy_position_y,0, 360, 0, 30,0,1,0);
+					}
+				}
+	
+			scr_ship_update_segments(id,segment_distance)
 		
-		}
+			}
+	}
 }

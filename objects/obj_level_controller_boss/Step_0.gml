@@ -1,5 +1,5 @@
-if instance_exists(obj_player)
-	global.camera.follow_object = obj_player //obj_player
+//if instance_exists(obj_player)
+//	global.camera.follow_object = obj_player //obj_player
 
 //
 	
@@ -113,7 +113,7 @@ if obj_player.destroyed{
 if death_timer <= 0 and !instance_exists(obj_death_menu){
 	death_menu = instance_create_depth(0.5*display_get_gui_width(),0.4*display_get_gui_height(),0,obj_death_menu)
 	death_menu.alignment = "center"
-	death_menu.x_pos = 0.5*display_get_width()
-	death_menu.y_pos = 0.4*display_get_height()
+	death_menu.x_pos = 0.5*display_get_gui_width()
+	death_menu.y_pos = 0.5*display_get_gui_height()
 	}
 	

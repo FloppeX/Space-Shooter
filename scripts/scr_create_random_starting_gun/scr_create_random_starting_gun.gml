@@ -4,6 +4,7 @@ switch (i){
 	case 0: temp_module = instance_create_depth(0,0,-10,obj_module_scatter_gun); break;
 	case 1: temp_module = instance_create_depth(0,0,-10,obj_module_blaster); break;
 	case 2: temp_module = instance_create_depth(0,0,-10,obj_module_shotgun); break;
+	//case 3: temp_module = instance_create_depth(0,0,-10,obj_module_teleporter); break;
 	}
 temp_module.offset_angle = irandom(3) * 90;
 

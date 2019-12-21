@@ -14,29 +14,34 @@ with(obj_player){
 
 with(obj_player){
 	var angle_diff = angle_difference(-phy_rotation,90)
-	physics_apply_torque(2*angle_diff)
+	physics_apply_angular_impulse(0.4 * angle_diff)
+	physics_apply_angular_impulse(0.001 * phy_angular_velocity)
 	var x_diff = obj_shop.phy_position_x - phy_position_x
 	var x_force = x_diff
 	physics_apply_force(phy_position_x,phy_position_y,x_force,0)
-	var x_braking_force = -20 * phy_speed_x
+	var x_braking_force = -50 * phy_speed_x
 		physics_apply_force(phy_position_x,phy_position_y,x_braking_force,0)
+	
 }
 
 if (obj_player.phy_position_y - obj_shop.phy_position_y) > 50 and !scr_exists(wormhole_begin)
 	global.player_entering_shop = true
 
-var force_max = 100 
+var force_max = 60
 
-if global.player_entering_shop
+if global.player_entering_shop{
+	global.zoom = 600
 	with(obj_player){
 		var y_diff = phy_position_y - obj_shop.phy_position_y 
 		var y_force = clamp(-y_diff,-force_max,force_max)
 		physics_apply_force(phy_position_x,phy_position_y,0,y_force)
-		var y_braking_force = -40 * phy_speed_y
-			physics_apply_force(phy_position_x,phy_position_y,0,y_braking_force)
+		var y_braking_force = -50 * phy_speed_y
+		physics_apply_force(phy_position_x,phy_position_y,0,y_braking_force)
 		}	
+}
 
 if global.player_exiting_shop and !instance_exists(obj_wormhole){
+	global.zoom = 1000
 	global.active_level += 1
 	wormhole_end = instance_create_depth(0.5 * room_width,0.5 * room_height-500,100,obj_wormhole_level_end_new)
 	wormhole_end.next_level = global.levels[global.active_level]
@@ -51,3 +56,9 @@ if global.player_exiting_shop
 		//var y_braking_force = -40 * phy_speed_y
 		//	physics_apply_force(phy_position_x,phy_position_y,0,y_braking_force)
 		}
+	
+if global.player_entering_shop and !scr_exists(cursor)
+	cursor = instance_create_depth(0.5 * room_width,0.5 * room_height,30,obj_cursor_new)
+if global.player_exiting_shop and scr_exists(cursor)
+	with(cursor)
+		instance_destroy()

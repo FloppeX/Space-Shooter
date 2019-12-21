@@ -14,7 +14,7 @@ start_menu.y_pos = 0.5*display_get_gui_height()
 
 //view_object = instance_create_depth(0.5 * room_width,0.5 * room_height,-5,obj_view_object)
 
-global.zoom = 1100
+global.zoom = 1000
 zoom_timer = 0
 
 // Clear particles
@@ -58,9 +58,9 @@ scr_create_background_layers()
 fake_wormhole_1 = instance_create_depth(0,0,-100,obj_wormhole_fake)
 fake_wormhole_2 = instance_create_depth(0,0,-100,obj_wormhole_fake)
 
-fake_wormhole_1.draw_position_x = 0.5 * display_get_gui_width() -285
-fake_wormhole_1.draw_position_y = 0.15 * display_get_gui_height()+280
+fake_wormhole_1.draw_position_x = 6.8 * global.gui_unit
+fake_wormhole_1.draw_position_y = 3 * global.gui_unit
 
-fake_wormhole_2.draw_position_x = 0.5 * display_get_gui_width() + 250
-fake_wormhole_2.draw_position_y = 0.15 * display_get_gui_height()+280
+fake_wormhole_2.draw_position_x = 9 * global.gui_unit
+fake_wormhole_2.draw_position_y = 3 * global.gui_unit
 

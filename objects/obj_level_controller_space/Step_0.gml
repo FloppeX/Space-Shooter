@@ -1,5 +1,10 @@
-// Zoom
+// TEST 
+if keyboard_check_pressed(vk_delete)
+	stage_timer = 0
 
+
+// Zoom
+/*
 if gamepad_button_check_pressed(0,gp_padu)
 		global.zoom = global.zoom - 100
 
@@ -7,11 +12,11 @@ if gamepad_button_check_pressed(0,gp_padd)
 		global.zoom = global.zoom + 100
 	
 global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
-
+*/
 //
 
-if instance_exists(obj_player)
-	global.camera.follow_object = obj_player
+//if instance_exists(obj_player)
+//	global.camera.follow_object = obj_player
 	
 //
 
@@ -154,8 +159,8 @@ if obj_player.destroyed{
 if death_timer <= 0 and !instance_exists(obj_death_menu){
 	death_menu = instance_create_depth(0.5*display_get_gui_width(),0.4*display_get_gui_height(),0,obj_death_menu)
 	death_menu.alignment = "center"
-	death_menu.x_pos = 0.5*display_get_width()
-	death_menu.y_pos = 0.4*display_get_height()
+	death_menu.x_pos = 0.5*display_get_gui_width()
+	death_menu.y_pos = 0.5*display_get_gui_height()
 	}
 	
 // If the timer is 0, spawn lots of enemies

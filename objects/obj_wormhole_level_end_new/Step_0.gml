@@ -62,7 +62,7 @@ if scr_exists(warping_ship) and !done_warping{
 	
 // Check when done warping
 
-if scr_exists(fake_warping_ship){
+if scr_exists(warping_ship) and scr_exists(fake_warping_ship){
 	if fake_warping_ship.draw_scale <= 0{
 		done_warping = true
 		}

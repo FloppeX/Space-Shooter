@@ -17,7 +17,7 @@
 	target_y = scr_wrap_closest_y(target);
     dir = point_direction(origin.phy_position_x,origin.phy_position_y,target_x,target_y);
     alpha = target.phy_speed / pspeed;
-	target_travel_dir = scr_wrap_direction_to_point(target.phy_position_xprevious,target.phy_position_yprevious,target.phy_position_x,target.phy_position_y)
+	target_travel_dir = point_direction(0,0,target.phy_position_x,target.phy_position_y) //scr_wrap_direction_to_point(target.phy_position_xprevious,target.phy_position_yprevious,target.phy_position_x,target.phy_position_y)
     phi = degtorad(target_travel_dir - dir);
     beta = alpha * sin(phi);
     if (abs(beta) >= 1)

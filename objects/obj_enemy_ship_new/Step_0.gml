@@ -43,7 +43,9 @@ if obj_health <= 0{
 	audio_emitter_free(ship_audio_emitter)
 
 	
-	scr_create_pickups_after_death();
+	scr_create_pickups_after_death(obj_pickup_credit,pickup_objects_credits);
+	scr_create_pickups_after_death(obj_pickup_health,pickup_objects_health);
+	scr_create_pickups_after_death(obj_pickup_particles,pickup_objects_particles);
 	scr_create_explosion_medium(phy_position_x,phy_position_y)
 	if the_one_that_killed_me == obj_player{
 		obj_player.enemies_killed += 1
@@ -229,11 +231,18 @@ if controls_disabled == false{
 	// Apply thrust
 	
 	if phy_speed < target_speed
-		add_thrust = 1
-	else add_thrust = 0
+		add_thrust += 0.02
+	else add_thrust -= 0.02
 	
+	// Set angular damping
+	phy_angular_damping = 20	
+
 	}
-else add_thrust = 0
+else{
+	add_thrust -= 0.02
+	phy_angular_damping = 4
+	}	
+add_thrust = clamp(add_thrust,0,1)
 
 // Counter drift
 if add_thrust and !controls_disabled
@@ -245,16 +254,6 @@ if energy < max_energy
 	energy += energy_increase
 if energy > max_energy
 	energy = max_energy
-
-
-// Find mirror positions
-
-scr_find_mirror_positions();
-
-// Wrap movement
-
-scr_wrap_room_ship()//_test();
-
 
 // Sound
 
@@ -274,3 +273,12 @@ for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 				ship_segment[i].module.visible = true
 				}
 			}
+			
+
+// Find mirror positions
+
+scr_find_mirror_positions();
+
+// Wrap movement
+
+scr_wrap_room_ship()

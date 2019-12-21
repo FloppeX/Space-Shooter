@@ -1,6 +1,6 @@
 event_inherited();
 
-add_thrust = owner.add_thrust
+var add_thrust = owner.add_thrust
 
 if scr_exists(owner) and add_thrust > 0 and visible{
 

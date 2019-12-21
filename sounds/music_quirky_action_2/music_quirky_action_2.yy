@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "music_quirky_action_2",
-    "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
+    "audioGroupGuid": "2860664f-b4aa-4541-8b4a-d8a371340a9f",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

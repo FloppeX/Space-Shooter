@@ -1,5 +1,5 @@
 // Control view
-
+/*
 if instance_exists(obj_player)
 	with(view_object){
 		phy_position_x = obj_player.phy_com_x

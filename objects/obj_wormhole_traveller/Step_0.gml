@@ -2,7 +2,13 @@ wormhole = instance_nearest(phy_position_x,phy_position_y,obj_wormhole)
 
 if wormhole == noone
 	instance_destroy();
-	
+
+//
+
+scr_find_mirror_positions();
+
+scr_wrap_room();
+
 
 // TEST!
 wormhole = instance_nearest(phy_position_x,phy_position_y,obj_wormhole)
@@ -27,8 +33,3 @@ depth = -round(100-100*draw_scale)
 
 depth = 10 - (draw_scale * 10)
 
-//
-
-scr_find_mirror_positions();
-
-scr_wrap_room();

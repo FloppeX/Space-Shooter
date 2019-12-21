@@ -1,5 +1,5 @@
 // Zoom
-
+/*
 if gamepad_button_check_pressed(0,gp_padu)
 		global.zoom = global.zoom - 100
 
@@ -7,7 +7,7 @@ if gamepad_button_check_pressed(0,gp_padd)
 		global.zoom = global.zoom + 100
 	
 global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
-
+*/
 // Enemies
 
 if scr_timer(30){	

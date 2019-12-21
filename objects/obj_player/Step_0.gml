@@ -70,16 +70,16 @@ if controls_disabled == false{
 		
 	// Zoom
 
-if gamepad_button_check(0,gp_padu)
-		global.zoom = global.zoom - 20
+if gamepad_button_check_pressed(0,gp_padu)
+		global.zoom = global.zoom - 100
 
-if gamepad_button_check(0,gp_padd)
-		global.zoom = global.zoom + 20
+if gamepad_button_check_pressed(0,gp_padd)
+		global.zoom = global.zoom + 100
 	
 global.zoom = clamp(global.zoom,global.min_zoom,global.max_zoom)
 
 	}
-
+	
 if keyboard_check(vk_right){
 	shop = room_duplicate(rm_shop)
 	room_goto (shop)
@@ -118,14 +118,12 @@ if keyboard_check_pressed(ord("3")){
 // Turn
 
 if controls_disabled == false{
-			
-	//rotation_value = (1-sqr(1-abs(rotation_value))) * sign(rotation_value)
-	
-	if abs(phy_angular_velocity) < rotation_speed //* abs(rotation_value)
+
+	if abs(phy_angular_velocity) < rotation_speed
 		physics_apply_torque(rotation_force * rotation_value)
-	//else
-	//	physics_apply_torque(rotation_force * -sign(phy_angular_velocity))
+	phy_angular_damping = 20	
 }
+else phy_angular_damping = 4
 	
 // Stop ship from skidding
 if add_thrust
@@ -143,6 +141,8 @@ if phy_speed > max_speed{
 for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
 	if scr_exists(ship_segment[i].module){
 		if gamepad_button[ship_segment[i].module.activation_button] == true and ship_segment[i].module.activation_button != 0
+			ship_segment[i].module.activated = true
+		if use_active_item and ship_segment[i].module.active
 			ship_segment[i].module.activated = true
 		}
 	
@@ -211,14 +211,17 @@ scr_find_mirror_positions();
 
 // Wrap room if needed
 
-scr_wrap_room_ship();//scr_wrap_room_ship();
+scr_wrap_room_ship();
 
 // Sound
 
 audio_emitter_position(ship_audio_emitter,phy_position_x,phy_position_y,0)
 var listener_height = 0.25*global.zoom
 listener_height = clamp(listener_height,0,1000)
+
 audio_listener_position(phy_position_x,phy_position_y,listener_height)
+audio_listener_orientation(0,1,0,0,0,1)
+audio_listener_velocity(phy_speed_x, phy_speed_y, 0);
 
 // Credits
 if obj_health > 0{
@@ -261,27 +264,43 @@ credits_gained += (credits - credits_old)
 global.total_credits += (credits - credits_old)
 credits_old = credits
 
-// MAP UI
+// GUI stuff
 
-if scr_timer(40)
-	scr_populate_map_object_array(obj_asteroid,spr_map_marker_asteroid)
+if scr_timer(30)
+	scr_populate_map_object_array()
+	
+health_bar_x = global.gui_unit * 0.2
+health_bar_y = 4.5 * global.gui_unit //540
+health_bar_height = 1.5 * global.gui_unit
+health_bar_width = global.gui_unit * 0.16
+
+energy_bar_x = global.gui_unit * 0.4
+energy_bar_y = 4.5 * global.gui_unit //540
+energy_bar_height = 1.5 * global.gui_unit
+energy_bar_width = global.gui_unit * 0.16
+
+particles_bar_x = global.gui_unit * 0.6
+particles_bar_y = 4.5 * global.gui_unit //540
+particles_bar_height = 1.5 * global.gui_unit
+particles_bar_width = global.gui_unit * 0.16
 
 // Update costs
 
-for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
-	if scr_exists(ship_segment[i].module){
-		ship_segment[i].module.cost = 0
-		}
+if scr_timer(60)
+	for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+		if scr_exists(ship_segment[i].module)
+			ship_segment[i].module.cost = 0
 		
 // TEST
 
-for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
-	if scr_exists(ship_segment[i]){
-			ship_segment[i].owner = id
-			ship_segment[i].persistent = true
-			if scr_exists(ship_segment[i].module){
-				ship_segment[i].module.owner = id
-				ship_segment[i].module.persistent = true
-				ship_segment[i].module.cost = 0
+if scr_timer(60)
+	for(var i = 0; i < array_length_1d(ship_segment); i+=1;)
+		if scr_exists(ship_segment[i]){
+				ship_segment[i].owner = id
+				ship_segment[i].persistent = true
+				if scr_exists(ship_segment[i].module){
+					ship_segment[i].module.owner = id
+					ship_segment[i].module.persistent = true
+					ship_segment[i].module.cost = 0
+					}
 				}
-			}

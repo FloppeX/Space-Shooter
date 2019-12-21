@@ -38,6 +38,11 @@ else
 	
 phy_angular_velocity = clamp(phy_angular_velocity,-max_rotation_speed,max_rotation_speed)
 
+//Sound
+
+audio_emitter_position(asteroid_audio_emitter,phy_position_x,phy_position_y,0)
+audio_emitter_velocity(asteroid_audio_emitter, phy_speed_x, phy_speed_y, 0);
+
 // Find mirror positions
 
 scr_find_mirror_positions();
